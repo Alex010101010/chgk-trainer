@@ -12,7 +12,14 @@ import sys
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 GQ_IN = os.path.join(DATA_DIR, "gotquestions_dump.json")
-BINGO_IN = os.path.join(DATA_DIR, "bingo_questions.json")
+# Бинго-корпус собирается из двух источников: вики (T1) и статей индекса (T16).
+# Ниже по конвейеру корпус один — `bingo_clean.json`, — а разводит их поле
+# `source`. Отдельный третий вход пришлось бы не забыть подключить в санитайзере,
+# отчёте, T3 и T14; ровно там половина корпуса и теряется молча.
+BINGO_IN = (
+    (os.path.join(DATA_DIR, "bingo_questions.json"), "wiki"),
+    (os.path.join(DATA_DIR, "bingo_index_questions.json"), "index"),
+)
 GQ_OUT = os.path.join(DATA_DIR, "gq_clean.json")
 BINGO_OUT = os.path.join(DATA_DIR, "bingo_clean.json")
 REPORT = os.path.join(DATA_DIR, "sanitize_report.json")
@@ -74,7 +81,7 @@ def clean_question(text):
     return text.strip()
 
 
-def exclusion_reason(question, answer, theme, raw_question=None):
+def exclusion_reason(question, answer, theme, raw_question=None, handout_image=None):
     """Первое сработавшее правило. Только структурные маркеры: `^Внимание`
     сюда не входит — из 195 gq-совпадений почти все это «Внимание, слово
     АЛЬФА в вопросе — замена», то есть полностью играбельный вопрос.
@@ -85,7 +92,8 @@ def exclusion_reason(question, answer, theme, raw_question=None):
     санитайзер перестал бы эту раздатку видеть.
     """
     raw = raw_question if raw_question is not None else question
-    if not question.strip():
+    # Пустой текст при живой картинке — это вопрос-картинка, а не пустышка.
+    if not question.strip() and not handout_image:
         return "empty", "пустой текст вопроса"
     # `answer` вида «.» встречается и после нормализации превращается в пустоту:
     # играть по такому вопросу нельзя, значит это отсутствие ответа.
@@ -93,6 +101,12 @@ def exclusion_reason(question, answer, theme, raw_question=None):
         return "no_answer", "пустой ответ"
     if theme in META_THEMES:
         return "meta_theme", "тема-приём, а не тема-ответ"
+    # Картинка нашлась в теле вопроса (T16) — играть без неё нельзя, сколько бы
+    # текст ни выглядел самодостаточным: «Назовите француза, изображенного на
+    # фотографиях» без фотографий не берётся. Исключение снимет T3, когда экран
+    # научится показывать раздатку до старта минуты.
+    if handout_image:
+        return "handout", "раздаточный материал (картинка есть локально)"
     # `^перед вами` — по очищенному тексту: инструкция чтецу могла стоять перед ним.
     if RE_HANDOUT_START.search(question) or RE_HANDOUT.search(raw):
         return "handout", "раздаточный материал"
@@ -186,7 +200,11 @@ def sanitize(rows, corpus):
         theme = as_text(row.get("theme")) or None
 
         reason, note = exclusion_reason(
-            question, answer, theme, raw_question=as_text(row.get("question"))
+            question,
+            answer,
+            theme,
+            raw_question=as_text(row.get("question")),
+            handout_image=row.get("handoutImage"),
         )
         record = dict(row)
         record["corpus"] = corpus
@@ -211,10 +229,17 @@ def report_for(rows):
         theme = as_text(row.get("theme"))
         if theme:
             themes[theme] = themes.get(theme, 0) + 1
+    by_source = {}
+    for row in kept:
+        source = row.get("source")
+        if source:
+            by_source[source] = by_source.get(source, 0) + 1
     return {
         "всего": len(rows),
         "осталось": len(kept),
         "по причинам": reasons,
+        "по источникам": by_source,
+        "повторов помечено": sum(1 for r in rows if r.get("duplicateOf")),
         "тем осталось": len(themes),
         "тем с 3+ вопросами": sum(1 for n in themes.values() if n >= 3),
         "пустых acceptVariants при непустом ответе": sum(
@@ -254,17 +279,72 @@ def write_sample(rows, path, seed=20260829):
         json.dump(sample, f, ensure_ascii=False, indent=2)
 
 
+def load_gq():
+    with open(GQ_IN, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_bingo():
+    """Оба источника бинго одним списком, с проставленным `source`."""
+    rows = []
+    for path, source in BINGO_IN:
+        if not os.path.exists(path):
+            raise SystemExit(
+                f"нет {os.path.basename(path)} — собери его: "
+                f"python3 scripts/{'structure_bingo_dump.py' if source == 'wiki' else 'crawl_bingo_index.py && python3 scripts/structure_bingo_index.py'}"
+            )
+        with open(path, encoding="utf-8") as f:
+            rows.extend({**row, "source": row.get("source", source)} for row in json.load(f))
+    return rows
+
+
+def mark_duplicates(rows):
+    """Один и тот же турнирный вопрос попадается и в gq, и в бинго.
+
+    Ничего не удаляется — принцип T11: помечается `duplicateOf`, чтобы T3 мог
+    не показывать в «Бинго» то, что игрок уже проходил в «Классике».
+    """
+    seen = {}
+    duplicates = 0
+    for row in rows:
+        key = duplicate_key(row.get("question"))
+        if not key:
+            continue
+        if key in seen and seen[key] != row.get("id"):
+            row["duplicateOf"] = seen[key]
+            duplicates += 1
+        else:
+            seen.setdefault(key, row.get("id"))
+    return duplicates
+
+
+def duplicate_key(question):
+    """Первые 120 значащих символов: у одного вопроса в двух базах расходятся
+    пунктуация, кавычки и хвост про «Назовите…», а начало совпадает."""
+    text = re.sub(r"[^а-яa-z0-9 ]", " ", (question or "").lower().replace("ё", "е"))
+    text = re.sub(r"\s+", " ", text).strip()[:120]
+    return text or None
+
+
 def main(seed=20260829):
     report = {}
     all_rows = []
-    for corpus, src, dst in (("gq", GQ_IN, GQ_OUT), ("bingo", BINGO_IN, BINGO_OUT)):
-        with open(src, encoding="utf-8") as f:
-            rows = json.load(f)
+    corpora = []
+    for corpus, rows, dst in (("gq", load_gq(), GQ_OUT), ("bingo", load_bingo(), BINGO_OUT)):
         cleaned = sanitize(rows, corpus)
+        corpora.append((corpus, cleaned, dst))
+
+    # Дедуп — по обоим корпусам разом: gq идёт первым, поэтому оригиналом
+    # считается он, а помечается повтор в бинго.
+    duplicates = mark_duplicates([r for _, cleaned, _ in corpora for r in cleaned])
+    print(f"Повторов между корпусами помечено: {duplicates}")
+
+    for corpus, cleaned, dst in corpora:
         with open(dst, "w", encoding="utf-8") as f:
             json.dump(cleaned, f, ensure_ascii=False, indent=2)
         report[corpus] = report_for(cleaned)
         all_rows.extend(cleaned)
+
         print(f"{corpus}: {report[corpus]['осталось']}/{report[corpus]['всего']} -> {dst}")
         for key, count in sorted(report[corpus]["по причинам"].items()):
             print(f"    {key}: {count}")

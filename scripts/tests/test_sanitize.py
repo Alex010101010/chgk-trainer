@@ -7,7 +7,14 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from sanitize_dumps import accept_variants, clean_question, exclusion_reason, sanitize
+from sanitize_dumps import (
+    accept_variants,
+    clean_question,
+    duplicate_key,
+    exclusion_reason,
+    mark_duplicates,
+    sanitize,
+)
 from scrape_bingo_wiki import extract_article_text
 
 FIXTURES = os.path.join(os.path.dirname(__file__), "fixtures")
@@ -172,6 +179,52 @@ def test_sanitize_end_to_end():
     check("\xa0" not in out[0]["question"], "неразрывные пробелы схлопнуты")
 
 
+def test_question_with_a_local_handout_image_is_excluded():
+    """T16 кладёт картинку локально, но «Классика» показывать её не умеет.
+    Красно-зелёный: «Назовите француза, изображенного на фотографиях» текстовым
+    правилом не ловится — оно не содержит ни «раздаточн», ни «перед вами», — и
+    без проверки по `handoutImage` уехало бы в корпус играбельным."""
+    text = "Назовите француза, изображенного на фотографиях."
+    reason, _ = exclusion_reason(text, "Бертильон.", None)
+    check(reason is None, "текстовое правило такой вопрос не ловит")
+    reason, note = exclusion_reason(text, "Бертильон.", None, handout_image="images/a.jpg")
+    check(reason == "handout", "с картинкой в теле вопрос помечен раздаткой")
+    check("картинка" in (note or ""), "причина названа своими словами")
+
+
+def test_image_only_question_is_a_handout_not_an_empty_one():
+    """Вопрос, текст которого и есть картинка. «Пусто» тут было бы неправдой:
+    в T3 такой вопрос играется, как только экран научится показывать раздатку."""
+    reason, _ = exclusion_reason("", "Каррара", None, handout_image="images/b.png")
+    check(reason == "handout", "вопрос-картинка — раздатка")
+    reason, _ = exclusion_reason("", "Каррара", None)
+    check(reason == "empty", "а без картинки он по-прежнему пустой")
+
+
+def test_duplicates_are_marked_not_deleted():
+    """Один турнирный вопрос попадается и в gq, и в бинго. Принцип T11 —
+    ничего не удалять: помечается `duplicateOf`, строка остаётся."""
+    rows = [
+        {"id": "gq-1", "question": "В 1937 году вышла повесть Стейнбека. Назовите её."},
+        {"id": "ix-t-1", "question": "В 1937 году вышла повесть Стейнбека — назовите её!"},
+        {"id": "ix-t-2", "question": "Совсем другой вопрос про другое."},
+    ]
+    marked = mark_duplicates(rows)
+    check(marked == 1, "помечен ровно один повтор")
+    check(rows[1]["duplicateOf"] == "gq-1", "оригиналом назван gq, а не бинго")
+    check("duplicateOf" not in rows[0], "оригинал не помечен")
+    check("duplicateOf" not in rows[2], "непохожий вопрос не помечен")
+    check(len(rows) == 3, "ни одна строка не удалена")
+
+
+def test_duplicate_key_ignores_punctuation_and_yo():
+    check(
+        duplicate_key("Ёлка, «ель» — назовите!") == duplicate_key("елка ель назовите"),
+        "ё, кавычки и тире не мешают совпадению",
+    )
+    check(duplicate_key("   ") is None, "пустой вопрос ключа не даёт")
+
+
 def main():
     for test in [
         test_parsing_keeps_guillemets,
@@ -180,6 +233,10 @@ def main():
         test_structural_markers_are_excluded,
         test_accept_variants,
         test_sanitize_end_to_end,
+        test_question_with_a_local_handout_image_is_excluded,
+        test_image_only_question_is_a_handout_not_an_empty_one,
+        test_duplicates_are_marked_not_deleted,
+        test_duplicate_key_ignores_punctuation_and_yo,
     ]:
         print(test.__name__)
         test()
