@@ -115,6 +115,16 @@ void main() {
     expect(find.byKey(const Key('cycle-start')), findsOneWidget);
   });
 
+  testWidgets('на холодном старте карточка показана — в журнале уже sessionStart',
+      (tester) async {
+    // Реальный первый запуск: main.dart пишет sessionStart до входа в режим,
+    // то есть журнал не пуст. Тест на полностью пустом журнале этого не ловит.
+    final log = MemoryEventLog();
+    await log.append(SessionStartEvent.at(_now));
+    await _pump(tester, log);
+    expect(find.byKey(const Key('tehnika-card')), findsOneWidget);
+  });
+
   testWidgets('после ответа на этой неделе карточка больше не показывается',
       (tester) async {
     final log = MemoryEventLog();
