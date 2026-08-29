@@ -60,13 +60,15 @@ AnswerEvent _answer(String id, {int daysAgo = 0}) {
   );
 }
 
-Future<void> _pump(WidgetTester tester, EventLog log) async {
+Future<void> _pump(WidgetTester tester, EventLog log,
+    {TehnikaCardSeen? cardSeen}) async {
   await tester.pumpWidget(JournalScope(
     log: log,
     child: MaterialApp(
       home: ClassicScreen(
         repository: FakeQuestions(_pool),
         tehnikaRepository: FakeTehniki(),
+        cardSeen: cardSeen,
         random: Random(1),
         now: () => _now,
       ),
@@ -134,6 +136,24 @@ void main() {
     expect(find.byKey(const Key('cycle-start')), findsOneWidget);
   });
 
+  testWidgets('прочитанная карточка второй раз перед раундом не всплывает',
+      (tester) async {
+    // Урок скрывается только после первого ответа за неделю, поэтому чтение
+    // карточки с главного экрана нужно отмечать отдельно — иначе она
+    // открывается дважды подряд.
+    final seen = TehnikaCardSeen()..value = true;
+    await _pump(tester, MemoryEventLog(), cardSeen: seen);
+    expect(find.byKey(const Key('tehnika-card')), findsNothing);
+    expect(find.byKey(const Key('cycle-start')), findsOneWidget);
+  });
+
+  testWidgets('показ карточки перед раундом сам поднимает флаг', (tester) async {
+    final seen = TehnikaCardSeen();
+    await _pump(tester, MemoryEventLog(), cardSeen: seen);
+    expect(find.byKey(const Key('tehnika-card')), findsOneWidget);
+    expect(seen.value, isTrue);
+  });
+
   testWidgets('эталонный вопрос даёт вердикт с разбором', (tester) async {
     final log = MemoryEventLog();
     await log.append(_answer('gq-0', daysAgo: 1)); // карточку пропускаем
@@ -153,6 +173,9 @@ void main() {
     expect(find.text('Здесь был приём «Перевод для ответа»?'), findsOneWidget);
     await tester.tap(find.text('Да'));
     await tester.pumpAndSettle();
+    // Пока не нажато «Ответить», вердикта нет и решение ещё можно переменить.
+    expect(find.byKey(const Key('cycle-tehnika-verdict')), findsNothing);
+    await _tap(tester, 'cycle-tehnika-answer');
     expect(find.byKey(const Key('cycle-tehnika-verdict')), findsOneWidget);
     expect(find.text('разбор примера'), findsOneWidget);
 
@@ -180,10 +203,11 @@ void main() {
       await tester.pumpAndSettle();
       await _tap(tester, 'cycle-verdict-done');
       await _tap(tester, 'cycle-reason-done');
-      if (find.byKey(const Key('cycle-tehnika-done')).evaluate().isNotEmpty) {
+      if (find.byKey(const Key('cycle-tehnika-answer')).evaluate().isNotEmpty) {
         asked = true;
         await tester.tap(find.text('Да'));
         await tester.pumpAndSettle();
+        await _tap(tester, 'cycle-tehnika-answer');
         expect(find.byKey(const Key('cycle-tehnika-noted')), findsOneWidget);
         expect(find.byKey(const Key('cycle-tehnika-verdict')), findsNothing);
         await _tap(tester, 'cycle-tehnika-done');
@@ -199,4 +223,16 @@ void main() {
     expect(tapped, isNotEmpty);
     expect(tapped.last.tehnikaGuess, isTrue);
   });
+}
+
+/// Кеш корпуса. Замер на телефоне показал 871 мс при первом открытии и 890 при
+/// повторном: репозиторий создавался заново на каждом переходе, и его кеш не
+/// работал ни разу.
+class CountingRepository implements QuestionRepository {
+  int calls = 0;
+  @override
+  Future<List<Question>> loadAll() async {
+    calls++;
+    return _pool;
+  }
 }

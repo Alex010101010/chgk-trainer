@@ -171,7 +171,8 @@ void main() {
   test('фаза приёма показывается только если он задан', () {
     final c = _toTehnika();
     expect(c.phase, CyclePhase.tehnika);
-    c.answerTehnika(true);
+    c.setTehnikaGuess(true);
+    c.revealTehnika();
     c.confirmTehnika();
     expect(c.phase, CyclePhase.done);
     expect(c.buildEvent().tehnikaGuess, isTrue);
@@ -191,21 +192,51 @@ void main() {
   test('вердикт по тапу выносится только когда эталон говорит «да»', () {
     // Эталон с низкой полнотой не даёт права сказать «приёма здесь не было»:
     // игрок мог увидеть то, что правило поиска пропустило.
-    final known = _toTehnika(inStandard: true)..answerTehnika(true);
+    final known = _toTehnika(inStandard: true)
+      ..setTehnikaGuess(true)
+      ..revealTehnika();
     expect(known.tehnikaVerdictKnown, isTrue);
     expect(known.tehnikaGuessedRight, isTrue);
     known.dispose();
 
-    final missed = _toTehnika(inStandard: true)..answerTehnika(false);
+    final missed = _toTehnika(inStandard: true)
+      ..setTehnikaGuess(false)
+      ..revealTehnika();
     expect(missed.tehnikaVerdictKnown, isTrue);
     expect(missed.tehnikaGuessedRight, isFalse);
     missed.dispose();
 
-    final unknown = _toTehnika()..answerTehnika(true);
+    final unknown = _toTehnika()
+      ..setTehnikaGuess(true)
+      ..revealTehnika();
     expect(unknown.tehnikaVerdictKnown, isFalse);
     // Догадка всё равно записана — это и есть разметка, ради которой тап есть.
     expect(unknown.buildEvent().tehnikaGuess, isTrue);
     unknown.dispose();
+  });
+
+  test('догадку о приёме можно переменить до «Ответить» и нельзя после', () {
+    // Мисклик по сегменту не должен запирать в случайном ответе; но и
+    // переписать догадку, уже увидев вердикт, нельзя — иначе разметка липовая.
+    final c = _toTehnika(inStandard: true);
+    c.setTehnikaGuess(true);
+    c.setTehnikaGuess(false);
+    expect(c.tehnikaGuess, isFalse);
+    expect(c.tehnikaAnswered, isFalse);
+
+    c.revealTehnika();
+    expect(c.tehnikaAnswered, isTrue);
+    c.setTehnikaGuess(true);
+    expect(c.tehnikaGuess, isFalse, reason: 'после «Ответить» решение заперто');
+    expect(c.buildEvent().tehnikaGuess, isFalse);
+    c.dispose();
+  });
+
+  test('«Ответить» без выбора ничего не фиксирует', () {
+    final c = _toTehnika()..revealTehnika();
+    expect(c.tehnikaAnswered, isFalse);
+    expect(c.phase, CyclePhase.tehnika);
+    c.dispose();
   });
 
   test('событие несёт answerWindowSec и roundId', () {

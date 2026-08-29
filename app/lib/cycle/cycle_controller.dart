@@ -243,12 +243,17 @@ class CycleController extends ChangeNotifier {
   CyclePhase _afterReason() =>
       config.tehnika != null ? CyclePhase.tehnika : CyclePhase.done;
 
+  /// Догадка меняется свободно, пока не нажато «Ответить»: промах пальцем по
+  /// сегменту не должен запирать игрока в случайном ответе.
   void setTehnikaGuess(bool? v) {
+    if (_tehnikaAnswered) return;
     _tehnikaGuess = v;
     notifyListeners();
   }
 
-  /// Ответ на тап засчитан и показан разбор; дальше — конец цикла.
+  /// Ответ зафиксирован, показан разбор; менять решение уже нельзя — иначе,
+  /// увидев вердикт, можно переписать догадку на правильную, и разметка,
+  /// ради которой тап и существует, станет липовой.
   bool _tehnikaAnswered = false;
   bool get tehnikaAnswered => _tehnikaAnswered;
 
@@ -259,9 +264,9 @@ class CycleController extends ChangeNotifier {
   bool get tehnikaGuessedRight =>
       config.tehnikaInStandard && _tehnikaGuess == true;
 
-  void answerTehnika(bool guess) {
+  void revealTehnika() {
     if (_phase != CyclePhase.tehnika || _tehnikaAnswered) return;
-    _tehnikaGuess = guess;
+    if (_tehnikaGuess == null) return;
     _tehnikaAnswered = true;
     notifyListeners();
   }

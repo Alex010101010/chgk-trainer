@@ -32,12 +32,23 @@ class HomeScreen extends StatelessWidget {
   final QuestionRepository? repository;
   final TehnikaRepository? tehnikaRepository;
 
-  const HomeScreen({super.key, this.repository, this.tehnikaRepository});
+  /// Флаг «карточку урока уже показывали». Прокидывается сверху, а не
+  /// создаётся здесь: иначе экран режима и экран карточки не узнают друг
+  /// о друге, и урок откроется дважды подряд.
+  final TehnikaCardSeen? cardSeen;
+
+  const HomeScreen({
+    super.key,
+    this.repository,
+    this.tehnikaRepository,
+    this.cardSeen,
+  });
 
   Widget _screenFor(String title) => switch (title) {
         'Классика' => ClassicScreen(
             repository: repository ?? AssetQuestionRepository(),
             tehnikaRepository: tehnikaRepository,
+            cardSeen: cardSeen,
           ),
         _ => ComingSoonScreen(
             title: title,
@@ -75,11 +86,14 @@ class HomeScreen extends StatelessWidget {
                 title: const Text('Приём недели'),
                 subtitle: const Text('Карточка урока — полминуты'),
                 onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => _TehnikaCardScreen(
-                        repository: repository ?? AssetQuestionRepository(),
-                        tehnikaRepository:
-                            tehnikaRepository ?? AssetTehnikaRepository(),
-                      )),
+                  MaterialPageRoute(
+                    builder: (_) => _TehnikaCardScreen(
+                      repository: repository ?? AssetQuestionRepository(),
+                      tehnikaRepository:
+                          tehnikaRepository ?? AssetTehnikaRepository(),
+                      cardSeen: cardSeen,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -112,10 +126,12 @@ class HomeScreen extends StatelessWidget {
 class _TehnikaCardScreen extends StatefulWidget {
   final QuestionRepository repository;
   final TehnikaRepository tehnikaRepository;
+  final TehnikaCardSeen? cardSeen;
 
   const _TehnikaCardScreen({
     required this.repository,
     required this.tehnikaRepository,
+    this.cardSeen,
   });
 
   @override
@@ -141,6 +157,8 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
       final byId = {for (final q in pool) q.id: q};
       final t = tehniki[min(weekIndex(events, DateTime.now()), tehniki.length - 1)];
       if (!mounted) return;
+      // Урок прочитан — перед раундом его показывать уже не нужно.
+      widget.cardSeen?.value = true;
       setState(() {
         _tehnika = t;
         _examples = {

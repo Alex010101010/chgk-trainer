@@ -83,6 +83,7 @@ List<Question> selectRound(
 class ClassicScreen extends StatefulWidget {
   final QuestionRepository repository;
   final TehnikaRepository? tehnikaRepository;
+  final TehnikaCardSeen? cardSeen;
   final Random? random;
   final DateTime Function()? now;
 
@@ -90,6 +91,7 @@ class ClassicScreen extends StatefulWidget {
     super.key,
     required this.repository,
     this.tehnikaRepository,
+    this.cardSeen,
     this.random,
     this.now,
   });
@@ -156,8 +158,11 @@ class _ClassicScreenState extends State<ClassicScreen> {
           for (final e in tehnika.examples)
             if (byId[e.questionId] case final q?) e.questionId: q,
         };
-        // Первый за неделю вход в режим — сперва урок.
-        _showCard = !answeredThisWeek(events, _now());
+        // Первый за неделю вход в режим — сперва урок. Но не второй раз
+        // подряд, если игрок только что прочитал карточку с главного экрана.
+        _showCard = !answeredThisWeek(events, _now()) &&
+            !(widget.cardSeen?.value ?? false);
+        if (_showCard) widget.cardSeen?.value = true;
       });
       _startRound();
     } on QuestionAssetException catch (e) {

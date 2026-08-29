@@ -324,18 +324,27 @@ class _QuestionCycleState extends State<QuestionCycle> {
           ],
           selected: _c.tehnikaGuess == null ? const {} : {_c.tehnikaGuess!},
           emptySelectionAllowed: true,
-          onSelectionChanged: (s) => _c.answerTehnika(s.first),
+          // Пока не нажато «Ответить», решение можно переменить.
+          onSelectionChanged:
+              _c.tehnikaAnswered ? null : (s) => _c.setTehnikaGuess(s.first),
         ),
         if (_c.tehnikaAnswered) ...[
           const SizedBox(height: 16),
           _tehnikaFeedback(t),
         ],
         const SizedBox(height: 16),
-        FilledButton(
-          key: const Key('cycle-tehnika-done'),
-          onPressed: _c.tehnikaAnswered ? _c.confirmTehnika : null,
-          child: const Text('Дальше'),
-        ),
+        if (!_c.tehnikaAnswered)
+          FilledButton(
+            key: const Key('cycle-tehnika-answer'),
+            onPressed: _c.tehnikaGuess == null ? null : _c.revealTehnika,
+            child: const Text('Ответить'),
+          )
+        else
+          FilledButton(
+            key: const Key('cycle-tehnika-done'),
+            onPressed: _c.confirmTehnika,
+            child: const Text('Дальше'),
+          ),
       ],
     );
   }

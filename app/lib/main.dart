@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
+import 'data/question_repository.dart';
+import 'data/tehnika_repository.dart';
 import 'journal/event.dart';
 import 'journal/event_log.dart';
 import 'journal/event_log_factory.dart';
@@ -31,6 +33,14 @@ class ChgkTrainerApp extends StatefulWidget {
 }
 
 class _ChgkTrainerAppState extends State<ChgkTrainerApp> {
+  // По одному экземпляру на запуск: у репозитория есть кеш, но он бесполезен,
+  // если создавать репозиторий заново на каждом переходе. Замер на телефоне
+  // 30.08.2026: 871 мс при первом открытии и 890 при повторном — то есть
+  // корпус на 8866 вопросов перечитывался и переразбирался каждый раз.
+  final _questions = AssetQuestionRepository();
+  final _tehniki = AssetTehnikaRepository();
+  final _cardSeen = TehnikaCardSeen();
+
   @override
   void initState() {
     super.initState();
@@ -53,7 +63,11 @@ class _ChgkTrainerAppState extends State<ChgkTrainerApp> {
         title: 'Панда будет?',
         debugShowCheckedModeBanner: false,
         theme: buildTheme(),
-        home: const HomeScreen(),
+        home: HomeScreen(
+          repository: _questions,
+          tehnikaRepository: _tehniki,
+          cardSeen: _cardSeen,
+        ),
       ),
     );
   }

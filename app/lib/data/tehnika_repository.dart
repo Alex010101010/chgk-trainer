@@ -7,6 +7,16 @@ import 'question_repository.dart';
 
 const String kTehnikiAsset = 'assets/tehniki.json';
 
+/// Показывали ли карточку урока в этом запуске приложения.
+///
+/// Живёт в памяти, а не в журнале: заводить событие ради «прочитал карточку» —
+/// расширение схемы T10 под нужду, которая исчезает после первого же ответа
+/// за неделю. Цена — после перезапуска приложения карточка всплывёт ещё раз,
+/// если играть игрок так и не начал.
+class TehnikaCardSeen {
+  bool value = false;
+}
+
 abstract class TehnikaRepository {
   Future<List<Tehnika>> loadAll();
 }

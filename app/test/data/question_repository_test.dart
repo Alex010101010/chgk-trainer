@@ -47,6 +47,19 @@ void main() {
     }
   });
 
+  test('второй loadAll не перечитывает ассет', () async {
+    // Замер на телефоне: 871 мс при первом открытии и 890 при повторном —
+    // кеш есть, но был бесполезен, потому что репозиторий пересоздавался.
+    TestWidgetsFlutterBinding.ensureInitialized();
+    final repo = AssetQuestionRepository();
+    final first = await repo.loadAll();
+    final sw = Stopwatch()..start();
+    final second = await repo.loadAll();
+    sw.stop();
+    expect(identical(first, second), isTrue);
+    expect(sw.elapsedMilliseconds, lessThan(50));
+  });
+
   test('обрезанный ассет — исключение, а не короткий список', () {
     expect(
       () => parseQuestionAsset(

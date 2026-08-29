@@ -123,9 +123,10 @@ Future<void> _playOne(WidgetTester tester, {required Verdict verdict}) async {
   await tester.pumpAndSettle();
   await tap('cycle-verdict-done');
   if (verdict != Verdict.taken) await tap('cycle-reason-done');
-  if (find.byKey(const Key('cycle-tehnika-done')).evaluate().isNotEmpty) {
+  if (find.byKey(const Key('cycle-tehnika-answer')).evaluate().isNotEmpty) {
     await tester.tap(find.text('Нет'));
     await tester.pumpAndSettle();
+    await tap('cycle-tehnika-answer');
     await tap('cycle-tehnika-done');
   }
 }
