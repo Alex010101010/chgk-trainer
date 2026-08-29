@@ -1,4 +1,5 @@
 import 'package:chgk_trainer/data/question_repository.dart';
+import 'package:chgk_trainer/data/tehnika_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -18,6 +19,32 @@ void main() {
     expect(questions.length, greaterThan(8000));
     expect(questions.every((q) => q.acceptVariants.isNotEmpty), isTrue);
     expect(questions.map((q) => q.id).toSet().length, questions.length);
+  });
+
+  // Гард против незаявленного ассета приёмов: `tehniki.json` коммитится, но
+  // если он выпадет из `pubspec.yaml`, приложение узнает об этом только на
+  // телефоне, при входе в режим.
+  test('ассет приёмов грузится и связан с корпусом', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    final tehniki = await AssetTehnikaRepository().loadAll();
+    expect(tehniki, isNotEmpty);
+
+    final byId = {
+      for (final q in await AssetQuestionRepository().loadAll()) q.id: q
+    };
+    for (final t in tehniki) {
+      expect(t.explain, isNotEmpty, reason: t.id);
+      expect(t.examples, isNotEmpty, reason: t.id);
+      for (final e in t.examples) {
+        final q = byId[e.questionId];
+        expect(q, isNotNull, reason: '${t.id}: ${e.questionId}');
+        expect(q!.tehniki, contains(t.id), reason: e.questionId);
+      }
+      // Эталон должен быть достаточно велик, чтобы приём реально попадался.
+      expect(byId.values.where((q) => q.tehniki.contains(t.id)).length,
+          greaterThanOrEqualTo(30),
+          reason: t.id);
+    }
   });
 
   test('обрезанный ассет — исключение, а не короткий список', () {

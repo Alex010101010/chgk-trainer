@@ -1,6 +1,7 @@
 import 'package:chgk_trainer/cycle/cycle_controller.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/model/question.dart';
+import 'package:chgk_trainer/model/tehnika.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Подменные часы. Без них ни один тест таймера не пишется — ради этого
@@ -19,10 +20,18 @@ const _q = Question(
   acceptVariants: ['уорхол'],
 );
 
+const _tehnika = Tehnika(
+  id: 'perevod',
+  title: 'Перевод для ответа',
+  explain: 'ответ прячется в другом языке',
+  trigger: 'что значит это имя на своём языке?',
+);
+
 CycleController _make(
   FakeClock clock, {
   bool askBingoTap = false,
-  String? tehnika,
+  Tehnika? tehnika,
+  bool tehnikaInStandard = false,
   int windowSec = kDefaultAnswerWindowSec,
   String? roundId,
 }) =>
@@ -32,6 +41,7 @@ CycleController _make(
         mode: GameMode.classic,
         askBingoTap: askBingoTap,
         tehnika: tehnika,
+        tehnikaInStandard: tehnikaInStandard,
         answerWindowSec: windowSec,
         roundId: roundId,
       ),
@@ -147,19 +157,55 @@ void main() {
     c.dispose();
   });
 
-  test('фаза приёма показывается только если он задан', () {
-    final c = _make(FakeClock(), tehnika: 'Замена')..startThinking();
+  CycleController _toTehnika({bool inStandard = false}) {
+    final c = _make(FakeClock(), tehnika: _tehnika, tehnikaInStandard: inStandard)
+      ..startThinking();
     c.readyToAnswer();
     c.finishWriting();
     c.toVerdict();
     c.setVerdict(Verdict.taken);
     c.confirmVerdict();
+    return c;
+  }
+
+  test('фаза приёма показывается только если он задан', () {
+    final c = _toTehnika();
     expect(c.phase, CyclePhase.tehnika);
-    c.setTehnikaGuess(true);
+    c.answerTehnika(true);
     c.confirmTehnika();
     expect(c.phase, CyclePhase.done);
     expect(c.buildEvent().tehnikaGuess, isTrue);
     c.dispose();
+
+    final c2 = _make(FakeClock())..startThinking();
+    c2.readyToAnswer();
+    c2.finishWriting();
+    c2.toVerdict();
+    c2.setVerdict(Verdict.taken);
+    c2.confirmVerdict();
+    expect(c2.phase, CyclePhase.done);
+    expect(c2.buildEvent().tehnikaGuess, isNull);
+    c2.dispose();
+  });
+
+  test('вердикт по тапу выносится только когда эталон говорит «да»', () {
+    // Эталон с низкой полнотой не даёт права сказать «приёма здесь не было»:
+    // игрок мог увидеть то, что правило поиска пропустило.
+    final known = _toTehnika(inStandard: true)..answerTehnika(true);
+    expect(known.tehnikaVerdictKnown, isTrue);
+    expect(known.tehnikaGuessedRight, isTrue);
+    known.dispose();
+
+    final missed = _toTehnika(inStandard: true)..answerTehnika(false);
+    expect(missed.tehnikaVerdictKnown, isTrue);
+    expect(missed.tehnikaGuessedRight, isFalse);
+    missed.dispose();
+
+    final unknown = _toTehnika()..answerTehnika(true);
+    expect(unknown.tehnikaVerdictKnown, isFalse);
+    // Догадка всё равно записана — это и есть разметка, ради которой тап есть.
+    expect(unknown.buildEvent().tehnikaGuess, isTrue);
+    unknown.dispose();
   });
 
   test('событие несёт answerWindowSec и roundId', () {

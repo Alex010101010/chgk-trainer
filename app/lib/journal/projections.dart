@@ -102,3 +102,34 @@ Set<String> recognizedThemes(List<JournalEvent> events) {
   }
   return themes;
 }
+
+/// Номер недели стажа, с нуля. Считается по собственному журналу, а не по
+/// календарю: сервер не нужен, `day` уже локальная дата, и первый запуск
+/// в четверг не даёт огрызок в четыре дня вместо первого урока.
+///
+/// Граница включительная снизу: день 6 — ещё неделя 0, день 7 — уже неделя 1.
+int weekIndex(List<JournalEvent> events, DateTime now) {
+  final start = _firstDay(events);
+  if (start == null) return 0;
+  return _weekOf(start, localDay(now));
+}
+
+/// Был ли на этой неделе стажа хоть один ответ. По нему решается, показывать
+/// ли карточку урока при входе в режим.
+bool answeredThisWeek(List<JournalEvent> events, DateTime now) {
+  final start = _firstDay(events);
+  if (start == null) return false;
+  final week = _weekOf(start, localDay(now));
+  return events
+      .whereType<AnswerEvent>()
+      .any((e) => _weekOf(start, e.day) == week);
+}
+
+String? _firstDay(List<JournalEvent> events) => events.isEmpty
+    ? null
+    : events.map((e) => e.day).reduce((a, b) => a.compareTo(b) <= 0 ? a : b);
+
+int _weekOf(String startDay, String day) {
+  final days = DateTime.parse(day).difference(DateTime.parse(startDay)).inDays;
+  return days <= 0 ? 0 : days ~/ 7;
+}

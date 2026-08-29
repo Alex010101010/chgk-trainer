@@ -25,6 +25,10 @@ class Question {
   /// бинго. Цикл его не читает; его переносит в событие режим.
   final String? theme;
 
+  /// Эталон приёмов, проставленный при сборке ассета (T4a). Точность высокая,
+  /// полнота низкая: пустой список значит «не нашли», а не «приёма нет».
+  final List<String> tehniki;
+
   const Question({
     required this.id,
     required this.corpus,
@@ -36,6 +40,7 @@ class Question {
     this.sources = const [],
     this.author,
     this.theme,
+    this.tehniki = const [],
   });
 
   /// Возвращает `null` на записи без обязательных полей: испорченная строка
@@ -56,6 +61,7 @@ class Question {
     }
     final variants = j['acceptVariants'];
     final sources = j['sources'];
+    final tehniki = j['tehniki'];
     return Question(
       id: id,
       corpus: corpus,
@@ -68,6 +74,8 @@ class Question {
       sources: sources is List ? sources.whereType<String>().toList() : const [],
       author: j['author'] is String ? j['author'] as String : null,
       theme: j['theme'] is String ? j['theme'] as String : null,
+      tehniki:
+          tehniki is List ? tehniki.whereType<String>().toList() : const [],
     );
   }
 
@@ -82,5 +90,6 @@ class Question {
         'sources': sources,
         'author': author,
         'theme': theme,
+        'tehniki': tehniki,
       };
 }

@@ -4,12 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../cycle/cycle_controller.dart';
 import '../cycle/question_cycle.dart';
+import '../cycle/tehnika_tap.dart';
 import '../data/question_repository.dart';
+import '../data/tehnika_repository.dart';
 import '../journal/event.dart';
 import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
+import '../model/tehnika.dart';
+import 'tehnika_card_screen.dart';
 
 const int kRoundSize = 5;
 
@@ -24,6 +28,7 @@ List<Question> selectRound(
   DateTime now, {
   int size = kRoundSize,
   Random? random,
+  String? tehnikaId,
 }) {
   final rnd = random ?? Random();
   final answers = events.whereType<AnswerEvent>().toList();
@@ -38,6 +43,19 @@ List<Question> selectRound(
     final q = byId[due[rnd.nextInt(due.length)]]!;
     picked.add(q);
     used.add(q.id);
+  }
+
+  // Один слот — эталонный вопрос приёма недели. Их 91 на 8866, и случайно
+  // такой вопрос не попадался бы неделями: тап показывался бы всегда на
+  // вопросах без эталона, то есть без обратной связи.
+  if (tehnikaId != null && picked.length < size) {
+    final marked = pool
+        .where((q) => q.tehniki.contains(tehnikaId) && !seen.contains(q.id))
+        .toList();
+    if (marked.isNotEmpty) {
+      final q = marked[rnd.nextInt(marked.length)];
+      if (used.add(q.id)) picked.add(q);
+    }
   }
 
   final unseen = pool.where((q) => !seen.contains(q.id)).toList()..shuffle(rnd);
@@ -64,12 +82,14 @@ List<Question> selectRound(
 
 class ClassicScreen extends StatefulWidget {
   final QuestionRepository repository;
+  final TehnikaRepository? tehnikaRepository;
   final Random? random;
   final DateTime Function()? now;
 
   const ClassicScreen({
     super.key,
     required this.repository,
+    this.tehnikaRepository,
     this.random,
     this.now,
   });
@@ -90,6 +110,12 @@ class _ClassicScreenState extends State<ClassicScreen> {
   List<JournalEvent> _events = [];
   int _skippedLines = 0;
 
+  Tehnika? _tehnika;
+  Map<String, Question> _tehnikaExamples = const {};
+
+  /// Карточка урока перед раундом. Показывается один раз за неделю стажа.
+  bool _showCard = false;
+
   List<Question> _round = [];
   int _index = 0;
   String _roundId = '';
@@ -104,12 +130,26 @@ class _ClassicScreenState extends State<ClassicScreen> {
   Future<void> _load() async {
     try {
       final pool = await widget.repository.loadAll();
+      final tehniki =
+          await (widget.tehnikaRepository ?? AssetTehnikaRepository()).loadAll();
       final read = await _log.readAll();
       if (!mounted) return;
+      final events = List.of(read.events);
+      // Приёмы открываются по одному; когда они кончились, последний остаётся.
+      final tehnika =
+          tehniki[min(weekIndex(events, _now()), tehniki.length - 1)];
+      final byId = {for (final q in pool) q.id: q};
       setState(() {
         _pool = pool;
-        _events = List.of(read.events);
+        _events = events;
         _skippedLines = read.skippedLines;
+        _tehnika = tehnika;
+        _tehnikaExamples = {
+          for (final e in tehnika.examples)
+            if (byId[e.questionId] case final q?) e.questionId: q,
+        };
+        // Первый за неделю вход в режим — сперва урок.
+        _showCard = !answeredThisWeek(events, _now());
       });
       _startRound();
     } on QuestionAssetException catch (e) {
@@ -123,7 +163,8 @@ class _ClassicScreenState extends State<ClassicScreen> {
     final now = _now();
     setState(() {
       _roundId = now.millisecondsSinceEpoch.toString();
-      _round = selectRound(_pool!, _events, now, random: widget.random);
+      _round = selectRound(_pool!, _events, now,
+          random: widget.random, tehnikaId: _tehnika?.id);
       _index = 0;
       _results.clear();
     });
@@ -165,6 +206,13 @@ class _ClassicScreenState extends State<ClassicScreen> {
       );
     }
     if (_pool == null) return const Center(child: CircularProgressIndicator());
+    if (_showCard && _tehnika != null) {
+      return TehnikaCard(
+        tehnika: _tehnika!,
+        questions: _tehnikaExamples,
+        onDone: () => setState(() => _showCard = false),
+      );
+    }
 
     return Column(
       children: [
@@ -192,12 +240,20 @@ class _ClassicScreenState extends State<ClassicScreen> {
 
   Widget _current() {
     final q = _round[_index];
+    final inStandard = _tehnika != null && q.tehniki.contains(_tehnika!.id);
+    final askTehnika = _tehnika != null &&
+        shouldAskTehnika(q.id, inStandard: inStandard);
     return QuestionCycle(
       // Свой ключ на вопрос: без него Flutter переиспользует состояние цикла
       // и второй вопрос открывается на фазе раскрытия первого.
       key: ValueKey('${_roundId}_${q.id}'),
       question: q,
-      config: CycleConfig(mode: GameMode.classic, roundId: _roundId),
+      config: CycleConfig(
+        mode: GameMode.classic,
+        roundId: _roundId,
+        tehnika: askTehnika ? _tehnika : null,
+        tehnikaInStandard: inStandard,
+      ),
       onFinished: _onFinished,
       now: widget.now,
     );

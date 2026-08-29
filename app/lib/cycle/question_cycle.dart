@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../journal/event.dart';
 import '../model/question.dart';
+import '../model/tehnika.dart';
 import 'cycle_controller.dart';
 import 'screen_wakelock.dart';
 
@@ -309,27 +310,56 @@ class _QuestionCycleState extends State<QuestionCycle> {
         ],
       );
 
-  Widget _tehnika() => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text('Здесь был приём «${widget.config.tehnika}»?'),
-          const SizedBox(height: 8),
-          SegmentedButton<bool>(
-            segments: const [
-              ButtonSegment(value: true, label: Text('Да')),
-              ButtonSegment(value: false, label: Text('Нет')),
-            ],
-            selected:
-                _c.tehnikaGuess == null ? const {} : {_c.tehnikaGuess!},
-            emptySelectionAllowed: true,
-            onSelectionChanged: (s) => _c.setTehnikaGuess(s.first),
-          ),
+  Widget _tehnika() {
+    final t = widget.config.tehnika!;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text('Здесь был приём «${t.title}»?'),
+        const SizedBox(height: 8),
+        SegmentedButton<bool>(
+          segments: const [
+            ButtonSegment(value: true, label: Text('Да')),
+            ButtonSegment(value: false, label: Text('Нет')),
+          ],
+          selected: _c.tehnikaGuess == null ? const {} : {_c.tehnikaGuess!},
+          emptySelectionAllowed: true,
+          onSelectionChanged: (s) => _c.answerTehnika(s.first),
+        ),
+        if (_c.tehnikaAnswered) ...[
           const SizedBox(height: 16),
-          FilledButton(
-            key: const Key('cycle-tehnika-done'),
-            onPressed: _c.confirmTehnika,
-            child: const Text('Дальше'),
-          ),
+          _tehnikaFeedback(t),
         ],
-      );
+        const SizedBox(height: 16),
+        FilledButton(
+          key: const Key('cycle-tehnika-done'),
+          onPressed: _c.tehnikaAnswered ? _c.confirmTehnika : null,
+          child: const Text('Дальше'),
+        ),
+      ],
+    );
+  }
+
+  /// Вердикт — только там, где эталон говорит «да». На остальных вопросах
+  /// честное «записал»: эталона нет, и притворяться, что он есть, нельзя.
+  Widget _tehnikaFeedback(Tehnika t) {
+    if (!_c.tehnikaVerdictKnown) {
+      return const Text('Записал.', key: Key('cycle-tehnika-noted'));
+    }
+    final right = _c.tehnikaGuessedRight;
+    final why = t.examples
+        .where((e) => e.questionId == widget.question.id)
+        .map((e) => e.why)
+        .firstOrNull;
+    return Column(
+      key: const Key('cycle-tehnika-verdict'),
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(right ? 'Да, приём здесь был.' : 'Приём здесь был — пропустил.',
+            style: const TextStyle(fontWeight: FontWeight.w600)),
+        const SizedBox(height: 4),
+        Text(why ?? t.trigger),
+      ],
+    );
+  }
 }

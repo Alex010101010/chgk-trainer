@@ -1,10 +1,12 @@
 import 'dart:math';
 
 import 'package:chgk_trainer/data/question_repository.dart';
+import 'package:chgk_trainer/data/tehnika_repository.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/journal/event_log.dart';
 import 'package:chgk_trainer/journal/journal_scope.dart';
 import 'package:chgk_trainer/model/question.dart';
+import 'package:chgk_trainer/model/tehnika.dart';
 import 'package:chgk_trainer/screens/classic_screen.dart';
 import 'package:chgk_trainer/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +27,20 @@ Question _q(int i) => Question(
     );
 
 final _pool = List.generate(40, _q);
+
+/// Приёмы подменяются: настоящий ассет тянуть в тесты режима незачем, а без
+/// подмены тест зависел бы от содержимого `tehniki.json`.
+const _tehnika = Tehnika(
+  id: 'perevod',
+  title: 'Перевод для ответа',
+  explain: 'ответ спрятан в другом языке',
+  trigger: 'что это значит на своём языке?',
+);
+
+class FakeTehniki implements TehnikaRepository {
+  @override
+  Future<List<Tehnika>> loadAll() async => const [_tehnika];
+}
 
 class FakeRepository implements QuestionRepository {
   final List<Question> questions;
@@ -72,12 +88,20 @@ Future<void> _pumpClassic(WidgetTester tester, EventLog log,
     child: MaterialApp(
       home: ClassicScreen(
         repository: repo ?? FakeRepository(_pool),
+        tehnikaRepository: FakeTehniki(),
         random: Random(1),
         now: () => _clock,
       ),
     ),
   ));
   await tester.pumpAndSettle();
+  // Первый за неделю вход открывает карточку урока (T4a) — тесты режима
+  // проверяют не её, поэтому пролистываем.
+  final card = find.byKey(const Key('tehnika-card-done'));
+  if (card.evaluate().isNotEmpty) {
+    await tester.tap(card);
+    await tester.pumpAndSettle();
+  }
 }
 
 /// Один вопрос от «начал» до конца цикла.
@@ -99,6 +123,11 @@ Future<void> _playOne(WidgetTester tester, {required Verdict verdict}) async {
   await tester.pumpAndSettle();
   await tap('cycle-verdict-done');
   if (verdict != Verdict.taken) await tap('cycle-reason-done');
+  if (find.byKey(const Key('cycle-tehnika-done')).evaluate().isNotEmpty) {
+    await tester.tap(find.text('Нет'));
+    await tester.pumpAndSettle();
+    await tap('cycle-tehnika-done');
+  }
 }
 
 void main() {
@@ -212,10 +241,16 @@ void main() {
       (tester) async {
     await tester.pumpWidget(JournalScope(
       log: MemoryEventLog(),
-      child: MaterialApp(home: HomeScreen(repository: FakeRepository(_pool))),
+      child: MaterialApp(
+          home: HomeScreen(
+        repository: FakeRepository(_pool),
+        tehnikaRepository: FakeTehniki(),
+      )),
     ));
 
     await tester.tap(find.text('Классика'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('tehnika-card-done')));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('cycle-start')), findsOneWidget);
 

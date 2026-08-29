@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '../journal/event.dart';
 import '../model/question.dart';
+import '../model/tehnika.dart';
 import 'answer_match.dart';
 
 /// Длина окна записи по умолчанию. Живёт в одном месте и пробрасывается
@@ -35,8 +36,14 @@ class CycleConfig {
   /// Спрашивать «узнал клише? назови» — до раскрытия.
   final bool askBingoTap;
 
-  /// Название приёма недели (T4a). `null` — фазу не показывать.
-  final String? tehnika;
+  /// Приём недели (T4a). `null` — фазу тапа не показывать. Решает режим:
+  /// тап попадается не на каждом вопросе.
+  final Tehnika? tehnika;
+
+  /// Говорит ли эталон, что приём недели в этом вопросе есть. `false` значит
+  /// «эталон не нашёл», а не «приёма нет»: полнота эталона низкая, и вердикт
+  /// на отрицательном ответе поэтому не выносится.
+  final bool tehnikaInStandard;
 
   final int answerWindowSec;
 
@@ -47,6 +54,7 @@ class CycleConfig {
     required this.mode,
     this.askBingoTap = false,
     this.tehnika,
+    this.tehnikaInStandard = false,
     this.answerWindowSec = kDefaultAnswerWindowSec,
     this.roundId,
   });
@@ -237,6 +245,24 @@ class CycleController extends ChangeNotifier {
 
   void setTehnikaGuess(bool? v) {
     _tehnikaGuess = v;
+    notifyListeners();
+  }
+
+  /// Ответ на тап засчитан и показан разбор; дальше — конец цикла.
+  bool _tehnikaAnswered = false;
+  bool get tehnikaAnswered => _tehnikaAnswered;
+
+  /// Вердикт выносится **только когда эталон говорит «да»**. Эталон с низкой
+  /// полнотой не даёт права сказать «приёма здесь не было»: игрок мог увидеть
+  /// то, что правило поиска пропустило.
+  bool get tehnikaVerdictKnown => config.tehnikaInStandard;
+  bool get tehnikaGuessedRight =>
+      config.tehnikaInStandard && _tehnikaGuess == true;
+
+  void answerTehnika(bool guess) {
+    if (_phase != CyclePhase.tehnika || _tehnikaAnswered) return;
+    _tehnikaGuess = guess;
+    _tehnikaAnswered = true;
     notifyListeners();
   }
 
