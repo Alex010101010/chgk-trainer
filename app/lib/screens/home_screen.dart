@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../data/question_repository.dart';
 import '../widgets/coming_soon_screen.dart';
+import 'classic_screen.dart';
 
 class _ModeInfo {
   final String title;
@@ -16,7 +18,21 @@ const _modes = [
 ];
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  /// Репозиторий инжектируется — это seam для виджет-тестов главного экрана:
+  /// иначе они тянули бы настоящий ассет на 8.6 МБ.
+  final QuestionRepository? repository;
+
+  const HomeScreen({super.key, this.repository});
+
+  Widget _screenFor(String title) => switch (title) {
+        'Классика' => ClassicScreen(
+            repository: repository ?? AssetQuestionRepository(),
+          ),
+        _ => ComingSoonScreen(
+            title: title,
+            icon: _modes.firstWhere((m) => m.title == title).icon,
+          ),
+      };
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +52,7 @@ class HomeScreen extends StatelessWidget {
                       subtitle: Text(m.subtitle),
                       onTap: () => Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (_) =>
-                              ComingSoonScreen(title: m.title, icon: m.icon),
+                          builder: (_) => _screenFor(m.title),
                         ),
                       ),
                     ),

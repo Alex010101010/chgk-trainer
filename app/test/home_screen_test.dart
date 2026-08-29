@@ -11,7 +11,9 @@ void main() {
     expect(find.text('Тренажёр рассуждений'), findsOneWidget);
     expect(find.text('Бинго'), findsOneWidget);
 
-    await tester.tap(find.text('Классика'));
+    // «Классика» ведёт уже в режим — это проверяет classic_screen_test;
+    // здесь остаются два пункта, которые пока заглушки.
+    await tester.tap(find.text('Бинго'));
     await tester.pumpAndSettle();
 
     expect(find.text('Скоро'), findsOneWidget);

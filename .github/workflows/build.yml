@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - 'app/**'
+      # Перегонка корпуса обязана пересобирать превью: ассет выводится из data/
+      # скриптом из scripts/, и без этих строк изменения там останутся невидимы.
+      - 'data/**'
+      - 'scripts/**'
       - '.github/workflows/build.yml'
   workflow_dispatch:
 
@@ -25,6 +29,13 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+
+      # Ассет вопросов в git не лежит — генерируется до тестов. Объявленный,
+      # но несобранный ассет роняет `flutter test`, а не выдаёт пустой экран
+      # в рантайме: это и есть гард против забытого шага.
+      - name: Build question asset
+        run: python3 scripts/build_app_assets.py
+        working-directory: .
 
       # Юнит/виджет-тесты — до генерации платформ: им нужны только pubspec + lib/ + test/,
       # а flutter create мог бы подложить шаблонный widget_test.dart и сломать прогон.
@@ -65,6 +76,11 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+
+      # Ассет вопросов в git не лежит — без этого шага APK соберётся без вопросов.
+      - name: Build question asset
+        run: python3 scripts/build_app_assets.py
+        working-directory: .
 
       - run: flutter pub get
 
