@@ -1,0 +1,22 @@
+# Flutter / Dart
+app/build/
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/pubspec.lock
+
+# Платформенные папки генерируются в CI (flutter create), в репо не храним
+app/android/
+app/ios/
+app/web/
+app/linux/
+app/macos/
+app/windows/
+app/.metadata
+
+# IDE / OS
+*.iml
+.idea/
+.vscode/
+.DS_Store

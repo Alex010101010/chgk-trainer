@@ -1,0 +1,57 @@
+name: build
+
+on:
+  push:
+    paths:
+      - 'app/**'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # Веб-превью: единственная сборка на этом этапе (без OTA/APK-подписи — контент ещё не готов).
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      # Юнит/виджет-тесты — до генерации платформ: им нужны только pubspec + lib/ + test/,
+      # а flutter create мог бы подложить шаблонный widget_test.dart и сломать прогон.
+      - run: flutter pub get
+      - name: Run tests
+        run: flutter test
+
+      # Платформенные папки генерируем здесь (в репо только lib/ + pubspec).
+      - name: Generate web platform
+        run: flutter create --platforms=web --org dev.chgktrainer --project-name chgk_trainer .
+
+      - run: flutter pub get
+
+      - name: Build Web
+        run: flutter build web --release --base-href /chgk-trainer/
+
+      - name: Upload Web artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/build/web
+
+  deploy-pages:
+    needs: web
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
