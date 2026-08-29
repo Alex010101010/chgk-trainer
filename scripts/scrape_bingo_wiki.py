@@ -14,11 +14,33 @@ DELAY = 0.7
 HEADERS = {"User-Agent": "chgk-trainer-content-research/0.1 (non-commercial personal project)"}
 
 
-def fix_mojibake(text):
+def _fix_run(run):
     try:
-        return text.encode("latin-1", errors="strict").decode("utf-8", errors="strict")
-    except (UnicodeDecodeError, UnicodeEncodeError):
-        return text
+        raw_bytes = run.encode("latin-1")
+    except UnicodeEncodeError:
+        return run
+    try:
+        return raw_bytes.decode("utf-8")
+    except UnicodeDecodeError:
+        return raw_bytes.decode("utf-8", errors="replace")
+
+
+def fix_mojibake(text):
+    # Archived pages mix already-correct Unicode (e.g. real em-dashes) with mojibake'd
+    # Cyrillic (UTF-8 bytes misread as Latin-1, sometimes twice over). Fixing the whole
+    # string in one shot corrupts the already-correct parts, so we only touch maximal
+    # runs of Latin-1-supplement characters (U+0080-U+00FF), retrying once if a run is
+    # still mostly mojibake after the first pass (double-encoded case).
+    def repl(match):
+        run = match.group(0)
+        fixed = _fix_run(run)
+        if fixed.count("Ð") / max(len(fixed), 1) > 0.2:
+            fixed_twice = _fix_run(fixed)
+            if fixed_twice.count("Ð") / max(len(fixed_twice), 1) < fixed.count("Ð") / max(len(fixed), 1):
+                return fixed_twice
+        return fixed
+
+    return re.sub(r"[\x80-\xff]+", repl, text)
 
 
 def get_topic_slugs():
