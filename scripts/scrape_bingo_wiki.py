@@ -14,33 +14,31 @@ DELAY = 0.7
 HEADERS = {"User-Agent": "chgk-trainer-content-research/0.1 (non-commercial personal project)"}
 
 
-def _fix_run(run):
+def parse_html(raw_bytes):
+    """Разобрать страницу с ЯВНО определённой кодировкой.
+
+    lxml, получив байты, угадывает кодировку сам и на архивных страницах
+    bingo.chgk.info промахивается в latin-1: кириллица превращается в
+    `Ð‘Ð»Ð°Ð³Ð¾Ð´Ð°Ñ€Ñ`. Прежняя версия компенсировала это функцией
+    `fix_mojibake`, которая перекодировала раны [\x80-\xff] обратно — и
+    попутно уничтожала корректные «ёлочки» и неразрывные пробелы: одиночный
+    «` (U+00AB) — это ран из одного байта, `b'\xab'` как UTF-8 не
+    декодируется, и errors="replace" оставлял на его месте U+FFFD.
+    """
     try:
-        raw_bytes = run.encode("latin-1")
-    except UnicodeEncodeError:
-        return run
-    try:
-        return raw_bytes.decode("utf-8")
+        raw_bytes.decode("utf-8")
+        encoding = "utf-8"
     except UnicodeDecodeError:
-        return raw_bytes.decode("utf-8", errors="replace")
+        encoding = "cp1251"
+    return lxml.html.fromstring(raw_bytes, parser=lxml.html.HTMLParser(encoding=encoding))
 
 
-def fix_mojibake(text):
-    # Archived pages mix already-correct Unicode (e.g. real em-dashes) with mojibake'd
-    # Cyrillic (UTF-8 bytes misread as Latin-1, sometimes twice over). Fixing the whole
-    # string in one shot corrupts the already-correct parts, so we only touch maximal
-    # runs of Latin-1-supplement characters (U+0080-U+00FF), retrying once if a run is
-    # still mostly mojibake after the first pass (double-encoded case).
-    def repl(match):
-        run = match.group(0)
-        fixed = _fix_run(run)
-        if fixed.count("Ð") / max(len(fixed), 1) > 0.2:
-            fixed_twice = _fix_run(fixed)
-            if fixed_twice.count("Ð") / max(len(fixed_twice), 1) < fixed.count("Ð") / max(len(fixed), 1):
-                return fixed_twice
-        return fixed
-
-    return re.sub(r"[\x80-\xff]+", repl, text)
+def extract_article_text(raw_bytes):
+    """Текст статьи или None, если на странице нет содержимого вики."""
+    content = parse_html(raw_bytes).xpath('//div[@id="mw-content-text"]')
+    if not content:
+        return None
+    return re.sub(r"\n{3,}", "\n\n", content[0].text_content()).strip()
 
 
 def get_topic_slugs():
@@ -91,12 +89,9 @@ def fetch_and_parse(name, slug):
     except Exception as e:
         return {"name": name, "slug": slug, "snapshot_url": snap_url, "error": f"fetch failed: {e}"}
     try:
-        tree = lxml.html.fromstring(r.content)
-        content = tree.xpath('//div[@id="mw-content-text"]')
-        if not content:
+        raw_text = extract_article_text(r.content)
+        if raw_text is None:
             return {"name": name, "slug": slug, "snapshot_url": snap_url, "error": "no mw-content-text"}
-        raw_text = fix_mojibake(content[0].text_content())
-        raw_text = re.sub(r'\n{3,}', '\n\n', raw_text).strip()
     except Exception as e:
         return {"name": name, "slug": slug, "snapshot_url": snap_url, "error": f"parse failed: {e}"}
     return {"name": name, "slug": slug, "snapshot_url": snap_url, "raw_text": raw_text}
@@ -112,10 +107,41 @@ def main():
         print(f"[{i}/{len(topics)}] {name} -> {status}")
         results.append(entry)
         time.sleep(DELAY)
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
+    save_if_not_worse(results)
+
+
+def quality(entries):
+    """Три числа, по которым сравниваются прогоны: удачных тем, объём прозы,
+    остаточный мойибейк."""
+    ok = sum(1 for e in entries if e.get("raw_text"))
+    prose = sum(len(e.get("raw_text") or "") for e in entries)
+    broken = sum((e.get("raw_text") or "").count("\ufffd") for e in entries)
+    return ok, prose, broken
+
+
+def save_if_not_worse(results):
+    """Крауль по web.archive флакует — два прогона подряд дают разный набор
+    удачных тем. Молча затереть хороший дамп неудачным прогоном обошлось бы
+    дороже всего, поэтому замена только при не-ухудшении; иначе результат
+    ложится рядом и решение принимает человек."""
+    new_q = quality(results)
+    old_q = None
+    if os.path.exists(OUT_JSON):
+        with open(OUT_JSON, encoding="utf-8") as f:
+            old_q = quality(json.load(f))
+
+    print(f"Прогон: тем с текстом {new_q[0]}/{len(results)}, прозы {new_q[1]} симв., U+FFFD {new_q[2]}")
+    if old_q:
+        print(f"Было:   тем с текстом {old_q[0]}, прозы {old_q[1]} симв., U+FFFD {old_q[2]}")
+
+    worse = old_q and (new_q[0] < old_q[0] or new_q[1] < old_q[1])
+    target = OUT_JSON if not worse else OUT_JSON.replace(".json", ".new.json")
+    with open(target, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    ok = sum(1 for r in results if "raw_text" in r)
-    print(f"Готово: {ok}/{len(results)} тем успешно, сохранено в {OUT_JSON}")
+    if worse:
+        print(f"ХУЖЕ ПРЕЖНЕГО — прежний дамп не тронут, новый лежит в {target}")
+    else:
+        print(f"Сохранено в {target}")
 
 
 if __name__ == "__main__":
