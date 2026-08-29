@@ -20,7 +20,7 @@ jobs:
       run:
         working-directory: app
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: subosito/flutter-action@v2
         with:
@@ -42,9 +42,45 @@ jobs:
         run: flutter build web --release --base-href /chgk-trainer/
 
       - name: Upload Web artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: app/build/web
+
+  # Отладочный APK для обкатки на телефоне. Подпись debug: ставится с «неизвестного
+  # источника» на свой телефон, релизная нужна только под OTA, которого в фазе 1 нет.
+  apk:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v7
+
+      # Gradle из шаблона Flutter требует JDK 17; дефолт раннера может смениться.
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - run: flutter pub get
+
+      - name: Generate android platform
+        run: flutter create --platforms=android --org dev.chgktrainer --project-name chgk_trainer .
+
+      - run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --debug
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: chgk-trainer-debug-apk
+          path: app/build/app/outputs/flutter-apk/app-debug.apk
 
   deploy-pages:
     needs: web
@@ -54,4 +90,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
