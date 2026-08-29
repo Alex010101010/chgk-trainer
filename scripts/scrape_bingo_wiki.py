@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import re
 import time
 import urllib.parse
@@ -10,7 +11,15 @@ import requests
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 CATEGORY_HTML = os.path.join(DATA_DIR, "bingo_wiki_category2.html")
 OUT_JSON = os.path.join(DATA_DIR, "bingo_wiki_dump.json")
-DELAY = 0.7
+DELAY = 2.0
+# Версия декодера. Тема, взятая старым кодом, несёт мойибейк, который сам по
+# себе не чинится, — поэтому «уже скачано» и «скачано правильно» это разные
+# вещи, и провенанс пишется прямо в дамп.
+DECODER_VERSION = 2
+# archive.org под нагрузкой отдаёт 503 и рвёт соединения пачками: первый
+# полный прогон взял 53 темы из 139 и упёрся. Отступ с ростом — единственное,
+# что отличает «сервер занят» от «темы нет».
+RETRY_SLEEPS = (5, 15, 45)
 HEADERS = {"User-Agent": "chgk-trainer-content-research/0.1 (non-commercial personal project)"}
 
 
@@ -53,22 +62,31 @@ def get_topic_slugs():
     return slugs
 
 
-def best_snapshot_url(slug, retries=3):
+def polite_get(url, params=None, timeout=30):
+    """Запрос с растущим отступом. Возвращает (response, None) либо (None, текст ошибки)."""
+    last_error = "не пробовали"
+    for pause in (0,) + RETRY_SLEEPS:
+        if pause:
+            time.sleep(pause)
+        try:
+            r = requests.get(url, params=params, headers=HEADERS, timeout=timeout)
+            r.raise_for_status()
+            return r, None
+        except Exception as e:
+            last_error = str(e)
+    return None, last_error
+
+
+def best_snapshot_url(slug):
     original = f"http://bingo.chgk.info/wiki/{slug}"
     cdx_url = "http://web.archive.org/cdx/search/cdx"
-    params = {"url": original, "output": "json"}
-    for attempt in range(retries):
-        try:
-            r = requests.get(cdx_url, params=params, headers=HEADERS, timeout=20)
-            r.raise_for_status()
-            data = r.json()
-            break
-        except Exception as e:
-            if attempt == retries - 1:
-                return None, str(e)
-            time.sleep(2)
-    else:
-        return None, "no data"
+    r, err = polite_get(cdx_url, params={"url": original, "output": "json"}, timeout=20)
+    if r is None:
+        return None, err
+    try:
+        data = r.json()
+    except Exception as e:
+        return None, f"bad cdx json: {e}"
     rows = data[1:]
     ok_rows = [row for row in rows if row[4] == "200"]
     if not ok_rows:
@@ -83,31 +101,62 @@ def fetch_and_parse(name, slug):
     snap_url, err = best_snapshot_url(slug)
     if not snap_url:
         return {"name": name, "slug": slug, "error": f"no snapshot: {err}"}
-    try:
-        r = requests.get(snap_url, headers=HEADERS, timeout=30)
-        r.raise_for_status()
-    except Exception as e:
-        return {"name": name, "slug": slug, "snapshot_url": snap_url, "error": f"fetch failed: {e}"}
+    r, err = polite_get(snap_url, timeout=30)
+    if r is None:
+        return {"name": name, "slug": slug, "snapshot_url": snap_url, "error": f"fetch failed: {err}"}
     try:
         raw_text = extract_article_text(r.content)
         if raw_text is None:
             return {"name": name, "slug": slug, "snapshot_url": snap_url, "error": "no mw-content-text"}
     except Exception as e:
         return {"name": name, "slug": slug, "snapshot_url": snap_url, "error": f"parse failed: {e}"}
-    return {"name": name, "slug": slug, "snapshot_url": snap_url, "raw_text": raw_text}
+    return {
+        "name": name,
+        "slug": slug,
+        "snapshot_url": snap_url,
+        "raw_text": raw_text,
+        "decoder": DECODER_VERSION,
+    }
 
 
-def main():
+def load_existing():
+    if not os.path.exists(OUT_JSON):
+        return {}
+    with open(OUT_JSON, encoding="utf-8") as f:
+        return {t["name"]: t for t in json.load(f)}
+
+
+def is_fresh(entry):
+    """Тема считается готовой, только если текст есть И взят текущим декодером."""
+    return bool(entry.get("raw_text")) and entry.get("decoder") == DECODER_VERSION
+
+
+def main(force_all=False):
     topics = get_topic_slugs()
-    print(f"Тем к обработке: {len(topics)}")
-    results = []
-    for i, (name, slug) in enumerate(topics, 1):
+    existing = load_existing()
+    todo = [(n, s) for n, s in topics if force_all or not is_fresh(existing.get(n, {}))]
+    print(f"Тем всего {len(topics)}, уже свежих {len(topics) - len(todo)}, идём за {len(todo)}")
+
+    for i, (name, slug) in enumerate(todo, 1):
         entry = fetch_and_parse(name, slug)
         status = "OK" if "raw_text" in entry else f"ERR: {entry.get('error')}"
-        print(f"[{i}/{len(topics)}] {name} -> {status}")
-        results.append(entry)
+        print(f"[{i}/{len(todo)}] {name} -> {status}", flush=True)
+        # Неудача не имеет права затереть уже имеющийся текст: прогон по
+        # архиву флакует, и «сегодня не ответили» — это не «темы больше нет».
+        previous = existing.get(name)
+        if entry.get("raw_text") or not (previous and previous.get("raw_text")):
+            existing[name] = entry
         time.sleep(DELAY)
+
+    results = [
+        existing.get(name, {"name": name, "slug": slug, "error": "не краулилось"})
+        for name, slug in topics
+    ]
     save_if_not_worse(results)
+    stale = [r["name"] for r in results if not is_fresh(r)]
+    print(f"Ещё не свежих тем: {len(stale)}")
+    if stale:
+        print("Повторный запуск заберёт только их — уже свежие не перекраиваются.")
 
 
 def quality(entries):
@@ -145,4 +194,5 @@ def save_if_not_worse(results):
 
 
 if __name__ == "__main__":
-    main()
+    # --all — принудительно перекраулить всё, а не только несвежее.
+    main(force_all="--all" in sys.argv)
