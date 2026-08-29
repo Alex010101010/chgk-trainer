@@ -99,7 +99,7 @@ class ClassicScreen extends StatefulWidget {
 }
 
 class _ClassicScreenState extends State<ClassicScreen> {
-  late final EventLog _log = JournalScope.of(context);
+  late EventLog _log;
   DateTime Function() get _now => widget.now ?? DateTime.now;
 
   List<Question>? _pool;
@@ -121,9 +121,17 @@ class _ClassicScreenState extends State<ClassicScreen> {
   String _roundId = '';
   final List<AnswerEvent> _results = [];
 
+  bool _started = false;
+
+  // Не initState: `JournalScope.of` — это dependOnInheritedWidgetOfExactType,
+  // а его нельзя звать до того, как зависимости смонтированы. Раньше это
+  // сходило с рук лишь потому, что журнал читался после первого `await`.
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_started) return;
+    _started = true;
+    _log = JournalScope.of(context);
     _load();
   }
 

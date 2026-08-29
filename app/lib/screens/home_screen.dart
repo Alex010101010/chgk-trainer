@@ -9,6 +9,7 @@ import '../model/question.dart';
 import '../model/tehnika.dart';
 import '../widgets/coming_soon_screen.dart';
 import 'classic_screen.dart';
+import 'debug_journal_screen.dart';
 import 'tehnika_card_screen.dart';
 
 class _ModeInfo {
@@ -47,7 +48,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('ЧГК-тренажёр')),
+      appBar: AppBar(
+        // Долгий тап по заголовку — вход в отладку. Не пункт меню: это
+        // сверка с критериями MVP, а не функция приложения.
+        title: GestureDetector(
+          key: const Key('home-title'),
+          onLongPress: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => DebugJournalScreen(
+                repository: repository ?? AssetQuestionRepository(),
+              ),
+            ),
+          ),
+          child: const Text('ЧГК-тренажёр'),
+        ),
+      ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(16),
