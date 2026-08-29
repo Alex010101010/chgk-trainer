@@ -1,0 +1,335 @@
+import 'package:flutter/material.dart';
+
+import '../journal/event.dart';
+import '../model/question.dart';
+import 'cycle_controller.dart';
+import 'screen_wakelock.dart';
+
+/// Один вопрос по турнирной конвенции. Режимо-специфичного здесь нет ничего:
+/// T3 и T4b получают этот же виджет с другой [CycleConfig].
+///
+/// Собранное событие уезжает в [onFinished] — пишет его в журнал режим.
+class QuestionCycle extends StatefulWidget {
+  final Question question;
+  final CycleConfig config;
+  final void Function(AnswerEvent) onFinished;
+  final DateTime Function()? now;
+
+  const QuestionCycle({
+    super.key,
+    required this.question,
+    required this.config,
+    required this.onFinished,
+    this.now,
+  });
+
+  @override
+  State<QuestionCycle> createState() => _QuestionCycleState();
+}
+
+class _QuestionCycleState extends State<QuestionCycle> {
+  late final CycleController _c;
+  final _draftField = TextEditingController();
+  final _answerField = TextEditingController();
+  final _bingoField = TextEditingController();
+  bool _finished = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _c = CycleController(
+      question: widget.question,
+      config: widget.config,
+      now: widget.now,
+    )..addListener(_onPhase);
+  }
+
+  void _onPhase() {
+    if (!_finished && _c.phase == CyclePhase.done) {
+      _finished = true;
+      holdScreenAwake(false);
+      widget.onFinished(_c.buildEvent());
+    }
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    holdScreenAwake(false);
+    _c.removeListener(_onPhase);
+    _c.dispose();
+    _draftField.dispose();
+    _answerField.dispose();
+    _bingoField.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _header(),
+          const SizedBox(height: 12),
+          Expanded(child: SingleChildScrollView(child: _phaseBody())),
+        ],
+      ),
+    );
+  }
+
+  Widget _header() {
+    final text = switch (_c.phase) {
+      CyclePhase.thinking => 'Осталось ${kThinkingSec - _c.secondsUsed} сек',
+      CyclePhase.writing => _c.writingClosed
+          ? 'Время записи вышло'
+          : 'Запись: ${_c.writingRemainingSec} сек',
+      _ => '',
+    };
+    return Text(
+      text,
+      key: const Key('cycle-header'),
+      textAlign: TextAlign.center,
+      style: Theme.of(context).textTheme.titleMedium,
+    );
+  }
+
+  Widget _phaseBody() => switch (_c.phase) {
+        CyclePhase.reading => _reading(),
+        CyclePhase.thinking => _thinking(),
+        CyclePhase.writing => _writing(),
+        CyclePhase.bingoTap => _bingoTap(),
+        CyclePhase.reveal => _reveal(),
+        CyclePhase.verdict => _verdict(),
+        CyclePhase.reason => _reason(),
+        CyclePhase.tehnika => _tehnika(),
+        CyclePhase.done => const SizedBox.shrink(),
+      };
+
+  Widget _questionText() => Text(
+        widget.question.question,
+        style: const TextStyle(fontSize: 18, height: 1.4),
+      );
+
+  Widget _reading() => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _questionText(),
+          const SizedBox(height: 24),
+          FilledButton(
+            key: const Key('cycle-start'),
+            onPressed: () {
+              holdScreenAwake(true);
+              _c.startThinking();
+            },
+            child: const Text('Начал'),
+          ),
+        ],
+      );
+
+  Widget _thinking() => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _questionText(),
+          const SizedBox(height: 16),
+          _draftsNotepad(editable: true),
+          const SizedBox(height: 16),
+          FilledButton(
+            key: const Key('cycle-ready'),
+            onPressed: _c.readyToAnswer,
+            child: const Text('Готов отвечать'),
+          ),
+        ],
+      );
+
+  /// Блокнот версий: живёт только в контроллере, в журнал не едет.
+  Widget _draftsNotepad({required bool editable}) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text('Версии', style: Theme.of(context).textTheme.labelLarge),
+          for (var i = 0; i < _c.drafts.length; i++)
+            ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              title: Text(_c.drafts[i]),
+              trailing: editable
+                  ? IconButton(
+                      icon: const Icon(Icons.close, size: 18),
+                      onPressed: () => _c.removeDraft(i),
+                    )
+                  : null,
+            ),
+          if (editable)
+            TextField(
+              key: const Key('cycle-draft-field'),
+              controller: _draftField,
+              decoration: const InputDecoration(hintText: 'ещё версия'),
+              onSubmitted: (t) {
+                _c.addDraft(t);
+                _draftField.clear();
+              },
+            ),
+        ],
+      );
+
+  Widget _writing() => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _questionText(),
+          const SizedBox(height: 16),
+          TextField(
+            key: const Key('cycle-answer-field'),
+            controller: _answerField,
+            enabled: !_c.writingClosed,
+            autofocus: true,
+            decoration: const InputDecoration(labelText: 'Ответ'),
+            onChanged: _c.setUserAnswer,
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            key: const Key('cycle-answer-done'),
+            onPressed: _c.finishWriting,
+            child: const Text('Дальше'),
+          ),
+        ],
+      );
+
+  /// Спрашивается ДО раскрытия: после него догадка перестаёт быть догадкой.
+  Widget _bingoTap() => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text('Узнал клише? Назови'),
+          const SizedBox(height: 8),
+          TextField(
+            key: const Key('cycle-bingo-field'),
+            controller: _bingoField,
+            decoration: const InputDecoration(hintText: 'название клише'),
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            key: const Key('cycle-bingo-done'),
+            onPressed: () => _c.submitBingoTap(_bingoField.text),
+            child: const Text('Дальше'),
+          ),
+        ],
+      );
+
+  Widget _labelled(String label, String? value) {
+    if (value == null || value.trim().isEmpty) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: Theme.of(context).textTheme.labelLarge),
+          Text(value),
+        ],
+      ),
+    );
+  }
+
+  Widget _reveal() {
+    final q = widget.question;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _labelled('Ответ', q.answer),
+        _labelled('Зачёт', q.acceptance),
+        _labelled('Комментарий', q.comment),
+        _labelled('Источник', q.sources.join('\n')),
+        _labelled('Автор', q.author),
+        _labelled('Твоя версия', _c.userAnswer.isEmpty ? '—' : _c.userAnswer),
+        if (_c.drafts.isNotEmpty) _draftsNotepad(editable: false),
+        const SizedBox(height: 16),
+        FilledButton(
+          key: const Key('cycle-to-verdict'),
+          onPressed: _c.toVerdict,
+          child: const Text('Оценить'),
+        ),
+      ],
+    );
+  }
+
+  Widget _verdict() => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text('Взял?'),
+          const SizedBox(height: 8),
+          SegmentedButton<Verdict>(
+            segments: const [
+              ButtonSegment(value: Verdict.taken, label: Text('Взял')),
+              ButtonSegment(value: Verdict.almost, label: Text('Почти')),
+              ButtonSegment(value: Verdict.missed, label: Text('Не взял')),
+            ],
+            // Пустой набор — матчер не сработал, не предвыбрано ничего.
+            selected: _c.verdict == null ? const {} : {_c.verdict!},
+            emptySelectionAllowed: true,
+            onSelectionChanged: (s) => _c.setVerdict(s.first),
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            key: const Key('cycle-verdict-done'),
+            onPressed: _c.verdict == null ? null : _c.confirmVerdict,
+            child: const Text('Дальше'),
+          ),
+        ],
+      );
+
+  static const _reasonLabels = {
+    MissReason.fact: 'Не знал факт',
+    MissReason.link: 'Не увидел связку',
+    MissReason.tehnika: 'Не узнал приём',
+    MissReason.time: 'Не хватило времени',
+  };
+
+  Widget _reason() => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text('Что помешало?'),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            children: [
+              for (final e in _reasonLabels.entries)
+                ChoiceChip(
+                  label: Text(e.value),
+                  selected: _c.reason == e.key,
+                  onSelected: (_) => _c.setReason(e.key),
+                ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          // Пропуск разрешён: обязательность провоцирует жать первое попавшееся.
+          FilledButton(
+            key: const Key('cycle-reason-done'),
+            onPressed: _c.confirmReason,
+            child: Text(_c.reason == null ? 'Пропустить' : 'Дальше'),
+          ),
+        ],
+      );
+
+  Widget _tehnika() => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text('Здесь был приём «${widget.config.tehnika}»?'),
+          const SizedBox(height: 8),
+          SegmentedButton<bool>(
+            segments: const [
+              ButtonSegment(value: true, label: Text('Да')),
+              ButtonSegment(value: false, label: Text('Нет')),
+            ],
+            selected:
+                _c.tehnikaGuess == null ? const {} : {_c.tehnikaGuess!},
+            emptySelectionAllowed: true,
+            onSelectionChanged: (s) => _c.setTehnikaGuess(s.first),
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            key: const Key('cycle-tehnika-done'),
+            onPressed: _c.confirmTehnika,
+            child: const Text('Дальше'),
+          ),
+        ],
+      );
+}

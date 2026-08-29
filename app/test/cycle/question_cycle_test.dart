@@ -1,0 +1,110 @@
+import 'package:chgk_trainer/cycle/cycle_controller.dart';
+import 'package:chgk_trainer/cycle/question_cycle.dart';
+import 'package:chgk_trainer/journal/event.dart';
+import 'package:chgk_trainer/model/question.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+const _q = Question(
+  id: 'gq-1',
+  corpus: Corpus.gq,
+  question: 'текст вопроса',
+  answer: 'Уорхол.',
+  acceptVariants: ['уорхол'],
+  comment: 'комментарий',
+  sources: ['источник'],
+  author: 'автор',
+);
+
+Future<void> _pump(
+  WidgetTester tester,
+  void Function(AnswerEvent) onFinished, {
+  bool askBingoTap = false,
+}) async {
+  await tester.pumpWidget(MaterialApp(
+    home: Scaffold(
+      body: QuestionCycle(
+        question: _q,
+        config: CycleConfig(mode: GameMode.classic, askBingoTap: askBingoTap),
+        onFinished: onFinished,
+      ),
+    ),
+  ));
+}
+
+Future<void> _tap(WidgetTester tester, String key) async {
+  await tester.tap(find.byKey(Key(key)));
+  await tester.pump();
+}
+
+void main() {
+  testWidgets('полный проход reading→done отдаёт событие', (tester) async {
+    AnswerEvent? got;
+    await _pump(tester, (e) => got = e);
+
+    expect(find.text('текст вопроса'), findsOneWidget);
+    await _tap(tester, 'cycle-start');
+    await _tap(tester, 'cycle-ready');
+
+    await tester.enterText(find.byKey(const Key('cycle-answer-field')), 'Уорхол');
+    await tester.pump();
+    await _tap(tester, 'cycle-answer-done');
+
+    expect(find.text('комментарий'), findsOneWidget);
+    await _tap(tester, 'cycle-to-verdict');
+    await _tap(tester, 'cycle-verdict-done');
+
+    expect(got, isNotNull);
+    expect(got!.questionId, 'gq-1');
+    expect(got!.answerWindowSec, kDefaultAnswerWindowSec);
+    expect(got!.verdict, Verdict.taken); // предзаполнено матчером
+    expect(got!.userAnswer, 'Уорхол');
+  });
+
+  testWidgets('пустая версия не блокирует переход', (tester) async {
+    AnswerEvent? got;
+    await _pump(tester, (e) => got = e);
+    await _tap(tester, 'cycle-start');
+    await _tap(tester, 'cycle-ready');
+    await _tap(tester, 'cycle-answer-done');
+    await _tap(tester, 'cycle-to-verdict');
+
+    // Матчер ничего не предзаполнил — кнопка «дальше» ждёт выбора игрока.
+    expect(
+        tester.widget<FilledButton>(find.byKey(const Key('cycle-verdict-done')))
+            .onPressed,
+        isNull);
+    await tester.tap(find.text('Не взял'));
+    await tester.pump();
+    await _tap(tester, 'cycle-verdict-done');
+    await _tap(tester, 'cycle-reason-done'); // причину пропустили
+
+    expect(got, isNotNull);
+    expect(got!.userAnswer, '');
+    expect(got!.verdict, Verdict.missed);
+    expect(got!.reason, isNull);
+  });
+
+  testWidgets('тап «это бинго?» показан до раскрытия', (tester) async {
+    AnswerEvent? got;
+    await _pump(tester, (e) => got = e, askBingoTap: true);
+    await _tap(tester, 'cycle-start');
+    await _tap(tester, 'cycle-ready');
+    await _tap(tester, 'cycle-answer-done');
+
+    expect(find.text('Узнал клише? Назови'), findsOneWidget);
+    expect(find.text('комментарий'), findsNothing);
+
+    await tester.enterText(find.byKey(const Key('cycle-bingo-field')), 'Ковентри');
+    await _tap(tester, 'cycle-bingo-done');
+    expect(find.text('комментарий'), findsOneWidget);
+
+    await _tap(tester, 'cycle-to-verdict');
+    await tester.tap(find.text('Почти'));
+    await tester.pump();
+    await _tap(tester, 'cycle-verdict-done');
+    await _tap(tester, 'cycle-reason-done');
+
+    expect(got!.themeGuess, 'Ковентри');
+  });
+}
