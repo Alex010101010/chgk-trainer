@@ -1,8 +1,9 @@
 """Нормализованные блоки статьи индекса бинго (T16, шаг 1).
 
-Три хоста отдают статью тремя разными способами, но дальше по конвейеру идёт
-одна форма — список блоков `{type, text, images}`. Разборщик вопросов не знает,
-из какого хоста пришёл блок: иначе каждая правка формата множилась бы на три.
+Четыре хоста отдают статью четырьмя разными способами, но дальше по конвейеру
+идёт одна форма — список блоков `{type, text, images}`. Разборщик вопросов не
+знает, из какого хоста пришёл блок: иначе каждая правка формата множилась бы
+на четыре.
 
 Разбор (`parse_*`) отделён от сети (`fetch_*`) намеренно — тесты гоняют разбор
 на сохранённых фикстурах и в сеть не ходят.
@@ -13,6 +14,7 @@ import re
 import time
 import urllib.parse
 
+import lxml.html
 import requests
 
 from scrape_bingo_wiki import HEADERS, RETRY_SLEEPS, parse_html, polite_get
@@ -133,6 +135,104 @@ def fetch_vk(url):
     if blocks is None:
         return None, "нет контейнера статьи (страница-заглушка VK?)"
     return blocks, None
+
+
+# -------------------------------------------------------------------- teletype
+
+# Единственная статья на этом хосте, и сам хост из части сетей недоступен —
+# берётся через снапшот web.archive, как вики в T1.
+TELETYPE_CONTAINER = '//article[contains(@class,"article__content")]'
+TELETYPE_TAGS = {
+    "section": "quote",
+    "blockquote": "quote",
+    "p": "p",
+    "h1": "heading",
+    "h2": "heading",
+    "h3": "heading",
+    "h4": "heading",
+    "figure": "figure",
+    "ul": "list",
+    "ol": "list",
+}
+
+
+def _html_lines(el):
+    """Разбить блок по `<br>` и границам абзацев.
+
+    В teletype весь вопрос лежит одним `<section>`, а метки разделены только
+    `<br>`: `text_content()` склеил бы «ХимГумФест» + «Вопрос 28» + текст в одну
+    строку без пробела, и разборщик меток промахнулся бы по всем сразу. После
+    разбиения строки ложатся так же, как отдельные `blockquote` у VK.
+    """
+    html = lxml.html.tostring(el, encoding="unicode")
+    html = re.sub(r"(?i)<br\s*/?>", "\n", html)
+    html = re.sub(r"(?i)</(p|div|li)\s*>", "\n", html)
+    clone = lxml.html.fromstring(html)
+    for cap in clone.xpath(".//figcaption"):
+        cap.getparent().remove(cap)
+    return [line for line in (_norm(x) for x in clone.text_content().split("\n")) if line]
+
+
+def parse_teletype(raw_bytes):
+    """Блоки статьи teletype или None, если контейнера статьи на странице нет."""
+    tree = parse_html(raw_bytes)
+    container = tree.xpath(TELETYPE_CONTAINER)
+    if not container:
+        return None
+    blocks = []
+    for el in container[0]:
+        if not isinstance(el.tag, str):
+            continue
+        type_ = TELETYPE_TAGS.get(el.tag, "p")
+        images, caption = _html_images(el)
+        if type_ == "figure":
+            blocks.append(block("figure", caption, images))
+            continue
+        lines = _html_lines(el)
+        # Картинки внутри текстового блока не теряем: вешаем на первую строку.
+        for i, line in enumerate(lines):
+            blocks.append(block(type_, line, images if i == 0 else []))
+        if not lines and images:
+            blocks.append(block(type_, caption, images))
+    return [b for b in blocks if _keep(b)]
+
+
+def fetch_teletype(url):
+    """Через снапшот архива: сам teletype.in из части сетей не открывается."""
+    snapshot, err = best_snapshot_url_for(url)
+    if not snapshot:
+        return None, f"нет снапшота: {err}"
+    r, err = polite_get(snapshot)
+    if r is None:
+        return None, f"снапшот не открылся: {err}"
+    blocks = parse_teletype(r.content)
+    if blocks is None:
+        return None, "нет контейнера статьи в снапшоте"
+    return blocks, None
+
+
+def best_snapshot_url_for(original):
+    """`best_snapshot_url` из T1 умеет только вики-слаги; здесь тот же CDX по URL.
+
+    Снапшоты сортируются по размеру ответа, а не по дате: ближайший по времени
+    бывает страницей-ошибкой самого сайта, заархивированной со статусом 200.
+    """
+    r, err = polite_get(
+        "http://web.archive.org/cdx/search/cdx",
+        params={"url": original, "output": "json"},
+        timeout=20,
+    )
+    if r is None:
+        return None, err
+    try:
+        rows = r.json()[1:]
+    except ValueError as e:
+        return None, f"битый CDX-ответ: {e}"
+    ok_rows = [row for row in rows if row[4] == "200"]
+    if not ok_rows:
+        return None, "нет снапшота со статусом 200"
+    best = max(ok_rows, key=lambda row: int(row[6]))
+    return f"http://web.archive.org/web/{best[1]}/{original}", None
 
 
 # -------------------------------------------------------------------- telegraph
@@ -350,7 +450,7 @@ def _post_json(url, body, timeout=30):
     return None, last_error
 
 
-FETCHERS = {"vk.com": fetch_vk, "telegra.ph": fetch_telegraph}
+FETCHERS = {"vk.com": fetch_vk, "telegra.ph": fetch_telegraph, "teletype.in": fetch_teletype}
 
 
 def fetch_article(host, url):

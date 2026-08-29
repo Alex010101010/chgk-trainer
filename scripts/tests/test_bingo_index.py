@@ -1,7 +1,7 @@
 """Тесты добытчиков статей индекса бинго (T16, шаг 1).
 Запуск: python3 scripts/tests/test_bingo_index.py
 
-Без сети: три фикстуры — по одной на добытчика, взяты с живых статей 30.08.2026.
+Без сети: четыре фикстуры — по одной на добытчика, взяты с живых статей 30.08.2026.
 """
 import json
 import os
@@ -13,6 +13,7 @@ from bingo_index_blocks import (
     dashed_page_id,
     parse_notion,
     parse_telegraph,
+    parse_teletype,
     parse_vk,
 )
 
@@ -23,6 +24,15 @@ NOTION_PAGE = "383ceff1-e975-8083-867d-e0820c8edb0b"
 NOTION_ORIGIN = "https://planet-tabletop-d82.notion.site"
 
 _failures = []
+
+
+def all_sources():
+    return (
+        ("vk", load_vk()),
+        ("telegraph", load_telegraph()),
+        ("teletype", load_teletype()),
+        ("notion", load_notion()),
+    )
 
 
 def check(condition, message):
@@ -43,14 +53,19 @@ def load_telegraph():
         return parse_telegraph(json.load(f))
 
 
+def load_teletype():
+    with open(os.path.join(FIXTURES, "teletype_krasnaya_seledka.html"), "rb") as f:
+        return parse_teletype(f.read())
+
+
 def load_notion():
     with open(os.path.join(FIXTURES, "notion_alberto_giacometti.json"), encoding="utf-8") as f:
         return parse_notion(json.load(f), NOTION_PAGE, NOTION_ORIGIN)
 
 
-def test_all_three_give_the_same_shape():
-    """Смысл шага 1: дальше по конвейеру идёт одна форма, а не три."""
-    for name, blocks in (("vk", load_vk()), ("telegraph", load_telegraph()), ("notion", load_notion())):
+def test_all_four_give_the_same_shape():
+    """Смысл шага 1: дальше по конвейеру идёт одна форма, а не четыре."""
+    for name, blocks in all_sources():
         check(bool(blocks), f"{name}: блоки извлечены")
         check(
             all(set(b) == {"type", "text", "images"} for b in blocks),
@@ -171,6 +186,25 @@ def test_notion_walks_children_not_the_table_of_contents():
           "ответ без корневого блока -> None, а не []")
 
 
+def test_teletype_splits_lines_glued_by_br():
+    """У teletype весь вопрос лежит одним `<section>`, метки разделены только
+    `<br>`. Красно-зелёный: без разбиения `text_content()` склеивает название
+    турнира с меткой — «ХимГумФестВопрос 28В книге…» — и разборщик меток
+    промахивается по всем сразу."""
+    blocks = load_teletype()
+    texts = [b["text"] for b in blocks]
+    check("ХимГумФест" in texts, "название турнира — отдельной строкой")
+    check("Вопрос 28" in texts, "метка вопроса — отдельной строкой")
+    check(
+        not any(t.startswith("ХимГумФестВопрос") for t in texts),
+        "склейки турнира с меткой нет",
+    )
+    check(
+        sum(1 for t in texts if t.startswith("Вопрос ")) >= 6,
+        "вопросы статьи найдены",
+    )
+
+
 def test_notion_page_id_gets_dashes():
     """loadPageChunk на id без дефисов отвечает ошибкой, а не страницей."""
     check(
@@ -183,7 +217,7 @@ def test_notion_page_id_gets_dashes():
 def test_whitespace_is_collapsed():
     """`\\xa0` не совпадает с `\\s` в части регулярок — разборщик вопросов
     промахнётся по меткам, если неразрывные пробелы доедут до него."""
-    for name, blocks in (("vk", load_vk()), ("telegraph", load_telegraph()), ("notion", load_notion())):
+    for name, blocks in all_sources():
         check(
             all("\xa0" not in b["text"] and b["text"] == b["text"].strip() for b in blocks),
             f"{name}: пробелы схлопнуты, края обрезаны",
@@ -192,12 +226,13 @@ def test_whitespace_is_collapsed():
 
 def main():
     for test in [
-        test_all_three_give_the_same_shape,
+        test_all_four_give_the_same_shape,
         test_vk_page_is_cp1251_not_utf8,
         test_vk_stub_page_is_an_error_not_an_empty_article,
         test_images_carry_absolute_urls_and_captions,
         test_notion_attachment_is_resolved_to_a_downloadable_url,
         test_notion_walks_children_not_the_table_of_contents,
+        test_teletype_splits_lines_glued_by_br,
         test_notion_page_id_gets_dashes,
         test_whitespace_is_collapsed,
     ]:
