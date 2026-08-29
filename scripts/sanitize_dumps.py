@@ -126,30 +126,53 @@ def _split_alternatives(text):
     return [p for p in (part.strip() for part in parts) if p]
 
 
+def _forms(text):
+    """Формы одного ответа: скобки в ЧГК-ответах значат разное.
+
+    `[…]` — необязательная часть: «[король] Артур» принимается и как «Артур»,
+    и как «король Артур», но само «король» ответом не является. Таких ответов
+    528 из 9915, и без разбора они давали вариант с буквальными скобками,
+    который не совпал бы ни с чем.
+
+    `(…)` — чаще полная форма того же ответа («Уорхол (Энди Уорхол)»), но
+    иногда пояснение («Температуру воздуха (1 градус по Фаренгейту равен 5/9
+    градуса по Цельсию)»). Содержимое скобок берётся вариантом только в первом
+    случае — он опознаётся тем, что текст снаружи входит в текст внутри.
+    """
+    forms = [text]
+    inside = re.findall(r"\(([^)]*)\)", text)
+    if inside:
+        without = re.sub(r"\s*\([^)]*\)", "", text)
+        forms.append(without)
+        outside_norm = normalize_answer(without)
+        for part in inside:
+            if outside_norm and outside_norm in normalize_answer(part):
+                forms.append(part)
+    if "[" in text:
+        forms.append(re.sub(r"[\[\]]", "", text))
+        forms.append(re.sub(r"\s*\[[^\]]*\]\s*", " ", text))
+    return forms
+
+
 def accept_variants(answer, acceptance):
     """Варианты, с которыми T2a сравнивает версию игрока.
 
     Хвостовая точка есть у 85% ответов gq и 97% bingo — без её снятия матч
     промахивается почти всегда, поэтому нормализация здесь не косметика.
     """
-    raw = [answer]
-    # «Уорхол (Энди Уорхол)» — это два варианта, а не один.
-    inside = re.findall(r"\(([^)]*)\)", answer)
-    if inside:
-        raw.append(re.sub(r"\s*\([^)]*\)", "", answer))
-        raw.extend(inside)
+    raw = list(_forms(answer))
 
     acceptance = REJECTION_MARKER.split(acceptance, maxsplit=1)[0]
     acceptance_norm = normalize_answer(acceptance)
     if acceptance and acceptance_norm not in ACCEPTANCE_BOILERPLATE:
-        raw.append(acceptance)
+        raw.extend(_forms(acceptance))
         raw.extend(re.findall(r"[\"«]([^\"»]+)[\"»]", acceptance))
 
     variants = []
     for chunk in raw:
         for part in [chunk] + _split_alternatives(chunk):
             value = normalize_answer(part)
-            if value and value not in variants:
+            if value and "[" not in value and "]" not in value and value not in variants:
                 variants.append(value)
     return variants
 
