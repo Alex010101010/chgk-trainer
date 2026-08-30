@@ -16,6 +16,19 @@ abstract final class PandaMoments {
   // weakmap.show (T4b), streak.alive / streak.broken (T9), loading, empty.
 }
 
+/// Сказанное пандой: текст и признак того, что реплика из редкого пула.
+///
+/// Редкость нужна не только голосу: искренняя строка выпадает раз на
+/// тридцать показов, и лицо в этот момент должно совпадать со сказанным —
+/// иначе «Вот это было красиво. Правда.» произносится с тем же
+/// невозмутимым прищуром, что и подколка.
+class PandaSpeech {
+  final String text;
+  final bool rare;
+
+  const PandaSpeech({required this.text, required this.rare});
+}
+
 /// Голос панды: выбирает реплику на момент или молчит.
 ///
 /// Три правила из T8, все три здесь:
@@ -55,10 +68,17 @@ class PandaVoice {
 
   /// Реплика на момент или `null` — молчание.
   ///
+  /// Тонкая обёртка над [speakFor] для тех, кому нужен только текст.
+  String? lineFor(String momentId, {Map<String, String> vars = const {}}) =>
+      speakFor(momentId, vars: vars)?.text;
+
+  /// Реплика вместе с признаком редкости — или `null`, молчание.
+  ///
   /// `vars` подставляется в фигурные скобки: `{n}` — число, `{приём}` —
   /// название приёма. Строка с неподставленной переменной не показывается:
   /// «{n} дней подряд» на экране хуже, чем молчание.
-  String? lineFor(String momentId, {Map<String, String> vars = const {}}) {
+  PandaSpeech? speakFor(String momentId,
+      {Map<String, String> vars = const {}}) {
     final moment = _moments[momentId];
     if (moment == null) return null;
     if (_random.nextInt(100) >= speakPercent) return null;
@@ -75,7 +95,8 @@ class PandaVoice {
     _lastByMoment[momentId] = chosen;
 
     final filled = _fill(chosen, vars);
-    return filled != null && filled.contains('{') ? null : filled;
+    if (filled == null || filled.contains('{')) return null;
+    return PandaSpeech(text: filled, rare: useRare);
   }
 
   String? _fill(String line, Map<String, String> vars) {

@@ -5,7 +5,7 @@ import '../journal/event.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
-import '../widgets/panda_bubble.dart';
+import '../widgets/panda_says.dart';
 import 'cycle_controller.dart';
 import 'screen_wakelock.dart';
 
@@ -276,7 +276,7 @@ class _QuestionCycleState extends State<QuestionCycle> {
           // оценки реплика бралась заново, а не досталась от прошлой.
           if (_c.verdict case final v?) ...[
             const SizedBox(height: 16),
-            PandaBubble(key: ValueKey(v), moment: _momentFor(v)),
+            PandaSays(key: ValueKey(v), moment: _momentFor(v)),
           ],
           const SizedBox(height: 16),
           FilledButton(

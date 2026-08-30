@@ -21,11 +21,18 @@ class PandaBubble extends StatefulWidget {
   /// если на обкатке окажется, что полсекунды мало или много.
   final Duration delay;
 
+  /// Уже выбранная реплика. Передаётся, когда голос спросили снаружи —
+  /// [PandaSays] делает это, чтобы выбрать позу под ту же самую реплику.
+  /// Спрашивать голос дважды нельзя: второй ответ был бы другим, а половина
+  /// показов пришлась бы на молчание уже после того, как поза выбрана.
+  final PandaSpeech? speech;
+
   const PandaBubble({
     super.key,
     required this.moment,
     this.vars = const {},
     this.delay = const Duration(milliseconds: 700),
+    this.speech,
   });
 
   @override
@@ -45,7 +52,10 @@ class _PandaBubbleState extends State<PandaBubble> {
     // говорила бы новое, а половину показов молчала бы прямо посреди фразы.
     if (_asked) return;
     _asked = true;
-    _line = PandaScope.maybeOf(context)?.lineFor(widget.moment, vars: widget.vars);
+    final given = widget.speech;
+    _line = given != null
+        ? given.text
+        : PandaScope.maybeOf(context)?.lineFor(widget.moment, vars: widget.vars);
     if (_line == null) return;
     _timer = Timer(widget.delay, () {
       if (mounted) setState(() => _visible = true);
