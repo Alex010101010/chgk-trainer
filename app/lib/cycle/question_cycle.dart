@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../app_theme.dart';
 import '../journal/event.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
@@ -110,7 +111,7 @@ class _QuestionCycleState extends State<QuestionCycle> {
 
   Widget _questionText() => Text(
         widget.question.question,
-        style: const TextStyle(fontSize: 18, height: 1.4),
+        style: questionTextStyle(context),
       );
 
   Widget _reading() => Column(

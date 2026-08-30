@@ -62,7 +62,9 @@ class _ChgkTrainerAppState extends State<ChgkTrainerApp> {
       child: MaterialApp(
         title: 'Панда будет?',
         debugShowCheckedModeBanner: false,
-        theme: buildTheme(),
+        theme: buildLightTheme(),
+        darkTheme: buildDarkTheme(),
+        themeMode: ThemeMode.dark,
         home: HomeScreen(
           repository: _questions,
           tehnikaRepository: _tehniki,

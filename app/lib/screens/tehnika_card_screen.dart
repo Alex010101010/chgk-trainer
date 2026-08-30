@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../app_theme.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
 
@@ -67,7 +68,7 @@ class TehnikaCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(q.question, style: const TextStyle(height: 1.35)),
+            Text(q.question, style: questionTextStyle(context)),
             const SizedBox(height: 4),
             Text('Ответ: ${q.answer}',
                 style: const TextStyle(fontWeight: FontWeight.w600)),

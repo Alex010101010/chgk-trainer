@@ -28,3 +28,12 @@ flutter:
     - assets/questions.json
     # Авторский текст приёмов — наоборот, коммитится: генерировать его нечем.
     - assets/tehniki.json
+  # Происхождение файлов и почему они статические — assets/fonts/README.md.
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
