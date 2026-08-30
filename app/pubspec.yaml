@@ -28,6 +28,9 @@ flutter:
     - assets/questions.json
     # Авторский текст приёмов — наоборот, коммитится: генерировать его нечем.
     - assets/tehniki.json
+    # Банк реплик панды — тоже авторский текст, из вычитанного черновика
+    # data/panda_lines_draft.md.
+    - assets/panda_lines.json
   # Происхождение файлов и почему они статические — assets/fonts/README.md.
   fonts:
     - family: Nunito

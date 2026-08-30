@@ -13,6 +13,8 @@ import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
+import '../panda/panda_voice.dart';
+import '../widgets/panda_bubble.dart';
 import 'tehnika_card_screen.dart';
 
 const int kRoundSize = 5;
@@ -298,8 +300,7 @@ class _ClassicScreenState extends State<ClassicScreen> {
             trailing: Text(_verdictLabels[_results[i].verdict]!),
           ),
         const SizedBox(height: 16),
-        // Место для реплики панды — арт едет в T8.
-        const Text('Панда будет?'),
+        PandaBubble(key: ValueKey(_roundId), moment: PandaMoments.roundEnd),
         const SizedBox(height: 16),
         FilledButton(
           key: const Key('classic-next-round'),

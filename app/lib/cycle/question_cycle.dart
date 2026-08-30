@@ -4,6 +4,8 @@ import '../app_theme.dart';
 import '../journal/event.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
+import '../panda/panda_voice.dart';
+import '../widgets/panda_bubble.dart';
 import 'cycle_controller.dart';
 import 'screen_wakelock.dart';
 
@@ -269,6 +271,13 @@ class _QuestionCycleState extends State<QuestionCycle> {
             emptySelectionAllowed: true,
             onSelectionChanged: (s) => _c.setVerdict(s.first),
           ),
+          // Панда комментирует самооценку, а не эталон: она реагирует на то,
+          // что игрок сам про себя решил. Key по вердикту — чтобы при смене
+          // оценки реплика бралась заново, а не досталась от прошлой.
+          if (_c.verdict case final v?) ...[
+            const SizedBox(height: 16),
+            PandaBubble(key: ValueKey(v), moment: _momentFor(v)),
+          ],
           const SizedBox(height: 16),
           FilledButton(
             key: const Key('cycle-verdict-done'),
@@ -277,6 +286,12 @@ class _QuestionCycleState extends State<QuestionCycle> {
           ),
         ],
       );
+
+  static String _momentFor(Verdict v) => switch (v) {
+        Verdict.taken => PandaMoments.took,
+        Verdict.almost => PandaMoments.almost,
+        Verdict.missed => PandaMoments.missed,
+      };
 
   static const _reasonLabels = {
     MissReason.fact: 'Не знал факт',

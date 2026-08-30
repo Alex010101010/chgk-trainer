@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
+import 'data/panda_lines_repository.dart';
 import 'data/question_repository.dart';
 import 'data/tehnika_repository.dart';
 import 'journal/event.dart';
 import 'journal/event_log.dart';
 import 'journal/event_log_factory.dart';
 import 'journal/journal_scope.dart';
+import 'model/panda_line.dart';
+import 'panda/panda_voice.dart';
 import 'screens/home_screen.dart';
 
 Future<void> main() async {
@@ -20,13 +23,24 @@ Future<void> main() async {
     debugPrint('[journal] хранилище недоступно, журнал только в памяти: $e');
     log = MemoryEventLog();
   }
-  runApp(ChgkTrainerApp(log: log));
+  // Банк реплик читается до первого кадра: он маленький, а голос нужен
+  // синхронно в глубине цикла вопроса. Не прочитался — панда молчит, это
+  // не повод не пускать в приложение.
+  List<PandaMoment> lines;
+  try {
+    lines = await AssetPandaLinesRepository().loadAll();
+  } catch (e) {
+    debugPrint('[panda] банк реплик недоступен, панда молчит: $e');
+    lines = const [];
+  }
+  runApp(ChgkTrainerApp(log: log, voice: PandaVoice(lines)));
 }
 
 class ChgkTrainerApp extends StatefulWidget {
   final EventLog log;
+  final PandaVoice voice;
 
-  const ChgkTrainerApp({super.key, required this.log});
+  const ChgkTrainerApp({super.key, required this.log, required this.voice});
 
   @override
   State<ChgkTrainerApp> createState() => _ChgkTrainerAppState();
@@ -59,16 +73,19 @@ class _ChgkTrainerAppState extends State<ChgkTrainerApp> {
   Widget build(BuildContext context) {
     return JournalScope(
       log: widget.log,
-      child: MaterialApp(
-        title: 'Панда будет?',
-        debugShowCheckedModeBanner: false,
-        theme: buildLightTheme(),
-        darkTheme: buildDarkTheme(),
-        themeMode: ThemeMode.dark,
-        home: HomeScreen(
-          repository: _questions,
-          tehnikaRepository: _tehniki,
-          cardSeen: _cardSeen,
+      child: PandaScope(
+        voice: widget.voice,
+        child: MaterialApp(
+          title: 'Панда будет?',
+          debugShowCheckedModeBanner: false,
+          theme: buildLightTheme(),
+          darkTheme: buildDarkTheme(),
+          themeMode: ThemeMode.dark,
+          home: HomeScreen(
+            repository: _questions,
+            tehnikaRepository: _tehniki,
+            cardSeen: _cardSeen,
+          ),
         ),
       ),
     );
