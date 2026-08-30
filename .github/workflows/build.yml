@@ -110,11 +110,16 @@ jobs:
           } > android/key.properties
           python3 ../scripts/inject_android_signing.py android
 
-      # INTERNET — чтобы проверить манифест и скачать APK; REQUEST_INSTALL_PACKAGES —
-      # чтобы открыть системный установщик. В release-манифесте flutter их нет.
-      - name: Add Android permissions
+      - name: Patch AndroidManifest
         run: |
           M=android/app/src/main/AndroidManifest.xml
+          # Подпись под иконкой: flutter create берёт её из --project-name,
+          # то есть на домашнем экране приложение звалось бы chgk_trainer.
+          sed -i 's#android:label="chgk_trainer"#android:label="Панда будет?"#' "$M"
+          grep -q 'android:label="Панда будет?"' "$M" || \
+            { echo "не нашёл android:label — шаблон flutter изменился"; exit 1; }
+          # INTERNET — чтобы проверить манифест и скачать APK; REQUEST_INSTALL_PACKAGES —
+          # чтобы открыть системный установщик. В release-манифесте flutter их нет.
           grep -q 'android.permission.INTERNET' "$M" || \
             sed -i 's#\(<manifest[^>]*>\)#\1\n    <uses-permission android:name="android.permission.INTERNET"/>#' "$M"
           grep -q 'REQUEST_INSTALL_PACKAGES' "$M" || \
@@ -156,7 +161,7 @@ jobs:
           python3 scripts/build_app_manifest.py "$APK" "$BUILD" "$VERSION" "$URL" app_manifest.json
           gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
           gh release create "$TAG" "$APK" app_manifest.json \
-            --title "ЧГК-тренажёр $VERSION (build $BUILD)" \
+            --title "Панда будет? $VERSION (build $BUILD)" \
             --notes "Автосборка. Обновляется из приложения: кнопка в шапке главного экрана."
 
   deploy-pages:
