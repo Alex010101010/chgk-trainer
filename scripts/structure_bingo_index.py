@@ -104,8 +104,13 @@ def split_sources(value):
     return [p for p in parts if p]
 
 
-def collect_record(blocks, start, end, taken_tournament):
-    """Один вопрос из блоков [start, end). `start` — блок с меткой вопроса."""
+def collect_record(blocks, start, end, taken_tournament, skip=None):
+    """Один вопрос из блоков [start, end). `start` — блок с меткой вопроса.
+
+    `skip` — номер блока, уже отданного под строку турнира. В notion он идёт
+    ПОСЛЕ метки, и без этого его текст уезжает в начало вопроса: «Скрулл Кап:
+    второй этап · июнь 2022 Герой романа под названием «Кишот»…».
+    """
     marker = is_marker(blocks[start]["text"])
     question_parts = [marker["rest"]] if marker["rest"] else []
     handout_images = []
@@ -114,6 +119,8 @@ def collect_record(blocks, start, end, taken_tournament):
     in_body = True
 
     for i in range(start + 1, end):
+        if i == skip:
+            continue
         block = blocks[i]
         text = block["text"]
         if OR_SEPARATOR.match(text):
@@ -233,11 +240,13 @@ def structure_article(article):
         tournament = blocks[taken]["text"] if taken is not None else None
         # В notion блок метки — голое «Вопрос 35», а турнир идёт следующей
         # строкой, уже после неё.
+        skip = None
         if tournament is None and start + 1 < end and looks_like_tournament(blocks[start + 1]):
             tournament = blocks[start + 1]["text"]
             used_tournament.add(start + 1)
+            skip = start + 1
 
-        record = collect_record(blocks, start, end, tournament)
+        record = collect_record(blocks, start, end, tournament, skip=skip)
         if not record:
             continue
         out.append({

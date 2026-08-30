@@ -100,6 +100,25 @@ def test_image_only_question_keeps_an_empty_text_instead_of_vanishing():
     check(got[0]["handoutImage"] == "https://cdn.test/q.png", "картинка привязана")
 
 
+def test_notion_order_does_not_leak_the_tournament_into_the_question():
+    """В notion блок метки — голое «Вопрос 35», а строка турнира идёт ПОСЛЕ неё.
+    Красно-зелёный: без пропуска этого блока его текст уезжает в начало вопроса
+    («Скрулл Кап: второй этап · июнь 2022 Герой романа…»)."""
+    got = structure_article(article(
+        "Альберто Джакометти",
+        ("quote", "Вопрос 35"),
+        ("quote", "Скрулл Кап: второй этап · июнь 2022"),
+        ("quote", "Герой романа «Кишот» отправился в путешествие. Кто упомянут?"),
+        ("quote", "Ответ: Альберто Джакометти."),
+    ))
+    check(len(got) == 1, "вопрос извлечён")
+    check(got[0]["tournament"] == "Скрулл Кап: второй этап · июнь 2022", "турнир на месте")
+    check(
+        got[0]["question"] == "Герой романа «Кишот» отправился в путешествие. Кто упомянут?",
+        "строка турнира не затекла в текст вопроса",
+    )
+
+
 def test_marker_glued_to_the_tournament_line_is_split():
     """«БЕСКОНЕЧНЫЕ ЗЕМЛИ: ТОМ XI, ВОПРОС 34» — метка не в начале строки.
     Красно-зелёный: парсер, ищущий метку только с начала блока, теряет вопрос
@@ -185,6 +204,7 @@ def main():
         test_id_is_prefixed_so_it_cannot_collide_with_the_wiki_corpus,
         test_image_inside_the_question_body_is_a_handout,
         test_image_only_question_keeps_an_empty_text_instead_of_vanishing,
+        test_notion_order_does_not_leak_the_tournament_into_the_question,
         test_marker_glued_to_the_tournament_line_is_split,
         test_prose_after_the_record_does_not_leak_into_the_author_field,
         test_or_separator_starts_a_new_record,
