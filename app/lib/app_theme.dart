@@ -30,6 +30,38 @@ abstract final class PandaPalette {
   /// Текст на тёмном фоне: не белый. Чистый белый на почти чёрном
   /// «раздувается» по краям букв — от этого и режет глаз.
   static const paperDim = Color(0xFFE2DED4);
+
+  /// Металлический блеск: тёмное золото → узкий светлый блик в верхней
+  /// трети → спад к тёмному низу. Плоская заливка выглядит жёлтым
+  /// пластиком; блик делает её металлом.
+  ///
+  /// Градиент вертикальный, а не диагональный, по двум причинам: так свет
+  /// падает сверху, как в жизни, и вид не зависит от ширины — на широкой
+  /// кнопке диагональ растягивала блик в засвет левой половины.
+  static const goldSheenDark = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color(0xFFCE9C36),
+      Color(0xFFF8E3AC),
+      Color(0xFFDBAA4A),
+      Color(0xFF9C6E1C),
+    ],
+    stops: [0.0, 0.16, 0.52, 1.0],
+  );
+
+  /// То же на светлой теме: золото глубже, чтобы белый текст поверх читался.
+  static const goldSheenLight = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color(0xFF7C5C19),
+      Color(0xFFAE8B38),
+      Color(0xFF8A6A22),
+      Color(0xFF57400F),
+    ],
+    stops: [0.0, 0.16, 0.52, 1.0],
+  );
 }
 
 /// Единственный шрифт приложения: округлый гуманистический sans.
@@ -41,13 +73,66 @@ abstract final class PandaPalette {
 /// рисунком букв.
 const _uiFont = 'Nunito';
 
-/// Текст вопроса — крупнее и просторнее интерфейса: от того, насколько легко
-/// он читается, зависит, сколько минуты уйдёт на чтение вместо думанья.
+/// Шкала кеглей: 13 · 15 · 17 · 20 · 24 · 30.
+///
+/// Шесть ступеней на всё приложение, шаг примерно в четверть. До этого часть
+/// текста брала размеры из темы, а часть — зашитые числа (18, 20, 22), и
+/// соседние строки прыгали без причины. Правило простое: **в экранах нет
+/// `fontSize`**, есть слот шкалы.
+///
+/// | слот | кегль | чем набрано |
+/// |---|---|---|
+/// | `displaySmall` | 30 | название приложения |
+/// | `headlineSmall` | 24 | заголовок экрана, название приёма |
+/// | `titleLarge` | 20 | заголовок карточки режима, «Скоро» |
+/// | `titleMedium` | 17 | шапка цикла, выделенная строка ответа |
+/// | `bodyLarge` | 17 | основной читаемый текст |
+/// | `bodyMedium` | 15 | второстепенный текст, комментарий |
+/// | `labelLarge` | 13 | метки над значениями: «Ответ», «Источник» |
+const _scale = TextTheme(
+  displaySmall:
+      TextStyle(fontSize: 30, fontWeight: FontWeight.w700, height: 1.2),
+  headlineSmall:
+      TextStyle(fontSize: 24, fontWeight: FontWeight.w700, height: 1.25),
+  titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, height: 1.3),
+  titleMedium:
+      TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.35),
+  bodyLarge: TextStyle(fontSize: 17, fontWeight: FontWeight.w400, height: 1.5),
+  bodyMedium: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, height: 1.45),
+  bodySmall: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, height: 1.4),
+  labelLarge:
+      TextStyle(fontSize: 13, fontWeight: FontWeight.w600, letterSpacing: 0.6),
+  labelMedium:
+      TextStyle(fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: 0.5),
+);
+
+/// Текст вопроса — на ступень выше основного текста и просторнее его: от
+/// того, насколько легко он читается, зависит, сколько минуты уйдёт на
+/// чтение вместо думанья.
 TextStyle questionTextStyle(BuildContext context) =>
     Theme.of(context).textTheme.bodyLarge!.copyWith(
-          fontSize: 19,
+          fontSize: 20,
           height: 1.55,
         );
+
+/// Название приложения, набранное металлическим золотом. Единственное место,
+/// где блеск лежит на самом тексте: это имя, а не интерфейс.
+class PandaWordmark extends StatelessWidget {
+  const PandaWordmark({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final gradient = theme.brightness == Brightness.dark
+        ? PandaPalette.goldSheenDark
+        : PandaPalette.goldSheenLight;
+    return ShaderMask(
+      shaderCallback: (bounds) => gradient.createShader(bounds),
+      blendMode: BlendMode.srcIn,
+      child: Text('Панда будет?', style: theme.textTheme.displaySmall),
+    );
+  }
+}
 
 const _darkScheme = ColorScheme(
   brightness: Brightness.dark,
@@ -94,18 +179,29 @@ const _lightScheme = ColorScheme(
 );
 
 ThemeData _themeFrom(ColorScheme scheme, Color scaffold) {
+  final sheen = scheme.brightness == Brightness.dark
+      ? PandaPalette.goldSheenDark
+      : PandaPalette.goldSheenLight;
+
   final base = ThemeData(
     useMaterial3: true,
     colorScheme: scheme,
     fontFamily: _uiFont,
     scaffoldBackgroundColor: scaffold,
+    // Цвет задаётся здесь, а не в слотах шкалы: шкала описывает размеры и
+    // веса, а цвет у светлой и тёмной темы разный.
+    textTheme: _scale.apply(
+      bodyColor: scheme.onSurface,
+      displayColor: scheme.onSurface,
+    ),
   );
+
   return base.copyWith(
     appBarTheme: AppBarTheme(
       backgroundColor: scaffold,
       foregroundColor: scheme.onSurface,
       elevation: 0,
-      centerTitle: false,
+      centerTitle: true,
       titleTextStyle: base.textTheme.titleLarge?.copyWith(
         fontWeight: FontWeight.w700,
         color: scheme.onSurface,
@@ -126,28 +222,39 @@ ThemeData _themeFrom(ColorScheme scheme, Color scaffold) {
     // цветное пятно, и без него четыре режима выглядят одинаковыми плашками.
     iconTheme: IconThemeData(color: scheme.primary),
     listTileTheme: ListTileThemeData(iconColor: scheme.primary),
-    // Скругление во всём хроме — то же «мягкая форма при контрастном
+    // Скругление во всём хроме — та же «мягкая форма при контрастном
     // характере», что и у самой панды.
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
-        minimumSize: const Size.fromHeight(48),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        minimumSize: const Size.fromHeight(52),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         textStyle: const TextStyle(
           fontFamily: _uiFont,
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
+          fontSize: 17,
+          fontWeight: FontWeight.w700,
         ),
+      ).copyWith(
+        // Плоская заливка золотом выглядит пластиком. backgroundBuilder кладёт
+        // градиент между Material кнопки и её текстом — форма, обрезка и рябь
+        // остаются родные, красить вручную ничего не надо.
+        backgroundBuilder: (context, states, child) {
+          if (states.contains(WidgetState.disabled)) {
+            return child ?? const SizedBox.shrink();
+          }
+          return DecoratedBox(
+            decoration: BoxDecoration(gradient: sheen),
+            child: child,
+          );
+        },
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        minimumSize: const Size.fromHeight(48),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        minimumSize: const Size.fromHeight(52),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         textStyle: const TextStyle(
           fontFamily: _uiFont,
-          fontSize: 16,
+          fontSize: 17,
           fontWeight: FontWeight.w600,
         ),
       ),

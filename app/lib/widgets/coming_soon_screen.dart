@@ -16,8 +16,7 @@ class ComingSoonScreen extends StatelessWidget {
           children: [
             Icon(icon, size: 64, color: Theme.of(context).colorScheme.primary),
             const SizedBox(height: 16),
-            const Text('Скоро',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600)),
+            Text('Скоро', style: Theme.of(context).textTheme.titleLarge),
           ],
         ),
       ),

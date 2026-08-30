@@ -366,7 +366,7 @@ class _QuestionCycleState extends State<QuestionCycle> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(right ? 'Да, приём здесь был.' : 'Приём здесь был — пропустил.',
-            style: const TextStyle(fontWeight: FontWeight.w600)),
+            style: Theme.of(context).textTheme.titleMedium),
         const SizedBox(height: 4),
         Text(why ?? t.trigger),
       ],

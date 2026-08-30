@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import '../app_theme.dart';
 import '../data/question_repository.dart';
 import '../data/tehnika_repository.dart';
 import '../journal/journal_scope.dart';
@@ -72,7 +73,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          child: const Text('Панда будет?'),
+          child: const PandaWordmark(),
         ),
         // Приложение раздаётся сборкой из CI, а не через маркет: свежая версия
         // ставится отсюда, без перекладывания APK на телефон руками.
@@ -107,8 +108,7 @@ class HomeScreen extends StatelessWidget {
                       contentPadding: const EdgeInsets.all(16),
                       leading: Icon(m.icon, size: 32),
                       title: Text(m.title,
-                          style: const TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600)),
+                          style: Theme.of(context).textTheme.titleLarge),
                       subtitle: Text(m.subtitle),
                       onTap: () => Navigator.of(context).push(
                         MaterialPageRoute(

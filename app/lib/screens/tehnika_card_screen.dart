@@ -36,7 +36,7 @@ class TehnikaCard extends StatelessWidget {
         const SizedBox(height: 4),
         Text(tehnika.title, style: text.headlineSmall),
         const SizedBox(height: 12),
-        Text(tehnika.explain, style: const TextStyle(height: 1.4)),
+        Text(tehnika.explain, style: text.bodyLarge),
         if (tehnika.trigger.isNotEmpty) ...[
           const SizedBox(height: 12),
           Container(
@@ -71,10 +71,10 @@ class TehnikaCard extends StatelessWidget {
             Text(q.question, style: questionTextStyle(context)),
             const SizedBox(height: 4),
             Text('Ответ: ${q.answer}',
-                style: const TextStyle(fontWeight: FontWeight.w600)),
+                style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 4),
             Text(why,
-                style: TextStyle(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Theme.of(context).colorScheme.onSurfaceVariant)),
           ],
         ),
