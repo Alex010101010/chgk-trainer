@@ -178,7 +178,9 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Приём недели')),
+      // Без заголовка: он есть в теле карточки, и две одинаковые
+      // строки подряд читались как ошибка вёрстки.
+      appBar: AppBar(),
       body: SafeArea(
         child: switch ((_error, _tehnika)) {
           (final String e, _) => Center(child: Padding(
