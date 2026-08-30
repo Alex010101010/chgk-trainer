@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write   # write — чтобы apk-джоба публиковала GitHub Release (канал самообновления)
   pages: write
   id-token: write
 
@@ -57,8 +57,9 @@ jobs:
         with:
           path: app/build/web
 
-  # Отладочный APK для обкатки на телефоне. Подпись debug: ставится с «неизвестного
-  # источника» на свой телефон, релизная нужна только под OTA, которого в фазе 1 нет.
+  # APK для обкатки на телефоне + публикация релиза, из которого приложение
+  # обновляет само себя. Подпись релизная: debug-ключ на раннере эфемерный,
+  # и обновление «поверх» с ним невозможно (Android требует ту же подпись).
   apk:
     runs-on: ubuntu-latest
     defaults:
@@ -87,18 +88,76 @@ jobs:
       - name: Generate android platform
         run: flutter create --platforms=android --org dev.chgktrainer --project-name chgk_trainer .
 
+      # Release-подпись: keystore из секрета, key.properties, патчер впрыскивает
+      # signingConfig в сгенерённый build.gradle (android/ в git не лежит).
+      # Без этого flutter подписал бы release эфемерным debug-ключом, и каждая
+      # сборка была бы «чужим» приложением — обновление поверх не встало бы.
+      - name: Configure release signing
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KS_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_PASS: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+        run: |
+          # Явная проверка: без секретов gradle упал бы позже и невнятно.
+          test -n "$KS_B64" || { echo "нет секрета ANDROID_KEYSTORE_BASE64"; exit 1; }
+          echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          {
+            printf 'storePassword=%s\n' "$KS_PASS"
+            printf 'keyPassword=%s\n' "$KEY_PASS"
+            printf 'keyAlias=%s\n' "$KEY_ALIAS"
+            printf 'storeFile=%s\n' "$RUNNER_TEMP/release.jks"
+          } > android/key.properties
+          python3 ../scripts/inject_android_signing.py android
+
+      # INTERNET — чтобы проверить манифест и скачать APK; REQUEST_INSTALL_PACKAGES —
+      # чтобы открыть системный установщик. В release-манифесте flutter их нет.
+      - name: Add Android permissions
+        run: |
+          M=android/app/src/main/AndroidManifest.xml
+          grep -q 'android.permission.INTERNET' "$M" || \
+            sed -i 's#\(<manifest[^>]*>\)#\1\n    <uses-permission android:name="android.permission.INTERNET"/>#' "$M"
+          grep -q 'REQUEST_INSTALL_PACKAGES' "$M" || \
+            sed -i 's#\(<manifest[^>]*>\)#\1\n    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>#' "$M"
+          head -6 "$M"
+
       - run: flutter pub get
 
       # Только arm64: целимся в Android-телефон, а сборка под все три
       # архитектуры даёт 161 МБ вместо ~60 на каждую перекачку.
+      # build-номер = номер прогона CI: он монотонно растёт сам, и бампать
+      # pubspec руками перед каждой сборкой не нужно — иначе приложение не
+      # увидело бы обновления, потому что номер остался прежним.
       - name: Build APK
-        run: flutter build apk --debug --target-platform android-arm64
+        run: |
+          flutter build apk --release --target-platform android-arm64 \
+            --build-number=${{ github.run_number }}
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v7
         with:
-          name: chgk-trainer-debug-apk
-          path: app/build/app/outputs/flutter-apk/app-debug.apk
+          name: chgk-trainer-apk
+          path: app/build/app/outputs/flutter-apk/app-release.apk
+
+      # Канал самообновления: подписанный APK + манифест в GitHub Release.
+      # Приложение читает манифест с releases/latest/download/app_manifest.json.
+      # Тег один и тот же, релиз пересоздаётся: держим ровно одну свежую сборку,
+      # а не десятки релизов-однодневок.
+      - name: Publish release
+        working-directory: ${{ github.workspace }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          APK=app/build/app/outputs/flutter-apk/app-release.apk
+          BUILD=${{ github.run_number }}
+          VERSION=$(grep '^version:' app/pubspec.yaml | sed 's/version:[[:space:]]*//; s/+.*//' | tr -d ' ')
+          TAG="auto"
+          URL="https://github.com/${{ github.repository }}/releases/download/$TAG/app-release.apk"
+          python3 scripts/build_app_manifest.py "$APK" "$BUILD" "$VERSION" "$URL" app_manifest.json
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" "$APK" app_manifest.json \
+            --title "ЧГК-тренажёр $VERSION (build $BUILD)" \
+            --notes "Автосборка. Обновляется из приложения: кнопка в шапке главного экрана."
 
   deploy-pages:
     needs: web

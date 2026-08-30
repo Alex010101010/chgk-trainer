@@ -8,6 +8,7 @@ import '../journal/projections.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
 import '../widgets/coming_soon_screen.dart';
+import '../widgets/update_button.dart';
 import 'classic_screen.dart';
 import 'debug_journal_screen.dart';
 import 'tehnika_card_screen.dart';
@@ -73,6 +74,9 @@ class HomeScreen extends StatelessWidget {
           ),
           child: const Text('ЧГК-тренажёр'),
         ),
+        // Приложение раздаётся сборкой из CI, а не через маркет: свежая версия
+        // ставится отсюда, без перекладывания APK на телефон руками.
+        actions: const [UpdateButton()],
       ),
       body: SafeArea(
         child: ListView(
