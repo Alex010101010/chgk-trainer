@@ -321,8 +321,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    "fetchedFrom": null,
+    "file": "8232d2cf818d3f84.jpg",
+    "sha256": "97672a0f0858a28af0d5ddcb31c6bbc707f30ad9c6780b48873ca2f96b202d61",
+    "bytes": 116154,
+    "width": 575,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/76d9f1db33064f01706b8.png",
@@ -331,8 +336,13 @@
     "caption": "Публий Элий Траян Адриан ( 76—138). Третий из пяти хороших императоров.",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    "fetchedFrom": null,
+    "file": "cae33de57c228b7e.jpg",
+    "sha256": "9bc53d22063c8dbb0786990a6ee942097d8b3cf619fafe1762c6ff53376342db",
+    "bytes": 56994,
+    "width": 480,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/e65eaa897725c50729956.png",
@@ -341,8 +351,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    "fetchedFrom": null,
+    "file": "1a048bddd48ea047.jpg",
+    "sha256": "1cea271279247d5dd4165651fb1e69b11f238d4669a85e269dfd4127a2414ace",
+    "bytes": 49867,
+    "width": 482,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://sun9-65.userapi.com/s/v1/ig2/-XrEALNhRP-NKmFYgtWu9x7_6ZYZkqbPKL04hXEUhWmTJjfrNRtfBD82aIB4kcW2CmXsQlRqtgMni5JEmgPsHmpK.jpg?quality=96&as=32x24,48x36,72x54,108x81,160x119,240x179,360x268,480x358&from=bu&cs=72x0",
@@ -831,8 +846,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    "fetchedFrom": null,
+    "file": "0e6a9553a32e7fae.jpg",
+    "sha256": "46236c1cbf4814d5063f53890a9f3a8b7955474054861652f6c440226fc2e6dc",
+    "bytes": 25115,
+    "width": 274,
+    "height": 331,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/c3cca786711d006272117.png",
@@ -841,8 +861,13 @@
     "caption": null,
     "attachedTo": "ix-alfred-vegener-1",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    "fetchedFrom": null,
+    "file": "7fb1d055af40328d.png",
+    "sha256": "8fe20b79f2e569b0a545d3e684fe86e8e767233042c1acd15a25ab91163a86e7",
+    "bytes": 302053,
+    "width": 600,
+    "height": 571,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/f4a2385f7a14fa335c717.png",
@@ -851,8 +876,13 @@
     "caption": null,
     "attachedTo": "ix-alfred-vegener-2",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "da016ead66cc0981.png",
+    "sha256": "059454c14c98300629d7d6784a6bbd8de65381431303dfa047d2965d713b6540",
+    "bytes": 298140,
+    "width": 328,
+    "height": 438,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8f434f93ebc08c841bcaf.png",
@@ -861,8 +891,13 @@
     "caption": "Передвижение континентов по представлениям Альфреда Вегенера",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "262f08d4ccee67de.jpg",
+    "sha256": "574ebbeecf38c9a50dc95fb0a4c0f2412b43a41c056fe7e923352e3536cb2745",
+    "bytes": 26437,
+    "width": 220,
+    "height": 371,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/d1cd5fe5be0a957e7d493.png",
@@ -871,8 +906,13 @@
     "caption": null,
     "attachedTo": "ix-alfred-vegener-3",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5e0d37cb3a5842bf.png",
+    "sha256": "0d229658509c40f3ff67c1863d66187021468731e15270547794ef556f847e4f",
+    "bytes": 49083,
+    "width": 542,
+    "height": 399,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/cc037d5ccfc4b21554843.png",
@@ -881,8 +921,13 @@
     "caption": "Почтовая марка Западного Берлина, посвящённая Альфреду Вегенеру",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7446430b02be4d12.jpg",
+    "sha256": "6e702ea0cd623dd861ccb1ddef1ec83c18dcadf3747be037cf8b19d09bebc4dd",
+    "bytes": 25743,
+    "width": 220,
+    "height": 220,
+    "status": "ok"
   },
   {
     "url": "https://sun9-26.userapi.com/s/v1/ig2/o9Dg32qq8vN78ZF1U9IYlvS4Y6_acLI6UH1loJJTyq-JfxDDbd7_MQOhE5bx9cKONq0_jbn2ZIl3AmtcQKKx02BW.jpg?quality=96&as=32x17,48x26,72x39,108x59,160x87,240x131,360x196,480x262,540x295,640x349,720x393,1080x589,1280x698,1440x785,1916x1045&from=bu&cs=72x0",
@@ -936,8 +981,13 @@
     "caption": "Борьба Геракла с Антеем",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d8d1e5e64aa7a153.jpg",
+    "sha256": "c9400febbd832beff51477a2f219bef75477284c0e6dbb2e7cdc0ba5c6e641b8",
+    "bytes": 49211,
+    "width": 335,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/2f4b15a17e8bdef309ace.png",
@@ -946,8 +996,13 @@
     "caption": null,
     "attachedTo": "ix-antei-3",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "a3e1d493aa2d3f20.png",
+    "sha256": "cd1ea5d0bbd4f99c80475a02559c049bdaa644cfbd12e6df26b52ac18f659ea2",
+    "bytes": 162633,
+    "width": 215,
+    "height": 320,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/1a0245fa03700b685c847.png",
@@ -956,8 +1011,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c82487ecad53a489.jpg",
+    "sha256": "85859d13cf0eb9c704884fb178acf9ee745e2c1137c9c4aa39c116b75e558827",
+    "bytes": 19106,
+    "width": 267,
+    "height": 399,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/9a7f4573d6379310502d1.png",
@@ -966,8 +1026,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "abdd01103a68ae13.jpg",
+    "sha256": "7efc05c61d3d5142c1019a8c0bd60b9a1bee4ec3db676b4d0e5828e78b1f0503",
+    "bytes": 86576,
+    "width": 500,
+    "height": 584,
+    "status": "ok"
   },
   {
     "url": "https://sun9-63.userapi.com/s/v1/ig2/KfuQMiEoKJ9jlx38F57Cx9ZW2pvuZ4_HLo9kUnjfqjH9oakTlo9ixtqZe5Ir8Zldad-HqXX4sbtMIScOiX7pl8sw.jpg?quality=96&as=32x52,48x78,72x117,108x175,160x259,240x389,360x584,370x600&from=bu&cs=72x0",
@@ -1141,8 +1206,13 @@
     "caption": "«Портрет Артемизии Ломи Джентилески». Симон Вуэ (1626)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "3a2948c27547dfe3.jpg",
+    "sha256": "87e8d6b35e332a4bb5aed358c1755e8be91c45b9b22dceb5fa7b2e2fc7b8dc05",
+    "bytes": 93015,
+    "width": 469,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a2fe07cfb3985636e04dc.png",
@@ -1151,8 +1221,13 @@
     "caption": "«Сусанна и старцы» (1610)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5d2e3447fe514c6c.jpg",
+    "sha256": "b770d5bafc5ef07f167dbe419e5bce15896dbb5461fbb7ab93a747fc922e2e68",
+    "bytes": 69737,
+    "width": 422,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a14d9babb1ac07bf2945b.png",
@@ -1161,8 +1236,13 @@
     "caption": "«Юдифь, обезглавливающая Олоферна» (1613)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "6e8b900240ee3152.jpg",
+    "sha256": "cc522f02b36b69bea37c6812216da0aa6318e2d90294df777a67b2c5ce7619fc",
+    "bytes": 72031,
+    "width": 486,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3a54434ae79671c42c2dd.png",
@@ -1171,8 +1251,13 @@
     "caption": "«Изнасилование Лукреции» (1650)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "e3b6a374448fc229.jpg",
+    "sha256": "575b131ee7a9328505895f61a5f67cc3019710b50b71d236e709cc85cc608b04",
+    "bytes": 93673,
+    "width": 514,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/036ba75f915c092f9d8b9.png",
@@ -1181,8 +1266,13 @@
     "caption": "«Клеопатра» (1620)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "3f6aa8e826f6ddb3.jpg",
+    "sha256": "0d6b471fb262f51d0bd61c7cc47a3457ec1bab7129e44d8a0980cbe6fc1a1dff",
+    "bytes": 46690,
+    "width": 443,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8e89827cb6407866af1cc.png",
@@ -1191,8 +1281,13 @@
     "caption": "«Саломея с головой Иоанна Предтечи (Крестителя)» (1615)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2d109a3d3830b781.jpg",
+    "sha256": "25f8c93c542209b6c5cb58b8cfadc3fbcabac090201e2b601c415e86a9ec04e0",
+    "bytes": 86548,
+    "width": 654,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8d58a20e1457f478e2270.png",
@@ -1201,8 +1296,13 @@
     "caption": "«Иаиль и Сисара» (1620)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "ecb1772c94e46278.jpg",
+    "sha256": "5325c127cf2c9cb762a60cb5336cf3cba5d37721cfba68dcc5f616c36b606f39",
+    "bytes": 112535,
+    "width": 800,
+    "height": 580,
+    "status": "ok"
   },
   {
     "url": "https://sun9-62.userapi.com/s/v1/ig2/UeVKoSoCLp5nes-A1RCzy14KWZdOI1O4EE8Jh9BbfaFbp27xIa3aAOWmZ_zN5Gii4yN_uu24KXzNMvwAeXJ9G_i3.jpg?quality=96&as=32x42,48x63,72x95,108x143,160x212,240x318,360x476,480x635,540x714,640x847,720x953,907x1200&from=bu&cs=72x0",
@@ -1481,8 +1581,13 @@
     "caption": "Иллюстрация ирландского художника Гарри Кларка (1919)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "9585b7586c62598d.jpg",
+    "sha256": "ddf81a01378be6b7f4f4a7a33e37c72170f808fff6e73dd011112de5b3b0f1b9",
+    "bytes": 43344,
+    "width": 274,
+    "height": 361,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/e4e12a492282e81858aaa.png",
@@ -1491,8 +1596,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d4cca4ffffaa41d9.jpg",
+    "sha256": "6edf508a2370257803d0967bda898a1c798781239db73abd54f5153317031fd1",
+    "bytes": 231727,
+    "width": 1000,
+    "height": 704,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a74b435600ebf29937a8f.png",
@@ -1501,8 +1611,13 @@
     "caption": "Хрущёв, будучи неподготовленным к восприятию абстрактного искусства, подвергает его резкой критике, используя обсценную лексику.",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "30cd85d9539cd19e.jpg",
+    "sha256": "1506f48dd0035e099a2e14ad4f510e31224a466dfe71ce0e180a661737228c71",
+    "bytes": 18698,
+    "width": 386,
+    "height": 300,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/71136696ab8e3cbcd750f.png",
@@ -1511,8 +1626,13 @@
     "caption": "Пригласительный билет на Первый осенний просмотр картин на открытом воздухе, 1974 год",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "3fd50e90034331c6.jpg",
+    "sha256": "8bf76830c6f027f76cb35c88b4705ce6a8709225938b367bdfa8f8c99ac20eb4",
+    "bytes": 68510,
+    "width": 500,
+    "height": 459,
+    "status": "ok"
   },
   {
     "url": "https://sun9-87.userapi.com/s/v1/ig2/Fow46Cj1o9znEZjSeQFVkhqYYi9FXArLb2_nZY4fpeN0f4q58esDe317fYtDgLWsTq6Kf8srvGSSl2MewZRx2K6Z.jpg?quality=96&as=32x48,48x72,72x108,108x163,160x241,240x362,360x542,480x723,540x814,640x964,720x1085,896x1350&from=bu&cs=72x0",
@@ -2181,8 +2301,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7bd12566c62d464b.jpg",
+    "sha256": "ae84f7804b2f6e78cf48d3437f8ba9ca1db6d92534a6c145e97d70d1af205f9e",
+    "bytes": 35881,
+    "width": 449,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/44c793b5c2ad9335dd971.png",
@@ -2191,8 +2316,13 @@
     "caption": "Обложка первого издания «Плутонии»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "78f9c58eb4e598fe.jpg",
+    "sha256": "092fa1ab1d30533db717e35d4cade70dc8557a50345a2e7081976830d01bf8c3",
+    "bytes": 16840,
+    "width": 200,
+    "height": 287,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/7e3faf0eba59a7b746bab.png",
@@ -2201,8 +2331,13 @@
     "caption": "Обложка первого издания «Земли Санникова»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c12bb35adbf032ff.jpg",
+    "sha256": "42a398d11dd4c2d2a481713524922d54b6676ddd5c3887711de4082754d7ebc8",
+    "bytes": 102898,
+    "width": 433,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/7cb9ebcbdcdf3a1154877.png",
@@ -2211,8 +2346,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "61387984de14012b.jpg",
+    "sha256": "385f404008c14cb354b8a9f3a730900aff5d7e4e1650aecedd543a873239e8cf",
+    "bytes": 22259,
+    "width": 250,
+    "height": 391,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/eb474908a47e270886279.png",
@@ -2221,8 +2361,13 @@
     "caption": "Томас Манн",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8f70cf8fab2fcb6c.jpg",
+    "sha256": "894d51a71cdda15e4d5f4ebf8030b00e0e40d8202b66ab0b2eefe25f38c13fb7",
+    "bytes": 50056,
+    "width": 473,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8858a9008ece4987db215.png",
@@ -2231,8 +2376,13 @@
     "caption": "Горная местность возле Давоса, место действия романа",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "cb56d3a526718d8f.jpg",
+    "sha256": "c9556a7348ad508449ed24e9bce47f07abdb420d33cf25c0d3d55699eb48b6bb",
+    "bytes": 174969,
+    "width": 800,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/c9ff70d1e94cdefb29d36.png",
@@ -2241,8 +2391,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2ca98538e2915f23.jpg",
+    "sha256": "9e0fb2b30d02fa310da79d0e1cba0a92fe45fe3ae45f69b6863b574350320c18",
+    "bytes": 164284,
+    "width": 750,
+    "height": 501,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a3a831572e4ea60ff7311.png",
@@ -2251,8 +2406,13 @@
     "caption": "Рыбаки. Жорж Сёра (1886)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "3d42e8b45fce7a3e.jpg",
+    "sha256": "fa6eef6e21fafb72ae284cee1beb822066b83522db519b41866b6723980df448",
+    "bytes": 273642,
+    "width": 1024,
+    "height": 648,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3d82a9e5d08b2ff46f256.png",
@@ -2261,8 +2421,13 @@
     "caption": "Натурщицы. Жорж Сёра (1888)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7e2988bbc89971e9.jpg",
+    "sha256": "ae03b5e0ee53f59c6e6f827dd69730b75157d9cc37e515931a65821fdd3bc9ea",
+    "bytes": 232780,
+    "width": 800,
+    "height": 632,
+    "status": "ok"
   },
   {
     "url": "https://sun9-55.userapi.com/s/v1/ig2/A5SaYQU9ec75a6R1wOXFH5yGR1CLlijn5ePQ_E0NTNwGGIJww7VZ5MTB4nqrBIEW_WKKTiR2aoHutP0WUmoqZxjL.jpg?quality=96&as=32x49,48x73,72x110,108x164,160x243,230x350&from=bu&cs=72x0",
@@ -2316,8 +2481,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5366ebc338dbb553.jpg",
+    "sha256": "534a35938d79cc939e92ded351968e9774948759fa592ef343279479e5290ffb",
+    "bytes": 11661,
+    "width": 265,
+    "height": 393,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8e7bea4bfb305d1713948.png",
@@ -2326,8 +2496,13 @@
     "caption": "Джером Дэвид Сэлинджер (1919—2010)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "6199855ebcee64ef.jpg",
+    "sha256": "05eae38a17620621df0e503849eb47db2c4e62f6725c917a9ef9002b317daee8",
+    "bytes": 62645,
+    "width": 398,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/468011f400351882b8c34.png",
@@ -2336,8 +2511,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "edd57ddd17eca8a3.jpg",
+    "sha256": "ba35277cdf2da20377151cdaf50d29deaf226948abdf85a992c88db9df3b543e",
+    "bytes": 26057,
+    "width": 230,
+    "height": 330,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/90c40b45950f273346ef9.png",
@@ -2346,8 +2526,13 @@
     "caption": "Картина Бэнкси «Brace Yourself»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "9956d28cdb63c58c.jpg",
+    "sha256": "6837fd8574f60548797acb38b10927929b731e43365d74e17d5556ff66ce08db",
+    "bytes": 130094,
+    "width": 1000,
+    "height": 816,
+    "status": "ok"
   },
   {
     "url": "https://sun9-52.userapi.com/s/v1/ig2/8i-0ZdUTwCp-pKKRd8pvoLhAPncVOMgwZw9-PgEwLRPUVswVOjIMl1jNloviR-3opEriT7a7gSoACD5FZlJHpiJZ.jpg?quality=96&as=32x43,48x65,72x97,108x146,160x216,240x324,360x486,444x599&from=bu&cs=72x0",
@@ -2506,8 +2691,13 @@
     "caption": "Муций Сцевола. Луи-Пьер Десен (1791)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "6df7144cd1bc39d5.jpg",
+    "sha256": "5f8b6bc6e8846e0e1bcd53ba04fcca90a82a6318e8e9b3e5c4ce05fbf32b240c",
+    "bytes": 20989,
+    "width": 320,
+    "height": 551,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/97d349d653f4f7e490924.png",
@@ -2516,8 +2706,13 @@
     "caption": "Муций Сцевола в лагере Порсены. Ганс Бальдунг Грин (1531)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c32f879eae38cd63.jpg",
+    "sha256": "b812ef5063004def5bf91ca358ee210956a24a77fa43221b26ca17c17463b5f2",
+    "bytes": 184877,
+    "width": 800,
+    "height": 1122,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8121f4fed6f5afd9e7c9d.png",
@@ -2526,8 +2721,13 @@
     "caption": "Гай Муций Сцевола в присутствии Ларса Порсены. Маттиас Стом (1640)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "a4159a400a28cf65.jpg",
+    "sha256": "430fd90a5262194c86c405773aadb5727e8dea5ca5c13e9edd62a997770898b3",
+    "bytes": 63483,
+    "width": 600,
+    "height": 442,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/562da09a7275854af94ec.png",
@@ -2536,8 +2736,13 @@
     "caption": "Муций Сцевола в лагере Порсены. Джованни Баттиста Тьеполо (1729)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8918d8c677d7ece0.jpg",
+    "sha256": "a21fc13967f96fa62697e3a32fcf10bd182ba2f8722800ddfe14568196c716e3",
+    "bytes": 56081,
+    "width": 320,
+    "height": 563,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/5d27031c533c7872e63cc.png",
@@ -2546,8 +2751,13 @@
     "caption": "«Русский Сцевола» (1813)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1c656fb22b58d0e6.jpg",
+    "sha256": "2bb2e499d2fe9846d7e0387c4f3f957ee23d67012d3b00ae87fb9e9270403c7c",
+    "bytes": 211960,
+    "width": 800,
+    "height": 1297,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/1accee7e6ba2911a7447f.png",
@@ -2556,8 +2766,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "45c533b8c8192bf0.jpg",
+    "sha256": "0626bc30404aa2e9e9fdd867bb720919e31861d71dfe66cbd036a512bbd6d649",
+    "bytes": 31062,
+    "width": 224,
+    "height": 299,
+    "status": "ok"
   },
   {
     "url": "https://sun9-28.userapi.com/s/v1/ig2/g8h_LeYxmaTwlHbOU_u53wVyPkSR2Ey9GdxavBa0-D04j3DqZMfxHPaIIKkbq48madMunnhLc8Mvxe8FW98uLwDm.jpg?quality=96&as=32x39,48x59,72x89,108x133,160x197,240x296,360x444,480x591,487x600&from=bu&cs=72x0",
@@ -2671,8 +2886,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "9e7fbca413d21aba.jpg",
+    "sha256": "d5e79400d9c8472189ccce781d375f23edacdd2bc8edbdead669ceca7655825b",
+    "bytes": 100217,
+    "width": 800,
+    "height": 532,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/292c737f9cacee25a9c85.png",
@@ -2681,8 +2901,13 @@
     "caption": "Джордж Форман и Мохаммед Али во время боксёрского поединка",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "71c27760979a6735.jpg",
+    "sha256": "393119711f486a6b2c9406f7edc03e8511a485a5b7ad3934d729494bdf02701f",
+    "bytes": 12176,
+    "width": 300,
+    "height": 185,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/87cfdeac8e511bf856a4d.png",
@@ -2691,8 +2916,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5db6ad60e6a3225a.jpg",
+    "sha256": "b450457fef40fe9f8e921d953fe077fa6efbd56bb72711f061ee0448e0f8209e",
+    "bytes": 33975,
+    "width": 299,
+    "height": 444,
+    "status": "ok"
   },
   {
     "url": "https://sun9-49.userapi.com/s/v1/ig2/7rAba2iT_6OXpwzQbwiJse-8domjfMdWu0lo4Hlk5gdNv24gH4Iv8VwSkR870uW1c9iLu7PXrongCANi3SGgbu-T.jpg?quality=96&as=32x45,48x67,72x101,108x151,160x224,240x336,360x505,480x673,540x757,640x897,720x1009,1006x1410&from=bu&cs=72x0",
@@ -3106,8 +3336,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "e4005c6256ae2e4f.jpg",
+    "sha256": "9ec983b023c2f0e86bf37e394222dde716ec5d51f62f4250237d26eb1f43d54d",
+    "bytes": 4394,
+    "width": 204,
+    "height": 297,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/cc3c10cc36e920bb95515.png",
@@ -3116,8 +3351,13 @@
     "caption": "Джеффри Евгенидис",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "119c0547cb22fa5a.jpg",
+    "sha256": "bd56c59e7146186d591f476f44a25a219677a31f333e77b1ccfb9d86bae02a45",
+    "bytes": 32369,
+    "width": 300,
+    "height": 401,
+    "status": "ok"
   },
   {
     "url": "https://sun9-55.userapi.com/s/v1/ig2/IcwW12ArCN14SAvxkbzTY9gn0iPwDqpah51DNcvBwo8HFzbTo5YO3TbQ8Oug8Um_MtYrhNezVX7rvmysbrAvfism.jpg?quality=96&as=32x47,48x70,72x105,108x157,160x233,240x349,360x524,480x699,540x786,617x898&from=bu&cs=72x0",
@@ -3231,8 +3471,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8a82de538a19795b.jpg",
+    "sha256": "578c04c0b401aab69effd642be35c6fd84eb352264c0bfebb6206e8caa4dea05",
+    "bytes": 6642,
+    "width": 512,
+    "height": 401,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/febec75188990a9993caf.png",
@@ -3241,8 +3486,13 @@
     "caption": null,
     "attachedTo": "ix-dzhiro-d-italiya-2",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2670b2ee8b77f914.png",
+    "sha256": "61cffc486fb3e6276d46536f67eb7a742809fdbf7485a158359f5e403548ad02",
+    "bytes": 151079,
+    "width": 536,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8bddc9e692be29b778649.png",
@@ -3251,8 +3501,13 @@
     "caption": "Розовая майка лидера",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "bf45961b1d778016.jpg",
+    "sha256": "b0e14381beb9e19616e7c6033fc8af05f5f8f2c55fb2110718187de54cc7d09e",
+    "bytes": 72631,
+    "width": 450,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/5c12441592b490255712f.png",
@@ -3261,8 +3516,13 @@
     "caption": "Велогонщик Марк Кавендиш в красной майке (2013)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "936b2ed22df614b9.jpg",
+    "sha256": "2e14afac93d2fe66f2237c41235a2a8765aac07da2724ab2f120968d3e24462b",
+    "bytes": 91460,
+    "width": 800,
+    "height": 532,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a016335232509cf0c09e3.png",
@@ -3271,8 +3531,13 @@
     "caption": "Велогонщик Хулиан Арредондо в синей майке (2014)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "35415342862c3c32.jpg",
+    "sha256": "c0776ae10943308f359f3e0f994f8b5cccf0dd22da3e456928b43788b50d374c",
+    "bytes": 35516,
+    "width": 295,
+    "height": 455,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/1b28efb2cb4dbd13cf576.png",
@@ -3281,8 +3546,13 @@
     "caption": "Велогонщик Ричи Порт в белой майке (2010)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5416baa0989ccedb.jpg",
+    "sha256": "c11f34d82fcd993e9a749ea7eb43b49e0ddb84aa5e0c510f33eeb9e20840db12",
+    "bytes": 18887,
+    "width": 273,
+    "height": 365,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/ee1fc79e075f17336c772.png",
@@ -3291,8 +3561,13 @@
     "caption": "Джузеппе Тикоцелли майке футбольного клуба \"Казале\"",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "e237ae9801960297.jpg",
+    "sha256": "38517d4ca0d0334a4383dfaafbd0dadff9ed84bc409e03023b3bf1aeb3a6bb8d",
+    "bytes": 18673,
+    "width": 300,
+    "height": 300,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/395f8461d326f3e43ee1c.png",
@@ -3301,8 +3576,13 @@
     "caption": "Trofeo Senza Fine",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c208eefa053fd448.jpg",
+    "sha256": "0983e9947a0ab943ed7a3742ae49883166b74471269706df6edcf1cdbee9444e",
+    "bytes": 103263,
+    "width": 683,
+    "height": 1024,
+    "status": "ok"
   },
   {
     "url": "https://sun9-49.userapi.com/s/v1/ig2/B6IYklAiQx0gbw_rc_a3JDl337gtJyu3vo0hT_VAwDMpPMw85-hI5bw2thiMxM_bLsmHMDmmn89FvGHykiEFG0YR.jpg?quality=96&as=32x43,48x64,72x96,108x144,160x213,240x320,360x479,480x639,540x719,640x852,669x891&from=bu&cs=72x0",
@@ -3446,8 +3726,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2b78cae951de7264.jpg",
+    "sha256": "a12b3b20907d4d4096e95b827e46dc953456ff542e179b9c3f3d963b380e8661",
+    "bytes": 47817,
+    "width": 478,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8c137ffbf410a4347af38.png",
@@ -3456,8 +3741,13 @@
     "caption": "Интерьер пульмановского вагона",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "60d776118e4f5b03.jpg",
+    "sha256": "f95bd10a5822ee0047cebda61b9004186718cb5e317c278bd0f55ed577660785",
+    "bytes": 20910,
+    "width": 267,
+    "height": 212,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/dbfdada55502c70300556.png",
@@ -3466,8 +3756,13 @@
     "caption": "Зелёный пульмановский вагон",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "965c8e6d4d815527.jpg",
+    "sha256": "c97d39071c38f35b300ae29fe11f127e6980341f3cf2489a5076545e33faafda",
+    "bytes": 164821,
+    "width": 800,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/bd0febf87f891bdc362ec.png",
@@ -3476,8 +3771,13 @@
     "caption": null,
     "attachedTo": "ix-dzhordzh-pulman-5",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c51f6e4547d8df9c.png",
+    "sha256": "4efb683c69060da661706a6345c6c360b3d7988b5b7491be10b5b673bbde7fd1",
+    "bytes": 30090,
+    "width": 800,
+    "height": 107,
+    "status": "ok"
   },
   {
     "url": "https://sun9-11.userapi.com/s/v1/ig2/4TZLMvR92StyxttM68Ur9hOYXjcqEE3DR4G2QSCs4WK6LABx3pE4YdYoiyMPl0so4ovvQYrCYzyg0qSoxgzg1pfC.jpg?quality=96&as=32x40,48x60,72x90,108x135,160x200,240x301,360x451,480x601,540x677,640x802,700x877&from=bu&cs=72x0",
@@ -3561,8 +3861,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "92bd23e104608623.jpg",
+    "sha256": "36c8c84f2da40a03c9ff261a82141f90e7ae4dbc4d42d827a04df5ca253c2ee4",
+    "bytes": 171184,
+    "width": 760,
+    "height": 561,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/85ff78fee4e623b3694ae.png",
@@ -3571,8 +3876,13 @@
     "caption": "Восковой мундштук",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "4c4885dcc632a9f7.jpg",
+    "sha256": "682ce903ea8cac522c96b00ba9bdef6eef5d8959e297cde526e7ce4552177a5c",
+    "bytes": 12122,
+    "width": 320,
+    "height": 240,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/0f97b9d051918477139c8.png",
@@ -3581,8 +3891,13 @@
     "caption": null,
     "attachedTo": "ix-didzheridu-4",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "af30702cf5bd93fe.png",
+    "sha256": "0d021420dd5a04a30706d9da8eeb844fd626f6deef062d7fcef32a33445e23ae",
+    "bytes": 68177,
+    "width": 886,
+    "height": 306,
+    "status": "ok"
   },
   {
     "url": "https://sun9-18.userapi.com/s/v1/ig2/2ClNTJJwxCL2yafBL4ObFdBOcsPRyG0_c6cMfY1N90SUx-I-hznpfO4yXPq-OzVJccqDvc1ZXiMBXBOkKMYHDV_p.jpg?quality=96&as=32x42,48x62,72x94,108x140,160x208,240x312,360x468,480x624,540x702,640x832,720x936,800x1040&from=bu&cs=72x0",
@@ -3846,8 +4161,13 @@
     "caption": "Мистер и миссис Кларк и Перси. 1971",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/ru/thumb/5/5f/%D0%9C%D0%B8%D1%81%D1%82%D0%B5%D1%80_%D0%B8_%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D1%81_%D0%9A%D0%BB%D0%B0%D1%80%D0%BA_%D0%B8_%D0%9F%D0%B5%D1%80%D1%81%D0%B8.jpg/500px-%D0%9C%D0%B8%D1%81%D1%82%D0%B5%D1%80_%D0%B8_%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D1%81_%D0%9A%D0%BB%D0%B0%D1%80%D0%BA_%D0%B8_%D0%9F%D0%B5%D1%80%D1%81%D0%B8.jpg"
+    "fetchedFrom": null,
+    "file": "587863b98c18ee3c.jpg",
+    "sha256": "43708ddc342720d20f78451d8500ad8f30228f05f32d292f59197c5a4cd49842",
+    "bytes": 43609,
+    "width": 500,
+    "height": 351,
+    "status": "ok"
   },
   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Westminster_Abbey_-_51370500850.jpg/960px-Westminster_Abbey_-_51370500850.jpg",
@@ -3856,8 +4176,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Westminster_Abbey_-_51370500850.jpg/960px-Westminster_Abbey_-_51370500850.jpg"
+    "fetchedFrom": null,
+    "file": "b0d5d8fc85130847.jpg",
+    "sha256": "c05beca8f4f0d20c493f44a0a07c57a50fdfe05276aef4b32d3dff8013dec544",
+    "bytes": 287829,
+    "width": 960,
+    "height": 1481,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/bff69e290adde09f8e4f6.png",
@@ -3866,8 +4191,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "44adbe12d3430ee6.jpg",
+    "sha256": "c6c53ad3597df89d7f85d96e6bd5e9e2567bb616a97f131d2ecdd3b1fab39b05",
+    "bytes": 36899,
+    "width": 450,
+    "height": 296,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/c9aa328812160cdec7871.png",
@@ -3876,8 +4206,13 @@
     "caption": "Памятник Жеводанскому Зверю во Франции",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5f6131de064064c1.jpg",
+    "sha256": "be70ad3e46e126985bd19a2a9616a8ef8f9ab255030b58156082798a256d50b2",
+    "bytes": 154553,
+    "width": 800,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a66b69d70fd6643d8fd1f.png",
@@ -3886,8 +4221,13 @@
     "caption": "Лейтенант де Ботерн убивает волка из Шаз",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "522f273421cef980.jpg",
+    "sha256": "d943e87d8187a398d4e83bd250534f61df69732ab1f0e28868bfb53fa78f0a93",
+    "bytes": 196351,
+    "width": 797,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://sun9-83.userapi.com/s/v1/ig2/favz0Qbb9GQIbICO4qPSGt9PG1gg9whnLTA5gm10k3AEWPAewhhsRJcMOCS3zkIw78rk-EWQcYwGY8wkB42ZICxo.jpg?quality=96&as=32x17,48x26,72x39,108x58,160x86,240x129,360x194,480x258,540x291,640x345,650x350&from=bu&cs=72x0",
@@ -4031,8 +4371,13 @@
     "caption": "Данте Габриэль Россетти. «Моя леди Зелёные рукава» (1864)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "cd033ccc1d3ad3ca.jpg",
+    "sha256": "a0634042865dfd6dda64c30b0da5af15371c88b5038e8c2eb607e2f56bd6132b",
+    "bytes": 88254,
+    "width": 514,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://sun9-63.userapi.com/s/v1/ig2/eqIWqvZi-t1dvpCDbk-ZGZdZUF9FIRKGbX9B_gIba5bgJAyH74ena0PTrfoYq5JYWkMokBIijLLxi6jSI6wAt1uZ.jpg?quality=96&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,725x483&from=bu&cs=72x0",
@@ -4701,8 +5046,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "23656cecb685f9fe.jpg",
+    "sha256": "44e4ac64a30246746c20eeba5c8c4d4d0510a11411ba0fdba37563dc616382b0",
+    "bytes": 46294,
+    "width": 604,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/ab70770ffdb378c4483fc.png",
@@ -4711,8 +5061,13 @@
     "caption": null,
     "attachedTo": "ix-koltsa-borromeo-1",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "00536ea9ce10e6df.png",
+    "sha256": "8507c0f46c7ca2fdbfd91cd706607b57991a60799125a2bb7ff1718d88a74b41",
+    "bytes": 5677,
+    "width": 182,
+    "height": 86,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/f8e02bbb6e6386665cf47.png",
@@ -4721,8 +5076,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "f2f739321038b02b.jpg",
+    "sha256": "b6bbc50f1f70d8c975e1787c7f1676242584113ea502a1972d30cc897ef30a8d",
+    "bytes": 46973,
+    "width": 771,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/1b7eb0087d35f33822268.png",
@@ -4731,8 +5091,13 @@
     "caption": "Герб семьи Борромео",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "283960a508f36b8c.jpg",
+    "sha256": "00abcfb03ec8b89de0b43ce6b2a46ca00ed8b3e68be1b2fca09f8365d1947671",
+    "bytes": 95714,
+    "width": 657,
+    "height": 768,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/d5f359c9b4cf2871f17f8.png",
@@ -4741,8 +5106,13 @@
     "caption": "Валькнут на Стура-Хаммарском камне",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1f051074ddb2603f.jpg",
+    "sha256": "adfbef774ff5d8978b55b5807dfa75632c529438532183177553ba79382ca154",
+    "bytes": 59083,
+    "width": 392,
+    "height": 452,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/91ad8156575e14e36c814.png",
@@ -4751,8 +5121,13 @@
     "caption": "Кольца Борромео как символ христианской Троицы в французской рукописи XIII века",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5243447400285992.jpg",
+    "sha256": "84824e74d542e0443d785024c34f5e6bdcaf839bb5855a93771183cbdef3b562",
+    "bytes": 57379,
+    "width": 615,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/84e1961e2d361138fcb6f.png",
@@ -4761,8 +5136,13 @@
     "caption": "Связанные треугольники в храме Марундисварар",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d979b00ef75e7b4a.jpg",
+    "sha256": "c56cdfe3490595c2c5aba19af18d2997ee9941dbe2e1cbb6e52618d15dd22f4b",
+    "bytes": 38034,
+    "width": 609,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/7371fc6d01562dbf0e419.png",
@@ -4771,8 +5151,13 @@
     "caption": "Реализация колец Борромео в виде эллипсов",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "b42618627eeca5fe.jpg",
+    "sha256": "bb78843ca0ae4b9525bdc2958e550960939aa21de798402f7b034008b76c6c8b",
+    "bytes": 29094,
+    "width": 642,
+    "height": 500,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/ab6e0278bf9f9ad3ee8b5.png",
@@ -4781,8 +5166,13 @@
     "caption": "Трёхмерное представление колец Борромео",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c4a1498fb2a9b96e.jpg",
+    "sha256": "3ce3b1702c11b8ed089b6d0c5dd73b0c202de807068c9a912b3f8640d275b7df",
+    "bytes": 17972,
+    "width": 528,
+    "height": 440,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/cb3eb91d3f5a89479f45b.png",
@@ -4791,8 +5181,13 @@
     "caption": "Стандартная коса из трёх лент соответствует кольцам Борромео",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7e5e690bbea406bc.jpg",
+    "sha256": "617d62b27fe410f60b905378605118d2558108b63ab95293d7a8b4ccf1d5a401",
+    "bytes": 77109,
+    "width": 800,
+    "height": 567,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/89eef12bf89a35891d999.png",
@@ -4801,8 +5196,13 @@
     "caption": "Логотип Международного математического союза",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "33f0ad1676063242.jpg",
+    "sha256": "22c9a042dc0677748ded33dac8eaf10c671fa65d0dfd9b4b179acee339dfc46d",
+    "bytes": 28065,
+    "width": 348,
+    "height": 348,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/f472decd3575beb84df17.png",
@@ -4811,8 +5211,13 @@
     "caption": "Кристаллическая структура молекулярных колец Борромео, приведённая Фрейзером Стодартом в журнале «Science»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c65f5371f508f493.jpg",
+    "sha256": "637e29da63f9271a706b104e74b958b988d6fe0b545f0953e940e07ae1cc0294",
+    "bytes": 55957,
+    "width": 556,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/7adfa00bc3e5d97f37f34.png",
@@ -4821,8 +5226,13 @@
     "caption": "Узел «обезьяний кулак»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "9f01d86a0ed2e90d.jpg",
+    "sha256": "9647e6ebb0f93de119fbb8c5520899b9d34a7114d9868e3d223645ba0f1a1917",
+    "bytes": 29113,
+    "width": 377,
+    "height": 279,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/86e8b5cce65d15f525473.png",
@@ -4831,8 +5241,13 @@
     "caption": "«Мандала» дискордианства, содержащая пять колец Борромео",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "69523af6b38dfd7d.jpg",
+    "sha256": "8c196ebab72c0dabdf0013e19ec33d6bd6baf6980250aaa93ebc0f849bbcfe0a",
+    "bytes": 50831,
+    "width": 629,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/99ffced85b08c5bf35a24.png",
@@ -4841,8 +5256,13 @@
     "caption": "Логотип пива \"Ballantine\"",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "78df42ce27b31a07.jpg",
+    "sha256": "60c30bf0bd92a578f4a3039ade344913b95ce1ba87faf47b7b7bcb89b38be8ee",
+    "bytes": 17535,
+    "width": 230,
+    "height": 243,
+    "status": "ok"
   },
   {
     "url": "https://sun9-65.userapi.com/s/v1/ig2/L2uraKvOg57Zd_tEplkR990PLZ8hWORph05uvEtON8t6Db6t3JFIeTi9IQ6hPfxs0bnErECFtuRGNdh-zsqnoKRG.jpg?quality=96&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480&from=bu&cs=72x0",
@@ -4911,8 +5331,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7016c24f413af08a.jpg",
+    "sha256": "778e4cc51e400a4a624682ea44b98dcacc8d1158084a4f27854b12fb9b944013",
+    "bytes": 44759,
+    "width": 750,
+    "height": 375,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a46721726c7b0653ad9d1.png",
@@ -4921,8 +5346,13 @@
     "caption": "Кафе Циммермана (справа)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8c925346db6728c1.jpg",
+    "sha256": "440e67f2ca75761cde10120f1a60bbc9f340bf9bc59c8cc29a50c9b84182fd89",
+    "bytes": 46732,
+    "width": 220,
+    "height": 447,
+    "status": "ok"
   },
   {
     "url": "https://sun9-34.userapi.com/s/v1/ig2/4YUU4F7wOEcSHZKINnfifgWN36cVDLYTxQJlClg50riCldudtn8smAQPqKbgbizYL8rUsyXyDLONqbLquJbt7MYs.jpg?quality=96&as=32x23,48x35,72x52,108x78,160x115,240x173,360x259,480x346,540x389,600x432&from=bu&cs=72x0",
@@ -4991,8 +5421,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "02316c06d31918d0.jpg",
+    "sha256": "e8d34ea619cc9f43cf551868305355de9640f8074e1ef0836bfb5cb9702169f4",
+    "bytes": 64975,
+    "width": 781,
+    "height": 463,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/312b82329ca69705d57d9.png",
@@ -5001,8 +5436,13 @@
     "caption": "Одна из двух наиболее хорошо сохранившихся скрипок Страдивари \"Леди Блант\"",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "562bdc606bae8871.jpg",
+    "sha256": "47e518597a00a7cb122ebb11f865ed7866cfd70d7bc8957498e40c2b831a4028",
+    "bytes": 17783,
+    "width": 220,
+    "height": 513,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/64df0a4a327f86c0acf16.png",
@@ -5011,8 +5451,13 @@
     "caption": null,
     "attachedTo": "ix-kremona-3",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "69a833c388547a14.png",
+    "sha256": "4c5c6774c081be3dc3bf7a7cadc7c92cbdda020b8211f13fdca5de5582bf7b32",
+    "bytes": 161142,
+    "width": 372,
+    "height": 204,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a9764ed76e5e8079eb92d.png",
@@ -5021,8 +5466,13 @@
     "caption": null,
     "attachedTo": "ix-kremona-4",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1015d57fd7805694.png",
+    "sha256": "881f9237a8f4457d7682acdcde4726beee07c51df451283497307ec058b326dc",
+    "bytes": 52620,
+    "width": 162,
+    "height": 240,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/eb848b8290e5edbcd7827.png",
@@ -5031,8 +5481,13 @@
     "caption": "Автопортрет. Софонисба Анвиссола",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1ec68a2e89413dd3.jpg",
+    "sha256": "58786d6006a880b4665ba157cbd2b26e5365cfba9d4a31c44858a482a8827bb4",
+    "bytes": 59325,
+    "width": 518,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://sun9-74.userapi.com/s/v1/ig2/m_B--IgkITN9wHmGeHVfS1IM735oelXCp5b7UD7PytmW-jyhldbCe2kEvo4yE1osEo-_UOIkq5p8kbIYeX6xTT6o.jpg?quality=96&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,800x1067&from=bu&cs=72x0",
@@ -5386,8 +5841,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "549313a8cda041fa.jpg",
+    "sha256": "e71c7c9b038b9f3a26e3e5c4ec27663faef5c3f711c9bd9709bee50f77cfd1fa",
+    "bytes": 153129,
+    "width": 785,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/90d63a59bde0c5588704f.png",
@@ -5396,8 +5856,13 @@
     "caption": "Урсула Ле Гуин (1929—2018)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "305e7f69e3c1a6ea.jpg",
+    "sha256": "ce331c8772086a24b8f37cfbe8721d5012133376c6d1e8444b8e652e44f9b913",
+    "bytes": 48865,
+    "width": 413,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/0862f8a4b97810853d64a.png",
@@ -5406,8 +5871,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "217917fc1bdd9a08.jpg",
+    "sha256": "b86039fed82893bc610e83732bb63cf963cac81b0ed8f1e024404c1423c8f270",
+    "bytes": 42420,
+    "width": 700,
+    "height": 463,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/81959af6b3209821054a1.png",
@@ -5416,8 +5886,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "b9081a5edfcbac5b.jpg",
+    "sha256": "7b4021fc9470096b0906a8c8845c10deee731c9ed77a2411975c70f2230afef1",
+    "bytes": 89911,
+    "width": 391,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://sun9-72.userapi.com/s/v1/ig2/J4-ZjJCEl3VlpYZpDX4Mrkn4EPPyjv4JRFDt7rfdERiZazpdlfd4FVXJBW_ktHJsWbhi7JW9wTdWkRo3p-N5L2vI.jpg?quality=96&as=32x47,48x70,72x105,108x157,160x233,240x349,360x523,480x698&from=bu&cs=72x0",
@@ -5501,8 +5976,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2d0fd2ad2df37448.jpg",
+    "sha256": "e421dbdce2732cf40597875fea95d2d59e7f36f44835c79bdd8506cb42c772c1",
+    "bytes": 178672,
+    "width": 1024,
+    "height": 1024,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3ae6839e03a564b329023.png",
@@ -5511,8 +5991,13 @@
     "caption": "Бен Шульц",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c290c06b96016d7f.jpg",
+    "sha256": "948d72b4bedb3c167e7190000f51ff1dd1c5581234dbae93ec4b4611ef5b45b1",
+    "bytes": 51758,
+    "width": 358,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/19ff7a0742eb42c6ce9e3.png",
@@ -5521,8 +6006,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "bd29d94230225884.jpg",
+    "sha256": "7336e667b1afc2bf0f3f39c84688e318d29ea91e2d87b61a052a232c5f6c2600",
+    "bytes": 35670,
+    "width": 300,
+    "height": 454,
+    "status": "ok"
   },
   {
     "url": "https://sun9-42.userapi.com/s/v1/ig2/_G1Nvx-W3GuoubzlpGfoeKXiGQ0cddO4PXKdVwhfr1tAW7gf4ldbsckTXsA0KKdWY8An0NrEacfUlmg2qxgo6D1h.jpg?quality=96&as=32x45,48x67,72x100,108x151,160x223,240x335,360x502,430x600&from=bu&cs=72x0",
@@ -5681,8 +6171,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "02311e3fb06b3e6c.jpg",
+    "sha256": "df6ca8d71f21bfcbcc9188700aefbe1759610a01d5c0b787977569cb22d7644e",
+    "bytes": 194538,
+    "width": 1024,
+    "height": 695,
+    "status": "ok"
   },
   {
     "url": "https://assets.discours.io/unsafe/900x/production/image/d6a7e430-b61f-11ea-886e-17de616832f8.png",
@@ -5706,8 +6201,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "76a4f513b391091f.jpg",
+    "sha256": "57e0105aa1220ccbf8cd9df829e11ca05fca839fa671b1ed5357e024a268a60e",
+    "bytes": 70958,
+    "width": 823,
+    "height": 824,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/d13d18d5a21d9c92f4cf9.png",
@@ -5716,8 +6216,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "6297d284d8c1bebb.jpg",
+    "sha256": "db676a9692168736dc828417026c6a65c491480b17f121e6049aaac5bd151e07",
+    "bytes": 104092,
+    "width": 1024,
+    "height": 612,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a3aba2fc7e3d8c4d0a311.png",
@@ -5726,8 +6231,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "cd5fba3f64d2de56.jpg",
+    "sha256": "4155d6b72a4dca3d7a51e9b2ca7e49bf59e1896a8295d88ec4a0d40d12b91215",
+    "bytes": 62054,
+    "width": 900,
+    "height": 728,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/5660d3c2aef8b4f1046db.png",
@@ -5736,8 +6246,13 @@
     "caption": null,
     "attachedTo": "ix-lucho-fontana-5",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "3543ae899cbce109.png",
+    "sha256": "c6747c18c5cd29983e272c82cc79e7f619edb315b8f2cfbc9d3cb17692df1bd5",
+    "bytes": 137944,
+    "width": 1080,
+    "height": 946,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/0c0906fc2f61ff418225d.png",
@@ -5746,8 +6261,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "6557d37f7a96c549.jpg",
+    "sha256": "7abf70939fc5412dccfda46298bb62abe4afe2eb9c8b3f396356df7f72d8e8fe",
+    "bytes": 50510,
+    "width": 1024,
+    "height": 897,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/e3a57510de9b131c9f0bf.png",
@@ -5756,8 +6276,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "da88484770f6c214.jpg",
+    "sha256": "50691ce77db31f5c5800d6a2be6fddb89ad9076ca4db284f78ab8462329031a1",
+    "bytes": 125552,
+    "width": 1024,
+    "height": 683,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/253e35c4db633c50fb546.png",
@@ -5766,8 +6291,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "451e224e258eefc6.jpg",
+    "sha256": "5153cee8c8e5709fdc41a3be373a592061f06a61167a669a7b59c5fbcb6b973d",
+    "bytes": 63948,
+    "width": 1024,
+    "height": 683,
+    "status": "ok"
   },
   {
     "url": "https://gotquestions.online/pics/6900/442723_razdatka.jpg",
@@ -5806,8 +6336,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "720336abc705c692.jpg",
+    "sha256": "d894175427d0e16e1bf0d8364a14cb59cd3a4eb5381e721bd68d4222ec1478c0",
+    "bytes": 197542,
+    "width": 1024,
+    "height": 567,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/343364adc7ec6ae48f3bb.png",
@@ -5816,8 +6351,13 @@
     "caption": null,
     "attachedTo": "ix-lysaya-pevitsa-3",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2cc045325ff6267e.png",
+    "sha256": "cae1755413d5df70f26b4055bbb7abde41d950e6fbd9d22b87ab529d3a14e3ac",
+    "bytes": 126851,
+    "width": 336,
+    "height": 308,
+    "status": "ok"
   },
   {
     "url": "https://sun9-42.userapi.com/s/v1/ig2/pQ0-VfDHMZmReV_ATjMrMDngIX8C410Z7Q2OQKUvirslni_gl6KAeVM81T7VWU8Sg44jZ-y9naoNahLnc9n-aqFI.jpg?quality=96&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,800x600&from=bu&cs=72x0",
@@ -5871,8 +6411,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "0d01aa65b83531de.jpg",
+    "sha256": "57089dc477f45801ea1f1ac69d8afdeea95660707b5570e4ccd220f0dfe3bdb1",
+    "bytes": 114683,
+    "width": 800,
+    "height": 534,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8d91fe75df58b3a39fcef.png",
@@ -5881,8 +6426,13 @@
     "caption": "Макао на карте Китая",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "88ab84866ebf23b6.jpg",
+    "sha256": "84d332f9afa297d7b0a228a49f84b4c8441ea0cc5d8c30488df2f0f8f63b2d53",
+    "bytes": 72742,
+    "width": 705,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/4100842b6e2c1d83d3992.png",
@@ -5891,8 +6441,13 @@
     "caption": "Флаг Макао",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "30d6a2282d93014f.jpg",
+    "sha256": "4749e03c9ce9eb3db6d83df2ed8b80114a164cba5b54d59fa06d8971dd45c77b",
+    "bytes": 11643,
+    "width": 550,
+    "height": 367,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/be8c1a012ef49925dd6d9.png",
@@ -5901,8 +6456,13 @@
     "caption": "Мост Губернатора Номбре де Карвальо",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c0c229e1c2acb1fd.jpg",
+    "sha256": "4d1fa23928a43a91856313b0c737623e804369949e24a0acfa2e10da0c211ab0",
+    "bytes": 38433,
+    "width": 787,
+    "height": 451,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/e997d42255d4586197e4a.png",
@@ -5911,8 +6471,13 @@
     "caption": "Руины Святого Павла",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "e85fabdf2bbdd3f9.jpg",
+    "sha256": "aaadfb92110add408c796ba227ce586a2af542231fc05c75baec6138fa5ed9f6",
+    "bytes": 155707,
+    "width": 800,
+    "height": 532,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a25f106af637ea61baf28.png",
@@ -5921,8 +6486,13 @@
     "caption": "1 патака 1952 года",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "392628e89b3d16d5.jpg",
+    "sha256": "47db6d120a4a0fcf35bb039af75fcfb3a7e2b62c78cf13593ce56ebb17dadc72",
+    "bytes": 52954,
+    "width": 640,
+    "height": 320,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/6f1aaaece27c2a7c7f790.png",
@@ -5931,8 +6501,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "04a3266528910fe6.jpg",
+    "sha256": "5831c9bb908f55a1111d3906048cacd5ea64890346c8680742a1aeb1cc97fdf9",
+    "bytes": 67691,
+    "width": 600,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/30a6185ab1b33f8841311.png",
@@ -5941,8 +6516,13 @@
     "caption": null,
     "attachedTo": "ix-makao-5",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7706e52e16abed6e.png",
+    "sha256": "80eb7928401df788b5986352c732247068dcab32eca3869001e01108e29b4ee6",
+    "bytes": 347927,
+    "width": 537,
+    "height": 491,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/2abf3eb39b8f9f56b4759.png",
@@ -5951,8 +6531,13 @@
     "caption": "«Кодекс Emilianense» с пометками на полях",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2db1d0b98e3d13aa.jpg",
+    "sha256": "8a47a14160223f80ab1a5389f45c65d663dd2bf8779f4b1f41188b5ea6c53409",
+    "bytes": 135065,
+    "width": 460,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/31d3a6398fa6440221827.png",
@@ -5961,8 +6546,13 @@
     "caption": "Лист рукописи «Сокращения хроник» Радульфа де Дисето с таблицей условных значков",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "910b9819b55618c4.jpg",
+    "sha256": "a4a3bfabd9c6e14f20a9d18fdfd835cc899114d7e78c272ba83584220b0490e0",
+    "bytes": 92009,
+    "width": 446,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/5e1d56ea17485ef89a1b0.png",
@@ -5971,8 +6561,13 @@
     "caption": "Охотник и его собака в плену у зайцев, дролери «Миссала Георгия из Топуско» из древлехранилища Загребского собора.",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "cb9d96550d6daac0.jpg",
+    "sha256": "e1e2784f699a655d9291ce880cd7d731a980c14200b357cdc9340608bbc6fa6d",
+    "bytes": 96940,
+    "width": 700,
+    "height": 380,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/6ecbc9e3632699c54f892.png",
@@ -5981,8 +6576,13 @@
     "caption": "Лиса-проповедница в епископской митре и с посохом. Из Декреталий папы Григория IX",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8eb89a78f3155f12.jpg",
+    "sha256": "41e124cdc13f17adc98d3a259ece1ba9fc7bce4dace6848204d4e367ac592d44",
+    "bytes": 92375,
+    "width": 800,
+    "height": 397,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/e89ab1f9d7599065cc2bf.png",
@@ -5991,8 +6591,13 @@
     "caption": "Маргиналия с двумя рыбаками из Фроловской Псалтири",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "945dbd201cb48004.png",
+    "sha256": "731189fa5cdc6eef7af227608ae0f51c83a629d6b07ef294a817d6c69700ac20",
+    "bytes": 8502,
+    "width": 167,
+    "height": 168,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/48e2166c1a1aff853275f.png",
@@ -6001,8 +6606,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8a38c440f75ca184.png",
+    "sha256": "6b149fd5767c37689ee732dce7d658b534e5ab5991a8a74c8a673e1fba4f9e10",
+    "bytes": 7246,
+    "width": 134,
+    "height": 168,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/4f90383e5fcd52b20092b.png",
@@ -6011,8 +6621,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5d302de63b49e67d.jpg",
+    "sha256": "9a6a6326fb7c91912f79865df24439280a2b67aff2f0cbee7ff3c46c93c5aef9",
+    "bytes": 51845,
+    "width": 423,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/143eb6fa0a056a9793d42.png",
@@ -6021,8 +6636,13 @@
     "caption": null,
     "attachedTo": "ix-marie-kondo-1",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "a946650e09c58b4e.png",
+    "sha256": "5cd815830cb5e3627b7d650c2ff5153c29ce39132a6dd37e1e5e28da68577ab6",
+    "bytes": 33509,
+    "width": 500,
+    "height": 145,
+    "status": "ok"
   },
   {
     "url": "https://sun9-61.userapi.com/s/v1/ig2/wVmsv0EUtVH2V1lgp0mSs7ULCMsxLRvprLwBHsU_TvUal79wRGPgkCWaL88LCzqARm9jAkzEDS0eQvehr3XQWlBI.jpg?quality=96&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1200x900&from=bu&cs=72x0",
@@ -6076,8 +6696,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "49c778ef5dc5cb78.png",
+    "sha256": "8dba49a17f54d5fddf623e9cb0e2f66eba9bda4efb72220d40940152157d7a21",
+    "bytes": 15619,
+    "width": 822,
+    "height": 334,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/004e6ab67753fcea44776.png",
@@ -6086,8 +6711,13 @@
     "caption": null,
     "attachedTo": "ix-meandr-2",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c067fe5171185aad.png",
+    "sha256": "c428b0ddc0d3fe5cd6b4eeebb29947e6856b17b298beb208664c3b0bc01b08db",
+    "bytes": 61627,
+    "width": 224,
+    "height": 225,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/67e94e9bc4a521abd0fe0.png",
@@ -6096,8 +6726,13 @@
     "caption": null,
     "attachedTo": "ix-meandr-4",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5511b2b70c573858.png",
+    "sha256": "5fe89b0416ca0a62272dcbe44ff439dd2d9111a437c7bfcd496ce099400ba6be",
+    "bytes": 97108,
+    "width": 244,
+    "height": 203,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/064c6362235bc6ee7aef9.png",
@@ -6106,8 +6741,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "a91ce07218338395.jpg",
+    "sha256": "f2fad55ab0a466f5ac9d77e0db64aaec8cbeb5bc0c6fee7e8913a81ffed0ffa7",
+    "bytes": 29946,
+    "width": 960,
+    "height": 720,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/380ebc173607539405bf4.png",
@@ -6116,8 +6756,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c1344ac859c857fb.jpg",
+    "sha256": "b69d4394c43a6951e40c2622bfe76c52eba6515925d09f947770bf41757af7e6",
+    "bytes": 26965,
+    "width": 500,
+    "height": 500,
+    "status": "ok"
   },
   {
     "url": "https://sun9-72.userapi.com/s/v1/ig2/xD9jh62j3u8CR7K6Iwch8_AfCri55HUFwRQlxYMUL7lozPp6_pmR33noaJlKG-4zbIup_Uq6DGc7xpCfjc9h9EQu.jpg?quality=96&as=32x20,48x30,72x45,108x67,160x100,240x150,360x225,480x300,540x337,624x390&from=bu&cs=72x0",
@@ -6186,8 +6831,13 @@
     "caption": "«Мэйфлауэр в гавани Плимута». Уильям Холсалл, 1882 год",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "ce136b188c63885c.jpg",
+    "sha256": "0633f59d7588cda6dd548461d4e562a85595cf0a0ba6b3ba58370b633fdf56e0",
+    "bytes": 83951,
+    "width": 800,
+    "height": 410,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/03bf80d9dcd982ed1736d.png",
@@ -6196,8 +6846,13 @@
     "caption": "Эпигея ползучая",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "e004341d03795c45.jpg",
+    "sha256": "9abc3b4e3fbff90b1b7417233d279840fb5db7895b8eca9425a41e0079063c48",
+    "bytes": 103045,
+    "width": 800,
+    "height": 534,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/f123acc4d548d8e8f96d2.png",
@@ -6206,8 +6861,13 @@
     "caption": "Дом-музей Общества Мейфлауэр",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "ce743abbb3dbf37a.jpg",
+    "sha256": "db34f80e4aa2135174551ca97afe88ce06d1b34314fdb514356e70bce49bd27f",
+    "bytes": 130958,
+    "width": 800,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/17159a6b058788d12d1dc.png",
@@ -6216,8 +6876,13 @@
     "caption": "«Мэйфлауэр II»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7997ed5de16b6d27.jpg",
+    "sha256": "09b3e7032567e55dc3f6faa0ef3abe763b88eb9b8cf512c618faca766d38fbc3",
+    "bytes": 121599,
+    "width": 749,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://sun9-26.userapi.com/s/v1/ig2/VYuEQnr80tMPU6X17YAs9cHDXdtPt1W6q69qBkyCxWRLWGwbisgHx4EF5Y4u5VOjWqOcLXwTX17wJyQY4qB0yy_F.jpg?quality=96&as=32x37,48x55,72x83,108x124,160x184,240x276,360x415,480x553,540x622,626x721&from=bu&cs=72x0",
@@ -6511,8 +7176,13 @@
     "caption": "Франческо Гварди. Отправление Бучинторо на Лидо в день Вознесения. (1780)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "3a148f23aabc79e5.jpg",
+    "sha256": "453cd16270cdafa9ad07fd6736f0685d7827ea3770af0d4e9d26b9f613991a5b",
+    "bytes": 181794,
+    "width": 800,
+    "height": 535,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/022b7d07ff3c8dec28f28.png",
@@ -6521,8 +7191,13 @@
     "caption": "Музейная модель Бучинторо",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5ef99fa3ae559b25.jpg",
+    "sha256": "c50742dc8bfdce7cb8b427771f6f6254424125b628b37e365a1778cd7a72955f",
+    "bytes": 105114,
+    "width": 503,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/b68993147707ad82a4c8c.png",
@@ -6531,8 +7206,13 @@
     "caption": "Каналетто. Возвращение Бучинторо на Моло в день Вознесения. (1730)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "a21070081a074e98.jpg",
+    "sha256": "2068fe781ac48a72848a75c2feda290de35de4acd630ec3d38e9fbee8636739a",
+    "bytes": 156831,
+    "width": 799,
+    "height": 559,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/e982b1ea78f91a903cf3b.png",
@@ -6541,8 +7221,13 @@
     "caption": "Войцех Коссак. Обручение Польши с морем. (1930)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d3fbdf9f19fad377.jpg",
+    "sha256": "2cb83cb543234f63de7e52107bd457498e6c2bf48b23d023758e04474eda7400",
+    "bytes": 137371,
+    "width": 800,
+    "height": 553,
+    "status": "ok"
   },
   {
     "url": "https://sun9-2.userapi.com/s/v1/ig2/Ga1JEs4hv0dBCUY-MgUxgsYdA9Uz1aLTNnMm2e_eqvyuEyZHJMHooeyeaf1zsPkJ_npSGI7AdGHAL3oZq2esC67H.jpg?quality=96&as=32x50,48x75,72x113,108x169,160x250,240x375,360x563,383x599&from=bu&cs=72x0",
@@ -6686,8 +7371,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "27bff275e45d8ce2.jpg",
+    "sha256": "7eeb522391d33ae2ced585a8ccea332ce42dbaedcaec4dc5ac015efc0df44f82",
+    "bytes": 27933,
+    "width": 437,
+    "height": 518,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/def58c5b07c96bb453627.png",
@@ -6696,8 +7386,13 @@
     "caption": "Джеймс Макферсон",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "fc8e6c62f19211ff.jpg",
+    "sha256": "60e80b7cb31729202d544c6be14c89b7c3819290eeda6b639ab03a554337ae2b",
+    "bytes": 37386,
+    "width": 497,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/ecf0a145aff2bb4fbb21e.png",
@@ -6706,8 +7401,13 @@
     "caption": "«Фингал» Макферсона, второе издание (1762)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d85a86f2c1955222.jpg",
+    "sha256": "a04d2eefe7cbf9cfc28333ed911c0ab16dfac3cf75c024936142c8740841a612",
+    "bytes": 41389,
+    "width": 438,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/0e56e690f61071a096b51.png",
@@ -6716,8 +7416,13 @@
     "caption": "Оссиан и Мальвина. Иоганн Петер Краффт (1810).",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "86d1f5a95fbb9ade.jpg",
+    "sha256": "93f44c99b5d7615a6e352a89264c6593012b3f3016d772c67a6734b5886aeb12",
+    "bytes": 50434,
+    "width": 481,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://sun9-7.userapi.com/s/v1/ig2/IP4_kUpdPZNjEVfHpSyy41uWadnPl4SiCRrLfw36Tt___kJBYIaLIj7I74qgp1A-8Z5Iq4h6QFAcG89W7Wjxmu41.jpg?quality=96&as=32x45,48x67,72x100,108x150,160x223,240x334,360x501,431x600&from=bu&cs=72x0",
@@ -6876,8 +7581,13 @@
     "caption": "Первая леди США Пэт Никсон в зоопарке Пекина в 1972 году",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d342408d2cdfc809.jpg",
+    "sha256": "ca75e9eea3629608046b9efed01a17a69e7fc034962c4ac21a6d023d2366fe8a",
+    "bytes": 56859,
+    "width": 352,
+    "height": 500,
+    "status": "ok"
   },
   {
     "url": "https://sun9-28.userapi.com/s/v1/ig2/FePeIgo18iAGrq3bzWNRUANVUI4CbhuYmcS1nEMjVTB1zRi9bt3CaoU-_61WCkTe-kEYZx4qYGIZVjySD0gjC99X.jpg?quality=96&as=32x45,48x67,72x100,108x150,160x223,240x334,360x501,430x599&from=bu&cs=72x0",
@@ -7051,8 +7761,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "bbdd07c531018f3f.jpg",
+    "sha256": "5784c29dbc7642ba9c4af96b0f10aa446ce307feefc1e6c82806a0e9dc6e1325",
+    "bytes": 117321,
+    "width": 930,
+    "height": 614,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/9f5ffd0059191d8cda017.png",
@@ -7061,8 +7776,13 @@
     "caption": "Карл Шпицвег. «Пепельная среда»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1425570b007eb9ab.jpg",
+    "sha256": "c6a598ceafb768a3a25f5dd8a917844077d54bda814501a2ede29936f1e5036e",
+    "bytes": 453070,
+    "width": 800,
+    "height": 1210,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/fe98856aee62c86d7bab7.png",
@@ -7071,8 +7791,13 @@
     "caption": "Марди Гра в Новом Орлеане Derek Bridges, Flickr",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "b56243ae039696e8.jpg",
+    "sha256": "4f28a90471ed85fd5c2a8ffc17b55e39afde3fc3cea1c3db0c756d95d853d253",
+    "bytes": 186817,
+    "width": 960,
+    "height": 640,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/321e6d88b833dffbf4bb1.png",
@@ -7081,8 +7806,13 @@
     "caption": "Копия черепа «пилтдаунского человека»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1f42b00503f0dc18.jpg",
+    "sha256": "a698ecfe30bd2bd1e188ee3ae2e1f8191df735d777020701e098203e695332c3",
+    "bytes": 98225,
+    "width": 612,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/79221eb8fc845cc9a95b5.png",
@@ -7091,8 +7821,13 @@
     "caption": "Реконструкция «Eoanthropus dawsoni» (1913)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c374b2e23a5af678.jpg",
+    "sha256": "58de808c719d7bbfdc3aefb6e9db125113bd7a2f138a31cd593ff6015d6a485f",
+    "bytes": 83208,
+    "width": 439,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/0dee702ec85f04dcc4cec.png",
@@ -7101,8 +7836,13 @@
     "caption": "Мемориал на месте находки черепа «пилтдаунского человека»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8c521662a6e295b6.jpg",
+    "sha256": "ed9c47d63746ea2c2469721b6bf32cab3a9e057e338423177a8cd4bd3e5091a0",
+    "bytes": 75339,
+    "width": 352,
+    "height": 598,
+    "status": "ok"
   },
   {
     "url": "https://sun9-13.userapi.com/s/v1/ig2/bPCuaJWP5X-OCj289ZRx12U37SQjgvj8Rol8nODeFd5plcjrPqae8DhdBTZ81573fzps2xMev6_IzuEPRM_pQ4Ws.jpg?quality=96&as=32x22,48x33,72x50,108x74,160x110,240x165,360x248,480x330,540x372,640x440,720x495,1080x743,1280x881,1440x991,1654x1138&from=bu&cs=72x0",
@@ -7276,8 +8016,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "bae85636dcff906c.jpg",
+    "sha256": "93dfebe0c74924e98245294cdbf6173f7c104ed260c1ea822d21db31ae18787b",
+    "bytes": 38250,
+    "width": 299,
+    "height": 450,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/5389c2921b017fc25bc32.png",
@@ -7286,8 +8031,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "34226d67b0abeb00.jpg",
+    "sha256": "18e02595123108c7b3e93410d94470c9c8e4d3c6760d2e5fbd924fb2b82abe3c",
+    "bytes": 167921,
+    "width": 1024,
+    "height": 534,
+    "status": "ok"
   },
   {
     "url": "https://sun9-69.userapi.com/s/v1/ig2/HqOcpgKHUc5qxhkyAuKvRTW00HGewVj9Hfqwb4edY__RqA00g1fWbUCQY7Y3diOQQzgShWr_q3KrUo5cDZQL5TIW.jpg?quality=96&as=32x18,48x28,72x41,108x62,160x92,240x138,360x207,480x277,540x311,640x369,720x415,800x461&from=bu&cs=72x0",
@@ -7956,8 +8706,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d434a92d34d509a9.jpg",
+    "sha256": "329a4ab0a9b6f60d4cea9a04933b4fa4a81cc02ce2a3734d40303ec053a43e12",
+    "bytes": 80331,
+    "width": 1024,
+    "height": 540,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/ac3a7929fbdc7ea73a870.png",
@@ -7966,8 +8721,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "25a5974c8675e9bc.jpg",
+    "sha256": "add0effa658a98ab9fdcb93244746c8712a0fa0684a7d9ef21131ca437438137",
+    "bytes": 39516,
+    "width": 320,
+    "height": 722,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/533065259dc6516e9b8b9.png",
@@ -7976,8 +8736,13 @@
     "caption": null,
     "attachedTo": "ix-purpurnoe-serdtse-4",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "0a8b523c8a5de686.png",
+    "sha256": "c6d244906321339367e5ba9f56f7593ead2e8ce79bcc1dabc69fba88d500962e",
+    "bytes": 453978,
+    "width": 595,
+    "height": 579,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/93cc572c58f99a90d4dde.png",
@@ -7986,8 +8751,13 @@
     "caption": "Дубовые листья",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "534530b4cd3c6953.jpg",
+    "sha256": "efaa2d07b2bd6f1833c6279fac8028ca36cb896efd46d35dd9ed9a277159a419",
+    "bytes": 9778,
+    "width": 417,
+    "height": 154,
+    "status": "ok"
   },
   {
     "url": "https://sun9-40.userapi.com/s/v1/ig2/ERgYCJ5XLqfRJluUKII5nSXJWMwF7s1pHs_1_E8VJfqLme8nsZpDu3z4e5BuDNpottbO3MMY5K1ko-WqzQAzaczy.jpg?quality=96&as=32x37,48x56,72x84,108x126,160x187,240x280,360x421,428x500&from=bu&cs=72x0",
@@ -8041,8 +8811,13 @@
     "caption": "Девушки за работой на фабрике United States Radium Corporation.",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "26b1a333ad4cb735.jpg",
+    "sha256": "a4e603aa531f0018f226e4c99a2ae01fd509feb2376ff506ee70f1282e584a03",
+    "bytes": 126943,
+    "width": 761,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/6c82c282a348b5ed44e23.png",
@@ -8051,8 +8826,13 @@
     "caption": null,
     "attachedTo": "ix-radievye-devushki-1",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "21ea38cfb2bc6b68.png",
+    "sha256": "8cf3a63ded646c55e38136aaef4eb3bc1ab245f580a8123f8fbdf359d54c35cf",
+    "bytes": 193814,
+    "width": 662,
+    "height": 396,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3612320b9321a09bb40c3.png",
@@ -8061,8 +8841,13 @@
     "caption": "Плакат 1921 года с рекламой радиолюминесцентных часов серии Undark, стрелки и циферблаты которых окрашивали «радиевые девушки».",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "37f96f00bf3ef474.jpg",
+    "sha256": "c3fa0e0e7054d5916fcd93103d89555d974caf175e0f6c7eaf8ae114447b45bb",
+    "bytes": 74096,
+    "width": 411,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/1ebce9f25a6f26b1344f5.png",
@@ -8071,8 +8856,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1c3d3d4151e5d65e.jpg",
+    "sha256": "62ffe1421e6c1b55bdd56aa7e7760d64e3c94e475d90606a930a1632665ee7a6",
+    "bytes": 8183,
+    "width": 297,
+    "height": 170,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/bb84ffc9348015a6ec043.png",
@@ -8081,8 +8871,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "a03c02f5c3180325.jpg",
+    "sha256": "eb02403c204522440c4919c1d66cc8ebec605185a719a27b5782b16657d255c1",
+    "bytes": 41557,
+    "width": 927,
+    "height": 641,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/83241038c98ca15174f24.png",
@@ -8091,8 +8886,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d3acb577114af80e.jpg",
+    "sha256": "e4d2e5741416b845f8749d2bf83010d0564a4f8eff5fb0ae28f51d4e231d804e",
+    "bytes": 71646,
+    "width": 834,
+    "height": 764,
+    "status": "ok"
   },
   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Irvington_statue_of_Rip_van_Winkle.jpg",
@@ -8191,8 +8991,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2f0eb1cc19909c5f.jpg",
+    "sha256": "910964816413347cd5b35f8f0bd422fd11447319c99c54a74cd846c011e41d33",
+    "bytes": 40094,
+    "width": 328,
+    "height": 499,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a5bbd5806393423526f55.png",
@@ -8201,8 +9006,13 @@
     "caption": "Оси континентов по Джареду Даймонду",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8c7efe7ed27d0650.jpg",
+    "sha256": "b9e39aede7d84dd867e965a1ea9b65aa8b89bec41ce59da00ee20f0cec41286e",
+    "bytes": 22438,
+    "width": 747,
+    "height": 370,
+    "status": "ok"
   },
   {
     "url": "https://media.grqaser.org/media/image/82/ce/7a/bananafish.jpg",
@@ -8286,8 +9096,13 @@
     "caption": "Портрет Шарля Сансона. Эжен Лампсониус",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "ace87f3687c3c665.jpg",
+    "sha256": "e61184053ef2a359c56f7d2dd09002aa090ad04773b85fa3d8640bea19b9e4e8",
+    "bytes": 107110,
+    "width": 451,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/5971ad014ae613e347f9a.png",
@@ -8296,8 +9111,13 @@
     "caption": null,
     "attachedTo": "ix-sansony-5",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d213e81faf6d9a04.png",
+    "sha256": "e5716813b68b0b8a47c9ec0b194a52515ac9b1e590b13a5fd967101bf18fcdd3",
+    "bytes": 143033,
+    "width": 253,
+    "height": 386,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/132ea45c522f634bf12aa.png",
@@ -8306,8 +9126,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7cd051d5538b6085.jpg",
+    "sha256": "7b15fde1ffaa386dc8b80f01ebf73cec79faa16999967f1cfd55a5f513e67db0",
+    "bytes": 258696,
+    "width": 1024,
+    "height": 844,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a3efcd8d3a35ec951c43a.png",
@@ -8316,8 +9141,13 @@
     "caption": "Карта Бреды из атласа ван Луна",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8f49dba532718a39.jpg",
+    "sha256": "4160ca962bbb84a837c7c1f0b195f36147da02e79a6216fd2bec6820f7539c09",
+    "bytes": 162628,
+    "width": 738,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/312d130841e3037062a73.png",
@@ -8326,8 +9156,13 @@
     "caption": null,
     "attachedTo": "ix-sdacha-bredy-3",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "f6045e3366f83bef.png",
+    "sha256": "ecdecb0d429afaa0cf0846b3214f77aa063e283ac41f9c147f8cebfd54ad2372",
+    "bytes": 261052,
+    "width": 408,
+    "height": 353,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a6d4fe07dd13ca5a881db.png",
@@ -8336,8 +9171,13 @@
     "caption": "Передача ключа испанцам",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c8ead36506a762ee.jpg",
+    "sha256": "7c332e9d105febd18343c892148fd40300d3be6762e9372a6bedb937a96707ef",
+    "bytes": 140848,
+    "width": 499,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://sun9-48.userapi.com/s/v1/ig2/Z5NIj2EBYqF568yU7fUcTtYlXetHkcqSQ3sr3QlWt-A2x3qJkYFMsKRBkjywSd1zuIzXkrMpmYRTI_bRx0F7cwLY.jpg?quality=96&as=32x24,48x36,72x55,108x82,160x121,240x182,360x273,480x364,540x409,640x485,720x545,800x606&from=bu&cs=72x0",
@@ -8616,8 +9456,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "fd6ad91e14d9edbe.jpg",
+    "sha256": "2c77160be7f4a6b0140cdfc9aeb2f973ac141ed25ec8e62781736cf4c68ef73c",
+    "bytes": 180573,
+    "width": 1024,
+    "height": 768,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/6a7438ada13ea9b0612e0.png",
@@ -8626,8 +9471,13 @@
     "caption": "Маршруты синкансэна",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "e794d01e69429385.jpg",
+    "sha256": "6fc69dbc8180827dd14528d4013ddb4cbc307759473c8e485045d19475a6e447",
+    "bytes": 65157,
+    "width": 581,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/a7b16973b701c320d4d83.png",
@@ -8636,8 +9486,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "889abbd3aeb0ac65.jpg",
+    "sha256": "bb86844bc2529cf54c1cf61703e067f9cf370726a0e4bd5a28d57ad7ac723969",
+    "bytes": 42512,
+    "width": 700,
+    "height": 461,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/eaa9c5431c0d76ec15bf6.png",
@@ -8646,8 +9501,13 @@
     "caption": null,
     "attachedTo": "ix-sinkansen-4",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "4100309563199e19.png",
+    "sha256": "df9fcc2420d8a029a66a623a16b35ff6ea4b2f004d9a5adc9b7c1670099ae21c",
+    "bytes": 675127,
+    "width": 600,
+    "height": 448,
+    "status": "ok"
   },
   {
     "url": "https://sun9-56.userapi.com/s/v1/ig2/XOt9KyKRIF5sj0HimZb9wUoW-KvusYgZrGxCgbNUWbP3hdgGHYCUCxf9aarGMGqFgXkr5Rx0GK8USoI8A0NADYbs.jpg?quality=96&as=32x22,48x34,72x50,108x76,160x112,240x168,360x252,480x337,540x379,640x449,713x500&from=bu&cs=72x0",
@@ -8761,8 +9621,13 @@
     "caption": "Моррис Сводеш (1909 — 1967)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "c82f5407f2e99b5a.jpg",
+    "sha256": "743473be70f35201c62b53414aba81c7efcdbaa8c28c7ed3d002180611f00d03",
+    "bytes": 13391,
+    "width": 250,
+    "height": 250,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/9e07eb9ead37ebda0ac05.png",
@@ -8771,8 +9636,13 @@
     "caption": null,
     "attachedTo": "ix-spisok-svodesha-1",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "f0f983bc53b09292.png",
+    "sha256": "0607067da93f1eb0e2a00eaa6b569983af8204c8b6668fe1360d09d93e5f396d",
+    "bytes": 12661,
+    "width": 600,
+    "height": 59,
+    "status": "ok"
   },
   {
     "url": "https://sun9-47.userapi.com/s/v1/ig2/Y7nrRpfuPGx2M7qFJKxh3ID4poZZiEzaQNjVKFkqcDmNH28sOahBSNxs-Vea4uV7eVQaqp_FGyUCGsLByj24SNPt.jpg?quality=96&as=32x31,48x46,72x69,108x103,160x153,240x229,360x344,480x459,540x516,640x612,720x688,750x717&from=bu&cs=72x0",
@@ -8841,8 +9711,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "0f9bb86a46997c39.jpg",
+    "sha256": "ae799768fc5874ae01dd68ab77f0eb442641e0bf8692e59e5e654792dd9ee3fd",
+    "bytes": 3792,
+    "width": 512,
+    "height": 591,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/1f0d595ed54fc8eb79e4b.png",
@@ -8851,8 +9726,13 @@
     "caption": "Френсис Келси",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5db131bb7bb0ba27.jpg",
+    "sha256": "2c57ce3d08736a5e62e16494e610f9adaef0d6864f6d8e9044a2565579c5f330",
+    "bytes": 12126,
+    "width": 307,
+    "height": 418,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8405a5c6c02a91af2e165.png",
@@ -8861,8 +9741,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "5f4c66f2355727fb.jpg",
+    "sha256": "dd94a6b924bce76bd4dfe420058100b9758cb8f5229c817a5346b5e4fe639058",
+    "bytes": 48990,
+    "width": 743,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/63017e3446d26c67ef953.png",
@@ -8871,8 +9756,13 @@
     "caption": null,
     "attachedTo": "ix-talidomid-3",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "e3aa867db7c4c12b.png",
+    "sha256": "b66324f880b28fc512ce46224ebab08993df82d93e9db406da7b1472aa893262",
+    "bytes": 250900,
+    "width": 533,
+    "height": 300,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/722827fbfbdb36a40cc40.png",
@@ -8881,8 +9771,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "79c3e2e041b6febb.jpg",
+    "sha256": "1448d1c88b5d99c763a9788b76c62df29444b34e9502094f49f7fe5d36126a59",
+    "bytes": 92620,
+    "width": 1024,
+    "height": 681,
+    "status": "ok"
   },
   {
     "url": "https://sun9-39.userapi.com/s/v1/ig2/h9KDmahjd6riZ2EJdghuZ-YqDpn8dnjCBMXqg2dkrrExq39iTre4P6L7N31G0CR3-kQw4UPhvnElM47zKfK8JBMv.jpg?quality=96&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,800x600&from=bu&cs=72x0",
@@ -8981,8 +9876,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "1be4ae3058782b45.jpg",
+    "sha256": "918f6c743c98d3b656dc91ceaf99263fb263024a904426bcdf9f0aa17eb6cacd",
+    "bytes": 52457,
+    "width": 512,
+    "height": 336,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/62c50f66e56e6aa3372d9.png",
@@ -8991,8 +9891,13 @@
     "caption": null,
     "attachedTo": "ix-teorema-o-chetyreh-kraskah-2",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7ebb8a155fa50111.png",
+    "sha256": "9db8dda78c63a1d5f35f6e8816c64e6f010f9f2f96d5010d5ea12b375ad3cae1",
+    "bytes": 56645,
+    "width": 312,
+    "height": 177,
+    "status": "ok"
   },
   {
     "url": "https://sun9-17.userapi.com/s/v1/ig2/KKp0gEO9Hg17nwfm2uAxbXFhVHFkPtgZDP9nwUKt2xMXzrZEb4-ahaP7dBy9QVFkj4vbAVc2o2PWHUx50dlPJypm.jpg?quality=96&as=32x12,48x18,72x27,108x41,160x60,240x90,360x135,480x181,540x203,640x241,720x271,800x301&from=bu&cs=72x0",
@@ -9046,8 +9951,13 @@
     "caption": "\"Тиресий превратился в женщину\", Пьетро делла Веккья",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "9537d025d8c95151.jpg",
+    "sha256": "0ff45f8da89e629d73842bdb17c45661f1fd44b4ffc91d27fa7d00e0c36221ae",
+    "bytes": 74958,
+    "width": 758,
+    "height": 583,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/92a1d5b27076e022387ed.png",
@@ -9056,8 +9966,13 @@
     "caption": "«Тиресий перед Одиссеем», Иоганн Фюссли",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "4e1890cf97e66a55.jpg",
+    "sha256": "abe8b4de64a43ae8a7842ace7e104136e390f8968cea10557880b19e74ed5bd0",
+    "bytes": 78581,
+    "width": 412,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://sun9-39.userapi.com/s/v1/ig2/eBbekQ8rYtw3scY2YqUMPXtD7vi_QgNVb6GcgWcOMKX6ykfvPY3ByT-P7i6k1BrADMAEQkiVAMHeyXwQtr6r4pwc.jpg?quality=96&as=32x41,48x61,72x91,108x137,160x203,240x305,360x457,472x599&from=bu&cs=72x0",
@@ -9111,8 +10026,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "3cc70ca3c69fbecb.jpg",
+    "sha256": "1aefcd3f4009da1cccb2177b9deb6110a723a132cfdee56f7e1bed2ba91bfbd4",
+    "bytes": 91713,
+    "width": 411,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/45a3cbb354a7f92c7af2f.png",
@@ -9121,8 +10041,13 @@
     "caption": "Тони Хоук выполняет Трюк «900»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "4f487a6ceb3243fb.jpg",
+    "sha256": "5d8b4b7e380536422adc65c1bd9f71aad5b43b2b21ecc26e732d394ec53962d2",
+    "bytes": 22736,
+    "width": 398,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/e2fb963129c3b9a4feba4.png",
@@ -9131,8 +10056,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "aa9d8399e9b2645f.jpg",
+    "sha256": "3b3ac11c2abe43c0dea76ec7acb0437d93213cd25e43d474e2f4b42f7a550ead",
+    "bytes": 23394,
+    "width": 500,
+    "height": 225,
+    "status": "ok"
   },
   {
     "url": "https://ic.pics.livejournal.com/evalinger/82867148/97973/97973_900.png",
@@ -9171,8 +10101,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8faa548c1812bd53.jpg",
+    "sha256": "dd72428602d4151fa8fe7e0b62cb5b38ad4910e770d7d3b2f33e6d118259b7a5",
+    "bytes": 70247,
+    "width": 382,
+    "height": 525,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3b56ff5ccd4570504eb27.png",
@@ -9181,8 +10116,13 @@
     "caption": null,
     "attachedTo": "ix-triller-v-manile-4",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "0637a7fb1175ea0f.png",
+    "sha256": "f7109a6af7631d0d1355ee8dc5eb54848faffe0ba78ed48873a581404e8e529a",
+    "bytes": 175088,
+    "width": 297,
+    "height": 300,
+    "status": "ok"
   },
   {
     "url": "https://sun9-64.userapi.com/s/v1/ig2/38_sbJBZIc8RGvOpHC4MEh-lRN-pytYS0zDYMmBGkJEmgvZG5gsVhapmfyTIbw_TG4HNPz_tnHT2osHjOQTLDPew.jpg?quality=96&as=32x46,48x69,72x104,108x156,160x231,240x347,360x520,415x600&from=bu&cs=72x0",
@@ -9236,8 +10176,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "44dd1748cf7d3b60.jpg",
+    "sha256": "7d9981d0ede9acb7f3c9bc72b8e2164cdaad63172a35b98ac115f9d8556ca137",
+    "bytes": 96085,
+    "width": 1024,
+    "height": 576,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3282273b3410f0a061a4f.png",
@@ -9246,8 +10191,13 @@
     "caption": null,
     "attachedTo": "ix-tuman-voiny-1",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "2de6ca18d6211d41.png",
+    "sha256": "f29a0eb0b8ad97df7acb48355ecb7351020d1c72d001d0cef06be9e8c239cfa9",
+    "bytes": 60918,
+    "width": 454,
+    "height": 396,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/af73774a6edbad0b8c4ce.png",
@@ -9256,8 +10206,13 @@
     "caption": "В эпоху дымного пороха в гуще сражения видимость была не лучше, чем в густом тумане.",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d225a7f54f8c859a.jpg",
+    "sha256": "84af08b75aa00d057d9df5a4da0f5b52b8845208ddd1317ff73c86b2f12a5db9",
+    "bytes": 48471,
+    "width": 800,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/9f77cb12f427220b4c6f6.png",
@@ -9266,8 +10221,13 @@
     "caption": "Пример начальной расстановки в «Стратего»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "548efe5342244132.jpg",
+    "sha256": "ce3586c6f615ecfdaf462e756822d6715dfadf2745dc8af8bfc5cf78275e337c",
+    "bytes": 128661,
+    "width": 800,
+    "height": 480,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3501bfe45bb6785efd166.png",
@@ -9276,8 +10236,13 @@
     "caption": "Кригшпиль. Игровая позиция, видимая белыми.",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "d2c25e7f614cdf0c.jpg",
+    "sha256": "d45f74bd681f9fc8f37d5e430804342c9e200e12b17cbdf2388d8df28bae7f72",
+    "bytes": 30692,
+    "width": 487,
+    "height": 489,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/8a203d93399e2063ac6ba.png",
@@ -9286,8 +10251,13 @@
     "caption": null,
     "attachedTo": "ix-tuman-voiny-5",
     "isHandout": true,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "27961364096d2b0f.png",
+    "sha256": "a298a7a2f987d36df09f06c9cc2f8fc15007d4925f57abe748581741a4ad6818",
+    "bytes": 70284,
+    "width": 193,
+    "height": 262,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/c66b64fe645fdeb259337.png",
@@ -9296,8 +10266,13 @@
     "caption": "Игра \"Battle for Wesnoth\". «Туман войны» обозначен серым цветом.",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "61a77e6631ea6f61.jpg",
+    "sha256": "6b7165fccdb58e476eacbca8ac6bed23903e7acf62706ca1f6b9bfa23e96ad76",
+    "bytes": 121185,
+    "width": 800,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/fc5d22b18dc90d981fd8c.png",
@@ -9306,8 +10281,13 @@
     "caption": "Empire: Wargame of the Century для Amiga",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "fac67754dd83f870.png",
+    "sha256": "aec63ee116dfe2bf60ad8e0a86d50027bc4541236585e99b34879c0419dd805a",
+    "bytes": 12046,
+    "width": 632,
+    "height": 400,
+    "status": "ok"
   },
   {
     "url": "https://sun9-19.userapi.com/s/v1/ig2/tyPL5KsMO5j0KTMMXZFEmPoWs_FFGOCF6I-5RYxARUdlHoVK4UIeeuNjRpjPEkjYzZQfSQp_hQZW2-8LgMB5fOxU.jpg?quality=96&as=32x20,48x30,72x45,108x67,160x100,240x150,360x225,480x300,540x337,640x400,720x450,1080x675,1280x800,1440x900,1920x1200&from=bu&cs=72x0",
@@ -9406,8 +10386,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "8c87ebb8f28bda6f.jpg",
+    "sha256": "0fec347cadb581ae149b66c62a97f78c042f1ce1bde15a2170356d53dbd5e993",
+    "bytes": 60658,
+    "width": 471,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/547edd8b8cf917a00db69.png",
@@ -9416,8 +10401,13 @@
     "caption": "Памятник Леверье у Парижской обсерватории",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "77ff084776af8964.jpg",
+    "sha256": "457fd9125c2da440f6635124b9c04c417c5eb0f57fdafeccadc37e9f30f56b12",
+    "bytes": 82181,
+    "width": 496,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/3ab570c68f2335489a97c.png",
@@ -9426,8 +10416,13 @@
     "caption": "Иоганн Готфрид Галле",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "95e316fcaa71afae.jpg",
+    "sha256": "435e5fd166ad5d2abddd1885b601c58184463471e6b432792b307f113a145724",
+    "bytes": 30520,
+    "width": 363,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/668d0640903a702971c16.png",
@@ -9436,8 +10431,13 @@
     "caption": "Надгробный памятник Леверье на кладбище Монпарнас",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "16ae4934f80c56db.jpg",
+    "sha256": "fdd6e93ab08e6703fc2b123434ec1f05491b786dfa0939616dac8a0cf24a9777",
+    "bytes": 117876,
+    "width": 800,
+    "height": 600,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/39c34f0bbe52906bc976e.png",
@@ -9446,8 +10446,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "cd4440e34ac3fbf9.jpg",
+    "sha256": "cbf1f2ff888638988eb73571b88df7503f1b8bf9ad5d0e267337808c9b0c830b",
+    "bytes": 94371,
+    "width": 497,
+    "height": 599,
+    "status": "ok"
   },
   {
     "url": "https://sun9-23.userapi.com/s/v1/ig2/CkhB5352rlKJTZsMVhq1w-ELL0QITIvJLUHsX8_GgHxPWaPjxWB1_2zyX5QGCeor9i1_-Fl7lA4wezia0OJkbl7O.jpg?quality=96&as=32x21,48x31,72x47,108x71,160x105,240x157,360x236,389x255&from=bu&cs=72x0",
@@ -9981,8 +10986,13 @@
     "caption": null,
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "49d8f4915c8a64ce.jpg",
+    "sha256": "a5eae08001ca661a0cbbb44f409f7ca32e7bae22f7c49d3252730dc288e5d7c1",
+    "bytes": 110848,
+    "width": 640,
+    "height": 497,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/46aec9b3e200138d333af.png",
@@ -9991,8 +11001,13 @@
     "caption": "Кадр из фильма «Человек с ружьём»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "ba12a48421058fb5.jpg",
+    "sha256": "c0cdabbbf7e0eeeba3cda82a8ec7067f963b62f8cdd6cb6a37f20d08cad5b91e",
+    "bytes": 36187,
+    "width": 933,
+    "height": 627,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/bd454b2d26e9bc4b8de57.png",
@@ -10001,8 +11016,13 @@
     "caption": "Кадр из первоначальной версии фильма «Человек с ружьём»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "ab9d7c939b40967c.jpg",
+    "sha256": "bd8ecf90c53be8cdd76306822b87b1c1421190e0f0a5c0787242f908517b68da",
+    "bytes": 40537,
+    "width": 694,
+    "height": 576,
+    "status": "ok"
   },
   {
     "url": "https://telegra.ph/file/643dc01af06f07fb62923.png",
@@ -10011,8 +11031,13 @@
     "caption": "Марк Бернес в роли Кости Жигилёва в фильме «Человек с ружьём»",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "dbbe8ddb5f3129db.jpg",
+    "sha256": "57b7663c52fad7f2a1fbe2c08bc0d4b39c3316122a18db26441a2da5e7a872cb",
+    "bytes": 48469,
+    "width": 741,
+    "height": 574,
+    "status": "ok"
   },
   {
     "url": "https://sun9-12.userapi.com/s/v1/ig2/MODVa39LUJmQQHM_y4SvexeoN4F_vA_B4G82-G-4Vo5hNMU4E3fkpHJ0bpz1ofTT5id_-qsdCc3OmBJWTvh9ZxsC.jpg?quality=96&as=32x24,48x36,72x54,108x81,160x119,240x179,360x269,480x358,540x403,640x478,720x537,800x597&from=bu&cs=72x0",
@@ -10531,7 +11556,12 @@
     "caption": "Юлиус Фучик (1903 — 1943)",
     "attachedTo": null,
     "isHandout": false,
-    "status": "unreachable",
-    "error": "хост telegra.ph не отвечает (5 обрыва подряд)"
+    "fetchedFrom": null,
+    "file": "7077d10d6c8ea7c1.jpg",
+    "sha256": "80706308e971f93afc56eef413504d1683bb0d36ecff1355662dc4d05dc80aae",
+    "bytes": 48334,
+    "width": 462,
+    "height": 600,
+    "status": "ok"
   }
 ]
