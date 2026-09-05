@@ -17,6 +17,7 @@ ROOT = os.path.join(os.path.dirname(__file__), "..")
 GQ_IN = os.path.join(ROOT, "data", "gq_clean.json")
 BINGO_IN = os.path.join(ROOT, "data", "bingo_clean.json")
 TEHNIKI = os.path.join(ROOT, "app", "assets", "tehniki.json")
+HANDOUTS = os.path.join(ROOT, "app", "assets", "handouts")
 OUT = os.path.join(ROOT, "app", "assets", "questions.json")
 
 # Версия формата ассета. Читатель — `AssetQuestionRepository`.
@@ -37,6 +38,8 @@ FIELDS = (
     "author",
     # Настоящее клише. У gq всегда None, у бинго — название темы сетки (T3).
     "theme",
+    # Имя файла раздатки в `app/assets/handouts/` (T20). None — раздатки нет.
+    "handout",
     # Эталон приёмов: проставляется здесь, а не в приложении. Регулярки живут
     # в авторском `tehniki.json` рядом с объяснением приёма — приложение их
     # не видит и не исполняет.
@@ -57,6 +60,24 @@ def is_boilerplate(acceptance):
 def load_tehniki():
     with open(TEHNIKI, encoding="utf-8") as f:
         return json.load(f)["tehniki"]
+
+
+def handout_file(row):
+    """Имя файла раздатки для вопроса или None.
+
+    Падаем, а не кладём вопрос без картинки: санитайзер вернул его в корпус
+    именно потому, что картинка есть, и «Перед вами…» без раздатки — это
+    вопрос, который нельзя взять.
+    """
+    if not row.get("handoutImage"):
+        return None
+    for ext in (".jpg", ".png"):
+        if os.path.exists(os.path.join(HANDOUTS, row["id"] + ext)):
+            return row["id"] + ext
+    raise SystemExit(
+        f"Нет раздатки для вопроса {row['id']}. "
+        f"Собери картинки: python3 scripts/build_handout_assets.py"
+    )
 
 
 def detect_tehniki(row, tehniki):
@@ -85,6 +106,7 @@ def build(rows, tehniki=None):
         if is_boilerplate(item["acceptance"]):
             item["acceptance"] = None
         item["tehniki"] = detect_tehniki(r, tehniki)
+        item["handout"] = handout_file(r)
         out.append(item)
     # `count` ловит обрезанный файл: без него усечённый ассет распарсится как
     # валидный короткий список и режим молча пойдёт по огрызку корпуса.
@@ -110,7 +132,8 @@ def main():
     for q in asset["questions"]:
         by_corpus[q["corpus"]] = by_corpus.get(q["corpus"], 0) + 1
     themes = {q["theme"] for q in asset["questions"] if q["theme"]}
-    print(f"    корпуса: {by_corpus}, тем бинго: {len(themes)}")
+    handouts = sum(1 for q in asset["questions"] if q["handout"])
+    print(f"    корпуса: {by_corpus}, тем бинго: {len(themes)}, раздаток: {handouts}")
     marked = {}
     for q in asset["questions"]:
         for t in q["tehniki"]:

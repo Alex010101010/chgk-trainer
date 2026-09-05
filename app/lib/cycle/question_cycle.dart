@@ -5,6 +5,7 @@ import '../journal/event.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
+import '../widgets/handout_image.dart';
 import '../widgets/panda_says.dart';
 import 'cycle_controller.dart';
 import 'screen_wakelock.dart';
@@ -109,10 +110,25 @@ class _QuestionCycleState extends State<QuestionCycle> {
         CyclePhase.done => const SizedBox.shrink(),
       };
 
-  Widget _questionText() => Text(
-        widget.question.question,
-        style: questionTextStyle(context),
-      );
+  /// Текст вопроса и раздатка над ним. Раздатку выдают до вопроса и не
+  /// отбирают: она видна на чтении, минуте, записи и раскрытии — всюду, где
+  /// показан сам вопрос.
+  Widget _questionText() {
+    final handout = widget.question.handout;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (handout != null) ...[
+          HandoutImage(file: handout),
+          const SizedBox(height: 12),
+        ],
+        Text(
+          widget.question.question,
+          style: questionTextStyle(context),
+        ),
+      ],
+    );
+  }
 
   Widget _reading() => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -255,6 +271,12 @@ class _QuestionCycleState extends State<QuestionCycle> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        // Раздатка остаётся и на разборе: комментарий часто объясняет именно
+        // то, что на картинке, и без неё читается как ребус.
+        if (q.handout case final file?) ...[
+          HandoutImage(file: file),
+          const SizedBox(height: 12),
+        ],
         _labelled('Ответ', q.answer),
         _labelled('Зачёт', q.acceptance),
         _labelled('Комментарий', q.comment),

@@ -33,6 +33,14 @@ jobs:
       # Ассет вопросов в git не лежит — генерируется до тестов. Объявленный,
       # но несобранный ассет роняет `flutter test`, а не выдаёт пустой экран
       # в рантайме: это и есть гард против забытого шага.
+      # Раздатки — до ассета вопросов: сборщик вопросов падает, если у вопроса
+      # с раздаткой нет файла, и это гард против забытого шага.
+      - name: Build handout assets
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 scripts/build_handout_assets.py
+        working-directory: .
+
       - name: Build question asset
         run: python3 scripts/build_app_assets.py
         working-directory: .
@@ -79,6 +87,14 @@ jobs:
           channel: stable
 
       # Ассет вопросов в git не лежит — без этого шага APK соберётся без вопросов.
+      # Раздатки — до ассета вопросов: сборщик вопросов падает, если у вопроса
+      # с раздаткой нет файла, и это гард против забытого шага.
+      - name: Build handout assets
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 scripts/build_handout_assets.py
+        working-directory: .
+
       - name: Build question asset
         run: python3 scripts/build_app_assets.py
         working-directory: .

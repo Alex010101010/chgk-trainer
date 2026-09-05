@@ -29,6 +29,11 @@ class Question {
   /// полнота низкая: пустой список значит «не нашли», а не «приёма нет».
   final List<String> tehniki;
 
+  /// Имя файла раздатки в `assets/handouts/` (T20). `null` — раздатки нет.
+  /// Вопрос с непустым полем без картинки не играется: сборщик ассета следит,
+  /// чтобы такого не случилось.
+  final String? handout;
+
   const Question({
     required this.id,
     required this.corpus,
@@ -41,6 +46,7 @@ class Question {
     this.author,
     this.theme,
     this.tehniki = const [],
+    this.handout,
   });
 
   /// Возвращает `null` на записи без обязательных полей: испорченная строка
@@ -76,6 +82,7 @@ class Question {
       theme: j['theme'] is String ? j['theme'] as String : null,
       tehniki:
           tehniki is List ? tehniki.whereType<String>().toList() : const [],
+      handout: j['handout'] is String ? j['handout'] as String : null,
     );
   }
 
@@ -91,5 +98,6 @@ class Question {
         'author': author,
         'theme': theme,
         'tehniki': tehniki,
+        'handout': handout,
       };
 }

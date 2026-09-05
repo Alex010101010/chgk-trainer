@@ -6,7 +6,16 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from build_app_assets import ASSET_VERSION, FIELDS, build, is_boilerplate, load_rows, load_tehniki
+from build_app_assets import (
+    ASSET_VERSION,
+    FIELDS,
+    HANDOUTS,
+    build,
+    handout_file,
+    is_boilerplate,
+    load_rows,
+    load_tehniki,
+)
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "..", "data")
 
@@ -95,6 +104,35 @@ def test_both_corpora_in_asset():
     check(len(themes) >= 9, "тем хватает на сетку")
 
 
+def test_handouts_reach_the_asset():
+    """T20: у вопроса с раздаткой файл обязан лежать в ассетах.
+
+    Красный→зелёный на тихом отказе: сборщик, который просто пропускает
+    ненайденную картинку, кладёт в корпус вопрос «Перед вами…» без раздатки —
+    игрок винит себя, а причина в забытом шаге сборки.
+    """
+    asset = build(load_rows())
+    with_handout = [q for q in asset["questions"] if q["handout"]]
+    check(len(with_handout) > 100, f"раздаток в ассете {len(with_handout)}")
+    check(
+        all(
+            os.path.exists(os.path.join(HANDOUTS, q["handout"]))
+            for q in with_handout
+        ),
+        "у каждой раздатки есть файл",
+    )
+    check(
+        all(q["corpus"] == "bingo" for q in with_handout),
+        "раздатки только у бинго — у gq картинок не скачано вовсе",
+    )
+    # Вопрос с раздаткой, но без файла — падение, а не молчаливый пропуск.
+    try:
+        handout_file({"id": "нет-такого", "handoutImage": "http://x/y.jpg"})
+        check(False, "ненайденная раздатка роняет сборку")
+    except SystemExit:
+        check(True, "ненайденная раздатка роняет сборку")
+
+
 def test_tehniki_examples_exist_in_corpus():
     with open(os.path.join(DATA, "gq_clean.json"), encoding="utf-8") as f:
         asset = build(json.load(f))
@@ -127,6 +165,7 @@ if __name__ == "__main__":
     test_boilerplate_cut()
     test_excluded_dropped_and_count_matches()
     test_both_corpora_in_asset()
+    test_handouts_reach_the_asset()
     test_tehniki_examples_exist_in_corpus()
     print("FAILED" if _failures else "OK")
     sys.exit(1 if _failures else 0)

@@ -179,24 +179,30 @@ def test_sanitize_end_to_end():
     check("\xa0" not in out[0]["question"], "неразрывные пробелы схлопнуты")
 
 
-def test_question_with_a_local_handout_image_is_excluded():
-    """T16 кладёт картинку локально, но «Классика» показывать её не умеет.
-    Красно-зелёный: «Назовите француза, изображенного на фотографиях» текстовым
-    правилом не ловится — оно не содержит ни «раздаточн», ни «перед вами», — и
-    без проверки по `handoutImage` уехало бы в корпус играбельным."""
+def test_question_with_a_local_handout_image_is_playable():
+    """T20: картинка скачана локально, цикл её показывает — вопрос играбелен.
+
+    Красно-зелёный на главной ловушке задачи: наличие файла обязано закрывать
+    разбор раздатки ЦЕЛИКОМ. Реализация, которая просто снимает проверку по
+    `handoutImage`, оставляет в браке 40 из 105 вопросов — те, где текст прямо
+    ссылается на картинку, то есть где раздатка нужнее всего."""
     text = "Назовите француза, изображенного на фотографиях."
-    reason, _ = exclusion_reason(text, "Бертильон.", None)
-    check(reason is None, "текстовое правило такой вопрос не ловит")
-    reason, note = exclusion_reason(text, "Бертильон.", None, handout_image="images/a.jpg")
-    check(reason == "handout", "с картинкой в теле вопрос помечен раздаткой")
-    check("картинка" in (note or ""), "причина названа своими словами")
+    reason, _ = exclusion_reason(text, "Бертильон.", None, handout_image="images/a.jpg")
+    check(reason is None, "с локальной картинкой вопрос играбелен")
+
+    pered = "Перед вами таблица. Назовите пропущенное слово."
+    reason, _ = exclusion_reason(pered, "Ответ", None, handout_image="images/a.jpg")
+    check(reason is None, "«Перед вами» с картинкой тоже играбелен")
+    reason, note = exclusion_reason(pered, "Ответ", None)
+    check(reason == "handout", "а без файла «Перед вами» по-прежнему брак")
+    check("раздаточный" in (note or ""), "причина названа своими словами")
 
 
-def test_image_only_question_is_a_handout_not_an_empty_one():
-    """Вопрос, текст которого и есть картинка. «Пусто» тут было бы неправдой:
-    в T3 такой вопрос играется, как только экран научится показывать раздатку."""
+def test_image_only_question_is_playable_with_a_file():
+    """Вопрос, текст которого и есть картинка. С файлом он играется; без файла
+    «пусто» — правда, играть нечем."""
     reason, _ = exclusion_reason("", "Каррара", None, handout_image="images/b.png")
-    check(reason == "handout", "вопрос-картинка — раздатка")
+    check(reason is None, "вопрос-картинка играется, если картинка есть")
     reason, _ = exclusion_reason("", "Каррара", None)
     check(reason == "empty", "а без картинки он по-прежнему пустой")
 
@@ -233,8 +239,8 @@ def main():
         test_structural_markers_are_excluded,
         test_accept_variants,
         test_sanitize_end_to_end,
-        test_question_with_a_local_handout_image_is_excluded,
-        test_image_only_question_is_a_handout_not_an_empty_one,
+        test_question_with_a_local_handout_image_is_playable,
+        test_image_only_question_is_playable_with_a_file,
         test_duplicates_are_marked_not_deleted,
         test_duplicate_key_ignores_punctuation_and_yo,
     ]:
