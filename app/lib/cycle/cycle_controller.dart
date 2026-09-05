@@ -89,11 +89,6 @@ class CycleController extends ChangeNotifier {
   String _userAnswer = '';
   String get userAnswer => _userAnswer;
 
-  /// Блокнот версий. Эфемерный: в журнал не едет, потребителя у черновиков
-  /// нет ни одного (см. развилку в T2a).
-  final List<String> _drafts = [];
-  List<String> get drafts => List.unmodifiable(_drafts);
-
   Verdict? _verdict;
   Verdict? get verdict => _verdict;
 
@@ -159,19 +154,6 @@ class CycleController extends ChangeNotifier {
   void setUserAnswer(String text) {
     if (_phase != CyclePhase.writing || writingClosed) return;
     _userAnswer = text;
-    notifyListeners();
-  }
-
-  void addDraft(String text) {
-    final t = text.trim();
-    if (t.isEmpty) return;
-    _drafts.add(t);
-    notifyListeners();
-  }
-
-  void removeDraft(int index) {
-    if (index < 0 || index >= _drafts.length) return;
-    _drafts.removeAt(index);
     notifyListeners();
   }
 

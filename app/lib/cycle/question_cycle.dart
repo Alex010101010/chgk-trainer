@@ -33,7 +33,6 @@ class QuestionCycle extends StatefulWidget {
 
 class _QuestionCycleState extends State<QuestionCycle> {
   late final CycleController _c;
-  final _draftField = TextEditingController();
   final _answerField = TextEditingController();
   final _bingoField = TextEditingController();
   bool _finished = false;
@@ -62,7 +61,6 @@ class _QuestionCycleState extends State<QuestionCycle> {
     holdScreenAwake(false);
     _c.removeListener(_onPhase);
     _c.dispose();
-    _draftField.dispose();
     _answerField.dispose();
     _bingoField.dispose();
     super.dispose();
@@ -136,44 +134,12 @@ class _QuestionCycleState extends State<QuestionCycle> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _questionText(),
-          const SizedBox(height: 16),
-          _draftsNotepad(editable: true),
-          const SizedBox(height: 16),
+          const SizedBox(height: 24),
           FilledButton(
             key: const Key('cycle-ready'),
             onPressed: _c.readyToAnswer,
             child: const Text('Готов отвечать'),
           ),
-        ],
-      );
-
-  /// Блокнот версий: живёт только в контроллере, в журнал не едет.
-  Widget _draftsNotepad({required bool editable}) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text('Версии', style: Theme.of(context).textTheme.labelLarge),
-          for (var i = 0; i < _c.drafts.length; i++)
-            ListTile(
-              dense: true,
-              contentPadding: EdgeInsets.zero,
-              title: Text(_c.drafts[i]),
-              trailing: editable
-                  ? IconButton(
-                      icon: const Icon(Icons.close, size: 18),
-                      onPressed: () => _c.removeDraft(i),
-                    )
-                  : null,
-            ),
-          if (editable)
-            TextField(
-              key: const Key('cycle-draft-field'),
-              controller: _draftField,
-              decoration: const InputDecoration(hintText: 'ещё версия'),
-              onSubmitted: (t) {
-                _c.addDraft(t);
-                _draftField.clear();
-              },
-            ),
         ],
       );
 
@@ -244,7 +210,6 @@ class _QuestionCycleState extends State<QuestionCycle> {
         _labelled('Источник', q.sources.join('\n')),
         _labelled('Автор', q.author),
         _labelled('Твоя версия', _c.userAnswer.isEmpty ? '—' : _c.userAnswer),
-        if (_c.drafts.isNotEmpty) _draftsNotepad(editable: false),
         const SizedBox(height: 16),
         FilledButton(
           key: const Key('cycle-to-verdict'),

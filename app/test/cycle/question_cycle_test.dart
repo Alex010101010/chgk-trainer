@@ -61,6 +61,18 @@ void main() {
     expect(got!.userAnswer, 'Уорхол');
   });
 
+  // T18: версия сдаётся один раз, в окне записи. Во время минуты ввода нет —
+  // иначе набранное в блокноте исчезает по «Готов отвечать» и выглядит как
+  // потерянная работа.
+  testWidgets('во время минуты поля ввода нет', (tester) async {
+    await _pump(tester, (_) {});
+    await _tap(tester, 'cycle-start');
+    expect(find.byType(TextField), findsNothing);
+
+    await _tap(tester, 'cycle-ready');
+    expect(find.byKey(const Key('cycle-answer-field')), findsOneWidget);
+  });
+
   testWidgets('пустая версия не блокирует переход', (tester) async {
     AnswerEvent? got;
     await _pump(tester, (e) => got = e);

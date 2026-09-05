@@ -277,18 +277,4 @@ void main() {
     expect(c.buildEvent().userAnswer, '');
     c.dispose();
   });
-
-  test('блокнот версий в событие не едет', () {
-    final c = _make(FakeClock())..startThinking();
-    c.addDraft('версия раз');
-    c.addDraft('  ');
-    expect(c.drafts, ['версия раз']);
-    c.readyToAnswer();
-    c.finishWriting();
-    c.toVerdict();
-    c.setVerdict(Verdict.taken);
-    c.confirmVerdict();
-    expect(c.buildEvent().toJson().containsKey('drafts'), isFalse);
-    c.dispose();
-  });
 }
