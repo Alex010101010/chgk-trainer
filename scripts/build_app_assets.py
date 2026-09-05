@@ -1,6 +1,9 @@
-"""Сборка ассета вопросов для приложения (T2b).
+"""Сборка ассета вопросов для приложения (T2b, T3).
 
-`data/gq_clean.json` → `app/assets/questions.json`. Ассет не коммитится: он
+`data/gq_clean.json` + `data/bingo_clean.json` → `app/assets/questions.json`.
+Корпуса лежат в одном файле и различаются полем `corpus`: режим бинго читает
+оба (отвлекающие вопросы — из gq), и второй ассет всё равно грузился бы вместе
+с первым, зато кешей стало бы два. Ассет не коммитится: он
 детерминированно выводится из дампа, который уже в git, а T11 перегоняет
 корпус не раз — каждая перегонка иначе клала бы в историю новый блоб на 8.5 МБ.
 Забытая генерация не даёт пустой экран: несобранный ассет роняет `flutter test`.
@@ -12,6 +15,7 @@ import sys
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 GQ_IN = os.path.join(ROOT, "data", "gq_clean.json")
+BINGO_IN = os.path.join(ROOT, "data", "bingo_clean.json")
 TEHNIKI = os.path.join(ROOT, "app", "assets", "tehniki.json")
 OUT = os.path.join(ROOT, "app", "assets", "questions.json")
 
@@ -31,6 +35,8 @@ FIELDS = (
     "comment",
     "sources",
     "author",
+    # Настоящее клише. У gq всегда None, у бинго — название темы сетки (T3).
+    "theme",
     # Эталон приёмов: проставляется здесь, а не в приложении. Регулярки живут
     # в авторском `tehniki.json` рядом с объяснением приёма — приложение их
     # не видит и не исполняет.
@@ -85,15 +91,26 @@ def build(rows, tehniki=None):
     return {"v": ASSET_VERSION, "count": len(out), "questions": out}
 
 
+def load_rows():
+    rows = []
+    for path in (GQ_IN, BINGO_IN):
+        with open(path, encoding="utf-8") as f:
+            rows.extend(json.load(f))
+    return rows
+
+
 def main():
-    with open(GQ_IN, encoding="utf-8") as f:
-        rows = json.load(f)
-    asset = build(rows)
+    asset = build(load_rows())
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(asset, f, ensure_ascii=False, separators=(",", ":"))
     size_mb = os.path.getsize(OUT) / 1024 / 1024
     print(f"{asset['count']} вопросов -> {OUT} ({size_mb:.2f} МБ)")
+    by_corpus = {}
+    for q in asset["questions"]:
+        by_corpus[q["corpus"]] = by_corpus.get(q["corpus"], 0) + 1
+    themes = {q["theme"] for q in asset["questions"] if q["theme"]}
+    print(f"    корпуса: {by_corpus}, тем бинго: {len(themes)}")
     marked = {}
     for q in asset["questions"]:
         for t in q["tehniki"]:

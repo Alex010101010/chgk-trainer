@@ -6,7 +6,7 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from build_app_assets import ASSET_VERSION, FIELDS, build, is_boilerplate, load_tehniki
+from build_app_assets import ASSET_VERSION, FIELDS, build, is_boilerplate, load_rows, load_tehniki
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "..", "data")
 
@@ -62,6 +62,39 @@ def test_excluded_dropped_and_count_matches():
     )
 
 
+def test_both_corpora_in_asset():
+    """T3: бинго едет в тот же ассет и приносит с собой тему.
+
+    Красный→зелёный: без `theme` в FIELDS ассет собрался бы как валидный, а
+    режим бинго молча получил бы корпус, у которого не к чему привязать клетки.
+    """
+    asset = build(load_rows())
+    by_corpus = {}
+    for q in asset["questions"]:
+        by_corpus[q["corpus"]] = by_corpus.get(q["corpus"], 0) + 1
+
+    with open(os.path.join(DATA, "sanitize_report.json"), encoding="utf-8") as f:
+        report = json.load(f)
+    for corpus in ("gq", "bingo"):
+        kept = report[corpus]["по причинам"]["kept"]
+        check(by_corpus.get(corpus) == kept, f"корпус {corpus}: {kept} вопросов в ассете")
+
+    bingo = [q for q in asset["questions"] if q["corpus"] == "bingo"]
+    check(all(q["theme"] for q in bingo), "у каждого бинго-вопроса есть тема")
+    check(
+        all(q["theme"] is None for q in asset["questions"] if q["corpus"] == "gq"),
+        "у gq темы нет — иначе «ни к одной» перестало бы быть верным ответом",
+    )
+    themes = {q["theme"] for q in bingo}
+    check(
+        len(themes) == report["bingo"]["тем осталось"],
+        f"тем в ассете столько же, сколько в корпусе ({report['bingo']['тем осталось']})",
+    )
+    # Сетка — девять клеток; меньше девяти тем с непоказанным вопросом собрать её
+    # не дадут, и режим не запустится вовсе.
+    check(len(themes) >= 9, "тем хватает на сетку")
+
+
 def test_tehniki_examples_exist_in_corpus():
     with open(os.path.join(DATA, "gq_clean.json"), encoding="utf-8") as f:
         asset = build(json.load(f))
@@ -93,6 +126,7 @@ def test_tehniki_examples_exist_in_corpus():
 if __name__ == "__main__":
     test_boilerplate_cut()
     test_excluded_dropped_and_count_matches()
+    test_both_corpora_in_asset()
     test_tehniki_examples_exist_in_corpus()
     print("FAILED" if _failures else "OK")
     sys.exit(1 if _failures else 0)

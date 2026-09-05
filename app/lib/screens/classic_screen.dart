@@ -141,7 +141,13 @@ class _ClassicScreenState extends State<ClassicScreen> {
 
   Future<void> _load() async {
     try {
-      final pool = await widget.repository.loadAll();
+      // Только gq: бинго-корпус конечен, и вопрос, потраченный здесь, стал бы
+      // виденным — тема осталась бы в пуле сеток без непоказанного вопроса (T3).
+      // Только gq: бинго-корпус конечен, и вопрос, потраченный здесь, стал бы
+      // виденным — тема осталась бы в пуле сеток без непоказанного вопроса (T3).
+      final pool = (await widget.repository.loadAll())
+          .where((q) => q.corpus == Corpus.gq)
+          .toList();
       final tehniki =
           await (widget.tehnikaRepository ?? AssetTehnikaRepository()).loadAll();
       final read = await _log.readAll();

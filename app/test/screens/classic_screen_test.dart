@@ -225,6 +225,27 @@ void main() {
     expect(find.textContaining('3 строк'), findsOneWidget);
   });
 
+  // T3: корпуса едут одним ассетом, и без явного фильтра Классика тратила бы
+  // конечные бинго-вопросы — тема осталась бы в пуле сеток без вопроса.
+  testWidgets('бинго-вопросы в поток Классики не попадают', (tester) async {
+    const bingo = Question(
+      id: 'bingo-1',
+      corpus: Corpus.bingo,
+      question: 'вопрос про клише',
+      answer: 'ответ',
+      acceptVariants: ['ответ'],
+      theme: 'Гинденбург',
+    );
+    await _pumpClassic(tester, MemoryEventLog(),
+        repo: FakeRepository([bingo, ..._pool.take(4)]));
+
+    for (var i = 0; i < 4; i++) {
+      await _playOne(tester, verdict: Verdict.missed);
+    }
+    expect(find.byKey(const Key('classic-summary')), findsOneWidget);
+    expect(find.textContaining('вопрос про клише'), findsNothing);
+  });
+
   testWidgets('несобранный ассет показывается ошибкой с инструкцией',
       (tester) async {
     await _pumpClassic(

@@ -88,19 +88,86 @@ double? takenRate(List<JournalEvent> events, {int window = 50}) {
   return taken / slice.length;
 }
 
-/// Клише, которые игрок хоть раз узнал верно. Насколько «надёжно» —
-/// определяет T3 при сборке сетки, здесь только сырой факт узнавания.
-Set<String> recognizedThemes(List<JournalEvent> events) {
-  final themes = <String>{};
+/// Клише, которые игрок узнаёт. Освоенной считается тема, где **последнее**
+/// суждение оказалось верным (T3).
+///
+/// Порог «два верных подряд» отвергнут: у 42 тем корпуса меньше трёх вопросов,
+/// и они не смогли бы стать освоенными в принципе. По последнему суждению
+/// забытое клише само выпадает из освоенных после первого же промаха.
+Set<String> masteredThemes(List<JournalEvent> events) {
+  final last = <String, AnswerEvent>{};
   for (final e in events) {
-    if (e is AnswerEvent &&
-        e.theme != null &&
-        e.themeGuess != null &&
-        e.themeGuess == e.theme) {
-      themes.add(e.theme!);
+    // Суждение — только там, где клетку спрашивали и настоящее клише известно.
+    // У gq `theme` пуст: тап по клетке на отвлекающем вопросе — предложение
+    // разметки для T14, а не узнавание.
+    if (e is! AnswerEvent || e.theme == null || e.themeGuess == null) continue;
+    final prev = last[e.theme!];
+    if (prev == null || e.ts >= prev.ts) last[e.theme!] = e;
+  }
+  return {
+    for (final e in last.values)
+      if (e.themeGuess == e.theme) e.theme!,
+  };
+}
+
+/// Состав текущей сетки — темы последнего [BingoGridEvent]. `null`, если
+/// сетку ещё ни разу не собирали.
+List<String>? currentGrid(List<JournalEvent> events) {
+  BingoGridEvent? last;
+  for (final e in events) {
+    if (e is BingoGridEvent && (last == null || e.ts >= last.ts)) last = e;
+  }
+  return last?.themes;
+}
+
+enum BingoCell { empty, filled, golden }
+
+/// Состояние клеток текущей сетки, в порядке тем. Пустой список — сетки нет.
+///
+/// Считается только по ответам **после** старта сетки: узнавание из прошлой
+/// кампании не закрашивает клетку в новой, иначе сетка открывалась бы уже
+/// наполовину закрытой.
+List<BingoCell> gridCells(List<JournalEvent> events) {
+  BingoGridEvent? grid;
+  for (final e in events) {
+    if (e is BingoGridEvent && (grid == null || e.ts >= grid.ts)) grid = e;
+  }
+  if (grid == null) return const [];
+
+  final cells = {for (final t in grid.themes) t: BingoCell.empty};
+  for (final e in events) {
+    if (e is! AnswerEvent || e.ts < grid.ts) continue;
+    if (e.theme == null || e.themeGuess != e.theme) continue;
+    if (!cells.containsKey(e.theme)) continue;
+    // Золото — узнал клише И взял сам вопрос. Однажды полученное не сгорает:
+    // повторный промах по той же клетке не отбирает уже закрытое.
+    if (e.verdict == Verdict.taken) {
+      cells[e.theme!] = BingoCell.golden;
+    } else if (cells[e.theme] == BingoCell.empty) {
+      cells[e.theme!] = BingoCell.filled;
     }
   }
-  return themes;
+  return [for (final t in grid.themes) cells[t]!];
+}
+
+/// Линии сетки 3×3: три ряда, три столбца, две диагонали.
+const List<List<int>> kBingoLines = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
+/// Есть ли три в ряд. Золото — флекс, не гейт: линия считается по закрашенным
+/// любого цвета.
+bool hasLine(List<BingoCell> cells) {
+  if (cells.length < 9) return false;
+  return kBingoLines.any(
+      (line) => line.every((i) => cells[i] != BingoCell.empty));
 }
 
 /// Номер недели стажа, с нуля. Считается по собственному журналу, а не по

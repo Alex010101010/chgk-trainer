@@ -8,11 +8,12 @@ AnswerEvent _answer({
   required String questionId,
   required Verdict verdict,
   required int daysAgo,
+  int minutesAgo = 0,
   bool hintUsed = false,
   String? theme,
   String? themeGuess,
 }) {
-  final at = _now.subtract(Duration(days: daysAgo));
+  final at = _now.subtract(Duration(days: daysAgo, minutes: minutesAgo));
   return AnswerEvent(
     ts: at.millisecondsSinceEpoch,
     day: localDay(at),
@@ -26,6 +27,20 @@ AnswerEvent _answer({
     themeGuess: themeGuess,
   );
 }
+
+/// Сетка. Часы двигаются: два события с одним `ts` дали бы неопределённый
+/// порядок «какая сетка последняя», которого в жизни не бывает.
+BingoGridEvent _grid(List<String> themes, {required int minutesAgo}) {
+  final at = _now.subtract(Duration(minutes: minutesAgo));
+  return BingoGridEvent(
+      ts: at.millisecondsSinceEpoch, day: localDay(at), themes: themes);
+}
+
+const _nine = [
+  'т1', 'т2', 'т3',
+  'т4', 'т5', 'т6',
+  'т7', 'т8', 'т9',
+];
 
 void main() {
   group('dueQuestions', () {
@@ -121,22 +136,128 @@ void main() {
     expect(takenRate(events, window: 1), 1.0);
   });
 
-  test('recognizedThemes берёт только точное совпадение с клише', () {
-    final events = [
-      _answer(
-          questionId: 'b1',
-          verdict: Verdict.taken,
-          daysAgo: 1,
-          theme: 'Ковентри',
-          themeGuess: 'Ковентри'),
-      _answer(
-          questionId: 'b2',
-          verdict: Verdict.missed,
-          daysAgo: 1,
-          theme: 'Мадлен',
-          themeGuess: kThemeGuessNone),
-      _answer(questionId: 'b3', verdict: Verdict.taken, daysAgo: 1),
-    ];
-    expect(recognizedThemes(events), {'Ковентри'});
+  group('masteredThemes', () {
+    test('берёт только точное совпадение с клише', () {
+      final events = [
+        _answer(
+            questionId: 'b1',
+            verdict: Verdict.taken,
+            daysAgo: 1,
+            theme: 'Ковентри',
+            themeGuess: 'Ковентри'),
+        _answer(
+            questionId: 'b2',
+            verdict: Verdict.missed,
+            daysAgo: 1,
+            theme: 'Мадлен',
+            themeGuess: kThemeGuessNone),
+        // Тап по клетке на отвлекающем gq-вопросе: клише нет, узнавания нет.
+        _answer(
+            questionId: 'b3',
+            verdict: Verdict.taken,
+            daysAgo: 1,
+            themeGuess: 'Ковентри'),
+      ];
+      expect(masteredThemes(events), {'Ковентри'});
+    });
+
+    test('решает последнее суждение, а не первое', () {
+      // Красный→зелёный: реализация «узнал хоть раз» держит обе темы освоенными.
+      final events = [
+        _answer(
+            questionId: 'b1',
+            verdict: Verdict.taken,
+            daysAgo: 3,
+            theme: 'Ковентри',
+            themeGuess: 'Ковентри'),
+        _answer(
+            questionId: 'b2',
+            verdict: Verdict.missed,
+            daysAgo: 1,
+            theme: 'Ковентри',
+            themeGuess: kThemeGuessNone),
+        _answer(
+            questionId: 'b3',
+            verdict: Verdict.missed,
+            daysAgo: 3,
+            theme: 'Мадлен',
+            themeGuess: 'Ковентри'),
+        _answer(
+            questionId: 'b4',
+            verdict: Verdict.taken,
+            daysAgo: 1,
+            theme: 'Мадлен',
+            themeGuess: 'Мадлен'),
+      ];
+      expect(masteredThemes(events), {'Мадлен'});
+    });
+  });
+
+  group('сетка бинго', () {
+    test('текущая сетка — последняя собранная', () {
+      expect(currentGrid([]), isNull);
+      final events = [
+        _grid(const ['старая'], minutesAgo: 30),
+        _grid(_nine, minutesAgo: 10),
+      ];
+      expect(currentGrid(events), _nine);
+    });
+
+    test('клетка закрашивается узнаванием, золотится взятым вопросом', () {
+      final events = <JournalEvent>[
+        _grid(_nine, minutesAgo: 60),
+        _answer(
+            questionId: 'q1',
+            verdict: Verdict.missed,
+            daysAgo: 0,
+            minutesAgo: 30,
+            theme: 'т1',
+            themeGuess: 'т1'),
+        _answer(
+            questionId: 'q2',
+            verdict: Verdict.taken,
+            daysAgo: 0,
+            minutesAgo: 20,
+            theme: 'т5',
+            themeGuess: 'т5'),
+        // Мимо клетки — состояние не меняется.
+        _answer(
+            questionId: 'q3',
+            verdict: Verdict.taken,
+            daysAgo: 0,
+            minutesAgo: 10,
+            theme: 'т9',
+            themeGuess: kThemeGuessNone),
+      ];
+      final cells = gridCells(events);
+      expect(cells[0], BingoCell.filled);
+      expect(cells[4], BingoCell.golden);
+      expect(cells[8], BingoCell.empty);
+    });
+
+    test('узнавания до старта сетки её не закрашивают', () {
+      // Красный→зелёный: без сверки с `ts` сетки новая кампания открывалась бы
+      // уже наполовину закрытой — по темам, узнанным в прошлой.
+      final events = <JournalEvent>[
+        _answer(
+            questionId: 'q1',
+            verdict: Verdict.taken,
+            daysAgo: 1,
+            theme: 'т1',
+            themeGuess: 'т1'),
+        _grid(_nine, minutesAgo: 10),
+      ];
+      expect(gridCells(events).every((c) => c == BingoCell.empty), isTrue);
+    });
+
+    test('линия — три в ряд любого цвета', () {
+      expect(hasLine(const []), isFalse);
+      final cells = List.filled(9, BingoCell.empty);
+      cells[2] = BingoCell.filled;
+      cells[4] = BingoCell.golden;
+      expect(hasLine(cells), isFalse);
+      cells[6] = BingoCell.filled;
+      expect(hasLine(cells), isTrue);
+    });
   });
 }

@@ -74,6 +74,8 @@ sealed class JournalEvent {
         return AnswerEvent._fromJson(j, ts, day);
       case 'note':
         return NoteEvent._fromJson(j, ts, day);
+      case 'bingoGrid':
+        return BingoGridEvent._fromJson(j, ts, day);
       case 'sessionStart':
         return SessionStartEvent(ts: ts, day: day);
       default:
@@ -225,6 +227,44 @@ class NoteEvent extends JournalEvent {
       text: text,
       questionId: j['questionId'] is String ? j['questionId'] as String : null,
     );
+  }
+}
+
+/// Состав сетки «Бинго» (T3) — девять тем в порядке клеток.
+///
+/// Единственное, что нельзя вывести свёрткой: выбор тем случайный, и после
+/// перезапуска приложение собрало бы другую сетку, потеряв прогресс игрока.
+/// Закрашенность клеток при этом по-прежнему считается по ответам, отдельного
+/// хранилища прогресса не появляется.
+class BingoGridEvent extends JournalEvent {
+  final List<String> themes;
+
+  const BingoGridEvent({
+    required super.ts,
+    required super.day,
+    required this.themes,
+  });
+
+  factory BingoGridEvent.at(DateTime now, List<String> themes) => BingoGridEvent(
+        ts: now.toUtc().millisecondsSinceEpoch,
+        day: localDay(now),
+        themes: themes,
+      );
+
+  @override
+  String get type => 'bingoGrid';
+
+  @override
+  Map<String, dynamic> body() => {'themes': themes};
+
+  static BingoGridEvent? _fromJson(Map<String, dynamic> j, int ts, String day) {
+    final themes = j['themes'];
+    if (themes is! List) return null;
+    final list = themes.whereType<String>().toList();
+    // Сетка без тем — не сетка: пустой список означал бы, что клетки не к чему
+    // привязать, а режим молча показал бы девять пустых квадратов.
+    if (list.isEmpty) return null;
+    return BingoGridEvent(ts: ts, day: day, themes: list);
   }
 }
 

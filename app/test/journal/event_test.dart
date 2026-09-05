@@ -65,6 +65,25 @@ void main() {
     expect(roundTrip(start), start.toJson());
   });
 
+  test('round-trip сетки бинго', () {
+    final grid = BingoGridEvent.at(
+      DateTime.utc(2026, 9, 5, 12),
+      const ['Гинденбург', 'Ковентри', 'Мёртвые души'],
+    );
+    expect(roundTrip(grid), grid.toJson());
+    expect(grid.day, '2026-09-05');
+
+    // Сетка без тем — не сетка: девять пустых квадратов молча не рисуем.
+    expect(
+        JournalEvent.fromJson(
+            {'v': 1, 'type': 'bingoGrid', 'ts': 1, 'day': 'x', 'themes': []}),
+        isNull);
+    expect(
+        JournalEvent.fromJson(
+            {'v': 1, 'type': 'bingoGrid', 'ts': 1, 'day': 'x'}),
+        isNull);
+  });
+
   test('незнакомый тип и будущая версия схемы не разбираются', () {
     expect(JournalEvent.fromJson({'v': 1, 'type': 'нечто', 'ts': 1, 'day': 'x'}),
         isNull);
