@@ -193,6 +193,32 @@ void main() {
     });
   });
 
+  group('encounteredThemes', () {
+    test('считает показанное, а не угаданное', () {
+      final events = [
+        // Тема попалась и не узнана — это и есть «встречалось».
+        _answer(
+            questionId: 'b1',
+            verdict: Verdict.missed,
+            daysAgo: 2,
+            theme: 'Ковентри',
+            themeGuess: kThemeGuessNone),
+        // Клетку не спрашивали вовсе: тема всё равно попалась.
+        _answer(
+            questionId: 'b2', verdict: Verdict.taken, daysAgo: 1,
+            theme: 'Мадлен'),
+        // Тап по клетке на отвлекающем gq-вопросе: настоящей темы нет,
+        // и «Титаник» игроку не показывали — только он сам о нём подумал.
+        _answer(
+            questionId: 'g1',
+            verdict: Verdict.taken,
+            daysAgo: 1,
+            themeGuess: 'Титаник'),
+      ];
+      expect(encounteredThemes(events), {'Ковентри', 'Мадлен'});
+    });
+  });
+
   group('сетка бинго', () {
     test('текущая сетка — последняя собранная', () {
       expect(currentGrid([]), isNull);

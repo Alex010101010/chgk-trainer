@@ -256,6 +256,14 @@ void main() {
       expect(find.byKey(const Key('article-missing')), findsOneWidget);
     });
 
+    testWidgets('кнопка открывает справочник клише', (tester) async {
+      await _pumpBingo(tester, MemoryEventLog());
+      await _tapKey(tester, 'bingo-reference');
+
+      expect(find.byKey(const Key('reference-list')), findsOneWidget);
+      expect(find.byKey(const Key('reference-counters')), findsOneWidget);
+    });
+
     testWidgets('несобранный ассет справок — не «статьи нет», а инструкция',
         (tester) async {
       final log = MemoryEventLog();

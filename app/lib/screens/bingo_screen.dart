@@ -13,6 +13,7 @@ import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
 import '../panda/panda_voice.dart';
+import 'reference_screen.dart';
 import '../widgets/article_sheet.dart';
 import '../widgets/grid_label.dart';
 import '../widgets/panda_says.dart';
@@ -300,6 +301,17 @@ class _BingoScreenState extends State<BingoScreen> {
     );
   }
 
+  /// Справочник открывается отсюда, а не из главного меню: оглавление клише
+  /// имеет смысл рядом с кампанией, которая по нему и идёт.
+  void _openReference() {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => ReferenceScreen(
+        repository: widget.repository,
+        articles: _articles,
+      ),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -412,6 +424,12 @@ class _BingoScreenState extends State<BingoScreen> {
           key: const Key('bingo-start-round'),
           onPressed: _startRound,
           child: Text(_results.isEmpty ? 'Играть раунд' : 'Ещё раунд'),
+        ),
+        const SizedBox(height: 8),
+        OutlinedButton(
+          key: const Key('bingo-reference'),
+          onPressed: _openReference,
+          child: const Text('Справочник клише'),
         ),
         const SizedBox(height: 8),
         OutlinedButton(

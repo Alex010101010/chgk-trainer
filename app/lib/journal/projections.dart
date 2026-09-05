@@ -110,6 +110,16 @@ Set<String> masteredThemes(List<JournalEvent> events) {
   };
 }
 
+/// Клише, которые игроку уже попадались: по теме сыгран хотя бы один вопрос,
+/// независимо от того, узнал он её или нет (T14, справочник).
+///
+/// Считается по настоящей теме вопроса, а не по догадке: «встречалось» — это
+/// про то, что показали, а не про то, что ответили.
+Set<String> encounteredThemes(List<JournalEvent> events) => {
+      for (final e in events)
+        if (e is AnswerEvent && e.theme != null) e.theme!,
+    };
+
 /// Состав текущей сетки — темы последнего [BingoGridEvent]. `null`, если
 /// сетку ещё ни разу не собирали.
 List<String>? currentGrid(List<JournalEvent> events) {
