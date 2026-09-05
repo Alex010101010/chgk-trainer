@@ -26,6 +26,8 @@ flutter:
   assets:
     # Генерируется `python3 scripts/build_app_assets.py`, в git не едет.
     - assets/questions.json
+    # Справка по клише (T14). Тем же скриптом, в git тоже не едет.
+    - assets/articles.json
     # Авторский текст приёмов — наоборот, коммитится: генерировать его нечем.
     - assets/tehniki.json
     # Банк реплик панды — тоже авторский текст, из вычитанного черновика

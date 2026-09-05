@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../app_theme.dart';
 import '../cycle/cycle_controller.dart';
 import '../cycle/question_cycle.dart';
+import '../data/article_repository.dart';
 import '../data/question_repository.dart';
 import '../journal/event.dart';
 import '../journal/event_log.dart';
@@ -12,6 +13,8 @@ import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
 import '../panda/panda_voice.dart';
+import '../widgets/article_sheet.dart';
+import '../widgets/grid_label.dart';
 import '../widgets/panda_says.dart';
 
 /// Клеток в сетке. Девять — форма 3×3 из концепта, не настройка.
@@ -122,12 +125,17 @@ List<Question> selectBingoRound(
 /// новую.
 class BingoScreen extends StatefulWidget {
   final QuestionRepository repository;
+
+  /// Справка по клише. Отдельный ассет и отдельное чтение: он нужен только
+  /// когда карточку открыли, и грузить его вместе с корпусом незачем.
+  final ArticleRepository? articles;
   final Random? random;
   final DateTime Function()? now;
 
   const BingoScreen({
     super.key,
     required this.repository,
+    this.articles,
     this.random,
     this.now,
   });
@@ -138,6 +146,8 @@ class BingoScreen extends StatefulWidget {
 
 class _BingoScreenState extends State<BingoScreen> {
   late EventLog _log;
+  late final ArticleRepository _articles =
+      widget.articles ?? ArticleRepository();
   DateTime Function() get _now => widget.now ?? DateTime.now;
 
   List<Question>? _pool;
@@ -269,6 +279,27 @@ class _BingoScreenState extends State<BingoScreen> {
     });
   }
 
+  /// Справка по клетке. Открывается тапом по клетке между раундами: читать
+  /// справочник холодно не станет никто, а через пять секунд после промаха на
+  /// этом клише — станет.
+  Future<void> _openArticle(String theme) async {
+    Map<String, Article> articles = const {};
+    String? error;
+    try {
+      articles = await _articles.loadAll();
+    } on ArticleAssetException catch (e) {
+      error = e.message;
+    }
+    if (!mounted) return;
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (_) =>
+          ArticleSheet(theme: theme, article: articles[theme], error: error),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -350,9 +381,15 @@ class _BingoScreenState extends State<BingoScreen> {
               style: Theme.of(context).textTheme.bodySmall),
           const SizedBox(height: 16),
         ],
-        BingoBoard(themes: _grid, cells: _cells),
+        BingoBoard(themes: _grid, cells: _cells, onTapTheme: _openArticle),
         const SizedBox(height: 12),
         Text('Закрыто $filled из $kGridSize',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodySmall),
+        const SizedBox(height: 2),
+        // Без подписи справку не найдёт никто: клетка не выглядит кнопкой.
+        Text('Тап по клетке — что это за клише',
+            key: const Key('bingo-article-hint'),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 16),
@@ -405,28 +442,57 @@ class BingoBoard extends StatelessWidget {
   final List<String> themes;
   final List<BingoCell> cells;
 
-  const BingoBoard({super.key, required this.themes, required this.cells});
+  /// Тап по клетке. Null — сетка только показывается (итог раунда в цикле).
+  final void Function(String theme)? onTapTheme;
+
+  const BingoBoard({
+    super.key,
+    required this.themes,
+    required this.cells,
+    this.onTapTheme,
+  });
+
+  static const double _spacing = 8;
+  static const double _padding = 5;
+  static const double _border = 1;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return GridView.count(
-      crossAxisCount: 3,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      mainAxisSpacing: 8,
-      crossAxisSpacing: 8,
-      childAspectRatio: 1.3,
-      children: [
-        for (var i = 0; i < themes.length; i++)
-          _cell(context, scheme, themes[i],
-              i < cells.length ? cells[i] : BingoCell.empty),
-      ],
-    );
+    final base = Theme.of(context).textTheme.bodySmall ?? const TextStyle();
+    return LayoutBuilder(builder: (context, constraints) {
+      // Клетка квадратная: приплюснутая давала на строку меньше, а длинное
+      // название попадает в сетку из девяти случайных тем в половине случаев.
+      final side = (constraints.maxWidth - _spacing * 2) / 3;
+      // Рамка тоже съедает ширину: без неё расчёт обещал клетке на два
+      // пикселя больше, чем есть, и слово рвалось по буквам.
+      final inner = side - (_padding + _border) * 2;
+      final label = gridLabelStyle(
+        context,
+        labels: themes,
+        style: base,
+        maxWidth: inner,
+        maxHeight: inner,
+      );
+      return GridView.count(
+        crossAxisCount: 3,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        mainAxisSpacing: _spacing,
+        crossAxisSpacing: _spacing,
+        childAspectRatio: 1,
+        children: [
+          for (var i = 0; i < themes.length; i++)
+            _cell(context, scheme, base.copyWith(fontSize: label.fontSize),
+                label.maxLines, themes[i],
+                i < cells.length ? cells[i] : BingoCell.empty),
+        ],
+      );
+    });
   }
 
-  Widget _cell(BuildContext context, ColorScheme scheme, String theme,
-      BingoCell state) {
+  Widget _cell(BuildContext context, ColorScheme scheme, TextStyle style,
+      int maxLines, String theme, BingoCell state) {
     // Закрытая клетка держит цвет: узнал клише — сукно, узнал и взял вопрос —
     // золото. Пустая живёт контуром, чтобы сетка читалась как сетка.
     final (Color bg, Color fg) = switch (state) {
@@ -434,20 +500,28 @@ class BingoBoard extends StatelessWidget {
       BingoCell.filled => (PandaPalette.cloth, PandaPalette.paperDim),
       BingoCell.golden => (PandaPalette.gold, PandaPalette.goldInk),
     };
-    return Container(
-      padding: const EdgeInsets.all(6),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: scheme.outlineVariant),
-      ),
-      alignment: Alignment.center,
-      child: Text(
-        theme,
-        textAlign: TextAlign.center,
-        maxLines: 3,
-        overflow: TextOverflow.ellipsis,
-        style: Theme.of(context).textTheme.bodySmall?.copyWith(color: fg),
+    final radius = BorderRadius.circular(10);
+    return Material(
+      color: bg,
+      borderRadius: radius,
+      child: InkWell(
+        onTap: onTapTheme == null ? null : () => onTapTheme!(theme),
+        borderRadius: radius,
+        child: Container(
+          padding: const EdgeInsets.all(_padding),
+          decoration: BoxDecoration(
+            borderRadius: radius,
+            border: Border.all(color: scheme.outlineVariant, width: _border),
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            theme,
+            textAlign: TextAlign.center,
+            maxLines: maxLines,
+            overflow: TextOverflow.ellipsis,
+            style: style.copyWith(color: fg),
+          ),
+        ),
       ),
     );
   }

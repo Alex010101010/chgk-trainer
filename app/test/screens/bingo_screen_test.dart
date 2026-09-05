@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:chgk_trainer/data/article_repository.dart';
 import 'package:chgk_trainer/data/question_repository.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/journal/event_log.dart';
@@ -223,7 +224,62 @@ void main() {
       expect(find.byKey(const Key('bingo-error')), findsOneWidget);
       expect(find.textContaining('Клише кончились'), findsOneWidget);
     });
+
+    testWidgets('тап по клетке открывает справку по клише', (tester) async {
+      final log = MemoryEventLog();
+      await _pumpBingo(tester, log,
+          articles: FakeArticleRepository({
+            for (var t = 0; t < 12; t++)
+              'т$t': Article(
+                theme: 'т$t',
+                text: 'Что это такое.\n\n## Как обыгрывают\n\nВот так.',
+                source: 'wiki',
+              ),
+          }));
+      final theme = currentGrid((await log.readAll()).events)!.first;
+      expect(find.byKey(const Key('bingo-article-hint')), findsOneWidget);
+
+      await _tapCell(tester, theme);
+      expect(find.byKey(const Key('article-title')), findsOneWidget);
+      expect(find.text('Что это такое.'), findsOneWidget);
+      expect(find.text('Как обыгрывают'), findsOneWidget,
+          reason: 'заголовок раздела показан без разметки «##»');
+    });
+
+    testWidgets('клише без статьи — карточка говорит об этом словами',
+        (tester) async {
+      final log = MemoryEventLog();
+      await _pumpBingo(tester, log, articles: FakeArticleRepository(const {}));
+      final theme = currentGrid((await log.readAll()).events)!.first;
+
+      await _tapCell(tester, theme);
+      expect(find.byKey(const Key('article-missing')), findsOneWidget);
+    });
+
+    testWidgets('несобранный ассет справок — не «статьи нет», а инструкция',
+        (tester) async {
+      final log = MemoryEventLog();
+      await _pumpBingo(tester, log, articles: BrokenArticleRepository());
+      final theme = currentGrid((await log.readAll()).events)!.first;
+
+      await _tapCell(tester, theme);
+      expect(find.byKey(const Key('article-error')), findsOneWidget);
+      expect(find.byKey(const Key('article-missing')), findsNothing);
+      expect(find.textContaining('build_app_assets.py'), findsOneWidget);
+    });
   });
+}
+
+/// Тап по клетке сетки — по её подписи внутри доски.
+Future<void> _tapCell(WidgetTester tester, String theme) async {
+  final cell = find.descendant(
+    of: find.byType(BingoBoard),
+    matching: find.text(theme),
+  );
+  await tester.ensureVisible(cell);
+  await tester.pump();
+  await tester.tap(cell);
+  await tester.pumpAndSettle();
 }
 
 
@@ -241,8 +297,26 @@ class FakeRepository implements QuestionRepository {
 /// `roundId`, а две сетки — один `ts`, и «какая последняя» стало бы неясно.
 DateTime _clock = _now;
 
+/// Справка по клише из ассета в тесте не читается: ассет собирается скриптом,
+/// а проверяется здесь поведение экрана.
+class FakeArticleRepository extends ArticleRepository {
+  final Map<String, Article> articles;
+  FakeArticleRepository(this.articles);
+
+  @override
+  Future<Map<String, Article>> loadAll() async => articles;
+}
+
+class BrokenArticleRepository extends ArticleRepository {
+  @override
+  Future<Map<String, Article>> loadAll() async =>
+      throw const ArticleAssetException(
+        'Ассет справок не собран. Выполни: python3 scripts/build_app_assets.py',
+      );
+}
+
 Future<void> _pumpBingo(WidgetTester tester, EventLog log,
-    {List<Question>? pool}) async {
+    {List<Question>? pool, ArticleRepository? articles}) async {
   // Окно по умолчанию (800×600) короче телефона: доска с девятью клетками и
   // кнопками в него не влезает, и тап не доходит до кнопки за краем.
   tester.view.physicalSize = const Size(1200, 2400);
@@ -256,6 +330,7 @@ Future<void> _pumpBingo(WidgetTester tester, EventLog log,
         // «перезапуск» в тесте не перечитывает журнал вовсе.
         key: UniqueKey(),
         repository: FakeRepository(pool ?? _pool),
+        articles: articles ?? FakeArticleRepository(const {}),
         random: Random(1),
         now: () => _clock,
       ),

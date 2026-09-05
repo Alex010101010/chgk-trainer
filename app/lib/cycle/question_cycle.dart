@@ -5,6 +5,7 @@ import '../journal/event.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
+import '../widgets/grid_label.dart';
 import '../widgets/handout_image.dart';
 import '../widgets/panda_says.dart';
 import 'cycle_controller.dart';
@@ -219,30 +220,49 @@ class _QuestionCycleState extends State<QuestionCycle> {
           Text('К какой клетке?',
               style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 12),
-          GridView.count(
-            key: const Key('cycle-bingo-grid'),
-            crossAxisCount: 3,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
+          LayoutBuilder(builder: (context, constraints) {
+            const spacing = 8.0;
             // Клетки шире, чем высокие: квадратные заняли бы всю высоту экрана,
             // и «ни к одной» оказалась бы за краем — то есть невидимой.
-            childAspectRatio: 1.6,
-            children: [
-              for (final theme in grid)
-                OutlinedButton(
-                  onPressed: () => _c.submitBingoTap(theme),
-                  child: Text(
-                    theme,
-                    textAlign: TextAlign.center,
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodySmall,
+            const aspect = 1.6;
+            // Родные отступы кнопки съедали половину ширины клетки — на них
+            // обрезалось даже то, что по кеглю влезало.
+            const padding = EdgeInsets.all(8);
+            final side = (constraints.maxWidth - spacing * 2) / 3;
+            final style =
+                Theme.of(context).textTheme.bodySmall ?? const TextStyle();
+            final label = gridLabelStyle(
+              context,
+              labels: grid,
+              style: style,
+              // Плюс рамка кнопки, по пикселю с каждой стороны.
+              maxWidth: side - padding.horizontal - 2,
+              maxHeight: side / aspect - padding.vertical - 2,
+            );
+            return GridView.count(
+              key: const Key('cycle-bingo-grid'),
+              crossAxisCount: 3,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              mainAxisSpacing: spacing,
+              crossAxisSpacing: spacing,
+              childAspectRatio: aspect,
+              children: [
+                for (final theme in grid)
+                  OutlinedButton(
+                    onPressed: () => _c.submitBingoTap(theme),
+                    style: OutlinedButton.styleFrom(padding: padding),
+                    child: Text(
+                      theme,
+                      textAlign: TextAlign.center,
+                      maxLines: label.maxLines,
+                      overflow: TextOverflow.ellipsis,
+                      style: style.copyWith(fontSize: label.fontSize),
+                    ),
                   ),
-                ),
-            ],
-          ),
+              ],
+            );
+          }),
           const SizedBox(height: 16),
           FilledButton(
             key: const Key('cycle-bingo-none'),

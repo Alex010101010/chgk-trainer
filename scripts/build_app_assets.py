@@ -1,4 +1,4 @@
-"""Сборка ассета вопросов для приложения (T2b, T3).
+"""Сборка ассетов приложения (T2b, T3, T14).
 
 `data/gq_clean.json` + `data/bingo_clean.json` → `app/assets/questions.json`.
 Корпуса лежат в одном файле и различаются полем `corpus`: режим бинго читает
@@ -7,6 +7,11 @@
 детерминированно выводится из дампа, который уже в git, а T11 перегоняет
 корпус не раз — каждая перегонка иначе клала бы в историю новый блоб на 8.5 МБ.
 Забытая генерация не даёт пустой экран: несобранный ассет роняет `flutter test`.
+
+Вторым файлом едет `app/assets/articles.json` — справка по клише из
+`data/bingo_articles.json`. Отдельным ассетом, а не полем вопроса: справка
+одна на тему (их 333), а вопросов 8.5 тысяч, и в вопросах она лежала бы
+тридцатью копиями каждая. Читается лениво, при первом открытии карточки.
 """
 import json
 import os
@@ -16,9 +21,11 @@ import sys
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 GQ_IN = os.path.join(ROOT, "data", "gq_clean.json")
 BINGO_IN = os.path.join(ROOT, "data", "bingo_clean.json")
+ARTICLES_IN = os.path.join(ROOT, "data", "bingo_articles.json")
 TEHNIKI = os.path.join(ROOT, "app", "assets", "tehniki.json")
 HANDOUTS = os.path.join(ROOT, "app", "assets", "handouts")
 OUT = os.path.join(ROOT, "app", "assets", "questions.json")
+ARTICLES_OUT = os.path.join(ROOT, "app", "assets", "articles.json")
 
 # Версия формата ассета. Читатель — `AssetQuestionRepository`.
 ASSET_VERSION = 1
@@ -113,6 +120,20 @@ def build(rows, tehniki=None):
     return {"v": ASSET_VERSION, "count": len(out), "questions": out}
 
 
+def build_articles(rows):
+    """Справка едет только для тем, которые есть в собранном корпусе: тема без
+    вопросов в сетку не попадёт, и открывать её справку неоткуда."""
+    themes = {q["theme"] for q in rows if q.get("theme")}
+    if not os.path.exists(ARTICLES_IN):
+        raise SystemExit(
+            f"Нет {ARTICLES_IN}. Собери справки: "
+            f"python3 scripts/structure_bingo_articles.py"
+        )
+    with open(ARTICLES_IN, encoding="utf-8") as f:
+        articles = [a for a in json.load(f) if a["theme"] in themes]
+    return {"v": ASSET_VERSION, "count": len(articles), "articles": articles}
+
+
 def load_rows():
     rows = []
     for path in (GQ_IN, BINGO_IN):
@@ -140,6 +161,12 @@ def main():
             marked[t] = marked.get(t, 0) + 1
     for t, n in sorted(marked.items()):
         print(f"    приём {t}: эталон на {n} вопросах")
+
+    articles = build_articles(asset["questions"])
+    with open(ARTICLES_OUT, "w", encoding="utf-8") as f:
+        json.dump(articles, f, ensure_ascii=False, separators=(",", ":"))
+    without = len(themes) - articles["count"]
+    print(f"{articles['count']} справок -> {ARTICLES_OUT} (без справки тем: {without})")
     return 0
 
 
