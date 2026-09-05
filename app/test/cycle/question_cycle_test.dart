@@ -20,16 +20,36 @@ Future<void> _pump(
   WidgetTester tester,
   void Function(AnswerEvent) onFinished, {
   bool askBingoTap = false,
+  List<String>? bingoGrid,
 }) async {
   await tester.pumpWidget(MaterialApp(
     home: Scaffold(
       body: QuestionCycle(
         question: _q,
-        config: CycleConfig(mode: GameMode.classic, askBingoTap: askBingoTap),
+        config: CycleConfig(
+          mode: GameMode.classic,
+          askBingoTap: askBingoTap,
+          bingoGrid: bingoGrid,
+        ),
         onFinished: onFinished,
       ),
     ),
   ));
+}
+
+const _grid = [
+  'Ковентри', 'Мадлен', 'Гинденбург',
+  'Мёртвые души', 'Плот «Медузы»', 'Ковчег',
+  'Чукча', 'Павлов', 'Муха',
+];
+
+/// Довести цикл до конца после раскрытия — оценка и причина.
+Future<void> _finishAfterReveal(WidgetTester tester) async {
+  await _tap(tester, 'cycle-to-verdict');
+  await tester.tap(find.text('Не взял'));
+  await tester.pump();
+  await _tap(tester, 'cycle-verdict-done');
+  await _tap(tester, 'cycle-reason-done');
 }
 
 Future<void> _tap(WidgetTester tester, String key) async {
@@ -118,5 +138,61 @@ void main() {
     await _tap(tester, 'cycle-reason-done');
 
     expect(got!.themeGuess, 'Ковентри');
+  });
+
+  testWidgets('пустой открытый ввод — «не спрашивали», а не «ни к одной»',
+      (tester) async {
+    AnswerEvent? got;
+    await _pump(tester, (e) => got = e, askBingoTap: true);
+    await _tap(tester, 'cycle-start');
+    await _tap(tester, 'cycle-ready');
+    await _tap(tester, 'cycle-answer-done');
+    await _tap(tester, 'cycle-bingo-done');
+    await _finishAfterReveal(tester);
+    expect(got!.themeGuess, isNull);
+  });
+
+  group('сетка клеток (T3)', () {
+    testWidgets('выбор клетки пишет тему', (tester) async {
+      AnswerEvent? got;
+      await _pump(tester, (e) => got = e,
+          askBingoTap: true, bingoGrid: _grid);
+      await _tap(tester, 'cycle-start');
+
+      // Девять подсказок во время минуты превратили бы узнавание в перебор.
+      expect(find.byKey(const Key('cycle-bingo-grid')), findsNothing);
+      expect(find.text('Гинденбург'), findsNothing);
+
+      await _tap(tester, 'cycle-ready');
+      expect(find.byKey(const Key('cycle-bingo-grid')), findsNothing);
+
+      await _tap(tester, 'cycle-answer-done');
+      expect(find.byKey(const Key('cycle-bingo-grid')), findsOneWidget);
+      // Открытого ввода в режиме сетки нет.
+      expect(find.byKey(const Key('cycle-bingo-field')), findsNothing);
+
+      await tester.tap(find.text('Гинденбург'));
+      await tester.pump();
+      await _finishAfterReveal(tester);
+      expect(got!.themeGuess, 'Гинденбург');
+    });
+
+    testWidgets('«ни к одной» пишет маркер отказа, а не null', (tester) async {
+      // Красный→зелёный: наивное `submitBingoTap('')` кладёт null, и отказ
+      // становится неотличим от «клетку не спрашивали».
+      AnswerEvent? got;
+      await _pump(tester, (e) => got = e,
+          askBingoTap: true, bingoGrid: _grid);
+      await _tap(tester, 'cycle-start');
+      await _tap(tester, 'cycle-ready');
+      await _tap(tester, 'cycle-answer-done');
+      await tester.ensureVisible(find.byKey(const Key('cycle-bingo-none')));
+      await tester.pump();
+      await _tap(tester, 'cycle-bingo-none');
+      await _finishAfterReveal(tester);
+
+      expect(got!.themeGuess, kThemeGuessNone);
+      expect(got!.themeGuess, isNotNull);
+    });
   });
 }

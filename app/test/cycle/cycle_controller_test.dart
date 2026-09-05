@@ -146,15 +146,23 @@ void main() {
     c.dispose();
   });
 
-  test('пустое поле тапа даёт null, а не «ни к одной»', () {
-    // Пустая строка по контракту T10 значит «ни к одной», а это осмысленный
-    // выбор только там, где показаны девять клеток (T3).
-    final c = _make(FakeClock(), askBingoTap: true)..startThinking();
-    c.readyToAnswer();
-    c.finishWriting();
-    c.submitBingoTap('   ');
-    expect(c.themeGuess, isNull);
-    c.dispose();
+  test('«ни к одной» и «не спрашивали» — разные состояния', () {
+    // Контракт T10: пустая строка значит «ни к одной» (осмысленный выбор из
+    // девяти клеток), null — вопрос вообще не задавали. Слить их нельзя:
+    // по журналу отличить отказ от молчания будет неоткуда.
+    final none = _make(FakeClock(), askBingoTap: true)..startThinking();
+    none.readyToAnswer();
+    none.finishWriting();
+    none.submitBingoTap(kThemeGuessNone);
+    expect(none.themeGuess, kThemeGuessNone);
+    none.dispose();
+
+    final unasked = _make(FakeClock(), askBingoTap: true)..startThinking();
+    unasked.readyToAnswer();
+    unasked.finishWriting();
+    unasked.submitBingoTap(null);
+    expect(unasked.themeGuess, isNull);
+    unasked.dispose();
   });
 
   CycleController _toTehnika({bool inStandard = false}) {

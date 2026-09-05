@@ -166,7 +166,12 @@ class _QuestionCycleState extends State<QuestionCycle> {
       );
 
   /// Спрашивается ДО раскрытия: после него догадка перестаёт быть догадкой.
-  Widget _bingoTap() => Column(
+  Widget _bingoTap() {
+    final grid = widget.config.bingoGrid;
+    return grid == null ? _bingoOpenInput() : _bingoGrid(grid);
+  }
+
+  Widget _bingoOpenInput() => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const Text('Узнал клише? Назови'),
@@ -179,8 +184,54 @@ class _QuestionCycleState extends State<QuestionCycle> {
           const SizedBox(height: 16),
           FilledButton(
             key: const Key('cycle-bingo-done'),
-            onPressed: () => _c.submitBingoTap(_bingoField.text),
+            onPressed: () {
+              final t = _bingoField.text.trim();
+              // Пустой ввод — «не спрашивали», а не «ни к одной»: девяти
+              // вариантов здесь не показывали, отрицать нечего.
+              _c.submitBingoTap(t.isEmpty ? null : t);
+            },
             child: const Text('Дальше'),
+          ),
+        ],
+      );
+
+  /// Девять клеток (T3). Показываются только здесь: во время минуты они были бы
+  /// девятью подсказками, и узнавание клише подменилось бы перебором.
+  Widget _bingoGrid(List<String> grid) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text('К какой клетке?',
+              style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 12),
+          GridView.count(
+            key: const Key('cycle-bingo-grid'),
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            mainAxisSpacing: 8,
+            crossAxisSpacing: 8,
+            // Клетки шире, чем высокие: квадратные заняли бы всю высоту экрана,
+            // и «ни к одной» оказалась бы за краем — то есть невидимой.
+            childAspectRatio: 1.6,
+            children: [
+              for (final theme in grid)
+                OutlinedButton(
+                  onPressed: () => _c.submitBingoTap(theme),
+                  child: Text(
+                    theme,
+                    textAlign: TextAlign.center,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            key: const Key('cycle-bingo-none'),
+            onPressed: () => _c.submitBingoTap(kThemeGuessNone),
+            child: const Text('Ни к одной'),
           ),
         ],
       );

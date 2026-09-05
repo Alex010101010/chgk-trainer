@@ -12,6 +12,7 @@ import '../widgets/coming_soon_screen.dart';
 import '../widgets/update_button.dart';
 import 'classic_screen.dart';
 import 'debug_journal_screen.dart';
+import 'bingo_screen.dart';
 import 'tehnika_card_screen.dart';
 
 class _ModeInfo {
@@ -51,6 +52,9 @@ class HomeScreen extends StatelessWidget {
             repository: repository ?? AssetQuestionRepository(),
             tehnikaRepository: tehnikaRepository,
             cardSeen: cardSeen,
+          ),
+        'Бинго' => BingoScreen(
+            repository: repository ?? AssetQuestionRepository(),
           ),
         _ => ComingSoonScreen(
             title: title,

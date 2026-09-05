@@ -33,8 +33,12 @@ enum CyclePhase {
 class CycleConfig {
   final GameMode mode;
 
-  /// Спрашивать «узнал клише? назови» — до раскрытия.
+  /// Спрашивать «узнал клише? назови» — до раскрытия. В Классике это открытый
+  /// ввод; в режиме бинго вместо него показываются девять клеток [bingoGrid].
   final bool askBingoTap;
+
+  /// Темы клеток сетки (T3). `null` — сетки нет, спрашивается открытым вводом.
+  final List<String>? bingoGrid;
 
   /// Приём недели (T4a). `null` — фазу тапа не показывать. Решает режим:
   /// тап попадается не на каждом вопросе.
@@ -53,6 +57,7 @@ class CycleConfig {
   const CycleConfig({
     required this.mode,
     this.askBingoTap = false,
+    this.bingoGrid,
     this.tehnika,
     this.tehnikaInStandard = false,
     this.answerWindowSec = kDefaultAnswerWindowSec,
@@ -167,13 +172,13 @@ class CycleController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Непустой текст → догадка; пустое поле → `null`, «не спрашивали».
-  /// Пустая строка здесь не пишется: по контракту T10 она значит «ни к одной»,
-  /// а это осмысленный выбор только там, где показаны девять клеток (T3).
-  void submitBingoTap(String text) {
+  /// Догадка о клише. Три состояния по контракту T10 и различать их
+  /// обязательно: название темы — догадка, [kThemeGuessNone] — «ни к одной»
+  /// (осмысленный выбор, он есть только там, где показаны девять клеток),
+  /// `null` — не спрашивали, то есть открытый ввод в Классике остался пустым.
+  void submitBingoTap(String? themeGuess) {
     if (_phase != CyclePhase.bingoTap) return;
-    final t = text.trim();
-    _themeGuess = t.isEmpty ? null : t;
+    _themeGuess = themeGuess;
     _phase = CyclePhase.reveal;
     _computeHint();
     notifyListeners();

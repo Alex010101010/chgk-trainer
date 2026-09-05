@@ -265,7 +265,19 @@ void main() {
       log: MemoryEventLog(),
       child: MaterialApp(
           home: HomeScreen(
-        repository: FakeRepository(_pool),
+        // Пул с обоими корпусами: «Бинго» собирает сетку из девяти тем.
+        repository: FakeRepository([
+          ..._pool,
+          for (var t = 0; t < 9; t++)
+            Question(
+              id: 'b-$t',
+              corpus: Corpus.bingo,
+              question: 'клише $t',
+              answer: 'ответ',
+              acceptVariants: ['ответ'],
+              theme: 'тема $t',
+            ),
+        ]),
         tehnikaRepository: FakeTehniki(),
       )),
     ));
@@ -279,6 +291,13 @@ void main() {
     await tester.pageBack();
     await tester.pumpAndSettle();
     await tester.tap(find.text('Бинго'));
+    await tester.pumpAndSettle();
+    // T3: режим больше не заглушка — открывается сетка кампании.
+    expect(find.byKey(const Key('bingo-board')), findsOneWidget);
+
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Тренажёр рассуждений'));
     await tester.pumpAndSettle();
     expect(find.text('Скоро'), findsOneWidget);
   });
