@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app_theme.dart';
 import '../journal/event.dart';
+import '../journal/theme_notes.dart';
 import '../model/question.dart';
 import '../data/article_repository.dart';
 import '../model/tehnika.dart';
@@ -25,6 +26,10 @@ class QuestionCycle extends StatefulWidget {
   /// Справка по клише (T14). `null` — карточки под ответом не будет: у режима
   /// без бинго-корпуса раскрывать нечего, у вопроса без темы — тем более.
   final ArticleRepository? articles;
+
+  /// Заметки на клише (T14). В журнал пишет их этот объект, а не цикл: цикл
+  /// по-прежнему только собирает событие ответа и отдаёт его режиму.
+  final ThemeNotes? notes;
   final DateTime Function()? now;
 
   const QuestionCycle({
@@ -33,6 +38,7 @@ class QuestionCycle extends StatefulWidget {
     required this.config,
     required this.onFinished,
     this.articles,
+    this.notes,
     this.now,
   });
 
@@ -310,7 +316,7 @@ class _QuestionCycleState extends State<QuestionCycle> {
         // этот вопрос, а клише — все остальные вопросы того же рода.
         if (widget.articles case final repo?)
           if (q.theme case final theme?)
-            ArticleCard(theme: theme, repository: repo),
+            ArticleCard(theme: theme, repository: repo, notes: widget.notes),
         _labelled('Комментарий', q.comment),
         _labelled('Источник', q.sources.join('\n')),
         _labelled('Автор', q.author),

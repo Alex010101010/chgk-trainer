@@ -219,6 +219,36 @@ void main() {
     });
   });
 
+  group('themeNotes', () {
+    NoteEvent note(String theme, String text, {required int daysAgo}) {
+      final at = _now.subtract(Duration(days: daysAgo));
+      return NoteEvent(
+        ts: at.millisecondsSinceEpoch,
+        day: localDay(at),
+        theme: theme,
+        text: text,
+      );
+    }
+
+    test('показывается последняя запись, а не первая', () {
+      final events = [
+        note('Ковентри', 'первая мысль', daysAgo: 3),
+        note('Ковентри', 'понял точнее', daysAgo: 1),
+      ];
+      expect(themeNotes(events), {'Ковентри': 'понял точнее'});
+    });
+
+    test('пустая запись снимает заметку', () {
+      // Журнал append-only: «стереть» — это дописать пустое, а не удалить
+      // строку. Без этого стёртая заметка возвращалась бы после перезапуска.
+      final events = [
+        note('Ковентри', 'было', daysAgo: 2),
+        note('Ковентри', '   ', daysAgo: 1),
+      ];
+      expect(themeNotes(events), isEmpty);
+    });
+  });
+
   group('сетка бинго', () {
     test('текущая сетка — последняя собранная', () {
       expect(currentGrid([]), isNull);

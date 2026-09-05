@@ -7,6 +7,7 @@ import '../journal/event.dart';
 import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
+import '../journal/theme_notes.dart';
 import '../model/question.dart';
 import '../widgets/article_sheet.dart';
 
@@ -23,11 +24,13 @@ enum ThemeState { mastered, met, unmet }
 class ReferenceScreen extends StatefulWidget {
   final QuestionRepository repository;
   final ArticleRepository? articles;
+  final DateTime Function()? now;
 
   const ReferenceScreen({
     super.key,
     required this.repository,
     this.articles,
+    this.now,
   });
 
   @override
@@ -41,6 +44,7 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
   List<String>? _themes;
   Set<String> _mastered = const {};
   Set<String> _met = const {};
+  ThemeNotes? _notes;
   String? _error;
   bool _started = false;
 
@@ -62,6 +66,7 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
         _themes = _corpusThemes(pool);
         _mastered = masteredThemes(events);
         _met = encounteredThemes(events);
+        _notes = ThemeNotes(log: log, events: events, now: widget.now);
       });
     } on QuestionAssetException catch (e) {
       if (mounted) setState(() => _error = e.message);
@@ -100,8 +105,12 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
-      builder: (_) =>
-          ArticleSheet(theme: theme, article: articles[theme], error: error),
+      builder: (_) => ArticleSheet(
+        theme: theme,
+        article: articles[theme],
+        error: error,
+        notes: _notes,
+      ),
     );
   }
 

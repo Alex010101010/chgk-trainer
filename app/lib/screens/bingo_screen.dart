@@ -11,6 +11,7 @@ import '../journal/event.dart';
 import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
+import '../journal/theme_notes.dart';
 import '../model/question.dart';
 import '../panda/panda_voice.dart';
 import 'reference_screen.dart';
@@ -149,6 +150,10 @@ class _BingoScreenState extends State<BingoScreen> {
   late EventLog _log;
   late final ArticleRepository _articles =
       widget.articles ?? ArticleRepository();
+
+  /// Заметки живут дольше одного экрана справки, поэтому объект один на режим
+  /// и создаётся после чтения журнала.
+  ThemeNotes? _notes;
   DateTime Function() get _now => widget.now ?? DateTime.now;
 
   List<Question>? _pool;
@@ -191,6 +196,7 @@ class _BingoScreenState extends State<BingoScreen> {
         _pool = pool;
         _events = List.of(read.events);
         _skippedLines = read.skippedLines;
+        _notes = ThemeNotes(log: _log, events: _events, now: widget.now);
       });
       if (currentGrid(_events) == null) await _newGrid();
     } on QuestionAssetException catch (e) {
@@ -296,8 +302,12 @@ class _BingoScreenState extends State<BingoScreen> {
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
-      builder: (_) =>
-          ArticleSheet(theme: theme, article: articles[theme], error: error),
+      builder: (_) => ArticleSheet(
+        theme: theme,
+        article: articles[theme],
+        error: error,
+        notes: _notes,
+      ),
     );
   }
 
@@ -308,6 +318,7 @@ class _BingoScreenState extends State<BingoScreen> {
       builder: (_) => ReferenceScreen(
         repository: widget.repository,
         articles: _articles,
+        now: widget.now,
       ),
     ));
   }
@@ -365,6 +376,7 @@ class _BingoScreenState extends State<BingoScreen> {
       key: ValueKey('${_roundId}_${q.id}'),
       question: q,
       articles: _articles,
+      notes: _notes,
       config: CycleConfig(
         mode: GameMode.bingo,
         roundId: _roundId,

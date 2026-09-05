@@ -1,3 +1,4 @@
+import 'package:chgk_trainer/app_theme.dart';
 import 'package:chgk_trainer/data/article_repository.dart';
 import 'package:chgk_trainer/data/question_repository.dart';
 import 'package:chgk_trainer/journal/event.dart';
@@ -63,7 +64,10 @@ Future<void> _pump(WidgetTester tester, EventLog log) async {
   addTearDown(tester.view.reset);
   await tester.pumpWidget(JournalScope(
     log: log,
+    // Тема приложения, а не голая Material: у её кнопок задана только высота,
+    // и вёрстка, которая на голой теме проходит, на настоящей падает.
     child: MaterialApp(
+      theme: buildDarkTheme(),
       home: ReferenceScreen(
         repository: FakeRepository(_pool),
         articles: FakeArticleRepository({
@@ -112,6 +116,22 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('article-title')), findsOneWidget);
     expect(find.text('Город разбомбили в 1940-м.'), findsOneWidget);
+  });
+
+  testWidgets('заметка из справочника пишется в журнал', (tester) async {
+    final log = MemoryEventLog();
+    await _pump(tester, log);
+
+    await tester.tap(find.text('Мадлен'));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byKey(const Key('note-field')), 'про печенье');
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('note-save')));
+    await tester.pumpAndSettle();
+
+    final notes = (await log.readAll()).events.whereType<NoteEvent>().toList();
+    expect(notes.single.theme, 'Мадлен');
+    expect(notes.single.text, 'про печенье');
   });
 
   testWidgets('несобранный ассет вопросов — сообщение, а не пустой список',

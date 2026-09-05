@@ -256,6 +256,37 @@ void main() {
       expect(find.byKey(const Key('article-missing')), findsOneWidget);
     });
 
+    testWidgets('заметка на клише пишется в журнал и переживает перезапуск',
+        (tester) async {
+      final log = MemoryEventLog();
+      await _pumpBingo(tester, log,
+          articles: FakeArticleRepository(const {}));
+      final theme = currentGrid((await log.readAll()).events)!.first;
+
+      await _tapCell(tester, theme);
+      await tester.enterText(
+          find.byKey(const Key('note-field')), 'ищи бомбёжку 1940-го');
+      await tester.pump();
+      await _tapKey(tester, 'note-save');
+
+      final notes =
+          (await log.readAll()).events.whereType<NoteEvent>().toList();
+      expect(notes, hasLength(1));
+      expect(notes.single.theme, theme);
+      expect(notes.single.text, 'ищи бомбёжку 1940-го');
+
+      // Закрыть карточку: висящий модальный лист переживает pumpWidget —
+      // Navigator тот же, и «перезапуск» иначе тапает по его затемнению.
+      await tester.tapAt(const Offset(10, 10));
+      await tester.pumpAndSettle();
+
+      // Перезапуск экрана: заметка читается из журнала, а не из памяти поля.
+      _clock = _clock.add(const Duration(minutes: 5));
+      await _pumpBingo(tester, log, articles: FakeArticleRepository(const {}));
+      await _tapCell(tester, theme);
+      expect(find.text('ищи бомбёжку 1940-го'), findsOneWidget);
+    });
+
     testWidgets('кнопка открывает справочник клише', (tester) async {
       await _pumpBingo(tester, MemoryEventLog());
       await _tapKey(tester, 'bingo-reference');

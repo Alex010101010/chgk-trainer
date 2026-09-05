@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../data/article_repository.dart';
+import '../journal/theme_notes.dart';
 import 'article_sheet.dart';
+import 'theme_note_field.dart';
 
 /// Свёрнутая справка по клише под раскрытым ответом (T14).
 ///
@@ -16,10 +18,14 @@ class ArticleCard extends StatefulWidget {
   final String theme;
   final ArticleRepository repository;
 
+  /// Заметка на клише. `null` — поля не будет.
+  final ThemeNotes? notes;
+
   const ArticleCard({
     super.key,
     required this.theme,
     required this.repository,
+    this.notes,
   });
 
   @override
@@ -87,7 +93,16 @@ class _ArticleCardState extends State<ArticleCard> {
               key: const Key('cycle-article-body'),
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
               child: _loaded
-                  ? ArticleBody(article: _article, error: _error)
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ArticleBody(article: _article, error: _error),
+                        if (widget.notes case final notes?) ...[
+                          const SizedBox(height: 20),
+                          ThemeNoteField(theme: widget.theme, notes: notes),
+                        ],
+                      ],
+                    )
                   : const Center(
                       child: Padding(
                         padding: EdgeInsets.all(8),

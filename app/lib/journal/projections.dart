@@ -120,6 +120,22 @@ Set<String> encounteredThemes(List<JournalEvent> events) => {
         if (e is AnswerEvent && e.theme != null) e.theme!,
     };
 
+/// Своя заметка на клише — по последней записи (T14). Журнал append-only,
+/// поэтому правка заметки это новая запись, а пустой текст — снятая заметка:
+/// такие темы из свёртки выпадают, и «стереть» работает без удаления строк.
+Map<String, String> themeNotes(List<JournalEvent> events) {
+  final last = <String, NoteEvent>{};
+  for (final e in events) {
+    if (e is! NoteEvent) continue;
+    final prev = last[e.theme];
+    if (prev == null || e.ts >= prev.ts) last[e.theme] = e;
+  }
+  return {
+    for (final e in last.values)
+      if (e.text.trim().isNotEmpty) e.theme: e.text.trim(),
+  };
+}
+
 /// Состав текущей сетки — темы последнего [BingoGridEvent]. `null`, если
 /// сетку ещё ни разу не собирали.
 List<String>? currentGrid(List<JournalEvent> events) {

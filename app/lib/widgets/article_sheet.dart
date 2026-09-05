@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../data/article_repository.dart';
+import '../journal/theme_notes.dart';
+import 'theme_note_field.dart';
 
 /// Текст справки по клише: что это за факт и как его обыгрывают.
 ///
@@ -65,17 +67,23 @@ class ArticleBody extends StatelessWidget {
       source == 'wiki' ? 'Из вики бинго' : 'Из статьи об этом клише';
 }
 
-/// Справка, открытая тапом по клетке сетки, — во весь низ экрана.
+/// Справка, открытая тапом по клетке сетки или строке справочника, — во весь
+/// низ экрана.
 class ArticleSheet extends StatelessWidget {
   final String theme;
   final Article? article;
   final String? error;
+
+  /// Заметка на клише. `null` — поля не будет: писать некуда, если журнал
+  /// экрану не передали.
+  final ThemeNotes? notes;
 
   const ArticleSheet({
     super.key,
     required this.theme,
     this.article,
     this.error,
+    this.notes,
   });
 
   @override
@@ -96,6 +104,10 @@ class ArticleSheet extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineSmall),
               const SizedBox(height: 12),
               ArticleBody(article: article, error: error),
+              if (notes case final notes?) ...[
+                const SizedBox(height: 24),
+                ThemeNoteField(theme: theme, notes: notes),
+              ],
             ],
           ),
         ),

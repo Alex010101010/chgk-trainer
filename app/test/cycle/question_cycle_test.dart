@@ -1,5 +1,7 @@
 import 'package:chgk_trainer/cycle/cycle_controller.dart';
 import 'package:chgk_trainer/data/article_repository.dart';
+import 'package:chgk_trainer/journal/event_log.dart';
+import 'package:chgk_trainer/journal/theme_notes.dart';
 import 'package:chgk_trainer/cycle/question_cycle.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/model/question.dart';
@@ -43,12 +45,14 @@ Future<void> _pump(
   List<String>? bingoGrid,
   Question question = _q,
   ArticleRepository? articles,
+  ThemeNotes? notes,
 }) async {
   await tester.pumpWidget(MaterialApp(
     home: Scaffold(
       body: QuestionCycle(
         question: question,
         articles: articles,
+        notes: notes,
         config: CycleConfig(
           mode: GameMode.classic,
           askBingoTap: askBingoTap,
@@ -246,6 +250,27 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Город разбомбили в 1940-м.'), findsOneWidget);
       expect(find.text('Как обыгрывают'), findsOneWidget);
+    });
+
+    testWidgets('в карточке можно записать заметку на клише', (tester) async {
+      final log = MemoryEventLog();
+      final notes = ThemeNotes(log: log, events: const []);
+      await _pump(tester, (_) {},
+          question: _bingoQ, articles: repo, notes: notes);
+      await toReveal(tester);
+      await _tap(tester, 'cycle-article-toggle');
+      await tester.pumpAndSettle();
+
+      await tester.enterText(
+          find.byKey(const Key('note-field')), 'бомбёжка 1940-го');
+      await tester.pump();
+      await _tap(tester, 'note-save');
+      await tester.pumpAndSettle();
+
+      final written =
+          (await log.readAll()).events.whereType<NoteEvent>().single;
+      expect(written.theme, 'Ковентри');
+      expect(written.text, 'бомбёжка 1940-го');
     });
 
     testWidgets('у вопроса без клише карточки нет', (tester) async {
