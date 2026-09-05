@@ -352,6 +352,7 @@ class _BingoScreenState extends State<BingoScreen> {
       // и второй вопрос открывается на фазе раскрытия первого.
       key: ValueKey('${_roundId}_${q.id}'),
       question: q,
+      articles: _articles,
       config: CycleConfig(
         mode: GameMode.bingo,
         roundId: _roundId,

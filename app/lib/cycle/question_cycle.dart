@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import '../app_theme.dart';
 import '../journal/event.dart';
 import '../model/question.dart';
+import '../data/article_repository.dart';
 import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
+import '../widgets/article_card.dart';
 import '../widgets/grid_label.dart';
 import '../widgets/handout_image.dart';
 import '../widgets/panda_says.dart';
@@ -19,6 +21,10 @@ class QuestionCycle extends StatefulWidget {
   final Question question;
   final CycleConfig config;
   final void Function(AnswerEvent) onFinished;
+
+  /// Справка по клише (T14). `null` — карточки под ответом не будет: у режима
+  /// без бинго-корпуса раскрывать нечего, у вопроса без темы — тем более.
+  final ArticleRepository? articles;
   final DateTime Function()? now;
 
   const QuestionCycle({
@@ -26,6 +32,7 @@ class QuestionCycle extends StatefulWidget {
     required this.question,
     required this.config,
     required this.onFinished,
+    this.articles,
     this.now,
   });
 
@@ -299,6 +306,11 @@ class _QuestionCycleState extends State<QuestionCycle> {
         ],
         _labelled('Ответ', q.answer),
         _labelled('Зачёт', q.acceptance),
+        // Клише — сразу под ответом, до комментария: комментарий объясняет
+        // этот вопрос, а клише — все остальные вопросы того же рода.
+        if (widget.articles case final repo?)
+          if (q.theme case final theme?)
+            ArticleCard(theme: theme, repository: repo),
         _labelled('Комментарий', q.comment),
         _labelled('Источник', q.sources.join('\n')),
         _labelled('Автор', q.author),

@@ -1,4 +1,5 @@
 import 'package:chgk_trainer/cycle/cycle_controller.dart';
+import 'package:chgk_trainer/data/article_repository.dart';
 import 'package:chgk_trainer/cycle/question_cycle.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/model/question.dart';
@@ -16,16 +17,38 @@ const _q = Question(
   author: 'автор',
 );
 
+/// Вопрос бинго-корпуса: у него есть клише, и только у такого под ответом
+/// появляется справка.
+const _bingoQ = Question(
+  id: 'ix-koventri-1',
+  corpus: Corpus.bingo,
+  question: 'текст вопроса',
+  answer: 'Ковентри.',
+  acceptVariants: ['ковентри'],
+  theme: 'Ковентри',
+);
+
+class FakeArticleRepository extends ArticleRepository {
+  final Map<String, Article> articles;
+  FakeArticleRepository(this.articles);
+
+  @override
+  Future<Map<String, Article>> loadAll() async => articles;
+}
+
 Future<void> _pump(
   WidgetTester tester,
   void Function(AnswerEvent) onFinished, {
   bool askBingoTap = false,
   List<String>? bingoGrid,
+  Question question = _q,
+  ArticleRepository? articles,
 }) async {
   await tester.pumpWidget(MaterialApp(
     home: Scaffold(
       body: QuestionCycle(
-        question: _q,
+        question: question,
+        articles: articles,
         config: CycleConfig(
           mode: GameMode.classic,
           askBingoTap: askBingoTap,
@@ -193,6 +216,51 @@ void main() {
 
       expect(got!.themeGuess, kThemeGuessNone);
       expect(got!.themeGuess, isNotNull);
+    });
+  });
+
+  group('справка по клише (T14)', () {
+    final repo = FakeArticleRepository({
+      'Ковентри': const Article(
+        theme: 'Ковентри',
+        text: 'Город разбомбили в 1940-м.\n\n## Как обыгрывают\n\nВот так.',
+        source: 'wiki',
+      ),
+    });
+
+    Future<void> toReveal(WidgetTester tester) async {
+      await _tap(tester, 'cycle-start');
+      await _tap(tester, 'cycle-ready');
+      await _tap(tester, 'cycle-answer-done');
+    }
+
+    testWidgets('под ответом свёрнута и раскрывается тапом', (tester) async {
+      await _pump(tester, (_) {}, question: _bingoQ, articles: repo);
+      await toReveal(tester);
+
+      expect(find.text('Клише: Ковентри'), findsOneWidget);
+      // Свёрнута: разбор читают ради ответа, статья поверх него мешала бы.
+      expect(find.byKey(const Key('cycle-article-body')), findsNothing);
+
+      await _tap(tester, 'cycle-article-toggle');
+      await tester.pumpAndSettle();
+      expect(find.text('Город разбомбили в 1940-м.'), findsOneWidget);
+      expect(find.text('Как обыгрывают'), findsOneWidget);
+    });
+
+    testWidgets('у вопроса без клише карточки нет', (tester) async {
+      await _pump(tester, (_) {}, articles: repo);
+      await toReveal(tester);
+
+      expect(find.byKey(const Key('cycle-article-toggle')), findsNothing);
+    });
+
+    testWidgets('режим без справок — карточки нет даже у бинго-вопроса',
+        (tester) async {
+      await _pump(tester, (_) {}, question: _bingoQ);
+      await toReveal(tester);
+
+      expect(find.byKey(const Key('cycle-article-toggle')), findsNothing);
     });
   });
 }

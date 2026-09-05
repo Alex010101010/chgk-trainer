@@ -2,63 +2,45 @@ import 'package:flutter/material.dart';
 
 import '../data/article_repository.dart';
 
-/// Карточка справки по клише: что это за факт и как его обыгрывают.
+/// Текст справки по клише: что это за факт и как его обыгрывают.
 ///
 /// Абзац, начинающийся с `## `, — заголовок раздела статьи; без выделения он
 /// читается как оборванное предложение посреди текста.
-class ArticleSheet extends StatelessWidget {
-  final String theme;
+///
+/// Три случая разведены явно: статья есть, статьи нет, ассет не собран.
+/// Последний чинится командой сборки, а не поиском статьи, — и молчать о нём
+/// нельзя: несобранный ассет выглядел бы как «справок в приложении нет».
+class ArticleBody extends StatelessWidget {
   final Article? article;
-
-  /// Ассет справок не прочитался. Показывается вместо текста: «статьи нет» и
-  /// «сборка не запускалась» чинятся по-разному.
   final String? error;
 
-  const ArticleSheet({
-    super.key,
-    required this.theme,
-    this.article,
-    this.error,
-  });
+  const ArticleBody({super.key, this.article, this.error});
 
   static const String _headingMark = '## ';
 
   @override
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
-    return SafeArea(
-      child: ConstrainedBox(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.sizeOf(context).height * 0.75,
-        ),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(theme, key: const Key('article-title'), style: text.headlineSmall),
-              const SizedBox(height: 12),
-              if (error != null)
-                Text(error!,
-                    key: const Key('article-error'), style: text.bodyLarge)
-              else if (article == null)
-                Text(
-                  'Справки по этому клише нет — статьи о нём не нашлось. '
-                  'Что это такое, придётся достраивать по вопросам.',
-                  key: const Key('article-missing'),
-                  style: text.bodyLarge,
-                )
-              else
-                ..._paragraphs(context),
-              if (article != null) ...[
-                const SizedBox(height: 16),
-                Text(_sourceLabel(article!.source), style: text.bodySmall),
-              ],
-            ],
-          ),
-        ),
-      ),
+    if (error != null) {
+      return Text(error!,
+          key: const Key('article-error'), style: text.bodyLarge);
+    }
+    if (article == null) {
+      return Text(
+        'Справки по этому клише нет — статьи о нём не нашлось. '
+        'Что это такое, придётся достраивать по вопросам.',
+        key: const Key('article-missing'),
+        style: text.bodyLarge,
+      );
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        ..._paragraphs(context),
+        const SizedBox(height: 16),
+        Text(_sourceLabel(article!.source), style: text.bodySmall),
+      ],
     );
   }
 
@@ -81,4 +63,43 @@ class ArticleSheet extends StatelessWidget {
 
   static String _sourceLabel(String source) =>
       source == 'wiki' ? 'Из вики бинго' : 'Из статьи об этом клише';
+}
+
+/// Справка, открытая тапом по клетке сетки, — во весь низ экрана.
+class ArticleSheet extends StatelessWidget {
+  final String theme;
+  final Article? article;
+  final String? error;
+
+  const ArticleSheet({
+    super.key,
+    required this.theme,
+    this.article,
+    this.error,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.sizeOf(context).height * 0.75,
+        ),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(theme,
+                  key: const Key('article-title'),
+                  style: Theme.of(context).textTheme.headlineSmall),
+              const SizedBox(height: 12),
+              ArticleBody(article: article, error: error),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
