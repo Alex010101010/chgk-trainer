@@ -235,8 +235,8 @@
       "84.38"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "песочные часы"
     ]
@@ -428,8 +428,8 @@
       "17.19"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "белый крест"
     ]
@@ -617,8 +617,8 @@
       "9.38"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "якорь"
     ]
@@ -640,8 +640,8 @@
       "43.75"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "подымите мне веки",
       "поднимите мне веки, откройте мне веки"
@@ -664,8 +664,8 @@
       "48.44"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "огнетушитель"
     ]
@@ -930,8 +930,8 @@
       "14.06"
     ],
     "corpus": "gq",
-    "excluded": "duplet",
-    "excludedBy": "дуплет или блиц",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1. восход солнца, 2. зенит, 3. закат солнца",
       "1. восход , 2. зенит, 3. закат",
@@ -956,8 +956,8 @@
       "21.88"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "омега",
       "альфа/α и/, ω; зачет по омеге/ ω",
@@ -4217,8 +4217,8 @@
       "75.56"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "налог на бездетность",
       "налог на холостяков, одиноких и малосемейных граждан; tax on childlessness",
@@ -4717,8 +4717,8 @@
       "11.11"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ро́узи",
       "с незначительными искажениями"
@@ -6213,8 +6213,8 @@
       "15.49"
     ],
     "corpus": "gq",
-    "excluded": "duplet",
-    "excludedBy": "дуплет или блиц",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1. это не телефон. 2. это не папа",
       "2. это не понтифик"
@@ -6539,8 +6539,8 @@
       "57.75"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "супремаркет"
     ]
@@ -6640,8 +6640,8 @@
       "11.27"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "передача \"эвм",
       "передача эвм"
@@ -10801,8 +10801,8 @@
       "64.71"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "резец и клык",
       "в любом порядке"
@@ -12172,8 +12172,8 @@
       "52.94"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "шоколад",
       "квадратный шоколад; шоколад \"ritter sport\"; \"ritter sport",
@@ -12247,8 +12247,8 @@
       "73.53"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "греко-римская борьба"
     ]
@@ -12407,8 +12407,8 @@
       "61.76"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "солнце",
       "solaris; sol",
@@ -13757,8 +13757,8 @@
       "42.65"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "камасутра"
     ]
@@ -15353,8 +15353,8 @@
       "8.57"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "на патриарших прудах",
       "на патриарших",
@@ -15760,8 +15760,8 @@
       "37.14"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "404",
       "4-0-4"
@@ -17124,8 +17124,8 @@
       "54.76"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "короче",
       "слово(-паразит) «короче",
@@ -17514,8 +17514,8 @@
       "94.74"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "невидимые чернила",
       "исчезающие чернила, шпионские чернила, симпатические чернила"
@@ -18052,8 +18052,8 @@
     "complexity": null,
     "corpus": "gq",
     "questionRaw": "[Ведущему: неправильную орфографию в первом предложении вопроса следует выделить голосом.]\nПревед, кросавчеги! Для начала вот такой вопросег.\nПользователь Живого Журнала kanevsky объявил конкурс рисунков, один из участников которого перед вами. Каким словом из семи букв kanevsky назвал каждый из таких рисунков?",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "юзерпиг",
       "userpig"
@@ -18996,8 +18996,8 @@
     "author": "Максим Воронецкий",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "party"
     ]
@@ -19203,8 +19203,8 @@
     "author": "Максим Воронецкий",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "альфа-самец"
     ]
@@ -19453,8 +19453,8 @@
     "author": "Сергей Сазон",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "@"
     ]
@@ -20192,8 +20192,8 @@
       "55.39"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "из журнала playboy",
       "по слову «playboy» или «плэйбой",
@@ -21146,8 +21146,8 @@
       "11.11"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "move мув",
       "move"
@@ -22307,8 +22307,8 @@
     "author": null,
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "левенгука"
     ]
@@ -26924,8 +26924,8 @@
     "author": "Андрей Черданцев",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "сокращение левого предсердия"
     ]
@@ -30233,8 +30233,8 @@
       "16.09"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ирландский флаг",
       "флаг ирландии"
@@ -31445,8 +31445,8 @@
       "63.79"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "коньки"
     ]
@@ -34772,8 +34772,8 @@
     "author": "Дмитрий Башук",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "смерть с косой"
     ]
@@ -36484,8 +36484,8 @@
     "author": "Иван Стариков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "кодекс мак"
     ]
@@ -36545,8 +36545,8 @@
     "author": "Иван Стариков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "чешки"
     ]
@@ -36698,8 +36698,8 @@
     "author": "Иван Стариков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "понтия пилата",
       "пилата"
@@ -37140,8 +37140,8 @@
     "author": "Иван Стариков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "с, марта"
     ]
@@ -37249,8 +37249,8 @@
     "author": "Юрий Козьмин, Алексей Пуринсон",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "двуглавый орел"
     ]
@@ -38777,8 +38777,8 @@
     "author": "Дмитрий Жарков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "мяч для регби"
     ]
@@ -40432,8 +40432,8 @@
       "68.42"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "аполлон",
       "проект высадки на луну"
@@ -42344,8 +42344,8 @@
       "2.13"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "на мель",
       "точный ответ на двух или одной строчках",
@@ -42483,8 +42483,8 @@
       "69.15"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "автомобиль"
     ]
@@ -42669,8 +42669,8 @@
       "61.70"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "игрушка"
     ]
@@ -42816,8 +42816,8 @@
       "56.38"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "а на каком основании",
       "по смыслу, при наличии слова «основание",
@@ -44119,8 +44119,8 @@
       "5.00"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "виннету"
     ]
@@ -44642,8 +44642,8 @@
       "60.71"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "s"
     ]
@@ -44829,8 +44829,8 @@
       "25.00"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "запоминание знаков зодиака"
     ]
@@ -45019,8 +45019,8 @@
       "53.57"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "парикмахерская",
       "салон красоты, парикмахерский салон, барбершоп, цирюльня (?!)",
@@ -49406,8 +49406,8 @@
       "27.78"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "квинт гораций флакк",
       "гораций"
@@ -49497,8 +49497,8 @@
       "16.67"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "голем"
     ]
@@ -51230,8 +51230,8 @@
     "author": "Александр Кудрявцев",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "до, после"
     ]
@@ -58104,8 +58104,8 @@
       "15.91"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "4"
     ]
@@ -58749,8 +58749,8 @@
       "65.91"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "афроамериканка"
     ]
@@ -59195,8 +59195,8 @@
       "83.33"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "логический элемент \"или",
       "или",
@@ -59416,8 +59416,8 @@
       "22.22"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "в маске",
       "в \"маске",
@@ -59604,8 +59604,8 @@
       "86.11"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "lasagna code",
       "lasagna"
@@ -59675,8 +59675,8 @@
       "47.22"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ee"
     ]
@@ -59824,8 +59824,8 @@
       "66.67"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "дефрагментация"
     ]
@@ -59897,8 +59897,8 @@
       "86.11"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "витая пара"
     ]
@@ -62902,8 +62902,8 @@
       "68.89"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "защита кандидатской диссертации",
       "по слову «защита» без неверных уточнений",
@@ -63701,8 +63701,8 @@
     "author": "Александр Жабров",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "r"
     ]
@@ -63901,8 +63901,8 @@
     "author": "Андрей Косых",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "на соловьев"
     ]
@@ -64006,8 +64006,8 @@
     "author": "Алексей Морозов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "единорог"
     ]
@@ -64090,8 +64090,8 @@
     "author": "Алексей Морозов, Майя Разорёнова",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "божья коровка"
     ]
@@ -64501,8 +64501,8 @@
     "author": "Михаил Перлин, Борис Шойхет",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "purpur pur"
     ]
@@ -64915,8 +64915,8 @@
     "author": "Борис Шойхет",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "буква y"
     ]
@@ -65787,8 +65787,8 @@
       "27.27"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "камео стэна ли"
     ]
@@ -66057,8 +66057,8 @@
     "author": "Эдуард Голуб",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "пустая шпаргалка"
     ]
@@ -66117,8 +66117,8 @@
     "author": "Владимир Островский",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "любовь слепа",
       "love is blind"
@@ -66301,8 +66301,8 @@
     "author": "Владимир Островский",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "сатурналии"
     ]
@@ -66362,8 +66362,8 @@
     "author": "Владимир Островский",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "мама мыла раму"
     ]
@@ -66462,8 +66462,8 @@
     "author": "Эдуард Голуб",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "крымский друг"
     ]
@@ -67788,8 +67788,8 @@
     "author": "Александр Шапиро, Елена Пахомова",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "веревочный след",
       "след (от) веревки, след (от) шнура",
@@ -67810,8 +67810,8 @@
     "author": "Александр Шапиро",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "его форма — лента мебиуса"
     ]
@@ -67897,8 +67897,8 @@
     "author": "Александр Шапиро",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "here comes"
     ]
@@ -67998,8 +67998,8 @@
     "author": "Владимир Грамагин, Ирина Шихова, Александр Шапиро",
     "complexity": null,
     "corpus": "gq",
-    "excluded": "duplet",
-    "excludedBy": "дуплет или блиц",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1. навахи. 2. крисы",
       "в любом числе и написании"
@@ -68103,8 +68103,8 @@
     "author": "Владимир Грамагин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "цц"
     ]
@@ -69243,8 +69243,8 @@
     "author": "Григорий Алхазов, Елизавета Овдеенко",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "e-pilogue",
       "e-pilog"
@@ -71489,8 +71489,8 @@
     "author": "Игорь Мазин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "индиго",
       "индигофера"
@@ -72789,8 +72789,8 @@
     "author": "Илья Бабицкий",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "x = 24"
     ]
@@ -73781,8 +73781,8 @@
     "author": "Алексей Богомолов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "exe"
     ]
@@ -75151,8 +75151,8 @@
     "author": "Михаил Трифонов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "штандартенфюрер"
     ]
@@ -77497,8 +77497,8 @@
     ],
     "corpus": "gq",
     "questionRaw": "[Ведущему: прочитать название «Хичкок. Капот. АЛЬФЫ» с небольшими паузами между словами, так, чтобы на слух не воспринималось как «капот АЛЬФЫ»]\nРозданная вам работа уличного художника Zoom-а [зу́ма] называется «Хичкок. Капот. АЛЬФЫ». Какое слово мы заменили словом «АЛЬФЫ»?",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "птицы"
     ]
@@ -77595,8 +77595,8 @@
       "33.85"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "эдвин хаббл, джеймс уэбб (в любом порядке)",
       "хаббл, уэбб (в любом порядке)"
@@ -77643,8 +77643,8 @@
       "75.39"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "фло́ра и фа́уна",
       "фа́уна, фло́ра (в любом порядке)",
@@ -77767,8 +77767,8 @@
       "29.23"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "самые крутые звезды",
       "крутые звезды",
@@ -77946,8 +77946,8 @@
       "67.69"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "со списком кораблей",
       "перечень/каталог/список кораблей гоме́ра из «илиа́ды» (и синонимичные ответы без неверных уточнений)",
@@ -78409,8 +78409,8 @@
       "84.62"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "на надгробии"
     ]
@@ -78502,8 +78502,8 @@
       "66.81"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "well done вэл дан",
       "well done"
@@ -82916,8 +82916,8 @@
       "75.00"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "каштан"
     ]
@@ -85000,8 +85000,8 @@
       "24.74"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "небо над аустерл́ицем"
     ]
@@ -87782,8 +87782,8 @@
       "24.48"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1. панграмма. 2. анаграмма"
     ]
@@ -90526,8 +90526,8 @@
     "author": "Максим Богатов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "об извержении вулкана"
     ]
@@ -99053,8 +99053,8 @@
     "author": "Леонид Климович, Тамара Климович",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "с планетами, видимыми невооруженным глазом (ключевое слово — планеты)",
       "с планетами, видимыми невооруженным глазом"
@@ -101191,8 +101191,8 @@
       "66.67"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "лакмусовая бумажка"
     ]
@@ -101689,8 +101689,8 @@
       "44.44"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "сборник стихов льва лосева",
       "по упоминанию льва лосева: например, «книга льва лосева» или «мемуары льва лосева",
@@ -104371,8 +104371,8 @@
       "12.51"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "полусвет"
     ]
@@ -105637,8 +105637,8 @@
     "author": "Наиль Фарукшин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "madam",
       "мадам"
@@ -106043,8 +106043,8 @@
     "author": "Владимир Островский",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "вилка, нож"
     ]
@@ -108735,8 +108735,8 @@
       "8.57"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "уефа",
       "uefa"
@@ -111223,8 +111223,8 @@
       "67.65"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "эдга́р дега́",
       "по фамилии дега без неверных уточнений"
@@ -111531,8 +111531,8 @@
       "57.84"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "э",
       "егэ"
@@ -112259,8 +112259,8 @@
       "36.28"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1941"
     ]
@@ -116230,8 +116230,8 @@
     "author": "Евгений Калюков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "mec"
     ]
@@ -116315,8 +116315,8 @@
     "author": "Евгений Калюков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "мемориала \"гора рашмор",
       "по слову \"рашмор",
@@ -116513,8 +116513,8 @@
     "author": "Евгений Калюков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "лермонтов"
     ]
@@ -116860,8 +116860,8 @@
     "author": "Евгений Калюков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "утро в сосновом лесу"
     ]
@@ -118319,8 +118319,8 @@
       "27.91"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "назад в будущее"
     ]
@@ -121520,8 +121520,8 @@
       "21.99"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "vo",
       "после рассмотрения спорных — wo"
@@ -121619,8 +121619,8 @@
       "79.03"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "фергюсон"
     ]
@@ -123531,8 +123531,8 @@
     "author": "Денис Гончар",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "фридрих ницше",
       "ницше"
@@ -123616,8 +123616,8 @@
     "author": "Борис Гуревич",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "едоки картофеля"
     ]
@@ -123679,8 +123679,8 @@
     "author": "Денис Гончар",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "михалков"
     ]
@@ -123999,8 +123999,8 @@
     "author": "Денис Гончар",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "на дворе трава"
     ]
@@ -124580,8 +124580,8 @@
     "author": "Руслан Горусев",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "исток нила"
     ]
@@ -124642,8 +124642,8 @@
     "author": "Денис Гончар",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "индиана джонс"
     ]
@@ -124967,8 +124967,8 @@
     "author": "Руслан Горусев",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ночное солнце"
     ]
@@ -125147,8 +125147,8 @@
     "author": "Денис Гончар",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "команда \"штурм"
     ]
@@ -127740,8 +127740,8 @@
       "40.91"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "отец браун"
     ]
@@ -127762,8 +127762,8 @@
       "9.09"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "четки",
       "по упоминанию четок без неверных уточнений"
@@ -127962,8 +127962,8 @@
       "0.00"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "elis",
       "элис"
@@ -128860,8 +128860,8 @@
       "89.13"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "14 марта"
     ]
@@ -128956,8 +128956,8 @@
       "36.96"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "выпороть ребенка",
       "выпороть/высечь/наказать/воспитать сына/ребенка"
@@ -129563,8 +129563,8 @@
     "author": "Михаил Подгорбунских",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "зайчика",
       "кролика; в том числе с указанием на \"плейбой",
@@ -129630,8 +129630,8 @@
     "author": "Евгений Старков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "totenkopf",
       "мертвая голова"
@@ -130583,8 +130583,8 @@
       "98.41"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "гиппопотенуза",
       "hippopotenuse"
@@ -131694,8 +131694,8 @@
       "28.57"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "бесплатный сыр"
     ]
@@ -131843,8 +131843,8 @@
       "58.73"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "2"
     ]
@@ -131989,8 +131989,8 @@
     "author": "Дмитрий Бочаров",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "арина родионовна",
       "ирина родионовна; няня пушкина",
@@ -132306,8 +132306,8 @@
     "author": "Ольга Укадер",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "гипербола"
     ]
@@ -133174,8 +133174,8 @@
     "author": "Мишель Матвеев",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "матч сборных голландии и германии по футболу на евро-2012",
       "матч сборных голландии и германии"
@@ -133854,8 +133854,8 @@
     "author": "Алексей Бороненко, Юлия Закс",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ангкор, еще ангкор",
       "ангкор-ват, еще ангкор-ват"
@@ -135020,8 +135020,8 @@
       "4.17"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "quiznos куи́знос",
       "quiznos",
@@ -135587,8 +135587,8 @@
       "79.17"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "тот, кто от дедушки ушел и от бабушки ушел",
       "ответы, попадающие под форму и достаточно точно описывающие колобка, в том числе и одно слово (например, «круглый»), повторенное девять раз; сомневаетесь — отправляйте в спорный",
@@ -137628,8 +137628,8 @@
       "24.03"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "plaining",
       "плейнинг; плэйнинг",
@@ -137925,8 +137925,8 @@
       "10.39"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "formula one",
       "formula-1, формула-1, формула один"
@@ -138886,8 +138886,8 @@
       "8.16"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "netherlandish proverbs\" незерлэндиш провербс",
       "netherlandish proverbs",
@@ -139034,8 +139034,8 @@
       "17.96"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ниро вульф",
       "вульф",
@@ -140364,8 +140364,8 @@
       "42.86"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "amish (амиш)",
       "amish",
@@ -140788,8 +140788,8 @@
       "42.86"
     ],
     "corpus": "gq",
-    "excluded": "duplet",
-    "excludedBy": "дуплет или блиц",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1. этна 2. везувий"
     ]
@@ -140941,8 +140941,8 @@
     "author": "Александр Воронин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "jesus"
     ]
@@ -145303,8 +145303,8 @@
     "author": "Евгений Дёмин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "полубог",
       "demi-dieu"
@@ -147442,8 +147442,8 @@
     "author": "Сергей Перехрест",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "смотри четвертую строку"
     ]
@@ -148289,8 +148289,8 @@
     "complexity": null,
     "corpus": "gq",
     "questionRaw": "[Ведущему: при подготовке к печати обязательно проверить, чтобы раздатка была квадратной.]\nХарактеризуя степень ненависти персонажа к своему деду, писатель Даниэль Пеннак употребляет выражение из трех слов. Этим же выражением из трех слов можно описать и розданный вам фрагмент картины Антония Бродовского на мифологический сюжет. Напишите это выражение.",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "эдип в квадрате"
     ]
@@ -148603,8 +148603,8 @@
     "author": "Сергей Перехрест",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "... перевернутой страницы",
       "... переворачиваемой страницы\", \"... перевернутого листа\", \"... переворачиваемого листа",
@@ -148692,8 +148692,8 @@
     "author": "Павел Солахян",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "початок кукурузы",
       "плод кукурузы; кукурузный початок",
@@ -149283,8 +149283,8 @@
     "author": "Сергей Николенко",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "imeldific имельдифик",
       "imeldific"
@@ -149325,8 +149325,8 @@
     "author": "Александр Либер",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "national landscape gallery",
       "национальная пейзажная галерея; национальная ландшафтная галерея",
@@ -149790,8 +149790,8 @@
     "author": "Александр Марков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": "duplet",
-    "excludedBy": "дуплет или блиц",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1. убийца — на крыше в правом верхнем углу. 2. уолли",
       "2. волли, уолдо, а также латиницей (wally, waldo)",
@@ -150869,8 +150869,8 @@
       "72.31"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ло́ббиа"
     ]
@@ -151426,8 +151426,8 @@
       "46.15"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "длина очереди"
     ]
@@ -151750,8 +151750,8 @@
     "author": "Игорь Душевин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "байки из склепа"
     ]
@@ -152778,8 +152778,8 @@
     "author": "Борис Левин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "компанию сотовой связи"
     ]
@@ -152941,8 +152941,8 @@
     "author": "Иван Лазаренко",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "лимерик"
     ]
@@ -153063,8 +153063,8 @@
     "author": "Борис Левин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "он дорисовал табуретку и подписал \"та буретка\" — тоже раздельно"
     ]
@@ -153832,8 +153832,8 @@
     "author": "Павел Ершов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "генрих viii",
       "генрих тюдор"
@@ -153919,8 +153919,8 @@
     "author": "Павел Ершов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "cube"
     ]
@@ -154195,8 +154195,8 @@
     "author": "Артём Колесов, Елизавета Пономарева",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "человек-невидимка",
       "the invisible man"
@@ -155125,8 +155125,8 @@
     "author": "Александр Ершов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "колокольни",
       "колокольню"
@@ -155443,8 +155443,8 @@
     "author": "Дмитрий Сальников",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "русалочка"
     ]
@@ -155587,8 +155587,8 @@
     "author": "Игорь Тюнькин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "я пришел к тебе с приветом"
     ]
@@ -155697,8 +155697,8 @@
     "author": "Игорь Тюнькин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "павлин"
     ]
@@ -156058,8 +156058,8 @@
     "author": "Евгений Кононенко",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "портсигар"
     ]
@@ -156122,8 +156122,8 @@
     "author": "Евгений Кононенко",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "алфавит"
     ]
@@ -156203,8 +156203,8 @@
     "author": "Михаил Болотский",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "мальчиш-кибальчиш",
       "кибальчиш"
@@ -156678,8 +156678,8 @@
     "author": "Галина Лазарева",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "невозвращенцы"
     ]
@@ -157375,8 +157375,8 @@
     "author": "Сергей Дорофеев",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "гби"
     ]
@@ -157894,8 +157894,8 @@
     "author": "Артём Колесов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "деревянный макинтош"
     ]
@@ -157953,8 +157953,8 @@
     "author": "Борис Окунь",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "школьным автобусам"
     ]
@@ -158638,8 +158638,8 @@
     "author": "Дмитрий Смирнов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "с марджаной",
       "со служанкой али-бабы"
@@ -160120,8 +160120,8 @@
     "author": "Илья Миронов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "бабочка (http://vk-chgk.narod.ru/cs8ax1.jpg)",
       "бабочка"
@@ -164379,8 +164379,8 @@
     "author": "Клавдия Карпачёва",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "что, где, когда"
     ]
@@ -166773,8 +166773,8 @@
       "55.17"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "евгений поливанов"
     ]
@@ -166871,8 +166871,8 @@
       "58.62"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "федр с точками над е или без них",
       "федр с точками над е",
@@ -166906,8 +166906,8 @@
       "27.59"
     ],
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "немо меттлер",
       "немо"
@@ -167666,8 +167666,8 @@
     "author": "Алексей Ковалевский",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "л"
     ]
@@ -168644,8 +168644,8 @@
     "author": "Александр Андросов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "стиви уандер"
     ]
@@ -169373,8 +169373,8 @@
     "author": "Вадим Данько",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "... один воскрес"
     ]
@@ -173359,8 +173359,8 @@
     "author": "Александр Печеный",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "гоп, стоп",
       "в любом порядке"
@@ -178821,8 +178821,8 @@
     "author": "Станислав Осекин",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "жертвы холокоста"
     ]
@@ -179050,8 +179050,8 @@
     "author": "Мария Чамаева",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "розе паркс",
       "паркс"
@@ -179347,8 +179347,8 @@
     "author": "Борис Скоморохов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ни пуха, ни пера"
     ]
@@ -179513,8 +179513,8 @@
     "author": "Дмитрий Соловьёв, Борис Скоморохов",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "знак качества",
       "государственный знак качества ссср"
@@ -180483,8 +180483,8 @@
     "author": "Юрий Третьяков",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "распятие"
     ]
@@ -185934,8 +185934,8 @@
     "author": "Евгений Копейка",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ришелье (цитата из \"трех мушкетеров\")",
       "ришелье"
@@ -190100,8 +190100,8 @@
     "author": "Евгений Копейка",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "бумеранг"
     ]
@@ -194082,8 +194082,8 @@
     "author": "Евгений Копейка",
     "complexity": null,
     "corpus": "gq",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "оля (лазурит, опал и яшма — л,о,я — оля; заглавные буквы наименований камней в такой кольце составляли имя)",
       "оля (лазурит, опал и яшма — л,о,я — оля",

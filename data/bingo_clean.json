@@ -134,8 +134,8 @@
     "author": "Сергей Ефимов (Волгоград)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1984"
     ]
@@ -428,8 +428,8 @@
     "author": "Богдан Кравцов",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "42"
     ]
@@ -1058,8 +1058,8 @@
     "author": "Константин Науменко (Киев)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "watergate",
       "уотергейт"
@@ -1474,8 +1474,8 @@
     "source": "wiki",
     "corpus": "bingo",
     "questionRaw": "Раздаётся текст: И куда же ты полез,    ***?    Говорил: \"Вон ту фигню?    Догоню!\"    Никому, едрёна мать,    не поймать    Философских ***    В ***. Перед вами — стихотворение Евгения Лукина. Не спрашиваем, что пропущено во второй строчке. Заполните второй и третий пропуски одинаковыми словами.",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "черепах, черепах",
       "черепах"
@@ -1495,8 +1495,8 @@
     "author": "Алик Палатник (Хайфа), Мишель Матвеев (Санкт-Петербург)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "зенон"
     ]
@@ -1598,8 +1598,8 @@
     "author": "Павел Столяров (Калуга)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "апофеоз войны"
     ]
@@ -1758,8 +1758,8 @@
     "author": "Дмитрий Борок (Самара)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "манит афроамериканца"
     ]
@@ -2258,8 +2258,8 @@
     "author": "Константин Науменко (Киев)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "дженсон баттон"
     ]
@@ -3164,8 +3164,8 @@
     "author": null,
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ван гог"
     ]
@@ -3528,8 +3528,8 @@
     "author": "Михаил Иванов (Саратов)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "сын вильгельма телля"
     ]
@@ -3982,8 +3982,8 @@
     "author": "Мария Эйхгольц, Иван Эйхгольц (Воронеж)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "древне"
     ]
@@ -4022,8 +4022,8 @@
     "author": "Олег Пелипейченко (Харьков)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "гнедич"
     ]
@@ -4146,8 +4146,8 @@
     "author": "Игорь Волобуев (Донецк)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "и дым отечества нам сладок и приятен"
     ]
@@ -4370,8 +4370,8 @@
     "source": "wiki",
     "corpus": "bingo",
     "questionRaw": "Раздаётся текст:     Оглянись назад, Ипатка, Что за чучелы там ходят, То Антипка и Филатка Всё одни как стены ходят. Их все девки убегают, В хороводы не пускают. Стихотворение середины XIX века, отрывок из которого вам раздали, призывало СДЕЛАТЬ ЭТО. Назовите англичанина, который СДЕЛАЛ ЭТО впервые.",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "эдуард дженнер",
       "джеймс фиппс, дженнер, фиппс"
@@ -4863,8 +4863,8 @@
     "author": "Павел Ершов (Москва)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "число самоубийств",
       "количество самоубийств, количество суицидов"
@@ -4927,8 +4927,8 @@
     "author": "Максим Русов (Киев)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "мост \"golden gate",
       "мост \"золотые ворота\"; \"golden gate\"; \"золотые ворота",
@@ -5014,8 +5014,8 @@
     "author": "Эдуард Голуб (Киев — Бердянск)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "арфа"
     ]
@@ -5118,8 +5118,8 @@
     "author": "Кира Полевая (Гомель) при участии Евгения Миротина (Минск), в редакцииАлексея Богословского (Санкт-Петербург)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "камень, ножницы, бумага"
     ]
@@ -5139,8 +5139,8 @@
     "source": "wiki",
     "corpus": "bingo",
     "questionRaw": "Раздаётся текст: FINAL MATCH    CONRAD — BUTKIN         1st Set    R — R    R — P    R — S    P — R         2nd Set    R — S    P — P    P — P    P — R Перед вами протокол финального матча чемпионата мира по виду спорта, о котором вы наверняка слышали. Назовите его.",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "камень, ножницы, бумага",
       "rock, paper, scissors"
@@ -5160,8 +5160,8 @@
     "author": "Александр Шапиро (Ришон-ле-Цион)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "камень, ножницы, бумага"
     ]
@@ -5220,8 +5220,8 @@
     "author": "Дмитрий Христич",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "бомбардировка ковентри"
     ]
@@ -5652,8 +5652,8 @@
     "author": "Юрий Вашкулат (Киев)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "эдвард мунк",
       "мунк"
@@ -5673,8 +5673,8 @@
     "author": "Игорь Волобуев (Донецк)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "картина \"крик\" э. мунка"
     ]
@@ -6049,8 +6049,8 @@
     "author": "Алексей Пасечник (Санкт-Петербург)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "лимерике"
     ]
@@ -6695,8 +6695,8 @@
     "author": "Александр Коробейников (Саратов — Санкт-Петербург)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "моби дик, или белый кит",
       "моби дик",
@@ -7126,8 +7126,8 @@
     "author": "Олег Петров (\"Мы\")",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "венедикт ерофеев",
       "веничка ерофеев, веничка"
@@ -7346,8 +7346,8 @@
     "author": "Алексей Прошин",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "имя бога"
     ]
@@ -7776,8 +7776,8 @@
     "author": "Игорь Колмаков (Тель-Авив), Ольга Ярославцева (Торонто)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "анна павлова",
       "павлов"
@@ -7959,8 +7959,8 @@
     "author": "Игорь Колмаков (Тель-Авив), Ольга Ярославцева (Торонто)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "анна павлова",
       "павлов"
@@ -9240,8 +9240,8 @@
     "author": "Павел Игнатенков (Смоленск)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "принцип паули"
     ]
@@ -9260,8 +9260,8 @@
     "author": "Юрий Вашкулат (Киев)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "вольфганг паули",
       "паули"
@@ -9343,8 +9343,8 @@
     "author": "Анатолий Белкин, по идее Анатолия Вассермана (Москва)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "первой мировой войне"
     ]
@@ -9793,8 +9793,8 @@
     "author": "Радислав Дрибен",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "розеттский камень"
     ]
@@ -9875,8 +9875,8 @@
     "source": "wiki",
     "corpus": "bingo",
     "questionRaw": "Раздаётся текст: Сейчас этот африканский город называется Рашид.    Today this african city is known as Rashid.    Ahora ese pueblo africano se llama Rashid. Сейчас этот африканский город называется Рашид. А как его называли в 1799 году?",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "розетт",
       "розетта"
@@ -9958,8 +9958,8 @@
     "author": "Владимир Островский (Киев).",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "рука бога"
     ]
@@ -9978,8 +9978,8 @@
     "author": "Александр Лисянский (Харьков)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "рука бога"
     ]
@@ -10229,8 +10229,8 @@
     "author": "Иван Веселов (Краснодар).",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "stone",
       "стоун"
@@ -10275,8 +10275,8 @@
     "author": "Владимир Островский (Киев).",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "сад камней",
       "японский сад камней"
@@ -10646,8 +10646,8 @@
     "author": "Юрий Выменец",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "святой себастьян",
       "себастьян"
@@ -10731,8 +10731,8 @@
     "author": "Павел Петров (Новосибирск)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "кенигсберг",
       "так и быть, калининград"
@@ -11446,8 +11446,8 @@
     "author": "Борис Моносов (Санкт-Петербург)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "роршах"
     ]
@@ -11735,8 +11735,8 @@
     "author": "Алик Палатник (Хайфа — Венеция)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "ли"
     ]
@@ -11969,8 +11969,8 @@
     "source": "wiki",
     "corpus": "bingo",
     "questionRaw": "Раздаётся текст:     зеленый цвет — живущие менее чем на 10 долларов в месяц    желтый цвет — живущие менее чем на 100 долларов в месяц    синий цвет — живущие менее чем на 1000 долларов в месяц    белый цвет — живущие более чем на 100000 долларов в месяц Вы видите подписи под плакатом социальной рекламы, на котором изображен ОН. Весной 2006 года ОН побывал в космосе. Назовите ЕГО двумя словами.",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "флаг бразилии",
       "бразильский флаг"
@@ -12535,8 +12535,8 @@
     "author": "Владислав Говердовский (Тель-Авив)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "казимир малевич"
     ]
@@ -12555,8 +12555,8 @@
     "author": "Юрий Козьмин (Ариэль)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "кааба",
       "черный куб, каабский камень и другие синонимы"
@@ -12797,8 +12797,8 @@
     "author": "Андрей Гинзбург",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "григорий xiii"
     ]
@@ -12917,8 +12917,8 @@
     "author": "Кирилл Мальцев (Киров)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "цифры числа пи",
       "число пи, π, знаки числа пи, 3,14 и т.д",
@@ -12959,8 +12959,8 @@
     "author": "Артем Матухно (Одесса)",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": "media",
-    "excludedBy": "картинка, аудио или видео",
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "шалтай-болтай",
       "humpty-dumpty"
@@ -13293,8 +13293,8 @@
     "author": "Борис Гуревич",
     "source": "wiki",
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "эйнштейн"
     ]
@@ -15627,8 +15627,8 @@
     "author": "Григорий Львович (Торонто)",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "закат"
     ]
@@ -23577,8 +23577,8 @@
     "author": "Александр Усков (Краснодар)",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "жорж перек",
       "перек"
@@ -24429,8 +24429,8 @@
     "author": "Виталий Дубровнер",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "62. модель для сборки",
       "модель для сборки"
@@ -31656,8 +31656,8 @@
     "author": "Виктория Штратникова",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "1. панграмма.2. анаграмма"
     ]
@@ -31821,8 +31821,8 @@
     "author": "Роман Оркодашвили",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "заменгоф",
       "zamenhof"
@@ -33297,8 +33297,8 @@
     "author": "Рузель Халиуллин",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "его жена, ее любовник",
       "жена, любовник"
@@ -37796,8 +37796,8 @@
     "author": "Марк Семко",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "список сводеша"
     ]
@@ -38860,8 +38860,8 @@
     "author": null,
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "in cod we trust"
     ]
@@ -39098,8 +39098,8 @@
     "author": "Тимур Барский (Тель-Авив)",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "на капоте"
     ]
@@ -40621,8 +40621,8 @@
     "author": "Андрей Черданцев (Новосибирск)",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "как звучит хлопок одной ладонью",
       "как звучит хлопок одной рукой"
@@ -42375,8 +42375,8 @@
     "author": "Михаил Иванов (Саратов)",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "автор"
     ]
@@ -42536,8 +42536,8 @@
     "author": "Андрей Солдатов (Москва)",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "шибболет"
     ]
@@ -42701,8 +42701,8 @@
     "author": "Галина Буланова (Москва)",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "шоколадница"
     ]
@@ -42907,8 +42907,8 @@
     "author": "Алина Антипова",
     "handoutImage": null,
     "corpus": "bingo",
-    "excluded": null,
-    "excludedBy": null,
+    "excluded": "handout",
+    "excludedBy": "раздаточный материал",
     "acceptVariants": [
       "милгрэм",
       "зимбардо"
