@@ -122,7 +122,7 @@ class ArticleSheet extends StatelessWidget {
               ArticleBody(article: article, error: error, custom: custom),
               if (notes case final notes?) ...[
                 const SizedBox(height: 24),
-                ThemeNoteField(theme: theme, notes: notes),
+                ThemeNoteField(theme: theme, notes: notes, custom: custom),
               ],
             ],
           ),

@@ -10,7 +10,16 @@ class ThemeNoteField extends StatefulWidget {
   final String theme;
   final ThemeNotes notes;
 
-  const ThemeNoteField({super.key, required this.theme, required this.notes});
+  /// Своя реалия (T24): заметка для неё не дополнение, а всё её содержимое —
+  /// поэтому и кнопка называется «Удалить реалию», а не «Стереть заметку».
+  final bool custom;
+
+  const ThemeNoteField({
+    super.key,
+    required this.theme,
+    required this.notes,
+    this.custom = false,
+  });
 
   @override
   State<ThemeNoteField> createState() => _ThemeNoteFieldState();
@@ -27,6 +36,43 @@ class _ThemeNoteFieldState extends State<ThemeNoteField> {
   void dispose() {
     _field.dispose();
     super.dispose();
+  }
+
+  /// Стереть — это записать пустое: журнал append-only, удалять строки не
+  /// приходится. Спрашиваем перед этим: одним тапом теряется весь текст,
+  /// а у своей реалии вместе с ним и сама реалия.
+  Future<void> _confirmDelete() async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: Text(widget.custom
+            ? 'Удалить реалию «${widget.theme}» вместе с заметкой?'
+            : 'Стереть заметку?'),
+        actions: [
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  onPressed: () => Navigator.of(context).pop(false),
+                  child: const Text('Отмена'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: FilledButton(
+                  key: const Key('note-delete-confirm'),
+                  onPressed: () => Navigator.of(context).pop(true),
+                  child: const Text('Удалить'),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+    if (ok != true || !mounted) return;
+    _field.clear();
+    await _save();
   }
 
   Future<void> _save() async {
@@ -70,6 +116,21 @@ class _ThemeNoteFieldState extends State<ThemeNoteField> {
             child: const Text('Сохранить'),
           ),
         ),
+        // Удаление отдельной кнопкой, хотя «стереть текст и сохранить» делает
+        // то же самое: догадаться до этого нельзя, а спрятанное действие — это
+        // отсутствующее действие. Появляется, только когда стирать есть что.
+        if (_saved.trim().isNotEmpty)
+          SizedBox(
+            width: double.infinity,
+            child: TextButton(
+              key: const Key('note-delete'),
+              onPressed: _busy ? null : _confirmDelete,
+              child: Text(
+                widget.custom ? 'Удалить реалию' : 'Стереть заметку',
+                style: TextStyle(color: Theme.of(context).colorScheme.error),
+              ),
+            ),
+          ),
         if (_failed)
           Padding(
             padding: const EdgeInsets.only(top: 8),

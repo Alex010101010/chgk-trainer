@@ -216,6 +216,58 @@ void main() {
     expect(find.byKey(const Key('article-missing')), findsNothing);
   });
 
+  testWidgets('кнопка удаляет реалию, но сперва спрашивает', (tester) async {
+    final log = MemoryEventLog();
+    await log.append(_note('Тортуга', 'пиратский остров'));
+    await _pump(tester, log);
+
+    await tester.tap(find.text('Тортуга'));
+    await tester.pumpAndSettle();
+    expect(find.text('Удалить реалию'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('note-delete')));
+    await tester.pumpAndSettle();
+    // Отмена ничего не трогает: одним тапом теряется вся реалия.
+    await tester.tap(find.text('Отмена'));
+    await tester.pumpAndSettle();
+    expect((await log.readAll()).events.whereType<NoteEvent>().length, 1);
+
+    await tester.tap(find.byKey(const Key('note-delete')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('note-delete-confirm')));
+    await tester.pumpAndSettle();
+    await tester.tapAt(const Offset(10, 10));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Тортуга'), findsNothing);
+  });
+
+  testWidgets('у корпусного клише кнопка стирает заметку, а не клише',
+      (tester) async {
+    final log = MemoryEventLog();
+    await log.append(_note('Ковентри', 'город'));
+    await _pump(tester, log);
+
+    await tester.tap(find.text('Ковентри'));
+    await tester.pumpAndSettle();
+    expect(find.text('Стереть заметку'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('note-delete')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('note-delete-confirm')));
+    await tester.pumpAndSettle();
+    await tester.tapAt(const Offset(10, 10));
+    await tester.pumpAndSettle();
+
+    // Клише корпуса остаётся в оглавлении — стёрлась только заметка.
+    expect(find.text('Ковентри'), findsOneWidget);
+  });
+
+  testWidgets('без заметки кнопки удаления нет', (tester) async {
+    await _pump(tester, MemoryEventLog());
+    await tester.tap(find.text('Мадлен'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('note-delete')), findsNothing);
+  });
+
   testWidgets('стёртая заметка снимает и саму реалию', (tester) async {
     final log = MemoryEventLog();
     await log.append(_note('Тортуга', 'пиратский остров'));
