@@ -23,6 +23,23 @@ class FakeQuestions implements QuestionRepository {
       ];
 }
 
+/// Вопрос объявляет раздатку, но файла под неё в сборке нет — ровно тот
+/// случай, ради которого строка и добавлена (T20).
+class FakeHandoutQuestions implements QuestionRepository {
+  @override
+  Future<List<Question>> loadAll() async => const [
+        Question(
+          id: 'b-1',
+          corpus: Corpus.bingo,
+          question: 'вопрос',
+          answer: 'ответ',
+          acceptVariants: ['ответ'],
+          theme: 'Ковентри',
+          handout: 'нет-такого-файла.jpg',
+        ),
+      ];
+}
+
 class SkippingLog extends MemoryEventLog {
   final int skipped;
   SkippingLog(this.skipped);
@@ -108,5 +125,25 @@ void main() {
     await tester.longPress(find.byKey(const Key('home-title')));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('debug-journal')), findsOneWidget);
+  });
+
+  testWidgets('раздаток нет в ассете — это тревога, а не прочерк',
+      (tester) async {
+    await _pump(tester, MemoryEventLog());
+    expect(find.text('Вопросов с раздаткой'), findsOneWidget);
+    expect(find.text('0'), findsWidgets);
+    expect(find.text('—'), findsWidgets);
+  });
+
+  testWidgets('раздатка объявлена, а картинки в сборке нет', (tester) async {
+    await tester.pumpWidget(JournalScope(
+      log: MemoryEventLog(),
+      child: MaterialApp(
+        home: DebugJournalScreen(
+            repository: FakeHandoutQuestions(), now: () => _now),
+      ),
+    ));
+    await tester.pumpAndSettle();
+    expect(find.text('нет в сборке'), findsOneWidget);
   });
 }

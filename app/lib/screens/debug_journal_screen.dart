@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 import '../data/question_repository.dart';
 import '../journal/event.dart';
 import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
+import '../widgets/handout_image.dart';
 
 /// Сырые числа для сверки с критериями MVP. Не подменяет T9: там профиль и
 /// карта слабых мест с дизайном, здесь — строки текста, которые выбрасываются
@@ -30,6 +32,12 @@ class _DebugJournalScreenState extends State<DebugJournalScreen> {
   int? _loadMs;
   int _questionCount = 0;
 
+  /// Раздатки (T20): сколько вопросов их объявляют и лежит ли рядом сам файл.
+  /// Поле в ассете и картинка в бандле — два разных канала, и «в вопросе есть
+  /// `handout`» ещё не значит, что картинку будет чем показать.
+  int _handoutCount = 0;
+  bool? _handoutFileFound;
+
   bool _started = false;
 
   // Не initState: `JournalScope.of` — это dependOnInheritedWidgetOfExactType,
@@ -49,11 +57,25 @@ class _DebugJournalScreenState extends State<DebugJournalScreen> {
       final questions = await widget.repository.loadAll();
       sw.stop();
       if (!mounted) return;
+      final withHandout = questions.where((q) => q.handout != null).toList();
+      bool? fileFound;
+      if (withHandout.isNotEmpty) {
+        try {
+          await rootBundle
+              .load('$kHandoutDir/${withHandout.first.handout}');
+          fileFound = true;
+        } catch (_) {
+          fileFound = false;
+        }
+      }
+      if (!mounted) return;
       setState(() {
         _events = read.events;
         _skippedLines = read.skippedLines;
         _loadMs = sw.elapsedMilliseconds;
         _questionCount = questions.length;
+        _handoutCount = withHandout.length;
+        _handoutFileFound = fileFound;
       });
     } catch (e) {
       if (mounted) setState(() => _error = '$e');
@@ -102,6 +124,18 @@ class _DebugJournalScreenState extends State<DebugJournalScreen> {
         _row('Вопросов в ассете', '$_questionCount'),
         _row('Загрузка вопросов', _loadMs == null ? '—' : '$_loadMs мс',
             alarm: (_loadMs ?? 0) > 1000),
+        _row('Вопросов с раздаткой', '$_handoutCount',
+            alarm: _handoutCount == 0, key: const Key('debug-handouts')),
+        _row(
+          'Картинка раздатки',
+          switch (_handoutFileFound) {
+            true => 'на месте',
+            false => 'нет в сборке',
+            null => '—',
+          },
+          alarm: _handoutFileFound == false,
+          key: const Key('debug-handout-file'),
+        ),
       ],
     );
   }
