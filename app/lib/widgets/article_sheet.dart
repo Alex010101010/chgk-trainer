@@ -16,7 +16,11 @@ class ArticleBody extends StatelessWidget {
   final Article? article;
   final String? error;
 
-  const ArticleBody({super.key, this.article, this.error});
+  /// Своя реалия (T24): статьи у неё нет и быть не может. «Статьи не нашлось»
+  /// здесь было бы ложью — искать нечего, клише завёл сам игрок.
+  final bool custom;
+
+  const ArticleBody({super.key, this.article, this.error, this.custom = false});
 
   static const String _headingMark = '## ';
 
@@ -26,6 +30,14 @@ class ArticleBody extends StatelessWidget {
     if (error != null) {
       return Text(error!,
           key: const Key('article-error'), style: text.bodyLarge);
+    }
+    if (custom) {
+      return Text(
+        'Своя реалия — в корпусе бинго её нет. Что это такое, ты написал '
+        'сам в заметке ниже.',
+        key: const Key('article-custom'),
+        style: text.bodyLarge,
+      );
     }
     if (article == null) {
       return Text(
@@ -74,6 +86,9 @@ class ArticleSheet extends StatelessWidget {
   final Article? article;
   final String? error;
 
+  /// Своя реалия, а не клише корпуса.
+  final bool custom;
+
   /// Заметка на клише. `null` — поля не будет: писать некуда, если журнал
   /// экрану не передали.
   final ThemeNotes? notes;
@@ -83,6 +98,7 @@ class ArticleSheet extends StatelessWidget {
     required this.theme,
     this.article,
     this.error,
+    this.custom = false,
     this.notes,
   });
 
@@ -103,7 +119,7 @@ class ArticleSheet extends StatelessWidget {
                   key: const Key('article-title'),
                   style: Theme.of(context).textTheme.headlineSmall),
               const SizedBox(height: 12),
-              ArticleBody(article: article, error: error),
+              ArticleBody(article: article, error: error, custom: custom),
               if (notes case final notes?) ...[
                 const SizedBox(height: 24),
                 ThemeNoteField(theme: theme, notes: notes),

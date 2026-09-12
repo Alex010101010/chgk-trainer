@@ -249,6 +249,48 @@ void main() {
     });
   });
 
+  group('свои реалии', () {
+    NoteEvent note(String theme, String text) => NoteEvent(
+          ts: _now.millisecondsSinceEpoch,
+          day: localDay(_now),
+          theme: theme,
+          text: text,
+        );
+
+    const corpus = ['Ковентри', 'Мадлен'];
+
+    test('заметка на корпусном клише своей реалией не считается', () {
+      final notes = themeNotes([note('Ковентри', 'город')]);
+      expect(customThemes(notes, corpus), isEmpty);
+    });
+
+    test('разный регистр и «ё» — то же клише, а не своя реалия', () {
+      // Иначе дубль корпусной темы заводится первым же вводом.
+      final notes = themeNotes([note(' ковентри ', 'город')]);
+      expect(customThemes(notes, corpus), isEmpty);
+      expect(normalizeTheme('Пёс Барбос'), normalizeTheme('пес  барбос'));
+    });
+
+    test('заметка на клише вне корпуса — своя реалия', () {
+      final notes = themeNotes([note('Тортуга', 'пиратский остров')]);
+      expect(customThemes(notes, corpus), {'Тортуга': 'пиратский остров'});
+    });
+
+    test('стёртая заметка снимает и саму реалию', () {
+      // Отдельного хранилища у своей реалии нет — она живёт заметкой.
+      final events = [
+        note('Тортуга', 'было'),
+        NoteEvent(
+          ts: _now.add(const Duration(minutes: 1)).millisecondsSinceEpoch,
+          day: localDay(_now),
+          theme: 'Тортуга',
+          text: '  ',
+        ),
+      ];
+      expect(customThemes(themeNotes(events), corpus), isEmpty);
+    });
+  });
+
   group('сетка бинго', () {
     test('текущая сетка — последняя собранная', () {
       expect(currentGrid([]), isNull);

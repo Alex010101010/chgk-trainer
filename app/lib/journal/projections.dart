@@ -136,6 +136,35 @@ Map<String, String> themeNotes(List<JournalEvent> events) {
   };
 }
 
+/// Нормализованный вид названия клише — для сверки, не для показа.
+///
+/// «ковентри», «Ковентри» и «Ковентри » для игрока одно и то же, а для
+/// `Set<String>` это три разные строки: без нормализации дубль корпусной темы
+/// заводится первым же вводом мимо всех проверок. Хранится при этом то, что
+/// игрок написал, — приводится только ключ сравнения.
+String normalizeTheme(String theme) => theme
+    .trim()
+    .toLowerCase()
+    .replaceAll('ё', 'е')
+    .replaceAll(RegExp(r'\s+'), ' ');
+
+/// Свои реалии (T24) — клише, которых в корпусе нет: заметка на теме, которую
+/// приложение не показывало и показать не может.
+///
+/// Отдельного хранилища у своей реалии нет, она живёт заметкой — поэтому
+/// стёртая заметка снимает и саму реалию. Тема, приехавшая в корпус следующим
+/// импортом, перестаёт быть своей и склеивается с корпусной вместе с заметкой.
+Map<String, String> customThemes(
+  Map<String, String> notes,
+  Iterable<String> corpusThemes,
+) {
+  final known = {for (final t in corpusThemes) normalizeTheme(t)};
+  return {
+    for (final e in notes.entries)
+      if (!known.contains(normalizeTheme(e.key))) e.key: e.value,
+  };
+}
+
 /// Состав текущей сетки — темы последнего [BingoGridEvent]. `null`, если
 /// сетку ещё ни разу не собирали.
 List<String>? currentGrid(List<JournalEvent> events) {

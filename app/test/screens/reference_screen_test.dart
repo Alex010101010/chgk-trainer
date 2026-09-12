@@ -30,6 +30,13 @@ const _gq = Question(
 
 final _pool = [_bingo('Ковентри'), _bingo('Мадлен'), _bingo('Титаник'), _gq];
 
+NoteEvent _note(String theme, String text) => NoteEvent(
+      ts: _now.millisecondsSinceEpoch,
+      day: localDay(_now),
+      theme: theme,
+      text: text,
+    );
+
 AnswerEvent _answer(String theme, {String? guess}) => AnswerEvent(
       ts: _now.millisecondsSinceEpoch,
       day: localDay(_now),
@@ -132,6 +139,100 @@ void main() {
     final notes = (await log.readAll()).events.whereType<NoteEvent>().toList();
     expect(notes.single.theme, 'Мадлен');
     expect(notes.single.text, 'про печенье');
+  });
+
+  testWidgets('своя реалия стоит отдельно и счётчик кампании не трогает',
+      (tester) async {
+    final log = MemoryEventLog();
+    await log.append(_note('Тортуга', 'пиратский остров'));
+    await _pump(tester, log);
+
+    expect(find.text('Тортуга'), findsOneWidget);
+    expect(find.text('пиратский остров'), findsOneWidget);
+    expect(find.text('Свои'), findsOneWidget);
+    // Дно кампании конечное — свои его не размывают.
+    expect(find.text('Узнано 0 · встречалось 0 · всего 3'), findsOneWidget);
+    expect(find.text('Своих: 1'), findsOneWidget);
+  });
+
+  testWidgets('ввод названия показывает совпадения корпуса', (tester) async {
+    await _pump(tester, MemoryEventLog());
+
+    await tester.tap(find.byKey(const Key('custom-add')));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byKey(const Key('custom-name')), 'ковен');
+    await tester.pump();
+
+    expect(find.byKey(const Key('custom-match-Ковентри')), findsOneWidget);
+  });
+
+  testWidgets('имя корпусного клише своей реалии не создаёт', (tester) async {
+    final log = MemoryEventLog();
+    await _pump(tester, log);
+
+    await tester.tap(find.byKey(const Key('custom-add')));
+    await tester.pumpAndSettle();
+    // Другой регистр и лишний пробел — то же клише, а не новое.
+    await tester.enterText(find.byKey(const Key('custom-name')), ' ковентри ');
+    await tester.enterText(find.byKey(const Key('custom-note')), 'бомбили');
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('custom-save')));
+    await tester.pumpAndSettle();
+
+    expect((await log.readAll()).events.whereType<NoteEvent>(), isEmpty);
+    // Вместо заведения дубля открылась справка корпусного клише.
+    expect(find.text('Город разбомбили в 1940-м.'), findsOneWidget);
+  });
+
+  testWidgets('заведение пишет одну заметку и строку в «Своих»',
+      (tester) async {
+    final log = MemoryEventLog();
+    await _pump(tester, log);
+
+    await tester.tap(find.byKey(const Key('custom-add')));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byKey(const Key('custom-name')), 'Тортуга');
+    await tester.enterText(
+        find.byKey(const Key('custom-note')), 'пиратский остров');
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('custom-save')));
+    await tester.pumpAndSettle();
+
+    final notes = (await log.readAll()).events.whereType<NoteEvent>().toList();
+    expect(notes.single.theme, 'Тортуга');
+    expect(notes.single.text, 'пиратский остров');
+    expect(find.text('Своих: 1'), findsOneWidget);
+  });
+
+  testWidgets('у своей реалии нет статьи, но и «не нашлось» не пишем',
+      (tester) async {
+    final log = MemoryEventLog();
+    await log.append(_note('Тортуга', 'пиратский остров'));
+    await _pump(tester, log);
+
+    await tester.tap(find.text('Тортуга'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('article-custom')), findsOneWidget);
+    expect(find.byKey(const Key('article-missing')), findsNothing);
+  });
+
+  testWidgets('стёртая заметка снимает и саму реалию', (tester) async {
+    final log = MemoryEventLog();
+    await log.append(_note('Тортуга', 'пиратский остров'));
+    await _pump(tester, log);
+
+    await tester.tap(find.text('Тортуга'));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byKey(const Key('note-field')), '');
+    await tester.pump();
+    await tester.tap(find.byKey(const Key('note-save')));
+    await tester.pumpAndSettle();
+    // Закрыть лист тапом по затемнению — как это делает игрок.
+    await tester.tapAt(const Offset(10, 10));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Тортуга'), findsNothing);
+    expect(find.byKey(const Key('reference-custom-counter')), findsNothing);
   });
 
   testWidgets('несобранный ассет вопросов — сообщение, а не пустой список',
