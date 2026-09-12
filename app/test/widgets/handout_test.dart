@@ -82,6 +82,17 @@ Future<void> _pump(WidgetTester tester, Question q) async {
   // Без settle картинка ещё не декодирована, виджет нулевой высоты и тап по
   // нему промахивается мимо собственной цели.
   await tester.pumpAndSettle();
+  // ...но и settle этого не гарантирует: декодирование PNG идёт вне тестового
+  // времени, и примерно каждый пятый прогон тапал по виджету нулевой высоты.
+  // `runAsync` пускает настоящие асинхронные операции — единственный способ
+  // дождаться картинки, а не надеяться на неё.
+  if (q.handout != null) {
+    await tester.runAsync(() => precacheImage(
+          AssetImage('$kHandoutDir/${q.handout}'),
+          tester.element(find.byType(HandoutImage)),
+        ));
+    await tester.pumpAndSettle();
+  }
 }
 
 Future<void> _tap(WidgetTester tester, String key) async {
