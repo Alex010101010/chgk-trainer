@@ -119,6 +119,29 @@ void main() {
     expect(find.byType(HandoutImage), findsOneWidget);
   });
 
+  // T27: текстовая раздатка — стихи и шаблоны, переносы строк значимы.
+  testWidgets('текстовая раздатка видна на всех фазах, переносы на месте',
+      (tester) async {
+    const text = 'Слепы ли вы...\nЧто он только охотится...';
+    const q = Question(
+      id: 'gq-219701',
+      corpus: Corpus.gq,
+      question: 'текст вопроса',
+      answer: 'ответ',
+      comment: 'комментарий',
+      handoutText: text,
+    );
+    await _pump(tester, q);
+    expect(find.text(text), findsOneWidget);
+    await _tap(tester, 'cycle-start');
+    expect(find.text(text), findsOneWidget);
+    await _tap(tester, 'cycle-ready');
+    expect(find.text(text), findsOneWidget);
+    await _tap(tester, 'cycle-answer-done');
+    expect(find.text('комментарий'), findsOneWidget);
+    expect(find.text(text), findsOneWidget);
+  });
+
   testWidgets('у вопроса без раздатки картинки нет ни на одной фазе',
       (tester) async {
     await _pump(tester, _plain);

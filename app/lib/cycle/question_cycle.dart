@@ -131,6 +131,10 @@ class _QuestionCycleState extends State<QuestionCycle> {
           HandoutImage(file: handout),
           const SizedBox(height: 12),
         ],
+        if (widget.question.handoutText case final text?) ...[
+          _handoutText(text),
+          const SizedBox(height: 12),
+        ],
         Text(
           widget.question.question,
           style: questionTextStyle(context),
@@ -138,6 +142,19 @@ class _QuestionCycleState extends State<QuestionCycle> {
       ],
     );
   }
+
+  /// Текстовая раздатка (T27) — листок в рамке, отдельно от текста вопроса:
+  /// на игре его выдают на бумаге, и читается он как предмет, а не как
+  /// продолжение вопроса. Переносы строк сохраняются — это стихи и шаблоны.
+  Widget _handoutText(String text) => Container(
+        key: const Key('cycle-handout-text'),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          border: Border.all(color: Theme.of(context).colorScheme.outline),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(text, style: Theme.of(context).textTheme.bodyLarge),
+      );
 
   Widget _reading() => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -303,6 +320,10 @@ class _QuestionCycleState extends State<QuestionCycle> {
         // то, что на картинке, и без неё читается как ребус.
         if (q.handout case final file?) ...[
           HandoutImage(file: file),
+          const SizedBox(height: 12),
+        ],
+        if (q.handoutText case final text?) ...[
+          _handoutText(text),
           const SizedBox(height: 12),
         ],
         _labelled('Ответ', q.answer),

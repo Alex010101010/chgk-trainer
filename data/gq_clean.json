@@ -1159,6 +1159,7 @@
     "complexity": [
       "32.80"
     ],
+    "handoutText": "10 things you didn't know about Nicolas Otamendi",
     "corpus": "gq",
     "questionRaw": "[Ведущему: ни в коем случае не сообщать командам о кавычках и латинице в тексте вопроса!]\nНиколАс ОтамЕнди играет за \"Манчестер Сити\", чья тактика основана на превосходстве во владении мячом. На официальном сайте клуба в статье под названием \"Десять вещей, которых вы не знали о НиколАсе ОтамЕнди\" отмечается, что из \"Otamendi\" может получиться... Ответьте одним словом: что?",
     "excluded": null,
@@ -1915,9 +1916,10 @@
     "complexity": [
       "23.73"
     ],
+    "handoutText": "Стьерне",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "тихо браге",
       "браге"
@@ -2396,6 +2398,7 @@
     "author": "Игорь Демьянцев",
     "complexity": null,
     "handoutImage": "https://gotquestions.online/pics/205/9029_razdatka.jpg",
+    "handoutText": "_ _ _ _ _тье_ Леонтий Беннигсен",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -2462,6 +2465,7 @@
     ],
     "author": "Олег Михеев",
     "complexity": null,
+    "handoutText": "toilets",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -2548,9 +2552,10 @@
     ],
     "author": "Игорь Демьянцев",
     "complexity": null,
+    "handoutText": "ihtio",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "akihito",
       "по слову «акихито» латиницей или кириллицей",
@@ -3137,9 +3142,10 @@
     "complexity": [
       "44.44"
     ],
+    "handoutText": "Глобальный инженерный проект, предложенный немецким архитектором Германом Зёргелем, был призван решить экономические проблемы континента. Для его реализации Герман предлагал Сдизене.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "осушить средиземное море"
     ]
@@ -3181,9 +3187,10 @@
     "complexity": [
       "26.67"
     ],
+    "handoutText": "Jenny Everywhere",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "опенсорсным"
     ]
@@ -3251,9 +3258,10 @@
     "complexity": [
       "4.44"
     ],
+    "handoutText": "be duly and truly prepared and behave yourself accordingly — «будьте должным образом приуготовлены и ведите себя соответственно»",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "масоны, пионеры",
       "октябрята» вместо «пионеров",
@@ -4077,6 +4085,7 @@
     "complexity": [
       "57.78"
     ],
+    "handoutText": "smelt — корюшка\nsmelt — расплав",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -4268,9 +4277,10 @@
     "complexity": [
       "75.56"
     ],
+    "handoutText": "chess",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "налог на бездетность",
       "налог на холостяков, одиноких и малосемейных граждан; tax on childlessness",
@@ -4722,6 +4732,7 @@
     "complexity": [
       "31.11"
     ],
+    "handoutText": "∗n∗∗∗no",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -4770,9 +4781,10 @@
     "complexity": [
       "11.11"
     ],
+    "handoutText": "Brrr",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ро́узи",
       "с незначительными искажениями"
@@ -6699,9 +6711,10 @@
     "complexity": [
       "11.27"
     ],
+    "handoutText": "В 70-е годы [ПРОПУСК 1] (именно так ее часто называли в народе) была\nочень популярна. Ее участники демонстрировали необычную технику и\nуверяли телезрителей: это вы можете сделать, собрать, сконструировать.\n \nСогласно Уголовно-исполнительному кодексу РФ, [ПРОПУСК 2] и\nоргтехники осужденным запрещена.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "передача \"эвм",
       "передача эвм"
@@ -7091,6 +7104,7 @@
     ],
     "author": "Алексей Богословский",
     "complexity": null,
+    "handoutText": "скияшка скакаоница",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -7423,6 +7437,7 @@
     ],
     "author": "Алексей Богословский",
     "complexity": null,
+    "handoutText": "ЕВКЛИДНАЭДР",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -8101,6 +8116,7 @@
     ],
     "author": "Владимир Цвингли",
     "complexity": null,
+    "handoutText": "Dial \"M\" for Murder",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -8477,6 +8493,7 @@
     ],
     "author": "Михаил Карпук",
     "complexity": null,
+    "handoutText": "18 петель, или по 6 на спицу. Набрать один ряд синими нитками, потом\nеще 5 целиком синих рядов, а затем по следующей схеме:\n6-й ряд: 2 желтых, 3 синих, 2 желтых, 2 синих\n7-й ряд: 3 желтых, 2 синих, 3 желтых, 1 синий\n8-й ряд: 4 желтых, 1 синий, 4 желтых\nРяды с 9-го по 13-й набираются целиком желтыми, связка между рядами\nжелтая. Набрать один ряд оранжевыми нитками, потом еще 5 целиком\nоранжевых рядов, а затем по следующей схеме:\n6-й ряд: 1 зеленый, 3 оранжевых, 1 зеленый, 3 оранжевых, 1 зеленый\n7-й ряд: 2 зеленых, 1 оранжевый, 3 зеленых, 1 оранжевый, 2 зеленых\nРяды с 8-го по 13-й набираются целиком зелеными, связка между рядами\nзеленая",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -11242,9 +11259,10 @@
     "complexity": [
       "29.41"
     ],
+    "handoutText": "\"Urban Tribes: Are Community the New Family?\"",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "friends"
     ]
@@ -11287,9 +11305,10 @@
     "complexity": [
       "29.41"
     ],
+    "handoutText": "My name is Georgean. True or false?",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "boolean",
       "булеан; boo; бу",
@@ -11358,9 +11377,10 @@
     "complexity": [
       "50.00"
     ],
+    "handoutText": "Ему необходимо было делать что-нибудь для меня так же, как мне\nнеобходимо было делать что-нибудь для него. Целыми днями мы пытались\nпомочь друг другу. Я включала отопление, чтобы он мог включить\nкондиционер, чтобы я могла включить отопление.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "помочь друг другу"
     ]
@@ -12243,9 +12263,10 @@
     "complexity": [
       "52.94"
     ],
+    "handoutText": "Qualität × Qualität",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "шоколад",
       "квадратный шоколад; шоколад \"ritter sport\"; \"ritter sport",
@@ -12480,9 +12501,10 @@
     "complexity": [
       "61.76"
     ],
+    "handoutText": "Царица звезд     Regina Astris\n   Смешанный мир    Mixtus Orbis\n   Судьба           Fatum\n   ПРОПУСК1         ПРОПУСК2\n   Млечный путь     Lacteus Orbis\n   Звездное небо    Sidereus Orbi\n   Бог              Dominus",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "солнце",
       "solaris; sol",
@@ -12617,9 +12639,10 @@
     "complexity": [
       "83.82"
     ],
+    "handoutText": "Gangnus",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "латынь"
     ]
@@ -13066,9 +13089,10 @@
     "complexity": [
       "38.24"
     ],
+    "handoutText": "Tyrannus Rex",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "никеля",
       "никель"
@@ -13125,9 +13149,10 @@
     "complexity": [
       "23.53"
     ],
+    "handoutText": "Inks",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "skin скин",
       "skin",
@@ -13173,6 +13198,7 @@
     "complexity": [
       "0.00"
     ],
+    "handoutText": "whether it rains — идёт ли дождь",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -13603,10 +13629,11 @@
     "complexity": [
       "16.18"
     ],
+    "handoutText": "Некоторые спорные решения католическая церковь принимает не во всех церквях. Коди Джонстон цинично сравнил это с НИМ. Назовите ЕГО точно.\n\nКоди Джонстон сравнил действия Ватикана, одобрившего гей-бракосочетания не во всех католических церквях,… с ЧЕМ?\n\nНекоторые спорные решения католическая церковь принимает не во всех церквях. Коди Джонстон цинично сравнил это с НИМ. Назовите ЕГО точно.\n\nКоди Джонстон сравнил действия Ватикана, одобрившего гей-бракосочетания не во всех католических церквях,… с ЧЕМ?\n\nНекоторые спорные решения католическая церковь принимает не во всех церквях. Коди Джонстон цинично сравнил это с НИМ. Назовите ЕГО точно.\n\nКоди Джонстон сравнил действия Ватикана, одобрившего гей-бракосочетания не во всех католических церквях,… с ЧЕМ?",
     "corpus": "gq",
     "questionRaw": "[Указание организаторам по раздаточному материалу: команда получает один комплект из шести надрезанных/разрезанных раздаток, как ниже в тексте.]\nНекоторые спорные решения католическая церковь принимает не во всех церквях. Ко́ди Джо́нстон цинично сравнил это с НИМ. Назовите ЕГО точно.",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "a/b эй би тестирование",
       "a/b тестирование",
@@ -13663,9 +13690,10 @@
     "complexity": [
       "26.47"
     ],
+    "handoutText": "I am gay! I am gay! I really hope that that’s OK.\nI am gay! I am gay! There’s really not much more to say.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "let it go лет ит го́у",
       "let it go",
@@ -14538,6 +14566,7 @@
     "complexity": [
       "39.71"
     ],
+    "handoutText": "tren____",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -14585,6 +14614,7 @@
     "complexity": [
       "13.24"
     ],
+    "handoutText": "Нарисуйте прямую линию и следуйте за ней",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -14869,6 +14899,7 @@
     "complexity": [
       "42.86"
     ],
+    "handoutText": "das Wetter",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -15312,6 +15343,7 @@
     "complexity": [
       "5.71"
     ],
+    "handoutText": "beaut.....",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -15436,9 +15468,10 @@
     "complexity": [
       "8.57"
     ],
+    "handoutText": "Ни питью, ни еде не предавайтесь, ни спанью; сторожей сами снаряжайте\n..., расставив стражу со всех сторон, около воинов ложитесь, а вставайте\nрано. Оружия не снимайте с себя второпях, не оглядевшись; по лености...",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "на патриарших прудах",
       "на патриарших",
@@ -15799,6 +15832,7 @@
     "complexity": [
       "5.71"
     ],
+    "handoutText": "357686312646216567629137",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -16530,9 +16564,10 @@
       "79.55",
       "85.71"
     ],
+    "handoutText": "JuniCam",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "юпитера"
     ]
@@ -18355,6 +18390,7 @@
     ],
     "author": "Дмитрий Борок",
     "complexity": null,
+    "handoutText": "Boxin' Oxen",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19098,9 +19134,10 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutText": "In America, you can always find a COMPANY.\nIn Soviet Russia, COMPANY finds you!\n—\nВ Америке вы всегда можете найти КОМПАНИЮ.\nВ Советской России КОМПАНИЯ находит вас!",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "party"
     ]
@@ -19202,6 +19239,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutText": "— У Гленды ТАЙСОН! У Гленды ТАЙСОН!\n— Не \"ТАЙСОН\", а \"КАЗАНОВА\", — поправила Гленда, стараясь не\nвспоминать о том, что сама лишь недавно узнала, как правильно\nпроизносится это слово.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19346,6 +19384,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutText": "Швеей была маманя,\nКаталой был отец,\nОт ментовской маслины\nНашел он свой конец.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19435,6 +19474,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutText": "Широка КОЛУМБИЯ родная!\nКаждый житель в ней и сыт, и пьян.\nЯ другой такой страны не знаю,\nГде так МАЛО ДОБРЫХ ПАРТИЗАН.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19537,6 +19577,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutText": "\"Мир народам\", \"Земля крестьянам\"",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19683,6 +19724,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutText": "К аспекту вида выживанья\nОтносятся: укус, жеванье,\nГлотанье и пищеваренье.\nКто сочинил?",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19987,6 +20029,7 @@
     "complexity": [
       "28.92"
     ],
+    "handoutText": "чистый листок бумаги.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -20594,9 +20637,10 @@
     "complexity": [
       "22.22"
     ],
+    "handoutText": "….nuary",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "veganuary вига́нуари",
       "veganuary",
@@ -21255,9 +21299,10 @@
     "complexity": [
       "11.11"
     ],
+    "handoutText": "As I **** my hand to write this statement…",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "move мув",
       "move"
@@ -21327,9 +21372,10 @@
     "complexity": [
       "36.30"
     ],
+    "handoutText": "лък",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "смычок"
     ]
@@ -27038,9 +27084,10 @@
     ],
     "author": "Андрей Черданцев",
     "complexity": null,
+    "handoutText": "ЛП",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сокращение левого предсердия"
     ]
@@ -28352,6 +28399,7 @@
     "complexity": [
       "13.02"
     ],
+    "handoutText": "rolig",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -29296,9 +29344,10 @@
     ],
     "author": "Лев Орлов",
     "complexity": null,
+    "handoutText": ".........................\nТатэ — а глоз мыт бронфн.\n.........................\nТатэ — а глоз мыт бронфн.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "мама — анархия",
       "мама анархия (с любой пунктуацией)",
@@ -29387,6 +29436,7 @@
     ],
     "author": "Наталья Кудряшова",
     "complexity": null,
+    "handoutText": "Snowflakes",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -30672,6 +30722,7 @@
     "complexity": [
       "39.08"
     ],
+    "handoutText": "Education is important. Big biceps are",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -30960,6 +31011,7 @@
       "60.45",
       "58.62"
     ],
+    "handoutText": "инфо*****",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -31517,6 +31569,7 @@
       "88.81",
       "86.21"
     ],
+    "handoutText": "Герой фильма «Секс-гуру» жалуется, что уже долгое время находится в ссе холостяка, однако до сих пор не может забыть бывшую. Гуру советует ему для начала СДЕЛАТЬ ЭТО.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -32224,9 +32277,10 @@
     "complexity": [
       "44.00"
     ],
+    "handoutText": "**** Town",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "zoom"
     ]
@@ -32364,9 +32418,10 @@
     "complexity": [
       "4.00"
     ],
+    "handoutText": "O*v**, micro***",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "капитан очевидность"
     ]
@@ -32667,9 +32722,10 @@
     "complexity": [
       "72.00"
     ],
+    "handoutText": "***** will always be ****** me.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "intel inside"
     ]
@@ -32712,6 +32768,7 @@
     "complexity": [
       "58.00"
     ],
+    "handoutText": "«Плывет в тоске необъяснимой\r\nсреди кирпичного надсада\r\nночной кораблик негасимый\r\nиз Александровского сада»",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -32825,9 +32882,10 @@
     "complexity": [
       "6.00"
     ],
+    "handoutText": "Хоть ___ там все та же,\r\nДа ___ не та.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "флора, фауна"
     ]
@@ -32847,6 +32905,7 @@
     "complexity": [
       "20.00"
     ],
+    "handoutText": "Мы хотим любоваться солнцем\r\nИ вдыхать ароматы цветов.\r\nИ мы знаем: сам Бог повелел нам\r\nПРОПУСК",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -36615,9 +36674,10 @@
     ],
     "author": "Иван Стариков",
     "complexity": null,
+    "handoutText": "ДУЭЛЬНЫЙ [ПРОПУСК] РЕЙНОЛЬДС",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "кодекс мак"
     ]
@@ -36940,9 +37000,10 @@
     ],
     "author": "Юрий Козьмин, Иван Стариков",
     "complexity": null,
+    "handoutText": "Британия. Викторианский век\nВстречает свой закат неторопливый.\nЛаскает солнце гребешки прилива\nСквозь розовые щелки сонных век.\nИ группы отдыхающих на пляже\nЛежат, как экспонаты на продажу —\nТряпичный хлам, серебряная нить...\nВот генерал, израненный [ПРО ПУСК],\nА рядом с ним измученный [ПРОПУСК]\nЛюбитель выпить, мастер закусить.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "под агрой, подагрой"
     ]
@@ -38640,9 +38701,10 @@
     ],
     "author": "Борис Моносов",
     "complexity": null,
+    "handoutText": "В Риме императорская щедрость почти полностью выродилась в\nколоссальные пожертвования и развлечения нищего городского пролетариата.\nРелигиозная освященность, без которой, как известно, люди никогда\nполностью не обходились, судя по всему, уже вряд ли ощущалась толпой.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ludi"
     ]
@@ -39366,9 +39428,10 @@
     ],
     "author": "Илья Бер",
     "complexity": null,
+    "handoutText": ".НТОМО.....",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "энтомопилог"
     ]
@@ -40577,9 +40640,10 @@
     "complexity": [
       "68.42"
     ],
+    "handoutText": "Boondoggle",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "аполлон",
       "проект высадки на луну"
@@ -40759,6 +40823,7 @@
     "complexity": [
       "89.47"
     ],
+    "handoutText": "Colorado A.....ica",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -40853,9 +40918,10 @@
     "complexity": [
       "68.42"
     ],
+    "handoutText": "Отмечая уровень соревновательности участников турниров по разгадыванию кроссвордов, Сьюзи Межур пишет, что те предпочитают использовать такую ЕЁ, а не сякую ЕЁ.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "прописная е",
       "е",
@@ -42238,6 +42304,7 @@
     "complexity": [
       "29.79"
     ],
+    "handoutText": "«Venit, vidit, vicit»\n«Furto, ebrius, in carcere»",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -42494,9 +42561,10 @@
     "complexity": [
       "2.13"
     ],
+    "handoutText": "Уж\nТакой\nСлучился день,\nРезво рыскала везде,\nПротив ветра в \nОдиночку – прямиком…\n…\n…",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "на мель",
       "точный ответ на двух или одной строчках",
@@ -42633,9 +42701,10 @@
     "complexity": [
       "69.15"
     ],
+    "handoutText": "Takuri – гремящий",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "автомобиль"
     ]
@@ -42918,6 +42987,7 @@
     "complexity": [
       "25.53"
     ],
+    "handoutText": "MAKE ______ GREAT AGAIN",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -43285,6 +43355,7 @@
     "complexity": [
       "6.38"
     ],
+    "handoutText": "Unix",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -43329,6 +43400,7 @@
     "complexity": [
       "47.87"
     ],
+    "handoutText": "The first Japanese [проопуск] western!",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -43397,6 +43469,7 @@
     "complexity": [
       "82.98"
     ],
+    "handoutText": "ALPHAnet",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -44272,9 +44345,10 @@
     "complexity": [
       "5.00"
     ],
+    "handoutText": "*****toons",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "виннету"
     ]
@@ -44748,6 +44822,7 @@
       "72.73",
       "64.29"
     ],
+    "handoutText": "Pri IX ispol'zovanii ran'he chah'e vsego obrah'alis' k printsipy slogenia, ved' printsip vichitania rabotaet vsego v shesti slychayah. Odnako seichas etim pravilom chasto prenebregaut. Dogadqvshis', o chem idet rech', izobrazite naimen'shee iz IX.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -44795,9 +44870,10 @@
       "36.36",
       "60.71"
     ],
+    "handoutText": "«War & Peace»",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "s"
     ]
@@ -44982,9 +45058,10 @@
       "18.18",
       "25.00"
     ],
+    "handoutText": "О Т о Б РА Л   Д ВЕ   С о С К и   ВО Р",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "запоминание знаков зодиака"
     ]
@@ -45054,6 +45131,7 @@
       "27.27",
       "53.57"
     ],
+    "handoutText": "N****saurus",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -45319,6 +45397,7 @@
       "36.36",
       "17.86"
     ],
+    "handoutText": "Не рад, одарен.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -45392,6 +45471,7 @@
       "0.00",
       "25.00"
     ],
+    "handoutText": "Надоело говорить, и спорить,\nИ любить усталые глаза…\nВ флибустьерском дальнем синем море\nБригантина поднимает паруса…\n\n“Бригантина”, Григорий Соломонович Лепский.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -45508,9 +45588,10 @@
       "36.36",
       "35.71"
     ],
+    "handoutText": "«Из Ирана с любовью. Мы никогда не забудем вашу доброту к нам, когда у нас осталось меньше, чем ничего»\n«Спасибо за помощь в 1800-х. Я хотел бы дать больше, но я лишился работы».\n«Рассказы о доброте ваших предков всегда трогали моё сердце. Я с чувством смирения хочу вернуть долг в этой небольшой мере. Иран помнит».",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ирландия",
       "ирландии"
@@ -47971,6 +48052,7 @@
     ],
     "author": "Виктор Чепой",
     "complexity": null,
+    "handoutText": "OTTO",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -47992,6 +48074,7 @@
     ],
     "author": "Виктор Чепой",
     "complexity": null,
+    "handoutText": "1. _ _ _ _ И Щ Е\n2. _ _ _ _ _ И Щ Е",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -49561,9 +49644,10 @@
     "complexity": [
       "27.78"
     ],
+    "handoutText": "Д.: <…> чудесный, вечный\nЛ.: Превыше пирамид <…>\nД.: <…> металлов твёрже он <…>\nЛ.: Взгордися <…>, муза",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "квинт гораций флакк",
       "гораций"
@@ -49584,6 +49668,7 @@
     "complexity": [
       "0.00"
     ],
+    "handoutText": "Секстинская мадонна",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -49607,6 +49692,7 @@
     "complexity": [
       "66.67"
     ],
+    "handoutText": "И летят ко мне навстречу\nРаздуваясь от жары\n[ОНИ] как свечи\nКак воздушные шары",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -49653,9 +49739,10 @@
     "complexity": [
       "16.67"
     ],
+    "handoutText": "School of dance\nChiribim\nCitizen Boris",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "голем"
     ]
@@ -49675,6 +49762,7 @@
     "complexity": [
       "33.33"
     ],
+    "handoutText": "<...>\nзнамена-розы вы неисчислимы:\nвсе время в ряд о в ряд по всей стране!\nвы розы-головы: сиянием отверзты!\nи кровоточите <...>\n«я Роза-Сон: я на твоей груди»",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -53707,9 +53795,10 @@
     "complexity": [
       "30.91"
     ],
+    "handoutText": "E15",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "исландия"
     ]
@@ -53754,6 +53843,7 @@
     "complexity": [
       "49.09"
     ],
+    "handoutText": "elevennis",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -53923,9 +54013,10 @@
     "complexity": [
       "69.09"
     ],
+    "handoutText": "Астроном",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "астер, икс"
     ]
@@ -58265,9 +58356,10 @@
     "complexity": [
       "15.91"
     ],
+    "handoutText": "10.\n10.\n10.\n10.\n10.\n10.\n10.\n \n10.\n10.\n10.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "4"
     ]
@@ -58630,9 +58722,10 @@
     "complexity": [
       "34.09"
     ],
+    "handoutText": "Скучайте, девушки, скучайте,\nСолдатам ваша нужна тоска,\nВ далеком далеке любовью укрепляйте\n__________________________.\n \nДа будет мир силен и вечен\nДрузьям на радость, врагам на страх.\nА с нашей стороны надежно обеспечен\n__________________________.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "порядок в танковых войсках"
     ]
@@ -59442,6 +59535,7 @@
     "complexity": [
       "66.67"
     ],
+    "handoutText": "YidTec",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -59775,9 +59869,10 @@
     "complexity": [
       "86.11"
     ],
+    "handoutText": "asana code",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "lasagna code",
       "lasagna"
@@ -59846,9 +59941,10 @@
     "complexity": [
       "47.22"
     ],
+    "handoutText": "pirates.net",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ee"
     ]
@@ -62985,6 +63081,7 @@
       "55.49",
       "44.44"
     ],
+    "handoutText": "1) .  .  .  .  .  .  .\n2) _ _ _ _",
     "corpus": "gq",
     "excluded": "duplet",
     "excludedBy": "дуплет или блиц",
@@ -63084,9 +63181,10 @@
       "71.34",
       "68.89"
     ],
+    "handoutText": "Не мечите бисер перед свиньями",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "защита кандидатской диссертации",
       "по слову «защита» без неверных уточнений",
@@ -63217,9 +63315,10 @@
       "45.73",
       "71.11"
     ],
+    "handoutText": "silver voice",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "фре́дди ме́ркьюри, quick куи́к",
       "фре́дди ме́ркьюри, quick",
@@ -63844,6 +63943,7 @@
     "author": "Алексей Медведев",
     "complexity": null,
     "handoutImage": "https://gotquestions.online/pics/3764/265291_razdatka.jpg",
+    "handoutText": "Родители обеспечивают любыми вещами вместо того, чтобы дать ДЕРЖАВУ и\nСКИПЕТР, которые будут нравственно, социально ориентировать детей по\nжизни.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -63885,9 +63985,10 @@
     ],
     "author": "Александр Жабров",
     "complexity": null,
+    "handoutText": "\"Кофейный автомобиль\" под названием \"Capuccino\" был построен в\nБритании.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "r"
     ]
@@ -64150,6 +64251,7 @@
     ],
     "author": "Майя Разорёнова",
     "complexity": null,
+    "handoutText": "Этот разговор состоялся вскоре после того, как мы с друзьями\nобсуждали Великих Мыслителей Прошлого, и кто-то сказал, что все они, по\nсути дела, жили на Востоке, а я возразил, что не все, но собеседник не\nслушал возражений и все продолжал развивать свою мысль, которая, вроде\n[__________], никак не кончалась, и тогда я решил продемонстрировать\nобразец Западной Мудрости, чтобы доказать друзьям, что мир состоит не\nтолько из восточной половинки.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -64756,9 +64858,10 @@
     ],
     "author": "Михаил Перлин, Борис Шойхет",
     "complexity": null,
+    "handoutText": "Kilometerthal euer Urpokal.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "имена муз",
       "по слову \"музы",
@@ -64887,9 +64990,10 @@
     ],
     "author": "Борис Шойхет",
     "complexity": null,
+    "handoutText": "[...] zum Morgengrauen\n[...] zur Mittagsstunde\n[...] zum Abendrot\n[...] zum Ende der Nacht",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "bis(s)",
       "bis",
@@ -64997,6 +65101,7 @@
     ],
     "author": "Борис Шойхет",
     "complexity": null,
+    "handoutText": "Incoming-Outgoing-Manager",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -65913,6 +66018,7 @@
     "complexity": [
       "45.46"
     ],
+    "handoutText": "Александр Генис пишет, что его приятель открыл ресторан, который\nпозже переименовал в \"Кавказ\", и дальше уточняет, что абсурдным здесь\nбыло вовсе не меню, а люди.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -66661,9 +66767,10 @@
     ],
     "author": "Эдуард Голуб",
     "complexity": null,
+    "handoutText": ".....................................\nСкоро лето, понаедут сюда бабы.\nМне не надо больше сильным быть и рослым.\nЯ могу теперь быть маленьким и слабым.\n...\nЗдесь гуляю босиком по первоцветью.\nОтрываю лапки мелким насекомым.\nКак там Путин? Чем он занят? Всё \"Роснефтью\"?\nВсё \"Роснефтью\", вероятно, да \"Газпромом\".\n...\nВдалеке от ихней властной вертикали,\nОт борьбы, что доведет до импотенции.\nГоворишь, что здесь татары всех достали?\nНо татары мне милее, чем чеченцы.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "крымский друг"
     ]
@@ -67177,9 +67284,10 @@
     "complexity": [
       "54.22"
     ],
+    "handoutText": "Женюсь на девушке или вдове, желательно [ПРОПУСК], но с приданым.\nПрошу писать не стесняясь: г. Кострома, почтамт, до востребования, для\nГ.Л.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "неграмотной"
     ]
@@ -68099,9 +68207,10 @@
     ],
     "author": "Александр Шапиро",
     "complexity": null,
+    "handoutText": "The Son",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "here comes"
     ]
@@ -68243,6 +68352,7 @@
     ],
     "author": "Владимир Грамагин",
     "complexity": null,
+    "handoutText": "1. Вяземский — Баратынскому\nПускай венки плетет нам радость,\nПока не прибрала с клюкой\nПлешивая ПРОПУСК, старость,\nС подагрой, с святцами в руках\nИли с твореньями Шишкова,\nС сухой площадкой на грудях\nИ с жалкой рожею Хвостова.\n \n2. Биографическая справка\nВ 1815 году у Байрона появляется ПРОПУСК.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -68307,9 +68417,10 @@
     ],
     "author": "Владимир Грамагин",
     "complexity": null,
+    "handoutText": "царство ее",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "цц"
     ]
@@ -68396,9 +68507,10 @@
     ],
     "author": "Сергей Амлинский",
     "complexity": null,
+    "handoutText": "9/22 августа.\nАпостола Матфия (ок. 63). Собор Соловецких святых. Мч. Антония\nАлександрийского. Прп. КОТА Египетского (IV). Мчч. Иулиана, Маркиана,\nИоанна, Иакова, Алексия, Димитрия, Фотия, Петра, Леонтия, Марии Патрикии\nи других.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "псой, короленко"
     ]
@@ -68459,6 +68571,7 @@
     ],
     "author": "Сергей Амлинский",
     "complexity": null,
+    "handoutText": "un bobi",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -68797,6 +68910,7 @@
     ],
     "author": "Григорий Алхазов",
     "complexity": null,
+    "handoutText": "На первых полосах крупнейших французских газет появились броские,\n\"ударные\" заголовки: \"Бубка летит над Парижем\" (\"Матэн\"), \"Бубка —\nсверхчеловек шеста!\" (\"Паризьен\"), \"Бубка — космонавт\" (\"Фигаро\"),\n\"Бубка на седьмом небе\" (\"Франс суар\") и многочисленные фотографии\nвиновника \"сенсации спортивного года\" — советского спортсмена Сергея\nБубки, который, преодолев планку на высоте 6 метров, установил\nвыдающийся мировой рекорд в прыжках с шестом.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -69123,6 +69237,7 @@
     ],
     "author": "Дмитрий Соловьёв",
     "complexity": null,
+    "handoutText": "Мы были возле пропасти, у края,\nИ страшный срыв гудел у наших ног,\nБесчисленные крики извергая.\n(Данте Алигьери)\n \nВблизи гора дымилась — дикий пик\nС вершиной огневержущей, с корой,\nСверкающей на склонах: верный признак\nРаботы серы, залежей руды\nВ глубинах недр.\n(Джон Мильтон)\n \nГарсэн. Черт побери. Это у вас день. А снаружи?.. По другую сторону\nэтих стен.\nКоридорный. Там коридор.\nГарсэн. А в конце коридора?\nКоридорный. Другие комнаты, и коридоры, и лестницы.\nГарсэн. А дальше?\nКоридорный. Это всё...\n(Жан-Поль Сартр)",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -77227,6 +77342,7 @@
       "58.82",
       "65.31"
     ],
+    "handoutText": "Ka-Ching!",
     "corpus": "gq",
     "questionRaw": "В этой песне поётся, что в наше время по выходным ходят не в церковь. Звукоподражание отсылает к тому, как открывается или закрывается ЭТО. Назовите ЭТО, используя слово с удвоенной согласной.",
     "excluded": null,
@@ -77577,6 +77693,7 @@
       "86.76",
       "75.51"
     ],
+    "handoutText": "Santerismo",
     "corpus": "gq",
     "questionRaw": "Красочные ритуалы кубинской религии сантери́я сопровождаются музыкой и танцами. Политика, к которой прибегло правительство Кубы для улучшения экономического положения в 1990-х годах, получила название «сантери́смо». Напишите в исходном виде слово, в котором мы заменили букву.",
     "excluded": null,
@@ -78723,9 +78840,10 @@
     "complexity": [
       "66.81"
     ],
+    "handoutText": "I have decided why they call television a medium. It’s because nothing on it is …",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "well done вэл дан",
       "well done"
@@ -79824,6 +79942,7 @@
     ],
     "author": "Владислав Говердовский",
     "complexity": null,
+    "handoutText": "Gece, sokak, fener, eczane,\nAnlamsız ve fersiz ışık.\nÇeyrek asır bile yaşarsan —\nBöyle olur. Çıkar yol yok.\n \nÖlüp başlayacaksın yine,\nHepsi tekrarlanır gene:\nGece, soğuk dalgaları ile,\nSokak, eczane ve fener.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -80036,9 +80155,10 @@
     ],
     "author": "Лев Шмулевич",
     "complexity": null,
+    "handoutText": "И мне слышится, что холод станет весной\nЕсли мы все споем эту песню\nИ с небесных лугов по ступеням сойдет\nЭто утро для тех, кто был вместе",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "иаков",
       "яков"
@@ -80220,9 +80340,10 @@
     ],
     "author": "Лев Орлов",
     "complexity": null,
+    "handoutText": "(......)\nТатэ — а глоз мыт бронфн.\n(......)\nТатэ — а глоз мыт бронфн.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "мама — анархия"
     ]
@@ -80345,9 +80466,10 @@
     ],
     "author": "Евгений Мухачёв",
     "complexity": null,
+    "handoutText": "Осенью уже нельзя исправить положение, какой бы ни был теплый\nсентябрь. ... ... ... — травянистое растение.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "потому что гладиолус"
     ]
@@ -80543,6 +80665,7 @@
     ],
     "author": "Андрей Кузьма",
     "complexity": null,
+    "handoutText": "Сексуальные преступления — 206,\nредакционные статьи — 316,\nновости из-за рубежа — 330,\nместные новости — 419,\nпреступления — 459,\nразводы — 509,\nроманы-фельетоны — 887,5,\nновости — 1108,\nконкурсы красоты — 1385,\nспорт и радио — 2947,\nспециализированные рубрики — 4620,\n? — 10177",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -82633,9 +82756,10 @@
     "complexity": [
       "0.00"
     ],
+    "handoutText": "\"Тридцать шесть \"…\" с изображением тучного мужчины, похожего на торговца, еще восемь, на которых отпечатано лицо человека, похожего на владельца похоронного бюро. Но этот \"торговец\" на самом деле был Гровером Кливлендом, а гробовых дел мастер – Уильямом Маккинли\".",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "психо",
       "психоз, psycho"
@@ -83146,9 +83270,10 @@
     "complexity": [
       "75.00"
     ],
+    "handoutText": "Над сельской кузницей ШАТЕН\nРаскинул полог свой.\nДа нечем кузнецу ковать,\nСтрадает день-деньской:\nШАТЕНЫ Гарри отхватил\nЖелезною рукой.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "каштан"
     ]
@@ -83448,9 +83573,10 @@
     "complexity": [
       "100.00"
     ],
+    "handoutText": "Dewey, Cheatem & Howe",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "рога и копыта",
       "черноморское отделение арбатовской конторы по заготовке рогов и копыт"
@@ -83686,9 +83812,10 @@
     "complexity": [
       "75.00"
     ],
+    "handoutText": "Liber Paginarum Fulvarum",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "желтые страницы"
     ]
@@ -83825,9 +83952,10 @@
     "complexity": [
       "0.00"
     ],
+    "handoutText": "\"Blade Runner (a movie)\"",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "никто"
     ]
@@ -84035,9 +84163,10 @@
     "complexity": [
       "62.50"
     ],
+    "handoutText": "\"_____ the dead\"",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "shoot шут",
       "shoot"
@@ -85446,6 +85575,7 @@
     "complexity": [
       "17.53"
     ],
+    "handoutText": "hamazakaran",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -86943,9 +87073,10 @@
       "69.77",
       "78.13"
     ],
+    "handoutText": "koňské příjmení",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "лошадиная фамилия"
     ]
@@ -87462,6 +87593,7 @@
       "46.51",
       "37.50"
     ],
+    "handoutText": "ПРОПУСК and calculate!",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -87485,6 +87617,7 @@
       "72.09",
       "53.13"
     ],
+    "handoutText": "Karl Wienke",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -87802,9 +87935,10 @@
     "complexity": [
       "21.68"
     ],
+    "handoutText": "Снова сказкой позабавим\nПравославных христиан,\nЧто наделал наш Иван,\nНаходясь во службе царской,\nПри конюшне государской;\nКак в суседки он попал,\nКак перо свое проспал,\nКак хитро поймал Жар-птицу,\nКак похитил Царь-девицу,\nКак он ездил за кольцом,\nКак был на небе послом,\nКак он в солнцевом селенье\nКиту выпросил прощенье;\nКак, к числу других затей,\nСпас он тридцать кораблей;\nКак в котлах он не сварился,\nКак красавцем учинился;\nСловом: наша речь о том,\nКак он сделался царем.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "трейлер"
     ]
@@ -88028,9 +88162,10 @@
     "complexity": [
       "24.48"
     ],
+    "handoutText": "Широкая электрификация южных губерний даст мощный толчок подъёму\nсельского хозяйства.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "1. панграмма. 2. анаграмма"
     ]
@@ -88191,9 +88326,10 @@
     "complexity": [
       "1.40"
     ],
+    "handoutText": "Игорь Можейко предполагает, что во времена, когда Тамаре предстояло\nстать царицей Грузии, Икс был икс.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сослан"
     ]
@@ -88683,9 +88819,10 @@
     "complexity": [
       "60.14"
     ],
+    "handoutText": "Архипелаг Новая Зеландия состоит из двух больших островов — Северного\nи Южного, разделенных узким проливом (2-3 км), и множества относительно\nмалых островов. Тянется с юго-запада на северо-восток на 925 км. Площадь\nвсех островов более 83 тыс. км2; ширина Северного острова до 123 км,\nЮжного — до 143 км.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "анди"
     ]
@@ -101769,6 +101906,7 @@
       "4.20",
       "5.56"
     ],
+    "handoutText": "Be Free",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -101919,9 +102057,10 @@
       "37.76",
       "27.78"
     ],
+    "handoutText": "randomizer",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "s"
     ]
@@ -102931,6 +103070,7 @@
     ],
     "author": "Михаил Серопян",
     "complexity": null,
+    "handoutText": "pizzly grolar",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -104209,6 +104349,7 @@
     "complexity": [
       "19.74"
     ],
+    "handoutText": "Он и пляшет и поет,\nОн и ПРОПУСК и кует.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -104304,6 +104445,7 @@
     "complexity": [
       "24.54"
     ],
+    "handoutText": "une pomme grosse et rouge\na big red apple",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -104632,9 +104774,10 @@
     "complexity": [
       "12.51"
     ],
+    "handoutText": "Когда безмолвная наводит\nЛуна свой робкий ________\nНа лик уснувшия природы...",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "полусвет"
     ]
@@ -105899,9 +106042,10 @@
     ],
     "author": "Наиль Фарукшин",
     "complexity": null,
+    "handoutText": "Cm",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "madam",
       "мадам"
@@ -106196,6 +106340,7 @@
     ],
     "author": "Юрий Шатц",
     "complexity": null,
+    "handoutText": "_23_",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -110330,9 +110475,10 @@
     "complexity": [
       "71.43"
     ],
+    "handoutText": "Скучный — невеселый, незанятный; например: «ПРОПУСК — скучная работа».",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "составлять словари",
       "составление словарей"
@@ -110499,9 +110645,10 @@
     "complexity": [
       "68.57"
     ],
+    "handoutText": "OON MATTERS",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "bab"
     ]
@@ -110762,9 +110909,10 @@
     "complexity": [
       "20.00"
     ],
+    "handoutText": "— Вы полагаете, что ваши идеи возможно проводить в наше время? Что ДЕВА может безвозбранно разгуливать во всей своей неприкрытой красоте среди железных дорог и телеграфов?\n—  Неприкрытой — нет, конечно, в БЕДЕ!",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "венера, мехах",
       "в любом порядке"
@@ -111097,6 +111245,7 @@
     "complexity": [
       "85.29"
     ],
+    "handoutText": "Call me if you have ____",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -111142,6 +111291,7 @@
     "complexity": [
       "3.92"
     ],
+    "handoutText": "https://www.keep___________on.com/",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -111263,6 +111413,7 @@
     "complexity": [
       "53.92"
     ],
+    "handoutText": "civilization",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -111335,6 +111486,7 @@
     "complexity": [
       "36.28"
     ],
+    "handoutText": "Rameshbabu Praggnanandhaa",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -111507,9 +111659,10 @@
     "complexity": [
       "67.65"
     ],
+    "handoutText": "нерат",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "эдга́р дега́",
       "по фамилии дега без неверных уточнений"
@@ -111721,6 +111874,7 @@
     "complexity": [
       "4.90"
     ],
+    "handoutText": "Proud boys",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -111815,9 +111969,10 @@
     "complexity": [
       "57.84"
     ],
+    "handoutText": "Один криминолог говорит, что вовлечение молодёжи в преступную деятельность напрямую зависит от занятости. Далее криминолог отмечает, что уменьшение уровня преступности в России это в значительной степени заслуга не МВД, а ЕГО. Что мы заменили в тексте вопроса?",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "э",
       "егэ"
@@ -112988,9 +113143,10 @@
     "complexity": [
       "64.71"
     ],
+    "handoutText": "ПРОПУСК, а вокруг",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "не смотрите наверх",
       "не смотри наверх», «don’t look up",
@@ -114146,6 +114302,7 @@
       "58.14"
     ],
     "handoutImage": "https://gotquestions.online/pics/4991/357027_razdatka.jpg",
+    "handoutText": "На картине — gordost’ семейства Медичи: X с родственниками.",
     "corpus": "gq",
     "questionRaw": "[Ведущему: не зачитывать текст, относящийся к раздаточному материалу]\nКакое короткое слово мы пропустили на раздаточном материале?",
     "excluded": null,
@@ -114466,9 +114623,10 @@
       "61.91",
       "90.70"
     ],
+    "handoutText": "bringing a ___ to a _____ fight",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "индиана джонс"
     ]
@@ -116166,9 +116324,10 @@
     ],
     "author": "Максим Мозуль",
     "complexity": null,
+    "handoutText": "1. Heute lässt Heinrich seinen Chef warten, Hermanns ruppiger\nKollege wurde gefeuert.\n2. Achte Edelmut, keine Blender! Selbstverliebtheit kann süchtig\nmachen.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": "duplet",
+    "excludedBy": "дуплет или блиц",
     "acceptVariants": [
       "1. \"бундеспрезиденты\". 2. \"бундесканцлеры",
       "1. по слову \"президент\" или \"präsident\". 2. по слову \"канцлер\" или \"kanzler",
@@ -116585,9 +116744,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutText": "В [...] в одном из французских музеев найден потерянный давным-давно\n[...] новорожденной неандертальской девочки, жившей более 40 тысяч лет\nназад.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "шкафу\", \"скелет"
     ]
@@ -116804,9 +116964,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutText": "\"Прощай, жилище моих предков! Отныне никто из [...] не будет владеть\nтобой. Твои древние стены обветшают, и там, где некогда пылал твой\nгостеприимный очаг, зайчиха выведет свое потомство\".\n\"Из наук [...] с особенным рвением занимался русской словесностью и\nисторией. Вообще он имел способности весьма хорошие, но с любовью он\nотносился только к этим двум предметам...\".",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "лермонтов"
     ]
@@ -116911,9 +117072,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutText": "Катрин Фукс сейчас 38 лет. Она еще застала те времена, когда ребят\nотправляли отдыхать в лагеря типа пионерских. По горну вставать, по\nгорну ложиться... Катрин пришла в музей посмотреть выставку и\nпоностальгировать: \"Я страшно любила ездить в лагерь. Утром, до\nзавтрака, мы рано вставали, часов так в пять — полшестого, и коллективно\nзанимались спортом. Мы ходили в походы, плавали...",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "поостальгировать"
     ]
@@ -117238,9 +117400,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutText": "Робкими нитями вплеталась в этот сон нечисть, порожденная\nчеловеческим бытием, человеческим рассудком и представлениями об ужасе,\nсмешными для того, кто ... спит в земле, железными, отросшими до колен\n... отгородясь от скуки происходящего снаружи.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "хома брут"
     ]
@@ -117741,9 +117904,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutText": "Ради жизни каких-то невест\nМожно жизнью своей поплатиться.\nА зачем?\n— Как зачем?\n— Ведь [... ... ...\n... ... ... ...].\n \nМожно вдруг забрести в темный лес,\nСо скалы неприступной свалиться.\nА зачем?\n— Как зачем?\n— Ведь [... ... ...\n... ... ... ...].",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "... на десять принцесс по статистике девять принцев"
     ]
@@ -117812,9 +117976,10 @@
       "66.67",
       "72.09"
     ],
+    "handoutText": "I. Максимы количества\n1) Изложи столько информации, сколько требуется (для целей коммуникации в настоящий момент). \n2) Изложи не больше информации, чем требуется. \nIV. Максимы манеры\nСупермаксима: Будь ясен.\nМаксимы: \n1) Избегай туманности формулировок. \n2) Избегай двусмысленности. \n3) Будь краток (избегай излишней многословности).",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "нарушают сами себя",
       "противоречат сами себе, нарушают друг друга, противоречат друг другу"
@@ -117955,6 +118120,7 @@
       "88.10",
       "81.40"
     ],
+    "handoutText": "Faber – производящий",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -118053,6 +118219,7 @@
       "51.19",
       "60.47"
     ],
+    "handoutText": "****decs – небольшие временные промежутки",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -118125,6 +118292,7 @@
       "9.52",
       "11.63"
     ],
+    "handoutText": "scam blr",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -118150,6 +118318,7 @@
       "8.33",
       "18.61"
     ],
+    "handoutText": "Жак Брель родился в 1929 году в семье фабриканта.\nВ 1954 году он выпустил первый альбом Jacques Brel et ses chansons.\nПосле успеха пластинки Demain l'on se marie в 1958-м карьера пошла в гору. \nВ середине 1960-х Брель стал одним из главных шансонье и давал по 300 концертов в год. \nВ 1967 году он оставил музыку и начал играть в кино.\nВ 1978 году Жак Брель умер от рака лёгких в Бобиньи.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -118389,6 +118558,7 @@
       "19.05",
       "32.56"
     ],
+    "handoutText": "Поговорим, когда моё назначение вступит в силу, ПРОПУСК, в следующем марте",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -118589,9 +118759,10 @@
       "23.81",
       "34.88"
     ],
+    "handoutText": "T'Belgique-t'Belgique!",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "чокается"
     ]
@@ -121815,9 +121986,10 @@
     "complexity": [
       "21.99"
     ],
+    "handoutText": "**ynichese",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "vo",
       "после рассмотрения спорных — wo"
@@ -124881,9 +125053,10 @@
     ],
     "author": "Руслан Горусев",
     "complexity": null,
+    "handoutText": "1. Песню \"Белфаст\" ... в 1977 году исполнила группа \"Boney M\" (одна\nиз солисток которой — Лиз Митчелл).\n2. Этот знаменитый нечистокровка со шрамом на лбу первые несколько\nлет своей жизни провел в ужасных условиях, но потом ... его жизнь\nизменилась к лучшему.\n3. В средние века загар ... считался признаком простолюдина,\nработающего на открытом воздухе, а среди аристократов ценилась бледность\nкожи.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "исток нила"
     ]
@@ -126773,6 +126946,7 @@
     "complexity": [
       "4.55"
     ],
+    "handoutText": "В одном из эпизодов воспоминаний, опубликованных в 1839 году, автора называют молоды* ****ом.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -127023,6 +127197,7 @@
     "complexity": [
       "63.64"
     ],
+    "handoutText": "За активную реализацию лионских надежд",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -127183,6 +127358,7 @@
     "complexity": [
       "34.09"
     ],
+    "handoutText": "Makes Shit Good — Nigel Ng",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -127253,9 +127429,10 @@
     "complexity": [
       "15.91"
     ],
+    "handoutText": "Rotokas",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "буквы алфавита ротокас"
     ]
@@ -127411,6 +127588,7 @@
     "complexity": [
       "68.18"
     ],
+    "handoutText": "WIMP: ______ ___________ Massive Particle",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -127618,9 +127796,10 @@
     "complexity": [
       "13.64"
     ],
+    "handoutText": "Valhalla Dancehall",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "саундтрек игры disco elysium",
       "саундтрек disco elysium"
@@ -127977,6 +128156,7 @@
     "complexity": [
       "31.82"
     ],
+    "handoutText": "Your heart’s in the ground, frozen overMy heart’s in the sky, *********",
     "corpus": "gq",
     "questionRaw": "Лирический герой песни Энсела Элгорта, тяжело переживающий расставание, говорит, что его сердце не просто разбито, а взорвано. Какой термин, впервые использованный в 1929 году, мы от вас скрыли?",
     "excluded": null,
@@ -128053,9 +128233,10 @@
     "complexity": [
       "40.91"
     ],
+    "handoutText": "**** *****инга, к примеру, тоже был чиновником",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "отец браун"
     ]
@@ -128277,9 +128458,10 @@
     "complexity": [
       "0.00"
     ],
+    "handoutText": "I kiss your lips",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "elis",
       "элис"
@@ -128598,6 +128780,7 @@
     "complexity": [
       "31.82"
     ],
+    "handoutText": "Подвозили наркотик к пяти,\nа потом до утра танцевали,\nи кенту с портаком «ЛЕБЕДИ»\nнеотложку в ночи вызывали.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -128647,6 +128830,7 @@
     "complexity": [
       "56.82"
     ],
+    "handoutText": "Нам, великим государям, к тебе, кроме ругани, и писать ничего не стоит, да писать ругань не подобает великим государям.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -128745,6 +128929,7 @@
     "complexity": [
       "70.45"
     ],
+    "handoutText": "Забирайте, ПРОПУСК!\nФу, гора свалилась с плеч!",
     "corpus": "gq",
     "questionRaw": "[Ведущему: не обращать внимание на отточие в тексте вопроса]\n\nМы раздали вам реплику героя из любительской постановки «Про Федота кузнеца…». Пожалуйста, ничего не перепутайте и заполните пропуск тремя словами одинаковой длины.",
     "excluded": null,
@@ -129400,6 +129585,7 @@
       "79.51",
       "80.44"
     ],
+    "handoutText": "Маккормик***",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -129499,9 +129685,10 @@
       "22.13",
       "26.09"
     ],
+    "handoutText": "***igma",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "gen"
     ]
@@ -129646,6 +129833,7 @@
       "84.43",
       "78.26"
     ],
+    "handoutText": "Come around — поменять мнение",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -129757,6 +129945,7 @@
     ],
     "author": "Михаил Подгорбунских",
     "complexity": null,
+    "handoutText": "Костакурта возглавил клуб Сербии.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -129882,9 +130071,10 @@
     ],
     "author": "Михаил Подгорбунских",
     "complexity": null,
+    "handoutText": "Matthias Hoepfner",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "зайчика",
       "кролика; в том числе с указанием на \"плейбой",
@@ -130140,6 +130330,7 @@
     ],
     "author": "Михаил Подгорбунских",
     "complexity": null,
+    "handoutText": "МФК ВИЗ-Синара\nВратари\nN16 Сергей ЗУЕВ\nN36 Александр КОНДРАТЬЕВ\nN1 Александр КРИГЕР\nПолевые игроки\nN3 Алексей МОХОВ\nN4 Сергей АБРАМОВ\nN6 Игорь ЗАЙКОВ\nN7 Андрей АФАНАСЬЕВ\nN9 Андрей ШАБАНОВ\nN10 Дамир ХАМАДИЕВ\nN11 Дмитрий ПРУДНИКОВ\nN12 Николай ЛУПАШКИН\nN13 Николай ШИСТЕРОВ\nN14 Александр КАТАНЭ\nN15 Александр ГРОМИЛИН\nN17 Павел ЧИСТОПОЛОВ\nN18 Константин ТИМОЩЕНКОВ\nN19 Константин АГАПОВ\nN58 Артем ЧУДИНОВ",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -130355,9 +130546,10 @@
     ],
     "author": "Михаил Подгорбунских",
     "complexity": null,
+    "handoutText": "21:00. Биатлон. Кубок мира. Спринт. Женщины.\n22:25. _____________________________________\n01:55. Вести-спорт.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "короткая программа"
     ]
@@ -131972,6 +132164,7 @@
     "complexity": [
       "42.86"
     ],
+    "handoutText": "Те же место и время. Собор и Спас.\nТерна кольцо на челе мессии.\nНо тогда мы были. Теперь ни нас\nНет, ни Бога нет, ни России...",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132445,6 +132638,7 @@
     ],
     "author": "Владимир Веселов",
     "complexity": null,
+    "handoutText": "Дейл Корнеги «Самая лучшая семья»",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132598,6 +132792,7 @@
     ],
     "author": "Владимир Литвинский",
     "complexity": null,
+    "handoutText": "Hay, be seedy! Effigy! Hate-shy, jaky yellow man, o peek, you are rusty, you've edible, you ex-wise head!",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132638,9 +132833,10 @@
     ],
     "author": "Ольга Укадер",
     "complexity": null,
+    "handoutText": "И всё же я думал о Вас без конца,\nЗабывши друзей и приятелей,\nИ всё же мечтал, чтобы наши сердца\nСвести к одному знаменателю.\n\nНаташа, мы счастливы будем вдвоём!\nНаташа, любовь моя первая!..\nЛингвистка сказала, что этот приём —\nВсего лишь простая …",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "гипербола"
     ]
@@ -132702,6 +132898,7 @@
     ],
     "author": "Марина Верцешук",
     "complexity": null,
+    "handoutText": "гомеоморфные тела",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -133842,9 +134039,10 @@
     ],
     "author": "Мишель Матвеев",
     "complexity": null,
+    "handoutText": "В литературе сократится количество больших текстов. Читателю будет\nслишком сложно удерживать их в голове. Упростится сюжетная линия.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "твит"
     ]
@@ -134805,9 +135003,10 @@
     ],
     "author": "Екатерина Абрашина",
     "complexity": null,
+    "handoutText": "Месяц улыбается и заверчен, как",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "аркадий аверченко",
       "аверченко"
@@ -135238,9 +135437,10 @@
       "5.88",
       "41.67"
     ],
+    "handoutText": "Один интернет-пользователь рассказывал, что пытался зарегистрироваться на форуме какого-то сайта, связанного с ЧГК. Но попытка была безуспешной, ведь окошко с капчей было ТАКИМ. В 2001 году чясс тоже оказался ТАКИМ.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "черный ящик с серсо"
     ]
@@ -135420,9 +135620,10 @@
       "0.00",
       "4.17"
     ],
+    "handoutText": "Какой номер телефона был в гримёрной ***** ********?",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "яков наумович смирнов",
       "яков наумович похис, яков наумович смирнофф"
@@ -135807,6 +136008,7 @@
       "52.94",
       "41.67"
     ],
+    "handoutText": "олег решал пример на паре\nв журнал получит два в конце\nзабыл олег в ответ добавить",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -135833,9 +136035,10 @@
       "23.53",
       "37.50"
     ],
+    "handoutText": "Тонкие реки, сплетённые в тайну,\nЭтот ответ, я считаю, избит.\nВечно хранят они пропись случайную,\nКод мирозданья в изгибах сокрыт.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "отпечатки пальцев",
       "отпечаток пальца"
@@ -135882,6 +136085,7 @@
       "41.18",
       "50.00"
     ],
+    "handoutText": "___т___",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -135982,6 +136186,7 @@
     "complexity": [
       "82.83"
     ],
+    "handoutText": "I feel ya",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -136310,6 +136515,7 @@
     "complexity": [
       "81.12"
     ],
+    "handoutText": "Нам только б жизнь прожить, нам только б скорость выжать,\nНам только б сон заспать об ангельском крыле —\nИ некому узнать и некому услышать\nМальчишку, что кричит о ***** ******.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -136400,9 +136606,10 @@
     "complexity": [
       "16.74"
     ],
+    "handoutText": "Netto Stok’d",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "next to stok’d",
       "по словам «next to",
@@ -136712,9 +136919,10 @@
     "complexity": [
       "15.45"
     ],
+    "handoutText": "В пьесе «Сон в летнюю ночь» есть энергичный танец фей. В одном из театров Киото перед постановкой этой пьесы установили несколько резервуаров с ИКСОМ.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "буква о, о2",
       "о, о2"
@@ -136783,6 +136991,7 @@
     "complexity": [
       "39.06"
     ],
+    "handoutText": "Шерлок и Холмс\nКинг и Конг\nАстон и Мартин",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -137270,6 +137479,7 @@
     ],
     "author": "Дмитрий Красковский",
     "complexity": null,
+    "handoutText": "*о*****",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -137333,6 +137543,7 @@
     ],
     "author": "Павел Парфианович",
     "complexity": null,
+    "handoutText": "Кура – место пребывания",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -137480,9 +137691,10 @@
     ],
     "author": "Андрей Акимов",
     "complexity": null,
+    "handoutText": "yjdsqqfkm,jv123",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "по клавишам",
       "по клавиатуре"
@@ -137565,6 +137777,7 @@
     ],
     "author": "Павел Парфианович",
     "complexity": null,
+    "handoutText": "****ол***е *оле",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -137659,9 +137872,10 @@
     "complexity": [
       "1.30"
     ],
+    "handoutText": ".......berg  Löwen.....",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "франкенштейн",
       "франкенштайн, frankenstein"
@@ -137821,9 +138035,10 @@
     "complexity": [
       "3.90"
     ],
+    "handoutText": "Niugini",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ток-писин, новая гвинея",
       "пиджин, новая гвинея"
@@ -137977,9 +138192,10 @@
     "complexity": [
       "24.03"
     ],
+    "handoutText": "Villains********",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "plaining",
       "плейнинг; плэйнинг",
@@ -138004,9 +138220,10 @@
     "complexity": [
       "44.81"
     ],
+    "handoutText": "Четыре *********",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "звездочки",
       "астериска"
@@ -138275,9 +138492,10 @@
     "complexity": [
       "10.39"
     ],
+    "handoutText": "FICA",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "formula one",
       "formula-1, формула-1, формула один"
@@ -139143,6 +139361,7 @@
     "complexity": [
       "24.90"
     ],
+    "handoutText": "Plop, fizz",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -139213,6 +139432,7 @@
     "complexity": [
       "46.94"
     ],
+    "handoutText": "Maine — ... Island\nHawaii — ... Park\nVirginia — Forrest ...",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140127,6 +140347,7 @@
       "90.00",
       "92.00"
     ],
+    "handoutText": "sirloin steak – стейк из вырезки (англ.)",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140199,6 +140420,7 @@
       "48.33",
       "48.00"
     ],
+    "handoutText": "Institute of Genomic Research",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140226,6 +140448,7 @@
       "84.00"
     ],
     "handoutImage": "https://gotquestions.online/pics/6733/436201_razdatka.jpg",
+    "handoutText": "https://i.postimg.cc/x89NhmxW/image.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140323,6 +140546,7 @@
       "28.00"
     ],
     "handoutImage": "https://gotquestions.online/pics/6733/436205_razdatka.jpg",
+    "handoutText": "https://i.postimg.cc/sgn1T8Cd/unnamed.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -141369,9 +141593,10 @@
     ],
     "author": "Дмитрий Васильев",
     "complexity": null,
+    "handoutText": "Pneumonoultramicroscopicsilico******oconiosis",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "volcan",
       "vulcan, вулкан"
@@ -141954,6 +142179,7 @@
       "100.00",
       "62.16"
     ],
+    "handoutText": "ВЕЛОРОК",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -146498,6 +146724,7 @@
     ],
     "author": "Егор Господчиков",
     "complexity": null,
+    "handoutText": "Плесень в банке\nС вишневым вареньем —\n...\n \nВстав чуть попозже,\nДостала бесплатный сыр\n...\n \n...\nнаучил — волоку\nк Фудзияме.",
     "corpus": "gq",
     "excluded": "duplet",
     "excludedBy": "дуплет или блиц",
@@ -146741,6 +146968,7 @@
     ],
     "author": "Евгений Дёмин",
     "complexity": null,
+    "handoutText": "apple          be-la-sana\n   barrel         toish-jeh\n   colonel        atsah-besh-le-gai\n   division       ashih-hi\n   eye            ah-nah\n   fighter plane  da-he-tih-hi\n   Germany        besh-be-cha-he\n   horse          lin\n   Japan          beh-na-ali-tsosie\n   major          che-chil-be-tah-ola\n   November       nil-chi-tso\n   Philippine     ke-yah-da-na-lhe\n   squad          debeh-li-zini\n   submarine      besh-lo\n   transport      dineh-nay-ye-hi",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -147814,9 +148042,10 @@
     ],
     "author": "Сергей Перехрест",
     "complexity": null,
+    "handoutText": "Уход отдельного поэта\nНе создает в пространстве брешь.\nВ такой большой стране, как эта,\nТаких, как мы — хоть с маслом ешь.\nНо не прервется эстафета\nИ к новому придет витку.\nВ такой большой стране, как эта,\nТаких, как мы, хоть с маслом ешь.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "смотри четвертую строку"
     ]
@@ -148092,6 +148321,7 @@
     ],
     "author": "Сергей Перехрест",
     "complexity": null,
+    "handoutText": "Не щадя гитар,\nНе леча катар,\nВ тишину врываясь, как нашествие татар,\nМы наносим по природе акустический удар!\nЗапевай, не трусь,\nСлуха нет — и пусть,\nЗнаем три аккорда, но уж это — наизусть.\nА кто выучит четвертый, тот зазнается, боюсь!",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -148706,6 +148936,7 @@
     ],
     "author": "Наталия Криницкая",
     "complexity": null,
+    "handoutText": "1. \"[Пропуск] впервые в России была использована в 1860 г. в\nПетербургском университете, во время диспута о происхождении Руси между\nакадемиком Михаилом Погодиным и профессором Николаем Костомаровым\".\n2. \"[Пропуск] Паркера и Уотерса привлекательна тем, что причудливо\nзашифрованные в ней образы, бесконечно фрактальные мультипликационные\nаллегории, сюрреалистичная кадриль бессвязных эпизодов создают мощнейшую\nассоциативную силу, которая раззадоривает зрительское воображение\".",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -149178,6 +149409,7 @@
     ],
     "author": "Павел Солахян",
     "complexity": null,
+    "handoutText": "..schtsch..",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -149351,9 +149583,10 @@
     ],
     "author": "Павел Солахян",
     "complexity": null,
+    "handoutText": "И брату, и мне уже за шестьдесят, и я только недавно — несколько дней\nназад — спросил его",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "желтыми страницами",
       "желтыми"
@@ -149555,9 +149788,10 @@
     ],
     "author": "Александр Либер",
     "complexity": null,
+    "handoutText": "\"Как розы здесь растут между лесами?\"\n\"Где терния растут?\"",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "эхо"
     ]
@@ -149664,9 +149898,10 @@
     ],
     "author": "Сергей Николенко",
     "complexity": null,
+    "handoutText": "imagnific",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "imeldific имельдифик",
       "imeldific"
@@ -149731,6 +149966,7 @@
     ],
     "author": "Сергей Николенко",
     "complexity": null,
+    "handoutText": "А Сатана видит Наташу,\nНи один дьявол не выжил,\nОдинокий Тайленол,\nНе банановая палка.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -149920,9 +150156,10 @@
     ],
     "author": "Алексей Полевой",
     "complexity": null,
+    "handoutText": "Metalinguistic metalinguistic",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "sh"
     ]
@@ -150049,6 +150286,7 @@
     ],
     "author": "Евгений Миротин",
     "complexity": null,
+    "handoutText": "Я вынимаю из ящика яблоко.\nВсё. До свиданья. ........... ......",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -150667,6 +150905,7 @@
     ],
     "author": "Наташа Яковлева",
     "complexity": null,
+    "handoutText": "Doctor Zhivago",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -154053,9 +154292,10 @@
     ],
     "author": "Дмитрий Карякин",
     "complexity": null,
+    "handoutText": "San Fernando Valley",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "san pornando valley"
     ]
@@ -154673,9 +154913,10 @@
     ],
     "author": "Александр Шевченко",
     "complexity": null,
+    "handoutText": "В статье о джинсах в СССР утверждается, что \"обладание синими штанами\nавтоматически переводило молодых пацанов на более высокий социальный\nуровень\".",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "пацаков"
     ]
@@ -154911,6 +155152,7 @@
     ],
     "author": "Вадим Назаров",
     "complexity": null,
+    "handoutText": "Природа проявляет здесь необыкновенную склонность покрывать всё\nрастительностью: косматой шерстью, руном, щетиною и прочими видами\nволос; так, у английских лошадей растут настоящие волосяные кусты или\nкисти на ногах, а английские собаки — это просто смешные комки косматой\nшерсти. Только английский он и английский джентльмен ежедневно бреются.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -154995,6 +155237,7 @@
     ],
     "author": "Руслан Габдрахманов",
     "complexity": null,
+    "handoutText": "xxx: -_- о_- о_о О_О\nxxx: Чё смотришь? Это [пропуск]. Ты умер.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -155035,6 +155278,7 @@
     ],
     "author": "Наиль Валеев",
     "complexity": null,
+    "handoutText": "\"Вам, земли древние, — кричит она, безмолвных\nГуб не разжав, — жить в роскоши пустой,\nА мне отдайте из глубин бездонных\nСвоих изгоев, люд забитый свой,\nПошлите мне отверженных, бездомных,\nЯ им свечу у двери золотой!\"",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -155782,6 +156026,7 @@
     ],
     "author": "Дмитрий Галкин",
     "complexity": null,
+    "handoutText": "... for ...",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -156145,6 +156390,7 @@
     ],
     "author": "Игорь Тюнькин",
     "complexity": null,
+    "handoutText": "Полиакрилоиламиноундекановая кислота",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -156188,9 +156434,10 @@
     ],
     "author": "Игорь Тюнькин",
     "complexity": null,
+    "handoutText": "Можете ли вы петь одновременно в нескольких тональностях?\nСлепы ли вы...\nЧто он только охотится...\nПоющие на астрономических высотах.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "cats",
       "на других языках"
@@ -156293,6 +156540,7 @@
     ],
     "author": "Петр Степанов",
     "complexity": null,
+    "handoutText": "WAS FIRST PROPOSED IN 1950 BY DR ERNST RAFENBERG.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -156334,6 +156582,7 @@
     ],
     "author": "Петр Степанов",
     "complexity": null,
+    "handoutText": "Эх, ...! Еще ...! Еще много-много ...!",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -156528,9 +156777,10 @@
     ],
     "author": "Евгений Кононенко",
     "complexity": null,
+    "handoutText": "B1 1,5 мг\nPP 20 мг\nB6 1 мг\nFe 18 мг\nI 150 мкг\nCu 2 мг\nMo 25 мкг\nA 1 мг\nE 10 мг\nC 80 мг\nMg 40 мг\nMn 2,5 мг\nSe 25 мкг\nZn 15 мг\nB2 1,7 мг\nB5 5 мг\nB6 1 мг\nB9 200 мкг\nB12 3 мкг\nD3 2,5 мкг\nH 30 мкг\nK1 25 мкг\nCa 100 мг\nCr 25 мкг",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "алфавит"
     ]
@@ -156609,9 +156859,10 @@
     ],
     "author": "Михаил Болотский",
     "complexity": null,
+    "handoutText": "Удаль\nЮрк\nСмель\nЛовк",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "мальчиш-кибальчиш",
       "кибальчиш"
@@ -156857,6 +157108,7 @@
     ],
     "author": "Алексей Сотников, Константин Хмелинин",
     "complexity": null,
+    "handoutText": "Международный Каннский фестиваль короткометражного экспериментального\nавангардного кино и видео проводится с 2002 года в августе-сентябре.\nГран-при фестиваля — \"Золотой пальмовый секатор\".",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -156983,9 +157235,10 @@
     ],
     "author": "Инна Грановская",
     "complexity": null,
+    "handoutText": "Доносился ветра свист\nветочки дрожали\nи упал с березы лист\nего [два слова пропущено]\nА над речкою стоял\nневеселый парк\nпо дорожке там шагал\nего [два слова пропущено]",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "... ференц звали...\", \"... звали марк"
     ]
@@ -157107,9 +157360,10 @@
     ],
     "author": "Байрам Кулиев",
     "complexity": null,
+    "handoutText": "\"Маульт был страстным приверженцем Рыцарства с большой буквы. Поэтому\nон и выбрал такую фамилию. Мы пытались предложить Болтон или\nВулфхэмптон, однако Маульт никогда не слышал о них.\"\n(перевод И. Забелиной, издательство \"Букмэн\", 1998)\n\"Моулт был большим любителем скачек. Из этих соображений он и выбрал\nтакую фамилию. Мы предлагали Болтон или Вулверхэмптон, но он и слышать\nне хотел.\"\n(перевод А. Коршунова, издательство \"Центрполиграф\", 2002)",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "тоттенхэм",
       "tottenham; хотспур",
@@ -157278,9 +157532,10 @@
     ],
     "author": "Евгений Куприянов",
     "complexity": null,
+    "handoutText": "***син",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "дар"
     ]
@@ -157723,6 +157978,7 @@
     "sources": [],
     "author": "Илья Бабицкий",
     "complexity": null,
+    "handoutText": "Сын [ПРОПУСК 1] к отцу пришел\nИ призналась кроха:\n— \"[ПРОПУСК 2]\" пишут хорошо,\nПапа пишет плохо!",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -158044,6 +158300,7 @@
     ],
     "author": "Иван Кебец",
     "complexity": null,
+    "handoutText": "Владимир Цыбульский, рассказывая о Партии народной свободы \"За Россию\nбез произвола и коррупции\" (ПНСЗРБПИК), упоминает ЕГО.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -158218,6 +158475,7 @@
     ],
     "author": "Артём Колесов",
     "complexity": null,
+    "handoutText": "Don't give HIM a chance",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -158387,9 +158645,10 @@
     ],
     "author": "Борис Окунь",
     "complexity": null,
+    "handoutText": "... — любезный посредник, протягивающий руку разным партиям, дабы\nвсех сблизить, всех объединить.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "с яйца",
       "яйцо"
@@ -158659,9 +158918,10 @@
     ],
     "author": "Владимир Ксенофонтов, Артём Колесов",
     "complexity": null,
+    "handoutText": "— Пиши, Миша, записывай. Пятью пять двадцать пять, шестью двадцать\nпять — сто пятьдесят да плюс семнадцать, — итого сто шестьдесят семь\nваленок. Тэк-с! Теперь помножить на десять рукавиц, это получается одна\nтысяча шестьдесят семь. Валяй пиши: одна тысяча шестьдесят семь.\n— Чего одна тысяча шестьдесят семь?\n— Кажется, довольно ясно: валенко-рукавиц. Пиши. Теперь дальше. С\nлевой ноги тридцать да с правой ноги тридцать девять... Гм... будет\nтридцать умножить на тридцать девять. Будет одна тысяча сто семьдесят.\nПиши, Миша: одна тысяча сто семьдесят.\n— Чего?\n— Ясно, чего: право-левых валенков...\n— Василий Иванович, — кричала из соседней комнаты машинистка Манечка,\n— сколько у нас за прошлый месяц было сыграно шахматных партий?\n— Четыреста пятьдесят две!",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "цифромания"
     ]
@@ -158764,6 +159024,7 @@
     ],
     "author": "Наиль Фарукшин",
     "complexity": null,
+    "handoutText": "Nobelium",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -162465,9 +162726,10 @@
     ],
     "author": "Михаил Серопян",
     "complexity": null,
+    "handoutText": "Humuch shep corl ya?\nHow often do ships come here?",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "hms bounty",
       "bounty",
@@ -162912,10 +163174,11 @@
     "sources": [],
     "author": "Вадим Барановский",
     "complexity": null,
+    "handoutText": "ИКС носит тонкие щеголеватые усики, соломенную шляпу и ботинки с\nгамашами. Он один из пионеров автомобильного спорта. ИКС владеет\nвосточными единоборствами и умеет двигаться бесшумно. ИКС много\nпутешествовал и добился известности, хотя случалось ему терпеть и\nпоражения — например, вернуть во дворец похищенную особу монарших кровей\nему не удалось. Мы не знаем, как зовут ИКСА, — для нас он навсегда\nостался ИКСОМ.\nИГРЕК носит тонкие щеголеватые усики, соломенную шляпу и ботинки с\nгамашами. Он один из пионеров автомобильного спорта. ИГРЕК владеет\nвосточными единоборствами и умеет двигаться бесшумно. ИГРЕК много\nпутешествовал и добился известности, хотя случалось ему терпеть и\nпоражения — например, вернуть во дворец похищенную особу монарших кровей\nему не удалось.\nИГРЕК, вне всякого сомнения — ИКС.",
     "corpus": "gq",
     "questionRaw": "[Ведущему: раздаточный материал не зачитывать, дать командам 20 секунд на ознакомление.]\nНазовите ИКСА и ИГРЕКА.",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "гениальный сыщик, эраст фандорин",
       "сыщик, фандорин"
@@ -164939,6 +165202,7 @@
     ],
     "author": "Михаил Скипский",
     "complexity": null,
+    "handoutText": "Категории: Персоналии по алфавиту / Музыканты по алфавиту /\nРодившиеся 23 июля / Родившиеся в 1965 году / Родившиеся в Хампстеде /\nРок-музыканты США / Певцы и певицы США / Рок-музыканты Великобритании /\nПевцы и певицы Великобритании / Артистические псевдонимы",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -166033,6 +166297,7 @@
     ],
     "author": "Алексей Пономарёв",
     "complexity": null,
+    "handoutText": "ПРЕОБРАЗОВАНИЕ ПРИБЫЛИ В ДОБАВОЧНЫЕ ФАКТОРЫ ПРОИЗВОДСТВА, В\nРЕЗУЛЬТАТЕ ЧЕГО ДОСТИГАЕТСЯ УВЕЛИЧЕНИЕ РАЗМЕРА СОБСТВЕННЫХ СРЕДСТВ.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -166287,9 +166552,10 @@
     ],
     "author": "Алексей Бороненко",
     "complexity": null,
+    "handoutText": "I don't do drugs. If I want a rush I just ПРОПУСК when I'm not\nexpecting it.\nЯ не принимаю наркотики. Когда я хочу острых ощущений, я просто резко\nПРОПУСК.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "stand up"
     ]
@@ -166672,6 +166938,7 @@
       "44.23",
       "68.97"
     ],
+    "handoutText": "Und sehen wir uns nicht in dieser Welt,\nDann sehen wir uns in ________",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -166822,6 +167089,7 @@
       "11.54",
       "20.69"
     ],
+    "handoutText": "Я хотел подцепить на вилку кусок ветчины, но **** у меня *********.\nЯ схватился ******** ***** за каминную полку, иначе бы упал.\nУдар оказался слишком болезненным, и, когда я надевал носки, у меня ******* ****.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -166918,6 +167186,7 @@
       "48.08",
       "75.86"
     ],
+    "handoutText": "Erin Go Bragh",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -166941,6 +167210,7 @@
       "7.69",
       "44.83"
     ],
+    "handoutText": "A ROMANCE OF MANY MEN",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -167206,9 +167476,10 @@
       "19.23",
       "55.17"
     ],
+    "handoutText": "тьмо",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "евгений поливанов"
     ]
@@ -167304,9 +167575,10 @@
       "40.39",
       "58.62"
     ],
+    "handoutText": "Нам не суметь предугадать,\nКак буква наша изречется, —\nИ нам участие дается,\nКак нам дается блага гладь…\nФедор Тютчев",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "федр с точками над е или без них",
       "федр с точками над е",
@@ -167339,9 +167611,10 @@
       "9.62",
       "27.59"
     ],
+    "handoutText": "Biel/Bienne",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "немо меттлер",
       "немо"
@@ -167433,9 +167706,10 @@
       "42.31",
       "51.72"
     ],
+    "handoutText": "The P**n Star",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "шахбокс"
     ]
@@ -167738,6 +168012,7 @@
     ],
     "author": "Ирина Михлина",
     "complexity": null,
+    "handoutText": "\"We shall fight on the beaches, we shall fight on the landing\ngrounds, we shall fight in the fields and in the streets, we shall fight\nin the hills; we shall never surrender.\"\n\"Мы будем сражаться на побережье. Мы будем сражаться на аэродромах.\nМы будем сражаться на полях и на улицах. Мы будем сражаться в горах. Мы\nникогда не сдадимся\".\nЧерчилль, 1940",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -168205,9 +168480,10 @@
     ],
     "author": "Илья Аввакумов",
     "complexity": null,
+    "handoutText": "— Мы сейчас проходим под средним сводом Лондонского моста, — сказал\nКук.\n— Что вы сказали? — спросил Форстер-младший.\n— Под нами мутная вода Темзы, в которой отражаются баржи, набережные\nи дома, — продолжал Кук.\nФорстера пробила дрожь. Шутка ли — мчаться к Южному полюсу по\nневедомым морям на корабле, которым командует сумасшедший капитан!",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "острова антиподов"
     ]
@@ -173799,9 +174075,10 @@
     ],
     "author": "Александр Печеный",
     "complexity": null,
+    "handoutText": "По полю круглому. ЦУП!\nКонь под подпругами. ЦУП!\nПлашмя навытяжку. ЦУП!\nСтойка навыдержку. ЦУП!\nПублика в хлопанье. ЦУП!\nГонит галопом. ЦУП!\nМери под крупом. ЦУП!\nМери на крупе. ЦУП!\nСальто с седла,\n<...>\nПублика вертится.\nЦУП...\nЦУП...\nЦУП...\nЕкнуло сердце.\nКровь...\nЦОП!...",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "гоп, стоп",
       "в любом порядке"
@@ -176809,6 +177086,7 @@
     ],
     "author": "Наталья Кожанова",
     "complexity": null,
+    "handoutText": "Когда на играх Олимпийских,\nВ надежде радостных похвал,\n[ПРОПУСК] истории читал,\nКак грек разил вождей азийских\nИ силы гордых сокрушал,\nНарод, любитель шумной славы,\nЗабыв ристанье и забавы,\nСтоял и весь вниманье был.\nК.Н. Батюшков",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -176873,6 +177151,7 @@
     ],
     "author": "Дмитрий Бочаров",
     "complexity": null,
+    "handoutText": "... Когда съехались на место дуэли, [слово пропущено] с сильным\nветром мешала прицелу, противники сделали по [слово пропущено], и оба\nдали промах; <...> секунданты решительно настояли, чтобы дуэль, если не\nхотят так кончить, была отменена непременно, и уверяли, что уже нет\nболее зарядов. <...> примирение состоялось быстро.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -176962,6 +177241,7 @@
     "author": "Дмитрий Бочаров",
     "complexity": null,
     "handoutImage": "https://gotquestions.online/pics/2966/194621_razdatka.jpg",
+    "handoutText": "1.\nМихалков: — Что это, каша, что ли?\nАдабашьян: — [пропуск], сэр!\n2.\n[пропуск]: — Я погнался за великолепным экземпляром Cyclopides. Но у\nменя с собой ничего нет.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -177113,6 +177393,7 @@
     ],
     "author": "Сергей Климов",
     "complexity": null,
+    "handoutText": "И клюет себе синь-водицу,\nи топорщится, в небо глядя.\nНа вершину его — птица\nнесмышленая сядет.\nПодойдут бабенки, толкуя,\nнагребут в ведерко водицы...",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -177218,6 +177499,7 @@
     ],
     "author": "Дмитрий Бочаров",
     "complexity": null,
+    "handoutText": "1. \"Валезары, жители швейцарского [пропуск] Вале, абсолютно уверены в\nтом, что их долина — лучшая часть Альп, потому что достопримечательности\nу них самые интересные, отели самые лучшие, а природа самая красивая\".\n2. [пропуск], набравший 17% голосов, по результатам опроса 2005 года,\nбыл назван лучшим игроком всех времен в премьер-лиге.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -177283,9 +177565,10 @@
     ],
     "author": "Ольга Кочергина",
     "complexity": null,
+    "handoutText": "Maaf, di mana ada kamar kecil?\nMaafkan saya, di manakah tandas?\nMi scusi, dove' il bagno?\nPardonpetas, kie estas la necesejo?",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "горшком",
       "ночным горшком"
@@ -178639,6 +178922,7 @@
     ],
     "author": "Евгений Покревский, Рамиль Субхангулов",
     "complexity": null,
+    "handoutText": "паранормальное явление\nпрокрастинация лечение\nартериальное давление\nи губ твоих прикосновение",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -178920,10 +179204,11 @@
     ],
     "author": "Александр Панфёров",
     "complexity": null,
+    "handoutText": "Центр туризма, расположенный в окрестностях немецкого города,\nпостроен совсем недавно, однако благодаря чумовому оформлению органично\nвписался в пейзаж.",
     "corpus": "gq",
     "questionRaw": "[Ведущему: текст раздаточного материала не озвучивать!]\nВ розданном вам тексте мы заменили одну букву. Напишите название упомянутого города, содержащее дефис.",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "нарьян-мар"
     ]
@@ -179249,6 +179534,7 @@
     ],
     "author": "Михаил Иткин",
     "complexity": null,
+    "handoutText": "We hold this truth to be self-evident that all men are created equal",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -179480,6 +179766,7 @@
     ],
     "author": "Сергей Вознесенский",
     "complexity": null,
+    "handoutText": "Паскаль бы многое постиг,\nувидь он и услышь,\nкак пьяный ПРОПУСК1\nпоет ПРОПУСК2.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -180206,9 +180493,10 @@
     ],
     "author": "Игорь Бронштейн",
     "complexity": null,
+    "handoutText": "Отряд подкупленных господ,\nИсполнив миссию свою,\nВсё представлял наоборот:\nПРОПУСК1 живется, как ПРОПУСК2.",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "в юар, в раю"
     ]
@@ -180557,6 +180845,7 @@
     ],
     "author": "Анна Бабушкина",
     "complexity": null,
+    "handoutText": "Прошедшею ночью замерзли все,\nособенно после двух.\nТак дуло от стен, что, в кроватях сев,\nвсе вслух выражали протест и гнев,\nготовясь бежать в Москву.\n...\nСтекольщик был занят, никак не шел.\nБыл съеден шашлык и суп.\nБыл на зиму убран гамак и стол,\nи в доме скрипел на прощанье пол,\nтьфу-тьфу, не текло из труб.\n...\nВеранда от дома уходит прочь,\nпора тут сносить всё к псам.\nНам тоже пора, наступает ночь.\nКому тут поможешь, и чем помочь —\nдиагноз: ПРОПУСК",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -180661,6 +180950,7 @@
     ],
     "author": "Алина Стрельцова",
     "complexity": null,
+    "handoutText": "К обеду, случившемуся, вероятнее всего, 11 февраля 1872 года,\nсостоящему из фленбургских устриц, супа с кореньями прентаньер, тюрбо\nсос Бомарше (то есть тюрбо под густым соусом), ростбифа, пулард а\nлестрагон (то есть каплунов), маседуана де фрюи (то есть консервов) и\nпармезана, подавали напитки: шампанское \"Каше блан\" (с белой печатью),\nбургундское из \"Кот-де-Нюи\" или классическое шабли.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -180986,6 +181276,7 @@
     ],
     "author": "Александр Коханов",
     "complexity": null,
+    "handoutText": "учите физику придурки\nпод сослуживцев дружный смех\nворчал тевтонец надевая\nдоспех",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -181320,6 +181611,7 @@
     ],
     "author": "Сергей Трофимов",
     "complexity": null,
+    "handoutText": "Красу дворцов и королей\nЦеню я выше всех вещей.\nСтрану люблю, а мой король\nВажнейшую играет роль.\nБританский королевский стяг\nЗдесь ждет торжественных присяг.\n \nХотел бы я изгнать сперва\nИ Здравый Смысл и Права.\nНичтожен будет и презрен\nЧума дворянства — Томас Пейн.\nДавно пора спровадить вон\nСвободной Франции закон.",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,

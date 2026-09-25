@@ -251,7 +251,9 @@ def sanitize(rows, corpus):
             answer,
             theme,
             raw_question=as_text(row.get("question")),
-            handout_image=row.get("handoutImage"),
+            # Текстовая раздатка закрывает разбор раздатки так же, как картинка:
+            # цикл показывает и то и другое (T27).
+            handout_image=row.get("handoutImage") or row.get("handoutText"),
         )
         record = dict(row)
         record["corpus"] = corpus
@@ -328,15 +330,28 @@ def write_sample(rows, path, seed=20260829):
 
 def load_gq():
     """Дамп плюс раздатка из `gq_images.json`. Картинка ставится только
-    скачанная: вопрос с раздаткой, которой нет на диске, остаётся браком."""
+    скачанная: вопрос с раздаткой, которой нет на диске, остаётся браком.
+    Текстовая раздатка (T27) — `handoutText`, её показывает сам цикл."""
     with open(GQ_IN, encoding="utf-8") as f:
         rows = json.load(f)
     if not os.path.exists(GQ_IMAGES):
         return rows
     with open(GQ_IMAGES, encoding="utf-8") as f:
-        images = {i["attachedTo"]: i["url"] for i in json.load(f) if i.get("status") == "ok"}
-    return [{**row, "handoutImage": images[row["id"]]} if row["id"] in images else row
-            for row in rows]
+        manifest = json.load(f)
+    images = {i["attachedTo"]: i["url"] for i in manifest if i.get("status") == "ok"}
+    # «----Image alt text---->D:\\Текущая работа\\…» — подпись к картинке,
+    # выгруженная вместе с ней, а не раздатка: у обоих таких вопросов картинка есть.
+    texts = {i["attachedTo"]: i["text"] for i in manifest
+             if i.get("text") and not i["text"].startswith("----Image alt text")}
+    out = []
+    for row in rows:
+        row = dict(row)
+        if row["id"] in images:
+            row["handoutImage"] = images[row["id"]]
+        if row["id"] in texts:
+            row["handoutText"] = texts[row["id"]]
+        out.append(row)
+    return out
 
 
 def load_bingo():

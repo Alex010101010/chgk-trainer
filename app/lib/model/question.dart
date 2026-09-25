@@ -34,6 +34,10 @@ class Question {
   /// чтобы такого не случилось.
   final String? handout;
 
+  /// Текстовая раздатка (T27): отрывок, стихи или шаблон вроде «_ _ _ _».
+  /// Переносы строк значимы. `null` — текстовой раздатки нет.
+  final String? handoutText;
+
   const Question({
     required this.id,
     required this.corpus,
@@ -47,6 +51,7 @@ class Question {
     this.theme,
     this.tehniki = const [],
     this.handout,
+    this.handoutText,
   });
 
   /// Возвращает `null` на записи без обязательных полей: испорченная строка
@@ -83,6 +88,8 @@ class Question {
       tehniki:
           tehniki is List ? tehniki.whereType<String>().toList() : const [],
       handout: j['handout'] is String ? j['handout'] as String : null,
+      handoutText:
+          j['handoutText'] is String ? j['handoutText'] as String : null,
     );
   }
 
@@ -99,5 +106,6 @@ class Question {
         'theme': theme,
         'tehniki': tehniki,
         'handout': handout,
+        'handoutText': handoutText,
       };
 }
