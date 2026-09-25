@@ -14,6 +14,7 @@ import '../model/question.dart';
 import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
 import '../widgets/panda_says.dart';
+import 'daily_screen.dart';
 import 'tehnika_card_screen.dart';
 
 const int kRoundSize = 5;
@@ -142,11 +143,14 @@ class _ClassicScreenState extends State<ClassicScreen> {
     try {
       // Только gq: бинго-корпус конечен, и вопрос, потраченный здесь, стал бы
       // виденным — тема осталась бы в пуле сеток без непоказанного вопроса (T3).
-      // Только gq: бинго-корпус конечен, и вопрос, потраченный здесь, стал бы
-      // виденным — тема осталась бы в пуле сеток без непоказанного вопроса (T3).
-      final pool = (await widget.repository.loadAll())
+      final gq = (await widget.repository.loadAll())
           .where((q) => q.corpus == Corpus.gq)
           .toList();
+      // Сегодняшний вопрос дня Классике не отдаётся: иначе он мог бы попасться
+      // в раунде раньше и испортить ритуал (T12). Сыгранный — выпадет сам как
+      // виденный, а завтра станет обычным вопросом.
+      final daily = dailyQuestion(gq, localDay(_now()));
+      final pool = gq.where((q) => q.id != daily?.id).toList();
       final tehniki =
           await (widget.tehnikaRepository ?? AssetTehnikaRepository()).loadAll();
       final read = await _log.readAll();

@@ -255,3 +255,30 @@ int _weekOf(String startDay, String day) {
   final days = DateTime.parse(day).difference(DateTime.parse(startDay)).inDays;
   return days <= 0 ? 0 : days ~/ 7;
 }
+
+/// Итоги «Вопроса дня» (T12) по дням: `день → вердикт`. Попытка одна, поэтому
+/// берётся первый ответ дня — второго быть не должно, но если журнал его
+/// всё же содержит, переиграть день он не даёт.
+Map<String, Verdict> dailyResults(List<JournalEvent> events) {
+  final out = <String, Verdict>{};
+  for (final e in events.whereType<AnswerEvent>()) {
+    if (e.mode == GameMode.daily) out.putIfAbsent(e.day, () => e.verdict);
+  }
+  return out;
+}
+
+/// Дни подряд с сыгранным вопросом дня. Как и [currentStreak], серия,
+/// оборвавшаяся вчера, ещё жива: утром до игры она не должна показывать ноль.
+int dailyStreak(List<JournalEvent> events, DateTime now) {
+  final days = dailyResults(events).keys.toSet();
+  var cursor = DateTime.parse(localDay(now));
+  if (!days.contains(localDay(cursor))) {
+    cursor = cursor.subtract(const Duration(days: 1));
+  }
+  var streak = 0;
+  while (days.contains(localDay(cursor))) {
+    streak++;
+    cursor = cursor.subtract(const Duration(days: 1));
+  }
+  return streak;
+}

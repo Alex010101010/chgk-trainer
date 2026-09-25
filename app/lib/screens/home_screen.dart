@@ -11,6 +11,7 @@ import '../model/tehnika.dart';
 import '../widgets/coming_soon_screen.dart';
 import '../widgets/update_button.dart';
 import 'classic_screen.dart';
+import 'daily_screen.dart';
 import 'debug_journal_screen.dart';
 import 'bingo_screen.dart';
 import 'tehnika_card_screen.dart';
@@ -87,6 +88,24 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
+            // Первым: это ритуал на каждый день, ради него и заходят (T12).
+            Card(
+              child: ListTile(
+                key: const Key('home-daily'),
+                contentPadding: const EdgeInsets.all(16),
+                leading: const Icon(Icons.today_outlined, size: 32),
+                title: Text('Вопрос дня',
+                    style: Theme.of(context).textTheme.titleLarge),
+                subtitle: const Text('Один вопрос, одна попытка'),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => DailyScreen(
+                      repository: repository ?? AssetQuestionRepository(),
+                    ),
+                  ),
+                ),
+              ),
+            ),
             Card(
               child: ListTile(
                 key: const Key('home-tehnika'),
