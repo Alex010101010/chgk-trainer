@@ -12,6 +12,8 @@ import sys
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 GQ_IN = os.path.join(DATA_DIR, "gotquestions_dump.json")
+# Раздатка gq, докачанная отдельно от дампа (T21, `fetch_gq_handouts.py`).
+GQ_IMAGES = os.path.join(DATA_DIR, "gq_images.json")
 # Бинго-корпус собирается из двух источников: вики (T1) и статей индекса (T16).
 # Ниже по конвейеру корпус один — `bingo_clean.json`, — а разводит их поле
 # `source`. Отдельный третий вход пришлось бы не забыть подключить в санитайзере,
@@ -325,8 +327,16 @@ def write_sample(rows, path, seed=20260829):
 
 
 def load_gq():
+    """Дамп плюс раздатка из `gq_images.json`. Картинка ставится только
+    скачанная: вопрос с раздаткой, которой нет на диске, остаётся браком."""
     with open(GQ_IN, encoding="utf-8") as f:
-        return json.load(f)
+        rows = json.load(f)
+    if not os.path.exists(GQ_IMAGES):
+        return rows
+    with open(GQ_IMAGES, encoding="utf-8") as f:
+        images = {i["attachedTo"]: i["url"] for i in json.load(f) if i.get("status") == "ok"}
+    return [{**row, "handoutImage": images[row["id"]]} if row["id"] in images else row
+            for row in rows]
 
 
 def load_bingo():

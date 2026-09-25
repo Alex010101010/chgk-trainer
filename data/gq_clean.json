@@ -13,9 +13,10 @@
     ],
     "author": "Александр Сидоренков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5239/369291_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "гамма"
     ]
@@ -36,6 +37,7 @@
       "57.63",
       "53.12"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369292_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -60,6 +62,7 @@
       "57.63",
       "73.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369293_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -91,6 +94,7 @@
       "72.88",
       "75.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369294_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -114,6 +118,7 @@
       "83.05",
       "64.06"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369295_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -137,6 +142,7 @@
       "25.42",
       "29.69"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369296_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -161,6 +167,7 @@
       "45.76",
       "39.06"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369297_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -187,6 +194,7 @@
       "67.80",
       "62.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369298_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -211,6 +219,7 @@
       "96.61",
       "93.75"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369299_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -234,9 +243,10 @@
       "86.44",
       "84.38"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369300_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "песочные часы"
     ]
@@ -258,6 +268,7 @@
       "62.71",
       "56.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369301_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -282,6 +293,7 @@
       "77.97",
       "51.56"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369302_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -306,9 +318,10 @@
       "64.41",
       "54.69"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369303_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "свастика"
     ]
@@ -330,9 +343,10 @@
       "59.32",
       "70.31"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369304_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "праздника хэллоуин",
       "хэллоуин",
@@ -356,6 +370,7 @@
       "81.36",
       "67.19"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369305_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -380,6 +395,7 @@
       "42.37",
       "17.19"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369306_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -403,9 +419,10 @@
       "86.44",
       "79.69"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369307_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "огниво"
     ]
@@ -427,9 +444,10 @@
       "71.19",
       "17.19"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369308_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "белый крест"
     ]
@@ -450,6 +468,7 @@
       "44.07",
       "45.31"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369309_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -475,9 +494,10 @@
       "42.37",
       "39.06"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369310_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "магдебург"
     ]
@@ -498,9 +518,10 @@
       "98.31",
       "84.38"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369311_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "утконос"
     ]
@@ -523,9 +544,10 @@
       "86.44",
       "68.75"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369312_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "бабочки"
     ]
@@ -546,6 +568,7 @@
       "69.49",
       "67.19"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369313_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -569,9 +592,10 @@
       "62.71",
       "65.62"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369314_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "столовый"
     ]
@@ -592,6 +616,7 @@
       "74.58",
       "57.81"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369315_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -616,9 +641,10 @@
       "5.08",
       "9.38"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369316_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "якорь"
     ]
@@ -639,9 +665,10 @@
       "67.80",
       "43.75"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369317_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "подымите мне веки",
       "поднимите мне веки, откройте мне веки"
@@ -663,9 +690,10 @@
       "66.10",
       "48.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369318_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "огнетушитель"
     ]
@@ -687,6 +715,7 @@
       "89.83",
       "78.12"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369319_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -711,6 +740,7 @@
       "72.88",
       "73.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369320_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -734,6 +764,7 @@
       "72.88",
       "75.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369321_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -758,9 +789,10 @@
       "72.88",
       "85.94"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369322_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "почтовый адрес",
       "почтовый индекс"
@@ -784,6 +816,7 @@
       "64.41",
       "65.62"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369323_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -808,6 +841,7 @@
       "33.90",
       "9.38"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369324_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -831,6 +865,7 @@
       "66.10",
       "31.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369325_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -856,9 +891,10 @@
       "96.61",
       "81.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369326_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "звезда давида"
     ]
@@ -879,6 +915,7 @@
       "44.07",
       "31.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369327_razdatka.JPG",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -903,9 +940,10 @@
       "20.34",
       "15.62"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369328_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "флейта-позвоночник"
     ]
@@ -929,9 +967,10 @@
       "30.51",
       "14.06"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369329_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": "duplet",
+    "excludedBy": "дуплет или блиц",
     "acceptVariants": [
       "1. восход солнца, 2. зенит, 3. закат солнца",
       "1. восход , 2. зенит, 3. закат",
@@ -955,9 +994,10 @@
       "35.59",
       "21.88"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5239/369330_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "омега",
       "альфа/α и/, ω; зачет по омеге/ ω",
@@ -979,9 +1019,10 @@
     ],
     "author": "Александр Сидоренков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5239/369331_razdatka.JPG",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "агорафобом"
     ]
@@ -2052,9 +2093,10 @@
     ],
     "author": "Игорь Демьянцев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/205/9015_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "николас тульп",
       "тульп",
@@ -2353,6 +2395,7 @@
     ],
     "author": "Игорь Демьянцев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/205/9029_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -2658,6 +2701,7 @@
     ],
     "author": "Игорь Демьянцев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/205/9043_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -3023,6 +3067,7 @@
     ],
     "author": "Дмитрий Стальнухин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/6075/406332_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -3322,6 +3367,7 @@
     "complexity": [
       "75.56"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406345_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -3573,9 +3619,10 @@
     "complexity": [
       "60.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406356_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ротко, кляйн"
     ]
@@ -3619,9 +3666,10 @@
     "complexity": [
       "64.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406358_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "пост"
     ]
@@ -3692,9 +3740,10 @@
     "complexity": [
       "68.89"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406361_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "мат"
     ]
@@ -3744,6 +3793,7 @@
     "complexity": [
       "44.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406363_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -4049,9 +4099,10 @@
     "complexity": [
       "0.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406376_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ha ha ha"
     ]
@@ -4187,9 +4238,10 @@
     "complexity": [
       "28.89"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406382_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "шахматный конь, шахматный слон",
       "конь и слон; также «офицер» вместо «слон»; в любом порядке",
@@ -4430,6 +4482,7 @@
     "complexity": [
       "46.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406392_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -4455,9 +4508,10 @@
     ],
     "author": "Дмитрий Стальнухин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/6075/406393_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "рафи́ки",
       "описательный ответ, например: тот африканский мандри́л, который поднимал над головой си́мбу"
@@ -5185,6 +5239,7 @@
     "complexity": [
       "33.33"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406424_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -5519,6 +5574,7 @@
     "complexity": [
       "13.33"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406438_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -5569,6 +5625,7 @@
     "complexity": [
       "31.11"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406440_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -5673,6 +5730,7 @@
     "complexity": [
       "24.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6075/406444_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -6212,9 +6270,10 @@
     "complexity": [
       "15.49"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2254/143339_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": "duplet",
+    "excludedBy": "дуплет или блиц",
     "acceptVariants": [
       "1. это не телефон. 2. это не папа",
       "2. это не понтифик"
@@ -6538,9 +6597,10 @@
     "complexity": [
       "57.75"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2254/143352_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "супремаркет"
     ]
@@ -6811,6 +6871,7 @@
     "complexity": [
       "35.21"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2254/143363_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -6855,6 +6916,7 @@
     ],
     "author": "Кирилл Карташов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2007/125225_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -7224,6 +7286,7 @@
     ],
     "author": "Алексей Богословский, Александр Либер",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2007/125247_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -7618,6 +7681,7 @@
     ],
     "author": "Александр Коробейников",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2007/125271_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -8233,6 +8297,7 @@
     ],
     "author": "Михаил Карпук",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2007/125308_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -8631,6 +8696,7 @@
     ],
     "author": "Михаил Карпук",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2007/125332_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -8748,6 +8814,7 @@
     ],
     "author": "Михаил Карпук",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2007/125338_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -10800,9 +10867,10 @@
     "complexity": [
       "64.71"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1144/62224_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "резец и клык",
       "в любом порядке"
@@ -11104,9 +11172,10 @@
     "complexity": [
       "55.88"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1144/62237_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "аккордеоон"
     ]
@@ -11380,6 +11449,7 @@
     "complexity": [
       "11.76"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1144/62249_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -11567,9 +11637,10 @@
     "complexity": [
       "17.65"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1144/62257_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "pac-man",
       "пакман; пак-ман; pacman",
@@ -12056,6 +12127,7 @@
     "complexity": [
       "82.35"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1144/62277_razdatka.jpg",
     "corpus": "gq",
     "excluded": "duplet",
     "excludedBy": "дуплет или блиц",
@@ -12246,9 +12318,10 @@
     "complexity": [
       "73.53"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1144/62285_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "греко-римская борьба"
     ]
@@ -12336,6 +12409,7 @@
     "complexity": [
       "58.82"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1144/62289_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -12634,6 +12708,7 @@
     "complexity": [
       "69.12"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404578_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -12657,9 +12732,10 @@
     "complexity": [
       "38.24"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404579_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "арест дональда трампа",
       "арест трампа",
@@ -13295,6 +13371,7 @@
     "complexity": [
       "76.47"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404605_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -13729,9 +13806,10 @@
     "complexity": [
       "55.88"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404623_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "компьютер обыграл человека",
       "компьютер поставил мат человеку; человек проиграл компьютеру и т.п. по упоминанию победы компьютера над человеком",
@@ -13756,9 +13834,10 @@
     "complexity": [
       "42.65"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404624_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "камасутра"
     ]
@@ -14024,6 +14103,7 @@
     "complexity": [
       "77.94"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404635_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -14163,6 +14243,7 @@
     "complexity": [
       "25.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404641_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -14526,9 +14607,10 @@
     "complexity": [
       "25.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404657_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "малер"
     ]
@@ -14618,6 +14700,7 @@
     "complexity": [
       "44.12"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6034/404661_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -15254,9 +15337,10 @@
     "complexity": [
       "37.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/840/44897_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сверхновая звезда",
       "сверхновая",
@@ -15619,6 +15703,7 @@
     "complexity": [
       "2.86"
     ],
+    "handoutImage": "https://gotquestions.online/pics/840/44918_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -15875,6 +15960,7 @@
     "complexity": [
       "45.71"
     ],
+    "handoutImage": "https://gotquestions.online/pics/840/44929_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -16182,9 +16268,10 @@
     "complexity": [
       "0.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/840/44942_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "природа"
     ]
@@ -16489,6 +16576,7 @@
       "9.09",
       "16.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5544/383231_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -16738,9 +16826,10 @@
       "31.82",
       "42.86"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5544/383241_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ваниль"
     ]
@@ -16763,6 +16852,7 @@
       "36.36",
       "57.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5544/383242_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -16813,9 +16903,10 @@
       "4.55",
       "50.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5544/383244_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "коллективная жалоба"
     ]
@@ -17198,6 +17289,7 @@
       "4.55",
       "16.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5544/383260_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -17245,6 +17337,7 @@
       "4.55",
       "7.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5544/383262_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -17296,9 +17389,10 @@
       "55.00",
       "89.47"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6068/405963_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "51"
     ]
@@ -17392,9 +17486,10 @@
       "45.00",
       "78.95"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6068/405967_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "штурм зоны 51"
     ]
@@ -17416,6 +17511,7 @@
       "65.00",
       "94.74"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6068/405968_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -17467,6 +17563,7 @@
       "20.00",
       "47.37"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6068/405970_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -17513,9 +17610,10 @@
       "80.00",
       "94.74"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6068/405972_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "невидимые чернила",
       "исчезающие чернила, шпионские чернила, симпатические чернила"
@@ -17780,9 +17878,10 @@
     "sources": [],
     "author": "Алексей Кириллов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4838/345739_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "таблицы для проверки зрения"
     ]
@@ -18050,10 +18149,11 @@
     ],
     "author": "Дмитрий Борок",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4838/345759_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Ведущему: неправильную орфографию в первом предложении вопроса следует выделить голосом.]\nПревед, кросавчеги! Для начала вот такой вопросег.\nПользователь Живого Журнала kanevsky объявил конкурс рисунков, один из участников которого перед вами. Каким словом из семи букв kanevsky назвал каждый из таких рисунков?",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "юзерпиг",
       "userpig"
@@ -18424,9 +18524,10 @@
     ],
     "author": "Борис Моносов, Татьяна Моносова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4838/345784_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ручку (вторую, такую же, как и первая)",
       "ручку",
@@ -18660,9 +18761,10 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3457/240454_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "дикие гитары"
     ]
@@ -18722,6 +18824,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3457/240457_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19202,9 +19305,10 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3457/240489_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "альфа-самец"
     ]
@@ -19288,6 +19392,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3457/240497_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -19472,6 +19577,7 @@
     ],
     "author": "Максим Воронецкий",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3457/240517_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -20191,9 +20297,10 @@
     "complexity": [
       "55.39"
     ],
+    "handoutImage": "https://gotquestions.online/pics/261/11490_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "из журнала playboy",
       "по слову «playboy» или «плэйбой",
@@ -20514,9 +20621,10 @@
     "complexity": [
       "27.41"
     ],
+    "handoutImage": "https://gotquestions.online/pics/245/10730_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "3 √",
       "знак кубического корня; кубический корень",
@@ -20848,9 +20956,10 @@
     "complexity": [
       "59.26"
     ],
+    "handoutImage": "https://gotquestions.online/pics/245/10744_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "святой петр",
       "апостол петр; петр",
@@ -21025,6 +21134,7 @@
     "complexity": [
       "22.22"
     ],
+    "handoutImage": "https://gotquestions.online/pics/245/10751_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -26214,9 +26324,10 @@
     ],
     "author": "Андрей Черданцев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4140/294404_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "свинья",
       "синонимы слова \"свинья\"; поросенок; нюша",
@@ -26323,6 +26434,7 @@
     ],
     "author": "Борис Моносов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4140/294409_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -26555,6 +26667,7 @@
     ],
     "author": "Юлия Гафнер",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4140/294420_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -26734,6 +26847,7 @@
     ],
     "author": "Андрей Черданцев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4140/294428_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -26860,6 +26974,7 @@
     ],
     "author": "Борис Моносов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4140/294434_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -27054,9 +27169,10 @@
     ],
     "author": "Борис Моносов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4140/294445_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "губки"
     ]
@@ -27385,6 +27501,7 @@
       "62.50",
       "77.08"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4932/354599_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -27506,9 +27623,10 @@
       "24.17",
       "28.12"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4932/354604_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "лот",
       "lot"
@@ -27650,6 +27768,7 @@
       "26.67",
       "29.17"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4932/354610_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -29019,9 +29138,10 @@
     ],
     "author": "Андрей Островский",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4598/331253_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "большая медведица"
     ]
@@ -29561,6 +29681,7 @@
     ],
     "author": "Наталья Кудряшова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4598/331277_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -30503,6 +30624,7 @@
     "complexity": [
       "54.02"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1629/96471_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -30525,6 +30647,7 @@
     "complexity": [
       "44.83"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1629/96472_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -30571,6 +30694,7 @@
     "complexity": [
       "90.80"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1629/96474_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -30979,6 +31103,7 @@
       "50.00",
       "74.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5866/397107_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -31150,6 +31275,7 @@
       "4.48",
       "3.45"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5866/397114_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -31444,9 +31570,10 @@
       "54.48",
       "63.79"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5866/397128_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "коньки"
     ]
@@ -31492,6 +31619,7 @@
       "72.39",
       "68.97"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5866/397132_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -32259,9 +32387,10 @@
     "complexity": [
       "60.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5324/373138_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "победа», обеда, беда, еда",
       "в любом порядке и падеже"
@@ -32308,9 +32437,10 @@
     "complexity": [
       "8.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5324/373140_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "tomorrow",
       "завтра"
@@ -32604,6 +32734,7 @@
     "complexity": [
       "38.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5324/373153_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -33599,6 +33730,7 @@
       "77.50",
       "72.92"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5746/391951_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -36544,9 +36676,10 @@
     ],
     "author": "Иван Стариков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3680/259322_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "чешки"
     ]
@@ -36697,9 +36830,10 @@
     ],
     "author": "Иван Стариков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3680/259330_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "понтия пилата",
       "пилата"
@@ -36895,9 +37029,10 @@
     ],
     "author": "Иван Стариков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3680/259341_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "над вечным покоем"
     ]
@@ -37052,6 +37187,7 @@
     ],
     "author": "Иван Стариков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3680/259350_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -37139,9 +37275,10 @@
     ],
     "author": "Иван Стариков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3680/259354_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "с, марта"
     ]
@@ -37248,9 +37385,10 @@
     ],
     "author": "Юрий Козьмин, Алексей Пуринсон",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3680/259361_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "двуглавый орел"
     ]
@@ -37440,6 +37578,7 @@
     ],
     "author": "Юрий Выменец",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345160_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -38285,6 +38424,7 @@
     ],
     "author": "Иван Семушин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345224_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -38629,6 +38769,7 @@
     ],
     "author": "Сергей Николенко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345251_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -38692,6 +38833,7 @@
     ],
     "author": "Борис Моносов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345254_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -38776,9 +38918,10 @@
     ],
     "author": "Дмитрий Жарков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345258_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "мяч для регби"
     ]
@@ -39034,6 +39177,7 @@
     ],
     "author": "Юрий Выменец",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345270_razdatka.gif",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -39054,6 +39198,7 @@
     ],
     "author": "Юрий Выменец",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345271_razdatka.gif",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -39139,6 +39284,7 @@
     ],
     "author": "Юрий Выменец",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4828/345279_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -40478,6 +40624,7 @@
     "complexity": [
       "94.74"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6631/431354_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -41050,9 +41197,10 @@
     "complexity": [
       "58.41"
     ],
+    "handoutImage": "https://gotquestions.online/pics/54/2580_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "i,n",
       "в любом порядке"
@@ -41192,9 +41340,10 @@
     "complexity": [
       "27.43"
     ],
+    "handoutImage": "https://gotquestions.online/pics/54/2586_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "парабола"
     ]
@@ -41380,9 +41529,10 @@
     "complexity": [
       "16.81"
     ],
+    "handoutImage": "https://gotquestions.online/pics/54/2594_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "химе́нес"
     ]
@@ -41516,9 +41666,10 @@
     "complexity": [
       "34.51"
     ],
+    "handoutImage": "https://gotquestions.online/pics/54/2600_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "по́поль-вух",
       "по́поль-в, варианты с написанием без дефиса"
@@ -42668,9 +42819,10 @@
     "complexity": [
       "61.70"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6602/430078_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "игрушка"
     ]
@@ -42815,9 +42967,10 @@
     "complexity": [
       "56.38"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6602/430084_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "а на каком основании",
       "по смыслу, при наличии слова «основание",
@@ -42925,9 +43078,10 @@
     "complexity": [
       "68.09"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6602/430088_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "археолог, пират"
     ]
@@ -44875,6 +45029,7 @@
       "100.00",
       "82.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5720/390746_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -45018,9 +45173,10 @@
       "54.55",
       "53.57"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5720/390752_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "парикмахерская",
       "салон красоты, парикмахерский салон, барбершоп, цирюльня (?!)",
@@ -49473,9 +49629,10 @@
     "complexity": [
       "66.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6255/413964_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "двенадцать"
     ]
@@ -53387,6 +53544,7 @@
     "complexity": [
       "30.91"
     ],
+    "handoutImage": "https://gotquestions.online/pics/838/44713_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Ведущему: сделать паузу после слов \"в коллекционном издании\".]\nГероиня Джозефины Тэй замечает, что художники слишком поздно пишут знаменитых людей, и портрет Генриха VIII, отличавшегося в молодости красотой, годен разве что на НЕЕ. В коллекционном издании короля Генриха VIII действительно изобразили на НЕЙ. Назовите ЕЕ одним словом.",
     "excluded": null,
@@ -53571,6 +53729,7 @@
     "complexity": [
       "18.18"
     ],
+    "handoutImage": "https://gotquestions.online/pics/838/44724_razdatka.jpg",
     "corpus": "gq",
     "excluded": "no_answer",
     "excludedBy": "пустой ответ",
@@ -53809,9 +53968,10 @@
     "complexity": [
       "25.46"
     ],
+    "handoutImage": "https://gotquestions.online/pics/838/44739_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "greece чтецу: грис",
       "greece",
@@ -53917,9 +54077,10 @@
     "complexity": [
       "29.09"
     ],
+    "handoutImage": "https://gotquestions.online/pics/838/44745_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ава авы"
     ]
@@ -53990,6 +54151,7 @@
     "complexity": [
       "14.55"
     ],
+    "handoutImage": "https://gotquestions.online/pics/838/44749_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -58262,9 +58424,10 @@
     "complexity": [
       "82.96"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2818/186057_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "гонконг",
       "сянган"
@@ -58748,9 +58911,10 @@
     "complexity": [
       "65.91"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2818/186095_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "афроамериканка"
     ]
@@ -59009,9 +59173,10 @@
     "complexity": [
       "11.36"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2818/186116_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "черный пудель. незачет: пудель, черный пес"
     ]
@@ -59146,6 +59311,7 @@
     "complexity": [
       "52.78"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355189_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -59194,9 +59360,10 @@
     "complexity": [
       "83.33"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355191_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "логический элемент \"или",
       "или",
@@ -59251,9 +59418,10 @@
     "complexity": [
       "58.33"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355193_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "harley-davidson",
       "харли-дэвидсон"
@@ -59345,6 +59513,7 @@
     "complexity": [
       "86.11"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355197_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -59368,6 +59537,7 @@
     "complexity": [
       "86.11"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355198_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -59415,9 +59585,10 @@
     "complexity": [
       "22.22"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355200_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "в маске",
       "в \"маске",
@@ -59463,9 +59634,10 @@
     "complexity": [
       "80.56"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355202_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "таблица для проверки зрения",
       "синонимичные ответы"
@@ -59741,6 +59913,7 @@
     "complexity": [
       "47.22"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355214_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -59823,9 +59996,10 @@
     "complexity": [
       "66.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355217_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "дефрагментация"
     ]
@@ -59896,9 +60070,10 @@
     "complexity": [
       "86.11"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355220_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "витая пара"
     ]
@@ -59919,6 +60094,7 @@
     "complexity": [
       "55.56"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4946/355221_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -61570,9 +61746,10 @@
       "78.57",
       "60.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6612/430589_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "авиакомпании ryanair райанэйр",
       "авиакомпании ryanair",
@@ -61596,6 +61773,7 @@
       "95.24",
       "90.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6612/430590_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -61619,9 +61797,10 @@
       "83.33",
       "76.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6612/430591_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "помпеи, пицца",
       "в любом порядке"
@@ -61644,6 +61823,7 @@
       "2.38",
       "6.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6612/430592_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -61668,6 +61848,7 @@
       "69.05",
       "53.33"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6612/430593_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -61692,9 +61873,10 @@
       "47.62",
       "23.33"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6612/430594_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "колени, локоть",
       "в любом порядке"
@@ -61716,9 +61898,10 @@
       "95.24",
       "96.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6612/430595_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "съемки фильма “планета обезьян",
       "по смыслу с обязательным упоминанием “планеты обезьян"
@@ -63244,9 +63427,10 @@
       "70.12",
       "71.11"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5978/402094_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "буквы ч, л, н",
       "ч, л, н",
@@ -63659,6 +63843,7 @@
     ],
     "author": "Алексей Медведев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265291_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -63784,6 +63969,7 @@
     ],
     "author": "Дмитрий Христич",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265303_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -63900,9 +64086,10 @@
     ],
     "author": "Андрей Косых",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265316_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "на соловьев"
     ]
@@ -64005,9 +64192,10 @@
     ],
     "author": "Алексей Морозов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265327_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "единорог"
     ]
@@ -64068,6 +64256,7 @@
     ],
     "author": "Борис Ковалев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265333_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -64089,9 +64278,10 @@
     ],
     "author": "Алексей Морозов, Майя Разорёнова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265337_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "божья коровка"
     ]
@@ -64177,9 +64367,10 @@
     ],
     "author": "Андрей Косых",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265345_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "кака"
     ]
@@ -64327,9 +64518,10 @@
     ],
     "author": "Сергей Князев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3764/265358_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "kiss"
     ]
@@ -64500,9 +64692,10 @@
     ],
     "author": "Михаил Перлин, Борис Шойхет",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4393/318840_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "purpur pur"
     ]
@@ -64673,9 +64866,10 @@
     ],
     "author": "Борис Шойхет",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4393/318855_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "антей"
     ]
@@ -64914,9 +65108,10 @@
     ],
     "author": "Борис Шойхет",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4393/318877_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "буква y"
     ]
@@ -65127,6 +65322,7 @@
     ],
     "author": "Михаил Перлин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4393/318896_razdatka.gif",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -65786,9 +65982,10 @@
     "complexity": [
       "27.27"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1023/55104_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "камео стэна ли"
     ]
@@ -65833,6 +66030,7 @@
     "complexity": [
       "0.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1023/55106_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -66116,9 +66314,10 @@
     "sources": [],
     "author": "Владимир Островский",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3101/206911_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "любовь слепа",
       "love is blind"
@@ -66300,9 +66499,10 @@
     ],
     "author": "Владимир Островский",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3101/206923_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сатурналии"
     ]
@@ -66840,6 +67040,7 @@
     ],
     "author": "Эдуард Голуб",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3101/206957_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -67787,9 +67988,10 @@
     ],
     "author": "Александр Шапиро, Елена Пахомова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4523/326858_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "веревочный след",
       "след (от) веревки, след (от) шнура",
@@ -67809,9 +68011,10 @@
     ],
     "author": "Александр Шапиро",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4523/326860_razdatka.gif",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "его форма — лента мебиуса"
     ]
@@ -67958,9 +68161,10 @@
     ],
     "author": "Александр Шапиро",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4523/326871_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "улыбаемся и машем",
       "smile and wave"
@@ -67997,9 +68201,10 @@
     "sources": [],
     "author": "Владимир Грамагин, Ирина Шихова, Александр Шапиро",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4523/326874_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": "duplet",
+    "excludedBy": "дуплет или блиц",
     "acceptVariants": [
       "1. навахи. 2. крисы",
       "в любом числе и написании"
@@ -69242,9 +69447,10 @@
     ],
     "author": "Григорий Алхазов, Елизавета Овдеенко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4523/326952_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "e-pilogue",
       "e-pilog"
@@ -69263,9 +69469,10 @@
     ],
     "author": "Евгений Миротин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4523/326953_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "букве альфа",
       "альфа",
@@ -77495,10 +77702,11 @@
       "76.47",
       "97.96"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6795/438517_razdatka.png",
     "corpus": "gq",
     "questionRaw": "[Ведущему: прочитать название «Хичкок. Капот. АЛЬФЫ» с небольшими паузами между словами, так, чтобы на слух не воспринималось как «капот АЛЬФЫ»]\nРозданная вам работа уличного художника Zoom-а [зу́ма] называется «Хичкок. Капот. АЛЬФЫ». Какое слово мы заменили словом «АЛЬФЫ»?",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "птицы"
     ]
@@ -77594,9 +77802,10 @@
     "complexity": [
       "33.85"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364478_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "эдвин хаббл, джеймс уэбб (в любом порядке)",
       "хаббл, уэбб (в любом порядке)"
@@ -77642,9 +77851,10 @@
     "complexity": [
       "75.39"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364480_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "фло́ра и фа́уна",
       "фа́уна, фло́ра (в любом порядке)",
@@ -77766,9 +77976,10 @@
     "complexity": [
       "29.23"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364485_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "самые крутые звезды",
       "крутые звезды",
@@ -77868,9 +78079,10 @@
     "complexity": [
       "66.15"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364489_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "оранжевый это хит сезона",
       "оранжевый хит сезона",
@@ -77945,9 +78157,10 @@
     "complexity": [
       "67.69"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364492_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "со списком кораблей",
       "перечень/каталог/список кораблей гоме́ра из «илиа́ды» (и синонимичные ответы без неверных уточнений)",
@@ -77973,9 +78186,10 @@
     "complexity": [
       "33.85"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364493_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "языка программирования си",
       "си",
@@ -78025,6 +78239,7 @@
     "complexity": [
       "40.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364495_razdatka.png",
     "corpus": "gq",
     "questionRaw": "[Примечание ведущему: дать командам время на ознакомление с текстом, после чего прочитать текст вопроса в нормальном темпе — то есть быстрее, чем под запись. Прочитать ритмично, как стихотворение.]\n«Пред ва́ми образцы́ за но́мером:\nодин, ноль, ноль,\nдробь, единица, два ноля́ и дво́йка.\nА также сто, дробь, сто двенадцать, семь.\nУченые мужи́ между собо́ю называ́ют их\nПРО́ПУСК\nТакой вот гру́стный палеонтоло́гов мем..»\nЗаполните пропуск тремя словами.",
     "excluded": null,
@@ -78094,10 +78309,11 @@
     "complexity": [
       "78.46"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364498_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Примечание ведущему: раздаточный материал должен выглядеть как черный прямоугольник — в этом нет никакой технической ошибки.]\n\nСогласно шуточной конспирологической теории ОНИ есть в любой стране мира, просто именно японские ОНИ оказались самыми дилета́нтскими. А кто ОНИ?",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ни́ндзя",
       "синоби-но-моно, синоби, шиноби, шиноби-но моно"
@@ -78119,6 +78335,7 @@
     "complexity": [
       "92.31"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364499_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -78171,6 +78388,7 @@
     "complexity": [
       "70.77"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364501_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -78196,6 +78414,7 @@
     "complexity": [
       "70.77"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364502_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -78382,10 +78601,11 @@
     "complexity": [
       "56.92"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364509_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Примечание ведущему: раздаточный материал выдается по одному на команду.]\n\nПоделите раздаточный материал между собой. Перед вами поперечное сечение механизма, прототип которого демонстрировал еще Майкл Фараде́й. Подобную иллюстрацию можно встретить в истории о происхождении логотипа… какой компании?",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "tésla mótors/inc",
       "tésla",
@@ -78408,9 +78628,10 @@
     "complexity": [
       "84.62"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5150/364510_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "на надгробии"
     ]
@@ -78430,6 +78651,7 @@
     "complexity": [
       "73.53"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5067/361308_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -78593,6 +78815,7 @@
     "complexity": [
       "94.54"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5067/361315_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -78785,9 +79008,10 @@
     "complexity": [
       "80.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5067/361323_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "колодцы"
     ]
@@ -79374,9 +79598,10 @@
     ],
     "author": "Лев Шмулевич",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2963/194392_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "тетку чарлея",
       "тетушку чарлея, тетушку чарли, донну розу д'альвадорес, донну люсию",
@@ -80732,9 +80957,10 @@
     ],
     "author": "Андрей Кузьма",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4730/339232_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "скелет рентгена"
     ]
@@ -81009,6 +81235,7 @@
     ],
     "author": "Андрей Кузьма",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4730/339245_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -82290,9 +82517,10 @@
     "complexity": [
       "100.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393230_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "бордюр, поребрик"
     ]
@@ -82359,9 +82587,10 @@
     "complexity": [
       "37.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393233_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "тень короля",
       "тень кинга"
@@ -82614,6 +82843,7 @@
     "complexity": [
       "50.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393244_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -82869,6 +83099,7 @@
     "complexity": [
       "100.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393255_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -83029,6 +83260,7 @@
     "complexity": [
       "12.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393262_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -83262,9 +83494,10 @@
     "complexity": [
       "62.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393272_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ирина аллегрова"
     ]
@@ -83403,6 +83636,7 @@
     "complexity": [
       "100.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393278_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -83755,9 +83989,10 @@
     "complexity": [
       "25.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5772/393293_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "роджер мур",
       "roger moore"
@@ -84682,6 +84917,7 @@
     "complexity": [
       "70.10"
     ],
+    "handoutImage": "https://gotquestions.online/pics/376/16883_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -84750,9 +84986,10 @@
     "complexity": [
       "36.08"
     ],
+    "handoutImage": "https://gotquestions.online/pics/376/16886_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "окленд"
     ]
@@ -84999,9 +85236,10 @@
     "complexity": [
       "24.74"
     ],
+    "handoutImage": "https://gotquestions.online/pics/376/16897_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "небо над аустерл́ицем"
     ]
@@ -86033,6 +86271,7 @@
       "51.53",
       "56.41"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5418/377311_razdatka.png",
     "corpus": "gq",
     "questionRaw": "[Ведущему: не озвучивать капитализацию слова Крик в вопросе и не акцентировать её. Для онлайна слово следует вывести со строчной буквы.]\nРассказывают, что после просмотра вышедшего в 40-х годах триллера ОН с Криком выбежал из университетского кинозала. Назовите ЕГО.",
     "excluded": null,
@@ -86131,6 +86370,7 @@
       "75.46",
       "84.62"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5418/377315_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -86229,6 +86469,7 @@
       "24.54",
       "23.08"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5418/377319_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -86797,9 +87038,10 @@
       "20.93",
       "31.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6333/417007_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "бразилиа"
     ]
@@ -86895,9 +87137,10 @@
       "67.44",
       "56.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6333/417011_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "лишили медали"
     ]
@@ -86994,9 +87237,10 @@
       "86.05",
       "84.38"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6333/417015_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "плохая погода"
     ]
@@ -87065,9 +87309,10 @@
       "93.02",
       "81.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6333/417018_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "слепой"
     ]
@@ -87113,9 +87358,10 @@
       "72.09",
       "87.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6333/417020_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "не близнецы"
     ]
@@ -87287,6 +87533,7 @@
       "69.77",
       "75.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6333/417027_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -88060,9 +88307,10 @@
     "complexity": [
       "14.69"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2371/151137_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "над вечным покоем"
     ]
@@ -88199,6 +88447,7 @@
     "complexity": [
       "63.64"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2371/151148_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -88293,6 +88542,7 @@
     "complexity": [
       "40.56"
     ],
+    "handoutImage": "https://gotquestions.online/pics/2371/151154_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -89773,6 +90023,7 @@
     ],
     "author": "Александр Коробейников",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/7007/447781_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -101119,6 +101370,7 @@
     ],
     "author": "Михаил Савченков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/6834/440351_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -101190,9 +101442,10 @@
       "93.01",
       "66.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6834/440354_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "лакмусовая бумажка"
     ]
@@ -101263,6 +101516,7 @@
       "67.13",
       "38.89"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6834/440357_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -101688,9 +101942,10 @@
       "49.65",
       "44.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6834/440374_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сборник стихов льва лосева",
       "по упоминанию льва лосева: например, «книга льва лосева» или «мемуары льва лосева",
@@ -102503,9 +102758,10 @@
     ],
     "author": "Максим Карачун",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2989/197903_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "корриды",
       "боя быков, тавромахии"
@@ -102591,9 +102847,10 @@
     ],
     "author": "Максим Карачун",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2989/197910_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "четверг"
     ]
@@ -102759,6 +103016,7 @@
     ],
     "author": "Максим Карачун",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2989/197923_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -103047,6 +103305,7 @@
     "complexity": [
       "50.92"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1333/73184_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -103190,9 +103449,10 @@
     "complexity": [
       "8.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1333/73190_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "по телеграфу"
     ]
@@ -103665,9 +103925,10 @@
     "complexity": [
       "2.58"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1333/73210_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "человек с киноаппаратом"
     ]
@@ -103993,6 +104254,7 @@
     "complexity": [
       "42.44"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1333/73224_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -105310,6 +105572,7 @@
     ],
     "author": "Юрий Шатц",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2911/191217_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -105787,6 +106050,7 @@
     ],
     "author": "Наиль Фарукшин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2911/191261_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -106780,6 +107044,7 @@
       "90.91",
       "86.84"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380628_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Ведущему: НЕ делать логической паузы между словами «СДЕЛАТЬ ЭТО» и «антагонисту», чтобы командам не показалось, что действие совершает антагонист.]\nИммерси́вность — важная часть видеоигр. Чтобы СДЕЛАТЬ ЭТО антагонисту, в игре «God of War III» [гад оф вар три] нужно нажать на кнопки L3 [эл три] и R3 [эр три]. Какие два слова мы заменили словами СДЕЛАТЬ ЭТО?",
     "excluded": null,
@@ -107018,6 +107283,7 @@
       "30.30",
       "42.11"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380637_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -107148,6 +107414,7 @@
       "6.06",
       "5.26"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380642_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -107200,6 +107467,7 @@
       "3.03",
       "10.53"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380644_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -107327,9 +107595,10 @@
       "33.33",
       "13.16"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380649_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "чернила",
       "ink"
@@ -107352,6 +107621,7 @@
       "27.27",
       "21.05"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380650_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -107482,6 +107752,7 @@
       "60.61",
       "68.42"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380655_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -107541,9 +107812,10 @@
       "6.06",
       "0.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380657_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "y2k",
       "символы y, 2, k в любом порядке и капитализации; также «y2.01k»‎",
@@ -107623,6 +107895,7 @@
       "3.03",
       "15.79"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380660_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -107768,6 +108041,7 @@
       "51.52",
       "60.53"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5491/380665_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -108135,9 +108409,10 @@
     "sources": [],
     "author": "Андрий Бойко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2188/138483_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "конь"
     ]
@@ -108571,9 +108846,10 @@
     "complexity": [
       "85.71"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385494_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "серп и молот",
       "в любом порядке"
@@ -108734,9 +109010,10 @@
     "complexity": [
       "8.57"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385500_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "уефа",
       "uefa"
@@ -108929,9 +109206,10 @@
     "complexity": [
       "65.71"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385508_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "блоха"
     ]
@@ -109052,6 +109330,7 @@
     "complexity": [
       "22.86"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385513_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -109170,6 +109449,7 @@
     "complexity": [
       "80.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385518_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -109292,6 +109572,7 @@
     "complexity": [
       "80.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385523_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -109481,6 +109762,7 @@
     "complexity": [
       "14.29"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385531_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -109803,6 +110085,7 @@
     "complexity": [
       "11.43"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385544_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -109829,9 +110112,10 @@
     "complexity": [
       "17.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385545_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сноп"
     ]
@@ -110623,9 +110907,10 @@
     "complexity": [
       "77.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5600/385578_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "дорианом",
       "по имени дориан без неверных уточнений"
@@ -112258,9 +112543,10 @@
     "complexity": [
       "36.28"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5309/372423_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "1941"
     ]
@@ -112376,9 +112662,10 @@
     "complexity": [
       "12.75"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5309/372428_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "томск"
     ]
@@ -112655,6 +112942,7 @@
     "complexity": [
       "38.24"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5309/372440_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -113857,10 +114145,11 @@
       "38.10",
       "58.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4991/357027_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Ведущему: не зачитывать текст, относящийся к раздаточному материалу]\nКакое короткое слово мы пропустили на раздаточном материале?",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "лев"
     ]
@@ -114052,9 +114341,10 @@
       "71.43",
       "93.02"
     ],
+    "handoutImage": "https://gotquestions.online/pics/4991/357035_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "грей",
       "gray"
@@ -115729,6 +116019,7 @@
     ],
     "author": "Михаил Екимов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1402/79177_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -116229,9 +116520,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4376/317831_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "mec"
     ]
@@ -116859,9 +117151,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4376/317877_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "утро в сосновом лесу"
     ]
@@ -117384,9 +117677,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4376/317916_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "крестный тесть"
     ]
@@ -117469,9 +117763,10 @@
     ],
     "author": "Евгений Калюков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4376/317922_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "пятая колонна"
     ]
@@ -118318,9 +118613,10 @@
       "25.00",
       "27.91"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5974/401958_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "назад в будущее"
     ]
@@ -121618,9 +121914,10 @@
     "complexity": [
       "79.03"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1339/73445_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "фергюсон"
     ]
@@ -123530,9 +123827,10 @@
     ],
     "author": "Денис Гончар",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207577_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "фридрих ницше",
       "ницше"
@@ -123678,9 +123976,10 @@
     ],
     "author": "Денис Гончар",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207595_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "михалков"
     ]
@@ -123998,9 +124297,10 @@
     ],
     "author": "Денис Гончар",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207628_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "на дворе трава"
     ]
@@ -124277,9 +124577,10 @@
     ],
     "author": "Владимир Шевчук-Иркмаан",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207654_razdatka.gif",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "кернинг"
     ]
@@ -124318,9 +124619,10 @@
     ],
     "author": "Артём Матухно",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207659_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "венгрия"
     ]
@@ -124641,9 +124943,10 @@
     ],
     "author": "Денис Гончар",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207693_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "индиана джонс"
     ]
@@ -124966,9 +125269,10 @@
     ],
     "author": "Руслан Горусев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207723_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ночное солнце"
     ]
@@ -125146,9 +125450,10 @@
     ],
     "author": "Денис Гончар",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207731_razdatka.gif",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "команда \"штурм"
     ]
@@ -125365,9 +125670,10 @@
     ],
     "author": "Андрей Грамматик",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3109/207741_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "малевич"
     ]
@@ -126992,6 +127298,7 @@
     "complexity": [
       "79.55"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369485_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -127013,9 +127320,10 @@
     ],
     "author": "Артём Рожков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5243/369486_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "крученых"
     ]
@@ -127171,9 +127479,10 @@
     "complexity": [
       "38.64"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369493_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "слепые"
     ]
@@ -127262,9 +127571,10 @@
     "complexity": [
       "81.82"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369497_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "синоскептики"
     ]
@@ -127355,6 +127665,7 @@
     "complexity": [
       "77.27"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369501_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -127378,10 +127689,11 @@
     "complexity": [
       "97.73"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369502_razdatka.png",
     "corpus": "gq",
     "questionRaw": "Перед вами фрагмент иллюстрации, выполненной студентами одного учебного заведения. В каком государстве оно находится?",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "австралийский союз",
       "австралия, австралийское содружество, содружество австралии"
@@ -127521,6 +127833,7 @@
     "complexity": [
       "45.45"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369508_razdatka.png",
     "corpus": "gq",
     "questionRaw": "Согласно шутке автора вопроса, из НЕГО подвыпившие посетители выходят по диагонали. Назовите ЕГО двумя словами, которые начинаются на одну и ту же букву.",
     "excluded": null,
@@ -127689,10 +128002,11 @@
     "complexity": [
       "63.64"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369515_razdatka.png",
     "corpus": "gq",
     "questionRaw": "[Ведущему: сообщить командам, что номер вопроса на бланке нужен для правильного расположения раздатки — жёлтой частью вверх]\nПеред вами шуточная диаграмма, показывающая распределение коммунальных расходов одного учреждения. В каком городе оно находится?",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "готэм-сити",
       "готэм"
@@ -127761,9 +128075,10 @@
     "complexity": [
       "9.09"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369518_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "четки",
       "по упоминанию четок без неверных уточнений"
@@ -127888,9 +128203,10 @@
     "complexity": [
       "11.36"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5243/369523_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "george floyd, moon",
       "джордж флойд, луна; в любом порядке, числе и падеже",
@@ -128859,9 +129175,10 @@
       "78.69",
       "89.13"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5638/387205_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "14 марта"
     ]
@@ -128955,9 +129272,10 @@
       "40.98",
       "36.96"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5638/387209_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "выпороть ребенка",
       "выпороть/высечь/наказать/воспитать сына/ребенка"
@@ -129133,9 +129451,10 @@
       "18.85",
       "19.57"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5638/387216_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "картину «крик",
       "крик"
@@ -129417,6 +129736,7 @@
     ],
     "author": "Михаил Подгорбунских",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4563/329239_razdatka.jpg",
     "corpus": "gq",
     "excluded": "duplet",
     "excludedBy": "дуплет или блиц",
@@ -129629,9 +129949,10 @@
     ],
     "author": "Евгений Старков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4563/329259_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "totenkopf",
       "мертвая голова"
@@ -130327,6 +130648,7 @@
     "complexity": [
       "74.60"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1800/108352_razdatka.jpg",
     "corpus": "gq",
     "excluded": "duplet",
     "excludedBy": "дуплет или блиц",
@@ -130747,6 +131069,7 @@
     "complexity": [
       "19.05"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1800/108389_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -130887,9 +131210,10 @@
     "complexity": [
       "76.19"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1800/108405_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сбалансированное питание"
     ]
@@ -131077,6 +131401,7 @@
     "complexity": [
       "9.52"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1800/108421_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -131554,6 +131879,7 @@
     "complexity": [
       "47.62"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1800/108453_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -131693,9 +132019,10 @@
     "complexity": [
       "28.57"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1800/108459_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "бесплатный сыр"
     ]
@@ -131842,9 +132169,10 @@
     "complexity": [
       "58.73"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1800/108465_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "2"
     ]
@@ -131988,9 +132316,10 @@
     ],
     "author": "Дмитрий Бочаров",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385894_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "арина родионовна",
       "ирина родионовна; няня пушкина",
@@ -132033,6 +132362,7 @@
     ],
     "author": "Дмитрий Дорожко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385896_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "В английском языке группы разных животных называются разными словами: например, парад слонов или парламент сов.  А каким словом греческого происхождения называют группу бабочек?",
     "excluded": null,
@@ -132074,6 +132404,7 @@
     ],
     "author": "Дмитрий Бочаров",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385898_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132157,9 +132488,10 @@
     ],
     "author": "Максим Суслин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385902_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "вся королевская конница",
       "вся королевская рать"
@@ -132198,6 +132530,7 @@
     ],
     "author": "Елена Чепкасова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385904_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132494,9 +132827,10 @@
     ],
     "author": "Владимир Веселов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385918_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "моха́ммед али",
       "ка́ссиус клей"
@@ -132536,6 +132870,7 @@
     ],
     "author": "Ярослав Домб",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385920_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132647,6 +132982,7 @@
     ],
     "author": "Виктор Глухов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385925_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132771,6 +133107,7 @@
     ],
     "author": "Александр Малыженков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385931_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -132966,9 +133303,10 @@
     ],
     "author": "Ксения Удовенко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/5609/385940_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сбор риса",
       "по слову «рис» и упоминанию любых связанных с рисом полевых работ",
@@ -133173,9 +133511,10 @@
     ],
     "author": "Мишель Матвеев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2657/173983_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "матч сборных голландии и германии по футболу на евро-2012",
       "матч сборных голландии и германии"
@@ -133625,9 +133964,10 @@
     ],
     "author": "Алексей Бороненко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2657/174022_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "киномеханик"
     ]
@@ -133853,9 +134193,10 @@
     ],
     "author": "Алексей Бороненко, Юлия Закс",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2657/174041_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ангкор, еще ангкор",
       "ангкор-ват, еще ангкор-ват"
@@ -134040,9 +134381,10 @@
     ],
     "author": "Екатерина Свешникова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2657/174058_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "для ввода капчи",
       "по смыслу, с упоминанием капчи"
@@ -134693,9 +135035,10 @@
       "11.76",
       "12.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6905/442893_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "слово «яйцо",
       "слово «айна», слово «яйла», слово «яйца»; в любой капитализации и, возможно, без кавычек",
@@ -134991,9 +135334,10 @@
       "17.65",
       "54.17"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6905/442905_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "13 февраля",
       "14 февраля, 15 февраля, 16 февраля, 17 февраля, 18 февраля, 19 февраля; без или с указанием 2023 года; дата в любом формате",
@@ -135019,9 +135363,10 @@
       "5.88",
       "4.17"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6905/442906_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "quiznos куи́знос",
       "quiznos",
@@ -135586,9 +135931,10 @@
       "88.24",
       "79.17"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6905/442928_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "тот, кто от дедушки ушел и от бабушки ушел",
       "ответы, попадающие под форму и достаточно точно описывающие колобка, в том числе и одно слово (например, «круглый»), повторенное девять раз; сомневаетесь — отправляйте в спорный",
@@ -135729,9 +136075,10 @@
     "complexity": [
       "28.76"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6295/415396_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "döner",
       "денер-кебаб, денер, донер, дюрю́м, дуру́м"
@@ -137006,9 +137353,10 @@
     ],
     "author": "Павел Парфианович",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/6357/418170_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "шея жирафа"
     ]
@@ -137026,9 +137374,10 @@
     ],
     "author": "Павел Парфианович",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/6357/418171_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "для дальтоников"
     ]
@@ -137554,9 +137903,10 @@
     "complexity": [
       "88.31"
     ],
+    "handoutImage": "https://gotquestions.online/pics/459/21133_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "бумаги",
       "бумага"
@@ -137782,9 +138132,10 @@
     "complexity": [
       "7.79"
     ],
+    "handoutImage": "https://gotquestions.online/pics/459/21151_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": "duplet",
+    "excludedBy": "дуплет или блиц",
     "acceptVariants": [
       "1. подсознание. 2. подтекст",
       "1. подсознательное, бессознательное, id, ид, оно"
@@ -138045,6 +138396,7 @@
     "complexity": [
       "5.19"
     ],
+    "handoutImage": "https://gotquestions.online/pics/459/21172_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -138464,6 +138816,7 @@
     "complexity": [
       "45.71"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1877/113239_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -138885,9 +139238,10 @@
     "complexity": [
       "8.16"
     ],
+    "handoutImage": "https://gotquestions.online/pics/1877/113270_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "netherlandish proverbs\" незерлэндиш провербс",
       "netherlandish proverbs",
@@ -139278,6 +139632,7 @@
       "46.67",
       "72.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6733/436177_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -139522,6 +139877,7 @@
       "36.67",
       "72.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6733/436187_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -139747,9 +140103,10 @@
       "85.00",
       "92.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6733/436196_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ностальгия"
     ]
@@ -139868,6 +140225,7 @@
       "68.33",
       "84.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6733/436201_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -139964,6 +140322,7 @@
       "43.33",
       "28.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6733/436205_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140273,6 +140632,7 @@
     "complexity": [
       "71.43"
     ],
+    "handoutImage": "https://gotquestions.online/pics/263/11560_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140363,9 +140723,10 @@
     "complexity": [
       "42.86"
     ],
+    "handoutImage": "https://gotquestions.online/pics/263/11564_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "amish (амиш)",
       "amish",
@@ -140502,9 +140863,10 @@
     "complexity": [
       "57.14"
     ],
+    "handoutImage": "https://gotquestions.online/pics/263/11570_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "образец раздаточного материала с нарисованными ногами рыбы"
     ]
@@ -140594,9 +140956,10 @@
     "complexity": [
       "28.57"
     ],
+    "handoutImage": "https://gotquestions.online/pics/263/11574_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "без бахил"
     ]
@@ -140640,6 +141003,7 @@
     "complexity": [
       "71.43"
     ],
+    "handoutImage": "https://gotquestions.online/pics/263/11576_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140715,6 +141079,7 @@
     "complexity": [
       "28.57"
     ],
+    "handoutImage": "https://gotquestions.online/pics/263/11579_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -140787,9 +141152,10 @@
     "complexity": [
       "42.86"
     ],
+    "handoutImage": "https://gotquestions.online/pics/263/11582_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": "duplet",
+    "excludedBy": "дуплет или блиц",
     "acceptVariants": [
       "1. этна 2. везувий"
     ]
@@ -140940,9 +141306,10 @@
     ],
     "author": "Александр Воронин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/263/11589_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "jesus"
     ]
@@ -141074,9 +141441,10 @@
       "87.50",
       "56.76"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6595/429731_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "наф-наф",
       "ниф-ниф, нуф-нуф"
@@ -141196,9 +141564,10 @@
       "75.00",
       "40.54"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6595/429736_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "в имени рембрандт должно быть поставлено ударение на второй слог"
     ]
@@ -141879,9 +142248,10 @@
       "87.50",
       "64.86"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6595/429764_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "купание красного коня"
     ]
@@ -145302,9 +145672,10 @@
     ],
     "author": "Евгений Дёмин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4647/333911_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "полубог",
       "demi-dieu"
@@ -145433,6 +145804,7 @@
     ],
     "author": "Евгений Дёмин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4647/333917_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -146548,6 +146920,7 @@
     "complexity": [
       "40.74"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5882/397730_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -147950,6 +148323,7 @@
     ],
     "author": "Александр Сакало",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2578/168078_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -148159,6 +148533,7 @@
     ],
     "author": "Сергей Перехрест",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2578/168088_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -148287,10 +148662,11 @@
     ],
     "author": "Сергей Перехрест",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2578/168094_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Ведущему: при подготовке к печати обязательно проверить, чтобы раздатка была квадратной.]\nХарактеризуя степень ненависти персонажа к своему деду, писатель Даниэль Пеннак употребляет выражение из трех слов. Этим же выражением из трех слов можно описать и розданный вам фрагмент картины Антония Бродовского на мифологический сюжет. Напишите это выражение.",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "эдип в квадрате"
     ]
@@ -148691,9 +149067,10 @@
     ],
     "author": "Павел Солахян",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104237_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "початок кукурузы",
       "плод кукурузы; кукурузный початок",
@@ -149087,6 +149464,7 @@
     ],
     "author": "Павел Солахян",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104273_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -149199,9 +149577,10 @@
     ],
     "author": "Сергей Николенко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104283_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "антуан де сент-экзюпери",
       "сент-экзюпери"
@@ -149220,6 +149599,7 @@
     ],
     "author": "Александр Либер",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104285_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -149241,9 +149621,10 @@
     ],
     "author": "Сергей Николенко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104287_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "экстраполяция"
     ]
@@ -149261,9 +149642,10 @@
     ],
     "author": "Александр Либер",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104289_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "камбоджа"
     ]
@@ -149303,6 +149685,7 @@
     ],
     "author": "Александр Либер",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104292_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -149324,9 +149707,10 @@
     ],
     "author": "Александр Либер",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104294_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "national landscape gallery",
       "национальная пейзажная галерея; национальная ландшафтная галерея",
@@ -149368,6 +149752,7 @@
     ],
     "author": "Сергей Николенко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104298_razdatka.png",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -149789,9 +150174,10 @@
     ],
     "author": "Александр Марков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104320_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": "duplet",
+    "excludedBy": "дуплет или блиц",
     "acceptVariants": [
       "1. убийца — на крыше в правом верхнем углу. 2. уолли",
       "2. волли, уолдо, а также латиницей (wally, waldo)",
@@ -150237,6 +150623,7 @@
     ],
     "author": "Алексей Бороненко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104340_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -150305,6 +150692,7 @@
     ],
     "author": "Алексей Бороненко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104343_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -150419,6 +150807,7 @@
     ],
     "author": "Валерий Юдачёв",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104348_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Ведущему: интонационно выделить уточняющий оборот.]\nНа этикетке этой марки рАкии — крепкого алкогольного напитка — на месте буквы I [ай] прикреплена ОНА. Назовите ЕЕ.",
     "excluded": null,
@@ -150482,6 +150871,7 @@
     ],
     "author": "Мария Трефилова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104351_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -150566,6 +150956,7 @@
     ],
     "author": "Алексей Трефилов, Мария Трефилова",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1742/104355_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -150868,9 +151259,10 @@
       "67.77",
       "72.31"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5370/375155_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ло́ббиа"
     ]
@@ -151425,9 +151817,10 @@
       "44.69",
       "46.15"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5370/375178_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "длина очереди"
     ]
@@ -151749,9 +152142,10 @@
     ],
     "author": "Игорь Душевин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4090/291556_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "байки из склепа"
     ]
@@ -153831,9 +154225,10 @@
     ],
     "author": "Павел Ершов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219591_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "генрих viii",
       "генрих тюдор"
@@ -153918,9 +154313,10 @@
     ],
     "author": "Павел Ершов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219596_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "cube"
     ]
@@ -153961,6 +154357,7 @@
     ],
     "author": "Павел Ершов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219598_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -153983,6 +154380,7 @@
     ],
     "author": "Павел Ершов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219600_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -154194,9 +154592,10 @@
     ],
     "author": "Артём Колесов, Елизавета Пономарева",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219612_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "человек-невидимка",
       "the invisible man"
@@ -154467,6 +154866,7 @@
     ],
     "author": "Вадим Назаров",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219628_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -154927,6 +155327,7 @@
     "sources": [],
     "author": "Сергей Цибульский",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219658_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -155124,9 +155525,10 @@
     ],
     "author": "Александр Ершов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219670_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "колокольни",
       "колокольню"
@@ -155503,9 +155905,10 @@
     ],
     "author": "Серафим Шибанов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219688_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "желтая карточка",
       "красная карточка"
@@ -155586,9 +155989,10 @@
     ],
     "author": "Игорь Тюнькин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219692_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "я пришел к тебе с приветом"
     ]
@@ -155653,6 +156057,7 @@
     ],
     "author": "Игорь Тюнькин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219695_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -155696,9 +156101,10 @@
     ],
     "author": "Игорь Тюнькин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219697_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "павлин"
     ]
@@ -156012,6 +156418,7 @@
     ],
     "author": "Евгений Кононенко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219712_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -156326,9 +156733,10 @@
     ],
     "author": "Михаил Болотский",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219732_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "скрипка",
       "смычок"
@@ -156677,9 +157085,10 @@
     ],
     "author": "Галина Лазарева",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219775_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "невозвращенцы"
     ]
@@ -157188,6 +157597,7 @@
     ],
     "author": "Михаил Полищук",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219828_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -157374,9 +157784,10 @@
     ],
     "author": "Сергей Дорофеев",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219845_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "гби"
     ]
@@ -157515,6 +157926,7 @@
     ],
     "author": "Иван Кебец",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219855_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -157697,9 +158109,10 @@
     ],
     "author": "Иван Кебец",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219863_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "фуллер",
       "иж зачло ответы \"фулер\", \"фуллере\", \"фуллерен",
@@ -157893,9 +158306,10 @@
     ],
     "author": "Артём Колесов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219872_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "деревянный макинтош"
     ]
@@ -157952,9 +158366,10 @@
     ],
     "author": "Борис Окунь",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219875_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "школьным автобусам"
     ]
@@ -158284,9 +158699,10 @@
     ],
     "author": "Наиль Фарукшин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/3242/219891_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "телесериалу \"теория большого взрыва",
       "теория большого взрыва"
@@ -158750,9 +159166,10 @@
       "74.29",
       "91.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370625_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "титаник, гинденбург"
     ]
@@ -158844,9 +159261,10 @@
       "8.57",
       "12.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370629_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "космический клоун"
     ]
@@ -158961,9 +159379,10 @@
       "51.43",
       "45.83"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370634_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "сигарета"
     ]
@@ -158984,9 +159403,10 @@
       "45.71",
       "58.33"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370635_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "утиные истории"
     ]
@@ -159245,9 +159665,10 @@
       "54.29",
       "87.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370646_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "спид-дейтинг",
       "куик-дейт"
@@ -159340,9 +159761,10 @@
       "54.29",
       "91.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370650_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "straight",
       "gay"
@@ -159435,9 +159857,10 @@
       "2.86",
       "0.00"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370654_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ordinary world ординари ворлд",
       "ordinary world"
@@ -159505,9 +159928,10 @@
       "62.86",
       "66.67"
     ],
+    "handoutImage": "https://gotquestions.online/pics/5267/370657_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "кремлевская диета"
     ]
@@ -161392,9 +161816,10 @@
     ],
     "author": "Александр Сидоренков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2170/137440_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "полярные шапки"
     ]
@@ -161767,6 +162192,7 @@
     ],
     "author": "Михаил Серопян",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126146_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -162277,9 +162703,10 @@
     ],
     "author": "Дмитрий Стрильчук",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126189_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "empty",
-    "excludedBy": "пустой текст вопроса",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "пинг-понг"
     ]
@@ -162610,9 +163037,10 @@
     ],
     "author": "Русиф Гусейнов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126218_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "даунинг"
     ]
@@ -162795,6 +163223,7 @@
     "sources": [],
     "author": "Вадим Барановский",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126233_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -162962,9 +163391,10 @@
     ],
     "author": "Михаил Перлин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126247_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "банкноты в 10 немецких марок",
       "по указанию номинала и валюты (десятимарковая купюра и т.п.)",
@@ -163026,9 +163456,10 @@
     ],
     "author": "Виталий Рудник",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126253_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "капуста, пуста, уста, ста, та, а"
     ]
@@ -164174,6 +164605,7 @@
     ],
     "author": null,
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126344_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -164378,9 +164810,10 @@
     ],
     "author": "Клавдия Карпачёва",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2021/126360_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "что, где, когда"
     ]
@@ -166436,9 +166869,10 @@
       "15.39",
       "31.03"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6103/407370_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ниагарский водопад",
       "озеро онтарио, озеро эри, озеро гурон, озеро верхнее, река юкон, река ниагара",
@@ -167174,9 +167608,10 @@
     ],
     "author": "Татьяна Снеговская-Арш",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4599/331292_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "тетрис"
     ]
@@ -167859,10 +168294,11 @@
     ],
     "author": "Татьяна Снеговская-Арш",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4599/331324_razdatka.jpg",
     "corpus": "gq",
     "questionRaw": "[Ведущему: английское написание только для справки, читать не надо. :-)]\nПеред вами изображение церкви Сент-Брайд (St.Bride). После Великого Лондонского пожара она была отстроена одной из первых, поэтому в ней лондонцы совершали большинство религиозных обрядов. Говорят, что ОН обязан своим появлением именно Сент-Брайд. Назовите ЕГО двумя словами.",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "свадебный торт",
       "свадебный пирог"
@@ -170979,6 +171415,7 @@
     "complexity": [
       "12.50"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6120/408068_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -171004,9 +171441,10 @@
     "complexity": [
       "6.25"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6120/408069_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "поркахо́нтас",
       "porkahontas; любое из слов с незначительными ошибками при условии, что первые четыре буквы звучат как «порк",
@@ -171092,6 +171530,7 @@
     "complexity": [
       "46.88"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6120/408073_razdatka.jpeg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -171316,9 +171755,10 @@
     "complexity": [
       "68.75"
     ],
+    "handoutImage": "https://gotquestions.online/pics/6120/408083_razdatka.jpeg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "слева должны быть написаны буквы “дубр”, а справа - “вский”, так, чтобы получилось название “дубровский"
     ]
@@ -173111,6 +173551,7 @@
     ],
     "author": "Александр Пономарёв",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4781/342064_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -173632,6 +174073,7 @@
     ],
     "author": "Александр Пономарёв",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4781/342090_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -173993,9 +174435,10 @@
     ],
     "author": "Александр Пономарёв",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4781/342123_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "молотова",
       "скрябина"
@@ -174286,6 +174729,7 @@
     ],
     "author": "Александр Пономарёв",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/4781/342152_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -176174,9 +176618,10 @@
     ],
     "author": "Владислав Плисс",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2966/194601_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "в метро"
     ]
@@ -176516,9 +176961,10 @@
     ],
     "author": "Дмитрий Бочаров",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2966/194621_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "овсянка янковского. незачет: овсянка янковский"
     ]
@@ -176963,6 +177409,7 @@
     ],
     "author": "Павел Назаров",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/2966/194649_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -177254,6 +177701,7 @@
     ],
     "author": "Николай Коврижных",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1797/108126_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -178233,9 +178681,10 @@
     ],
     "author": "Рамиль Субхангулов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61529_razdatka.png",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "гай юлий цезарь, галилей, галлей"
     ]
@@ -178820,9 +179269,10 @@
     ],
     "author": "Станислав Осекин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61556_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "жертвы холокоста"
     ]
@@ -178860,6 +179310,7 @@
     ],
     "author": "Михаил Иткин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61558_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -178880,6 +179331,7 @@
     ],
     "author": "Станислав Осекин",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61559_razdatka.gif",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -179049,9 +179501,10 @@
     ],
     "author": "Мария Чамаева",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61567_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "розе паркс",
       "паркс"
@@ -179324,9 +179777,10 @@
     ],
     "author": "Анастасия Князева",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61580_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "бычки",
       "окурки"
@@ -179346,9 +179800,10 @@
     ],
     "author": "Борис Скоморохов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61581_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "ни пуха, ни пера"
     ]
@@ -179512,9 +179967,10 @@
     ],
     "author": "Дмитрий Соловьёв, Борис Скоморохов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61589_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "знак качества",
       "государственный знак качества ссср"
@@ -179597,9 +180053,10 @@
     ],
     "author": "Ольга Доленко",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61593_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "черный тюльпан"
     ]
@@ -179906,9 +180363,10 @@
     ],
     "author": "Игорь Бронштейн",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61607_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "красить небо"
     ]
@@ -179968,9 +180426,10 @@
     ],
     "author": "Юлия Луговская",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61610_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "флешка",
       "usb-накопитель; usb-флеш-накопитель; синонимичные ответы",
@@ -180315,6 +180774,7 @@
     ],
     "author": "Илья Фельдман",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61626_razdatka.jpg",
     "corpus": "gq",
     "excluded": null,
     "excludedBy": null,
@@ -180482,9 +180942,10 @@
     ],
     "author": "Юрий Третьяков",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61634_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "распятие"
     ]
@@ -180504,9 +180965,10 @@
     ],
     "author": "Александр Коханов",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61635_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "лунный трактор"
     ]
@@ -180660,9 +181122,10 @@
     ],
     "author": "Александр Коханов, Мария Агишева",
     "complexity": null,
+    "handoutImage": "https://gotquestions.online/pics/1134/61642_razdatka.jpg",
     "corpus": "gq",
-    "excluded": "handout",
-    "excludedBy": "раздаточный материал",
+    "excluded": null,
+    "excludedBy": null,
     "acceptVariants": [
       "николай носов",
       "носов"

@@ -1,6 +1,7 @@
 """Раздаточные картинки в ассеты приложения (T20).
 
-`data/images/` + `data/bingo_images.json` → `app/assets/handouts/<id вопроса>.<ext>`.
+`data/images/` + `data/bingo_images.json` + `data/gq_images.json` (T21)
+→ `app/assets/handouts/<id вопроса>.<ext>`.
 Имя файла — id вопроса: приложению не нужен манифест картинок, оно берёт
 `handout` прямо из ассета вопросов.
 
@@ -22,7 +23,10 @@ import sys
 from PIL import Image
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
-MANIFEST = os.path.join(ROOT, "data", "bingo_images.json")
+BINGO_MANIFEST = os.path.join(ROOT, "data", "bingo_images.json")
+# У gq в манифесте есть и нескачанные картинки, и чисто текстовая раздатка:
+# в сборку идут только скачанные — остальные вопросы санитайзер и так бракует.
+GQ_MANIFEST = os.path.join(ROOT, "data", "gq_images.json")
 SRC = os.path.join(ROOT, "data", "images")
 OUT = os.path.join(ROOT, "app", "assets", "handouts")
 
@@ -66,15 +70,18 @@ def build(manifest, src_dir, out_dir):
         if not os.path.exists(path):
             raise SystemExit(
                 f"Нет файла раздатки {item['file']} для вопроса {item['attachedTo']}. "
-                f"Скачай картинки: python3 scripts/fetch_bingo_images.py"
+                f"Скачай картинки: python3 scripts/fetch_bingo_images.py "
+                f"(gq — python3 scripts/fetch_gq_handouts.py)"
             )
         mapping[item["attachedTo"]] = encode(path, out_dir, item["attachedTo"])
     return mapping
 
 
 def main():
-    with open(MANIFEST, encoding="utf-8") as f:
+    with open(BINGO_MANIFEST, encoding="utf-8") as f:
         manifest = json.load(f)
+    with open(GQ_MANIFEST, encoding="utf-8") as f:
+        manifest += [i for i in json.load(f) if i.get("status") == "ok"]
     mapping = build(manifest, SRC, OUT)
     total = sum(os.path.getsize(os.path.join(OUT, n)) for n in mapping.values())
     was = sum(
