@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from sanitize_dumps import (
     accept_variants,
+    clean_markup,
     clean_question,
     duplicate_key,
     exclusion_reason,
@@ -257,6 +258,18 @@ def test_duplicates_are_marked_not_deleted():
     check(len(rows) == 3, "ни одна строка не удалена")
 
 
+def test_markup_is_cleaned():
+    """T28: gotquestions отдаёт разметку в тексте — на экране было «Procter &amp; Gamble»."""
+    check(clean_markup('"Procter &amp; Gamble"') == '"Procter & Gamble"', "сущность раскодирована")
+    check(clean_markup('см. <a href="https://x">статью</a>.') == "см. статью.", "ссылка снята, текст остался")
+    check(clean_markup("Раздаточный материал:\n<br/>\nтекст") == "Раздаточный материал:\n\n\nтекст",
+          "<br/> — перенос строки")
+    check(clean_markup("Он написал <...> и <пропуск>") == "Он написал <...> и <пропуск>",
+          "угловые скобки пропуска — не тег")
+    check(clean_markup(None) is None, "пустое поле не падает")
+    check(clean_markup("A &amp;amp; B") == "A & B", "двойное кодирование раскодировано до конца")
+
+
 def test_duplicate_key_ignores_punctuation_and_yo():
     check(
         duplicate_key("Ёлка, «ель» — назовите!") == duplicate_key("елка ель назовите"),
@@ -278,6 +291,7 @@ def main():
         test_image_only_question_is_playable_with_a_file,
         test_duplicates_are_marked_not_deleted,
         test_duplicate_key_ignores_punctuation_and_yo,
+        test_markup_is_cleaned,
     ]:
         print(test.__name__)
         test()

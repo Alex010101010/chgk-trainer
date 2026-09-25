@@ -4,6 +4,7 @@
 краулера, результат ложится рядом в `*_clean.json`. Ничего не удаляется —
 отбракованное едет с полем-причиной, чтобы не краулить заново.
 """
+import html
 import json
 import os
 import random
@@ -328,16 +329,36 @@ def write_sample(rows, path, seed=20260829):
         json.dump(sample, f, ensure_ascii=False, indent=2)
 
 
+# Поля gq, где встречается разметка: встроенный JSON пакета gotquestions
+# отдаёт «Procter &amp; Gamble», ссылки `<a href>` в комментариях и `<br/>`.
+GQ_TEXT_FIELDS = ("question", "answer", "acceptance", "comment", "author", "tournament")
+RE_BR = re.compile(r"<br\s*/?>", re.I)
+# Только латинская буква после `<`: «<...>» и «<пропуск>» — текст, не тег.
+RE_TAG = re.compile(r"</?[a-zA-Z][^>]*>")
+
+
+def clean_markup(text):
+    """Снять HTML (T28): `<br>` — перенос строки, прочие теги — без следа,
+    текст внутри них остаётся; сущности раскодируются — до устойчивого
+    вида: в названиях турниров встречается дважды закодированное `&amp;amp;`."""
+    if not isinstance(text, str):
+        return text
+    text = RE_TAG.sub("", RE_BR.sub("\n", text))
+    while (decoded := html.unescape(text)) != text:
+        text = decoded
+    return text
+
+
 def load_gq():
     """Дамп плюс раздатка из `gq_images.json`. Картинка ставится только
     скачанная: вопрос с раздаткой, которой нет на диске, остаётся браком.
     Текстовая раздатка (T27) — `handoutText`, её показывает сам цикл."""
     with open(GQ_IN, encoding="utf-8") as f:
         rows = json.load(f)
-    if not os.path.exists(GQ_IMAGES):
-        return rows
-    with open(GQ_IMAGES, encoding="utf-8") as f:
-        manifest = json.load(f)
+    manifest = []
+    if os.path.exists(GQ_IMAGES):
+        with open(GQ_IMAGES, encoding="utf-8") as f:
+            manifest = json.load(f)
     images = {i["attachedTo"]: i["url"] for i in manifest if i.get("status") == "ok"}
     # «----Image alt text---->D:\\Текущая работа\\…» — подпись к картинке,
     # выгруженная вместе с ней, а не раздатка: у обоих таких вопросов картинка есть.
@@ -346,6 +367,9 @@ def load_gq():
     out = []
     for row in rows:
         row = dict(row)
+        for key in GQ_TEXT_FIELDS:
+            row[key] = clean_markup(row.get(key))
+        row["sources"] = [clean_markup(s) for s in row.get("sources") or []]
         if row["id"] in images:
             row["handoutImage"] = images[row["id"]]
         if row["id"] in texts:
