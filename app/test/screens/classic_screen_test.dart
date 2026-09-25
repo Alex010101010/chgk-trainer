@@ -223,7 +223,9 @@ void main() {
       theme: 'Гинденбург',
     );
     await _pumpClassic(tester, MemoryEventLog(),
-        repo: FakeRepository([bingo, ..._pool.take(4)]));
+        // Пять gq: один из них — сегодняшний вопрос дня, Классике он не
+        // отдаётся (T12), и в раунде остаются четыре.
+        repo: FakeRepository([bingo, ..._pool.take(5)]));
 
     for (var i = 0; i < 4; i++) {
       await _playOne(tester, verdict: Verdict.missed);
