@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../app_theme.dart';
 import '../data/question_repository.dart';
 import '../data/tehnika_repository.dart';
+import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
@@ -13,6 +14,7 @@ import 'daily_screen.dart';
 import 'debug_journal_screen.dart';
 import 'bingo_screen.dart';
 import 'tehnika_card_screen.dart';
+import 'tehnika_check_screen.dart';
 
 class _ModeInfo {
   final String title;
@@ -125,6 +127,10 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+            _CheckCard(
+              repository: repository ?? AssetQuestionRepository(),
+              tehnikaRepository: tehnikaRepository ?? AssetTehnikaRepository(),
+            ),
             ..._modes
               .map((m) => Card(
                     child: ListTile(
@@ -219,6 +225,86 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
               doneLabel: 'Закрыть',
             ),
           _ => const Center(child: CircularProgressIndicator()),
+        },
+      ),
+    );
+  }
+}
+
+/// Вход в проверку недели (T4b). Читает журнал сам: `HomeScreen` без
+/// состояния, а карточке нужно знать, сыграна ли проверка, — и узнать это
+/// заново после возврата с её экрана.
+///
+/// Без журнала выше по дереву (тесты голого главного экрана) и на неделе с
+/// одним открытым приёмом — не показывается: выбирать не из чего.
+class _CheckCard extends StatefulWidget {
+  final QuestionRepository repository;
+  final TehnikaRepository tehnikaRepository;
+
+  const _CheckCard({required this.repository, required this.tehnikaRepository});
+
+  @override
+  State<_CheckCard> createState() => _CheckCardState();
+}
+
+class _CheckCardState extends State<_CheckCard> {
+  EventLog? _log;
+  int _opened = 0;
+  int _answered = 0;
+  int _daysLeft = 0;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final log =
+        context.dependOnInheritedWidgetOfExactType<JournalScope>()?.log;
+    if (log == null || log == _log) return;
+    _log = log;
+    _load();
+  }
+
+  Future<void> _load() async {
+    try {
+      final tehniki = await widget.tehnikaRepository.loadAll();
+      final events = (await _log!.readAll()).events;
+      final now = DateTime.now();
+      final week = weekIndex(events, now);
+      if (!mounted) return;
+      setState(() {
+        _opened = openedTehniki(tehniki, week).length;
+        _answered = tehnikaCheckAnswers(events, now).length;
+        _daysLeft = daysToNextWeek(events, now);
+      });
+    } catch (e) {
+      debugPrint('[home] проверка недели: $e');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_log == null || _opened < 2) return const SizedBox.shrink();
+    final done = _answered >= kCheckSize;
+    final subtitle = done
+        ? 'Сыграна · следующая через $_daysLeft дн.'
+        : _answered > 0
+            ? 'Осталось ${kCheckSize - _answered}'
+            : '$kCheckSize вопросов: какой здесь приём?';
+    return Card(
+      child: ListTile(
+        key: const Key('home-check'),
+        enabled: !done,
+        contentPadding: const EdgeInsets.all(16),
+        leading: const Icon(Icons.quiz_outlined, size: 32),
+        title: const Text('Проверка недели'),
+        subtitle: Text(subtitle),
+        onTap: () async {
+          await Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => TehnikaCheckScreen(
+              repository: widget.repository,
+              tehnikaRepository: widget.tehnikaRepository,
+            ),
+          ));
+          if (mounted) _load();
         },
       ),
     );

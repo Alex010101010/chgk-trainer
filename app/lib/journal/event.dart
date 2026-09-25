@@ -114,6 +114,11 @@ class AnswerEvent extends JournalEvent {
   final String? themeGuess;
 
   final bool? tehnikaGuess;
+
+  /// Проверка недели (T4b): id приёма, который выбрал игрок. `null` вне
+  /// проверки. Поле добавлено без подъёма `kSchemaVersion` — читатель
+  /// отбрасывает события с `v` больше известной, и бамп сломал бы старые сборки.
+  final String? tehnikaPick;
   final List<String> tags;
 
   const AnswerEvent({
@@ -132,6 +137,7 @@ class AnswerEvent extends JournalEvent {
     this.theme,
     this.themeGuess,
     this.tehnikaGuess,
+    this.tehnikaPick,
     this.tags = const [],
   });
 
@@ -153,6 +159,7 @@ class AnswerEvent extends JournalEvent {
         'theme': theme,
         'themeGuess': themeGuess,
         'tehnikaGuess': tehnikaGuess,
+        'tehnikaPick': tehnikaPick,
         'tags': tags,
       };
 
@@ -186,6 +193,7 @@ class AnswerEvent extends JournalEvent {
       theme: j['theme'] is String ? j['theme'] as String : null,
       themeGuess: j['themeGuess'] is String ? j['themeGuess'] as String : null,
       tehnikaGuess: j['tehnikaGuess'] is bool ? j['tehnikaGuess'] as bool : null,
+      tehnikaPick: j['tehnikaPick'] is String ? j['tehnikaPick'] as String : null,
       tags: tags is List ? tags.whereType<String>().toList() : const [],
     );
   }

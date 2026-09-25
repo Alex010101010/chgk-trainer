@@ -21,7 +21,9 @@ class ReturnRule {
 List<String> dueQuestions(List<JournalEvent> events, DateTime now) {
   final byQuestion = <String, List<AnswerEvent>>{};
   for (final e in events) {
-    if (e is AnswerEvent) {
+    // Промах в проверке недели (T4b) — неверно названный приём, а не
+    // невзятый вопрос: возвращать его нечем и незачем.
+    if (e is AnswerEvent && e.mode != GameMode.tehnika) {
       byQuestion.putIfAbsent(e.questionId, () => <AnswerEvent>[]).add(e);
     }
   }
@@ -78,7 +80,11 @@ int currentStreak(List<JournalEvent> events, DateTime now) {
 
 /// Доля «взял» на последних [window] ответах. `null`, если ответов ещё нет.
 double? takenRate(List<JournalEvent> events, {int window = 50}) {
-  final answers = events.whereType<AnswerEvent>().toList()
+  // Проверка недели (T4b) вопрос не берёт — её вердикт про узнавание приёма.
+  final answers = events
+      .whereType<AnswerEvent>()
+      .where((a) => a.mode != GameMode.tehnika)
+      .toList()
     ..sort((a, b) => a.ts.compareTo(b.ts));
   if (answers.isEmpty) return null;
   final slice = answers.length > window
@@ -242,9 +248,37 @@ bool answeredThisWeek(List<JournalEvent> events, DateTime now) {
   final start = _firstDay(events);
   if (start == null) return false;
   final week = _weekOf(start, localDay(now));
+  // Проверка недели (T4b) урок не заменяет: сыгранная первой, она спрятала
+  // бы карточку нового приёма до «Классики».
   return events
       .whereType<AnswerEvent>()
+      .where((e) => e.mode != GameMode.tehnika)
       .any((e) => _weekOf(start, e.day) == week);
+}
+
+/// Сколько дней до следующей недели стажа, 1..7. На пустом журнале — 7:
+/// первая неделя ещё не началась.
+int daysToNextWeek(List<JournalEvent> events, DateTime now) {
+  final start = _firstDay(events);
+  if (start == null) return 7;
+  final days = DateTime.parse(localDay(now)).difference(DateTime.parse(start)).inDays;
+  return 7 - (days < 0 ? 0 : days % 7);
+}
+
+/// Вопросов в проверке недели (T4b).
+const int kCheckSize = 5;
+
+/// Ответы проверки недели на текущей неделе стажа. Проверка сыграна, когда их
+/// набралось [kCheckSize]: вышел на середине — остаток доигрывается, а не
+/// сгорает до следующей недели.
+List<AnswerEvent> tehnikaCheckAnswers(List<JournalEvent> events, DateTime now) {
+  final start = _firstDay(events);
+  if (start == null) return const [];
+  final week = _weekOf(start, localDay(now));
+  return events
+      .whereType<AnswerEvent>()
+      .where((e) => e.mode == GameMode.tehnika && _weekOf(start, e.day) == week)
+      .toList();
 }
 
 String? _firstDay(List<JournalEvent> events) => events.isEmpty

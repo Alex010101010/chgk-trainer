@@ -9,6 +9,7 @@ import '../model/tehnika.dart';
 import '../widgets/article_card.dart';
 import '../widgets/grid_label.dart';
 import '../widgets/handout_image.dart';
+import '../widgets/handout_text.dart';
 import 'cycle_controller.dart';
 import 'screen_wakelock.dart';
 
@@ -132,7 +133,7 @@ class _QuestionCycleState extends State<QuestionCycle> {
           const SizedBox(height: 12),
         ],
         if (widget.question.handoutText case final text?) ...[
-          _handoutText(text),
+          HandoutText(text),
           const SizedBox(height: 12),
         ],
         Text(
@@ -142,19 +143,6 @@ class _QuestionCycleState extends State<QuestionCycle> {
       ],
     );
   }
-
-  /// Текстовая раздатка (T27) — листок в рамке, отдельно от текста вопроса:
-  /// на игре его выдают на бумаге, и читается он как предмет, а не как
-  /// продолжение вопроса. Переносы строк сохраняются — это стихи и шаблоны.
-  Widget _handoutText(String text) => Container(
-        key: const Key('cycle-handout-text'),
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).colorScheme.outline),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Text(text, style: Theme.of(context).textTheme.bodyLarge),
-      );
 
   Widget _reading() => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -323,7 +311,7 @@ class _QuestionCycleState extends State<QuestionCycle> {
           const SizedBox(height: 12),
         ],
         if (q.handoutText case final text?) ...[
-          _handoutText(text),
+          HandoutText(text),
           const SizedBox(height: 12),
         ],
         _labelled('Ответ', q.answer),
