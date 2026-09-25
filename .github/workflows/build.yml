@@ -47,10 +47,11 @@ jobs:
 
       # Тесты скриптов данных (T29). Без них проверка «раздатки только у бинго»
       # стала ложной после T21, и этого никто не заметил. Каждый файл сам
-      # выходит с кодом 1 при провале; `requests` нужен импортам краулеров.
+      # выходит с кодом 1 при провале; `requests` и `lxml` нужны импортам
+      # краулеров, которые тесты подтягивают вместе с разбором страниц.
       - name: Data script tests
         run: |
-          python3 -m pip install --quiet requests
+          python3 -m pip install --quiet requests lxml
           for t in scripts/tests/test_*.py; do python3 "$t" > /dev/null || { echo "FAILED: $t"; python3 "$t" | grep FAIL; exit 1; }; done
         working-directory: .
 
