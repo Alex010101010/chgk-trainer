@@ -117,6 +117,7 @@ class _ClassicScreenState extends State<ClassicScreen> {
 
   Tehnika? _tehnika;
   Map<String, Question> _tehnikaExamples = const {};
+  bool _tehnikaRepeated = false;
 
   /// Карточка урока перед раундом. Показывается один раз за неделю стажа.
   bool _showCard = false;
@@ -158,14 +159,15 @@ class _ClassicScreenState extends State<ClassicScreen> {
       if (!mounted) return;
       final events = List.of(read.events);
       // Приёмы открываются по одному; когда они кончились, последний остаётся.
-      final tehnika =
-          tehniki[min(weekIndex(events, _now()), tehniki.length - 1)];
+      final pick = tehnikaForWeek(tehniki, weekIndex(events, _now()));
+      final tehnika = pick.tehnika;
       final byId = {for (final q in pool) q.id: q};
       setState(() {
         _pool = pool;
         _events = events;
         _skippedLines = read.skippedLines;
         _tehnika = tehnika;
+        _tehnikaRepeated = pick.repeated;
         _tehnikaExamples = {
           for (final e in tehnika.examples)
             if (byId[e.questionId] case final q?) e.questionId: q,
@@ -238,6 +240,7 @@ class _ClassicScreenState extends State<ClassicScreen> {
       return TehnikaCard(
         tehnika: _tehnika!,
         questions: _tehnikaExamples,
+        repeated: _tehnikaRepeated,
         onDone: () => setState(() => _showCard = false),
       );
     }

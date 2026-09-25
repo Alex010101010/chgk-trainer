@@ -1,3 +1,5 @@
+import 'dart:math';
+
 /// Приём рассуждения — «приём недели» из T4a.
 ///
 /// Контент авторский и лежит в `assets/tehniki.json`, который коммитится:
@@ -59,4 +61,13 @@ class TehnikaExample {
     if (questionId is! String || why is! String) return null;
     return TehnikaExample(questionId: questionId, why: why);
   }
+}
+
+/// Приём на неделю стажа `week`. Приёмы дописываются по одному в неделю и
+/// кончаются раньше стажа — тогда остаётся последний, а `repeated` говорит
+/// об этом вслух: молчаливый повтор на обкатке выглядел поломкой (T22).
+({Tehnika tehnika, int index, bool repeated}) tehnikaForWeek(
+    List<Tehnika> tehniki, int week) {
+  final index = min(week, tehniki.length - 1);
+  return (tehnika: tehniki[index], index: index, repeated: week > index);
 }

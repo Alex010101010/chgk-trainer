@@ -191,6 +191,35 @@ void main() {
       await _tap(tester, 'cycle-verdict-missed');
     }
   });
+
+  // T22: приёмов меньше, чем недель стажа, — остаётся последний, но вслух.
+  test('приёмы кончились — последний, с пометкой повтора', () {
+    const second = Tehnika(id: 'sozvuchie', title: 'Созвучие', explain: '', trigger: '');
+    const tehniki = [_tehnika, second];
+    expect(tehnikaForWeek(tehniki, 0).tehnika.id, 'perevod');
+    expect(tehnikaForWeek(tehniki, 0).repeated, isFalse);
+    expect(tehnikaForWeek(tehniki, 1).tehnika.id, 'sozvuchie');
+    expect(tehnikaForWeek(tehniki, 1).repeated, isFalse);
+    final late = tehnikaForWeek(tehniki, 5);
+    expect(late.tehnika.id, 'sozvuchie');
+    expect(late.index, 1);
+    expect(late.repeated, isTrue);
+  });
+
+  testWidgets('первая неделя — урок без пометки повтора', (tester) async {
+    await _pump(tester, MemoryEventLog());
+    expect(find.byKey(const Key('tehnika-card-repeated')), findsNothing);
+  });
+
+  testWidgets('на неделе без нового приёма урок говорит о повторе',
+      (tester) async {
+    // Приём один, стаж — вторая неделя: карточка та же, но с пометкой.
+    final log = MemoryEventLog();
+    await log.append(_answer('gq-0', daysAgo: 8));
+    await _pump(tester, log);
+    expect(find.byKey(const Key('tehnika-card')), findsOneWidget);
+    expect(find.byKey(const Key('tehnika-card-repeated')), findsOneWidget);
+  });
 }
 
 /// Кеш корпуса. Замер на телефоне показал 871 мс при первом открытии и 890 при

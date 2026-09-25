@@ -17,11 +17,16 @@ class TehnikaCard extends StatelessWidget {
   final VoidCallback onDone;
   final String doneLabel;
 
+  /// Новые приёмы кончились, и неделя повторяет последний. Без пометки
+  /// тот же урок второй раз читался как поломка (T22).
+  final bool repeated;
+
   const TehnikaCard({
     super.key,
     required this.tehnika,
     required this.questions,
     required this.onDone,
+    this.repeated = false,
     this.doneLabel = 'Понятно, играем',
   });
 
@@ -38,6 +43,16 @@ class TehnikaCard extends StatelessWidget {
         Text('Приём недели', style: _kicker(context)),
         const SizedBox(height: 6),
         Text(tehnika.title, style: text.headlineSmall),
+        if (repeated) ...[
+          const SizedBox(height: 8),
+          Text(
+            'Новый приём ещё не написан — эта неделя повторяет прошлый.',
+            key: const Key('tehnika-card-repeated'),
+            style: text.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ],
         const SizedBox(height: 16),
         Text(tehnika.explain, style: text.bodyLarge),
         if (tehnika.trigger.isNotEmpty) ...[

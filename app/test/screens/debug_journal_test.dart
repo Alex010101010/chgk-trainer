@@ -1,9 +1,11 @@
 import 'package:chgk_trainer/data/handout_store.dart';
 import 'package:chgk_trainer/data/question_repository.dart';
+import 'package:chgk_trainer/data/tehnika_repository.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/journal/event_log.dart';
 import 'package:chgk_trainer/journal/journal_scope.dart';
 import 'package:chgk_trainer/model/question.dart';
+import 'package:chgk_trainer/model/tehnika.dart';
 import 'package:chgk_trainer/screens/debug_journal_screen.dart';
 import 'package:chgk_trainer/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +41,52 @@ class FakeHandoutQuestions implements QuestionRepository {
           handout: 'нет-такого-файла.jpg',
         ),
       ];
+}
+
+/// Два приёма; у первого эталон — gq-1, единственный вопрос FakeQuestions.
+class FakeTehniki implements TehnikaRepository {
+  @override
+  Future<List<Tehnika>> loadAll() async => const [
+        Tehnika(id: 'perevod', title: 'Перевод', explain: '', trigger: ''),
+        Tehnika(id: 'sozvuchie', title: 'Созвучие', explain: '', trigger: ''),
+      ];
+}
+
+class MarkedQuestions implements QuestionRepository {
+  @override
+  Future<List<Question>> loadAll() async => const [
+        Question(
+          id: 'gq-1',
+          corpus: Corpus.gq,
+          question: 'вопрос',
+          answer: 'ответ',
+          acceptVariants: ['ответ'],
+          tehniki: ['perevod', 'sozvuchie'],
+        ),
+      ];
+}
+
+Future<void> _pumpTehniki(WidgetTester tester, EventLog log) async {
+  await tester.pumpWidget(JournalScope(
+    log: log,
+    child: MaterialApp(
+      home: DebugJournalScreen(
+        repository: MarkedQuestions(),
+        tehnikaRepository: FakeTehniki(),
+        now: () => _now,
+      ),
+    ),
+  ));
+  await tester.pumpAndSettle();
+}
+
+String _value(WidgetTester tester, String key) {
+  final texts = tester
+      .widgetList<Text>(find.descendant(
+          of: find.byKey(Key(key)), matching: find.byType(Text)))
+      .map((t) => t.data)
+      .toList();
+  return texts.last!;
 }
 
 class SkippingLog extends MemoryEventLog {
@@ -150,6 +198,22 @@ void main() {
     ));
     await tester.pumpAndSettle();
     expect(find.text('не скачивается'), findsOneWidget);
+  });
+
+  // T22: неделя стажа и номер приёма расходятся молча, когда приёмы кончились.
+  testWidgets('первая неделя — приём 1, эталон не виден', (tester) async {
+    await _pumpTehniki(tester, MemoryEventLog());
+    expect(_value(tester, 'debug-tehnika'), '1 из 2');
+    expect(_value(tester, 'debug-tehnika-left'), '1');
+  });
+
+  testWidgets('приёмы кончились и эталоны исчерпаны — обе строки видны',
+      (tester) async {
+    final log = MemoryEventLog();
+    await log.append(_answer('gq-1', Verdict.taken, daysAgo: 20));
+    await _pumpTehniki(tester, log);
+    expect(_value(tester, 'debug-tehnika'), '2 из 2 · повтор');
+    expect(_value(tester, 'debug-tehnika-left'), '0');
   });
 }
 

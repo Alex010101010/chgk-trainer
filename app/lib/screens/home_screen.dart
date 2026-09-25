@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import '../app_theme.dart';
 import '../data/question_repository.dart';
@@ -75,6 +73,8 @@ class HomeScreen extends StatelessWidget {
             MaterialPageRoute(
               builder: (_) => DebugJournalScreen(
                 repository: repository ?? AssetQuestionRepository(),
+                tehnikaRepository:
+                    tehnikaRepository ?? AssetTehnikaRepository(),
               ),
             ),
           ),
@@ -168,6 +168,7 @@ class _TehnikaCardScreen extends StatefulWidget {
 class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
   Tehnika? _tehnika;
   Map<String, Question> _examples = const {};
+  bool _repeated = false;
   String? _error;
 
   @override
@@ -182,12 +183,14 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
       final pool = await widget.repository.loadAll();
       final events = (await JournalScope.of(context).readAll()).events;
       final byId = {for (final q in pool) q.id: q};
-      final t = tehniki[min(weekIndex(events, DateTime.now()), tehniki.length - 1)];
+      final pick = tehnikaForWeek(tehniki, weekIndex(events, DateTime.now()));
+      final t = pick.tehnika;
       if (!mounted) return;
       // Урок прочитан — перед раундом его показывать уже не нужно.
       widget.cardSeen?.value = true;
       setState(() {
         _tehnika = t;
+        _repeated = pick.repeated;
         _examples = {
           for (final e in t.examples)
             if (byId[e.questionId] case final q?) e.questionId: q,
@@ -211,6 +214,7 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
           (_, final Tehnika t) => TehnikaCard(
               tehnika: t,
               questions: _examples,
+              repeated: _repeated,
               onDone: () => Navigator.of(context).pop(),
               doneLabel: 'Закрыть',
             ),
