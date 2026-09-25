@@ -45,6 +45,15 @@ jobs:
         run: python3 scripts/build_app_assets.py
         working-directory: .
 
+      # Тесты скриптов данных (T29). Без них проверка «раздатки только у бинго»
+      # стала ложной после T21, и этого никто не заметил. Каждый файл сам
+      # выходит с кодом 1 при провале; `requests` нужен импортам краулеров.
+      - name: Data script tests
+        run: |
+          python3 -m pip install --quiet requests
+          for t in scripts/tests/test_*.py; do python3 "$t" > /dev/null || { echo "FAILED: $t"; python3 "$t" | grep FAIL; exit 1; }; done
+        working-directory: .
+
       # Юнит/виджет-тесты — до генерации платформ: им нужны только pubspec + lib/ + test/,
       # а flutter create мог бы подложить шаблонный widget_test.dart и сломать прогон.
       - run: flutter pub get
