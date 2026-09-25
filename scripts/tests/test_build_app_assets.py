@@ -121,9 +121,10 @@ def test_handouts_reach_the_asset():
         ),
         "у каждой раздатки есть файл",
     )
+    # С T21 раздатка есть у обоих корпусов: gq докачан `fetch_gq_handouts.py`.
     check(
-        all(q["corpus"] == "bingo" for q in with_handout),
-        "раздатки только у бинго — у gq картинок не скачано вовсе",
+        {q["corpus"] for q in with_handout} == {"bingo", "gq"},
+        "раздатки есть и у бинго, и у gq",
     )
     # Вопрос с раздаткой, но без файла — падение, а не молчаливый пропуск.
     try:
@@ -137,6 +138,10 @@ def test_tehniki_examples_exist_in_corpus():
     with open(os.path.join(DATA, "gq_clean.json"), encoding="utf-8") as f:
         asset = build(json.load(f))
     by_id = {q["id"]: q for q in asset["questions"]}
+    all_ids = set()
+    for name in ("gq_clean.json", "bingo_clean.json"):
+        with open(os.path.join(DATA, name), encoding="utf-8") as f:
+            all_ids |= {r["id"] for r in json.load(f)}
 
     for t in load_tehniki():
         for ex in t["examples"]:
@@ -152,9 +157,13 @@ def test_tehniki_examples_exist_in_corpus():
             check(bool(ex["why"].strip()), f"{t['id']}: у примера {ex['questionId']} есть разбор")
 
         marked = [q for q in asset["questions"] if t["id"] in q["tehniki"]]
-        # Эталон должен быть достаточно большим, чтобы тап попадался, — иначе
-        # приём недели не встретится ни разу за две недели.
-        check(len(marked) >= 30, f"{t['id']}: эталон достаточного размера ({len(marked)})")
+        # Эталон расходуется по вопросу за раунд (слот приёма недели), а
+        # раундов в неделю меньше десяти. 25 — с запасом на неделю; порог был
+        # 30, снижен под вычитанный руками эталон «bukvalno» (T4a, приём №3).
+        check(len(marked) >= 25, f"{t['id']}: эталон достаточного размера ({len(marked)})")
+        # Опечатка в `exclude` тихо оставила бы ложное срабатывание в эталоне.
+        for qid in t.get("exclude", ()):
+            check(qid in all_ids, f"{t['id']}: исключённый {qid} есть в корпусе")
         check(
             not any(re.search(t["detect"], q["question"]) for q in marked),
             f"{t['id']}: приём не объявлен в тексте самих эталонных вопросов",

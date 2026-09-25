@@ -40,9 +40,11 @@ void main() {
         expect(q, isNotNull, reason: '${t.id}: ${e.questionId}');
         expect(q!.tehniki, contains(t.id), reason: e.questionId);
       }
-      // Эталон должен быть достаточно велик, чтобы приём реально попадался.
+      // Эталон должен быть достаточно велик, чтобы приём реально попадался:
+      // по вопросу на раунд, раундов в неделю меньше десяти. Порог — как в
+      // `scripts/tests/test_build_app_assets.py`.
       expect(byId.values.where((q) => q.tehniki.contains(t.id)).length,
-          greaterThanOrEqualTo(30),
+          greaterThanOrEqualTo(25),
           reason: t.id);
     }
   });

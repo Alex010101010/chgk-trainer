@@ -94,10 +94,16 @@ def detect_tehniki(row, tehniki):
     сработало по тексту вопроса: во втором случае приём объявлен в самом
     вопросе, и угадывать нечего. Отсутствие приёма в этом списке не значит,
     что приёма нет, — поэтому «нет» здесь не эталон, а незнание.
+
+    `exclude` — вопросы, на которых правило сработало, но вычитка руками
+    показала, что приёма нет: у широкого правила точности не хватает, у
+    узкого — размера эталона.
     """
     found = []
     for t in tehniki:
         rx = re.compile(t["detect"])
+        if row.get("id") in t.get("exclude", ()):
+            continue
         if rx.search(row.get("comment") or "") and not rx.search(row.get("question") or ""):
             found.append(t["id"])
     return found
