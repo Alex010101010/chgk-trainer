@@ -270,6 +270,26 @@ def test_markup_is_cleaned():
     check(clean_markup("A &amp;amp; B") == "A & B", "двойное кодирование раскодировано до конца")
 
 
+def test_old_playable_question_is_stale():
+    """T30: старый годный вопрос — `stale`; брак остаётся браком; пример урока не устаревает."""
+    base = {"answer": "Уорхол", "acceptance": None}
+    rows = [
+        {**base, "id": "gq-new", "question": "Кто он?", "packDate": "2024-01-01"},
+        {**base, "id": "gq-old", "question": "Кто он?", "packDate": "2009-01-01"},
+        {**base, "id": "gq-nodate", "question": "Кто он?"},
+        {**base, "id": "gq-oldempty", "question": "", "packDate": "2009-01-01"},
+        {**base, "id": "gq-lesson", "question": "Кто он?", "packDate": "2009-01-01"},
+    ]
+    got = {r["id"]: r["excluded"] for r in
+           sanitize(rows, "gq", fresh_since="2020-09-25", keep={"gq-lesson"})}
+    check(got["gq-new"] is None, "свежий вопрос играбелен")
+    check(got["gq-old"] == "stale", "старый вопрос устарел")
+    check(got["gq-nodate"] == "stale", "вопрос без даты считается старым")
+    check(got["gq-oldempty"] == "empty", "брак не перекрашивается в stale")
+    check(got["gq-lesson"] is None, "пример урока не устаревает")
+    check(sanitize(rows[1:2], "gq")[0]["excluded"] is None, "без fresh_since фильтра нет")
+
+
 def test_duplicate_key_ignores_punctuation_and_yo():
     check(
         duplicate_key("Ёлка, «ель» — назовите!") == duplicate_key("елка ель назовите"),
@@ -292,6 +312,7 @@ def main():
         test_duplicates_are_marked_not_deleted,
         test_duplicate_key_ignores_punctuation_and_yo,
         test_markup_is_cleaned,
+        test_old_playable_question_is_stale,
     ]:
         print(test.__name__)
         test()

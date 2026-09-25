@@ -1,3 +1,4 @@
+import 'package:chgk_trainer/data/handout_store.dart';
 import 'package:chgk_trainer/data/question_repository.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/journal/event_log.dart';
@@ -135,7 +136,11 @@ void main() {
     expect(find.text('—'), findsWidgets);
   });
 
-  testWidgets('раздатка объявлена, а картинки в сборке нет', (tester) async {
+  testWidgets('раздатка объявлена, а картинка не скачивается', (tester) async {
+    // С T30 картинки на Pages: без сети или без выкладки — тревога.
+    final prev = HandoutStore.instance;
+    HandoutStore.instance = _NoNetworkStore();
+    addTearDown(() => HandoutStore.instance = prev);
     await tester.pumpWidget(JournalScope(
       log: MemoryEventLog(),
       child: MaterialApp(
@@ -144,6 +149,11 @@ void main() {
       ),
     ));
     await tester.pumpAndSettle();
-    expect(find.text('нет в сборке'), findsOneWidget);
+    expect(find.text('не скачивается'), findsOneWidget);
   });
+}
+
+class _NoNetworkStore implements HandoutStore {
+  @override
+  Future<ImageProvider> resolve(String file) async => throw Exception('нет сети');
 }

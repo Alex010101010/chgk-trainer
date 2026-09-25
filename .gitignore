@@ -26,6 +26,10 @@ app/assets/handouts/
 !app/assets/tehniki.json
 !app/assets/panda_lines.json
 
+# Сырой проход по пакетам gotquestions (T30): все свежие пакеты целиком,
+# десятки МБ. В git — его выжимки gq_packs_index.json и gq_fresh_dump.json.
+data/gq_packs_scan.jsonl
+
 # IDE / OS
 *.iml
 .idea/

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
 import '../data/question_repository.dart';
 import '../journal/event.dart';
 import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
-import '../widgets/handout_image.dart';
+import '../data/handout_store.dart';
 
 /// Сырые числа для сверки с критериями MVP. Не подменяет T9: там профиль и
 /// карта слабых мест с дизайном, здесь — строки текста, которые выбрасываются
@@ -61,8 +60,9 @@ class _DebugJournalScreenState extends State<DebugJournalScreen> {
       bool? fileFound;
       if (withHandout.isNotEmpty) {
         try {
-          await rootBundle
-              .load('$kHandoutDir/${withHandout.first.handout}');
+          // С T30 картинки не в сборке, а на Pages: проверяется, что первую
+          // из них можно получить — из кэша или скачав.
+          await HandoutStore.instance.resolve(withHandout.first.handout!);
           fileFound = true;
         } catch (_) {
           fileFound = false;
@@ -130,7 +130,7 @@ class _DebugJournalScreenState extends State<DebugJournalScreen> {
           'Картинка раздатки',
           switch (_handoutFileFound) {
             true => 'на месте',
-            false => 'нет в сборке',
+            false => 'не скачивается',
             null => '—',
           },
           alarm: _handoutFileFound == false,

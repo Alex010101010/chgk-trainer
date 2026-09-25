@@ -69,6 +69,12 @@ jobs:
       - name: Build Web
         run: flutter build web --release --base-href /chgk-trainer/
 
+      # Раздатки не вшиты в приложение (T30): APK вырос бы на ~90 МБ. Они
+      # живут здесь, на Pages, по адресу kHandoutBaseUrl, и приложение качает
+      # их при первом показе.
+      - name: Publish handouts to Pages
+        run: cp -r assets/handouts build/web/handouts
+
       - name: Upload Web artifact
         uses: actions/upload-pages-artifact@v5
         with:

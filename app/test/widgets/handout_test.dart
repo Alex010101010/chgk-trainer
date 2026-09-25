@@ -1,6 +1,5 @@
-import 'dart:convert';
-
 import 'package:chgk_trainer/cycle/cycle_controller.dart';
+import 'package:chgk_trainer/data/handout_store.dart';
 import 'package:chgk_trainer/cycle/question_cycle.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/model/question.dart';
@@ -47,29 +46,34 @@ final _png = Uint8List.fromList(const [
   0x4E, 0x44, 0xAE, 0x42, 0x60, 0x82,
 ]);
 
-/// Подменяет ТОЛЬКО файлы раздаток. Глобальная подмена канала ассетов ломает
-/// чтение манифеста (`AssetManifest.bin` приходит PNG-байтами и падает с
-/// «Message corrupted»), и полноэкранный просмотр не открывается вовсе.
-void _stubHandouts(WidgetTester tester, Uint8List bytes) {
-  tester.binding.defaultBinaryMessenger.setMockMessageHandler(
-    'flutter/assets',
-    (message) async {
-      final key = utf8.decode(message!.buffer.asUint8List());
-      if (key.startsWith(kHandoutDir)) return bytes.buffer.asByteData();
-      // Пустой, но валидный манифест: в тестах собранного бандла нет, а
-      // `Image.asset` читает манифест прежде самой картинки.
-      if (key == 'AssetManifest.bin') {
-        return const StandardMessageCodec().encodeMessage(<String, Object>{});
-      }
-      return null;
-    },
-  );
-  addTearDown(() => tester.binding.defaultBinaryMessenger
-      .setMockMessageHandler('flutter/assets', null));
+/// Подменное хранилище раздаток: настоящее ходит в сеть и на диск (T30).
+/// [fail] — сколько первых запросов упадут, как без сети.
+class FakeHandoutStore implements HandoutStore {
+  final Uint8List bytes;
+  int fail;
+  int calls = 0;
+  FakeHandoutStore(this.bytes, {this.fail = 0});
+
+  @override
+  Future<ImageProvider> resolve(String file) async {
+    calls++;
+    if (fail > 0) {
+      fail--;
+      throw Exception('нет сети');
+    }
+    return MemoryImage(bytes);
+  }
+}
+
+FakeHandoutStore _useStore(FakeHandoutStore store) {
+  final prev = HandoutStore.instance;
+  HandoutStore.instance = store;
+  addTearDown(() => HandoutStore.instance = prev);
+  return store;
 }
 
 Future<void> _pump(WidgetTester tester, Question q) async {
-  _stubHandouts(tester, _png);
+  _useStore(FakeHandoutStore(_png));
   await tester.pumpWidget(MaterialApp(
     home: Scaffold(
       body: QuestionCycle(
@@ -88,7 +92,7 @@ Future<void> _pump(WidgetTester tester, Question q) async {
   // дождаться картинки, а не надеяться на неё.
   if (q.handout != null) {
     await tester.runAsync(() => precacheImage(
-          AssetImage('$kHandoutDir/${q.handout}'),
+          MemoryImage(_png),
           tester.element(find.byType(HandoutImage)),
         ));
     await tester.pumpAndSettle();
@@ -164,14 +168,30 @@ void main() {
     expect(find.byType(HandoutImage), findsOneWidget);
   });
 
-  testWidgets('пропавший файл — сообщение, а не пустое место', (tester) async {
-    // В норме сюда не попасть: сборщик ассета не собирается без файла. Но если
-    // попали — игрок должен понимать, что вопрос не берётся не из-за него.
-    _stubHandouts(tester, Uint8List.fromList(const [1, 2, 3]));
+  testWidgets('битый файл — сообщение, а не пустое место', (tester) async {
+    // Игрок должен понимать, что вопрос не берётся не из-за него.
+    _useStore(FakeHandoutStore(Uint8List.fromList(const [1, 2, 3])));
     await tester.pumpWidget(const MaterialApp(
-      home: Scaffold(body: HandoutImage(file: 'нет-такого.jpg')),
+      home: Scaffold(body: HandoutImage(file: 'битый.jpg')),
     ));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('handout-missing')), findsOneWidget);
+  });
+
+  // T30: картинки качаются при первом показе — без сети это обычный случай.
+  testWidgets('нет сети — сообщение, «Повторить» догружает картинку',
+      (tester) async {
+    final store = _useStore(FakeHandoutStore(_png, fail: 1));
+    await tester.pumpWidget(const MaterialApp(
+      home: Scaffold(body: HandoutImage(file: 'gq-1.jpg')),
+    ));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('handout-missing')), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('handout-retry')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('handout-missing')), findsNothing);
+    expect(find.byKey(const Key('handout-open')), findsOneWidget);
+    expect(store.calls, 2);
   });
 }

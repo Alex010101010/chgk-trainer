@@ -27,6 +27,7 @@ BINGO_MANIFEST = os.path.join(ROOT, "data", "bingo_images.json")
 # У gq в манифесте есть и нескачанные картинки, и чисто текстовая раздатка:
 # в сборку идут только скачанные — остальные вопросы санитайзер и так бракует.
 GQ_MANIFEST = os.path.join(ROOT, "data", "gq_images.json")
+GQ_CLEAN = os.path.join(ROOT, "data", "gq_clean.json")
 SRC = os.path.join(ROOT, "data", "images")
 OUT = os.path.join(ROOT, "app", "assets", "handouts")
 
@@ -46,7 +47,9 @@ def encode(path, out_dir, name):
 
     if is_flat:
         out_name = f"{name}.png"
-        im.convert("P", palette=Image.ADAPTIVE, colors=min(256, len(colors))).save(
+        # Через RGB: палитра строится только из 8-битных режимов, а среди
+        # раздаток gq попадаются 16-битные и с альфой (T30).
+        im.convert("RGB").convert("P", palette=Image.ADAPTIVE, colors=min(256, len(colors))).save(
             os.path.join(out_dir, out_name), "PNG", optimize=True
         )
     else:
@@ -80,8 +83,13 @@ def build(manifest, src_dir, out_dir):
 def main():
     with open(BINGO_MANIFEST, encoding="utf-8") as f:
         manifest = json.load(f)
+    # Раздатка gq — только у вопросов, которые идут в поток: у устаревших
+    # (T30) картинки лежат в data/, но в приложение не едут.
+    with open(GQ_CLEAN, encoding="utf-8") as f:
+        playable = {r["id"] for r in json.load(f) if r.get("excluded") is None}
     with open(GQ_MANIFEST, encoding="utf-8") as f:
-        manifest += [i for i in json.load(f) if i.get("status") == "ok"]
+        manifest += [i for i in json.load(f)
+                     if i.get("status") == "ok" and i["attachedTo"] in playable]
     mapping = build(manifest, SRC, OUT)
     total = sum(os.path.getsize(os.path.join(OUT, n)) for n in mapping.values())
     was = sum(

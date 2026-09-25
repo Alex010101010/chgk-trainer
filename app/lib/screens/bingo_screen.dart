@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../app_theme.dart';
 import '../cycle/cycle_controller.dart';
 import '../cycle/question_cycle.dart';
+import '../data/handout_store.dart';
 import '../data/article_repository.dart';
 import '../data/question_repository.dart';
 import '../journal/event.dart';
@@ -264,6 +265,8 @@ class _BingoScreenState extends State<BingoScreen> {
       _lineClosed = false;
       _playing = true;
     });
+    // Раздатки раунда — заранее, как в Классике (T30).
+    HandoutStore.prefetch(round.map((q) => q.handout));
   }
 
   /// Событие пишется после каждого вопроса: краш на четвёртом не имеет права

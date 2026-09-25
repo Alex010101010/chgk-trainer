@@ -14191,7 +14191,8 @@
       "на стадионе «ливерпуля», на матчах фк ливерпуль",
       "в ливерпуле",
       "ливерпуля"
-    ]
+    ],
+    "duplicateOf": "gq-1788"
   },
   {
     "id": "ix-you-ll-never-walk-alone-4",
@@ -14578,7 +14579,8 @@
     "acceptVariants": [
       "ада",
       "ад, hell"
-    ]
+    ],
+    "duplicateOf": "gq-1170"
   },
   {
     "id": "ix-ad-eto-drugie-6",
@@ -16494,7 +16496,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "арма́н, дави́д"
-    ]
+    ],
+    "duplicateOf": "gq-354921"
   },
   {
     "id": "ix-artemiziya-dzhentileski-1",
@@ -16538,7 +16541,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "ножницы"
-    ]
+    ],
+    "duplicateOf": "gq-365415"
   },
   {
     "id": "ix-artemiziya-dzhentileski-3",
@@ -16748,7 +16752,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "барон"
-    ]
+    ],
+    "duplicateOf": "gq-2467"
   },
   {
     "id": "ix-baron-subbota-2",
@@ -17651,7 +17656,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "бульдозерная"
-    ]
+    ],
+    "duplicateOf": "gq-365427"
   },
   {
     "id": "ix-buldozernaya-vystavka-8",
@@ -19499,7 +19505,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "вирус табачной мозаики"
-    ]
+    ],
+    "duplicateOf": "gq-5352"
   },
   {
     "id": "ix-virus-tabachnoi-mozaiki-5",
@@ -19705,7 +19712,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "волшебная гора"
-    ]
+    ],
+    "duplicateOf": "gq-365496"
   },
   {
     "id": "ix-volshebnaya-gora-5",
@@ -23060,7 +23068,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "диджериду"
-    ]
+    ],
+    "duplicateOf": "gq-355409"
   },
   {
     "id": "ix-didzheridu-4",
@@ -26215,7 +26224,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "кофейная кантата"
-    ]
+    ],
+    "duplicateOf": "gq-381069"
   },
   {
     "id": "ix-kofeinaya-kantata-2",
@@ -26444,7 +26454,8 @@
       "red herring рэд хе́ррин",
       "red herring",
       "красная селедка, красная сельдь"
-    ]
+    ],
+    "duplicateOf": "gq-397091"
   },
   {
     "id": "ix-krasnaya-seledka-5",
@@ -26538,7 +26549,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "кремона"
-    ]
+    ],
+    "duplicateOf": "gq-365497"
   },
   {
     "id": "ix-kremona-3",
@@ -26629,7 +26641,8 @@
     "acceptVariants": [
       "кристиан барнард",
       "барнард"
-    ]
+    ],
+    "duplicateOf": "gq-366214"
   },
   {
     "id": "ix-kristian-barnard-3",
@@ -28624,7 +28637,8 @@
     "acceptVariants": [
       "картина лучо фонтаны",
       "по упоминанию фамилии фонтана"
-    ]
+    ],
+    "duplicateOf": "gq-373068"
   },
   {
     "id": "ix-lucho-fontana-6",
@@ -29035,7 +29049,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "маргиналии"
-    ]
+    ],
+    "duplicateOf": "gq-384570"
   },
   {
     "id": "ix-marginalii-3",
@@ -29106,7 +29121,8 @@
     "acceptVariants": [
       "мари кондо",
       "кондо"
-    ]
+    ],
+    "duplicateOf": "gq-2497"
   },
   {
     "id": "ix-marie-kondo-2",
@@ -29367,7 +29383,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "меандр"
-    ]
+    ],
+    "duplicateOf": "gq-359717"
   },
   {
     "id": "ix-meandr-2",
@@ -30347,7 +30364,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "мондриан"
-    ]
+    ],
+    "duplicateOf": "gq-5346"
   },
   {
     "id": "ix-mondrian-11",
@@ -31052,7 +31070,8 @@
     "acceptVariants": [
       "оймякон",
       "оймякон полюс холода"
-    ]
+    ],
+    "duplicateOf": "gq-2470"
   },
   {
     "id": "ix-oimyakon-6",
@@ -31153,7 +31172,8 @@
     "acceptVariants": [
       "джеймс макферсон",
       "оссиан"
-    ]
+    ],
+    "duplicateOf": "gq-369164"
   },
   {
     "id": "ix-ossian-4",
@@ -31175,7 +31195,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "оссиан, боян"
-    ]
+    ],
+    "duplicateOf": "gq-375599"
   },
   {
     "id": "ix-ossian-5",
@@ -32541,7 +32562,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "пилтдаун"
-    ]
+    ],
+    "duplicateOf": "gq-385198"
   },
   {
     "id": "ix-piltdaunskii-chelovek-3",
@@ -33464,7 +33486,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "кольская сверхглубокая скважина"
-    ]
+    ],
+    "duplicateOf": "gq-365962"
   },
   {
     "id": "ix-polunochniki-1",
@@ -34675,7 +34698,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "пурпурное сердце"
-    ]
+    ],
+    "duplicateOf": "gq-376579"
   },
   {
     "id": "ix-purpurnoe-serdtse-5",
@@ -34720,7 +34744,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "назон"
-    ]
+    ],
+    "duplicateOf": "gq-357391"
   },
   {
     "id": "ix-publii-ovidii-nazon-2",
@@ -34861,7 +34886,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "пустой дом"
-    ]
+    ],
+    "duplicateOf": "gq-1053"
   },
   {
     "id": "ix-pustoi-dom-2",
@@ -35845,7 +35871,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "сталь"
-    ]
+    ],
+    "duplicateOf": "gq-385016"
   },
   {
     "id": "ix-ruzhya-mikroby-i-stal-4",
@@ -36233,7 +36260,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "самсон зачет: сансон"
-    ]
+    ],
+    "duplicateOf": "gq-354292"
   },
   {
     "id": "ix-sansony-5",
@@ -36759,7 +36787,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "дерби"
-    ]
+    ],
+    "duplicateOf": "gq-1075"
   },
   {
     "id": "ix-seltik-vs-glazgo-reindzhers-7",
@@ -36783,7 +36812,8 @@
       "болельщиком «селтика",
       "фанатом «селтика», поклонником «селтика",
       "селтика"
-    ]
+    ],
+    "duplicateOf": "gq-4103"
   },
   {
     "id": "ix-seltik-vs-glazgo-reindzhers-8",
@@ -38784,7 +38814,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "тресковая война"
-    ]
+    ],
+    "duplicateOf": "gq-394393"
   },
   {
     "id": "ix-treskovye-voiny-2",
@@ -39241,7 +39272,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "туман войны"
-    ]
+    ],
+    "duplicateOf": "gq-2619"
   },
   {
     "id": "ix-tuman-voiny-4",
@@ -39471,7 +39503,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "тюльпаномания/"
-    ]
+    ],
+    "duplicateOf": "gq-1048"
   },
   {
     "id": "ix-tyulpanomaniya-9",
@@ -39723,7 +39756,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "урбену жану жозефу леверье"
-    ]
+    ],
+    "duplicateOf": "gq-2534"
   },
   {
     "id": "ix-urben-levere-3",
@@ -40165,7 +40199,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "филлоксере"
-    ]
+    ],
+    "duplicateOf": "gq-354245"
   },
   {
     "id": "ix-florens-naitingeil-1",
@@ -40186,7 +40221,8 @@
     "acceptVariants": [
       "флоренс найтингейл. комментарий: за прекрасный голос героиня среди близких друзей получила прозвище «соловей». по вступлении в церковный орден к ней стали обращаться сестра, и один раз, чтобы сохранить инкогнито, она представилась как «сестра соловей». флоренс найтингейл тоже была сестрой – правда, милосердия, а ее фамилия переводится как «соловей». источник: 1. https://dragonage.fandom.com/wiki/sister_nightingale 2. https://dragonage.fandom.com/wiki/leliana 3. https://en.wikipedia.org/wiki/florence_nightingale автор: руслан алиев (москва)",
       "флоренс найтингейл. комментарий: за прекрасный голос героиня среди близких друзей получила прозвище «соловей». по вступлении в церковный орден к ней стали обращаться сестра, и один раз, чтобы сохранить инкогнито, она представилась как «сестра соловей». флоренс найтингейл тоже была сестрой – правда, милосердия, а ее фамилия переводится как «соловей». источник: 1. https://dragonage.fandom.com/wiki/sister_nightingale 2. https://dragonage.fandom.com/wiki/leliana 3. https://en.wikipedia.org/wiki/florence_nightingale автор: руслан алиев"
-    ]
+    ],
+    "duplicateOf": "gq-4077"
   },
   {
     "id": "ix-florens-naitingeil-2",
@@ -41708,7 +41744,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "человек с ружьем"
-    ]
+    ],
+    "duplicateOf": "gq-385446"
   },
   {
     "id": "ix-chelovek-s-ruzhem-5",
@@ -41961,7 +41998,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "сон в красном тереме"
-    ]
+    ],
+    "duplicateOf": "gq-2479"
   },
   {
     "id": "ix-chetyre-klassicheskih-romana-11",
@@ -42866,7 +42904,8 @@
     "acceptVariants": [
       "стэнли милгрэм",
       "милгрэм"
-    ]
+    ],
+    "duplicateOf": "gq-361007"
   },
   {
     "id": "ix-eksperiment-milgrema-5",
@@ -43161,7 +43200,8 @@
     "excludedBy": null,
     "acceptVariants": [
       "репортаж с петлей на шее"
-    ]
+    ],
+    "duplicateOf": "gq-365593"
   },
   {
     "id": "ix-yulius-fuchik-3",

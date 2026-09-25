@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../cycle/cycle_controller.dart';
 import '../cycle/question_cycle.dart';
+import '../data/handout_store.dart';
 import '../data/question_repository.dart';
 import '../data/tehnika_repository.dart';
 import '../journal/event.dart';
@@ -192,6 +193,9 @@ class _ClassicScreenState extends State<ClassicScreen> {
       _index = 0;
       _results.clear();
     });
+    // Картинки раунда — сразу, пока идёт первый вопрос: к своему вопросу
+    // раздатка уже на телефоне, и минута не уходит на загрузку (T30).
+    HandoutStore.prefetch(_round.map((q) => q.handout));
   }
 
   /// Событие пишется после каждого вопроса: краш на четвёртом не имеет права

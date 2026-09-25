@@ -15,6 +15,14 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 GQ_IN = os.path.join(DATA_DIR, "gotquestions_dump.json")
 # Раздатка gq, докачанная отдельно от дампа (T21, `fetch_gq_handouts.py`).
 GQ_IMAGES = os.path.join(DATA_DIR, "gq_images.json")
+# Свежие пакеты и даты всех пакетов (T30, `build_gq_fresh.py`).
+GQ_FRESH = os.path.join(DATA_DIR, "gq_fresh_dump.json")
+GQ_INDEX = os.path.join(DATA_DIR, "gq_packs_index.json")
+TEHNIKI = os.path.join(DATA_DIR, "..", "app", "assets", "tehniki.json")
+# Вопросы из пакетов старше этой даты в поток не идут — просьба игрока
+# 25.09.2026 «вопросы за последние 5 лет». Из данных они не удаляются:
+# вернуть их — поменять эту строку.
+FRESH_SINCE = "2020-09-25"
 # Бинго-корпус собирается из двух источников: вики (T1) и статей индекса (T16).
 # Ниже по конвейеру корпус один — `bingo_clean.json`, — а разводит их поле
 # `source`. Отдельный третий вход пришлось бы не забыть подключить в санитайзере,
@@ -239,7 +247,19 @@ def accept_variants(answer, acceptance):
     return variants
 
 
-def sanitize(rows, corpus):
+def lesson_example_ids():
+    """Вопросы из карточек приёмов: урок ссылается на них, и устареть они
+    не могут — иначе карточка покажет пример, которого нет в корпусе."""
+    if not os.path.exists(TEHNIKI):
+        return set()
+    with open(TEHNIKI, encoding="utf-8") as f:
+        return {e["questionId"] for t in json.load(f)["tehniki"] for e in t["examples"]}
+
+
+def sanitize(rows, corpus, fresh_since=None, keep=frozenset()):
+    """`fresh_since` — дата, старше которой играбельный вопрос помечается
+    `stale` (T30). Только поверх остальных правил: в отчёте `stale` значит
+    «годный, но старый», а не смесь со структурным браком."""
     out = []
     for row in rows:
         question = clean_question(as_text(row.get("question")))
@@ -261,6 +281,9 @@ def sanitize(rows, corpus):
         record["question"] = question
         if question != as_text(row.get("question")):
             record["questionRaw"] = as_text(row.get("question"))
+        if (reason is None and fresh_since and row.get("id") not in keep
+                and (row.get("packDate") or "") < fresh_since):
+            reason, note = "stale", f"пакет старше {fresh_since} или без даты"
         record["excluded"] = reason
         record["excludedBy"] = note
         record["acceptVariants"] = accept_variants(answer, acceptance)
@@ -355,6 +378,16 @@ def load_gq():
     Текстовая раздатка (T27) — `handoutText`, её показывает сам цикл."""
     with open(GQ_IN, encoding="utf-8") as f:
         rows = json.load(f)
+    if os.path.exists(GQ_FRESH):
+        with open(GQ_FRESH, encoding="utf-8") as f:
+            known = {r["id"] for r in rows}
+            rows += [r for r in json.load(f) if r["id"] not in known]
+    dates = {}
+    if os.path.exists(GQ_INDEX):
+        with open(GQ_INDEX, encoding="utf-8") as f:
+            for pack in json.load(f):
+                for qid in pack["questionIds"]:
+                    dates[f"gq-{qid}"] = pack["startDate"]
     manifest = []
     if os.path.exists(GQ_IMAGES):
         with open(GQ_IMAGES, encoding="utf-8") as f:
@@ -367,6 +400,7 @@ def load_gq():
     out = []
     for row in rows:
         row = dict(row)
+        row["packDate"] = row.get("packDate") or dates.get(row["id"])
         for key in GQ_TEXT_FIELDS:
             row[key] = clean_markup(row.get(key))
         row["sources"] = [clean_markup(s) for s in row.get("sources") or []]
@@ -424,8 +458,14 @@ def main(seed=20260829):
     report = {}
     all_rows = []
     corpora = []
+    keep = lesson_example_ids()
+    # Без индекса дат каждый вопрос оказался бы «без даты», и поток опустел бы
+    # целиком: фильтр включается, только когда датировать есть чем.
+    fresh_since = FRESH_SINCE if os.path.exists(GQ_INDEX) else None
     for corpus, rows, dst in (("gq", load_gq(), GQ_OUT), ("bingo", load_bingo(), BINGO_OUT)):
-        cleaned = sanitize(rows, corpus)
+        # Бинго по дате не режется: корпус кампании конечен и ценен целиком.
+        cleaned = sanitize(rows, corpus,
+                           fresh_since=fresh_since if corpus == "gq" else None, keep=keep)
         corpora.append((corpus, cleaned, dst))
 
     # Дедуп — по обоим корпусам разом: gq идёт первым, поэтому оригиналом

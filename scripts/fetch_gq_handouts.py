@@ -32,6 +32,9 @@ from gq_extract import extract_questions
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 DUMP_JSON = os.path.join(DATA_DIR, "gotquestions_dump.json")
+# Свежие пакеты (T30): поля раздатки уже лежат в самом дампе, пакеты заново
+# не открываются.
+FRESH_DUMP = os.path.join(DATA_DIR, "gq_fresh_dump.json")
 MANIFEST = os.path.join(DATA_DIR, "gq_images.json")
 SITE = "https://gotquestions.online"
 TIMEOUT = 40
@@ -96,10 +99,19 @@ def main():
         with open(MANIFEST, encoding="utf-8") as f:
             old = {row["attachedTo"]: row for row in json.load(f)}
 
-    found = scan_packs(wanted)
-    missing = wanted - found.keys()
-    if missing:
-        print(f"Не нашлись на сайте: {len(missing)} вопросов, например {sorted(missing)[:5]}")
+    # Старый дамп сканируется заново, только если манифеста ещё нет: поля
+    # раздатки его 150 пакетов уже в нём, и перекачивать их незачем.
+    if old:
+        found = {qid: (row.get("url") or "", row.get("text") or "") for qid, row in old.items()}
+    else:
+        found = scan_packs(wanted)
+        missing = wanted - found.keys()
+        if missing:
+            print(f"Не нашлись на сайте: {len(missing)} вопросов, например {sorted(missing)[:5]}")
+    if os.path.exists(FRESH_DUMP):
+        with open(FRESH_DUMP, encoding="utf-8") as f:
+            for row in json.load(f):
+                found.setdefault(row["id"], (row.get("razdatkaPic") or "", row.get("razdatkaText") or ""))
 
     os.makedirs(IMAGES_DIR, exist_ok=True)
     manifest = []
