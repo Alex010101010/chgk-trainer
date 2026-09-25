@@ -114,21 +114,7 @@ Future<void> _playOne(WidgetTester tester, {required Verdict verdict}) async {
   await tap('cycle-start');
   await tap('cycle-ready');
   await tap('cycle-answer-done');
-  await tap('cycle-to-verdict');
-  await tester.tap(find.text(switch (verdict) {
-    Verdict.taken => 'Взял',
-    Verdict.almost => 'Почти',
-    Verdict.missed => 'Не взял',
-  }));
-  await tester.pumpAndSettle();
-  await tap('cycle-verdict-done');
-  if (verdict != Verdict.taken) await tap('cycle-reason-done');
-  if (find.byKey(const Key('cycle-tehnika-answer')).evaluate().isNotEmpty) {
-    await tester.tap(find.text('Нет'));
-    await tester.pumpAndSettle();
-    await tap('cycle-tehnika-answer');
-    await tap('cycle-tehnika-done');
-  }
+  await tap('cycle-verdict-${verdict.name}');
 }
 
 void main() {

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../cycle/cycle_controller.dart';
 import '../cycle/question_cycle.dart';
-import '../cycle/tehnika_tap.dart';
 import '../data/question_repository.dart';
 import '../data/tehnika_repository.dart';
 import '../journal/event.dart';
@@ -262,8 +261,6 @@ class _ClassicScreenState extends State<ClassicScreen> {
   Widget _current() {
     final q = _round[_index];
     final inStandard = _tehnika != null && q.tehniki.contains(_tehnika!.id);
-    final askTehnika = _tehnika != null &&
-        shouldAskTehnika(q.id, inStandard: inStandard);
     return QuestionCycle(
       // Свой ключ на вопрос: без него Flutter переиспользует состояние цикла
       // и второй вопрос открывается на фазе раскрытия первого.
@@ -272,8 +269,7 @@ class _ClassicScreenState extends State<ClassicScreen> {
       config: CycleConfig(
         mode: GameMode.classic,
         roundId: _roundId,
-        tehnika: askTehnika ? _tehnika : null,
-        tehnikaInStandard: inStandard,
+        tehnika: inStandard ? _tehnika : null,
       ),
       onFinished: _onFinished,
       now: widget.now,

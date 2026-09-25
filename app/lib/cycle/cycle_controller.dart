@@ -22,9 +22,6 @@ enum CyclePhase {
   writing,
   bingoTap,
   reveal,
-  verdict,
-  reason,
-  tehnika,
   done,
 }
 
@@ -40,14 +37,11 @@ class CycleConfig {
   /// Темы клеток сетки (T3). `null` — сетки нет, спрашивается открытым вводом.
   final List<String>? bingoGrid;
 
-  /// Приём недели (T4a). `null` — фазу тапа не показывать. Решает режим:
-  /// тап попадается не на каждом вопросе.
+  /// Приём недели (T4a), который **точно есть** в этом вопросе по эталону —
+  /// под ответом показывается строкой. `null` — строки нет. Вопроса «здесь
+  /// был приём?» больше нет (T26): на двух вопросах из трёх эталон не знал
+  /// ответа, и игрок отвечал в пустоту.
   final Tehnika? tehnika;
-
-  /// Говорит ли эталон, что приём недели в этом вопросе есть. `false` значит
-  /// «эталон не нашёл», а не «приёма нет»: полнота эталона низкая, и вердикт
-  /// на отрицательном ответе поэтому не выносится.
-  final bool tehnikaInStandard;
 
   final int answerWindowSec;
 
@@ -59,7 +53,6 @@ class CycleConfig {
     this.askBingoTap = false,
     this.bingoGrid,
     this.tehnika,
-    this.tehnikaInStandard = false,
     this.answerWindowSec = kDefaultAnswerWindowSec,
     this.roundId,
   });
@@ -97,14 +90,8 @@ class CycleController extends ChangeNotifier {
   Verdict? _verdict;
   Verdict? get verdict => _verdict;
 
-  MissReason? _reason;
-  MissReason? get reason => _reason;
-
   String? _themeGuess;
   String? get themeGuess => _themeGuess;
-
-  bool? _tehnikaGuess;
-  bool? get tehnikaGuess => _tehnikaGuess;
 
   /// Предзаполнение самооценки. Считается один раз при раскрытии.
   MatchHint _hint = MatchHint.none;
@@ -186,8 +173,9 @@ class CycleController extends ChangeNotifier {
 
   void _computeHint() {
     _hint = matchAnswer(_userAnswer, question.acceptVariants);
-    // Предзаполняется только положительный матч. Предвыбранное «не взял»
-    // систематически воровало бы корзину «почти» — диагностически самую ценную.
+    // Подсказкой (выделенной кнопкой) идёт только положительный матч.
+    // Подсказанное «не взял» систематически воровало бы корзину «почти» —
+    // диагностически самую ценную.
     _verdict = switch (_hint) {
       MatchHint.taken => Verdict.taken,
       MatchHint.almost => Verdict.almost,
@@ -195,71 +183,12 @@ class CycleController extends ChangeNotifier {
     };
   }
 
-  void toVerdict() {
+  /// Самооценка — одно нажатие под ответом, и вопрос закрыт (T26).
+  /// Отдельного экрана оценки, роутера причины и тапа приёма больше нет:
+  /// ни одним из них приложение не пользовалось, а раздражали они каждый раз.
+  void finish(Verdict v) {
     if (_phase != CyclePhase.reveal) return;
-    _phase = CyclePhase.verdict;
-    notifyListeners();
-  }
-
-  void setVerdict(Verdict v) {
     _verdict = v;
-    if (v == Verdict.taken) _reason = null;
-    notifyListeners();
-  }
-
-  /// Дальше из самооценки: роутер причины — только при почти/не взял.
-  void confirmVerdict() {
-    if (_phase != CyclePhase.verdict || _verdict == null) return;
-    _phase = _verdict == Verdict.taken ? _afterReason() : CyclePhase.reason;
-    notifyListeners();
-  }
-
-  /// Пропуск причины разрешён: обязательность даёт до пяти лишних тапов на
-  /// раунд и провоцирует жать первое попавшееся.
-  void setReason(MissReason? r) {
-    _reason = r;
-    notifyListeners();
-  }
-
-  void confirmReason() {
-    if (_phase != CyclePhase.reason) return;
-    _phase = _afterReason();
-    notifyListeners();
-  }
-
-  CyclePhase _afterReason() =>
-      config.tehnika != null ? CyclePhase.tehnika : CyclePhase.done;
-
-  /// Догадка меняется свободно, пока не нажато «Ответить»: промах пальцем по
-  /// сегменту не должен запирать игрока в случайном ответе.
-  void setTehnikaGuess(bool? v) {
-    if (_tehnikaAnswered) return;
-    _tehnikaGuess = v;
-    notifyListeners();
-  }
-
-  /// Ответ зафиксирован, показан разбор; менять решение уже нельзя — иначе,
-  /// увидев вердикт, можно переписать догадку на правильную, и разметка,
-  /// ради которой тап и существует, станет липовой.
-  bool _tehnikaAnswered = false;
-  bool get tehnikaAnswered => _tehnikaAnswered;
-
-  /// Вердикт выносится **только когда эталон говорит «да»**. Эталон с низкой
-  /// полнотой не даёт права сказать «приёма здесь не было»: игрок мог увидеть
-  /// то, что правило поиска пропустило.
-  bool get tehnikaVerdictKnown => config.tehnikaInStandard;
-  bool get tehnikaGuessedRight =>
-      config.tehnikaInStandard && _tehnikaGuess == true;
-
-  void revealTehnika() {
-    if (_phase != CyclePhase.tehnika || _tehnikaAnswered) return;
-    if (_tehnikaGuess == null) return;
-    _tehnikaAnswered = true;
-    notifyListeners();
-  }
-
-  void confirmTehnika() {
-    if (_phase != CyclePhase.tehnika) return;
     _phase = CyclePhase.done;
     notifyListeners();
   }
@@ -278,11 +207,9 @@ class CycleController extends ChangeNotifier {
       secondsUsed: secondsUsed,
       answerWindowSec: config.answerWindowSec,
       userAnswer: _userAnswer,
-      reason: _verdict == Verdict.taken ? null : _reason,
       roundId: config.roundId,
       theme: question.theme,
       themeGuess: _themeGuess,
-      tehnikaGuess: _tehnikaGuess,
     );
   }
 

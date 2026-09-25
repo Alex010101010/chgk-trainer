@@ -154,7 +154,9 @@ void main() {
     expect(seen.value, isTrue);
   });
 
-  testWidgets('эталонный вопрос даёт вердикт с разбором', (tester) async {
+  // T26: вопроса «здесь был приём?» больше нет — на эталонном вопросе приём
+  // показан строкой под ответом, без нажатий.
+  testWidgets('на эталонном вопросе приём показан под ответом', (tester) async {
     final log = MemoryEventLog();
     await log.append(_answer('gq-0', daysAgo: 1)); // карточку пропускаем
     await _pump(tester, log);
@@ -164,64 +166,30 @@ void main() {
     await _tap(tester, 'cycle-start');
     await _tap(tester, 'cycle-ready');
     await _tap(tester, 'cycle-answer-done');
-    await _tap(tester, 'cycle-to-verdict');
-    await tester.tap(find.text('Не взял'));
-    await tester.pumpAndSettle();
-    await _tap(tester, 'cycle-verdict-done');
-    await _tap(tester, 'cycle-reason-done');
-
-    expect(find.text('Здесь был приём «Перевод для ответа»?'), findsOneWidget);
-    await tester.tap(find.text('Да'));
-    await tester.pumpAndSettle();
-    // Пока не нажато «Ответить», вердикта нет и решение ещё можно переменить.
-    expect(find.byKey(const Key('cycle-tehnika-verdict')), findsNothing);
-    await _tap(tester, 'cycle-tehnika-answer');
-    expect(find.byKey(const Key('cycle-tehnika-verdict')), findsOneWidget);
+    expect(find.byKey(const Key('cycle-tehnika-hint')), findsOneWidget);
+    expect(find.text('Здесь был приём недели: «Перевод для ответа»'),
+        findsOneWidget);
     expect(find.text('разбор примера'), findsOneWidget);
 
-    await _tap(tester, 'cycle-tehnika-done');
+    await _tap(tester, 'cycle-verdict-missed');
     final e = (await log.readAll()).events.whereType<AnswerEvent>().last;
     expect(e.questionId, 'gq-3');
-    expect(e.tehnikaGuess, isTrue);
+    expect(e.tehnikaGuess, isNull);
   });
 
-  testWidgets('на вопросе без эталона вердикта нет, но догадка записана',
-      (tester) async {
+  testWidgets('на вопросе без эталона строки приёма нет', (tester) async {
     final log = MemoryEventLog();
     await log.append(_answer('gq-0', daysAgo: 1));
     await log.append(_answer('gq-3', daysAgo: 1)); // эталонный уже виден
     await _pump(tester, log);
 
-    // Ищем в раунде первый вопрос, на котором тап вообще показывается.
-    var asked = false;
-    for (var i = 0; i < kRoundSize && !asked; i++) {
+    for (var i = 0; i < kRoundSize; i++) {
       await _tap(tester, 'cycle-start');
       await _tap(tester, 'cycle-ready');
       await _tap(tester, 'cycle-answer-done');
-      await _tap(tester, 'cycle-to-verdict');
-      await tester.tap(find.text('Не взял'));
-      await tester.pumpAndSettle();
-      await _tap(tester, 'cycle-verdict-done');
-      await _tap(tester, 'cycle-reason-done');
-      if (find.byKey(const Key('cycle-tehnika-answer')).evaluate().isNotEmpty) {
-        asked = true;
-        await tester.tap(find.text('Да'));
-        await tester.pumpAndSettle();
-        await _tap(tester, 'cycle-tehnika-answer');
-        expect(find.byKey(const Key('cycle-tehnika-noted')), findsOneWidget);
-        expect(find.byKey(const Key('cycle-tehnika-verdict')), findsNothing);
-        await _tap(tester, 'cycle-tehnika-done');
-      }
+      expect(find.byKey(const Key('cycle-tehnika-hint')), findsNothing);
+      await _tap(tester, 'cycle-verdict-missed');
     }
-    expect(asked, isTrue, reason: 'тап не попался ни на одном вопросе раунда');
-
-    final tapped = (await log.readAll())
-        .events
-        .whereType<AnswerEvent>()
-        .where((e) => e.tehnikaGuess != null)
-        .toList();
-    expect(tapped, isNotEmpty);
-    expect(tapped.last.tehnikaGuess, isTrue);
   });
 }
 

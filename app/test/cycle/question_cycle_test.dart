@@ -1,3 +1,4 @@
+import 'package:chgk_trainer/app_theme.dart';
 import 'package:chgk_trainer/cycle/cycle_controller.dart';
 import 'package:chgk_trainer/data/article_repository.dart';
 import 'package:chgk_trainer/journal/event_log.dart';
@@ -47,7 +48,10 @@ Future<void> _pump(
   ArticleRepository? articles,
   ThemeNotes? notes,
 }) async {
+  // Тема приложения, а не голая MaterialApp: у её кнопок бесконечная ширина,
+  // и ряд самооценки без Expanded падает только на ней.
   await tester.pumpWidget(MaterialApp(
+    theme: buildLightTheme(),
     home: Scaffold(
       body: QuestionCycle(
         question: question,
@@ -70,13 +74,9 @@ const _grid = [
   'Чукча', 'Павлов', 'Муха',
 ];
 
-/// Довести цикл до конца после раскрытия — оценка и причина.
+/// Довести цикл до конца после раскрытия — одно нажатие самооценки.
 Future<void> _finishAfterReveal(WidgetTester tester) async {
-  await _tap(tester, 'cycle-to-verdict');
-  await tester.tap(find.text('Не взял'));
-  await tester.pump();
-  await _tap(tester, 'cycle-verdict-done');
-  await _tap(tester, 'cycle-reason-done');
+  await _tap(tester, 'cycle-verdict-missed');
 }
 
 Future<void> _tap(WidgetTester tester, String key) async {
@@ -98,14 +98,32 @@ void main() {
     await _tap(tester, 'cycle-answer-done');
 
     expect(find.text('комментарий'), findsOneWidget);
-    await _tap(tester, 'cycle-to-verdict');
-    await _tap(tester, 'cycle-verdict-done');
+    // Матчер подсказал «взял» заливкой кнопки, но решает всё равно игрок.
+    expect(find.byWidgetPredicate((w) =>
+        w is FilledButton && w.key == const Key('cycle-verdict-taken')),
+        findsOneWidget);
+    expect(got, isNull, reason: 'подсказка не закрывает вопрос сама');
+    await _tap(tester, 'cycle-verdict-taken');
 
     expect(got, isNotNull);
     expect(got!.questionId, 'gq-1');
     expect(got!.answerWindowSec, kDefaultAnswerWindowSec);
-    expect(got!.verdict, Verdict.taken); // предзаполнено матчером
+    expect(got!.verdict, Verdict.taken);
     expect(got!.userAnswer, 'Уорхол');
+  });
+
+  // T26: после ответа одно нажатие, без экрана оценки и роутера причины.
+  testWidgets('самооценка одним нажатием закрывает вопрос', (tester) async {
+    AnswerEvent? got;
+    await _pump(tester, (e) => got = e);
+    await _tap(tester, 'cycle-start');
+    await _tap(tester, 'cycle-ready');
+    await _tap(tester, 'cycle-answer-done');
+    await _tap(tester, 'cycle-verdict-almost');
+
+    expect(got!.verdict, Verdict.almost);
+    expect(got!.reason, isNull);
+    expect(find.text('Что помешало?'), findsNothing);
   });
 
   // T18: версия сдаётся один раз, в окне записи. Во время минуты ввода нет —
@@ -126,22 +144,14 @@ void main() {
     await _tap(tester, 'cycle-start');
     await _tap(tester, 'cycle-ready');
     await _tap(tester, 'cycle-answer-done');
-    await _tap(tester, 'cycle-to-verdict');
 
-    // Матчер ничего не предзаполнил — кнопка «дальше» ждёт выбора игрока.
-    expect(
-        tester.widget<FilledButton>(find.byKey(const Key('cycle-verdict-done')))
-            .onPressed,
-        isNull);
-    await tester.tap(find.text('Не взял'));
-    await tester.pump();
-    await _tap(tester, 'cycle-verdict-done');
-    await _tap(tester, 'cycle-reason-done'); // причину пропустили
+    // Матчер ничего не подсказал — ни одна кнопка не залита.
+    expect(find.byType(FilledButton), findsNothing);
+    await _tap(tester, 'cycle-verdict-missed');
 
     expect(got, isNotNull);
     expect(got!.userAnswer, '');
     expect(got!.verdict, Verdict.missed);
-    expect(got!.reason, isNull);
   });
 
   testWidgets('тап «это бинго?» показан до раскрытия', (tester) async {
@@ -158,11 +168,7 @@ void main() {
     await _tap(tester, 'cycle-bingo-done');
     expect(find.text('комментарий'), findsOneWidget);
 
-    await _tap(tester, 'cycle-to-verdict');
-    await tester.tap(find.text('Почти'));
-    await tester.pump();
-    await _tap(tester, 'cycle-verdict-done');
-    await _tap(tester, 'cycle-reason-done');
+    await _tap(tester, 'cycle-verdict-almost');
 
     expect(got!.themeGuess, 'Ковентри');
   });

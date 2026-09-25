@@ -406,15 +406,7 @@ Future<void> _playOne(WidgetTester tester,
     await tester.pumpAndSettle();
   }
 
-  await _tapKey(tester, 'cycle-to-verdict');
-  await tester.tap(find.text(switch (verdict) {
-    Verdict.taken => 'Взял',
-    Verdict.almost => 'Почти',
-    Verdict.missed => 'Не взял',
-  }));
-  await tester.pumpAndSettle();
-  await _tapKey(tester, 'cycle-verdict-done');
-  if (verdict != Verdict.taken) await _tapKey(tester, 'cycle-reason-done');
+  await _tapKey(tester, 'cycle-verdict-${verdict.name}');
 }
 
 /// Тема вопроса, который сейчас на экране, или `null` у отвлекающего.

@@ -1,7 +1,6 @@
 import 'package:chgk_trainer/cycle/cycle_controller.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/model/question.dart';
-import 'package:chgk_trainer/model/tehnika.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Подменные часы. Без них ни один тест таймера не пишется — ради этого
@@ -20,18 +19,9 @@ const _q = Question(
   acceptVariants: ['уорхол'],
 );
 
-const _tehnika = Tehnika(
-  id: 'perevod',
-  title: 'Перевод для ответа',
-  explain: 'ответ прячется в другом языке',
-  trigger: 'что значит это имя на своём языке?',
-);
-
 CycleController _make(
   FakeClock clock, {
   bool askBingoTap = false,
-  Tehnika? tehnika,
-  bool tehnikaInStandard = false,
   int windowSec = kDefaultAnswerWindowSec,
   String? roundId,
 }) =>
@@ -40,8 +30,6 @@ CycleController _make(
       config: CycleConfig(
         mode: GameMode.classic,
         askBingoTap: askBingoTap,
-        tehnika: tehnika,
-        tehnikaInStandard: tehnikaInStandard,
         answerWindowSec: windowSec,
         roundId: roundId,
       ),
@@ -112,27 +100,22 @@ void main() {
     c2.dispose();
   });
 
-  test('«взял» проскакивает роутер причины, «не взял» — нет', () {
-    final clock = FakeClock();
-    final c = _make(clock)..startThinking();
+  test('самооценка из раскрытия сразу закрывает вопрос', () {
+    final c = _make(FakeClock())..startThinking();
     c.readyToAnswer();
     c.finishWriting();
-    c.toVerdict();
-    c.setVerdict(Verdict.taken);
-    c.confirmVerdict();
+    c.finish(Verdict.missed);
     expect(c.phase, CyclePhase.done);
+    expect(c.buildEvent().verdict, Verdict.missed);
+    expect(c.buildEvent().reason, isNull);
     c.dispose();
+  });
 
-    final c2 = _make(FakeClock())..startThinking();
-    c2.readyToAnswer();
-    c2.finishWriting();
-    c2.toVerdict();
-    c2.setVerdict(Verdict.missed);
-    c2.confirmVerdict();
-    expect(c2.phase, CyclePhase.reason);
-    c2.confirmReason(); // причину разрешено пропустить
-    expect(c2.phase, CyclePhase.done);
-    c2.dispose();
+  test('до раскрытия самооценка ничего не делает', () {
+    final c = _make(FakeClock())..startThinking();
+    c.finish(Verdict.taken);
+    expect(c.phase, CyclePhase.thinking);
+    c.dispose();
   });
 
   test('тап «это бинго?» идёт до раскрытия', () {
@@ -165,88 +148,6 @@ void main() {
     unasked.dispose();
   });
 
-  CycleController _toTehnika({bool inStandard = false}) {
-    final c = _make(FakeClock(), tehnika: _tehnika, tehnikaInStandard: inStandard)
-      ..startThinking();
-    c.readyToAnswer();
-    c.finishWriting();
-    c.toVerdict();
-    c.setVerdict(Verdict.taken);
-    c.confirmVerdict();
-    return c;
-  }
-
-  test('фаза приёма показывается только если он задан', () {
-    final c = _toTehnika();
-    expect(c.phase, CyclePhase.tehnika);
-    c.setTehnikaGuess(true);
-    c.revealTehnika();
-    c.confirmTehnika();
-    expect(c.phase, CyclePhase.done);
-    expect(c.buildEvent().tehnikaGuess, isTrue);
-    c.dispose();
-
-    final c2 = _make(FakeClock())..startThinking();
-    c2.readyToAnswer();
-    c2.finishWriting();
-    c2.toVerdict();
-    c2.setVerdict(Verdict.taken);
-    c2.confirmVerdict();
-    expect(c2.phase, CyclePhase.done);
-    expect(c2.buildEvent().tehnikaGuess, isNull);
-    c2.dispose();
-  });
-
-  test('вердикт по тапу выносится только когда эталон говорит «да»', () {
-    // Эталон с низкой полнотой не даёт права сказать «приёма здесь не было»:
-    // игрок мог увидеть то, что правило поиска пропустило.
-    final known = _toTehnika(inStandard: true)
-      ..setTehnikaGuess(true)
-      ..revealTehnika();
-    expect(known.tehnikaVerdictKnown, isTrue);
-    expect(known.tehnikaGuessedRight, isTrue);
-    known.dispose();
-
-    final missed = _toTehnika(inStandard: true)
-      ..setTehnikaGuess(false)
-      ..revealTehnika();
-    expect(missed.tehnikaVerdictKnown, isTrue);
-    expect(missed.tehnikaGuessedRight, isFalse);
-    missed.dispose();
-
-    final unknown = _toTehnika()
-      ..setTehnikaGuess(true)
-      ..revealTehnika();
-    expect(unknown.tehnikaVerdictKnown, isFalse);
-    // Догадка всё равно записана — это и есть разметка, ради которой тап есть.
-    expect(unknown.buildEvent().tehnikaGuess, isTrue);
-    unknown.dispose();
-  });
-
-  test('догадку о приёме можно переменить до «Ответить» и нельзя после', () {
-    // Мисклик по сегменту не должен запирать в случайном ответе; но и
-    // переписать догадку, уже увидев вердикт, нельзя — иначе разметка липовая.
-    final c = _toTehnika(inStandard: true);
-    c.setTehnikaGuess(true);
-    c.setTehnikaGuess(false);
-    expect(c.tehnikaGuess, isFalse);
-    expect(c.tehnikaAnswered, isFalse);
-
-    c.revealTehnika();
-    expect(c.tehnikaAnswered, isTrue);
-    c.setTehnikaGuess(true);
-    expect(c.tehnikaGuess, isFalse, reason: 'после «Ответить» решение заперто');
-    expect(c.buildEvent().tehnikaGuess, isFalse);
-    c.dispose();
-  });
-
-  test('«Ответить» без выбора ничего не фиксирует', () {
-    final c = _toTehnika()..revealTehnika();
-    expect(c.tehnikaAnswered, isFalse);
-    expect(c.phase, CyclePhase.tehnika);
-    c.dispose();
-  });
-
   test('событие несёт answerWindowSec и roundId', () {
     final clock = FakeClock();
     final c = _make(clock, windowSec: 15, roundId: '1756500000000')
@@ -255,11 +156,7 @@ void main() {
     c.readyToAnswer();
     c.setUserAnswer('Уорхол');
     c.finishWriting();
-    c.toVerdict();
-    c.setVerdict(Verdict.almost);
-    c.confirmVerdict();
-    c.setReason(MissReason.link);
-    c.confirmReason();
+    c.finish(Verdict.almost);
 
     final e = c.buildEvent();
     expect(e.answerWindowSec, 15);
@@ -269,7 +166,6 @@ void main() {
     expect(e.corpus, Corpus.gq);
     expect(e.secondsUsed, 20);
     expect(e.userAnswer, 'Уорхол');
-    expect(e.reason, MissReason.link);
     expect(e.hintUsed, isFalse); // подсказки в фазе 1 нет вовсе
     c.dispose();
   });
@@ -278,10 +174,7 @@ void main() {
     final c = _make(FakeClock())..startThinking();
     c.readyToAnswer();
     c.finishWriting();
-    c.toVerdict();
-    c.setVerdict(Verdict.missed);
-    c.confirmVerdict();
-    c.confirmReason();
+    c.finish(Verdict.missed);
     expect(c.buildEvent().userAnswer, '');
     c.dispose();
   });

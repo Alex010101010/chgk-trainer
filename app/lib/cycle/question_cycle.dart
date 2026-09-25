@@ -6,11 +6,9 @@ import '../journal/theme_notes.dart';
 import '../model/question.dart';
 import '../data/article_repository.dart';
 import '../model/tehnika.dart';
-import '../panda/panda_voice.dart';
 import '../widgets/article_card.dart';
 import '../widgets/grid_label.dart';
 import '../widgets/handout_image.dart';
-import '../widgets/panda_says.dart';
 import 'cycle_controller.dart';
 import 'screen_wakelock.dart';
 
@@ -118,9 +116,6 @@ class _QuestionCycleState extends State<QuestionCycle> {
         CyclePhase.writing => _writing(),
         CyclePhase.bingoTap => _bingoTap(),
         CyclePhase.reveal => _reveal(),
-        CyclePhase.verdict => _verdict(),
-        CyclePhase.reason => _reason(),
-        CyclePhase.tehnika => _tehnika(),
         CyclePhase.done => const SizedBox.shrink(),
       };
 
@@ -321,146 +316,70 @@ class _QuestionCycleState extends State<QuestionCycle> {
         _labelled('Источник', q.sources.join('\n')),
         _labelled('Автор', q.author),
         _labelled('Твоя версия', _c.userAnswer.isEmpty ? '—' : _c.userAnswer),
+        if (widget.config.tehnika case final t?) _tehnikaHint(t),
         const SizedBox(height: 16),
-        FilledButton(
-          key: const Key('cycle-to-verdict'),
-          onPressed: _c.toVerdict,
-          child: const Text('Оценить'),
-        ),
+        _verdictButtons(),
       ],
     );
   }
 
-  Widget _verdict() => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Text('Взял?'),
-          const SizedBox(height: 8),
-          SegmentedButton<Verdict>(
-            segments: const [
-              ButtonSegment(value: Verdict.taken, label: Text('Взял')),
-              ButtonSegment(value: Verdict.almost, label: Text('Почти')),
-              ButtonSegment(value: Verdict.missed, label: Text('Не взял')),
-            ],
-            // Пустой набор — матчер не сработал, не предвыбрано ничего.
-            selected: _c.verdict == null ? const {} : {_c.verdict!},
-            emptySelectionAllowed: true,
-            onSelectionChanged: (s) => _c.setVerdict(s.first),
-          ),
-          // Панда комментирует самооценку, а не эталон: она реагирует на то,
-          // что игрок сам про себя решил. Key по вердикту — чтобы при смене
-          // оценки реплика бралась заново, а не досталась от прошлой.
-          if (_c.verdict case final v?) ...[
-            const SizedBox(height: 16),
-            PandaSays(key: ValueKey(v), moment: _momentFor(v)),
-          ],
-          const SizedBox(height: 16),
-          FilledButton(
-            key: const Key('cycle-verdict-done'),
-            onPressed: _c.verdict == null ? null : _c.confirmVerdict,
-            child: const Text('Дальше'),
-          ),
-        ],
-      );
-
-  static String _momentFor(Verdict v) => switch (v) {
-        Verdict.taken => PandaMoments.took,
-        Verdict.almost => PandaMoments.almost,
-        Verdict.missed => PandaMoments.missed,
-      };
-
-  static const _reasonLabels = {
-    MissReason.fact: 'Не знал факт',
-    MissReason.link: 'Не увидел связку',
-    MissReason.tehnika: 'Не узнал приём',
-    MissReason.time: 'Не хватило времени',
-  };
-
-  Widget _reason() => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Text('Что помешало?'),
-          const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            children: [
-              for (final e in _reasonLabels.entries)
-                ChoiceChip(
-                  label: Text(e.value),
-                  selected: _c.reason == e.key,
-                  onSelected: (_) => _c.setReason(e.key),
-                ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          // Пропуск разрешён: обязательность провоцирует жать первое попавшееся.
-          FilledButton(
-            key: const Key('cycle-reason-done'),
-            onPressed: _c.confirmReason,
-            child: Text(_c.reason == null ? 'Пропустить' : 'Дальше'),
-          ),
-        ],
-      );
-
-  Widget _tehnika() {
-    final t = widget.config.tehnika!;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Text('Здесь был приём «${t.title}»?'),
-        const SizedBox(height: 8),
-        SegmentedButton<bool>(
-          segments: const [
-            ButtonSegment(value: true, label: Text('Да')),
-            ButtonSegment(value: false, label: Text('Нет')),
-          ],
-          selected: _c.tehnikaGuess == null ? const {} : {_c.tehnikaGuess!},
-          emptySelectionAllowed: true,
-          // Пока не нажато «Ответить», решение можно переменить.
-          onSelectionChanged:
-              _c.tehnikaAnswered ? null : (s) => _c.setTehnikaGuess(s.first),
-        ),
-        if (_c.tehnikaAnswered) ...[
-          const SizedBox(height: 16),
-          _tehnikaFeedback(t),
-        ],
-        const SizedBox(height: 16),
-        if (!_c.tehnikaAnswered)
-          FilledButton(
-            key: const Key('cycle-tehnika-answer'),
-            onPressed: _c.tehnikaGuess == null ? null : _c.revealTehnika,
-            child: const Text('Ответить'),
-          )
-        else
-          FilledButton(
-            key: const Key('cycle-tehnika-done'),
-            onPressed: _c.confirmTehnika,
-            child: const Text('Дальше'),
-          ),
-      ],
-    );
-  }
-
-  /// Вердикт — только там, где эталон говорит «да». На остальных вопросах
-  /// честное «записал»: эталона нет, и притворяться, что он есть, нельзя.
-  Widget _tehnikaFeedback(Tehnika t) {
-    if (!_c.tehnikaVerdictKnown) {
-      return const Text('Записал.', key: Key('cycle-tehnika-noted'));
-    }
-    final right = _c.tehnikaGuessedRight;
+  /// Приём недели, который эталон точно нашёл в этом вопросе. Не вопрос, а
+  /// строка: увидеть приём в живом вопросе — цель, угадывать его здесь — нет,
+  /// угадывание живёт в воскресном разборе (T4b).
+  Widget _tehnikaHint(Tehnika t) {
     final why = t.examples
         .where((e) => e.questionId == widget.question.id)
         .map((e) => e.why)
         .firstOrNull;
-    return Column(
-      key: const Key('cycle-tehnika-verdict'),
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(right ? 'Да, приём здесь был.' : 'Приём здесь был — пропустил.',
-            style: Theme.of(context).textTheme.titleMedium),
-        const SizedBox(height: 4),
-        Text(why ?? t.trigger),
-      ],
+    return Padding(
+      key: const Key('cycle-tehnika-hint'),
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Здесь был приём недели: «${t.title}»',
+              style: Theme.of(context).textTheme.labelLarge),
+          Text(why ?? t.trigger),
+        ],
+      ),
     );
   }
+
+  static const _verdictLabels = {
+    Verdict.taken: 'Взял',
+    Verdict.almost: 'Почти',
+    Verdict.missed: 'Не взял',
+  };
+
+  /// Самооценка в одно нажатие — оно же закрывает вопрос. Подсказка матчера
+  /// выделена заливкой, но не выбрана за игрока.
+  ///
+  /// `Expanded` обязателен: у кнопок темы задана только высота, ширина
+  /// бесконечна, и в `Row` без него вёрстка падает (грабля из T3 и T24).
+  /// Боковой отступ ужат: треть ширины телефона минус штатные 24+24 — это
+  /// ~56 точек, и «Не взял» переносилось на вторую строку.
+  static const _verdictPadding = EdgeInsets.symmetric(horizontal: 8);
+
+  Widget _verdictButtons() => Row(
+        children: [
+          for (final (i, e) in _verdictLabels.entries.indexed) ...[
+            if (i > 0) const SizedBox(width: 8),
+            Expanded(
+              child: e.key == _c.verdict
+                  ? FilledButton(
+                      key: Key('cycle-verdict-${e.key.name}'),
+                      style: FilledButton.styleFrom(padding: _verdictPadding),
+                      onPressed: () => _c.finish(e.key),
+                      child: Text(e.value),
+                    )
+                  : OutlinedButton(
+                      key: Key('cycle-verdict-${e.key.name}'),
+                      style: OutlinedButton.styleFrom(padding: _verdictPadding),
+                      onPressed: () => _c.finish(e.key),
+                      child: Text(e.value),
+                    ),
+            ),
+          ],
+        ],
+      );
 }
