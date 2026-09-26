@@ -1,0 +1,3088 @@
+{
+ "source": "https://docs.google.com/spreadsheets/d/1iyyf_cTV0aUiQLbajGS4EEp0owuRQYEbeBn2ovpdSMw",
+ "fetched": "2026-09-26",
+ "decks": [
+  {
+   "id": "perifrazy",
+   "title": "Перифразы",
+   "count": 189
+  },
+  {
+   "id": "olimpiady",
+   "title": "Олимпиады",
+   "count": 59
+  },
+  {
+   "id": "prototipy",
+   "title": "Прототипы",
+   "count": 23
+  },
+  {
+   "id": "nobel",
+   "title": "Нобелевские лауреаты из России",
+   "count": 20
+  },
+  {
+   "id": "psevdonimy",
+   "title": "Псевдонимы",
+   "count": 14
+  },
+  {
+   "id": "kartiny",
+   "title": "Картины",
+   "count": 9
+  },
+  {
+   "id": "raznoe",
+   "title": "Разное",
+   "count": 17
+  }
+ ],
+ "cards": [
+  {
+   "id": "perifrazy-a10dfdee",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Архангельский мужик",
+   "back": "М.В. Ломоносов",
+   "sheet": "Перифразы",
+   "row": 2
+  },
+  {
+   "id": "perifrazy-ef1fcf62",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец русской авиации",
+   "back": "Н.Е. Жуковский",
+   "sheet": "Перифразы",
+   "row": 3
+  },
+  {
+   "id": "perifrazy-829ee695",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец русского радио",
+   "back": "А.С. Попов",
+   "sheet": "Перифразы",
+   "row": 4
+  },
+  {
+   "id": "perifrazy-ffce2a95",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец русской космонавтики",
+   "back": "К.Э. Циолковский",
+   "sheet": "Перифразы",
+   "row": 5
+  },
+  {
+   "id": "perifrazy-857b508d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Создатель русского театра",
+   "back": "Ф.Г. Волков",
+   "sheet": "Перифразы",
+   "row": 6
+  },
+  {
+   "id": "perifrazy-546117ad",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король баллады",
+   "back": "В.А. Жуковский",
+   "sheet": "Перифразы",
+   "row": 7
+  },
+  {
+   "id": "perifrazy-35862cd0",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король вальса",
+   "back": "Иоганн Штраус",
+   "sheet": "Перифразы",
+   "row": 8
+  },
+  {
+   "id": "perifrazy-01130ed6",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король сказок",
+   "back": "Г. Х. Андерсен",
+   "sheet": "Перифразы",
+   "row": 9
+  },
+  {
+   "id": "perifrazy-b6db9943",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Великий кобзарь",
+   "back": "Т.Г. Шевченко",
+   "sheet": "Перифразы",
+   "row": 10
+  },
+  {
+   "id": "perifrazy-2edc708e",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Вождь мирового пролетариата",
+   "back": "В.И. Ленин",
+   "sheet": "Перифразы",
+   "row": 11
+  },
+  {
+   "id": "perifrazy-6f967047",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Вождь всех времён и народов",
+   "back": "И.В. Сталин",
+   "sheet": "Перифразы",
+   "row": 12
+  },
+  {
+   "id": "perifrazy-2d7294f2",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец народов",
+   "back": "И.В. Сталин",
+   "sheet": "Перифразы",
+   "row": 13
+  },
+  {
+   "id": "perifrazy-3904edf3",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Великий кормчий",
+   "back": "Мао Цзэдун",
+   "sheet": "Перифразы",
+   "row": 14
+  },
+  {
+   "id": "perifrazy-061c573d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Буревестник революции",
+   "back": "М. Горький",
+   "sheet": "Перифразы",
+   "row": 15
+  },
+  {
+   "id": "perifrazy-0996fd68",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Глашатай революции",
+   "back": "В.В. Маяковский",
+   "sheet": "Перифразы",
+   "row": 16
+  },
+  {
+   "id": "perifrazy-480fdc59",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Рыцарь прекрасной дамы",
+   "back": "А.А. Блок",
+   "sheet": "Перифразы",
+   "row": 17
+  },
+  {
+   "id": "perifrazy-3fe5c4e5",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Красный граф",
+   "back": "А.Н. Толстой",
+   "sheet": "Перифразы",
+   "row": 18
+  },
+  {
+   "id": "perifrazy-08d8e22f",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Всесоюзный староста",
+   "back": "М.И. Калинин",
+   "sheet": "Перифразы",
+   "row": 19
+  },
+  {
+   "id": "perifrazy-6d46319c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Маршал Победы",
+   "back": "Г.К. Жуков",
+   "sheet": "Перифразы",
+   "row": 20
+  },
+  {
+   "id": "perifrazy-07a070da",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Серый кардинал",
+   "back": "М.А. Суслов",
+   "sheet": "Перифразы",
+   "row": 21
+  },
+  {
+   "id": "perifrazy-00f4f2ba",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Певец донского казачества",
+   "back": "М.А. Шолохов",
+   "sheet": "Перифразы",
+   "row": 22
+  },
+  {
+   "id": "perifrazy-42753ce7",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец оттепели",
+   "back": "Н.С. Хрущёв",
+   "sheet": "Перифразы",
+   "row": 23
+  },
+  {
+   "id": "perifrazy-06b70627",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Колумб Вселенной",
+   "back": "Ю.А. Гагарин",
+   "sheet": "Перифразы",
+   "row": 24
+  },
+  {
+   "id": "perifrazy-48a3e388",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Архитектор перестройки",
+   "back": "М.С. Горбачёв",
+   "sheet": "Перифразы",
+   "row": 25
+  },
+  {
+   "id": "perifrazy-d78be332",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Железная леди",
+   "back": "Маргарет Тэтчер",
+   "sheet": "Перифразы",
+   "row": 26
+  },
+  {
+   "id": "perifrazy-d1c2cbcd",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Русская ракета",
+   "back": "Павел Буре",
+   "sheet": "Перифразы",
+   "row": 27
+  },
+  {
+   "id": "perifrazy-93b45404",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Оранжевая принцесса",
+   "back": "Ю.В. Тимошенко",
+   "sheet": "Перифразы",
+   "row": 28
+  },
+  {
+   "id": "perifrazy-d475363b",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Женщина, которая поёт",
+   "back": "А.Б. Пугачёва",
+   "sheet": "Перифразы",
+   "row": 29
+  },
+  {
+   "id": "perifrazy-8c341083",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Солнце русской поэзии",
+   "back": "А.С. Пушкин",
+   "sheet": "Перифразы",
+   "row": 30
+  },
+  {
+   "id": "perifrazy-38dccc67",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Коронованный Гамлет",
+   "back": "Александр I",
+   "sheet": "Перифразы",
+   "row": 31
+  },
+  {
+   "id": "perifrazy-7282a6a7",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Иудушка русской революции",
+   "back": "Лев Троцкий",
+   "sheet": "Перифразы",
+   "row": 32
+  },
+  {
+   "id": "perifrazy-29f960af",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Кремлёвский мечтатель",
+   "back": "В.И. Ленин",
+   "sheet": "Перифразы",
+   "row": 33
+  },
+  {
+   "id": "perifrazy-35546168",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Зеркало русской революции",
+   "back": "Л.Н. Толстой",
+   "sheet": "Перифразы",
+   "row": 34
+  },
+  {
+   "id": "perifrazy-64ba01e9",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Тишайший поэт русской литературы",
+   "back": "В.А. Жуковский",
+   "sheet": "Перифразы",
+   "row": 35
+  },
+  {
+   "id": "perifrazy-38b7340f",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Певец русской природы",
+   "back": "М.М. Пришвин",
+   "sheet": "Перифразы",
+   "row": 36
+  },
+  {
+   "id": "perifrazy-123be7b1",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Тихий американец",
+   "back": "Сотрудник ЦРУ",
+   "sheet": "Перифразы",
+   "row": 37
+  },
+  {
+   "id": "perifrazy-81cf1ec3",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Ангел смерти",
+   "back": "И. Менгеле",
+   "sheet": "Перифразы",
+   "row": 38
+  },
+  {
+   "id": "perifrazy-0cca4b29",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Белые балахоны",
+   "back": "Члены ККК",
+   "sheet": "Перифразы",
+   "row": 39
+  },
+  {
+   "id": "perifrazy-574e620d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Водный балет",
+   "back": "Синхронное плавание",
+   "sheet": "Перифразы",
+   "row": 40
+  },
+  {
+   "id": "perifrazy-e3da5f27",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Двукрылый бандит",
+   "back": "Доллар США",
+   "sheet": "Перифразы",
+   "row": 41
+  },
+  {
+   "id": "perifrazy-0236d896",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Ледовая баталия",
+   "back": "Хоккейный матч",
+   "sheet": "Перифразы",
+   "row": 42
+  },
+  {
+   "id": "perifrazy-08cff748",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "На берегах Гудзона",
+   "back": "В Нью-Йорке",
+   "sheet": "Перифразы",
+   "row": 43
+  },
+  {
+   "id": "perifrazy-bff00eb5",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "На берегах Потомака",
+   "back": "В Вашингтоне",
+   "sheet": "Перифразы",
+   "row": 44
+  },
+  {
+   "id": "perifrazy-e04f1de0",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Зелёные береты",
+   "back": "Американские диверсионные войска",
+   "sheet": "Перифразы",
+   "row": 45
+  },
+  {
+   "id": "perifrazy-7cafdc5c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Красные береты",
+   "back": "Парашютисты армии Великобритании",
+   "sheet": "Перифразы",
+   "row": 46
+  },
+  {
+   "id": "perifrazy-acc23d97",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Оранжевые береты",
+   "back": "Сотрудники МЧС России",
+   "sheet": "Перифразы",
+   "row": 47
+  },
+  {
+   "id": "perifrazy-58efd2c6",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Чёрные береты",
+   "back": "Морские десантники в Чили",
+   "sheet": "Перифразы",
+   "row": 48
+  },
+  {
+   "id": "perifrazy-fe552e44",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Болезнь века",
+   "back": "Наркомания/СПИД",
+   "sheet": "Перифразы",
+   "row": 49
+  },
+  {
+   "id": "perifrazy-1d4dda25",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Важнейшее из искусств",
+   "back": "Кино",
+   "sheet": "Перифразы",
+   "row": 50
+  },
+  {
+   "id": "perifrazy-7fbf4e0a",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Ведомство (рыцарей) плаща и кинжала",
+   "back": "ЦРУ",
+   "sheet": "Перифразы",
+   "row": 51
+  },
+  {
+   "id": "perifrazy-6e2e4256",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Чёрная Венера",
+   "back": "Наоми Кэмпбелл",
+   "sheet": "Перифразы",
+   "row": 52
+  },
+  {
+   "id": "perifrazy-bc16b25c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Азиатская Венеция",
+   "back": "Бангкок",
+   "sheet": "Перифразы",
+   "row": 53
+  },
+  {
+   "id": "perifrazy-63bcbbd2",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Амазонская Венеция",
+   "back": "Икитос (Перу)",
+   "sheet": "Перифразы",
+   "row": 54
+  },
+  {
+   "id": "perifrazy-c92ff567",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Четвёртая власть",
+   "back": "СМИ",
+   "sheet": "Перифразы",
+   "row": 55
+  },
+  {
+   "id": "perifrazy-003e7399",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Волшебник танца",
+   "back": "М.А. Эсамбаев",
+   "sheet": "Перифразы",
+   "row": 56
+  },
+  {
+   "id": "perifrazy-f3f06fe6",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Вечно вчерашние",
+   "back": "Реваншисты, реакционеры",
+   "sheet": "Перифразы",
+   "row": 57
+  },
+  {
+   "id": "perifrazy-cba8b298",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Великий немой",
+   "back": "Незвуковой кинематограф",
+   "sheet": "Перифразы",
+   "row": 58
+  },
+  {
+   "id": "perifrazy-8cb7a7cd",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Гнездо кукушки",
+   "back": "Психиатрическая больница",
+   "sheet": "Перифразы",
+   "row": 59
+  },
+  {
+   "id": "perifrazy-46ce5424",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Кремлёвский горец",
+   "back": "И.В. Сталин",
+   "sheet": "Перифразы",
+   "row": 60
+  },
+  {
+   "id": "perifrazy-cabb128d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город Большого яблока",
+   "back": "Нью-Йорк",
+   "sheet": "Перифразы",
+   "row": 61
+  },
+  {
+   "id": "perifrazy-3891a217",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город братской любви",
+   "back": "Филадельфия",
+   "sheet": "Перифразы",
+   "row": 62
+  },
+  {
+   "id": "perifrazy-be21abf1",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город ветров",
+   "back": "Чикаго",
+   "sheet": "Перифразы",
+   "row": 63
+  },
+  {
+   "id": "perifrazy-65eccedf",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город воды",
+   "back": "Осака",
+   "sheet": "Перифразы",
+   "row": 64
+  },
+  {
+   "id": "perifrazy-faa1f98c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город добрых ветров",
+   "back": "Буэнос-Айрес",
+   "sheet": "Перифразы",
+   "row": 65
+  },
+  {
+   "id": "perifrazy-557c2421",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город королей",
+   "back": "Краков",
+   "sheet": "Перифразы",
+   "row": 66
+  },
+  {
+   "id": "perifrazy-43e5e230",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город льва",
+   "back": "Сингапур",
+   "sheet": "Перифразы",
+   "row": 67
+  },
+  {
+   "id": "perifrazy-2c2b5e40",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город мастеров",
+   "back": "Тула",
+   "sheet": "Перифразы",
+   "row": 68
+  },
+  {
+   "id": "perifrazy-802f38d6",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город нашенский",
+   "back": "Владивосток",
+   "sheet": "Перифразы",
+   "row": 69
+  },
+  {
+   "id": "perifrazy-fa43edd9",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город спорта",
+   "back": "Спортивный комплекс \"Лужники\"",
+   "sheet": "Перифразы",
+   "row": 70
+  },
+  {
+   "id": "perifrazy-863de188",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город трёх революций",
+   "back": "Ленинград",
+   "sheet": "Перифразы",
+   "row": 71
+  },
+  {
+   "id": "perifrazy-dd8298b0",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Город юности",
+   "back": "Комсомольск-на-Амуре",
+   "sheet": "Перифразы",
+   "row": 72
+  },
+  {
+   "id": "perifrazy-e19d6afc",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Дама с камелиями",
+   "back": "Куртизанка",
+   "sheet": "Перифразы",
+   "row": 73
+  },
+  {
+   "id": "perifrazy-d4742b94",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Дерево пустыни",
+   "back": "Саксаул",
+   "sheet": "Перифразы",
+   "row": 74
+  },
+  {
+   "id": "perifrazy-4cfda648",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Дом сказок",
+   "back": "Союзмультфильм",
+   "sheet": "Перифразы",
+   "row": 75
+  },
+  {
+   "id": "perifrazy-f61dbfa1",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Дом терпимости",
+   "back": "Публичный дом",
+   "sheet": "Перифразы",
+   "row": 76
+  },
+  {
+   "id": "perifrazy-77c7b4fd",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Жемчужина Адриатики",
+   "back": "Венеция",
+   "sheet": "Перифразы",
+   "row": 77
+  },
+  {
+   "id": "perifrazy-8d2572d7",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Жемчужина Беломорья",
+   "back": "Соловки",
+   "sheet": "Перифразы",
+   "row": 78
+  },
+  {
+   "id": "perifrazy-ffc27b81",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Жемчужина Дуная",
+   "back": "Будапешт",
+   "sheet": "Перифразы",
+   "row": 79
+  },
+  {
+   "id": "perifrazy-4e533b56",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Жемчужина Ладоги",
+   "back": "Валаам",
+   "sheet": "Перифразы",
+   "row": 80
+  },
+  {
+   "id": "perifrazy-ef848321",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Жемчужина Тянь-Шаня",
+   "back": "Озеро Иссык-Куль",
+   "sheet": "Перифразы",
+   "row": 81
+  },
+  {
+   "id": "perifrazy-0cd47586",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Жемчужина Черноморья",
+   "back": "Одесса",
+   "sheet": "Перифразы",
+   "row": 82
+  },
+  {
+   "id": "perifrazy-7e96fa4b",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Жрец Фемиды",
+   "back": "Юрист",
+   "sheet": "Перифразы",
+   "row": 83
+  },
+  {
+   "id": "perifrazy-95e3d8e7",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Зелье Бахуса",
+   "back": "Алкоголь",
+   "sheet": "Перифразы",
+   "row": 84
+  },
+  {
+   "id": "perifrazy-8a705e8f",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Игра Гулливеров",
+   "back": "Баскетбол",
+   "sheet": "Перифразы",
+   "row": 85
+  },
+  {
+   "id": "perifrazy-dd78ef29",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Империя грёз",
+   "back": "Голливуд",
+   "sheet": "Перифразы",
+   "row": 86
+  },
+  {
+   "id": "perifrazy-bc34b753",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Инквизитор XX века",
+   "back": "Члены ККК",
+   "sheet": "Перифразы",
+   "row": 87
+  },
+  {
+   "id": "perifrazy-19d72360",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Камень плодородия",
+   "back": "Апатит",
+   "sheet": "Перифразы",
+   "row": 88
+  },
+  {
+   "id": "perifrazy-26aca967",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Вечный камень",
+   "back": "Гранит",
+   "sheet": "Перифразы",
+   "row": 89
+  },
+  {
+   "id": "perifrazy-4ed1a081",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Горючий камень",
+   "back": "Сланец",
+   "sheet": "Перифразы",
+   "row": 90
+  },
+  {
+   "id": "perifrazy-2b2b97a9",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Голубые каски",
+   "back": "Силы ООН по поддержанию мира",
+   "sheet": "Перифразы",
+   "row": 91
+  },
+  {
+   "id": "perifrazy-1b757077",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Медные каски",
+   "back": "ВС США",
+   "sheet": "Перифразы",
+   "row": 92
+  },
+  {
+   "id": "perifrazy-0dfd4383",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Солнечный клоун",
+   "back": "Олег Попов",
+   "sheet": "Перифразы",
+   "row": 93
+  },
+  {
+   "id": "perifrazy-3189e9b7",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Княжество игорных домов",
+   "back": "Монако",
+   "sheet": "Перифразы",
+   "row": 94
+  },
+  {
+   "id": "perifrazy-93ae1a4f",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Великий комбинатор",
+   "back": "Остап Бендер",
+   "sheet": "Перифразы",
+   "row": 95
+  },
+  {
+   "id": "perifrazy-e77ceb4e",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Ледовый комиссар",
+   "back": "О.Ю. Шмидт",
+   "sheet": "Перифразы",
+   "row": 96
+  },
+  {
+   "id": "perifrazy-aa3831e6",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Пылающий континент",
+   "back": "Латинская Америка",
+   "sheet": "Перифразы",
+   "row": 97
+  },
+  {
+   "id": "perifrazy-c6d603f1",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Корень жизни",
+   "back": "Женьшень",
+   "sheet": "Перифразы",
+   "row": 98
+  },
+  {
+   "id": "perifrazy-b6b9e6d9",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Солнечный корень",
+   "back": "Лакрица",
+   "sheet": "Перифразы",
+   "row": 99
+  },
+  {
+   "id": "perifrazy-c347b725",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Королева комет",
+   "back": "Комета Галлея",
+   "sheet": "Перифразы",
+   "row": 100
+  },
+  {
+   "id": "perifrazy-a62f9f0e",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Королева лыж",
+   "back": "Любовь Егорова",
+   "sheet": "Перифразы",
+   "row": 101
+  },
+  {
+   "id": "perifrazy-ae485631",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Королева сердец",
+   "back": "Принцесса Диана",
+   "sheet": "Перифразы",
+   "row": 102
+  },
+  {
+   "id": "perifrazy-2b758631",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Королева спорта",
+   "back": "Лёгкая атлетика",
+   "sheet": "Перифразы",
+   "row": 103
+  },
+  {
+   "id": "perifrazy-3200fe11",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король блюза",
+   "back": "Би Би Кинг",
+   "sheet": "Перифразы",
+   "row": 104
+  },
+  {
+   "id": "perifrazy-1d7b67d4",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король инструментов",
+   "back": "Орган",
+   "sheet": "Перифразы",
+   "row": 105
+  },
+  {
+   "id": "perifrazy-810c1989",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король рок-н-ролла",
+   "back": "Элвис Пресли",
+   "sheet": "Перифразы",
+   "row": 106
+  },
+  {
+   "id": "perifrazy-35796fbf",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король спорта",
+   "back": "Футбол",
+   "sheet": "Перифразы",
+   "row": 107
+  },
+  {
+   "id": "perifrazy-04ab8806",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король танца",
+   "back": "Махмуд Эсамбаев",
+   "sheet": "Перифразы",
+   "row": 108
+  },
+  {
+   "id": "perifrazy-c4649e00",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король футбола",
+   "back": "Пеле",
+   "sheet": "Перифразы",
+   "row": 109
+  },
+  {
+   "id": "perifrazy-c7f4db66",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Король эпидемий",
+   "back": "Грипп",
+   "sheet": "Перифразы",
+   "row": 110
+  },
+  {
+   "id": "perifrazy-459b6601",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Всесоюзная кочегарка",
+   "back": "Донецкий угольный бассейн",
+   "sheet": "Перифразы",
+   "row": 111
+  },
+  {
+   "id": "perifrazy-6d07df93",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Новая всесоюзная кочегарка",
+   "back": "Экибастузский угольный бассейн",
+   "sheet": "Перифразы",
+   "row": 112
+  },
+  {
+   "id": "perifrazy-c76c033c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Вторая кочегарка страны",
+   "back": "Кузбасс",
+   "sheet": "Перифразы",
+   "row": 113
+  },
+  {
+   "id": "perifrazy-58953ba4",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Третья угольная кочегарка",
+   "back": "Карагандинский угольный бассейн",
+   "sheet": "Перифразы",
+   "row": 114
+  },
+  {
+   "id": "perifrazy-2aeea676",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Край тысячи озёр",
+   "back": "Кольский полуостров",
+   "sheet": "Перифразы",
+   "row": 115
+  },
+  {
+   "id": "perifrazy-0bb4ac20",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Текстильный край",
+   "back": "Ивановская область",
+   "sheet": "Перифразы",
+   "row": 116
+  },
+  {
+   "id": "perifrazy-434ba509",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Креветка пустыни",
+   "back": "Саранча",
+   "sheet": "Перифразы",
+   "row": 117
+  },
+  {
+   "id": "perifrazy-fbb06940",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Крыша Африки",
+   "back": "Лесото",
+   "sheet": "Перифразы",
+   "row": 118
+  },
+  {
+   "id": "perifrazy-8178d14a",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Красная кузница",
+   "back": "Тула",
+   "sheet": "Перифразы",
+   "row": 119
+  },
+  {
+   "id": "perifrazy-cc38d815",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Купол планеты",
+   "back": "Антарктида",
+   "sheet": "Перифразы",
+   "row": 120
+  },
+  {
+   "id": "perifrazy-cd8e988f",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Кухня погоды",
+   "back": "Атлантический океан",
+   "sheet": "Перифразы",
+   "row": 121
+  },
+  {
+   "id": "perifrazy-264c767e",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Янтарная леди",
+   "back": "Казимера Прунскене",
+   "sheet": "Перифразы",
+   "row": 122
+  },
+  {
+   "id": "perifrazy-276e5053",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Люди из Лэнгли",
+   "back": "Сотрудники ЦРУ",
+   "sheet": "Перифразы",
+   "row": 123
+  },
+  {
+   "id": "perifrazy-755ba246",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Магистраль века",
+   "back": "БАМ",
+   "sheet": "Перифразы",
+   "row": 124
+  },
+  {
+   "id": "perifrazy-a39da110",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Макушка земли",
+   "back": "Арктика",
+   "sheet": "Перифразы",
+   "row": 125
+  },
+  {
+   "id": "perifrazy-9a8d3b83",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Мастерская мира",
+   "back": "Британская империя",
+   "sheet": "Перифразы",
+   "row": 126
+  },
+  {
+   "id": "perifrazy-dbd25264",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Мекка моды",
+   "back": "Париж",
+   "sheet": "Перифразы",
+   "row": 127
+  },
+  {
+   "id": "perifrazy-aaae9af3",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Калужский мечтатель",
+   "back": "К.Э. Циолковский",
+   "sheet": "Перифразы",
+   "row": 128
+  },
+  {
+   "id": "perifrazy-b02e72b0",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Венгерское море",
+   "back": "Озеро Балатон",
+   "sheet": "Перифразы",
+   "row": 129
+  },
+  {
+   "id": "perifrazy-fb53bea6",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Городское море",
+   "back": "Воронежское водохранилище",
+   "sheet": "Перифразы",
+   "row": 130
+  },
+  {
+   "id": "perifrazy-76858acd",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Киргизское море",
+   "back": "Озеро Иссык-Куль",
+   "sheet": "Перифразы",
+   "row": 131
+  },
+  {
+   "id": "perifrazy-ac44e7be",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Муза русского балета",
+   "back": "Г.С. Уланова",
+   "sheet": "Перифразы",
+   "row": 132
+  },
+  {
+   "id": "perifrazy-54205814",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Балканский мясник",
+   "back": "А.Артукович",
+   "sheet": "Перифразы",
+   "row": 133
+  },
+  {
+   "id": "perifrazy-cec7bc12",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Лионский мясник",
+   "back": "К. Барбье",
+   "sheet": "Перифразы",
+   "row": 134
+  },
+  {
+   "id": "perifrazy-126366c7",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Азиатский Нью-Йорк",
+   "back": "Сингапур",
+   "sheet": "Перифразы",
+   "row": 135
+  },
+  {
+   "id": "perifrazy-44b8e166",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Остров Кастро",
+   "back": "Куба",
+   "sheet": "Перифразы",
+   "row": 136
+  },
+  {
+   "id": "perifrazy-d34b687a",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Остров пряностей",
+   "back": "Гренада",
+   "sheet": "Перифразы",
+   "row": 137
+  },
+  {
+   "id": "perifrazy-da879e1d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Изумрудный (чайный) остров",
+   "back": "Шри-Ланка",
+   "sheet": "Перифразы",
+   "row": 138
+  },
+  {
+   "id": "perifrazy-5eab9c80",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец реформ",
+   "back": "Егор Гайдар",
+   "sheet": "Перифразы",
+   "row": 139
+  },
+  {
+   "id": "perifrazy-d6b63a23",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец Рима",
+   "back": "Река Тибр",
+   "sheet": "Перифразы",
+   "row": 140
+  },
+  {
+   "id": "perifrazy-aaf0ada7",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Отец русской астрономии",
+   "back": "Ф.А. Бредихин",
+   "sheet": "Перифразы",
+   "row": 141
+  },
+  {
+   "id": "perifrazy-b8e9d873",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Палач Тарту",
+   "back": "К. Линнас",
+   "sheet": "Перифразы",
+   "row": 142
+  },
+  {
+   "id": "perifrazy-cbc81f29",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Пахарь моря",
+   "back": "Рыбак",
+   "sheet": "Перифразы",
+   "row": 143
+  },
+  {
+   "id": "perifrazy-67061184",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Певец Арбата",
+   "back": "Булат Окуджава",
+   "sheet": "Перифразы",
+   "row": 144
+  },
+  {
+   "id": "perifrazy-4ff50242",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Африканский перекрёсток",
+   "back": "Верхняя Вольта (Буркина-Фасо)",
+   "sheet": "Перифразы",
+   "row": 145
+  },
+  {
+   "id": "perifrazy-7b6af2e9",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Европейский перекрёсток",
+   "back": "Люксембург",
+   "sheet": "Перифразы",
+   "row": 146
+  },
+  {
+   "id": "perifrazy-2899259c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Поклонница Сафо",
+   "back": "Лесбиянка",
+   "sheet": "Перифразы",
+   "row": 147
+  },
+  {
+   "id": "perifrazy-6a7d7312",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Третий полюс",
+   "back": "Эверест",
+   "sheet": "Перифразы",
+   "row": 148
+  },
+  {
+   "id": "perifrazy-db127e42",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Рак воли",
+   "back": "Наркомания",
+   "sheet": "Перифразы",
+   "row": 149
+  },
+  {
+   "id": "perifrazy-907d652b",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Алмазная республика",
+   "back": "Якутия",
+   "sheet": "Перифразы",
+   "row": 150
+  },
+  {
+   "id": "perifrazy-89539b3d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Третий Рим",
+   "back": "Москва",
+   "sheet": "Перифразы",
+   "row": 151
+  },
+  {
+   "id": "perifrazy-6c64c9d6",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Родина Будды",
+   "back": "Непал",
+   "sheet": "Перифразы",
+   "row": 152
+  },
+  {
+   "id": "perifrazy-a73501cb",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Чёрная роза",
+   "back": "Каракуль",
+   "sheet": "Перифразы",
+   "row": 153
+  },
+  {
+   "id": "perifrazy-9b6d9002",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Рыцарь Арктики",
+   "back": "И.Д. Папанин",
+   "sheet": "Перифразы",
+   "row": 154
+  },
+  {
+   "id": "perifrazy-d0ce2f95",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Рыцарь из Ламанчи",
+   "back": "Дон Кихот",
+   "sheet": "Перифразы",
+   "row": 155
+  },
+  {
+   "id": "perifrazy-99007012",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Рыцарь революции",
+   "back": "Ф.Э. Дзержинский",
+   "sheet": "Перифразы",
+   "row": 156
+  },
+  {
+   "id": "perifrazy-10d3d08c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Служитель Мельпомены",
+   "back": "Актёр театра",
+   "sheet": "Перифразы",
+   "row": 157
+  },
+  {
+   "id": "perifrazy-a29a0337",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Служитель Панацеи",
+   "back": "Врач",
+   "sheet": "Перифразы",
+   "row": 158
+  },
+  {
+   "id": "perifrazy-616046a5",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Солнце в бокале",
+   "back": "Вино",
+   "sheet": "Перифразы",
+   "row": 159
+  },
+  {
+   "id": "perifrazy-d659597e",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Столица Антарктиды",
+   "back": "Станция Молодёжная",
+   "sheet": "Перифразы",
+   "row": 160
+  },
+  {
+   "id": "perifrazy-36af2b52",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Столица БАМа",
+   "back": "Город Тында",
+   "sheet": "Перифразы",
+   "row": 161
+  },
+  {
+   "id": "perifrazy-543297bb",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Столица Беломорья",
+   "back": "Архангельск",
+   "sheet": "Перифразы",
+   "row": 162
+  },
+  {
+   "id": "perifrazy-95f01137",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Столица газовиков",
+   "back": "Новый Уренгой",
+   "sheet": "Перифразы",
+   "row": 163
+  },
+  {
+   "id": "perifrazy-d526d4f5",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Столица мафии",
+   "back": "Палермо",
+   "sheet": "Перифразы",
+   "row": 164
+  },
+  {
+   "id": "perifrazy-9c818803",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Столица мира",
+   "back": "Нью-Йорк",
+   "sheet": "Перифразы",
+   "row": 165
+  },
+  {
+   "id": "perifrazy-d4d62fc1",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Столица моря",
+   "back": "Венеция",
+   "sheet": "Перифразы",
+   "row": 166
+  },
+  {
+   "id": "perifrazy-5dfe640c",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Заполярная столица",
+   "back": "Норильск",
+   "sheet": "Перифразы",
+   "row": 167
+  },
+  {
+   "id": "perifrazy-2c6dbd0d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна Белого слона",
+   "back": "Таиланд",
+   "sheet": "Перифразы",
+   "row": 168
+  },
+  {
+   "id": "perifrazy-c8a86248",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна Вильгельма Телля",
+   "back": "Швейцария",
+   "sheet": "Перифразы",
+   "row": 169
+  },
+  {
+   "id": "perifrazy-4f14515d",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна вулканов",
+   "back": "Индонезия",
+   "sheet": "Перифразы",
+   "row": 170
+  },
+  {
+   "id": "perifrazy-126efa30",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна гейзеров",
+   "back": "Исландия",
+   "sheet": "Перифразы",
+   "row": 171
+  },
+  {
+   "id": "perifrazy-9c40757e",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна диких обезьян",
+   "back": "Бразилия",
+   "sheet": "Перифразы",
+   "row": 172
+  },
+  {
+   "id": "perifrazy-84ab8fcc",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна изумрудов",
+   "back": "Колумбия",
+   "sheet": "Перифразы",
+   "row": 173
+  },
+  {
+   "id": "perifrazy-1a4c7550",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна кедра",
+   "back": "Ливан",
+   "sheet": "Перифразы",
+   "row": 174
+  },
+  {
+   "id": "perifrazy-9ef15e91",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна орлов",
+   "back": "Албания",
+   "sheet": "Перифразы",
+   "row": 175
+  },
+  {
+   "id": "perifrazy-c0dfdb4f",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна семи тысяч островов",
+   "back": "Филиппины",
+   "sheet": "Перифразы",
+   "row": 176
+  },
+  {
+   "id": "perifrazy-0d4ec080",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна снежного человека",
+   "back": "Непал",
+   "sheet": "Перифразы",
+   "row": 177
+  },
+  {
+   "id": "perifrazy-f12f8e94",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна тысячи вод",
+   "back": "Гайана",
+   "sheet": "Перифразы",
+   "row": 178
+  },
+  {
+   "id": "perifrazy-20790250",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна тысячи озёр",
+   "back": "Финляндия",
+   "sheet": "Перифразы",
+   "row": 179
+  },
+  {
+   "id": "perifrazy-5c245365",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Страна утренней свежести",
+   "back": "КНДР",
+   "sheet": "Перифразы",
+   "row": 180
+  },
+  {
+   "id": "perifrazy-d11a27c5",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Второй Транссиб",
+   "back": "БАМ",
+   "sheet": "Перифразы",
+   "row": 181
+  },
+  {
+   "id": "perifrazy-e3b1019e",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Второй хлеб",
+   "back": "Картофель",
+   "sheet": "Перифразы",
+   "row": 182
+  },
+  {
+   "id": "perifrazy-a2193af5",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Капитолийский холм",
+   "back": "Конгресс США",
+   "sheet": "Перифразы",
+   "row": 183
+  },
+  {
+   "id": "perifrazy-e080bea3",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Храм Мельпомены",
+   "back": "Театр",
+   "sheet": "Перифразы",
+   "row": 184
+  },
+  {
+   "id": "perifrazy-793e5580",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Ливерпульская четвёрка",
+   "back": "Битлз",
+   "sheet": "Перифразы",
+   "row": 185
+  },
+  {
+   "id": "perifrazy-eecd3ede",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Американская Швейцария",
+   "back": "Уругвай",
+   "sheet": "Перифразы",
+   "row": 186
+  },
+  {
+   "id": "perifrazy-869e35ca",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Африканская Швейцария",
+   "back": "Свазиленд (Эсватини)",
+   "sheet": "Перифразы",
+   "row": 187
+  },
+  {
+   "id": "perifrazy-e6ba5faa",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Латиноамериканская Швейцария",
+   "back": "Коста-Рика",
+   "sheet": "Перифразы",
+   "row": 188
+  },
+  {
+   "id": "perifrazy-32bb76fa",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Стена в десять тысяч ли",
+   "back": "Великая Китайская Стена",
+   "sheet": "Перифразы",
+   "row": 189
+  },
+  {
+   "id": "perifrazy-f6aebb03",
+   "deck": "perifrazy",
+   "ask": "Кто или что это?",
+   "front": "Председатель земного шара",
+   "back": "Велимир Хлебников",
+   "sheet": "Перифразы",
+   "row": 190
+  },
+  {
+   "id": "olimpiady-d04eef27",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1896",
+   "back": "Афины, Греция",
+   "sheet": "Олимпийские игры",
+   "row": 2
+  },
+  {
+   "id": "olimpiady-34c2aaea",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1900",
+   "back": "Париж, Франция",
+   "sheet": "Олимпийские игры",
+   "row": 3
+  },
+  {
+   "id": "olimpiady-327dba26",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1904",
+   "back": "Сент-Луис, США",
+   "sheet": "Олимпийские игры",
+   "row": 4,
+   "note": "Сначала игры отдали Чикаго"
+  },
+  {
+   "id": "olimpiady-fd47b426",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1906",
+   "back": "Афины, Греция",
+   "sheet": "Олимпийские игры",
+   "row": 5,
+   "note": "Внеочередные игры, МОК их официально не признаёт"
+  },
+  {
+   "id": "olimpiady-5cd5bd08",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1908",
+   "back": "Лондон, Великобритания",
+   "sheet": "Олимпийские игры",
+   "row": 6,
+   "note": "Сначала игры отдали Риму, но после извержения Везувия в 1906 году их перенесли в Лондон"
+  },
+  {
+   "id": "olimpiady-39a76cb3",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1912",
+   "back": "Стокгольм, Швеция",
+   "sheet": "Олимпийские игры",
+   "row": 7
+  },
+  {
+   "id": "olimpiady-7966188c",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1916 (отменены)",
+   "back": "Берлин, Германия",
+   "sheet": "Олимпийские игры",
+   "row": 8,
+   "note": "Отменены из-за Первой мировой войны"
+  },
+  {
+   "id": "olimpiady-61e0bbe1",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1920",
+   "back": "Антверпен, Бельгия",
+   "sheet": "Олимпийские игры",
+   "row": 9
+  },
+  {
+   "id": "olimpiady-8c3dd764",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1924",
+   "back": "Париж, Франция",
+   "sheet": "Олимпийские игры",
+   "row": 10
+  },
+  {
+   "id": "olimpiady-c88e9fbe",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1924",
+   "back": "Шамони, Франция",
+   "sheet": "Олимпийские игры",
+   "row": 11
+  },
+  {
+   "id": "olimpiady-79444fbd",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1928",
+   "back": "Амстердам, Нидерланды",
+   "sheet": "Олимпийские игры",
+   "row": 12
+  },
+  {
+   "id": "olimpiady-8dff09f8",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1928",
+   "back": "Санкт-Мориц, Швейцария",
+   "sheet": "Олимпийские игры",
+   "row": 13
+  },
+  {
+   "id": "olimpiady-749a05d9",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1932",
+   "back": "Лос-Анджелес, США",
+   "sheet": "Олимпийские игры",
+   "row": 14
+  },
+  {
+   "id": "olimpiady-53f334b3",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1932",
+   "back": "Лейк-Плэсид, США",
+   "sheet": "Олимпийские игры",
+   "row": 15
+  },
+  {
+   "id": "olimpiady-52ea4b5f",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1936",
+   "back": "Берлин, Германия",
+   "sheet": "Олимпийские игры",
+   "row": 16
+  },
+  {
+   "id": "olimpiady-ad33fdb8",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1936",
+   "back": "Гармиш-Партенкирхен (Бавария), Германия",
+   "sheet": "Олимпийские игры",
+   "row": 17
+  },
+  {
+   "id": "olimpiady-e7ee7e79",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1940 (отменены)",
+   "back": "Токио, затем Хельсинки",
+   "sheet": "Олимпийские игры",
+   "row": 18,
+   "note": "Отменены из-за Второй мировой войны"
+  },
+  {
+   "id": "olimpiady-4ba718da",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1940 (отменены)",
+   "back": "Саппоро, затем Санкт-Мориц, затем Гармиш-Партенкирхен",
+   "sheet": "Олимпийские игры",
+   "row": 19,
+   "note": "Отменены из-за Второй мировой войны"
+  },
+  {
+   "id": "olimpiady-25d198f4",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1944 (отменены)",
+   "back": "Лондон, Великобритания",
+   "sheet": "Олимпийские игры",
+   "row": 20,
+   "note": "Отменены из-за Второй мировой войны. Лондон принял следующие игры, 1948 года"
+  },
+  {
+   "id": "olimpiady-36b8a87c",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1944 (отменены)",
+   "back": "Кортина д'Ампеццо (Венето), Италия",
+   "sheet": "Олимпийские игры",
+   "row": 21,
+   "note": "Отменены из-за Второй мировой войны. Кортина д'Ампеццо приняла игры 1956 года"
+  },
+  {
+   "id": "olimpiady-6707048a",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1948",
+   "back": "Лондон, Великобритания",
+   "sheet": "Олимпийские игры",
+   "row": 22
+  },
+  {
+   "id": "olimpiady-30299e21",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1948",
+   "back": "Санкт-Мориц, Швейцария",
+   "sheet": "Олимпийские игры",
+   "row": 23
+  },
+  {
+   "id": "olimpiady-a44d8f84",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1952",
+   "back": "Хельсинки, Финляндия",
+   "sheet": "Олимпийские игры",
+   "row": 24
+  },
+  {
+   "id": "olimpiady-49016621",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1952",
+   "back": "Осло, Норвегия",
+   "sheet": "Олимпийские игры",
+   "row": 25
+  },
+  {
+   "id": "olimpiady-9dd6ac2e",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1956",
+   "back": "Мельбурн, Австралия",
+   "sheet": "Олимпийские игры",
+   "row": 26
+  },
+  {
+   "id": "olimpiady-61245fc5",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1956",
+   "back": "Кортина д'Ампеццо (Венето), Италия",
+   "sheet": "Олимпийские игры",
+   "row": 27
+  },
+  {
+   "id": "olimpiady-629e8016",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1960",
+   "back": "Рим, Италия",
+   "sheet": "Олимпийские игры",
+   "row": 28
+  },
+  {
+   "id": "olimpiady-cd2d3787",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1960",
+   "back": "Скво-Велли (Калифорния), США",
+   "sheet": "Олимпийские игры",
+   "row": 29
+  },
+  {
+   "id": "olimpiady-ddb62078",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1964",
+   "back": "Токио, Япония",
+   "sheet": "Олимпийские игры",
+   "row": 30
+  },
+  {
+   "id": "olimpiady-de89b208",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1964",
+   "back": "Инсбрук, Австрия",
+   "sheet": "Олимпийские игры",
+   "row": 31
+  },
+  {
+   "id": "olimpiady-7d460b91",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1968",
+   "back": "Мехико, Мексика",
+   "sheet": "Олимпийские игры",
+   "row": 32
+  },
+  {
+   "id": "olimpiady-9743e4b8",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1968",
+   "back": "Гренобль, Франция",
+   "sheet": "Олимпийские игры",
+   "row": 33
+  },
+  {
+   "id": "olimpiady-ff8ff6cb",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1972",
+   "back": "Мюнхен, ФРГ",
+   "sheet": "Олимпийские игры",
+   "row": 34
+  },
+  {
+   "id": "olimpiady-da98fbd0",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1972",
+   "back": "Саппоро, Япония",
+   "sheet": "Олимпийские игры",
+   "row": 35
+  },
+  {
+   "id": "olimpiady-b50d0dd9",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1976",
+   "back": "Монреаль, Канада",
+   "sheet": "Олимпийские игры",
+   "row": 36
+  },
+  {
+   "id": "olimpiady-703e06e9",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1976",
+   "back": "Инсбрук, Австрия",
+   "sheet": "Олимпийские игры",
+   "row": 37,
+   "note": "Сначала игры отдали Денверу, но жители штата Колорадо отказались их финансировать"
+  },
+  {
+   "id": "olimpiady-28b4b26a",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1980",
+   "back": "Москва, СССР",
+   "sheet": "Олимпийские игры",
+   "row": 38
+  },
+  {
+   "id": "olimpiady-094d1ce8",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1980",
+   "back": "Лейк-Плэсид, США",
+   "sheet": "Олимпийские игры",
+   "row": 39
+  },
+  {
+   "id": "olimpiady-edd1fcce",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1984",
+   "back": "Лос-Анджелес, США",
+   "sheet": "Олимпийские игры",
+   "row": 40
+  },
+  {
+   "id": "olimpiady-8c8fa72f",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1984",
+   "back": "Сараево, Югославия",
+   "sheet": "Олимпийские игры",
+   "row": 41
+  },
+  {
+   "id": "olimpiady-d83606af",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1988",
+   "back": "Сеул, Южная Корея",
+   "sheet": "Олимпийские игры",
+   "row": 42
+  },
+  {
+   "id": "olimpiady-b99e5ab3",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1988",
+   "back": "Калгари, Канада",
+   "sheet": "Олимпийские игры",
+   "row": 43
+  },
+  {
+   "id": "olimpiady-c66b5d34",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1992",
+   "back": "Барселона, Испания",
+   "sheet": "Олимпийские игры",
+   "row": 44,
+   "note": "Победитель: Объединённая команда"
+  },
+  {
+   "id": "olimpiady-7fb0390b",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1992",
+   "back": "Альбервиль, Франция",
+   "sheet": "Олимпийские игры",
+   "row": 45
+  },
+  {
+   "id": "olimpiady-591dbf9a",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1994",
+   "back": "Лиллехаммер, Норвегия",
+   "sheet": "Олимпийские игры",
+   "row": 46,
+   "note": "Победитель: Россия\nВпервые зимняя Олимпиада проводилась не в один год с летней Олимпиадой. Впервые бывшие советские республики участвовали в зимней Олимпиаде в качестве отдельных команд."
+  },
+  {
+   "id": "olimpiady-05c8dd98",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 1996",
+   "back": "Атланта, США",
+   "sheet": "Олимпийские игры",
+   "row": 47,
+   "note": "Победитель: США\nЭрик Рудольф устроил терракт рядом с Олимпийской деревней"
+  },
+  {
+   "id": "olimpiady-d37e6807",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 1998",
+   "back": "Нагано, Япония",
+   "sheet": "Олимпийские игры",
+   "row": 48,
+   "note": "Победитель: Германия"
+  },
+  {
+   "id": "olimpiady-04a400a8",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 2000",
+   "back": "Сидней, Австралия",
+   "sheet": "Олимпийские игры",
+   "row": 49,
+   "note": "Победитель: США\nВпервые в олимпийскую программу включены триатлон, тхэквондо и прыжки на батуте."
+  },
+  {
+   "id": "olimpiady-94a5b39e",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 2002",
+   "back": "Солт-Лейк-Сити, США",
+   "sheet": "Олимпийские игры",
+   "row": 50,
+   "note": "Победитель: Норвегия"
+  },
+  {
+   "id": "olimpiady-ceda34bc",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 2004",
+   "back": "Афины, Греция",
+   "sheet": "Олимпийские игры",
+   "row": 51,
+   "note": "Победитель: США"
+  },
+  {
+   "id": "olimpiady-8ca419bd",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 2006",
+   "back": "Турин, Италия",
+   "sheet": "Олимпийские игры",
+   "row": 52,
+   "note": "Победитель: Германия"
+  },
+  {
+   "id": "olimpiady-5b490bc9",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 2008",
+   "back": "Пекин, КНР",
+   "sheet": "Олимпийские игры",
+   "row": 53,
+   "note": "Победитель: Китай"
+  },
+  {
+   "id": "olimpiady-ab2db549",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 2010",
+   "back": "Ванкувер, Канада",
+   "sheet": "Олимпийские игры",
+   "row": 54,
+   "note": "Победитель: Канада"
+  },
+  {
+   "id": "olimpiady-e4d8d77f",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 2012",
+   "back": "Лондон, Великобритания",
+   "sheet": "Олимпийские игры",
+   "row": 55,
+   "note": "Победитель: США"
+  },
+  {
+   "id": "olimpiady-a624877f",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 2014",
+   "back": "Сочи, Россия",
+   "sheet": "Олимпийские игры",
+   "row": 56,
+   "note": "Победитель: Россия\nДопинговый скандал сборной России"
+  },
+  {
+   "id": "olimpiady-2e64e8e0",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 2016",
+   "back": "Рио-де-Жанейро, Бразилия",
+   "sheet": "Олимпийские игры",
+   "row": 57,
+   "note": "Победитель: США"
+  },
+  {
+   "id": "olimpiady-a00994da",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 2018",
+   "back": "Пхёнчхан, Южная Корея",
+   "sheet": "Олимпийские игры",
+   "row": 58,
+   "note": "Победитель: Норвегия"
+  },
+  {
+   "id": "olimpiady-97b95b79",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Летние Олимпийские игры 2020",
+   "back": "Токио, Япония",
+   "sheet": "Олимпийские игры",
+   "row": 59,
+   "note": "Победитель: США\nИз-за пандемии прошли в 2021 году"
+  },
+  {
+   "id": "olimpiady-0ad3ca61",
+   "deck": "olimpiady",
+   "ask": "Где проходили?",
+   "front": "Зимние Олимпийские игры 2022",
+   "back": "Пекин, КНР",
+   "sheet": "Олимпийские игры",
+   "row": 60,
+   "note": "Победитель: Норвегия"
+  },
+  {
+   "id": "prototipy-309ea662",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Отелло",
+   "back": "Абдул-Вахид бин Мусад",
+   "sheet": "Прототипы",
+   "row": 2,
+   "note": "Марокканский посол при дворе Елизаветы I"
+  },
+  {
+   "id": "prototipy-2554d658",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Рокки Бальбоа",
+   "back": "Чак Вепнер",
+   "sheet": "Прототипы",
+   "row": 3,
+   "note": "Американский боксёр. Есть ошибочное предположение, что прототипом Рокки является Рокки Марчиано (непобеждённый американский боксёр)"
+  },
+  {
+   "id": "prototipy-5138a219",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Гек Финн",
+   "back": "Том Блэнкеншип",
+   "sheet": "Прототипы",
+   "row": 4,
+   "note": "Друг детства Марка Твена"
+  },
+  {
+   "id": "prototipy-f6dcdb05",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Пятачок",
+   "back": "Кристофер Милн",
+   "sheet": "Прототипы",
+   "row": 5,
+   "note": "Не Кристофером Робиным единым"
+  },
+  {
+   "id": "prototipy-6575a994",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Матрос Лом («Приключения капитана Врунгеля»)",
+   "back": "Иван Манн",
+   "sheet": "Прототипы",
+   "row": 6,
+   "note": "Считается, что прототипом матроса Лома из \"Приключений капитана Врунгеля\" был Иван Ман (нем. Mann — человек — фр. l'homme), собиравшийся в 20-х годах с товарищами по училищу совершить кругосветное путешествие на яхте. Впоследствии он все же совершил кругосветное путешествие в качестве боцмана на барке \"Товарищ\", побывал на Севере и в Антарктиде, как и герои повести."
+  },
+  {
+   "id": "prototipy-d554cbfa",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Павел Верещагин («Белое солнце пустыни»)",
+   "back": "Михаил Поспелов",
+   "sheet": "Прототипы",
+   "row": 8,
+   "note": "командир Гермабского погранотряда  по прозвищу \"Красный шайтан\""
+  },
+  {
+   "id": "prototipy-d71d981f",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Дядюшка Том («Хижина дяди Тома»)",
+   "back": "Джосайя Хенсон",
+   "sheet": "Прототипы",
+   "row": 9,
+   "note": "американо-канадский писатель, аболиционист и священнослужитель. Гражданский активист."
+  },
+  {
+   "id": "prototipy-cc96ce32",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Золушка",
+   "back": "богиня Веста",
+   "sheet": "Прототипы",
+   "row": 10,
+   "note": "Богиня очага, одевалась в кошачьи шкуры"
+  },
+  {
+   "id": "prototipy-12ece014",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Бэтмен",
+   "back": "Джек-прыгун",
+   "sheet": "Прототипы",
+   "row": 11,
+   "note": "персонаж английского фольклора Викторианской эпохи, гуманоидное существо, примечательное прежде всего своей способностью совершать прыжки поразительной высоты."
+  },
+  {
+   "id": "prototipy-0723714a",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Мидас",
+   "back": "царь Мита",
+   "sheet": "Прототипы",
+   "row": 12,
+   "note": "Правитель протогрузинского западномушского государства VIII века до н.э."
+  },
+  {
+   "id": "prototipy-7968c1a5",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Майор («Скотный двор» Оруэлла)",
+   "back": "Ленин",
+   "sheet": "Прототипы",
+   "row": 13
+  },
+  {
+   "id": "prototipy-2f81a65d",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Наполеон («Скотный двор» Оруэлла)",
+   "back": "Сталин",
+   "sheet": "Прототипы",
+   "row": 14
+  },
+  {
+   "id": "prototipy-b223f01f",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Снежок («Скотный двор» Оруэлла)",
+   "back": "Троцкий",
+   "sheet": "Прототипы",
+   "row": 15
+  },
+  {
+   "id": "prototipy-955bee0e",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Визгун («Скотный двор» Оруэлла)",
+   "back": "Молотов",
+   "sheet": "Прототипы",
+   "row": 16
+  },
+  {
+   "id": "prototipy-c605ff83",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Минимус («Скотный двор» Оруэлла)",
+   "back": "Маяковский/Михалков",
+   "sheet": "Прототипы",
+   "row": 17
+  },
+  {
+   "id": "prototipy-bc3ef698",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Мистер Джонс («Скотный двор» Оруэлла)",
+   "back": "Николай II/Керенский",
+   "sheet": "Прототипы",
+   "row": 18
+  },
+  {
+   "id": "prototipy-4582b7ee",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Мистер Фредерик («Скотный двор» Оруэлла)",
+   "back": "Гитлер",
+   "sheet": "Прототипы",
+   "row": 19
+  },
+  {
+   "id": "prototipy-308c94eb",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Мистер Пилкингтон («Скотный двор» Оруэлла)",
+   "back": "Уинстон Черчилль",
+   "sheet": "Прототипы",
+   "row": 20
+  },
+  {
+   "id": "prototipy-efb0c6bd",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Мистер Уимпер («Скотный двор» Оруэлла)",
+   "back": "Арманд Хаммер",
+   "sheet": "Прототипы",
+   "row": 21
+  },
+  {
+   "id": "prototipy-89f00459",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Робинзон Крузо",
+   "back": "Александр Селькирк",
+   "sheet": "Прототипы",
+   "row": 22,
+   "note": "шотландский моряк, бывший пират, который провёл 4 года и 4 месяца (в 1704—1709 годах) на необитаемом острове Мас-а-Тьерра"
+  },
+  {
+   "id": "prototipy-217958e4",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Чацкий",
+   "back": "Чаадаев/Кюхельбекер",
+   "sheet": "Прототипы",
+   "row": 23
+  },
+  {
+   "id": "prototipy-e90822b9",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Гражданин Кейн",
+   "back": "Уильям Хёрст",
+   "sheet": "Прототипы",
+   "row": 24
+  },
+  {
+   "id": "prototipy-9e658c7c",
+   "deck": "prototipy",
+   "ask": "Кто прототип?",
+   "front": "Комиссар Каттани («Спрут»)",
+   "back": "Нино Кассар",
+   "sheet": "Прототипы",
+   "row": 25,
+   "note": "Комиссар палермской полиции из т/с \"Спрут\""
+  },
+  {
+   "id": "nobel-706c3580",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физиология и медицина, 1904: За работу по физиологии пищеварения",
+   "back": "Иван Петрович Павлов",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 2
+  },
+  {
+   "id": "nobel-68f54ba9",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физиология и медицина, 1908: За труды по иммунитету",
+   "back": "Илья Ильич Мечников",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 3
+  },
+  {
+   "id": "nobel-67a559eb",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Литература, 1905: За выдающиеся заслуги в области эпоса",
+   "back": "Генрик Сенкевич",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 4,
+   "note": "На момент вручения был подданным Российской империи"
+  },
+  {
+   "id": "nobel-1ad1d8b8",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Литература, 1933: За строгий артистический талант, с которым он воссоздал в литературной прозе типичный русский характер",
+   "back": "Иван Алексеевич Бунин",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 5,
+   "note": "На момент вручения премии не был гражданином России"
+  },
+  {
+   "id": "nobel-8397083c",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Химия, 1956: За исследования в области механизмов химической реакции",
+   "back": "Николай Николаевич Семёнов",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 6
+  },
+  {
+   "id": "nobel-16305429",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Литература, 1958: за значительные достижения в современной лирической поэзии, а также за продолжение традиций великого русского эпического романа",
+   "back": "Борис Леонидович Пастернак",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 7
+  },
+  {
+   "id": "nobel-f6d96019",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физика, 1958: За открытие и истолкование эффекта, названного именем одного из лауреатов",
+   "back": "Павел Алексеевич Черенков, Игорь Евгеньевич Тамм, Илья Михайлович Франк",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 8
+  },
+  {
+   "id": "nobel-5ab17d5c",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физика, 1962: За пионерские исследования конденсированных сред и особенно жидкого гелия",
+   "back": "Лев Давидович Ландау",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 9
+  },
+  {
+   "id": "nobel-4f650c16",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физика, 1964: За фундаментальные работы в области квантовой электроники, которые привели к созданию излучателей и усилителей на лазерно-мазерном принципе",
+   "back": "Николай Геннадиевич Басов, Александр Михайлович Прохоров",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 10
+  },
+  {
+   "id": "nobel-39581ad3",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Литература, 1965: За художественную силу и цельность эпоса о донском казачестве в переломное для России время",
+   "back": "Михаил Александрович Шолохов",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 11
+  },
+  {
+   "id": "nobel-e63abb19",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Литература, 1970: За нравственную силу, с которой он следовал непреложным традициям русской литературы",
+   "back": "Александр Исаевич Солженицын",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 12
+  },
+  {
+   "id": "nobel-ceaa55d4",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Экономика, 1975: За вклад в теорию оптимального распределения ресурсов",
+   "back": "Леонид Витальевич Канторович",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 13
+  },
+  {
+   "id": "nobel-523cfa99",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Премия мира, 1975: За бесстрашную поддержку фундаментальных принципов мира между людьми и мужественную борьбу со злоупотреблением властью и любыми формами подавления человеческого достоинства",
+   "back": "Андрей Дмитриевич Сахаров",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 14
+  },
+  {
+   "id": "nobel-e8d21038",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физика, 1978: За его базовые исследования и открытия в физике низких температур",
+   "back": "Пётр Леонидович Капица",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 15
+  },
+  {
+   "id": "nobel-a3d72504",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Литература, 1987: За всеобъемлющее творчество, пропитанное ясностью мысли и страстностью поэзии",
+   "back": "Иосиф Александрович Бродский",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 16,
+   "note": "На момент вручения премии не был гражданином России"
+  },
+  {
+   "id": "nobel-1f482a5c",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Премия мира, 1990: В знак признания его ведущей роли в мирном процессе, который сегодня характеризует важную составную часть жизни международного сообщества",
+   "back": "Михаил Сергеевич Горбачёв",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 17
+  },
+  {
+   "id": "nobel-a057cf97",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физика, 2000: За разработки в полупроводниковой технике",
+   "back": "Жорес Иванович Алфёров",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 18
+  },
+  {
+   "id": "nobel-25bdc77a",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физика, 2003: За создание теории сверхпроводимости второго рода и теории сверхтекучести гелия-3",
+   "back": "Алексей Алексеевич Абрикосов, Виталий Лазаревич Гинзбург",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 19
+  },
+  {
+   "id": "nobel-e7e1fb39",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Физика, 2010: За новаторские эксперименты по исследованию двумерного материала графена",
+   "back": "Константин Сергеевич Новосёлов",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 20
+  },
+  {
+   "id": "nobel-19451b3f",
+   "deck": "nobel",
+   "ask": "Кто лауреат?",
+   "front": "Премия мира, 2021: За усилия по защите свободы выражения мнений, что является предпосылкой демократии и прочного мира",
+   "back": "Дмитрий Андреевич Муратов",
+   "sheet": "Лауреаты нобелевской премии из ",
+   "row": 21
+  },
+  {
+   "id": "psevdonimy-6c20a3b0",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Марк Твен",
+   "back": "Сэмюэл Ленгхорн Клеменс",
+   "sheet": "Псевдонимы",
+   "row": 2
+  },
+  {
+   "id": "psevdonimy-9fe4b2d5",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Льюис Кэрролл",
+   "back": "Чарльз Лютвидж Доджсон",
+   "sheet": "Псевдонимы",
+   "row": 3
+  },
+  {
+   "id": "psevdonimy-7a1320f4",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Кукрыниксы",
+   "back": "Михаил Куприянов, Порфирий Крылов, Николай Соколов",
+   "sheet": "Псевдонимы",
+   "row": 4,
+   "note": "Творческий коллектив советских художников-графиков и живописцев\nНазвание группы образовано путём объединения первых букв фамилий участников: КУприянов+КРЫлов+НИКолай Соколов"
+  },
+  {
+   "id": "psevdonimy-600ec705",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Козьма Прутков",
+   "back": "Алексей Толстой, братья Алексей, Владимир и Александр Жемчужниковы",
+   "sheet": "Псевдонимы",
+   "row": 5,
+   "note": "Коллективный псевдоним четверых писателей, под которым они публиковали сатирические стихи и афоризмы в 50-60 годы 19 века"
+  },
+  {
+   "id": "psevdonimy-4655ec1d",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Никола Бурбаки",
+   "back": "Анри Картан, Клод Шевалле, Жан Дельсарт, Жан Дьёдонне, Рене де Поссель, Шолем Мандельбройт, Андре Вейль и много других математиков",
+   "sheet": "Псевдонимы",
+   "row": 6,
+   "note": "коллективный псевдоним группы французских математиков (позднее в неё вошли несколько иностранцев), созданной в 1935 году. Целью группы являлось написание серии книг, отражающих состояние математики того времени. Книги Бурбаки написаны в строгой аксиоматической манере и дают замкнутое изложение математики на основе теории множеств Цермело — Френкеля"
+  },
+  {
+   "id": "psevdonimy-540f4cb3",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "О Генри",
+   "back": "Уильям Сидни Портер",
+   "sheet": "Псевдонимы",
+   "row": 7
+  },
+  {
+   "id": "psevdonimy-921f56f0",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Джек Лондон",
+   "back": "Джон Гриффит Чейни",
+   "sheet": "Псевдонимы",
+   "row": 8
+  },
+  {
+   "id": "psevdonimy-c13debac",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Пол Пот",
+   "back": "Салот Сар",
+   "sheet": "Псевдонимы",
+   "row": 9
+  },
+  {
+   "id": "psevdonimy-4a17e99c",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "А. Актрисын",
+   "back": "Антон Павлович Чехов",
+   "sheet": "Псевдонимы",
+   "row": 10
+  },
+  {
+   "id": "psevdonimy-80be9000",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Илья Ильф",
+   "back": "Иехи́ел-Ле́йб А́рьевич Фа́йнзильберг",
+   "sheet": "Псевдонимы",
+   "row": 73
+  },
+  {
+   "id": "psevdonimy-d1cbb3b0",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Евгений Петров",
+   "back": "Евгений Петрович Катаев",
+   "sheet": "Псевдонимы",
+   "row": 74
+  },
+  {
+   "id": "psevdonimy-c7d04b4e",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Вольтер",
+   "back": "Франсуа́-Мари́ Аруэ́",
+   "sheet": "Псевдонимы",
+   "row": 75
+  },
+  {
+   "id": "psevdonimy-3cb21b44",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Макс О́тто фон Шти́рлиц",
+   "back": "Макси́м Макси́мович Иса́ев, настоящее имя Все́волод Влади́мирович Влади́миров",
+   "sheet": "Псевдонимы",
+   "row": 76
+  },
+  {
+   "id": "psevdonimy-e939ff9b",
+   "deck": "psevdonimy",
+   "ask": "Настоящее имя?",
+   "front": "Андрей Платонович Платонов",
+   "back": "Андрей Платонович Климентов",
+   "sheet": "Псевдонимы",
+   "row": 77
+  },
+  {
+   "id": "kartiny-aebcdca1",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Остров мёртвых",
+   "back": "Арнольд Бёклин",
+   "sheet": "Изобразительное искусство",
+   "row": 2,
+   "note": "Это последний и самый известный вариант картины, создан в 1901 году. Хранится в Старой национальной галерее Берлина",
+   "image": "b3743c13ef040628.jpg"
+  },
+  {
+   "id": "kartiny-da671af8",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Телефон-Омар",
+   "back": "Сальвадор Дали и Эдвард Джеймс",
+   "sheet": "Изобразительное искусство",
+   "row": 4,
+   "note": "Скульптура является пародией и шуткой, выражающей протест Дали против поклонения технике, средствам аудиокоммуникаций, которые отдаляют людей друг от друга.По словам самого Дали «телефон — это средство передачи новостей», а «в будущем омары заменят телефоны».",
+   "image": "6a1eddfed03cd5b6.jpg"
+  },
+  {
+   "id": "kartiny-6fb935da",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Последний сон Артура в Авалоне",
+   "back": "Эдвард Берн-Джонс",
+   "sheet": "Изобразительное искусство",
+   "row": 6,
+   "note": "Magnum opus прерафаэлита Эдварда Бёрн-Джонса.",
+   "image": "2e9dcc8030289f8d.jpg"
+  },
+  {
+   "id": "kartiny-920f8bb4",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Олимпия",
+   "back": "Эдуард Мане",
+   "sheet": "Изобразительное искусство",
+   "row": 7,
+   "note": "«Оли́мпия» (фр. Olympia) — картина, написанная в 1863 году французским импрессионистом Эдуардом Мане. Будучи выставленной на Парижском салоне 1865 года, картина стала причиной одного из самых больших скандалов в истории искусства. «Олимпия» находится в собственности французского государства и с 1986 года демонстрируется в экспозиции музея Орсе в Париже.",
+   "image": "710f3c7cd78c156e.jpg"
+  },
+  {
+   "id": "kartiny-56854709",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Скачет красная конница",
+   "back": "Казимир Малевич",
+   "sheet": "Изобразительное искусство",
+   "row": 8,
+   "image": "04fbb4b83ea65269.png"
+  },
+  {
+   "id": "kartiny-e33b9b2a",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Итальянский полдень",
+   "back": "Карл Брюллов",
+   "sheet": "Изобразительное искусство",
+   "row": 24
+  },
+  {
+   "id": "kartiny-f57d983b",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Итальянское утро",
+   "back": "Карл Брюллов",
+   "sheet": "Изобразительное искусство",
+   "row": 26
+  },
+  {
+   "id": "kartiny-eae35bc3",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Полуночники",
+   "back": "Эдвард Хоппер",
+   "sheet": "Изобразительное искусство",
+   "row": 28,
+   "note": "Э́двард Хо́ппер  — американский живописец и гравёр, представитель американской жанровой живописи. Наиболее известен своими картинами повседневной жизни, из которых самой известной стали «Полуночники» (1942). Творчество Хоппера оказало сильное влияние на мир искусства в целом и поп-культуру XX века в частности.",
+   "image": "bc4b6426ca7685c1.png"
+  },
+  {
+   "id": "kartiny-373651ce",
+   "deck": "kartiny",
+   "ask": "Кто автор?",
+   "front": "Американская готика",
+   "back": "Грант Вуд",
+   "sheet": "Изобразительное искусство",
+   "row": 34,
+   "image": "84e4570be51e66fc.png"
+  },
+  {
+   "id": "raznoe-0bed1066",
+   "deck": "raznoe",
+   "ask": "Как это имя звучит в других языках?",
+   "front": "Иосиф",
+   "back": "Джозеф, Жозеф, Джузеппе, Йозеф, Хосе",
+   "sheet": "Имена разных стран",
+   "row": 1
+  },
+  {
+   "id": "raznoe-d8df88ac",
+   "deck": "raznoe",
+   "ask": "Как это имя звучит в других языках?",
+   "front": "Евгений",
+   "back": "Эжен, Юджин",
+   "sheet": "Имена разных стран",
+   "row": 2
+  },
+  {
+   "id": "raznoe-acab2d99",
+   "deck": "raznoe",
+   "ask": "Как это имя звучит в других языках?",
+   "front": "Иван",
+   "back": "Джон, Джованни, Ян, Хуан",
+   "sheet": "Имена разных стран",
+   "row": 3
+  },
+  {
+   "id": "raznoe-5df701b7",
+   "deck": "raznoe",
+   "ask": "Как это имя звучит в других языках?",
+   "front": "Антон",
+   "back": "Тони, Энтони, Антуан",
+   "sheet": "Имена разных стран",
+   "row": 4
+  },
+  {
+   "id": "raznoe-4e8182fd",
+   "deck": "raznoe",
+   "ask": "Как это имя звучит в других языках?",
+   "front": "Георгий",
+   "back": "Хорхе, Жорж, Джорджо, Юрген",
+   "sheet": "Имена разных стран",
+   "row": 5
+  },
+  {
+   "id": "raznoe-09d56c9b",
+   "deck": "raznoe",
+   "ask": "Как переводится?",
+   "front": "Vae victis",
+   "back": "Горе побеждённым",
+   "sheet": "Латинские выражения",
+   "row": 2,
+   "note": "Приписывается галльскому полководцу Бренну после захвата Рима в 390 году до н.э."
+  },
+  {
+   "id": "raznoe-e3253636",
+   "deck": "raznoe",
+   "ask": "Как переводится?",
+   "front": "Sub Rosa",
+   "back": "Под розой/Тайно",
+   "sheet": "Латинские выражения",
+   "row": 3,
+   "note": "Розу как символ молчания древние римляне часто вешали над столом во время пиршеств в знак того, что о сказанном под розой, во время застолья, следует молчать где бы то ни было."
+  },
+  {
+   "id": "raznoe-1996e861",
+   "deck": "raznoe",
+   "ask": "Как переводится?",
+   "front": "Mea culpa",
+   "back": "Моя вина",
+   "sheet": "Латинские выражения",
+   "row": 4,
+   "note": "формула покаяния и исповеди в религиозном обряде католиков с XI века."
+  },
+  {
+   "id": "raznoe-28a7c042",
+   "deck": "raznoe",
+   "ask": "Как переводится?",
+   "front": "Hic sunt dracones",
+   "back": "Здесь живут драконы",
+   "sheet": "Латинские выражения",
+   "row": 5,
+   "note": "Переосмысление классического латинского выражения Hic sunt leones («тут [водятся] львы»), которым на средневековых картах подписывали неведомые земли на краю ойкумены"
+  },
+  {
+   "id": "raznoe-0be5b34d",
+   "deck": "raznoe",
+   "ask": "Как переводится?",
+   "front": "Damnatio memoriae",
+   "back": "Проклятие памяти",
+   "sheet": "Латинские выражения",
+   "row": 6,
+   "note": "Посмертное наказание, при котором стирались все свидетельства жизни наказанного"
+  },
+  {
+   "id": "raznoe-ec78ef57",
+   "deck": "raznoe",
+   "ask": "Чьё это прозвище?",
+   "front": "Die Werkself (11 рабочих)\nDie Löwen (Львы)\nФармацевты\nNeverkusen",
+   "back": "Байер 04 (Леверкузен)",
+   "sheet": "Спорт",
+   "row": 2,
+   "note": "Неверку́зен (англ. Neverkusen, от англ. never — «никогда» и нем. Leverkusen — Леверкузен, буквально Никогдакузен), также известное как Вицеку́зен (нем. Vizekusen) — прозвище немецкого футбольного клуба «Байер 04» эпохи 2000—2002 годов, данное в связи с тем, что этот клуб, считавшийся фаворитом в ряде турниров, потерпел неудачи в решающих матчах и остался «вечно вторым»"
+  },
+  {
+   "id": "raznoe-23167146",
+   "deck": "raznoe",
+   "ask": "Чьё это прозвище?",
+   "front": "FCB (нем. Der FCB)\nЗвезда юга (нем. Stern des Südens)\nКрасные (нем. Die Roten)\nФК Голливуд (нем. FC Hollywood)",
+   "back": "Бавария (Мюнхен)",
+   "sheet": "Спорт",
+   "row": 3,
+   "note": "Их противостояние с Дортмундской Боруссией являются \"классикой\" немецкого футбола, за что дерби и  получило название \"Der Klassiker\"  \nТакже есть \"Мюнхенское дерби\" с командой \"Мюнхен 1860\", особенность дерюи в том, что раньше команды делили один стадион на двоих; \nДерби с командой \"Нюрнберг\" носит имя \"Дерби Баварии\""
+  },
+  {
+   "id": "raznoe-61931313",
+   "deck": "raznoe",
+   "ask": "Чьё это прозвище?",
+   "front": "Die Schwarzgelben (Чёрно-жёлтые)\nDer BVB\n«Hummeln» (Шмели)",
+   "back": "Боруссия (Дортмунд)",
+   "sheet": "Спорт",
+   "row": 4
+  },
+  {
+   "id": "raznoe-d925119c",
+   "deck": "raznoe",
+   "ask": "Чьё это прозвище?",
+   "front": "Синие (The Blues), Пенсионеры (The Pensioners), Аристократы",
+   "back": "Челси (Лондон)",
+   "sheet": "Спорт",
+   "row": 5,
+   "note": "Не является участником известных английских дерби, разве что стоит отметить Западнолондонское дерби с «Фулхэмом»; действующий обладатель Кубка Лиги Чемпионов (2021/2022)"
+  },
+  {
+   "id": "raznoe-176ff86c",
+   "deck": "raznoe",
+   "ask": "Чьё это прозвище?",
+   "front": "«Бело-небесно-голубые» (итал. Biancocelesti)\n«Бело-голубые» (итал. Biancazzurri)\n«Орлы» (итал. le Aquile)\n«Орлята» (итал. gli Aquilotti)",
+   "back": "Лацио (Рим)",
+   "sheet": "Спорт",
+   "row": 6,
+   "note": "Выступает на олимпийском стадионе в Риме; противостояние с \"Ромой\" получило название \"Столичного/Римского Дерби\"; есть байка, что за Лацио болел Муссолини; и по сей день в фанатской среде Лацио сильны профашистские элементы"
+  },
+  {
+   "id": "raznoe-fe279a06",
+   "deck": "raznoe",
+   "ask": "Чьё это прозвище?",
+   "front": "«Красные» (англ. The Reds); Скаузеры; Ливерхуй",
+   "back": "Ливерпуль (Ливерпуль)",
+   "sheet": "Спорт",
+   "row": 7,
+   "note": "Домашним стадионом команды является \"Энфилд\"; гимном/девизом клуба является фраза/песня \"You’ll Never Walk Alone\"; противостояние с Эвертоном (Ливерпуль) носит название \"Мерсисайдское дерби\" (Дерби Ливерпуля); Северо-западное (притянутое за уши) дерби с Манчестер Юнайтед"
+  },
+  {
+   "id": "raznoe-71b0c536",
+   "deck": "raznoe",
+   "ask": "Чьё это прозвище?",
+   "front": "Red Devils (Красные дьяволы)\nThe Reds (Красные); Клуб Пидорасов",
+   "back": "Манчестер Юнайтед (Манчестер)",
+   "sheet": "Спорт",
+   "row": 8,
+   "note": "«Манчестер Юнайтед» является одним из самых успешных английских клубов по количеству выигранных титулов за всю историю, а под руководством Алекса Фергюсона — самым успешным клубом в Англии, выиграв 38 трофеев с 1986 по 2013 год;\n Традиционными соперниками команды являются «Ливерпуль», «Лидс Юнайтед» и «Манчестер Сити», против которых разыгрываются северо-западное дерби, «дерби роз» и манчестерское дерби соответственно;\nДомашним стадионом является \"Олд Траффорд\""
+  }
+ ]
+}

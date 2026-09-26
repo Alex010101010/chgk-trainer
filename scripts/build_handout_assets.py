@@ -24,7 +24,7 @@ from PIL import Image
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-from build_app_assets import article_image_name
+from build_app_assets import FACTS_IN, article_image_name, fact_image_name
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 BINGO_MANIFEST = os.path.join(ROOT, "data", "bingo_images.json")
@@ -110,6 +110,25 @@ def build_article_images(manifest, src_dir, out_dir):
     return len(done)
 
 
+def build_fact_images(deck_file, src_dir, out_dir):
+    """Картинки карточек фактов (T15) → `fact-<исходник>.jpg`. Смотрятся как
+    иллюстрации статей, а не разглядываются как раздатка — тот же порог."""
+    os.makedirs(out_dir, exist_ok=True)
+    done = set()
+    for c in deck_file["cards"]:
+        path = os.path.join(src_dir, c.get("image") or "")
+        if not c.get("image") or not os.path.exists(path):
+            continue
+        name = fact_image_name(c["image"])
+        if name in done:
+            continue
+        im = Image.open(path).convert("RGB")
+        im.thumbnail((ARTICLE_MAX_SIDE, ARTICLE_MAX_SIDE))
+        im.save(os.path.join(out_dir, name), "JPEG", quality=JPEG_QUALITY, optimize=True)
+        done.add(name)
+    return len(done)
+
+
 def main():
     with open(BINGO_MANIFEST, encoding="utf-8") as f:
         manifest = json.load(f)
@@ -127,6 +146,9 @@ def main():
         os.path.getsize(os.path.join(OUT, n)) for n in os.listdir(OUT) if n.startswith("art-")
     ) / 1024 / 1024
     print(f"{arts} иллюстраций статей -> {OUT} ({art_mb:.2f} МБ)")
+    with open(FACTS_IN, encoding="utf-8") as f:
+        facts = build_fact_images(json.load(f), SRC, OUT)
+    print(f"{facts} картинок карточек фактов -> {OUT}")
     total = sum(os.path.getsize(os.path.join(OUT, n)) for n in mapping.values())
     was = sum(
         i["bytes"] for i in manifest if i.get("isHandout") and i.get("attachedTo")

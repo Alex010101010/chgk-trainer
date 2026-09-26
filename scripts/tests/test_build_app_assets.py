@@ -15,6 +15,8 @@ from build_app_assets import (
     article_images,
     build,
     build_articles,
+    build_facts,
+    fact_image_name,
     handout_file,
     is_boilerplate,
     load_rows,
@@ -213,6 +215,32 @@ def test_article_images():
     )
 
 
+def test_facts():
+    deck_file = {
+        "source": "src", "decks": [{"id": "kartiny", "title": "Картины", "count": 2}],
+        "cards": [
+            {"id": "k-1", "deck": "kartiny", "ask": "?", "front": "Остров мёртвых", "back": "Бёклин",
+             "image": sorted(os.listdir(IMAGES_SRC))[0], "sheet": "ИЗО", "row": 2},
+            {"id": "k-2", "deck": "kartiny", "ask": "?", "front": "Олимпия", "back": "Мане",
+             "image": "nonexistent.png"},
+            {"id": "p-1", "deck": "perifrazy", "ask": "?", "front": "А", "back": "Б"},
+        ],
+    }
+    facts = build_facts(deck_file)
+    by = {c["id"]: c for c in facts["cards"]}
+    check(facts["count"] == 3 and facts["source"] == "src", "count и источник в ассете")
+    check(by["k-1"]["image"].startswith("fact-") and by["k-1"]["image"].endswith(".jpg"),
+          "картинка карточки — fact-<исходник>.jpg")
+    check("image" not in by["k-2"], "нескачанная картинка не объявляется")
+    check("image" not in by["p-1"] and "note" not in by["p-1"], "у карточки без картинки и заметки полей нет")
+    check("sheet" not in by["k-1"] and "row" not in by["k-1"], "служебные поля вычитки не едут")
+
+    real = build_facts()
+    srcs = {fact_image_name(f) for f in os.listdir(IMAGES_SRC)}
+    pics = [c["image"] for c in real["cards"] if "image" in c]
+    check(len(pics) == 7 and all(p in srcs for p in pics), "7 картинок карточек выводятся из data/images")
+
+
 if __name__ == "__main__":
     test_boilerplate_cut()
     test_excluded_dropped_and_count_matches()
@@ -220,5 +248,6 @@ if __name__ == "__main__":
     test_handouts_reach_the_asset()
     test_tehniki_examples_exist_in_corpus()
     test_article_images()
+    test_facts()
     print("FAILED" if _failures else "OK")
     sys.exit(1 if _failures else 0)

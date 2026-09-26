@@ -12,6 +12,10 @@
 `data/bingo_articles.json`. Отдельным ассетом, а не полем вопроса: справка
 одна на тему (их 333), а вопросов 8.5 тысяч, и в вопросах она лежала бы
 тридцатью копиями каждая. Читается лениво, при первом открытии карточки.
+
+Третьим — `app/assets/facts.json`, карточки фактов (T15) из
+`data/facts_cards.json`. Служебные поля вычитки (лист, строка) в приложение
+не едут.
 """
 import json
 import os
@@ -28,6 +32,11 @@ TEHNIKI = os.path.join(ROOT, "app", "assets", "tehniki.json")
 HANDOUTS = os.path.join(ROOT, "app", "assets", "handouts")
 OUT = os.path.join(ROOT, "app", "assets", "questions.json")
 ARTICLES_OUT = os.path.join(ROOT, "app", "assets", "articles.json")
+FACTS_IN = os.path.join(ROOT, "data", "facts_cards.json")
+FACTS_OUT = os.path.join(ROOT, "app", "assets", "facts.json")
+
+# Поля карточки факта, которые едут в приложение. Читатель — `AssetFactRepository`.
+FACT_FIELDS = ("id", "deck", "ask", "front", "back", "note", "image")
 
 # Версия формата ассета. Читатель — `AssetQuestionRepository`.
 ASSET_VERSION = 1
@@ -175,6 +184,36 @@ def build_articles(rows, images=None):
     return {"v": ASSET_VERSION, "count": len(articles), "articles": articles}
 
 
+def fact_image_name(src_file):
+    """Имя картинки карточки в `assets/handouts/` (T15). Всегда JPEG — по той
+    же причине, что у статей: расширение знает и карточка, и сборщик картинок."""
+    return "fact-" + os.path.splitext(src_file)[0] + ".jpg"
+
+
+def build_facts(deck_file=None):
+    if deck_file is None:
+        with open(FACTS_IN, encoding="utf-8") as f:
+            deck_file = json.load(f)
+    cards = []
+    for c in deck_file["cards"]:
+        item = {k: c[k] for k in FACT_FIELDS if c.get(k)}
+        if "image" in item:
+            # Нескачанную картинку не объявляем: имя без файла на Pages
+            # показало бы вместо картинки ошибку.
+            if os.path.exists(os.path.join(IMAGES_SRC, item["image"])):
+                item["image"] = fact_image_name(item["image"])
+            else:
+                del item["image"]
+        cards.append(item)
+    return {
+        "v": ASSET_VERSION,
+        "count": len(cards),
+        "source": deck_file["source"],
+        "decks": [{"id": d["id"], "title": d["title"]} for d in deck_file["decks"]],
+        "cards": cards,
+    }
+
+
 def load_rows():
     rows = []
     for path in (GQ_IN, BINGO_IN):
@@ -211,6 +250,12 @@ def main():
     with_pics = sum(1 for a in articles["articles"] if a.get("images"))
     print(f"{articles['count']} справок -> {ARTICLES_OUT} (без справки тем: {without}), "
           f"с картинками {with_pics}, картинок {pics}")
+
+    facts = build_facts()
+    with open(FACTS_OUT, "w", encoding="utf-8") as f:
+        json.dump(facts, f, ensure_ascii=False, separators=(",", ":"))
+    print(f"{facts['count']} карточек фактов -> {FACTS_OUT}, "
+          f"с картинкой {sum(1 for c in facts['cards'] if 'image' in c)}")
     return 0
 
 
