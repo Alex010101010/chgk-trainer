@@ -94,6 +94,13 @@ double? takenRate(List<JournalEvent> events, {int window = 50}) {
   return taken / slice.length;
 }
 
+/// Сколько вопросов сыграно (T9). Проверка недели не считается — там
+/// называют приём, а не берут вопрос; та же выборка, что в [takenRate].
+int answeredCount(List<JournalEvent> events) => events
+    .whereType<AnswerEvent>()
+    .where((a) => a.mode != GameMode.tehnika)
+    .length;
+
 /// Клише, которые игрок узнаёт. Освоенной считается тема, где **последнее**
 /// суждение оказалось верным (T3).
 ///
@@ -371,4 +378,46 @@ int newFactsToday(List<JournalEvent> events, String deck, DateTime now) {
     if (prev == null || e.day.compareTo(prev) < 0) firstDay[e.cardId] = e.day;
   }
   return firstDay.values.where((d) => d == today).length;
+}
+
+/// Карточек, дошедших до последней коробки (T9, ось фактов).
+int learnedFacts(List<JournalEvent> events) =>
+    factStates(events).values.where((s) => s.learned).length;
+
+enum TehnikaState { mastered, weak, unchecked }
+
+/// Что игрок знает о каждом открытом приёме (T9) — по проверке недели T4b,
+/// другого источника после T26 нет.
+///
+/// Правильный приём в событии не записан: берётся из разметки вопроса,
+/// поэтому нужен [tehnikiOf] (`questionId → приёмы вопроса`). Вопрос с двумя
+/// открытыми приёмами засчитывается обоим — узнан хоть один, значит, игрок
+/// увидел, как вопрос построен.
+///
+/// Как в [masteredThemes], решает **последний** ответ: забытый приём выпадает
+/// из освоенных первым же промахом. Приём, пропавший из разметки при
+/// пересборке корпуса, тихо становится «не проверен» — это не ошибка.
+Map<String, TehnikaState> tehnikaStates(
+  List<JournalEvent> events,
+  Map<String, List<String>> tehnikiOf,
+  Iterable<String> opened,
+) {
+  final last = <String, AnswerEvent>{};
+  final ids = opened.toSet();
+  for (final e in events) {
+    if (e is! AnswerEvent || e.mode != GameMode.tehnika) continue;
+    for (final t in tehnikiOf[e.questionId] ?? const <String>[]) {
+      if (!ids.contains(t)) continue;
+      final prev = last[t];
+      if (prev == null || e.ts >= prev.ts) last[t] = e;
+    }
+  }
+  return {
+    for (final t in opened)
+      t: switch (last[t]?.verdict) {
+        null => TehnikaState.unchecked,
+        Verdict.taken => TehnikaState.mastered,
+        _ => TehnikaState.weak,
+      },
+  };
 }

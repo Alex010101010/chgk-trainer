@@ -109,3 +109,12 @@ class Question {
         'handoutText': handoutText,
       };
 }
+
+/// Все клише корпуса бинго по алфавиту — список того, что может попасться, а
+/// не того, что уже попадалось. Один источник для справочника и профиля (T9):
+/// «всего N» на двух экранах не имеет права разойтись.
+List<String> corpusThemes(List<Question> pool) => <String>{
+      for (final q in pool)
+        if (q.corpus == Corpus.bingo && q.theme != null) q.theme!,
+    }.toList()
+      ..sort();

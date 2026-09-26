@@ -73,7 +73,7 @@ void main() {
 
   testWidgets('момента без арта хватает, чтобы не упасть', (tester) async {
     await tester.pumpWidget(_wrap(
-      const PandaSays(moment: 'weakmap.show'),
+      const PandaSays(moment: 'loading'),
       voice: PandaVoice.silent(),
     ));
     await tester.pump();
@@ -89,6 +89,9 @@ void main() {
         PandaMoments.almost,
         PandaMoments.missed,
         PandaMoments.roundEnd,
+        PandaMoments.streakAlive,
+        PandaMoments.streakBroken,
+        PandaMoments.weakmap,
       ])
         m: PandaPoses.forMoment(m),
       'rare': PandaPoses.sincere,

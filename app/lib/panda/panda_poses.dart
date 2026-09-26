@@ -21,10 +21,13 @@ abstract final class PandaPoses {
         // снята. Насмешка ровно в секунду неудачи — то, чего T8 запрещает.
         PandaMoments.missed => '$_dir/panda_missed.png',
         PandaMoments.roundEnd => '$_dir/panda_clap.png',
+        PandaMoments.streakAlive => '$_dir/panda_thumbs.png',
+        PandaMoments.streakBroken => '$_dir/panda_neutral.png',
+        PandaMoments.weakmap => '$_dir/panda_notes.png',
         _ => null,
       };
 
-  // В ассетах лежат ещё neutral, facepalm, stop, notes, waiting и thumbs —
-  // под моменты, для которых экранов пока нет (T9, T4b). Заводить им строки
-  // здесь значит писать мёртвый маппинг: он приедет вместе с экранами.
+  // В ассетах лежат ещё facepalm, stop и waiting — под моменты, для которых
+  // экранов пока нет. Заводить им строки здесь значит писать мёртвый маппинг:
+  // он приедет вместе с экранами.
 }

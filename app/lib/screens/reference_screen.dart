@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../app_theme.dart';
 import '../data/article_repository.dart';
 import '../data/question_repository.dart';
-import '../journal/event.dart';
 import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
@@ -79,7 +78,7 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
       final read = await log.readAll();
       final events = read.events;
       if (!mounted) return;
-      final themes = _corpusThemes(pool);
+      final themes = corpusThemes(pool);
       setState(() {
         _themes = themes;
         _mastered = masteredThemes(events);
@@ -92,17 +91,6 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
     } catch (e) {
       if (mounted) setState(() => _error = 'Не удалось открыть справочник: $e');
     }
-  }
-
-  /// Все клише корпуса по алфавиту. Это оглавление: список того, что может
-  /// попасться, а не того, что уже попадалось.
-  static List<String> _corpusThemes(List<Question> pool) {
-    final themes = <String>{
-      for (final q in pool)
-        if (q.corpus == Corpus.bingo && q.theme != null) q.theme!,
-    }.toList()
-      ..sort();
-    return themes;
   }
 
   ThemeState _stateOf(String theme) {

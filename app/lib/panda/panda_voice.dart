@@ -12,8 +12,11 @@ abstract final class PandaMoments {
   static const almost = 'verdict.almost';
   static const missed = 'verdict.missed';
   static const roundEnd = 'round.end';
-  // Ниже — моменты, для которых банк написан, а экранов ещё нет:
-  // weakmap.show (T4b), streak.alive / streak.broken (T9), loading, empty.
+  // Профиль (T9). `{n}` — серия дней, `{приём}` — первое слабое место.
+  static const streakAlive = 'streak.alive';
+  static const streakBroken = 'streak.broken';
+  static const weakmap = 'weakmap.show';
+  // Ниже — моменты, для которых банк написан, а экранов ещё нет: loading, empty.
 }
 
 /// Сказанное пандой: текст и признак того, что реплика из редкого пула.

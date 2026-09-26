@@ -11,6 +11,7 @@ import '../model/tehnika.dart';
 import '../widgets/update_button.dart';
 import 'classic_screen.dart';
 import 'daily_screen.dart';
+import 'profile_screen.dart';
 import 'debug_journal_screen.dart';
 import 'bingo_screen.dart';
 import 'tehnika_card_screen.dart';
@@ -130,6 +131,27 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ))
               .toList(),
+            // Последним: профиль — не ритуал, в него заглядывают, а не играют.
+            Card(
+              child: ListTile(
+                key: const Key('home-profile'),
+                contentPadding: const EdgeInsets.all(16),
+                leading: const Icon(Icons.person_outline, size: 32),
+                title: Text('Профиль',
+                    style: Theme.of(context).textTheme.titleLarge),
+                subtitle: const Text('Серия, клише, приёмы, факты'),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => ProfileScreen(
+                      repository: repository ?? AssetQuestionRepository(),
+                      tehnikaRepository:
+                          tehnikaRepository ?? AssetTehnikaRepository(),
+                      factRepository: factRepository ?? AssetFactRepository(),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
