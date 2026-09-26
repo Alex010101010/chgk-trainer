@@ -108,28 +108,10 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Card(
-              child: ListTile(
-                key: const Key('home-tehnika'),
-                contentPadding: const EdgeInsets.all(16),
-                leading: const Icon(Icons.school_outlined, size: 32),
-                title: const Text('Приём недели'),
-                subtitle: const Text('Карточка урока — полминуты'),
-                onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => _TehnikaCardScreen(
-                      repository: repository ?? AssetQuestionRepository(),
-                      tehnikaRepository:
-                          tehnikaRepository ?? AssetTehnikaRepository(),
-                      cardSeen: cardSeen,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            _CheckCard(
+            _TehnikaTile(
               repository: repository ?? AssetQuestionRepository(),
               tehnikaRepository: tehnikaRepository ?? AssetTehnikaRepository(),
+              cardSeen: cardSeen,
             ),
             ..._modes
               .map((m) => Card(
@@ -175,12 +157,23 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
   Tehnika? _tehnika;
   Map<String, Question> _examples = const {};
   bool _repeated = false;
+  ({int left, int daysLeft})? _check;
   String? _error;
 
   @override
   void initState() {
     super.initState();
     _load();
+  }
+
+  Future<void> _openCheck() async {
+    await Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => TehnikaCheckScreen(
+        repository: widget.repository,
+        tehnikaRepository: widget.tehnikaRepository,
+      ),
+    ));
+    if (mounted) _load();
   }
 
   Future<void> _load() async {
@@ -197,6 +190,7 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
       setState(() {
         _tehnika = t;
         _repeated = pick.repeated;
+        _check = checkStatus(tehniki, events, DateTime.now());
         _examples = {
           for (final e in t.examples)
             if (byId[e.questionId] case final q?) e.questionId: q,
@@ -223,6 +217,14 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
               repeated: _repeated,
               onDone: () => Navigator.of(context).pop(),
               doneLabel: 'Закрыть',
+              checkLabel: switch (_check) {
+                null => null,
+                (left: 0, :final daysLeft) =>
+                  'Проверка сыграна · следующая через $daysLeft дн.',
+                (left: kCheckSize, daysLeft: _) => 'Проверка недели',
+                (:final left, daysLeft: _) => 'Проверка недели · осталось $left',
+              },
+              onCheck: (_check?.left ?? 0) > 0 ? _openCheck : null,
             ),
           _ => const Center(child: CircularProgressIndicator()),
         },
@@ -231,31 +233,38 @@ class _TehnikaCardScreenState extends State<_TehnikaCardScreen> {
   }
 }
 
-/// Вход в проверку недели (T4b). Читает журнал сам: `HomeScreen` без
-/// состояния, а карточке нужно знать, сыграна ли проверка, — и узнать это
-/// заново после возврата с её экрана.
+/// «Приём недели» на главном экране. Сама проверка недели (T4b) живёт внутри
+/// карточки урока, чтобы не занимать главный экран, — а подпись напоминает о
+/// ней, пока она не сыграна: вход, о котором нельзя догадаться, всё равно что
+/// отсутствующий.
 ///
-/// Без журнала выше по дереву (тесты голого главного экрана) и на неделе с
-/// одним открытым приёмом — не показывается: выбирать не из чего.
-class _CheckCard extends StatefulWidget {
+/// Журнал читается здесь, потому что `HomeScreen` без состояния, а подпись
+/// должна обновиться после возврата с урока. Без журнала выше по дереву
+/// (тесты голого главного экрана) подпись обычная.
+class _TehnikaTile extends StatefulWidget {
   final QuestionRepository repository;
   final TehnikaRepository tehnikaRepository;
+  final TehnikaCardSeen? cardSeen;
 
-  const _CheckCard({required this.repository, required this.tehnikaRepository});
+  const _TehnikaTile({
+    required this.repository,
+    required this.tehnikaRepository,
+    this.cardSeen,
+  });
 
   @override
-  State<_CheckCard> createState() => _CheckCardState();
+  State<_TehnikaTile> createState() => _TehnikaTileState();
 }
 
-class _CheckCardState extends State<_CheckCard> {
+class _TehnikaTileState extends State<_TehnikaTile> {
   EventLog? _log;
-  int _opened = 0;
-  int _answered = 0;
-  int _daysLeft = 0;
+  bool _checkWaits = false;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    // `dependOn…`, а не `get…`: второй не подписывает, и смена журнала до
+    // подписи не доходила бы.
     final log =
         context.dependOnInheritedWidgetOfExactType<JournalScope>()?.log;
     if (log == null || log == _log) return;
@@ -267,14 +276,9 @@ class _CheckCardState extends State<_CheckCard> {
     try {
       final tehniki = await widget.tehnikaRepository.loadAll();
       final events = (await _log!.readAll()).events;
-      final now = DateTime.now();
-      final week = weekIndex(events, now);
+      final status = checkStatus(tehniki, events, DateTime.now());
       if (!mounted) return;
-      setState(() {
-        _opened = openedTehniki(tehniki, week).length;
-        _answered = tehnikaCheckAnswers(events, now).length;
-        _daysLeft = daysToNextWeek(events, now);
-      });
+      setState(() => _checkWaits = (status?.left ?? 0) > 0);
     } catch (e) {
       debugPrint('[home] проверка недели: $e');
     }
@@ -282,29 +286,24 @@ class _CheckCardState extends State<_CheckCard> {
 
   @override
   Widget build(BuildContext context) {
-    if (_log == null || _opened < 2) return const SizedBox.shrink();
-    final done = _answered >= kCheckSize;
-    final subtitle = done
-        ? 'Сыграна · следующая через $_daysLeft дн.'
-        : _answered > 0
-            ? 'Осталось ${kCheckSize - _answered}'
-            : '$kCheckSize вопросов: какой здесь приём?';
     return Card(
       child: ListTile(
-        key: const Key('home-check'),
-        enabled: !done,
+        key: const Key('home-tehnika'),
         contentPadding: const EdgeInsets.all(16),
-        leading: const Icon(Icons.quiz_outlined, size: 32),
-        title: const Text('Проверка недели'),
-        subtitle: Text(subtitle),
+        leading: const Icon(Icons.school_outlined, size: 32),
+        title: const Text('Приём недели'),
+        subtitle: Text(_checkWaits
+            ? 'Карточка урока · ждёт проверка'
+            : 'Карточка урока — полминуты'),
         onTap: () async {
           await Navigator.of(context).push(MaterialPageRoute(
-            builder: (_) => TehnikaCheckScreen(
+            builder: (_) => _TehnikaCardScreen(
               repository: widget.repository,
               tehnikaRepository: widget.tehnikaRepository,
+              cardSeen: widget.cardSeen,
             ),
           ));
-          if (mounted) _load();
+          if (mounted && _log != null) _load();
         },
       ),
     );

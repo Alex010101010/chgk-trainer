@@ -21,6 +21,12 @@ class TehnikaCard extends StatelessWidget {
   /// тот же урок второй раз читался как поломка (T22).
   final bool repeated;
 
+  /// Вход в проверку недели (T4b) под уроком. `null` — кнопки нет (перед
+  /// раундом «Классики» и на неделе с одним приёмом). [onCheck] `null` при
+  /// заданной подписи — проверка на этой неделе сыграна, кнопка неактивна.
+  final String? checkLabel;
+  final VoidCallback? onCheck;
+
   const TehnikaCard({
     super.key,
     required this.tehnika,
@@ -28,6 +34,8 @@ class TehnikaCard extends StatelessWidget {
     required this.onDone,
     this.repeated = false,
     this.doneLabel = 'Понятно, играем',
+    this.checkLabel,
+    this.onCheck,
   });
 
   @override
@@ -70,6 +78,14 @@ class TehnikaCard extends StatelessWidget {
           onPressed: onDone,
           child: Text(doneLabel),
         ),
+        if (checkLabel case final label?) ...[
+          const SizedBox(height: 8),
+          OutlinedButton(
+            key: const Key('tehnika-card-check'),
+            onPressed: onCheck,
+            child: Text(label),
+          ),
+        ],
       ],
     );
   }

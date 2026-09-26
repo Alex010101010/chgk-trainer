@@ -311,35 +311,64 @@ void main() {
     }
 
     final now = DateTime.now();
+    final start = SessionStartEvent.at(now.subtract(const Duration(days: 8)));
+    AnswerEvent check(String id) =>
+        _answer(id, mode: GameMode.tehnika, now: now, pick: 'a');
 
-    testWidgets('неделя 0 — карточки нет', (tester) async {
-      await pumpHome(tester, [SessionStartEvent.at(now)]);
-      expect(find.byKey(const Key('home-check')), findsNothing);
-    });
+    const plain = 'Карточка урока — полминуты';
+    const waits = 'Карточка урока · ждёт проверка';
 
-    testWidgets('неделя 1 — есть и активна', (tester) async {
-      await pumpHome(tester,
-          [SessionStartEvent.at(now.subtract(const Duration(days: 8)))]);
-      expect(find.byKey(const Key('home-check')), findsOneWidget);
-      expect(find.text('5 вопросов: какой здесь приём?'), findsOneWidget);
-    });
+    Future<void> openLesson(WidgetTester tester) async {
+      await tester.tap(find.byKey(const Key('home-tehnika')));
+      await tester.pumpAndSettle();
+    }
 
-    testWidgets('после двух ответов — «осталось 3», после пяти неактивна',
+    testWidgets('отдельной карточки проверки на главном экране нет',
         (tester) async {
-      final start = SessionStartEvent.at(now.subtract(const Duration(days: 8)));
-      AnswerEvent check(String id) =>
-          _answer(id, mode: GameMode.tehnika, now: now, pick: 'a');
+      await pumpHome(tester, [start]);
+      expect(find.byKey(const Key('home-check')), findsNothing);
+      expect(find.text('Проверка недели'), findsNothing);
+    });
 
+    testWidgets('неделя 0 — ни напоминания, ни кнопки в уроке', (tester) async {
+      await pumpHome(tester, [SessionStartEvent.at(now)]);
+      expect(find.text(plain), findsOneWidget);
+      await openLesson(tester);
+      expect(find.byKey(const Key('tehnika-card-check')), findsNothing);
+    });
+
+    testWidgets('неделя 1 — подпись напоминает, в уроке кнопка активна',
+        (tester) async {
+      await pumpHome(tester, [start]);
+      expect(find.text(waits), findsOneWidget);
+      await openLesson(tester);
+      final b = tester.widget<OutlinedButton>(
+          find.byKey(const Key('tehnika-card-check')));
+      expect(b.onPressed, isNotNull);
+      expect(find.text('Проверка недели'), findsOneWidget);
+
+      await tester.ensureVisible(find.byKey(const Key('tehnika-card-check')));
+      await tester.tap(find.byKey(const Key('tehnika-card-check')));
+      await tester.pumpAndSettle();
+      expect(find.byType(TehnikaCheckScreen), findsOneWidget);
+    });
+
+    testWidgets('после двух ответов — «осталось 3»', (tester) async {
       await pumpHome(tester, [start, check('a0'), check('a1')]);
-      expect(find.text('Осталось 3'), findsOneWidget);
+      expect(find.text(waits), findsOneWidget);
+      await openLesson(tester);
+      expect(find.text('Проверка недели · осталось 3'), findsOneWidget);
+    });
 
-      await pumpHome(tester, [
-        start,
-        for (var i = 0; i < 5; i++) check('a$i'),
-      ]);
-      final tile = tester.widget<ListTile>(find.byKey(const Key('home-check')));
-      expect(tile.enabled, isFalse);
-      expect(find.textContaining('Сыграна'), findsOneWidget);
+    testWidgets('после пяти — подпись обычная, кнопка неактивна',
+        (tester) async {
+      await pumpHome(tester, [start, for (var i = 0; i < 5; i++) check('a$i')]);
+      expect(find.text(plain), findsOneWidget);
+      await openLesson(tester);
+      final b = tester.widget<OutlinedButton>(
+          find.byKey(const Key('tehnika-card-check')));
+      expect(b.onPressed, isNull);
+      expect(find.textContaining('Проверка сыграна'), findsOneWidget);
     });
   });
 }

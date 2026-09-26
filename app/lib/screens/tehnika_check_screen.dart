@@ -98,6 +98,18 @@ List<Question> selectCheckRound(
   return round..shuffle(rnd);
 }
 
+/// Что сказать о проверке недели на входе в неё. `null` — проверки нет:
+/// открыт один приём, выбирать не из чего.
+({int left, int daysLeft})? checkStatus(
+    List<Tehnika> tehniki, List<JournalEvent> events, DateTime now) {
+  if (openedTehniki(tehniki, weekIndex(events, now)).length < 2) return null;
+  final answered = tehnikaCheckAnswers(events, now).length;
+  return (
+    left: max(0, kCheckSize - answered),
+    daysLeft: daysToNextWeek(events, now),
+  );
+}
+
 /// Кнопки приёмов для вопроса. Открытых не больше [kCheckMaxOptions] — все, в
 /// порядке открытия; больше — верный и пять других, выбранных сидом от id
 /// вопроса, чтобы при повторном показе набор не менялся.
