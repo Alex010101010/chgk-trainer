@@ -247,7 +247,7 @@ void main() {
     expect(find.textContaining('build_app_assets.py'), findsOneWidget);
   });
 
-  testWidgets('«Классика» из меню ведёт в режим, остальные — в заглушку',
+  testWidgets('«Классика» и «Бинго» из меню ведут в режимы',
       (tester) async {
     await tester.pumpWidget(JournalScope(
       log: MemoryEventLog(),
@@ -282,11 +282,5 @@ void main() {
     await tester.pumpAndSettle();
     // T3: режим больше не заглушка — открывается сетка кампании.
     expect(find.byKey(const Key('bingo-board')), findsOneWidget);
-
-    await tester.pageBack();
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Тренажёр рассуждений'));
-    await tester.pumpAndSettle();
-    expect(find.text('Скоро'), findsOneWidget);
   });
 }

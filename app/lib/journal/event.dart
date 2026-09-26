@@ -78,6 +78,8 @@ sealed class JournalEvent {
         return BingoGridEvent._fromJson(j, ts, day);
       case 'sessionStart':
         return SessionStartEvent(ts: ts, day: day);
+      case 'fact':
+        return FactEvent._fromJson(j, ts, day);
       default:
         return null;
     }
@@ -291,4 +293,51 @@ class SessionStartEvent extends JournalEvent {
 
   @override
   Map<String, dynamic> body() => const {};
+}
+
+/// Ответ на карточку факта (T15): «знал» или «не знал».
+///
+/// Отдельный тип, а не [AnswerEvent] с `mode: facts`: ответ на вопрос читают
+/// возврат проваленных, доля взятых, урок недели и «виденное» всех режимов —
+/// карточка в любом из них оказалась бы чужой, а фильтр пришлось бы ставить
+/// в восемь мест. Новый `type` старые сборки просто пропускают.
+class FactEvent extends JournalEvent {
+  final String cardId;
+
+  /// Колода карточки. Пишется полем, а не выводится из id: лимит новых
+  /// карточек считается по колоде, а ассет со временем меняется.
+  final String deck;
+  final bool known;
+
+  const FactEvent({
+    required super.ts,
+    required super.day,
+    required this.cardId,
+    required this.deck,
+    required this.known,
+  });
+
+  factory FactEvent.at(DateTime now,
+          {required String cardId, required String deck, required bool known}) =>
+      FactEvent(
+        ts: now.toUtc().millisecondsSinceEpoch,
+        day: localDay(now),
+        cardId: cardId,
+        deck: deck,
+        known: known,
+      );
+
+  @override
+  String get type => 'fact';
+
+  @override
+  Map<String, dynamic> body() => {'cardId': cardId, 'deck': deck, 'known': known};
+
+  static FactEvent? _fromJson(Map<String, dynamic> j, int ts, String day) {
+    final cardId = j['cardId'];
+    final deck = j['deck'];
+    final known = j['known'];
+    if (cardId is! String || deck is! String || known is! bool) return null;
+    return FactEvent(ts: ts, day: day, cardId: cardId, deck: deck, known: known);
+  }
 }

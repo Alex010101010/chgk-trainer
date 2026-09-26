@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../app_theme.dart';
+import '../data/fact_repository.dart';
 import '../data/question_repository.dart';
 import '../data/tehnika_repository.dart';
 import '../journal/event_log.dart';
@@ -7,7 +8,6 @@ import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
-import '../widgets/coming_soon_screen.dart';
 import '../widgets/update_button.dart';
 import 'classic_screen.dart';
 import 'daily_screen.dart';
@@ -15,6 +15,7 @@ import 'debug_journal_screen.dart';
 import 'bingo_screen.dart';
 import 'tehnika_card_screen.dart';
 import 'tehnika_check_screen.dart';
+import 'training_screen.dart';
 
 class _ModeInfo {
   final String title;
@@ -25,8 +26,7 @@ class _ModeInfo {
 
 const _modes = [
   _ModeInfo('Классика', 'Вопрос + таймер 60 сек', Icons.timer_outlined),
-  _ModeInfo('Тренажёр рассуждений', 'Факты → версии → отсечение',
-      Icons.psychology_outlined),
+  _ModeInfo('Тренировка', 'Карточки фактов по колодам', Icons.style_outlined),
   _ModeInfo('Бинго', 'Сетка тем 3×3', Icons.grid_3x3),
 ];
 
@@ -35,6 +35,7 @@ class HomeScreen extends StatelessWidget {
   /// иначе они тянули бы настоящий ассет на 8.6 МБ.
   final QuestionRepository? repository;
   final TehnikaRepository? tehnikaRepository;
+  final FactRepository? factRepository;
 
   /// Флаг «карточку урока уже показывали». Прокидывается сверху, а не
   /// создаётся здесь: иначе экран режима и экран карточки не узнают друг
@@ -45,6 +46,7 @@ class HomeScreen extends StatelessWidget {
     super.key,
     this.repository,
     this.tehnikaRepository,
+    this.factRepository,
     this.cardSeen,
   });
 
@@ -57,9 +59,8 @@ class HomeScreen extends StatelessWidget {
         'Бинго' => BingoScreen(
             repository: repository ?? AssetQuestionRepository(),
           ),
-        _ => ComingSoonScreen(
-            title: title,
-            icon: _modes.firstWhere((m) => m.title == title).icon,
+        _ => TrainingScreen(
+            repository: factRepository ?? AssetFactRepository(),
           ),
       };
 

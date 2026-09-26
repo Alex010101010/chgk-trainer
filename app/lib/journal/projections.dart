@@ -316,3 +316,59 @@ int dailyStreak(List<JournalEvent> events, DateTime now) {
   }
   return streak;
 }
+
+/// Интервалы коробок Лейтнера (T15), в днях. Коробки нумеруются с единицы:
+/// новая карточка — в первой, «знал» переносит в следующую (выше пятой
+/// некуда), «не знал» — обратно в первую.
+const List<int> kLeitnerDays = [1, 2, 4, 8, 16];
+
+/// Сколько новых карточек колода выдаёт за день. На колоду, а не на всё
+/// приложение: общий лимит сжигался бы на первой открытой колоде.
+const int kNewFactsPerDay = 10;
+
+/// Где карточка сейчас: коробка 1..5 и день последнего ответа.
+class FactState {
+  final int box;
+  final String lastDay;
+
+  const FactState(this.box, this.lastDay);
+
+  bool get learned => box == kLeitnerDays.length;
+
+  /// Пора ли повторить. Считается по дням, а не по часам: карточка, отвеченная
+  /// вечером, подходит на следующее утро, а не через сутки. Граница
+  /// включительная — срок ровно сегодня значит «пора».
+  bool isDue(DateTime now) {
+    final due = DateTime.parse(lastDay).add(Duration(days: kLeitnerDays[box - 1]));
+    return !DateTime.parse(localDay(now)).isBefore(due);
+  }
+}
+
+/// Состояние карточек, на которые уже отвечали. Карточки без ответов в свёртку
+/// не попадают — они новые.
+Map<String, FactState> factStates(List<JournalEvent> events) {
+  final facts = events.whereType<FactEvent>().toList()
+    ..sort((a, b) => a.ts.compareTo(b.ts));
+  final out = <String, FactState>{};
+  for (final e in facts) {
+    final box = out[e.cardId]?.box ?? 1;
+    out[e.cardId] = FactState(
+      e.known ? (box + 1).clamp(1, kLeitnerDays.length) : 1,
+      e.day,
+    );
+  }
+  return out;
+}
+
+/// Сколько новых карточек колоды уже открыто сегодня — первый ответ на них
+/// пришёлся на сегодняшний день.
+int newFactsToday(List<JournalEvent> events, String deck, DateTime now) {
+  final today = localDay(now);
+  final firstDay = <String, String>{};
+  for (final e in events.whereType<FactEvent>()) {
+    if (e.deck != deck) continue;
+    final prev = firstDay[e.cardId];
+    if (prev == null || e.day.compareTo(prev) < 0) firstDay[e.cardId] = e.day;
+  }
+  return firstDay.values.where((d) => d == today).length;
+}
