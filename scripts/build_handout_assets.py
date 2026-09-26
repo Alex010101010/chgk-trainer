@@ -22,6 +22,10 @@ import sys
 
 from PIL import Image
 
+sys.path.insert(0, os.path.dirname(__file__))
+
+from build_app_assets import article_image_name
+
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 BINGO_MANIFEST = os.path.join(ROOT, "data", "bingo_images.json")
 # У gq в манифесте есть и нескачанные картинки, и чисто текстовая раздатка:
@@ -37,6 +41,12 @@ OUT = os.path.join(ROOT, "app", "assets", "handouts")
 PALETTE_LIMIT = 512
 
 JPEG_QUALITY = 85
+
+# Иллюстрации статей справочника (T14) — не раздатка: их смотрят, а не
+# разглядывают, и больше экрана телефона им не нужно. Исходники в основном
+# до 800 px, так что на наборе 26.09.2026 порог почти ничего не срезал
+# (666 картинок, 54 МБ) — это страховка от единичных огромных.
+ARTICLE_MAX_SIDE = 1200
 
 
 def encode(path, out_dir, name):
@@ -80,6 +90,26 @@ def build(manifest, src_dir, out_dir):
     return mapping
 
 
+def build_article_images(manifest, src_dir, out_dir):
+    """Иллюстрации статей (T14) → `art-<исходник>.jpg`. Возвращает число файлов."""
+    os.makedirs(out_dir, exist_ok=True)
+    done = set()
+    for item in manifest:
+        if item.get("isHandout") or not item.get("file") or not item.get("articleName"):
+            continue
+        path = os.path.join(src_dir, item["file"])
+        name = article_image_name(item["file"])
+        # Нескачанную картинку статья и не объявит (`article_images`), так что
+        # здесь пропуск не молчаливая дыра, а тот же фильтр с другой стороны.
+        if name in done or not os.path.exists(path):
+            continue
+        im = Image.open(path).convert("RGB")
+        im.thumbnail((ARTICLE_MAX_SIDE, ARTICLE_MAX_SIDE))
+        im.save(os.path.join(out_dir, name), "JPEG", quality=JPEG_QUALITY, optimize=True)
+        done.add(name)
+    return len(done)
+
+
 def main():
     with open(BINGO_MANIFEST, encoding="utf-8") as f:
         manifest = json.load(f)
@@ -91,6 +121,12 @@ def main():
         manifest += [i for i in json.load(f)
                      if i.get("status") == "ok" and i["attachedTo"] in playable]
     mapping = build(manifest, SRC, OUT)
+    with open(BINGO_MANIFEST, encoding="utf-8") as f:
+        arts = build_article_images(json.load(f), SRC, OUT)
+    art_mb = sum(
+        os.path.getsize(os.path.join(OUT, n)) for n in os.listdir(OUT) if n.startswith("art-")
+    ) / 1024 / 1024
+    print(f"{arts} иллюстраций статей -> {OUT} ({art_mb:.2f} МБ)")
     total = sum(os.path.getsize(os.path.join(OUT, n)) for n in mapping.values())
     was = sum(
         i["bytes"] for i in manifest if i.get("isHandout") and i.get("attachedTo")

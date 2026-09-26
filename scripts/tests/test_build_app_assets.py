@@ -10,7 +10,11 @@ from build_app_assets import (
     ASSET_VERSION,
     FIELDS,
     HANDOUTS,
+    IMAGES_SRC,
+    article_image_name,
+    article_images,
     build,
+    build_articles,
     handout_file,
     is_boilerplate,
     load_rows,
@@ -170,11 +174,51 @@ def test_tehniki_examples_exist_in_corpus():
         )
 
 
+def test_article_images():
+    """Иллюстрации статей (T14): имя выводится из скачанного исходника, раздатки
+    вопросов в статью не идут, у статьи без картинок поля нет вовсе."""
+    manifest = [
+        {"articleName": "Ковентри", "file": "a.jpg", "isHandout": False},
+        {"articleName": "Ковентри", "file": "b.png", "isHandout": False},
+        {"articleName": "Ковентри", "file": "a.jpg", "isHandout": False},
+        {"articleName": "Ковентри", "file": "h.jpg", "isHandout": True, "attachedTo": "b-1"},
+        {"articleName": "Ковентри", "file": "нет-такого.jpg", "isHandout": False},
+    ]
+    real = [f for f in os.listdir(IMAGES_SRC)][:2]
+    manifest[0]["file"] = manifest[2]["file"] = real[0]
+    manifest[1]["file"] = real[1]
+    manifest[3]["file"] = real[0]
+    images = article_images(manifest)
+    check(
+        images.get("Ковентри") == [article_image_name(real[0]), article_image_name(real[1])],
+        "картинки статьи — скачанные, без дублей и без раздатки вопроса",
+    )
+    check(article_image_name("x.png") == "art-x.jpg", "имя всегда JPEG с приставкой art-")
+
+    rows = load_rows()
+    arts = build_articles([r for r in rows if r.get("theme")], images={"Ковентри": ["art-x.jpg"]})
+    by = {a["theme"]: a for a in arts["articles"]}
+    check(by.get("Ковентри", {}).get("images") == ["art-x.jpg"], "поле images доезжает до статьи")
+    check(
+        all("images" not in a for t, a in by.items() if t != "Ковентри"),
+        "у статьи без картинок поля images нет",
+    )
+
+    # Настоящий набор: каждое объявленное имя выводится из существующего исходника.
+    real_images = article_images()
+    srcs = {article_image_name(f) for f in os.listdir(IMAGES_SRC)}
+    check(
+        all(n in srcs for names in real_images.values() for n in names),
+        f"все {sum(map(len, real_images.values()))} картинок статей есть в data/images",
+    )
+
+
 if __name__ == "__main__":
     test_boilerplate_cut()
     test_excluded_dropped_and_count_matches()
     test_both_corpora_in_asset()
     test_handouts_reach_the_asset()
     test_tehniki_examples_exist_in_corpus()
+    test_article_images()
     print("FAILED" if _failures else "OK")
     sys.exit(1 if _failures else 0)

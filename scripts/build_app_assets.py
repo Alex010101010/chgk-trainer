@@ -22,6 +22,8 @@ ROOT = os.path.join(os.path.dirname(__file__), "..")
 GQ_IN = os.path.join(ROOT, "data", "gq_clean.json")
 BINGO_IN = os.path.join(ROOT, "data", "bingo_clean.json")
 ARTICLES_IN = os.path.join(ROOT, "data", "bingo_articles.json")
+IMAGES_MANIFEST = os.path.join(ROOT, "data", "bingo_images.json")
+IMAGES_SRC = os.path.join(ROOT, "data", "images")
 TEHNIKI = os.path.join(ROOT, "app", "assets", "tehniki.json")
 HANDOUTS = os.path.join(ROOT, "app", "assets", "handouts")
 OUT = os.path.join(ROOT, "app", "assets", "questions.json")
@@ -128,7 +130,34 @@ def build(rows, tehniki=None):
     return {"v": ASSET_VERSION, "count": len(out), "questions": out}
 
 
-def build_articles(rows):
+def article_image_name(src_file):
+    """Имя иллюстрации статьи в `assets/handouts/` (T14). Выводится из имени
+    исходника без кодирования, поэтому `build_handout_assets.py` пишет статьи
+    всегда в JPEG: иначе расширение знал бы только он, а статья — нет."""
+    return "art-" + os.path.splitext(src_file)[0] + ".jpg"
+
+
+def article_images(manifest=None):
+    """Тема → иллюстрации статьи в порядке манифеста. Раздатки вопросов сюда не
+    идут — у них своё поле `handout`; нескачанные тоже: имя без файла на Pages
+    показало бы вместо картинки ошибку."""
+    if manifest is None:
+        with open(IMAGES_MANIFEST, encoding="utf-8") as f:
+            manifest = json.load(f)
+    out = {}
+    for item in manifest:
+        if item.get("isHandout") or not item.get("file") or not item.get("articleName"):
+            continue
+        if not os.path.exists(os.path.join(IMAGES_SRC, item["file"])):
+            continue
+        names = out.setdefault(item["articleName"], [])
+        name = article_image_name(item["file"])
+        if name not in names:
+            names.append(name)
+    return out
+
+
+def build_articles(rows, images=None):
     """Справка едет только для тем, которые есть в собранном корпусе: тема без
     вопросов в сетку не попадёт, и открывать её справку неоткуда."""
     themes = {q["theme"] for q in rows if q.get("theme")}
@@ -139,6 +168,10 @@ def build_articles(rows):
         )
     with open(ARTICLES_IN, encoding="utf-8") as f:
         articles = [a for a in json.load(f) if a["theme"] in themes]
+    images = article_images() if images is None else images
+    for a in articles:
+        if images.get(a["theme"]):
+            a["images"] = images[a["theme"]]
     return {"v": ASSET_VERSION, "count": len(articles), "articles": articles}
 
 
@@ -174,7 +207,10 @@ def main():
     with open(ARTICLES_OUT, "w", encoding="utf-8") as f:
         json.dump(articles, f, ensure_ascii=False, separators=(",", ":"))
     without = len(themes) - articles["count"]
-    print(f"{articles['count']} справок -> {ARTICLES_OUT} (без справки тем: {without})")
+    pics = sum(len(a.get("images", ())) for a in articles["articles"])
+    with_pics = sum(1 for a in articles["articles"] if a.get("images"))
+    print(f"{articles['count']} справок -> {ARTICLES_OUT} (без справки тем: {without}), "
+          f"с картинками {with_pics}, картинок {pics}")
     return 0
 
 

@@ -1,5 +1,6 @@
 import 'package:chgk_trainer/app_theme.dart';
 import 'package:chgk_trainer/data/article_repository.dart';
+import 'package:chgk_trainer/data/handout_store.dart';
 import 'package:chgk_trainer/data/question_repository.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/journal/event_log.dart';
@@ -82,6 +83,12 @@ Future<void> _pump(WidgetTester tester, EventLog log) async {
             theme: 'Ковентри',
             text: 'Город разбомбили в 1940-м.',
             source: 'wiki',
+          ),
+          'Титаник': const Article(
+            theme: 'Титаник',
+            text: 'Лайнер утонул в 1912-м.',
+            source: 'wiki',
+            images: ['art-a.jpg', 'art-b.jpg'],
           ),
         }),
       ),
@@ -298,10 +305,74 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('reference-error')), findsOneWidget);
   });
+
+
+  // T14: поиск по оглавлению.
+  Future<void> search(WidgetTester tester, String text) async {
+    await tester.enterText(find.byKey(const Key('reference-search')), text);
+    await tester.pumpAndSettle();
+  }
+
+  testWidgets('поиск без учёта регистра оставляет совпавшие', (tester) async {
+    await _pump(tester, MemoryEventLog());
+    await search(tester, 'КОВЕН');
+    expect(find.text('Ковентри'), findsOneWidget);
+    expect(find.text('Мадлен'), findsNothing);
+    expect(find.text('Титаник'), findsNothing);
+    // Счётчик кампании — про кампанию, а не про выдачу поиска.
+    expect(find.text('Узнано 0 · встречалось 0 · всего 3'), findsOneWidget);
+  });
+
+  testWidgets('поиск находит и свои реалии', (tester) async {
+    final log = MemoryEventLog();
+    await log.append(_note('Ёжик в тумане', 'мультфильм Норштейна'));
+    await _pump(tester, log);
+    await search(tester, 'ежик');
+    expect(find.text('Ёжик в тумане'), findsOneWidget);
+    expect(find.text('Ковентри'), findsNothing);
+  });
+
+  testWidgets('ничего не нашлось — сообщение, крестик возвращает список',
+      (tester) async {
+    await _pump(tester, MemoryEventLog());
+    await search(tester, 'щщщ');
+    expect(find.byKey(const Key('reference-no-match')), findsOneWidget);
+    await tester.tap(find.byKey(const Key('reference-search-clear')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('reference-no-match')), findsNothing);
+    expect(find.text('Титаник'), findsOneWidget);
+  });
+
+  // T14: иллюстрации статьи.
+  testWidgets('у статьи с картинками лента есть, без картинок нет',
+      (tester) async {
+    final prev = HandoutStore.instance;
+    HandoutStore.instance = _NoNetworkStore();
+    addTearDown(() => HandoutStore.instance = prev);
+    await _pump(tester, MemoryEventLog());
+
+    await tester.tap(find.text('Титаник'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('article-images')), findsOneWidget);
+    // Без сети — значок на каждой картинке, а текст справки на месте.
+    expect(find.byKey(const Key('article-image-missing')), findsNWidgets(2));
+    expect(find.text('Лайнер утонул в 1912-м.'), findsOneWidget);
+
+    await tester.tapAt(const Offset(10, 10)); // закрыть лист
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Ковентри'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('article-images')), findsNothing);
+  });
 }
 
 class BrokenRepository implements QuestionRepository {
   @override
   Future<List<Question>> loadAll() async =>
       throw const QuestionAssetException('Ассет вопросов не собран.');
+}
+
+class _NoNetworkStore implements HandoutStore {
+  @override
+  Future<ImageProvider> resolve(String file) async => throw Exception('нет сети');
 }

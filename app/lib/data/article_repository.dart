@@ -14,11 +14,16 @@ class Article {
   final String source;
   final String? url;
 
+  /// Иллюстрации статьи (T14) — имена файлов на Pages рядом с раздатками,
+  /// `art-<исходник>.jpg`. Пусто — у статьи картинок нет.
+  final List<String> images;
+
   const Article({
     required this.theme,
     required this.text,
     required this.source,
     this.url,
+    this.images = const [],
   });
 
   static Article? fromJson(Object? json) {
@@ -31,6 +36,9 @@ class Article {
       text: text,
       source: json['source'] is String ? json['source'] as String : 'wiki',
       url: json['url'] is String ? json['url'] as String : null,
+      images: json['images'] is List
+          ? (json['images'] as List).whereType<String>().toList()
+          : const [],
     );
   }
 }

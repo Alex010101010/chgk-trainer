@@ -62,7 +62,7 @@ class _HandoutImageState extends State<HandoutImage> {
             key: const Key('handout-open'),
             onTap: () => showDialog<void>(
               context: context,
-              builder: (_) => _HandoutViewer(image: image),
+              builder: (_) => HandoutViewer(image: image),
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -111,10 +111,12 @@ class _HandoutImageState extends State<HandoutImage> {
       );
 }
 
-class _HandoutViewer extends StatelessWidget {
+/// Картинка на весь экран: щипок и двойной тап. Общий для раздатки и
+/// иллюстраций справочника (T14).
+class HandoutViewer extends StatelessWidget {
   final ImageProvider image;
 
-  const _HandoutViewer({required this.image});
+  const HandoutViewer({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {

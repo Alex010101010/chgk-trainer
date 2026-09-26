@@ -51,6 +51,20 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
   String? _error;
   bool _started = false;
 
+  /// Поиск по оглавлению: 329 строк листаются, но искать по ним глазами
+  /// нельзя. Нормализация та же, что у своих реалий (T24): регистр и «ё».
+  final _search = TextEditingController();
+  String _query = '';
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
+
+  bool _matches(String theme) =>
+      _query.isEmpty || normalizeTheme(theme).contains(_query);
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -174,7 +188,8 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
     final themes = _themes;
     if (themes == null) return const Center(child: CircularProgressIndicator());
 
-    final custom = _custom.keys.toList()..sort();
+    final custom = _custom.keys.where(_matches).toList()..sort();
+    final shown = themes.where(_matches).toList();
     return Column(
       children: [
         Padding(
@@ -197,8 +212,34 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
-        const SizedBox(height: 8),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+          child: TextField(
+            key: const Key('reference-search'),
+            controller: _search,
+            onChanged: (v) => setState(() => _query = normalizeTheme(v)),
+            decoration: InputDecoration(
+              hintText: 'Найти клише',
+              prefixIcon: const Icon(Icons.search),
+              suffixIcon: _query.isEmpty
+                  ? null
+                  : IconButton(
+                      key: const Key('reference-search-clear'),
+                      icon: const Icon(Icons.close),
+                      onPressed: () => setState(() {
+                        _search.clear();
+                        _query = '';
+                      }),
+                    ),
+            ),
+          ),
+        ),
         const Divider(height: 1),
+        if (custom.isEmpty && shown.isEmpty)
+          const Padding(
+            padding: EdgeInsets.all(24),
+            child: Text('Ничего не нашлось', key: Key('reference-no-match')),
+          ),
         Expanded(
           child: CustomScrollView(
             key: const Key('reference-list'),
@@ -211,11 +252,12 @@ class _ReferenceScreenState extends State<ReferenceScreen> {
                   itemCount: custom.length,
                   itemBuilder: (context, i) => _customRow(custom[i]),
                 ),
-                SliverToBoxAdapter(child: _sectionTitle('Все клише')),
+                if (shown.isNotEmpty)
+                  SliverToBoxAdapter(child: _sectionTitle('Все клише')),
               ],
               SliverList.builder(
-                itemCount: themes.length,
-                itemBuilder: (context, i) => _row(themes[i]),
+                itemCount: shown.length,
+                itemBuilder: (context, i) => _row(shown[i]),
               ),
               // Место под кнопкой: без него она накрывает последнюю строку.
               const SliverToBoxAdapter(child: SizedBox(height: 88)),
