@@ -53,6 +53,9 @@ class FactDeckScreen extends StatefulWidget {
 }
 
 class _FactDeckScreenState extends State<FactDeckScreen> {
+  /// Лицо длиннее — абзац, а не термин.
+  static const int _longFront = 120;
+
   late EventLog _log;
   DateTime Function() get _now => widget.now ?? DateTime.now;
   bool _started = false;
@@ -149,7 +152,13 @@ class _FactDeckScreenState extends State<FactDeckScreen> {
             style: text.labelLarge
                 ?.copyWith(color: theme.colorScheme.onSurfaceVariant)),
         const SizedBox(height: 8),
-        Text(card.front, key: const Key('fact-front'), style: text.headlineSmall),
+        // Лицо-абзац из прозы (T32) заголовком не читается — крупно только
+        // короткие лица пар.
+        Text(card.front,
+            key: const Key('fact-front'),
+            style: card.front.length > _longFront
+                ? text.bodyLarge
+                : text.headlineSmall),
         if (card.image != null) ...[
           const SizedBox(height: 16),
           HandoutImage(file: card.image!),

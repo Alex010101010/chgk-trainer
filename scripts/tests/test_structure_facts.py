@@ -9,11 +9,16 @@ from structure_facts import (
     DECKS,
     DUMP,
     FIXES,
+    MASK,
+    PROSE_SOURCES,
     SOURCES,
     apply_fixes,
     build,
     card_id,
     cards_from_sheet,
+    prose_cards,
+    split_head,
+    unmasked,
 )
 
 _failures = []
@@ -102,7 +107,70 @@ def test_real_dump():
     check(all(counts[d] > 0 for d, _ in DECKS), "ни одной пустой колоды")
     ids = [c["id"] for c in result["cards"]]
     check(len(ids) == len(set(ids)), "id карточек уникальны")
-    check(sum(1 for c in result["cards"] if c.get("image")) == 7, "у семи картин есть картинка")
+    check(sum(1 for c in result["cards"] if c.get("image")) == 9,
+          "картинки у семи картин и у двух абзацев прозы ИЗО")
+    prose = [c for c in result["cards"] if c["ask"] == "Кто или что это?" and c.get("sheet") != "Перифразы"]
+    check(len(prose) > 750, f"проза стала карточками (сейчас {len(prose)})")
+    leaks = [c["id"] for c in prose if c["id"] not in fixes and unmasked(c["front"], c["back"])]
+    check(leaks == [], f"на лице нет термина сквозь маску без вычитки: {leaks[:5]}")
+
+
+def prose(rows, sheet="Рандом", images=()):
+    src = next(x for x in PROSE_SOURCES if x["sheet"] == sheet)
+    got, dropped = prose_cards(src, {"name": sheet, "rows": rows, "images": list(images)})
+    return got, dropped
+
+
+def test_prose_head_and_mask():
+    got, _ = prose([{"row": 1, "cells": [
+        "Альтамира — пещера в Испании. Рисунки Альтамиры открыты в 1879 году."]}])
+    c = got[0]
+    check(c["back"] == "Альтамира", "оборот — термин")
+    check("Альтамир" not in c["front"] and c["front"].startswith("Пещера в Испании"),
+          "на лице термина нет, лицо с заглавной")
+    check(f"Рисунки {MASK} открыты" in c["front"], "склонённая форма термина замаскирована")
+    check(c["note"].startswith("Альтамира —"), "на обороте абзац целиком")
+
+
+def test_prose_variants_and_dates():
+    got, _ = prose([
+        {"row": 1, "cells": ["Иводзима (Ио) — остров. На Ио нет населения."]},
+        {"row": 2, "cells": ["Ян Гевелий (1611-1687) — польский астроном."]},
+        {"row": 3, "cells": ["Тест Бекдел (часто — тест Бехдель) — тест на предвзятость."]},
+    ])
+    check(f"На {MASK} нет" in got[0]["front"], "вариант из скобок замаскирован")
+    check(got[1]["front"].startswith("(1611-1687) Польский"), "даты из скобок уходят на лицо подсказкой")
+    check(got[2]["back"] == "Тест Бекдел", "тире внутри скобки не режет термин")
+
+
+def test_prose_without_head_dropped():
+    got, dropped = prose([{"row": 1, "cells": ["Нобелевская премия мира вручается в Осло"]}])
+    check(got == [] and len(dropped) == 1, "абзац без «Термин —» выпадает и считается")
+    check(split_head("Фра-Дьяволо — разбойник") == ("Фра-Дьяволо", "разбойник"),
+          "дефис внутри слова — не тире")
+    check(split_head("Этци- ледяная мумия") == ("Этци", "ледяная мумия"), "тире без пробела перед")
+
+
+def test_prose_inline_in_pair_sheet():
+    got, _ = prose([
+        {"row": 1, "cells": ["Картина", "Автор"]},
+        {"row": 2, "cells": ["Остров мёртвых", "Арнольд Бёклин"]},
+        {"row": 67, "cells": ["Рой Лихтенштейн — американский художник, поп-арт."]},
+    ], sheet="Изобразительное искусство", images=[{"row": 67, "col": 8, "file": "r.png"}])
+    check([c["back"] for c in got] == ["Рой Лихтенштейн"], "в листе-паре прозой считается только одна первая ячейка")
+    check(got[0].get("image") == "r.png", "картинка у строки прозы едет в карточку")
+
+
+def test_fix_sub():
+    deck = [{"id": "d-1", "front": "Дом Беккета. Беккет", "back": "Бекет", "note": "Бекет — Беккет, опечтка"}]
+    out = apply_fixes(deck, {"d-1": {"sub": [["опечтка", "опечатка"], ["Беккет", MASK, "front"]]}})
+    check(out[0]["note"] == "Бекет — Беккет, опечатка", "замена без поля правит и абзац; лицевая не трогает абзац")
+    check("Беккет" not in out[0]["front"], "замена «front» правит лицо")
+    try:
+        apply_fixes(deck, {"d-1": {"sub": [["нет такого", "x"]]}})
+        check(False, "устаревший фрагмент роняет сборку")
+    except SystemExit:
+        check(True, "устаревший фрагмент роняет сборку")
 
 
 if __name__ == "__main__":
@@ -112,5 +180,10 @@ if __name__ == "__main__":
     test_fixes()
     test_card_id_stable()
     test_real_dump()
+    test_prose_head_and_mask()
+    test_prose_variants_and_dates()
+    test_prose_without_head_dropped()
+    test_prose_inline_in_pair_sheet()
+    test_fix_sub()
     print("FAILED" if _failures else "OK")
     sys.exit(1 if _failures else 0)

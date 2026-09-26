@@ -238,7 +238,7 @@ def test_facts():
     real = build_facts()
     srcs = {fact_image_name(f) for f in os.listdir(IMAGES_SRC)}
     pics = [c["image"] for c in real["cards"] if "image" in c]
-    check(len(pics) == 7 and all(p in srcs for p in pics), "7 картинок карточек выводятся из data/images")
+    check(len(pics) == 9 and all(p in srcs for p in pics), "9 картинок карточек (7 картин и 2 абзаца прозы ИЗО) выводятся из data/images")
 
 
 if __name__ == "__main__":

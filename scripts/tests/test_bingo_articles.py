@@ -9,7 +9,7 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from structure_bingo_articles import build, index_prose, wiki_prose
+from structure_bingo_articles import build, index_prose, leaks, wiki_prose
 
 _failures = []
 
@@ -65,12 +65,128 @@ def test_wiki_section_heading_is_marked_and_split_off():
           "вики: заголовок не склеен с абзацем")
 
 
-def test_index_prose_stops_at_the_first_quote():
+def test_index_prose_keeps_text_before_the_question_and_drops_the_question():
     prose = index_prose(INDEX_BLOCKS)
     check("Мартина Лютера" in prose and "Реформации" in prose,
           "индекс: абзацы до вопроса на месте")
     check("Кубок Европы" not in prose and "индульгенция" not in prose,
           "индекс: вопрос и ответ в справку не попали")
+
+
+# Кусок «Ковентри» (T31): три раздела, два из них — после вопросов. У первой
+# записи в комментарии пустая строка — наивная граница «первая пустая строка
+# после ответа» утащила бы хвост комментария в справку.
+WIKI_COVENTRY = (
+    'Ковентри появляется в вопросах по трём разным причинам.\n'
+    '\n'
+    '  Немецкая бомбардировка \n'
+    'В 1940 году город был практически полностью уничтожен.\n'
+    '\n'
+    '"Знатокиада - 2009" (Эйлат).  2 тур. Вопрос 9.\n'
+    'Кафедральный собор этого города был освящен в 1962 году. Назовите город.\n'
+    'Ответ: Ковентри.\n'
+    ' Комментарий: У Мандельштама:\n'
+    '\n'
+    '     Леди Годиву с распущенной рыжею гривой. Источник: 1. http://x.ru\n'
+    '\n'
+    '    3. http://y.ru Автор: Михаил Иванов (Саратов)\n'
+    '\n'
+    '  Леди Годива \n'
+    'Ковентри и здесь оказался хорошим примером.\n'
+    '\n'
+    '"Покорение Меотиды - 2009" (Ейск).  2 тур. Вопрос 12.\n'
+    'Назовите европейский город, где выбирают лучшую ЕЕ.\n'
+    'Ответ: Ковентри.\n'
+    ' Комментарий: Фестиваль. Автор: Григорий Алхазов (Кишинев)\n'
+    '\n'
+    '  Города-побратимы \n'
+    'С Ковентри и Сталинграда началась история городов-побратимов.\n'
+    '\n'
+    '  См. также \n'
+    'Сталинград\n'
+)
+
+
+def test_wiki_prose_takes_sections_after_questions():
+    prose = wiki_prose(WIKI_COVENTRY)
+    for h in ("## Немецкая бомбардировка", "## Леди Годива", "## Города-побратимы"):
+        check(h in prose, f"вики: раздел «{h[3:]}» на месте")
+    check("хорошим примером" in prose and "побратимов" in prose,
+          "вики: проза после вопросов на месте")
+
+
+def test_wiki_prose_leaks_nothing_from_records():
+    prose = wiki_prose(WIKI_COVENTRY)
+    for bit in ("Назовите", "Ответ", "Автор", "Годиву с распущенной", "http", "Эйлат"):
+        check(bit not in prose, f"вики: «{bit}» из записи в справку не попало")
+    check(leaks(prose) == [], "вики: страж утечек молчит")
+
+
+def test_wiki_see_also_is_dropped_and_indented_list_is_not_a_heading():
+    prose = wiki_prose(WIKI_COVENTRY)
+    check("См. также" not in prose and "Сталинград\n" not in prose + "\n",
+          "вики: «См. также» выброшено вместе с содержимым")
+    films = wiki_prose("Фильмы:\n\n Иваново детство;\n Солярис.\n")
+    check("• Иваново детство;\n• Солярис." in films and "## " not in films,
+          "вики: строки с отступом — список, а не заголовок")
+
+
+# Кусок «HAL 9000» и «Адрианова вала»: раздатка абзацами внутри записи,
+# связка «или», запись без автора, стих, «Источники» со ссылками в конце.
+INDEX_HAL = [
+    {"type": "heading", "text": "HAL 9000"},
+    {"type": "p", "text": "HAL 9000 — вымышленный компьютер."},
+    {"type": "quote", "text": "Онлайн-турнир. Тур 2."},
+    {"type": "quote", "text": "Вопрос 18:"},
+    {"type": "p", "text": "Раздаточный материал"},
+    {"type": "p", "text": "NY"},
+    {"type": "quote", "text": "В машине героя установлен компьютер."},
+    {"type": "quote", "text": "Ответ: 9000."},
+    {"type": "quote", "text": "Автор: Александр Мерзликин"},
+    {"type": "p", "text": "HAL был создан 12 января 1997 года."},
+    {"type": "p", "text": "или"},
+    {"type": "p", "text": "Вопрос 26"},
+    {"type": "quote", "text": "Реконкиста · янв. 2023"},
+    {"type": "quote", "text": "Текст второго вопроса."},
+    {"type": "p", "text": "Ответ: IBM."},
+    {"type": "quote", "text": "Комментарий: без автора."},
+    {"type": "heading", "text": "Интересные факты"},
+    {"type": "list", "text": "Киплинг посвятил валу три рассказа."},
+    {"type": "aside", "text": "Я буду Риму здесь служить,"},
+    {"type": "aside", "text": "Болота гатить, лес валить."},
+    {"type": "list", "text": "Сцены «Короля Артура» происходят у вала."},
+    {"type": "p", "text": "Источники:"},
+    {"type": "list", "text": "https://ru.wikipedia.org/wiki/HAL_9000"},
+]
+
+
+def test_index_prose_takes_text_between_questions():
+    prose = index_prose(INDEX_HAL, "HAL 9000")
+    check("12 января 1997" in prose, "индекс: проза между вопросами на месте")
+    check("## Интересные факты" in prose, "индекс: заголовок раздела помечен")
+    check("## HAL 9000" not in prose, "индекс: заголовок-имя статьи выброшен")
+    check("• Киплинг" in prose and "• Сцены" in prose, "индекс: пункты списка")
+    check("Я буду Риму здесь служить,\nБолота гатить" in prose,
+          "индекс: стих — один абзац построчно")
+
+
+def test_index_prose_leaks_nothing_from_records():
+    prose = index_prose(INDEX_HAL, "HAL 9000")
+    for bit in ("Раздаточный", "NY", "установлен компьютер", "IBM", "Вопрос 26",
+                "Реконкиста", "без автора", "Источники", "https"):
+        check(bit not in prose, f"индекс: «{bit}» в справку не попало")
+    check("\n\nили\n\n" not in f"\n\n{prose}\n\n", "индекс: связка «или» выброшена")
+    check(leaks(prose) == [], "индекс: страж утечек молчит")
+
+
+def test_record_without_author_does_not_swallow_the_prose_after_it():
+    blocks = [
+        {"type": "quote", "text": "Вопрос 1: Текст."},
+        {"type": "quote", "text": "Ответ: Да."},
+        {"type": "p", "text": "Проза после записи без автора."},
+    ]
+    check("Проза после записи" in index_prose(blocks),
+          "индекс: запись без автора кончается на первом не-поле после ответа")
 
 
 def test_wiki_wins_over_index_and_themes_outside_corpus_are_dropped():
@@ -96,7 +212,13 @@ def main():
         test_wiki_prose_stops_before_the_first_question,
         test_wiki_table_of_contents_is_dropped,
         test_wiki_section_heading_is_marked_and_split_off,
-        test_index_prose_stops_at_the_first_quote,
+        test_index_prose_keeps_text_before_the_question_and_drops_the_question,
+        test_wiki_prose_takes_sections_after_questions,
+        test_wiki_prose_leaks_nothing_from_records,
+        test_wiki_see_also_is_dropped_and_indented_list_is_not_a_heading,
+        test_index_prose_takes_text_between_questions,
+        test_index_prose_leaks_nothing_from_records,
+        test_record_without_author_does_not_swallow_the_prose_after_it,
         test_wiki_wins_over_index_and_themes_outside_corpus_are_dropped,
         test_theme_without_prose_is_absent,
     ]:

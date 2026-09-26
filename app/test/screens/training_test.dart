@@ -127,4 +127,26 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('В этой колоде на сегодня всё'), findsOneWidget);
   });
+
+  testWidgets('лицо-абзац из прозы — обычным текстом, короткое лицо — крупно', (tester) async {
+    final long = FactCard(
+        id: 'p', deck: 'latyn', ask: 'Кто или что это?',
+        front: 'Пещера в Испании, известная наскальными рисунками эпохи верхнего палеолита. ' * 6,
+        back: 'Альтамира');
+    await _pump(tester, await _logWith(const []), [_card('a'), long]);
+    final theme = buildDarkTheme().textTheme;
+
+    Future<TextStyle?> frontStyle(String deck) async {
+      await tester.tap(find.byKey(Key('deck-$deck')));
+      await tester.pumpAndSettle();
+      final style = tester.widget<Text>(find.byKey(const Key('fact-front'))).style;
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      return style;
+    }
+
+    expect((await frontStyle('latyn'))?.fontSize, theme.bodyLarge?.fontSize);
+    expect(tester.takeException(), isNull);
+    expect((await frontStyle('perifrazy'))?.fontSize, theme.headlineSmall?.fontSize);
+  });
 }
