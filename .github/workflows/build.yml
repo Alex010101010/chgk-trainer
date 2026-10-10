@@ -11,10 +11,10 @@ on:
       - '.github/workflows/build.yml'
   workflow_dispatch:
 
+# Право писать — только джобам, которым оно нужно (T33): всё, что может
+# выпустить релиз `auto`, фактически ставит код на телефон.
 permissions:
-  contents: write   # write — чтобы apk-джоба публиковала GitHub Release (канал самообновления)
-  pages: write
-  id-token: write
+  contents: read
 
 jobs:
   # Веб-превью: единственная сборка на этом этапе (без OTA/APK-подписи — контент ещё не готов).
@@ -26,7 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: subosito/flutter-action@v2
+      # Сторонний экшен — на commit-SHA, а не на тег (T33): тег переставляется,
+      # и при взломе чужого репозитория шаг увидел бы секреты и токен.
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           channel: stable
 
@@ -86,6 +88,8 @@ jobs:
   # и обновление «поверх» с ним невозможно (Android требует ту же подпись).
   apk:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # публикация GitHub Release (канал самообновления)
     defaults:
       run:
         working-directory: app
@@ -98,7 +102,7 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           channel: stable
 
@@ -180,7 +184,10 @@ jobs:
       # Приложение читает манифест с releases/latest/download/app_manifest.json.
       # Тег один и тот же, релиз пересоздаётся: держим ровно одну свежую сборку,
       # а не десятки релизов-однодневок.
+      # Только с main: пуш в любую другую ветку иначе перевыпустил бы `auto`,
+      # и телефон предложил бы поставить непроверенную сборку (T33).
       - name: Publish release
+        if: github.ref == 'refs/heads/main'
         working-directory: ${{ github.workspace }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -199,6 +206,9 @@ jobs:
   deploy-pages:
     needs: web
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
