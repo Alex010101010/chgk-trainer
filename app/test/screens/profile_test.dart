@@ -180,6 +180,11 @@ void main() {
       ),
     ));
     await tester.pumpAndSettle();
+    // Последней карточкой профиль уходит за край окна 800×600: докрутить,
+    // чтобы построилась, и довести в кадр.
+    await tester.scrollUntilVisible(find.byKey(const Key('home-profile')), 100);
+    await tester.ensureVisible(find.byKey(const Key('home-profile')));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('home-profile')));
     await tester.pumpAndSettle();
 

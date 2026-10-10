@@ -16,6 +16,7 @@ from build_app_assets import (
     build,
     build_articles,
     build_facts,
+    build_svoyak,
     fact_image_name,
     handout_file,
     is_boilerplate,
@@ -241,6 +242,29 @@ def test_facts():
     check(len(pics) == 9 and all(p in srcs for p in pics), "9 картинок карточек (7 картин и 2 абзаца прозы ИЗО) выводятся из data/images")
 
 
+def test_svoyak():
+    fixture = [{
+        "id": "1", "title": "Тема", "round": "Отбор", "pack": "Пакет", "packId": 7, "date": "2024-05-01",
+        "questions": [
+            {"id": f"si-{n}", "nominal": n, "question": "Q", "answer": "A",
+             "acceptance": "Точный ответ." if n == 10 else "синонимы",
+             "acceptVariants": ["a"], "comment": None, "sources": [], "author": None, "extra": 1}
+            for n in (10, 20, 30, 40, 50)
+        ],
+    }]
+    built = build_svoyak(fixture)
+    t = built["themes"][0]
+    check(built["count"] == 1 and t["year"] == "2024", "тема и год доезжают")
+    check(t["questions"][0]["acceptance"] is None and t["questions"][1]["acceptance"] == "синонимы",
+          "болванка зачёта снимается, содержательный зачёт остаётся")
+    check("extra" not in t["questions"][0], "лишние поля не едут")
+
+    real = build_svoyak()
+    shapes = {tuple(q["nominal"] for q in t["questions"]) for t in real["themes"]}
+    check(real["count"] > 0 and shapes == {(10, 20, 30, 40, 50)},
+          f"в ассете {real['count']} тем, у каждой пять вопросов 10–50")
+
+
 if __name__ == "__main__":
     test_boilerplate_cut()
     test_excluded_dropped_and_count_matches()
@@ -249,5 +273,6 @@ if __name__ == "__main__":
     test_tehniki_examples_exist_in_corpus()
     test_article_images()
     test_facts()
+    test_svoyak()
     print("FAILED" if _failures else "OK")
     sys.exit(1 if _failures else 0)

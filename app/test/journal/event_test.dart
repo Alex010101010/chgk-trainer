@@ -84,6 +84,45 @@ void main() {
         isNull);
   });
 
+  test('round-trip ответа «Своей игры» и очки по турнирному правилу', () {
+    SvoyakEvent e({required bool buzzed, required bool taken}) => SvoyakEvent(
+          ts: 1756400000000,
+          day: '2026-10-10',
+          questionId: 'si-474019',
+          themeId: '34678',
+          nominal: 30,
+          buzzed: buzzed,
+          taken: taken,
+          secondsUsed: 4,
+          decideSec: 10,
+          userAnswer: 'Синдбад',
+          roundId: '1756399999000',
+        );
+    final full = e(buzzed: true, taken: true);
+    expect(roundTrip(full), full.toJson());
+    expect(full.score, 30);
+    expect(e(buzzed: true, taken: false).score, -30);
+    expect(e(buzzed: false, taken: false).score, 0);
+    // Пас со случайно проставленным «взял» очков не даёт.
+    expect(e(buzzed: false, taken: true).score, 0);
+  });
+
+  test('ответ «Своей игры» без обязательного поля не разбирается', () {
+    final j = SvoyakEvent(
+      ts: 1,
+      day: '2026-10-10',
+      questionId: 'si-1',
+      themeId: 't',
+      nominal: 10,
+      buzzed: false,
+      taken: false,
+      secondsUsed: 10,
+      decideSec: 10,
+    ).toJson()
+      ..remove('nominal');
+    expect(JournalEvent.fromJson(j), isNull);
+  });
+
   test('незнакомый тип и будущая версия схемы не разбираются', () {
     expect(JournalEvent.fromJson({'v': 1, 'type': 'нечто', 'ts': 1, 'day': 'x'}),
         isNull);

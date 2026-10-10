@@ -16,6 +16,11 @@
 Третьим — `app/assets/facts.json`, карточки фактов (T15) из
 `data/facts_cards.json`. Служебные поля вычитки (лист, строка) в приложение
 не едут.
+
+Четвёртым — `app/assets/svoyak.json`, темы «Своей игры» (T6) из
+`data/svoyak_clean.json`. Отдельным ассетом, а не корпусом в `questions.json`:
+«Классика» и «Бинго» берут вопросы из общего пула, и вопрос со штрафом и
+номиналом оказался бы у них в раунде.
 """
 import json
 import os
@@ -34,6 +39,12 @@ OUT = os.path.join(ROOT, "app", "assets", "questions.json")
 ARTICLES_OUT = os.path.join(ROOT, "app", "assets", "articles.json")
 FACTS_IN = os.path.join(ROOT, "data", "facts_cards.json")
 FACTS_OUT = os.path.join(ROOT, "app", "assets", "facts.json")
+SVOYAK_IN = os.path.join(ROOT, "data", "svoyak_clean.json")
+SVOYAK_OUT = os.path.join(ROOT, "app", "assets", "svoyak.json")
+
+# Поля вопроса «Своей игры». Читатель — `AssetSvoyakRepository`.
+SVOYAK_FIELDS = ("id", "nominal", "question", "answer", "acceptance",
+                 "acceptVariants", "comment", "sources", "author")
 
 # Поля карточки факта, которые едут в приложение. Читатель — `AssetFactRepository`.
 FACT_FIELDS = ("id", "deck", "ask", "front", "back", "note", "image")
@@ -190,6 +201,28 @@ def fact_image_name(src_file):
     return "fact-" + os.path.splitext(src_file)[0] + ".jpg"
 
 
+def build_svoyak(themes=None):
+    if themes is None:
+        with open(SVOYAK_IN, encoding="utf-8") as f:
+            themes = json.load(f)
+    out = []
+    for t in themes:
+        questions = []
+        for q in t["questions"]:
+            item = {k: q.get(k) for k in SVOYAK_FIELDS}
+            if is_boilerplate(item["acceptance"]):
+                item["acceptance"] = None
+            questions.append(item)
+        out.append({
+            "id": t["id"],
+            "title": t["title"],
+            "pack": t["pack"],
+            "year": (t.get("date") or "")[:4] or None,
+            "questions": questions,
+        })
+    return {"v": ASSET_VERSION, "count": len(out), "themes": out}
+
+
 def build_facts(deck_file=None):
     if deck_file is None:
         with open(FACTS_IN, encoding="utf-8") as f:
@@ -256,6 +289,12 @@ def main():
         json.dump(facts, f, ensure_ascii=False, separators=(",", ":"))
     print(f"{facts['count']} карточек фактов -> {FACTS_OUT}, "
           f"с картинкой {sum(1 for c in facts['cards'] if 'image' in c)}")
+
+    svoyak = build_svoyak()
+    with open(SVOYAK_OUT, "w", encoding="utf-8") as f:
+        json.dump(svoyak, f, ensure_ascii=False, separators=(",", ":"))
+    size_mb = os.path.getsize(SVOYAK_OUT) / 1024 / 1024
+    print(f"{svoyak['count']} тем «Своей игры» -> {SVOYAK_OUT} ({size_mb:.2f} МБ)")
     return 0
 
 

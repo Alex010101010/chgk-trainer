@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../app_theme.dart';
 import '../data/fact_repository.dart';
 import '../data/question_repository.dart';
+import '../data/svoyak_repository.dart';
 import '../data/tehnika_repository.dart';
 import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
@@ -14,6 +15,7 @@ import 'daily_screen.dart';
 import 'profile_screen.dart';
 import 'debug_journal_screen.dart';
 import 'bingo_screen.dart';
+import 'svoyak_screen.dart';
 import 'tehnika_card_screen.dart';
 import 'tehnika_check_screen.dart';
 import 'training_screen.dart';
@@ -29,6 +31,7 @@ const _modes = [
   _ModeInfo('Классика', 'Вопрос + таймер 60 сек', Icons.timer_outlined),
   _ModeInfo('Тренировка', 'Карточки фактов по колодам', Icons.style_outlined),
   _ModeInfo('Бинго', 'Сетка тем 3×3', Icons.grid_3x3),
+  _ModeInfo('Своя игра', 'Тема из пяти вопросов, 10–50', Icons.emoji_events_outlined),
 ];
 
 class HomeScreen extends StatelessWidget {
@@ -37,6 +40,7 @@ class HomeScreen extends StatelessWidget {
   final QuestionRepository? repository;
   final TehnikaRepository? tehnikaRepository;
   final FactRepository? factRepository;
+  final SvoyakRepository? svoyakRepository;
 
   /// Флаг «карточку урока уже показывали». Прокидывается сверху, а не
   /// создаётся здесь: иначе экран режима и экран карточки не узнают друг
@@ -48,6 +52,7 @@ class HomeScreen extends StatelessWidget {
     this.repository,
     this.tehnikaRepository,
     this.factRepository,
+    this.svoyakRepository,
     this.cardSeen,
   });
 
@@ -59,6 +64,9 @@ class HomeScreen extends StatelessWidget {
           ),
         'Бинго' => BingoScreen(
             repository: repository ?? AssetQuestionRepository(),
+          ),
+        'Своя игра' => SvoyakScreen(
+            repository: svoyakRepository ?? AssetSvoyakRepository(),
           ),
         _ => TrainingScreen(
             repository: factRepository ?? AssetFactRepository(),

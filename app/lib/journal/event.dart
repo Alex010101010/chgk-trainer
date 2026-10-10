@@ -80,6 +80,8 @@ sealed class JournalEvent {
         return SessionStartEvent(ts: ts, day: day);
       case 'fact':
         return FactEvent._fromJson(j, ts, day);
+      case 'svoyak':
+        return SvoyakEvent._fromJson(j, ts, day);
       default:
         return null;
     }
@@ -339,5 +341,132 @@ class FactEvent extends JournalEvent {
     final known = j['known'];
     if (cardId is! String || deck is! String || known is! bool) return null;
     return FactEvent(ts: ts, day: day, cardId: cardId, deck: deck, known: known);
+  }
+}
+
+/// Ответ на вопрос «Своей игры» (T6).
+///
+/// Отдельный тип, а не [AnswerEvent] с `mode: svoyak` — по той же причине,
+/// что и [FactEvent]: доля взятых, возврат проваленных, урок недели и счётчик
+/// ответов профиля читают [AnswerEvent], и у вопроса со штрафом и номиналом
+/// в любом из них была бы чужая шкала. Серия дней видит событие сама — она
+/// считает любое.
+class SvoyakEvent extends JournalEvent {
+  final String questionId;
+
+  /// Тема — id тура gotquestions. Сыгранной считается тема, на любой вопрос
+  /// которой есть событие: выход посреди темы её не возвращает.
+  final String themeId;
+  final int nominal;
+
+  /// Нажал «Знаю!». `false` — пас или истекло время, очков ноль.
+  final bool buzzed;
+
+  /// Самооценка после раскрытия. Осмысленна только при [buzzed].
+  final bool taken;
+
+  /// Секунды от показа вопроса до нажатия или истечения.
+  final int secondsUsed;
+
+  /// Окно на решение «Знаю!/Пас», действовавшее на этом событии: без него
+  /// доля пасов до и после подкрутки несопоставима.
+  final int decideSec;
+
+  /// Текст версии. Пустая строка — валидное значение (пас, не успел).
+  final String userAnswer;
+
+  /// epoch millis старта темы, строкой.
+  final String? roundId;
+
+  const SvoyakEvent({
+    required super.ts,
+    required super.day,
+    required this.questionId,
+    required this.themeId,
+    required this.nominal,
+    required this.buzzed,
+    required this.taken,
+    required this.secondsUsed,
+    required this.decideSec,
+    this.userAnswer = '',
+    this.roundId,
+  });
+
+  factory SvoyakEvent.at(
+    DateTime now, {
+    required String questionId,
+    required String themeId,
+    required int nominal,
+    required bool buzzed,
+    required bool taken,
+    required int secondsUsed,
+    required int decideSec,
+    String userAnswer = '',
+    String? roundId,
+  }) =>
+      SvoyakEvent(
+        ts: now.toUtc().millisecondsSinceEpoch,
+        day: localDay(now),
+        questionId: questionId,
+        themeId: themeId,
+        nominal: nominal,
+        buzzed: buzzed,
+        taken: taken,
+        secondsUsed: secondsUsed,
+        decideSec: decideSec,
+        userAnswer: userAnswer,
+        roundId: roundId,
+      );
+
+  /// Очки по турнирному правилу: взял — плюс номинал, нажал и не взял —
+  /// минус, не нажимал — ноль.
+  int get score => buzzed ? (taken ? nominal : -nominal) : 0;
+
+  @override
+  String get type => 'svoyak';
+
+  @override
+  Map<String, dynamic> body() => {
+        'questionId': questionId,
+        'themeId': themeId,
+        'nominal': nominal,
+        'buzzed': buzzed,
+        'taken': taken,
+        'secondsUsed': secondsUsed,
+        'decideSec': decideSec,
+        'userAnswer': userAnswer,
+        'roundId': roundId,
+      };
+
+  static SvoyakEvent? _fromJson(Map<String, dynamic> j, int ts, String day) {
+    final questionId = j['questionId'];
+    final themeId = j['themeId'];
+    final nominal = j['nominal'];
+    final buzzed = j['buzzed'];
+    final taken = j['taken'];
+    final secondsUsed = j['secondsUsed'];
+    final decideSec = j['decideSec'];
+    if (questionId is! String ||
+        themeId is! String ||
+        nominal is! int ||
+        buzzed is! bool ||
+        taken is! bool ||
+        secondsUsed is! int ||
+        decideSec is! int) {
+      return null;
+    }
+    return SvoyakEvent(
+      ts: ts,
+      day: day,
+      questionId: questionId,
+      themeId: themeId,
+      nominal: nominal,
+      buzzed: buzzed,
+      taken: taken,
+      secondsUsed: secondsUsed,
+      decideSec: decideSec,
+      userAnswer: j['userAnswer'] is String ? j['userAnswer'] as String : '',
+      roundId: j['roundId'] is String ? j['roundId'] as String : null,
+    );
   }
 }
