@@ -30,7 +30,7 @@ void main() {
   testWidgets('«Знаю!» останавливает отсчёт, версия сверяется с зачётом',
       (tester) async {
     final clock = _Clock();
-    final c = SvoyakController(item: _item, now: clock.call);
+    final c = SvoyakController(item: _item, now: clock.call)..startDeciding();
     clock.advance(4);
     c.buzz();
     clock.advance(30);
@@ -43,7 +43,7 @@ void main() {
 
   testWidgets('версия в окне записи доезжает до подсказки', (tester) async {
     final clock = _Clock();
-    final c = SvoyakController(item: _item, now: clock.call);
+    final c = SvoyakController(item: _item, now: clock.call)..startDeciding();
     c.buzz();
     clock.advance(3);
     c.setUserAnswer('Синдбад');
@@ -53,9 +53,25 @@ void main() {
     expect(c.hint, MatchHint.taken);
   });
 
-  testWidgets('истечение отсчёта — пас', (tester) async {
+  testWidgets('чтение не съедает отсчёт: он идёт с «Прочитал»', (tester) async {
     final clock = _Clock();
     final c = SvoyakController(item: _item, now: clock.call);
+    clock.advance(kSvoyakDecideSec + 20);
+    await tester.pump(const Duration(milliseconds: 250));
+    expect(c.phase, SvoyakPhase.reading);
+    c.buzz();
+    expect(c.phase, SvoyakPhase.reading, reason: '«Знаю!» до «Прочитал» нет');
+    c.startDeciding();
+    clock.advance(12);
+    await tester.pump(const Duration(milliseconds: 250));
+    expect(c.phase, SvoyakPhase.deciding);
+    expect(c.decideRemainingSec, kSvoyakDecideSec - 12);
+    c.dispose();
+  });
+
+  testWidgets('истечение отсчёта — пас', (tester) async {
+    final clock = _Clock();
+    final c = SvoyakController(item: _item, now: clock.call)..startDeciding();
     clock.advance(kSvoyakDecideSec - 1);
     await tester.pump(const Duration(milliseconds: 250));
     expect(c.phase, SvoyakPhase.deciding);
@@ -69,7 +85,7 @@ void main() {
 
   testWidgets('после окна записи новое не принимается', (tester) async {
     final clock = _Clock();
-    final c = SvoyakController(item: _item, now: clock.call);
+    final c = SvoyakController(item: _item, now: clock.call)..startDeciding();
     c.buzz();
     c.setUserAnswer('Синд');
     clock.advance(c.answerWindowSec + 1);

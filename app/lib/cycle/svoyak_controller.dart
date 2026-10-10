@@ -6,13 +6,16 @@ import '../model/svoyak.dart';
 import 'answer_match.dart';
 import 'cycle_controller.dart' show kDefaultAnswerWindowSec;
 
-/// Окно на решение «Знаю!/Пас» (T6). Вопросы «Своей игры» — в одно-два
-/// предложения; длина пишется в событие, подкрутка не ломает сравнимость.
-const int kSvoyakDecideSec = 10;
+/// Окно на решение «Знаю!/Пас» (T6). Отсчёт идёт после чтения — как на
+/// турнире, где время пошло, когда ведущий дочитал. Первая версия считала
+/// 10 секунд с показа и съедала время на чтение (обкатка 10.10.2026). Длина
+/// пишется в событие — подкрутка не ломает сравнимость.
+const int kSvoyakDecideSec = 30;
 
-enum SvoyakPhase { deciding, writing, reveal }
+enum SvoyakPhase { reading, deciding, writing, reveal }
 
-/// Один вопрос «Своей игры»: показ → «Знаю!» или пас → версия → раскрытие.
+/// Один вопрос «Своей игры»: чтение → «Прочитал» → «Знаю!» или пас →
+/// версия → раскрытие.
 ///
 /// Свой контроллер, а не [CycleController]: тот построен на минуте
 /// обсуждения, а здесь её нет — решение «жать или нет» и есть навык.
@@ -31,18 +34,15 @@ class SvoyakController extends ChangeNotifier {
     this.answerWindowSec = kDefaultAnswerWindowSec,
     Duration tick = const Duration(milliseconds: 200),
   })  : now = now ?? DateTime.now,
-        _tick = tick {
-    _shownAt = this.now();
-    _timer = Timer.periodic(_tick, (_) => _onTick());
-  }
+        _tick = tick;
 
   final Duration _tick;
   Timer? _timer;
-  late final DateTime _shownAt;
+  DateTime? _decideStartedAt;
   DateTime? _writingStartedAt;
   int? _committedSecondsUsed;
 
-  SvoyakPhase _phase = SvoyakPhase.deciding;
+  SvoyakPhase _phase = SvoyakPhase.reading;
   SvoyakPhase get phase => _phase;
 
   bool _buzzed = false;
@@ -54,11 +54,14 @@ class SvoyakController extends ChangeNotifier {
   MatchHint _hint = MatchHint.none;
   MatchHint get hint => _hint;
 
-  /// Секунды от показа до нажатия или истечения. Разницей часов, а не
-  /// тиками — по той же причине, что в [CycleController.secondsUsed].
+  /// Секунды от «Прочитал» до нажатия или истечения; чтение не считается.
+  /// Разницей часов, а не тиками — по той же причине, что в
+  /// [CycleController.secondsUsed].
   int get secondsUsed {
     if (_committedSecondsUsed != null) return _committedSecondsUsed!;
-    return now().difference(_shownAt).inSeconds.clamp(0, decideSec);
+    final started = _decideStartedAt;
+    if (started == null) return 0;
+    return now().difference(started).inSeconds.clamp(0, decideSec);
   }
 
   int get decideRemainingSec => decideSec - secondsUsed;
@@ -71,6 +74,15 @@ class SvoyakController extends ChangeNotifier {
   }
 
   bool get writingClosed => writingRemainingSec <= 0;
+
+  /// «Прочитал» — пошёл отсчёт на решение.
+  void startDeciding() {
+    if (_phase != SvoyakPhase.reading) return;
+    _phase = SvoyakPhase.deciding;
+    _decideStartedAt = now();
+    _timer = Timer.periodic(_tick, (_) => _onTick());
+    notifyListeners();
+  }
 
   void _onTick() {
     if (_phase == SvoyakPhase.deciding && decideRemainingSec <= 0) {

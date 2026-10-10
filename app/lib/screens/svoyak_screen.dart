@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../app_theme.dart';
 import '../cycle/answer_match.dart';
+import '../cycle/screen_wakelock.dart';
 import '../cycle/svoyak_controller.dart';
 import '../data/svoyak_repository.dart';
 import '../journal/event.dart';
@@ -120,6 +121,9 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       tick: widget.tick,
     );
     c.addListener(() {
+      // Экран держится только на отсчёте и записи: 30 секунд без касаний —
+      // ровно тот срок, после которого телефон гасит экран.
+      if (c.phase == SvoyakPhase.reveal) holdScreenAwake(false);
       if (mounted) setState(() {});
     });
     setState(() => _c = c);
@@ -165,6 +169,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
 
   @override
   void dispose() {
+    holdScreenAwake(false);
     _c?.dispose();
     _answerField.dispose();
     super.dispose();
@@ -197,7 +202,8 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       children: [
         Text('Выбери тему', style: text.titleLarge),
         const SizedBox(height: 4),
-        const Text('Пять вопросов от 10 до 50. Не взял после «Знаю!» — минус номинал.'),
+        const Text('Пять вопросов от 10 до 50. Прочитал — $kSvoyakDecideSec секунд на «Знаю!» '
+            'или «Пас». Не взял после «Знаю!» — минус номинал.'),
         const SizedBox(height: 16),
         for (final t in _choice)
           Card(
@@ -218,6 +224,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
   Widget _question(SvoyakTheme theme, SvoyakController c) {
     final text = Theme.of(context).textTheme;
     final header = switch (c.phase) {
+      SvoyakPhase.reading => '',
       SvoyakPhase.deciding => 'Решай: ${c.decideRemainingSec} сек',
       SvoyakPhase.writing =>
         c.writingClosed ? 'Время записи вышло' : 'Запись: ${c.writingRemainingSec} сек',
@@ -242,6 +249,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
         Text(c.item.question.question, style: questionTextStyle(context)),
         const SizedBox(height: 24),
         ...switch (c.phase) {
+          SvoyakPhase.reading => _reading(c),
           SvoyakPhase.deciding => _decide(c),
           SvoyakPhase.writing => _writing(c),
           SvoyakPhase.reveal => _reveal(c),
@@ -249,6 +257,18 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       ],
     );
   }
+
+  /// Отсчёт запускает сам игрок, когда дочитал, — как «Начал» в «Классике».
+  List<Widget> _reading(SvoyakController c) => [
+        FilledButton(
+          key: const Key('svoyak-start'),
+          onPressed: () {
+            holdScreenAwake(true);
+            c.startDeciding();
+          },
+          child: const Text('Прочитал'),
+        ),
+      ];
 
   /// `Expanded` обязателен: у кнопок темы задана только высота, ширина
   /// бесконечна, и в `Row` без него вёрстка падает (грабля T3 и T24).

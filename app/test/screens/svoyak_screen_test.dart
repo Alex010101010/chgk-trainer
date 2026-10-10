@@ -134,6 +134,8 @@ void main() {
 
     // 10: «Знаю!», верная версия, «Взял» → +10.
     expect(find.text('Вопрос $id за 10'), findsOneWidget);
+    clock.advance(20);
+    await _tap(tester, 'svoyak-start');
     clock.advance(3);
     await _tap(tester, 'svoyak-buzz');
     await tester.enterText(find.byKey(const Key('svoyak-answer-field')), 'Ответ ${id}10');
@@ -144,6 +146,7 @@ void main() {
     expect(find.text('Счёт: +10'), findsOneWidget);
 
     // 20: «Знаю!» и «Не взял» → −20.
+    await _tap(tester, 'svoyak-start');
     clock.advance(5);
     await _tap(tester, 'svoyak-buzz');
     await _tap(tester, 'svoyak-answer-done');
@@ -151,17 +154,20 @@ void main() {
     expect(find.text('Счёт: −10'), findsOneWidget);
 
     // 30: пас → 0.
+    await _tap(tester, 'svoyak-start');
     clock.advance(5);
     await _tap(tester, 'svoyak-pass');
     await _tap(tester, 'svoyak-next');
 
     // 40: время на решение вышло — пас.
+    await _tap(tester, 'svoyak-start');
     clock.advance(kSvoyakDecideSec + 1);
     await _settle(tester);
     expect(find.byKey(const Key('svoyak-next')), findsOneWidget);
     await _tap(tester, 'svoyak-next');
 
     // 50: «Знаю!», «Взял» → +50.
+    await _tap(tester, 'svoyak-start');
     clock.advance(5);
     await _tap(tester, 'svoyak-buzz');
     await _tap(tester, 'svoyak-answer-done');
@@ -174,7 +180,8 @@ void main() {
     expect(events.map((e) => e.nominal), [10, 20, 30, 40, 50]);
     expect(events.map((e) => e.score), [10, -20, 0, 0, 50]);
     expect(events.every((e) => e.themeId == id), isTrue);
-    expect(events.first.secondsUsed, 3);
+    expect(events.first.secondsUsed, 3, reason: '20 секунд чтения не в счёт');
+    expect(events.first.decideSec, kSvoyakDecideSec);
     expect(events.first.userAnswer, 'Ответ ${id}10');
     expect(events[3].buzzed, isFalse, reason: 'истечение пишется пасом');
     expect(events.map((e) => e.roundId).toSet().length, 1);
