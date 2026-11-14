@@ -256,9 +256,43 @@ def load_rows():
     return rows
 
 
+def build_adult(packs=None):
+    from sanitize_dumps import sanitize, mark_duplicates, clean_markup, GQ_TEXT_FIELDS
+    if packs is None:
+        with open(os.path.join(ROOT, "data", "gq_adult_dump.json"), encoding="utf-8") as f:
+            packs = json.load(f)
+    rows = []
+    for entry in packs:
+        pack = entry["pack"]
+        if pack.get("audience") != "adult" or not pack.get("metadataChecked"):
+            raise ValueError(f"Непроверенный взрослый пакет: {pack.get('id')}")
+        for original in entry["questions"]:
+            row = dict(original)
+            row["packDate"] = pack.get("startDate")
+            for field in GQ_TEXT_FIELDS:
+                row[field] = clean_markup(row.get(field))
+            row["sources"] = [clean_markup(s) for s in row.get("sources") or []]
+            if row.get("razdatkaText"):
+                row["handoutText"] = clean_markup(row["razdatkaText"])
+            rows.append(row)
+    cleaned = sanitize(rows, "gq")
+    mark_duplicates(cleaned)
+    asset = build(cleaned)
+    if not asset["count"]:
+        raise ValueError("Взрослый набор пуст после очистки")
+    return asset
+
+
 def main():
     asset = build(load_rows())
+    adult = build_adult()
+    if {q["id"] for q in asset["questions"]} & {q["id"] for q in adult["questions"]}:
+        raise ValueError("Взрослый набор пересекается с обычным")
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    adult_out = os.path.join(os.path.dirname(OUT), "adult_questions.json")
+    with open(adult_out, "w", encoding="utf-8") as f:
+        json.dump(adult, f, ensure_ascii=False, separators=(",", ":"))
+    print(f"{adult['count']} вопросов 18+ -> {adult_out}")
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(asset, f, ensure_ascii=False, separators=(",", ":"))
     size_mb = os.path.getsize(OUT) / 1024 / 1024

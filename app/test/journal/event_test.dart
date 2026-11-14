@@ -99,6 +99,14 @@ void main() {
           roundId: '1756399999000',
         );
     final full = e(buzzed: true, taken: true);
+    final legacy = full.toJson()..remove('responseSeconds');
+    final decoded = JournalEvent.fromJson(legacy) as SvoyakEvent;
+    expect(decoded.responseSeconds, isNull);
+    expect(decoded.secondsUsed, 4);
+    final current = {...legacy, 'responseSeconds': 48};
+    final timed = JournalEvent.fromJson(current) as SvoyakEvent;
+    expect(timed.responseSeconds, 48);
+    expect(timed.toJson()['responseSeconds'], 48);
     expect(roundTrip(full), full.toJson());
     expect(full.score, 30);
     expect(e(buzzed: true, taken: false).score, -30);

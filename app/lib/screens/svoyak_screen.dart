@@ -140,6 +140,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       buzzed: c.buzzed,
       taken: c.buzzed && taken,
       secondsUsed: c.secondsUsed,
+      responseSeconds: c.responseSeconds,
       decideSec: c.decideSec,
       // Поле журнала остаётся совместимым со старыми записями.
       userAnswer: '',
@@ -307,6 +308,11 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
     final q = c.item.question;
     final n = c.item.nominal;
     return [
+      if (c.responseSeconds != null)
+        Padding(
+          padding: const EdgeInsets.only(bottom: 12),
+          child: Text('Ответил за ${c.responseSeconds} с'),
+        ),
       _labelled('Ответ', q.answer),
       _labelled('Зачёт', q.acceptance),
       _labelled('Комментарий', q.comment),

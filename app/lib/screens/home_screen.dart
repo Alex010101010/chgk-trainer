@@ -10,7 +10,7 @@ import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
 import '../model/tehnika.dart';
-import 'classic_screen.dart';
+import 'classic_choice_screen.dart';
 import 'daily_screen.dart';
 import 'profile_screen.dart';
 import 'debug_journal_screen.dart';
@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
   });
 
   Widget _screenFor(String title) => switch (title) {
-        'Классика' => ClassicScreen(
+        'Классика' => ClassicChoiceScreen(
             repository: repository ?? AssetQuestionRepository(),
             tehnikaRepository: tehnikaRepository,
             cardSeen: cardSeen,

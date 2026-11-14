@@ -27,6 +27,8 @@ abstract class QuestionRepository {
 ///
 /// Честная цена: на web у `compute()` нет изолята, декод подвесит UI.
 class AssetQuestionRepository implements QuestionRepository {
+  final String assetPath;
+  AssetQuestionRepository({this.assetPath = kQuestionsAsset});
   List<Question>? _cache;
 
   @override
@@ -34,7 +36,7 @@ class AssetQuestionRepository implements QuestionRepository {
     if (_cache != null) return _cache!;
     final String raw;
     try {
-      raw = await rootBundle.loadString(kQuestionsAsset);
+      raw = await rootBundle.loadString(assetPath);
     } catch (e) {
       throw const QuestionAssetException(
         'Ассет вопросов не собран. Выполни: python3 scripts/build_app_assets.py',

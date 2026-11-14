@@ -30,9 +30,16 @@ class SvoyakController extends ChangeNotifier {
     this.decideSec = kSvoyakDecideSec,
     Duration tick = const Duration(milliseconds: 200),
   })  : now = now ?? DateTime.now,
-        _tick = tick;
+        _tick = tick {
+    _shownAt = this.now();
+  }
 
   final Duration _tick;
+  late final DateTime _shownAt;
+
+  /// От появления вопроса до «Знаю!», включая чтение. При пасе — null.
+  int? get responseSeconds => _responseSeconds;
+  int? _responseSeconds;
   Timer? _timer;
   DateTime? _decideStartedAt;
   int? _committedSecondsUsed;
@@ -76,6 +83,7 @@ class SvoyakController extends ChangeNotifier {
   void buzz() {
     if (_phase != SvoyakPhase.deciding) return;
     _committedSecondsUsed = secondsUsed;
+    _responseSeconds = now().difference(_shownAt).inSeconds.clamp(0, 1 << 31);
     _buzzed = true;
     _toReveal();
   }

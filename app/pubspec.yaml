@@ -26,6 +26,7 @@ flutter:
   assets:
     # Генерируется `python3 scripts/build_app_assets.py`, в git не едет.
     - assets/questions.json
+    - assets/adult_questions.json
     # Справка по клише (T14). Тем же скриптом, в git тоже не едет.
     - assets/articles.json
     # Карточки фактов (T15). Тем же скриптом, в git тоже не едет.

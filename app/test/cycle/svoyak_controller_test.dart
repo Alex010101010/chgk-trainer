@@ -26,6 +26,23 @@ class _Clock {
 /// testWidgets, а не test: периодический таймер контроллера крутится в
 /// фейковом времени, и `pump` его продвигает.
 void main() {
+  testWidgets('время до «Знаю!» включает чтение и фиксируется', (tester) async {
+    final clock = _Clock();
+    final c = SvoyakController(item: _item, now: clock.call);
+    expect(c.responseSeconds, isNull);
+    clock.advance(40);
+    c.startDeciding();
+    clock.advance(8);
+    c.buzz();
+    expect(c.responseSeconds, 48);
+    expect(c.secondsUsed, 8);
+    clock.advance(20);
+    c.buzz();
+    c.pass();
+    expect(c.responseSeconds, 48);
+    c.dispose();
+  });
+
   testWidgets('«Знаю!» сразу раскрывает ответ и фиксирует время решения',
       (tester) async {
     final clock = _Clock();
@@ -72,5 +89,6 @@ void main() {
     expect(c.phase, SvoyakPhase.reveal);
     expect(c.buzzed, isFalse);
     expect(c.secondsUsed, kSvoyakDecideSec);
+    expect(c.responseSeconds, isNull);
   });
 }

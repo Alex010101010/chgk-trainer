@@ -274,10 +274,14 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Классика'));
     await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('classic-standard')));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('tehnika-card-done')));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('cycle-start')), findsOneWidget);
 
+    await tester.pageBack();
+    await tester.pumpAndSettle();
     await tester.pageBack();
     await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('Бинго'));

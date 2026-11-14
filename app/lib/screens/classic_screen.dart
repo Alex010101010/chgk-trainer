@@ -33,9 +33,11 @@ List<Question> selectRound(
   int size = kRoundSize,
   Random? random,
   String? tehnikaId,
+  bool adult = false,
 }) {
   pool = pool
-      .where((q) => q.corpus == Corpus.bingo || withinTenYears(q.packDate, now))
+      .where((q) =>
+          adult || q.corpus == Corpus.bingo || withinTenYears(q.packDate, now))
       .toList();
   final rnd = random ?? Random();
   final answers = events.whereType<AnswerEvent>().toList();
@@ -90,6 +92,7 @@ List<Question> selectRound(
 
 class ClassicScreen extends StatefulWidget {
   final QuestionRepository repository;
+  final bool adult;
   final TehnikaRepository? tehnikaRepository;
   final TehnikaCardSeen? cardSeen;
   final Random? random;
@@ -98,6 +101,7 @@ class ClassicScreen extends StatefulWidget {
   const ClassicScreen({
     super.key,
     required this.repository,
+    this.adult = false,
     this.tehnikaRepository,
     this.cardSeen,
     this.random,
@@ -156,7 +160,7 @@ class _ClassicScreenState extends State<ClassicScreen> {
       // Сегодняшний вопрос дня Классике не отдаётся: иначе он мог бы попасться
       // в раунде раньше и испортить ритуал (T12). Сыгранный — выпадет сам как
       // виденный, а завтра станет обычным вопросом.
-      final daily = dailyQuestion(gq, localDay(_now()));
+      final daily = widget.adult ? null : dailyQuestion(gq, localDay(_now()));
       final pool = gq.where((q) => q.id != daily?.id).toList();
       final tehniki =
           await (widget.tehnikaRepository ?? AssetTehnikaRepository())
@@ -180,7 +184,8 @@ class _ClassicScreenState extends State<ClassicScreen> {
         };
         // Первый за неделю вход в режим — сперва урок. Но не второй раз
         // подряд, если игрок только что прочитал карточку с главного экрана.
-        _showCard = !answeredThisWeek(events, _now()) &&
+        _showCard = !widget.adult &&
+            !answeredThisWeek(events, _now()) &&
             !(widget.cardSeen?.value ?? false);
         if (_showCard) widget.cardSeen?.value = true;
       });
@@ -197,7 +202,7 @@ class _ClassicScreenState extends State<ClassicScreen> {
     setState(() {
       _roundId = now.millisecondsSinceEpoch.toString();
       _round = selectRound(_pool!, _events, now,
-          random: widget.random, tehnikaId: _tehnika?.id);
+          random: widget.random, tehnikaId: _tehnika?.id, adult: widget.adult);
       _index = 0;
       _results.clear();
     });
@@ -224,11 +229,12 @@ class _ClassicScreenState extends State<ClassicScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final title = widget.adult ? 'Чёрное ЧГК · 18+' : 'Классика';
     return Scaffold(
       appBar: AppBar(
         title: Text(_index < _round.length && _round.isNotEmpty
-            ? 'Классика · ${_index + 1}/${_round.length}'
-            : 'Классика'),
+            ? '$title · ${_index + 1}/${_round.length}'
+            : title),
       ),
       body: SafeArea(child: _body()),
     );
@@ -286,6 +292,7 @@ class _ClassicScreenState extends State<ClassicScreen> {
       question: q,
       config: CycleConfig(
         mode: GameMode.classic,
+        tags: widget.adult ? const ['adult'] : const [],
         roundId: _roundId,
         tehnika: inStandard ? _tehnika : null,
       ),

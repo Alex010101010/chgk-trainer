@@ -148,6 +148,11 @@ void main() {
     expect(find.text('Твоя версия'), findsNothing);
     expect(find.text('Ответ ${id}10'), findsOneWidget);
     expect(find.text('Взял +10'), findsOneWidget);
+    expect(find.text('Ответил за 23 секунд'), findsNothing);
+    expect(find.text('Ответил за 23 с'), findsOneWidget);
+    clock.advance(10);
+    await _settle(tester);
+    expect(find.text('Ответил за 23 с'), findsOneWidget);
     await _tap(tester, 'svoyak-taken');
     expect(find.text('Счёт: +10'), findsOneWidget);
 
@@ -162,6 +167,7 @@ void main() {
     await _tap(tester, 'svoyak-start');
     clock.advance(5);
     await _tap(tester, 'svoyak-pass');
+    expect(find.textContaining('Ответил за'), findsNothing);
     await _tap(tester, 'svoyak-next');
 
     // 40: время на решение вышло — пас.
@@ -187,6 +193,7 @@ void main() {
     expect(events.every((e) => e.themeId == id), isTrue);
     expect(events.first.secondsUsed, 3, reason: '20 секунд чтения не в счёт');
     expect(events.first.decideSec, kSvoyakDecideSec);
+    expect(events.map((e) => e.responseSeconds), [23, 5, null, null, 5]);
     expect(events.every((e) => e.userAnswer.isEmpty), isTrue);
     expect(events[3].buzzed, isFalse, reason: 'истечение пишется пасом');
     expect(events.map((e) => e.roundId).toSet().length, 1);

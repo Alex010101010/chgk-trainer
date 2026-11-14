@@ -365,8 +365,11 @@ class SvoyakEvent extends JournalEvent {
   /// Самооценка после раскрытия. Осмысленна только при [buzzed].
   final bool taken;
 
-  /// Секунды от показа вопроса до нажатия или истечения.
+  /// Секунды от «Прочитал» до нажатия или истечения.
   final int secondsUsed;
+
+  /// От появления вопроса до «Знаю!». null — старая запись или пас.
+  final int? responseSeconds;
 
   /// Окно на решение «Знаю!/Пас», действовавшее на этом событии: без него
   /// доля пасов до и после подкрутки несопоставима.
@@ -387,6 +390,7 @@ class SvoyakEvent extends JournalEvent {
     required this.buzzed,
     required this.taken,
     required this.secondsUsed,
+    this.responseSeconds,
     required this.decideSec,
     this.userAnswer = '',
     this.roundId,
@@ -400,6 +404,7 @@ class SvoyakEvent extends JournalEvent {
     required bool buzzed,
     required bool taken,
     required int secondsUsed,
+    int? responseSeconds,
     required int decideSec,
     String userAnswer = '',
     String? roundId,
@@ -413,6 +418,7 @@ class SvoyakEvent extends JournalEvent {
         buzzed: buzzed,
         taken: taken,
         secondsUsed: secondsUsed,
+        responseSeconds: responseSeconds,
         decideSec: decideSec,
         userAnswer: userAnswer,
         roundId: roundId,
@@ -433,6 +439,7 @@ class SvoyakEvent extends JournalEvent {
         'buzzed': buzzed,
         'taken': taken,
         'secondsUsed': secondsUsed,
+        if (responseSeconds != null) 'responseSeconds': responseSeconds,
         'decideSec': decideSec,
         'userAnswer': userAnswer,
         'roundId': roundId,
@@ -465,6 +472,9 @@ class SvoyakEvent extends JournalEvent {
       taken: taken,
       secondsUsed: secondsUsed,
       decideSec: decideSec,
+      responseSeconds: j['responseSeconds'] is int
+          ? j['responseSeconds'] as int
+          : null,
       userAnswer: j['userAnswer'] is String ? j['userAnswer'] as String : '',
       roundId: j['roundId'] is String ? j['roundId'] as String : null,
     );

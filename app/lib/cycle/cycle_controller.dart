@@ -29,6 +29,7 @@ enum CyclePhase {
 /// не знает: T3 и T4b берут тот же контроллер с другой конфигурацией.
 class CycleConfig {
   final GameMode mode;
+  final List<String> tags;
 
   /// Спрашивать «узнал клише? назови» — до раскрытия. В Классике это открытый
   /// ввод; в режиме бинго вместо него показываются девять клеток [bingoGrid].
@@ -50,6 +51,7 @@ class CycleConfig {
 
   const CycleConfig({
     required this.mode,
+    this.tags = const [],
     this.askBingoTap = false,
     this.bingoGrid,
     this.tehnika,
@@ -203,6 +205,7 @@ class CycleController extends ChangeNotifier {
       questionId: question.id,
       corpus: question.corpus,
       mode: config.mode,
+      tags: config.tags,
       verdict: _verdict ?? Verdict.missed,
       secondsUsed: secondsUsed,
       answerWindowSec: config.answerWindowSec,
