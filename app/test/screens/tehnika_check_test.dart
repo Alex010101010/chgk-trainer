@@ -308,6 +308,9 @@ void main() {
         ),
       ));
       await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.byKey(const Key('home-tehnika')), 200);
+      await tester.ensureVisible(find.byKey(const Key('home-tehnika')));
+      await tester.pumpAndSettle();
     }
 
     final now = DateTime.now();
@@ -315,10 +318,12 @@ void main() {
     AnswerEvent check(String id) =>
         _answer(id, mode: GameMode.tehnika, now: now, pick: 'a');
 
-    const plain = 'Карточка урока — полминуты';
-    const waits = 'Карточка урока · ждёт проверка';
+    const plain = 'Приём b';
+    const waits = 'Приём b · Ждёт проверка';
 
     Future<void> openLesson(WidgetTester tester) async {
+      await tester.ensureVisible(find.byKey(const Key('home-tehnika')));
+      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('home-tehnika')));
       await tester.pumpAndSettle();
     }
@@ -332,7 +337,7 @@ void main() {
 
     testWidgets('неделя 0 — ни напоминания, ни кнопки в уроке', (tester) async {
       await pumpHome(tester, [SessionStartEvent.at(now)]);
-      expect(find.text(plain), findsOneWidget);
+      expect(find.text('Приём a'), findsOneWidget);
       await openLesson(tester);
       expect(find.byKey(const Key('tehnika-card-check')), findsNothing);
     });

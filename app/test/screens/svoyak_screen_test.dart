@@ -33,7 +33,9 @@ SvoyakTheme _theme(String id) => SvoyakTheme(
       ],
     );
 
-final _themes = [for (final id in ['a', 'b', 'c', 'd']) _theme(id)];
+final _themes = [
+  for (final id in ['a', 'b', 'c', 'd']) _theme(id)
+];
 
 class _Repo implements SvoyakRepository {
   @override
@@ -86,7 +88,8 @@ Future<void> _tap(WidgetTester tester, String key) async {
   await _settle(tester);
 }
 
-Future<void> _pumpScreen(WidgetTester tester, EventLog log, _Clock clock) async {
+Future<void> _pumpScreen(
+    WidgetTester tester, EventLog log, _Clock clock) async {
   // Тема приложения, а не голая MaterialApp: у её кнопок бесконечная ширина,
   // и ряд без Expanded падает только на ней.
   await tester.pumpWidget(JournalScope(
@@ -107,7 +110,8 @@ Future<void> _pumpScreen(WidgetTester tester, EventLog log, _Clock clock) async 
 void main() {
   group('выбор тем', () {
     test('несыгранные первыми, сыгранная не предлагается', () {
-      final got = selectSvoyakThemes(_themes, [_played('b', 1)], random: Random(1));
+      final got =
+          selectSvoyakThemes(_themes, [_played('b', 1)], random: Random(1));
       expect(got.map((t) => t.id).toSet(), {'a', 'c', 'd'});
     });
 
@@ -118,29 +122,31 @@ void main() {
     });
   });
 
-  testWidgets('тема целиком: плюс, минус, пас, истечение — и итог', (tester) async {
+  testWidgets('тема целиком: плюс, минус, пас, истечение — и итог',
+      (tester) async {
     final clock = _Clock();
     final log = await _logWith(const []);
     await _pumpScreen(tester, log, clock);
 
     final first = find.byKey(const Key('svoyak-choice'));
     expect(first, findsOneWidget);
-    final themeTile = find.byWidgetPredicate(
-        (w) => w.key is ValueKey<String> && (w.key as ValueKey<String>).value.startsWith('svoyak-theme-'));
+    final themeTile = find.byWidgetPredicate((w) =>
+        w.key is ValueKey<String> &&
+        (w.key as ValueKey<String>).value.startsWith('svoyak-theme-'));
     final id = ((tester.widget(themeTile.first).key as ValueKey<String>).value)
         .replaceFirst('svoyak-theme-', '');
     await tester.tap(themeTile.first);
     await _settle(tester);
 
-    // 10: «Знаю!», верная версия, «Взял» → +10.
+    // 10: «Знаю!» → раскрытие без клавиатуры → «Взял» → +10.
     expect(find.text('Вопрос $id за 10'), findsOneWidget);
     clock.advance(20);
     await _tap(tester, 'svoyak-start');
     clock.advance(3);
     await _tap(tester, 'svoyak-buzz');
-    await tester.enterText(find.byKey(const Key('svoyak-answer-field')), 'Ответ ${id}10');
-    await _settle(tester);
-    await _tap(tester, 'svoyak-answer-done');
+    expect(find.byType(TextField), findsNothing);
+    expect(find.text('Твоя версия'), findsNothing);
+    expect(find.text('Ответ ${id}10'), findsOneWidget);
     expect(find.text('Взял +10'), findsOneWidget);
     await _tap(tester, 'svoyak-taken');
     expect(find.text('Счёт: +10'), findsOneWidget);
@@ -149,7 +155,6 @@ void main() {
     await _tap(tester, 'svoyak-start');
     clock.advance(5);
     await _tap(tester, 'svoyak-buzz');
-    await _tap(tester, 'svoyak-answer-done');
     await _tap(tester, 'svoyak-missed');
     expect(find.text('Счёт: −10'), findsOneWidget);
 
@@ -170,19 +175,19 @@ void main() {
     await _tap(tester, 'svoyak-start');
     clock.advance(5);
     await _tap(tester, 'svoyak-buzz');
-    await _tap(tester, 'svoyak-answer-done');
     await _tap(tester, 'svoyak-taken');
 
     expect(find.byKey(const Key('svoyak-summary')), findsOneWidget);
     expect(find.text('Счёт за тему: +40'), findsOneWidget);
 
-    final events = (await log.readAll()).events.whereType<SvoyakEvent>().toList();
+    final events =
+        (await log.readAll()).events.whereType<SvoyakEvent>().toList();
     expect(events.map((e) => e.nominal), [10, 20, 30, 40, 50]);
     expect(events.map((e) => e.score), [10, -20, 0, 0, 50]);
     expect(events.every((e) => e.themeId == id), isTrue);
     expect(events.first.secondsUsed, 3, reason: '20 секунд чтения не в счёт');
     expect(events.first.decideSec, kSvoyakDecideSec);
-    expect(events.first.userAnswer, 'Ответ ${id}10');
+    expect(events.every((e) => e.userAnswer.isEmpty), isTrue);
     expect(events[3].buzzed, isFalse, reason: 'истечение пишется пасом');
     expect(events.map((e) => e.roundId).toSet().length, 1);
 

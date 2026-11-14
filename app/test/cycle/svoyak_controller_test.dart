@@ -1,4 +1,3 @@
-import 'package:chgk_trainer/cycle/answer_match.dart';
 import 'package:chgk_trainer/cycle/svoyak_controller.dart';
 import 'package:chgk_trainer/journal/event.dart';
 import 'package:chgk_trainer/model/question.dart';
@@ -27,30 +26,22 @@ class _Clock {
 /// testWidgets, а не test: периодический таймер контроллера крутится в
 /// фейковом времени, и `pump` его продвигает.
 void main() {
-  testWidgets('«Знаю!» останавливает отсчёт, версия сверяется с зачётом',
+  testWidgets('«Знаю!» сразу раскрывает ответ и фиксирует время решения',
       (tester) async {
     final clock = _Clock();
     final c = SvoyakController(item: _item, now: clock.call)..startDeciding();
     clock.advance(4);
     c.buzz();
-    clock.advance(30);
-    expect(c.phase, SvoyakPhase.writing);
-    expect(c.buzzed, isTrue);
-    expect(c.secondsUsed, 4, reason: 'секунды до нажатия, а не до раскрытия');
-    c.finishWriting();
-    expect(c.hint, MatchHint.none, reason: 'пустая версия не матчится');
-  });
-
-  testWidgets('версия в окне записи доезжает до подсказки', (tester) async {
-    final clock = _Clock();
-    final c = SvoyakController(item: _item, now: clock.call)..startDeciding();
-    c.buzz();
-    clock.advance(3);
-    c.setUserAnswer('Синдбад');
-    c.finishWriting();
     expect(c.phase, SvoyakPhase.reveal);
-    expect(c.userAnswer, 'Синдбад');
-    expect(c.hint, MatchHint.taken);
+    expect(c.buzzed, isTrue);
+    clock.advance(30);
+    await tester.pump(const Duration(milliseconds: 250));
+    expect(c.secondsUsed, 4);
+    c.buzz();
+    c.pass();
+    expect(c.buzzed, isTrue);
+    expect(c.secondsUsed, 4);
+    c.dispose();
   });
 
   testWidgets('чтение не съедает отсчёт: он идёт с «Прочитал»', (tester) async {
@@ -81,19 +72,5 @@ void main() {
     expect(c.phase, SvoyakPhase.reveal);
     expect(c.buzzed, isFalse);
     expect(c.secondsUsed, kSvoyakDecideSec);
-  });
-
-  testWidgets('после окна записи новое не принимается', (tester) async {
-    final clock = _Clock();
-    final c = SvoyakController(item: _item, now: clock.call)..startDeciding();
-    c.buzz();
-    c.setUserAnswer('Синд');
-    clock.advance(c.answerWindowSec + 1);
-    c.setUserAnswer('Синдбад');
-    expect(c.writingClosed, isTrue);
-    expect(c.userAnswer, 'Синд');
-    // Таймер живёт до раскрытия; тестовая среда проверяет таймеры раньше
-    // `addTearDown`, поэтому останавливается явно.
-    c.dispose();
   });
 }

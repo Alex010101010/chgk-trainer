@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../app_theme.dart';
-import '../cycle/answer_match.dart';
 import '../cycle/screen_wakelock.dart';
 import '../cycle/svoyak_controller.dart';
 import '../data/svoyak_repository.dart';
@@ -13,6 +12,7 @@ import '../journal/journal_scope.dart';
 import '../model/svoyak.dart';
 import '../panda/panda_voice.dart';
 import '../widgets/panda_says.dart';
+import '../widgets/play_surface.dart';
 
 /// Сколько тем предлагается на выбор.
 const int kSvoyakChoice = 3;
@@ -74,7 +74,6 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
   int _index = 0;
   SvoyakController? _c;
   final List<SvoyakEvent> _results = [];
-  final _answerField = TextEditingController();
 
   DateTime _now() => (widget.now ?? DateTime.now)();
 
@@ -98,7 +97,8 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
         _choice = selectSvoyakThemes(all, events, random: widget.random);
       });
     } catch (e) {
-      if (mounted) setState(() => _error = 'Не удалось открыть «Свою игру»: $e');
+      if (mounted)
+        setState(() => _error = 'Не удалось открыть «Свою игру»: $e');
     }
   }
 
@@ -114,14 +114,13 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
 
   void _startQuestion() {
     _c?.dispose();
-    _answerField.clear();
     final c = SvoyakController(
       item: _theme!.questions[_index],
       now: widget.now,
       tick: widget.tick,
     );
     c.addListener(() {
-      // Экран держится только на отсчёте и записи: 30 секунд без касаний —
+      // Экран держится только на отсчёте: 30 секунд без касаний —
       // ровно тот срок, после которого телефон гасит экран.
       if (c.phase == SvoyakPhase.reveal) holdScreenAwake(false);
       if (mounted) setState(() {});
@@ -142,7 +141,8 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       taken: c.buzzed && taken,
       secondsUsed: c.secondsUsed,
       decideSec: c.decideSec,
-      userAnswer: c.userAnswer,
+      // Поле журнала остаётся совместимым со старыми записями.
+      userAnswer: '',
       roundId: _roundId,
     );
     setState(() {
@@ -171,7 +171,6 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
   void dispose() {
     holdScreenAwake(false);
     _c?.dispose();
-    _answerField.dispose();
     super.dispose();
   }
 
@@ -179,7 +178,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Своя игра')),
-      body: SafeArea(child: _body()),
+      body: SafeArea(child: PlaySurface(child: _body())),
     );
   }
 
@@ -202,7 +201,8 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       children: [
         Text('Выбери тему', style: text.titleLarge),
         const SizedBox(height: 4),
-        const Text('Пять вопросов от 10 до 50. Прочитал — $kSvoyakDecideSec секунд на «Знаю!» '
+        const Text(
+            'Пять вопросов от 10 до 50. Прочитал — $kSvoyakDecideSec секунд на «Знаю!» '
             'или «Пас». Не взял после «Знаю!» — минус номинал.'),
         const SizedBox(height: 16),
         for (final t in _choice)
@@ -226,8 +226,6 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
     final header = switch (c.phase) {
       SvoyakPhase.reading => '',
       SvoyakPhase.deciding => 'Решай: ${c.decideRemainingSec} сек',
-      SvoyakPhase.writing =>
-        c.writingClosed ? 'Время записи вышло' : 'Запись: ${c.writingRemainingSec} сек',
       SvoyakPhase.reveal => '',
     };
     return ListView(
@@ -251,7 +249,6 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
         ...switch (c.phase) {
           SvoyakPhase.reading => _reading(c),
           SvoyakPhase.deciding => _decide(c),
-          SvoyakPhase.writing => _writing(c),
           SvoyakPhase.reveal => _reveal(c),
         },
       ],
@@ -292,24 +289,6 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
         ]),
       ];
 
-  List<Widget> _writing(SvoyakController c) => [
-        TextField(
-          key: const Key('svoyak-answer-field'),
-          controller: _answerField,
-          enabled: !c.writingClosed,
-          autofocus: true,
-          decoration: const InputDecoration(labelText: 'Ответ'),
-          onChanged: c.setUserAnswer,
-          onSubmitted: (_) => c.finishWriting(),
-        ),
-        const SizedBox(height: 16),
-        FilledButton(
-          key: const Key('svoyak-answer-done'),
-          onPressed: c.finishWriting,
-          child: const Text('Дальше'),
-        ),
-      ];
-
   Widget _labelled(String label, String? value) {
     if (value == null || value.trim().isEmpty) return const SizedBox.shrink();
     return Padding(
@@ -333,8 +312,6 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       _labelled('Комментарий', q.comment),
       _labelled('Источник', q.sources.join('\n')),
       _labelled('Автор', q.author),
-      if (c.buzzed)
-        _labelled('Твоя версия', c.userAnswer.isEmpty ? '—' : c.userAnswer),
       const SizedBox(height: 16),
       if (!c.buzzed)
         FilledButton(
@@ -343,14 +320,12 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
           child: const Text('Дальше'),
         )
       else
-        // Самооценка в одно нажатие, подсказка матчера выделена заливкой,
-        // но не выбрана за игрока — как в цикле вопроса.
+        // Обе оценки равноправны: письменной версии и матчера здесь нет.
         Row(children: [
           Expanded(
             child: _verdict(
               key: const Key('svoyak-taken'),
               label: 'Взял +$n',
-              filled: c.hint == MatchHint.taken,
               onPressed: () => _finish(c, taken: true),
             ),
           ),
@@ -359,7 +334,6 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
             child: _verdict(
               key: const Key('svoyak-missed'),
               label: 'Не взял −$n',
-              filled: false,
               onPressed: () => _finish(c, taken: false),
             ),
           ),
@@ -370,12 +344,15 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
   Widget _verdict({
     required Key key,
     required String label,
-    required bool filled,
     required VoidCallback onPressed,
   }) =>
-      filled
-          ? FilledButton(key: key, onPressed: onPressed, child: Text(label))
-          : OutlinedButton(key: key, onPressed: onPressed, child: Text(label));
+      OutlinedButton(
+        key: key,
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12)),
+        child: Text(label, textAlign: TextAlign.center),
+      );
 
   Widget _summary(SvoyakTheme theme) {
     final text = Theme.of(context).textTheme;

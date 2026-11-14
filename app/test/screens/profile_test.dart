@@ -165,7 +165,7 @@ void main() {
     expect(find.text('момент streak.alive'), findsOneWidget);
   });
 
-  testWidgets('карточка на главном открывает профиль', (tester) async {
+  testWidgets('кнопка в шапке открывает профиль с обновлением', (tester) async {
     _phone(tester);
 
     await tester.pumpWidget(JournalScope(
@@ -180,14 +180,11 @@ void main() {
       ),
     ));
     await tester.pumpAndSettle();
-    // Последней карточкой профиль уходит за край окна 800×600: докрутить,
-    // чтобы построилась, и довести в кадр.
-    await tester.scrollUntilVisible(find.byKey(const Key('home-profile')), 100);
-    await tester.ensureVisible(find.byKey(const Key('home-profile')));
-    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('home-update')), findsNothing);
     await tester.tap(find.byKey(const Key('home-profile')));
     await tester.pumpAndSettle();
 
     expect(find.byType(ProfileScreen), findsOneWidget);
+    expect(find.byKey(const Key('home-update')).hitTestable(), findsOneWidget);
   });
 }

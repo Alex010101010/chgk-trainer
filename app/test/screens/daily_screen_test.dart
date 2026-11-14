@@ -55,7 +55,12 @@ Future<void> _pump(WidgetTester tester, EventLog log,
 
 Future<void> _tap(WidgetTester tester, String key) async {
   await tester.tap(find.byKey(Key(key)));
-  await tester.pumpAndSettle();
+  // При активном секундомере дерево регулярно обновляется.
+  if (key == 'cycle-start' || key == 'cycle-ready') {
+    await tester.pump(const Duration(milliseconds: 300));
+  } else {
+    await tester.pumpAndSettle();
+  }
 }
 
 void main() {

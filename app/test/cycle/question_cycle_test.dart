@@ -270,6 +270,8 @@ void main() {
       await tester.enterText(
           find.byKey(const Key('note-field')), 'бомбёжка 1940-го');
       await tester.pump();
+      await tester.ensureVisible(find.byKey(const Key('note-save')));
+      await tester.pump();
       await _tap(tester, 'note-save');
       await tester.pumpAndSettle();
 

@@ -11,6 +11,7 @@ import '../model/question.dart';
 import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
 import '../widgets/panda_says.dart';
+import '../widgets/update_button.dart';
 import 'tehnika_check_screen.dart';
 
 /// Профиль (T9): сводка сверху и по блоку на ось — клише, приёмы, факты.
@@ -86,7 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final events = _events;
     return Scaffold(
-      appBar: AppBar(title: const Text('Профиль')),
+      appBar: AppBar(title: const Text('Профиль'), actions: const [UpdateButton()]),
       body: SafeArea(
         child: _error != null
             ? Center(child: Text(_error!))

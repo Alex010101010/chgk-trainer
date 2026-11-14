@@ -10,6 +10,7 @@ import '../widgets/article_card.dart';
 import '../widgets/grid_label.dart';
 import '../widgets/handout_image.dart';
 import '../widgets/handout_text.dart';
+import '../widgets/play_surface.dart';
 import 'cycle_controller.dart';
 import 'screen_wakelock.dart';
 
@@ -82,42 +83,144 @@ class _QuestionCycleState extends State<QuestionCycle> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _header(),
-          const SizedBox(height: 12),
-          Expanded(child: SingleChildScrollView(child: _phaseBody())),
-        ],
-      ),
+    return PlaySurface(
+      child: LayoutBuilder(builder: (context, constraints) {
+        final compact = constraints.maxHeight < 350;
+        return Padding(
+          padding:
+              EdgeInsets.fromLTRB(20, compact ? 4 : 12, 20, compact ? 8 : 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _header(compact: compact),
+              Expanded(
+                  child: SingleChildScrollView(
+                key: ValueKey(_c.phase),
+                child: _phaseBody(),
+              )),
+              if (_c.phase != CyclePhase.bingoTap &&
+                  _c.phase != CyclePhase.done)
+                Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: _actions(),
+                ),
+            ],
+          ),
+        );
+      }),
     );
   }
 
-  Widget _header() {
-    final text = switch (_c.phase) {
-      CyclePhase.thinking => 'Осталось ${kThinkingSec - _c.secondsUsed} сек',
-      CyclePhase.writing => _c.writingClosed
-          ? 'Время записи вышло'
-          : 'Запись: ${_c.writingRemainingSec} сек',
-      _ => '',
-    };
-    return Text(
-      text,
-      key: const Key('cycle-header'),
-      textAlign: TextAlign.center,
-      style: Theme.of(context).textTheme.titleMedium,
+  Widget _header({required bool compact}) {
+    final thinking = _c.phase == CyclePhase.thinking;
+    final writing = _c.phase == CyclePhase.writing;
+    if (!thinking && !writing) return const SizedBox.shrink();
+    final seconds =
+        thinking ? kThinkingSec - _c.secondsUsed : _c.writingRemainingSec;
+    final total = thinking ? kThinkingSec : widget.config.answerWindowSec;
+    final text = Theme.of(context).textTheme;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Wrap(
+          spacing: 12,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            Text(
+                '${(seconds ~/ 60).toString().padLeft(2, '0')}:${(seconds % 60).toString().padLeft(2, '0')}',
+                style: text.titleLarge),
+            if (!compact)
+              Text(
+                  thinking
+                      ? 'Осталось времени'
+                      : (_c.writingClosed
+                          ? 'Время записи вышло'
+                          : 'Запись ответа'),
+                  key: const Key('cycle-header'),
+                  style: text.bodyMedium),
+          ],
+        ),
+        const SizedBox(height: 8),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: SizedBox(
+              height: 4,
+              child: Stack(children: [
+                Positioned.fill(
+                    child: ColoredBox(
+                        color: Theme.of(context).colorScheme.outlineVariant)),
+                FractionallySizedBox(
+                  widthFactor: total > 0 ? seconds / total : 0,
+                  heightFactor: 1,
+                  child: const ColoredBox(color: PandaPalette.gold),
+                ),
+              ])),
+        ),
+      ]),
     );
   }
 
   Widget _phaseBody() => switch (_c.phase) {
-        CyclePhase.reading => _reading(),
-        CyclePhase.thinking => _thinking(),
-        CyclePhase.writing => _writing(),
+        CyclePhase.reading ||
+        CyclePhase.thinking ||
+        CyclePhase.writing =>
+          _questionText(),
         CyclePhase.bingoTap => _bingoTap(),
         CyclePhase.reveal => _reveal(),
         CyclePhase.done => const SizedBox.shrink(),
+      };
+
+  void _finishWriting() {
+    FocusScope.of(context).unfocus();
+    _c.finishWriting();
+  }
+
+  Widget _actions() => switch (_c.phase) {
+        CyclePhase.reading => FilledButton(
+            key: const Key('cycle-start'),
+            onPressed: () {
+              holdScreenAwake(true);
+              _c.startThinking();
+            },
+            child: const Text('Начал'),
+          ),
+        CyclePhase.thinking => FilledButton(
+            key: const Key('cycle-ready'),
+            onPressed: _c.readyToAnswer,
+            child: const Text('Готов отвечать'),
+          ),
+        CyclePhase.writing => Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              TextField(
+                key: const Key('cycle-answer-field'),
+                controller: _answerField,
+                enabled: !_c.writingClosed,
+                autofocus: true,
+                decoration: const InputDecoration(labelText: 'Твой ответ'),
+                onChanged: _c.setUserAnswer,
+                onSubmitted: (_) => _finishWriting(),
+              ),
+              const SizedBox(height: 12),
+              FilledButton(
+                key: const Key('cycle-answer-done'),
+                onPressed: _finishWriting,
+                child: const Text('Дальше'),
+              ),
+            ],
+          ),
+        CyclePhase.reveal => Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text('Как получилось?',
+                  style: Theme.of(context).textTheme.bodyMedium),
+              const SizedBox(height: 8),
+              _verdictButtons(),
+            ],
+          ),
+        _ => const SizedBox.shrink(),
       };
 
   /// Текст вопроса и раздатка над ним. Раздатку выдают до вопроса и не
@@ -136,6 +239,12 @@ class _QuestionCycleState extends State<QuestionCycle> {
           HandoutText(text),
           const SizedBox(height: 12),
         ],
+        Text('ВОПРОС',
+            style: Theme.of(context)
+                .textTheme
+                .labelLarge
+                ?.copyWith(color: Theme.of(context).colorScheme.secondary)),
+        const SizedBox(height: 12),
         Text(
           widget.question.question,
           style: questionTextStyle(context),
@@ -143,57 +252,6 @@ class _QuestionCycleState extends State<QuestionCycle> {
       ],
     );
   }
-
-  Widget _reading() => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _questionText(),
-          const SizedBox(height: 24),
-          FilledButton(
-            key: const Key('cycle-start'),
-            onPressed: () {
-              holdScreenAwake(true);
-              _c.startThinking();
-            },
-            child: const Text('Начал'),
-          ),
-        ],
-      );
-
-  Widget _thinking() => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _questionText(),
-          const SizedBox(height: 24),
-          FilledButton(
-            key: const Key('cycle-ready'),
-            onPressed: _c.readyToAnswer,
-            child: const Text('Готов отвечать'),
-          ),
-        ],
-      );
-
-  Widget _writing() => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _questionText(),
-          const SizedBox(height: 16),
-          TextField(
-            key: const Key('cycle-answer-field'),
-            controller: _answerField,
-            enabled: !_c.writingClosed,
-            autofocus: true,
-            decoration: const InputDecoration(labelText: 'Ответ'),
-            onChanged: _c.setUserAnswer,
-          ),
-          const SizedBox(height: 16),
-          FilledButton(
-            key: const Key('cycle-answer-done'),
-            onPressed: _c.finishWriting,
-            child: const Text('Дальше'),
-          ),
-        ],
-      );
 
   /// Спрашивается ДО раскрытия: после него догадка перестаёт быть догадкой.
   Widget _bingoTap() {
@@ -314,20 +372,46 @@ class _QuestionCycleState extends State<QuestionCycle> {
           HandoutText(text),
           const SizedBox(height: 12),
         ],
-        _labelled('Ответ', q.answer),
+        Card(
+          color: Theme.of(context).brightness == Brightness.dark
+              ? const Color(0xFF1D3027)
+              : null,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text('ПРАВИЛЬНЫЙ ОТВЕТ',
+                      style: Theme.of(context).textTheme.labelLarge),
+                  const SizedBox(height: 8),
+                  Text(q.answer,
+                      style: Theme.of(context).textTheme.headlineSmall),
+                  const Divider(height: 32),
+                  _labelled('Твоя версия',
+                      _c.userAnswer.isEmpty ? '—' : _c.userAnswer),
+                ]),
+          ),
+        ),
         _labelled('Зачёт', q.acceptance),
         // Клише — сразу под ответом, до комментария: комментарий объясняет
         // этот вопрос, а клише — все остальные вопросы того же рода.
         if (widget.articles case final repo?)
           if (q.theme case final theme?)
             ArticleCard(theme: theme, repository: repo, notes: widget.notes),
-        _labelled('Комментарий', q.comment),
+        _labelled('Почему так', q.comment),
         _labelled('Источник', q.sources.join('\n')),
         _labelled('Автор', q.author),
-        _labelled('Твоя версия', _c.userAnswer.isEmpty ? '—' : _c.userAnswer),
         if (widget.config.tehnika case final t?) _tehnikaHint(t),
         const SizedBox(height: 16),
-        _verdictButtons(),
+        Row(children: [
+          Image.asset('assets/panda/panda_support_clean.png',
+              width: 88,
+              height: 96,
+              fit: BoxFit.contain,
+              excludeFromSemantics: true),
+          const SizedBox(width: 16),
+          const Expanded(child: Text('Сверь ответ и оцени себя.')),
+        ]),
       ],
     );
   }

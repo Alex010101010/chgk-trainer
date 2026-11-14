@@ -270,6 +270,8 @@ void main() {
       )),
     ));
 
+    await tester.ensureVisible(find.text('Классика'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Классика'));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('tehnika-card-done')));
@@ -277,6 +279,8 @@ void main() {
     expect(find.byKey(const Key('cycle-start')), findsOneWidget);
 
     await tester.pageBack();
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Бинго'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Бинго'));
     await tester.pumpAndSettle();
