@@ -66,6 +66,28 @@ def test_host_instruction_is_fixed_not_dropped():
           "«Перед вами» после инструкции чтецу распознаётся")
 
 
+def test_unclosed_host_instruction_keeps_text_and_is_excluded():
+    raw = ('[Ведущему: не закрыли Дуплет. 0.1 Первый вопрос. '
+           '0.2 Уволился из «Microsoft» [майкрософт]. Второй вопрос.')
+    check(clean_question(raw) == raw,
+          "незакрытая инструкция не съедает вопрос до чужой скобки")
+    row = sanitize([{"id": "gq-1888", "question": raw, "answer": "ответ"}], "gq")[0]
+    check(row["excluded"] == "host_instruction",
+          "неоднозначная граница инструкции исключает вопрос из игры")
+    check(row["question"] == raw, "исключённый вопрос сохраняет исходный текст")
+    no_close = '[Чтецу: пауза. Что это?'
+    check(clean_question(no_close) == no_close, "текст без закрывающей скобки сохранён")
+    check(exclusion_reason(no_close, "ответ", None)[0] == "host_instruction",
+          "инструкция без закрывающей скобки не попадает в игру")
+    nested = '[Ведущему: произнести Apple [эпл].] Назовите компанию.'
+    check(clean_question(nested) == 'Назовите компанию.',
+          "вложенная скобка в корректной инструкции разбирается целиком")
+    ordinary = 'Компания Apple [эпл] создала это. Что?'
+    check(clean_question(ordinary) == ordinary, "обычная транскрипция сохранена")
+    check(exclusion_reason(ordinary, "ответ", None)[0] is None,
+          "транскрипция не считается инструкцией")
+
+
 def test_handout_deixis_beyond_pered_vami():
     """Обкатка 08.09.2026: в «Классике» попался вопрос «смотреть на эту
     картинку» — а картинки нет. Якорное `^перед вами` ловит только самую явную
@@ -271,7 +293,7 @@ def test_markup_is_cleaned():
 
 
 def test_old_playable_question_is_stale():
-    """T30: старый годный вопрос — `stale`; брак остаётся браком; пример урока не устаревает."""
+    """T30: старый годный вопрос — `stale`; брак остаётся браком; учебные примеры тоже устаревают."""
     base = {"answer": "Уорхол", "acceptance": None}
     rows = [
         {**base, "id": "gq-new", "question": "Кто он?", "packDate": "2024-01-01"},
@@ -281,12 +303,12 @@ def test_old_playable_question_is_stale():
         {**base, "id": "gq-lesson", "question": "Кто он?", "packDate": "2009-01-01"},
     ]
     got = {r["id"]: r["excluded"] for r in
-           sanitize(rows, "gq", fresh_since="2020-09-25", keep={"gq-lesson"})}
+           sanitize(rows, "gq", fresh_since="2020-09-25")}
     check(got["gq-new"] is None, "свежий вопрос играбелен")
     check(got["gq-old"] == "stale", "старый вопрос устарел")
     check(got["gq-nodate"] == "stale", "вопрос без даты считается старым")
     check(got["gq-oldempty"] == "empty", "брак не перекрашивается в stale")
-    check(got["gq-lesson"] is None, "пример урока не устаревает")
+    check(got["gq-lesson"] == "stale", "пример урока тоже устаревает")
     check(sanitize(rows[1:2], "gq")[0]["excluded"] is None, "без fresh_since фильтра нет")
 
 
@@ -302,6 +324,7 @@ def main():
     for test in [
         test_parsing_keeps_guillemets,
         test_host_instruction_is_fixed_not_dropped,
+        test_unclosed_host_instruction_keeps_text_and_is_excluded,
         test_handout_deixis_beyond_pered_vami,
         test_vnimanie_is_not_a_handout,
         test_structural_markers_are_excluded,

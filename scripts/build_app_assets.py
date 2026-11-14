@@ -65,6 +65,7 @@ FIELDS = (
     "comment",
     "sources",
     "author",
+    "packDate",
     # Настоящее клише. У gq всегда None, у бинго — название темы сетки (T3).
     "theme",
     # Имя файла раздатки в `app/assets/handouts/` (T20). None — раздатки нет.

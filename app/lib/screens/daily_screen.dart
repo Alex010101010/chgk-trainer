@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 import '../cycle/cycle_controller.dart';
 import '../cycle/question_cycle.dart';
@@ -8,6 +9,7 @@ import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
+import '../model/recent_order.dart';
 import '../panda/panda_voice.dart';
 import '../widgets/panda_says.dart';
 
@@ -34,12 +36,15 @@ int fnv1a(String s) {
 /// вопрос обыгрывает прежнего победителя.
 Question? dailyQuestion(List<Question> pool, String day) {
   Question? best;
-  var bestHash = 0;
+  var bestScore = double.infinity;
   for (final q in pool) {
+    if (!withinTenYears(q.packDate, DateTime.parse(day))) continue;
     final h = fnv1a('$day|${q.id}');
-    if (best == null || h < bestHash) {
+    final score = -log(1 - h / 4294967296) /
+        freshnessWeight(q.packDate, DateTime.parse(day));
+    if (best == null || score < bestScore) {
       best = q;
-      bestHash = h;
+      bestScore = score;
     }
   }
   return best;
@@ -176,7 +181,8 @@ class _DailyScreenState extends State<DailyScreen> {
             for (final day in week)
               Column(
                 children: [
-                  Text(results[day] == null ? '·' : _verdictMarks[results[day]]!,
+                  Text(
+                      results[day] == null ? '·' : _verdictMarks[results[day]]!,
                       style: text.titleLarge),
                   Text(day.substring(8), style: text.labelSmall),
                 ],

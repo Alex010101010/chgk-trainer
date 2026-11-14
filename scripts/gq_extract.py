@@ -2,47 +2,35 @@ import json
 import re
 
 
-def extract_balanced(text, start_idx, open_ch, close_ch):
-    depth = 0
-    i = start_idx
-    in_string = False
-    n = len(text)
-    while i < n:
-        ch = text[i]
-        if ch == "\\":
-            i += 2
+def _extract_arrays(html_text, key):
+    """Сначала снять экранирование JS-строки, затем читать массив как JSON.
+
+    Ошибки считаются по всем найденным фрагментам; частичный результат
+    нельзя выдавать за успешно прочитанную страницу.
+    """
+    arrays = []
+    failed = 0
+    matches = list(re.finditer(r'\\"%s\\":\[' % re.escape(key), html_text))
+    for match in matches:
+        start = end = match.end() - 1
+        while end < len(html_text) and html_text[end] != '"':
+            end += 2 if html_text[end] == "\\" else 1
+        try:
+            decoded = json.loads('"' + html_text[start:end] + '"')
+            value, _ = json.JSONDecoder().raw_decode(decoded)
+        except json.JSONDecodeError:
+            failed += 1
             continue
-        if ch == '"':
-            in_string = not in_string
-        elif not in_string:
-            if ch == open_ch:
-                depth += 1
-            elif ch == close_ch:
-                depth -= 1
-                if depth == 0:
-                    return text[start_idx:i + 1]
-        i += 1
-    return None
-
-
-def unescape_json_fragment(fragment):
-    wrapped = '"' + fragment + '"'
-    inner_text = json.loads(wrapped)
-    return json.loads(inner_text)
+        arrays.append(value)
+    if failed:
+        raise ValueError(f"{key}: не разобраны {failed} из {len(matches)} массивов")
+    return arrays
 
 
 def extract_questions(html_text):
     questions = []
     seen_ids = set()
-    for m in re.finditer(r'\\"questions\\":\[', html_text):
-        bracket_start = m.end() - 1
-        frag = extract_balanced(html_text, bracket_start, '[', ']')
-        if not frag:
-            continue
-        try:
-            arr = unescape_json_fragment(frag)
-        except Exception:
-            continue
+    for arr in _extract_arrays(html_text, "questions"):
         for q in arr:
             qid = q.get("id")
             if qid in seen_ids:
@@ -54,15 +42,7 @@ def extract_questions(html_text):
 
 def extract_authors_map(html_text):
     mapping = {}
-    for m in re.finditer(r'\\"authors\\":\[', html_text):
-        bracket_start = m.end() - 1
-        frag = extract_balanced(html_text, bracket_start, '[', ']')
-        if not frag:
-            continue
-        try:
-            arr = unescape_json_fragment(frag)
-        except Exception:
-            continue
+    for arr in _extract_arrays(html_text, "authors"):
         for entry in arr:
             qid = entry.get("questionId")
             person = entry.get("person") or {}
@@ -75,6 +55,35 @@ def extract_authors_map(html_text):
 def extract_title(html_text):
     m = re.search(r"<title>([^<]*)</title>", html_text)
     return m.group(1) if m else None
+
+
+def extract_pack(html_text, pack_id):
+    """Именно запрошенный пакет, а не первый из рекомендаций на странице."""
+    match = re.search(r'\\"pack\\":\{\\"id\\":%d,' % pack_id, html_text)
+    if not match:
+        raise ValueError(f'pack {pack_id}: нет метаданных')
+    start = html_text.index('{', match.start())
+    end = start
+    while end < len(html_text) and html_text[end] != '"':
+        end += 2 if html_text[end] == '\\' else 1
+    decoded = json.loads('"' + html_text[start:end] + '"')
+    pack, _ = json.JSONDecoder().raw_decode(decoded)
+    if pack.get('id') != pack_id:
+        raise ValueError(f'pack {pack_id}: получен другой пакет')
+    info = pack.get('info') or ''
+    if re.fullmatch(r'\$[0-9a-f]+', info):
+        chunks = []
+        for m in re.finditer(r'self\.__next_f\.push\(', html_text):
+            value, _ = json.JSONDecoder().raw_decode(html_text[m.end():])
+            if len(value) > 1 and value[0] == 1 and isinstance(value[1], str):
+                chunks.append(value[1])
+        stream = ''.join(chunks).encode('utf-8')
+        ref = info[1:].encode('ascii')
+        m = re.search(rb'(?:^|\n)' + ref + rb':T([0-9a-fA-F]+),', stream)
+        if m:
+            size = int(m[1], 16)
+            pack['info'] = stream[m.end():m.end()+size].decode('utf-8')
+    return pack
 
 
 if __name__ == "__main__":

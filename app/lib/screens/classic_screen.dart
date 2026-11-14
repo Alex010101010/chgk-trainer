@@ -12,6 +12,7 @@ import '../journal/event_log.dart';
 import '../journal/journal_scope.dart';
 import '../journal/projections.dart';
 import '../model/question.dart';
+import '../model/recent_order.dart';
 import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
 import '../widgets/panda_says.dart';
@@ -33,6 +34,9 @@ List<Question> selectRound(
   Random? random,
   String? tehnikaId,
 }) {
+  pool = pool
+      .where((q) => q.corpus == Corpus.bingo || withinTenYears(q.packDate, now))
+      .toList();
   final rnd = random ?? Random();
   final answers = events.whereType<AnswerEvent>().toList();
   final seen = answers.map((e) => e.questionId).toSet();
@@ -61,7 +65,8 @@ List<Question> selectRound(
     }
   }
 
-  final unseen = pool.where((q) => !seen.contains(q.id)).toList()..shuffle(rnd);
+  final unseen = preferRecent(
+      pool.where((q) => !seen.contains(q.id)), (q) => q.packDate, now, rnd);
   for (final q in unseen) {
     if (picked.length >= size) break;
     if (used.add(q.id)) picked.add(q);
@@ -154,7 +159,8 @@ class _ClassicScreenState extends State<ClassicScreen> {
       final daily = dailyQuestion(gq, localDay(_now()));
       final pool = gq.where((q) => q.id != daily?.id).toList();
       final tehniki =
-          await (widget.tehnikaRepository ?? AssetTehnikaRepository()).loadAll();
+          await (widget.tehnikaRepository ?? AssetTehnikaRepository())
+              .loadAll();
       final read = await _log.readAll();
       if (!mounted) return;
       final events = List.of(read.events);
@@ -265,7 +271,8 @@ class _ClassicScreenState extends State<ClassicScreen> {
           'Часть журнала не прочитана ($_skippedLines строк) — '
           'вопросы могут повторяться',
           key: const Key('classic-journal-warning'),
-          style: TextStyle(color: Theme.of(context).colorScheme.onErrorContainer),
+          style:
+              TextStyle(color: Theme.of(context).colorScheme.onErrorContainer),
         ),
       );
 
@@ -299,7 +306,8 @@ class _ClassicScreenState extends State<ClassicScreen> {
       key: const Key('classic-summary'),
       padding: const EdgeInsets.all(16),
       children: [
-        Text('Раунд закончен', style: Theme.of(context).textTheme.headlineSmall),
+        Text('Раунд закончен',
+            style: Theme.of(context).textTheme.headlineSmall),
         const SizedBox(height: 8),
         Text('Взято $taken из ${_results.length}'),
         const SizedBox(height: 16),

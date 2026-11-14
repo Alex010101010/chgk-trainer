@@ -1,0 +1,67 @@
+{
+  "asOf": "2026-11-14",
+  "firstPlayedSince": "2016-11-14",
+  "beforeQuestions": 14875,
+  "afterQuestions": 12886,
+  "added": 2527,
+  "removed": 4516,
+  "bingoQuestions": 1831,
+  "svoyakThemes": 623,
+  "adultAgeLimit": null,
+  "adultPacks": [
+    {
+      "id": 6528,
+      "title": "У Вас Волчанка, сэр! Серия 4я (18+)",
+      "date": "2025-07-18",
+      "questions": 37
+    },
+    {
+      "id": 6068,
+      "title": "Какая грязь. АКТ 3",
+      "date": "2024-08-12",
+      "questions": 36
+    },
+    {
+      "id": 6129,
+      "title": "\"ЧерноСлив\" (18+)",
+      "date": "2022-11-26",
+      "questions": 36
+    },
+    {
+      "id": 2824,
+      "title": "18+",
+      "date": "2013-04-27",
+      "questions": 35
+    },
+    {
+      "id": 5719,
+      "title": "У Вас Волчанка, сэр! Серия 1я (18+)",
+      "date": "2023-12-01",
+      "questions": 37
+    },
+    {
+      "id": 5895,
+      "title": "У Вас Волчанка, сэр! Серия 2я (18+)",
+      "date": "2024-05-01",
+      "questions": 37
+    },
+    {
+      "id": 6038,
+      "title": "У Вас Волчанка, сэр! Серия 3я (18+)",
+      "date": "2024-07-05",
+      "questions": 37
+    }
+  ],
+  "years": {
+    "2022": 2340,
+    "2023": 2542,
+    "2024": 3641,
+    "2025": 2938,
+    "2026": 1425
+  },
+  "validation": {
+    "flutterTests": 267,
+    "dataTestFiles": 9,
+    "realQuestionFlow": "passed"
+  }
+}

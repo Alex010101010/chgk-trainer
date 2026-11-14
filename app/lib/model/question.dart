@@ -20,6 +20,7 @@ class Question {
   final String? comment;
   final List<String> sources;
   final String? author;
+  final String? packDate;
 
   /// Настоящее клише. У gq-корпуса всегда `null` — поле осмысленно только для
   /// бинго. Цикл его не читает; его переносит в событие режим.
@@ -48,6 +49,7 @@ class Question {
     this.comment,
     this.sources = const [],
     this.author,
+    this.packDate,
     this.theme,
     this.tehniki = const [],
     this.handout,
@@ -67,7 +69,10 @@ class Question {
       'bingo' => Corpus.bingo,
       _ => null,
     };
-    if (id is! String || question is! String || answer is! String || corpus == null) {
+    if (id is! String ||
+        question is! String ||
+        answer is! String ||
+        corpus == null) {
       return null;
     }
     final variants = j['acceptVariants'];
@@ -82,8 +87,10 @@ class Question {
       acceptVariants:
           variants is List ? variants.whereType<String>().toList() : const [],
       comment: j['comment'] is String ? j['comment'] as String : null,
-      sources: sources is List ? sources.whereType<String>().toList() : const [],
+      sources:
+          sources is List ? sources.whereType<String>().toList() : const [],
       author: j['author'] is String ? j['author'] as String : null,
+      packDate: j['packDate'] is String ? j['packDate'] as String : null,
       theme: j['theme'] is String ? j['theme'] as String : null,
       tehniki:
           tehniki is List ? tehniki.whereType<String>().toList() : const [],
@@ -103,6 +110,7 @@ class Question {
         'comment': comment,
         'sources': sources,
         'author': author,
+        'packDate': packDate,
         'theme': theme,
         'tehniki': tehniki,
         'handout': handout,
