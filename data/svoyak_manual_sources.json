@@ -1,0 +1,195 @@
+[
+ {
+  "file": "Individualnaya-Svoya-Igra-k-turniru-Kraft-12-.pdf",
+  "sha256": "5c08d5306348f6b8e5dbce0887ed33121d46ca5843521a39902e3e0e294fb12a",
+  "pack": "Крафт №12 — Индивидуальная Своя игра",
+  "themes": 10,
+  "questions": 50,
+  "credits": "Диана Агейченкова, Семен Попов",
+  "creditRole": "редакторы",
+  "date": null
+ },
+ {
+  "file": "ISI-Kraft-13-Firsova.pdf",
+  "sha256": "1563caedefa6a68b467676a3066082aee80b8ca473f604b4434616d5307032f4",
+  "pack": "Крафт №13 — Индивидуальная Своя игра",
+  "themes": 10,
+  "questions": 50,
+  "credits": "Дарья Фирсова",
+  "creditRole": "автор",
+  "date": null
+ },
+ {
+  "file": "Komandnaya_Svoya_Igra_Kraft-12.pdf",
+  "sha256": "7be50a5ca288c4d6124342621adc833a9b599804f0e828d1de7e4c78d483179d",
+  "pack": "Крафт №12 — Командная Своя игра",
+  "themes": 6,
+  "questions": 30,
+  "credits": "Дмитрий Карякин",
+  "creditRole": "автор",
+  "date": null
+ },
+ {
+  "file": "Komandnaya-svoya-igra_Kraft-13.pdf",
+  "sha256": "060866a966a3aa32c085f988152224ad44500e4d699ebd7be69824448aaa579f",
+  "pack": "Крафт №13 — Командная Своя игра",
+  "themes": 6,
+  "questions": 30,
+  "credits": "Ася Самойлова",
+  "creditRole": "автор",
+  "date": null
+ },
+ {
+  "url": "https://docs.google.com/document/d/1FCBc4es5gzBlCLliJ0T4B6bPvNV9A55A_PuP65XqSGs/edit?tab=t.0",
+  "pack": "Крафт №1+Крафт №2 КСИ - 12 тем",
+  "credits": "Ася Самойлова",
+  "themes": 12,
+  "questions": 60,
+  "date": null,
+  "sha256": "5fc1db75938e28a6013671b520b7164bcbb4aaab204f707c0b6ad4a39a0c6888"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1MMladWn03ohXoFzF5xow3YPXW6_ehLr50dXHy6HspDw/edit?tab=t.0",
+  "pack": "Крафт №3 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "187a766aa1696912d77fd31dcf9c008f86355da6c17a6caa63d247f711d95793"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1KBjaegEz2q67v3kpnsLHr4Cm72DsklIs_9WCRfDqWUc/edit?tab=t.0",
+  "pack": "Крафт №4 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "9e16d13bc08c7bc096ea6cd6000569bdd94ecf55cd474fa16869c8601baf27ce"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1ra-vDDxxealef4Yf2HPzaFJrieKDmAA5WeF_8fKy49M/edit?tab=t.0",
+  "pack": "Крафтик №1 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "f6a7ca5224c9adae98cc672d36efa393a8e476611d7764b6d7ed67ec9d776aa4"
+ },
+ {
+  "url": "https://docs.google.com/document/d/12drJGKzN9_0ZjVUqK5ikyaeAeLaQpv_T44Csz1oGzCA/edit?tab=t.0",
+  "pack": "Крафтик №1 ИСИ - 12 тем",
+  "credits": "Михаил Савченков",
+  "themes": 12,
+  "questions": 60,
+  "date": null,
+  "sha256": "1026a4e471e1a79da772619b7f7bf1bb203f06509a1dfc032f63d463096e9c87"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1bDgjFYllA9plm_hdfF87EyX0-kuq8tmNUnhdS-0kYcI/edit?tab=t.0",
+  "pack": "Крафт №5 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "73658aff60b738c8139bc4a8919bf2aaeebc9ef3fbaa719fd4e156f653977397"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1XHZZieg0feKboQ485hq3gzWzr5wu949b6HA1ng8Acmo/edit?tab=t.0",
+  "pack": "Крафт №5 ИСИ - 12 тем",
+  "credits": "Диана Агейченкова+Семён Попов",
+  "themes": 12,
+  "questions": 60,
+  "date": null,
+  "sha256": "06dc9d8c778effaff0286f0faca31a28ad9435df0c51ae82181684f17d9792a7"
+ },
+ {
+  "url": "https://docs.google.com/document/d/14PWYnNOMSod5-MbLc8ORhsyByqPbrA-cX06znVm1FOg/edit?tab=t.0",
+  "pack": "Witchcraft №1 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "06ab6353750f9da098b08198f407e3cce7f0abb2812ac2f1054f65c80e92bf37"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1FKvoE6JWmiF9hDB7PM0q8tRjcBrzbEQhxZnFckUAMNQ/edit?tab=t.0#heading=h.h6qk6zln7g33",
+  "pack": "Witchcraft №1 ИСИ - 11 тем",
+  "credits": "Ася Самойлова, Дарья Любинская, Дарья Горянина, Дарья Фирсова, Любовь Кочанова, Диана Агейченкова",
+  "themes": 11,
+  "questions": 55,
+  "date": null,
+  "sha256": "eabf2a009aa721d9353dd4d90a4bf2cfccf5219eef41b00b78f782e2579f05fc"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1dWeWuVpnC7KAUnk2WDn465h_01BM2YNkSe3-CC6InA4/edit?tab=t.0",
+  "pack": "Крафт №6 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "a090997d849a5036ce57b717376bcb17acdd0add2e2f22c9ba10f3bab0b008a6"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1zGtb73dCkTUiUheI7BpT9L_MmA1Z1v5dUrPfaJAmaD4/edit?tab=t.0#heading=h.nlh3iuqbowwg",
+  "pack": "Крафт №6 ИСИ - 10 тем",
+  "credits": "Сергей Лотин",
+  "themes": 10,
+  "questions": 50,
+  "date": null,
+  "sha256": "b0d3f525abba37f449e215267434abe879603d410b44dda8cd595488b48af174"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1NNi7uTyJFOKValTE1GF-Yf_CgM2l_lMh87C1fZj7plA/edit?tab=t.0",
+  "pack": "Крафт №7 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "962de5fdde443e3719a5a194303f3fbac3585f28ca514673bf78e00063f8338c"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1giKiSJ1W0iOmdMbOGLuSZe0W9MZtdDPJ92uEmOLbWF0/edit?tab=t.0#heading=h.7w754khnjhip",
+  "pack": "Крафт №7 ИСИ - 12 тем",
+  "credits": "Диана Агейченкова+Семён Попов",
+  "themes": 12,
+  "questions": 60,
+  "date": null,
+  "sha256": "94d4034c39f5257da1ea1536ad72fe082af7fdca36d40b829fbc24e0994d4e51"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1oXtE-t2JjIBlKdTWZxP1CTADIJHub_Vteo8XI-xu9QQ/edit?tab=t.0",
+  "pack": "Крафтик №2 КСИ - 6 тем",
+  "credits": "Ася Самойлова",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "2d661f78ef04d1a7655a0083d42bc05784a5446c32fe3bdad4e46f86e4c73925"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1NLfnp6up49aR1Zd-DS8qGLCmVK2ZyL1ef5PnBEPjpPw/edit?usp=drivesdk",
+  "pack": "Крафтик №2 ИСИ - 10 тем",
+  "credits": "Тимур Трубачеев",
+  "themes": 10,
+  "questions": 50,
+  "date": null,
+  "sha256": "c989050485648e1708d3e80e94e4be06ed1cead9a616ac4ca5cdfb5f7bc9f15b"
+ },
+ {
+  "url": "https://docs.google.com/document/d/135Sa3CNobhqW6rS9mUHTX6uhYuXpnw083WnPsCFdLh0/edit?tab=t.0",
+  "pack": "Крафт №8 КСИ - 6 тем",
+  "credits": "Дмитрий Карякин",
+  "themes": 6,
+  "questions": 30,
+  "date": null,
+  "sha256": "cc43e7a1e2bb2993781114b229fab16d63352c398c16ad2b6b14a054ff9aeb07"
+ },
+ {
+  "url": "https://docs.google.com/document/d/1uxESS9pecS7nR9LSuolKdIlLjxr3oIB7XZsdCpf14r4/edit?tab=t.0#heading=h.cjaxie3sanx0",
+  "pack": "Крафт №8 ИСИ - 10 тем",
+  "credits": "Михаил Наугольнов",
+  "themes": 10,
+  "questions": 50,
+  "date": null,
+  "sha256": "6da817c2f245e0f7dc96d6a1ea66fbd4232ed13fa16e278f236b8e1c014c6639"
+ }
+]

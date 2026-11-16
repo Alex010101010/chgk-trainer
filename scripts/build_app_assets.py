@@ -206,6 +206,9 @@ def build_svoyak(themes=None):
     if themes is None:
         with open(SVOYAK_IN, encoding="utf-8") as f:
             themes = json.load(f)
+        # Пользовательские PDF-пакеты хранятся отдельно от отбора gotquestions.
+        with open(os.path.join(ROOT, "data", "svoyak_manual.json"), encoding="utf-8") as f:
+            themes += json.load(f)
     out = []
     for t in themes:
         questions = []
