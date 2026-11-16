@@ -1,0 +1,43 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-16",
+  "references": [
+    "app/assets/panda/panda_home_v2.png",
+    "app/assets/panda/panda_support_clean.png"
+  ],
+  "shared_prompt": "Use case: stylized-concept. Asset: transparent PNG mascot reaction for a mobile quiz app. Reference image is the existing approved character and style; preserve that EXACT panda identity, head proportions, eye patches, thick expressive eyebrows, warm ivory face and belly, charcoal-brown fur, soft dimensional shading with subtle paper texture, fine dark outlines, bamboo twig at the corner of the mouth. This is the same mature, slightly ironic teammate, never a baby or plush toy. New pose, not a redraw of a different character. Waist-up bust, centered on a square canvas, complete rounded ears and both paws visible, base at consistent height. Leave ~8% transparent padding around silhouette, twig and hands. Actual alpha transparency, no backdrop, no checkered pattern painted in, no floor, no cast shadow beyond silhouette, no lettering, no labels, no clothing. Match reference rendering precisely.",
+  "poses": [
+    {
+      "name": "panda_took.png",
+      "prompt_suffix": " Reaction: TOOK / correct answer. Panda confidently folds both arms across its belly, one eyebrow slightly raised, small knowing satisfied smile, half-lidded eyes directed at viewer. Calm restrained approval, not exuberant celebration. Exactly two arms and two paws."
+    },
+    {
+      "name": "panda_almost.png",
+      "prompt_suffix": " Reaction: ALMOST / close to correct: panda holds its left paw (on viewer right) near shoulder, with thumb and index finger pinched a small distance apart, clearly showing 'just this much'. Other arm rests across belly. Mild sympathetic knowing half-smile, one eyebrow raised, looking at viewer. Gentle near-miss, never mockery."
+    },
+    {
+      "name": "panda_missed.png",
+      "prompt_suffix": " Reaction: MISSED / supportive after wrong answer: relaxed shoulders, one open paw extended gently upward toward viewer as if saying 'it happens, we continue', other paw rests low on belly. Soft compassionate eyebrows and kind neutral small smile. No smugness, no judgment, no frown, no tears, no thumbs-up."
+    },
+    {
+      "name": "panda_clap.png",
+      "prompt_suffix": " Reaction: ROUND END: slow restrained applause. Both paws held separately in front of upper belly, facing one another in a plausible clapping gesture; show TWO distinct forearms and TWO paws with natural clear anatomy. Small approving half-smile, one eyebrow subtly raised. Quiet teammate approval, no motion lines or symbols."
+    },
+    {
+      "name": "panda_thumbs.png",
+      "prompt_suffix": " Reaction: STREAK ALIVE: panda raises one paw with a clear thumbs-up near shoulder, other forearm relaxed across lower belly. One subtly raised eyebrow, pleased calm half-smile. Restrained teammate approval. Two arms only."
+    },
+    {
+      "name": "panda_neutral.png",
+      "prompt_suffix": " Reaction: STREAK BROKEN / neutral restart: both paws rest comfortably together low across belly. Level head, relaxed shoulders, neutral soft compassionate eyebrows, small calm closed-mouth smile, eyes attentive rather than sad. Welcoming, no guilt or judgment, no tears. Deliberately no gesture of celebration."
+    },
+    {
+      "name": "panda_notes.png",
+      "prompt_suffix": " Reaction: WEAK SKILLS MAP: panda holds a small dark forest-green spiral notepad at lower chest height with one paw; the other paw holds a short pencil poised near the page. Calm observant expression, thoughtful slightly lifted eyebrow, gentle half-smile. Simple notepad without any visible letters or symbols. Two arms only. Match reference panda identity."
+    },
+    {
+      "name": "panda_sincere.png",
+      "prompt_suffix": " Reaction: RARE SINCERE PRAISE: both eyebrows soften symmetrically, eyes open warmly but retain the adult character proportions, small genuine warm smile without irony. One open paw extends gently outward in a friendly appreciation gesture, the other rests on its chest. No smug raised eyebrow, no tears, no exaggerated grin. Same panda, not a different cute character."
+    }
+  ]
+}
