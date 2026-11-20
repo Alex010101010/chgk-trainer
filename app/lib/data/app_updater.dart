@@ -1,5 +1,7 @@
-import 'app_updater_stub.dart'
-    if (dart.library.io) 'app_updater_io.dart' as impl;
+import 'dart:async';
+
+import 'app_updater_stub.dart' if (dart.library.io) 'app_updater_io.dart'
+    as impl;
 
 /// Итог проверки самообновления приложения.
 enum AppUpdateStatus {
@@ -30,7 +32,29 @@ abstract class AppUpdater {
   /// Скачать APK из запомненного манифеста, проверить sha256, открыть системный
   /// установщик. Возвращает null при успехе или текст ошибки. Вызывать только
   /// после check() со статусом available.
-  Future<String?> install();
+  Future<String?> install(
+      {void Function(UpdateProgress)? onProgress,
+      UpdateCancellation? cancellation});
 }
 
 AppUpdater createAppUpdater() => impl.createAppUpdater();
+
+enum UpdatePhase { downloading, verifying, opening }
+
+class UpdateProgress {
+  final UpdatePhase phase;
+  final int received;
+  final int? total;
+  const UpdateProgress(this.phase, {this.received = 0, this.total});
+  double? get fraction =>
+      total != null && total! > 0 ? (received / total!).clamp(0.0, 1.0) : null;
+}
+
+class UpdateCancellation {
+  final _done = Completer<void>();
+  bool get isCancelled => _done.isCompleted;
+  Future<void> get cancelled => _done.future;
+  void cancel() {
+    if (!isCancelled) _done.complete();
+  }
+}

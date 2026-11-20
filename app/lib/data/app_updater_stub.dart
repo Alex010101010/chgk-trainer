@@ -8,10 +8,13 @@ class _StubAppUpdater implements AppUpdater {
   const _StubAppUpdater();
 
   @override
-  Future<AppUpdateInfo> check() async => const AppUpdateInfo(
-      AppUpdateStatus.skipped,
-      message: 'самообновление недоступно на этой платформе');
+  Future<AppUpdateInfo> check() async =>
+      const AppUpdateInfo(AppUpdateStatus.skipped,
+          message: 'самообновление недоступно на этой платформе');
 
   @override
-  Future<String?> install() async => 'недоступно на этой платформе';
+  Future<String?> install(
+          {void Function(UpdateProgress)? onProgress,
+          UpdateCancellation? cancellation}) async =>
+      'недоступно на этой платформе';
 }
