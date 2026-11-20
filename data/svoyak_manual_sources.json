@@ -191,5 +191,25 @@
   "questions": 50,
   "date": null,
   "sha256": "6da817c2f245e0f7dc96d6a1ea66fbd4232ed13fa16e278f236b8e1c014c6639"
+ },
+ {
+  "file": "Командная своя игра_Крафт №14.pdf",
+  "sha256": "ca8bd62cafcc16308adec9708a4940ee16caf4a72f2601b8f4693a7bdc76aefb",
+  "pack": "Крафт №14 — Командная Своя игра",
+  "themes": 6,
+  "questions": 30,
+  "credits": "Ася Самойлова",
+  "creditRole": "автор",
+  "date": null
+ },
+ {
+  "file": "Индивидуальная Своя Игра к турниру “Крафт №14”.pdf",
+  "sha256": "d7fc3d89bae7935fc893ff762f4d10921b8ee94be718d4728a9e477dfcfba6ea",
+  "pack": "Крафт №14 — Индивидуальная Своя игра",
+  "themes": 10,
+  "questions": 50,
+  "credits": "Диана Агейченкова и Семен Попов",
+  "creditRole": "редакторы",
+  "date": null
  }
 ]

@@ -17,6 +17,14 @@ class SvoyakTheme {
 
   /// Турнир, откуда тема, — показывается при выборе.
   final String pack;
+  final String? packId;
+  final String? packGroup;
+  final String? packVariant;
+
+  String get packKey => packId ?? pack;
+  String get groupKey =>
+      packGroup == null ? 'pack:$packKey' : 'group:$packGroup';
+  String get groupTitle => packGroup ?? pack;
   final String? year;
   final List<SvoyakQuestion> questions;
 
@@ -24,6 +32,9 @@ class SvoyakTheme {
     required this.id,
     required this.title,
     required this.pack,
+    this.packId,
+    this.packGroup,
+    this.packVariant,
     required this.year,
     required this.questions,
   });
@@ -52,6 +63,10 @@ class SvoyakTheme {
       id: id,
       title: title,
       pack: j['pack'] is String ? j['pack'] as String : '',
+      packId: j['packId'] is String ? j['packId'] as String : null,
+      packGroup: j['packGroup'] is String ? j['packGroup'] as String : null,
+      packVariant:
+          j['packVariant'] is String ? j['packVariant'] as String : null,
       year: j['year'] is String ? j['year'] as String : null,
       questions: questions,
     );

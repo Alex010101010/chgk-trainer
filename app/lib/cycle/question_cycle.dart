@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/favorite_button.dart';
 
 import '../app_theme.dart';
 import '../journal/event.dart';
@@ -392,6 +393,20 @@ class _QuestionCycleState extends State<QuestionCycle> {
                 ]),
           ),
         ),
+        FavoriteButton(
+            question: q,
+            explanation: widget.config.tehnika == null
+                ? null
+                : 'Приём «${widget.config.tehnika!.title}»: ${_tehnikaWhy(widget.config.tehnika!)}',
+            origin: widget.config.tags.contains('adult')
+                ? 'Чёрное ЧГК · 18+'
+                : switch (widget.config.mode) {
+                    GameMode.classic => 'Классика',
+                    GameMode.bingo => 'Бинго',
+                    GameMode.daily => 'Вопрос дня',
+                    GameMode.tehnika => 'Проверка недели',
+                    GameMode.facts => 'Тренировка',
+                  }),
         _labelled('Зачёт', q.acceptance),
         // Клише — сразу под ответом, до комментария: комментарий объясняет
         // этот вопрос, а клише — все остальные вопросы того же рода.
@@ -419,11 +434,15 @@ class _QuestionCycleState extends State<QuestionCycle> {
   /// Приём недели, который эталон точно нашёл в этом вопросе. Не вопрос, а
   /// строка: увидеть приём в живом вопросе — цель, угадывать его здесь — нет,
   /// угадывание живёт в воскресном разборе (T4b).
+  String _tehnikaWhy(Tehnika t) =>
+      t.examples
+          .where((e) => e.questionId == widget.question.id)
+          .map((e) => e.why)
+          .firstOrNull ??
+      t.trigger;
+
   Widget _tehnikaHint(Tehnika t) {
-    final why = t.examples
-        .where((e) => e.questionId == widget.question.id)
-        .map((e) => e.why)
-        .firstOrNull;
+    final why = _tehnikaWhy(t);
     return Padding(
       key: const Key('cycle-tehnika-hint'),
       padding: const EdgeInsets.only(bottom: 8),
@@ -432,7 +451,7 @@ class _QuestionCycleState extends State<QuestionCycle> {
         children: [
           Text('Здесь был приём недели: «${t.title}»',
               style: Theme.of(context).textTheme.labelLarge),
-          Text(why ?? t.trigger),
+          Text(why),
         ],
       ),
     );

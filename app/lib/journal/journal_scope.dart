@@ -16,6 +16,9 @@ class JournalScope extends InheritedWidget {
     return scope!.log;
   }
 
+  static EventLog? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<JournalScope>()?.log;
+
   @override
   bool updateShouldNotify(JournalScope oldWidget) => oldWidget.log != log;
 }

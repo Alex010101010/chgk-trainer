@@ -26,7 +26,9 @@ String _asset(List<Map<String, dynamic>> themes, {int? count}) =>
 
 void main() {
   test('тема читается, вопросы по возрастанию номинала', () {
-    final themes = parseSvoyakAsset(_asset([_theme('1', [30, 10, 50, 20, 40])]));
+    final themes = parseSvoyakAsset(_asset([
+      _theme('1', [30, 10, 50, 20, 40])
+    ]));
     expect(themes.single.questions.map((q) => q.nominal), [10, 20, 30, 40, 50]);
     expect(themes.single.questions.first.question.id, 'si-10');
     expect(themes.single.year, '2024');
@@ -41,9 +43,38 @@ void main() {
   });
 
   test('обрезанный и пустой ассет — ошибка, а не тихий огрызок', () {
-    expect(() => parseSvoyakAsset(_asset([_theme('1', [10, 20, 30, 40, 50])], count: 2)),
+    expect(
+        () => parseSvoyakAsset(_asset([
+              _theme('1', [10, 20, 30, 40, 50])
+            ], count: 2)),
         throwsA(isA<QuestionAssetException>()));
-    expect(() => parseSvoyakAsset(_asset([_theme('2', [10])])),
+    expect(
+        () => parseSvoyakAsset(_asset([
+              _theme('2', [10])
+            ])),
         throwsA(isA<QuestionAssetException>()));
+  });
+  test('package identity and explicit variants survive parsing', () {
+    final a = _theme('1', [10, 20, 30, 40, 50])
+      ..addAll({
+        'packId': 'team',
+        'packGroup': 'Крафт №14',
+        'packVariant': 'Командная'
+      });
+    final b = _theme('2', [10, 20, 30, 40, 50])
+      ..addAll({
+        'packId': 'individual',
+        'packGroup': 'Крафт №14',
+        'packVariant': 'Индивидуальная'
+      });
+    final themes = parseSvoyakAsset(_asset([a, b]));
+    expect(themes[0].packKey, isNot(themes[1].packKey));
+    expect(themes[0].groupKey, themes[1].groupKey);
+    expect(themes[0].packVariant, 'Командная');
+    final legacy = parseSvoyakAsset(_asset([
+      _theme('3', [10, 20, 30, 40, 50])
+    ])).single;
+    expect(legacy.packKey, 'Кубок');
+    expect(legacy.groupTitle, 'Кубок');
   });
 }

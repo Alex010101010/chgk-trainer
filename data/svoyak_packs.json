@@ -1,0 +1,94 @@
+{
+  "kraft-individual12": {
+    "group": "Крафт №12",
+    "variant": "Индивидуальная"
+  },
+  "kraft-individual13": {
+    "group": "Крафт №13",
+    "variant": "Индивидуальная"
+  },
+  "kraft-team12": {
+    "group": "Крафт №12",
+    "variant": "Командная"
+  },
+  "kraft-team13": {
+    "group": "Крафт №13",
+    "variant": "Командная"
+  },
+  "1FCBc4es5gzBlCLliJ0T4B6bPvNV9A55A_PuP65XqSGs": {
+    "group": "Крафт №1+Крафт №2",
+    "variant": "Командная"
+  },
+  "1MMladWn03ohXoFzF5xow3YPXW6_ehLr50dXHy6HspDw": {
+    "group": "Крафт №3",
+    "variant": "Командная"
+  },
+  "1KBjaegEz2q67v3kpnsLHr4Cm72DsklIs_9WCRfDqWUc": {
+    "group": "Крафт №4",
+    "variant": "Командная"
+  },
+  "1ra-vDDxxealef4Yf2HPzaFJrieKDmAA5WeF_8fKy49M": {
+    "group": "Крафтик №1",
+    "variant": "Командная"
+  },
+  "12drJGKzN9_0ZjVUqK5ikyaeAeLaQpv_T44Csz1oGzCA": {
+    "group": "Крафтик №1",
+    "variant": "Индивидуальная"
+  },
+  "1bDgjFYllA9plm_hdfF87EyX0-kuq8tmNUnhdS-0kYcI": {
+    "group": "Крафт №5",
+    "variant": "Командная"
+  },
+  "1XHZZieg0feKboQ485hq3gzWzr5wu949b6HA1ng8Acmo": {
+    "group": "Крафт №5",
+    "variant": "Индивидуальная"
+  },
+  "14PWYnNOMSod5-MbLc8ORhsyByqPbrA-cX06znVm1FOg": {
+    "group": "Witchcraft №1",
+    "variant": "Командная"
+  },
+  "1FKvoE6JWmiF9hDB7PM0q8tRjcBrzbEQhxZnFckUAMNQ": {
+    "group": "Witchcraft №1",
+    "variant": "Индивидуальная"
+  },
+  "1dWeWuVpnC7KAUnk2WDn465h_01BM2YNkSe3-CC6InA4": {
+    "group": "Крафт №6",
+    "variant": "Командная"
+  },
+  "1zGtb73dCkTUiUheI7BpT9L_MmA1Z1v5dUrPfaJAmaD4": {
+    "group": "Крафт №6",
+    "variant": "Индивидуальная"
+  },
+  "1NNi7uTyJFOKValTE1GF-Yf_CgM2l_lMh87C1fZj7plA": {
+    "group": "Крафт №7",
+    "variant": "Командная"
+  },
+  "1giKiSJ1W0iOmdMbOGLuSZe0W9MZtdDPJ92uEmOLbWF0": {
+    "group": "Крафт №7",
+    "variant": "Индивидуальная"
+  },
+  "1oXtE-t2JjIBlKdTWZxP1CTADIJHub_Vteo8XI-xu9QQ": {
+    "group": "Крафтик №2",
+    "variant": "Командная"
+  },
+  "1NLfnp6up49aR1Zd-DS8qGLCmVK2ZyL1ef5PnBEPjpPw": {
+    "group": "Крафтик №2",
+    "variant": "Индивидуальная"
+  },
+  "135Sa3CNobhqW6rS9mUHTX6uhYuXpnw083WnPsCFdLh0": {
+    "group": "Крафт №8",
+    "variant": "Командная"
+  },
+  "1uxESS9pecS7nR9LSuolKdIlLjxr3oIB7XZsdCpf14r4": {
+    "group": "Крафт №8",
+    "variant": "Индивидуальная"
+  },
+  "kraft-team14": {
+    "group": "Крафт №14",
+    "variant": "Командная"
+  },
+  "kraft-individual14": {
+    "group": "Крафт №14",
+    "variant": "Индивидуальная"
+  }
+}

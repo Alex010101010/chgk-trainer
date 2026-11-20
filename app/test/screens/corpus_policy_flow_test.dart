@@ -35,6 +35,9 @@ void main() {
         await tester.scrollUntilVisible(finder, 500, maxScrolls: 40);
       }
       await tester.ensureVisible(finder);
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.ensureVisible(finder);
+      await tester.pump();
       await tester.tap(finder);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 500));

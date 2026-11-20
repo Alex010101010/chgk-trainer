@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import '../widgets/favorite_button.dart';
 
 import '../cycle/cycle_controller.dart';
 import '../cycle/question_cycle.dart';
@@ -171,6 +172,7 @@ class _DailyScreenState extends State<DailyScreen> {
             style: text.headlineSmall),
         const SizedBox(height: 8),
         Text('Ответ: ${q.answer}'),
+        FavoriteButton(question: q, origin: 'Вопрос дня'),
         const SizedBox(height: 16),
         Text('Дней подряд: $streak', key: const Key('daily-streak')),
         const SizedBox(height: 8),

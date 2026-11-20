@@ -203,6 +203,8 @@ def fact_image_name(src_file):
 
 
 def build_svoyak(themes=None):
+    with open(os.path.join(ROOT, "data", "svoyak_packs.json"), encoding="utf-8") as f:
+        catalog = json.load(f)
     if themes is None:
         with open(SVOYAK_IN, encoding="utf-8") as f:
             themes = json.load(f)
@@ -221,6 +223,9 @@ def build_svoyak(themes=None):
             "id": t["id"],
             "title": t["title"],
             "pack": t["pack"],
+            "packId": str(t.get("packId", t["pack"])),
+            "packGroup": catalog.get(str(t.get("packId")), {}).get("group"),
+            "packVariant": catalog.get(str(t.get("packId")), {}).get("variant"),
             "year": (t.get("date") or "")[:4] or None,
             "questions": questions,
         })

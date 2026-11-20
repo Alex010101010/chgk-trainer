@@ -80,6 +80,8 @@ sealed class JournalEvent {
         return SessionStartEvent(ts: ts, day: day);
       case 'fact':
         return FactEvent._fromJson(j, ts, day);
+      case 'favorite':
+        return FavoriteEvent._fromJson(j, ts, day);
       case 'svoyak':
         return SvoyakEvent._fromJson(j, ts, day);
       default:
@@ -189,15 +191,18 @@ class AnswerEvent extends JournalEvent {
       mode: mode,
       verdict: verdict,
       secondsUsed: secondsUsed,
-      answerWindowSec: j['answerWindowSec'] is int ? j['answerWindowSec'] as int : 10,
+      answerWindowSec:
+          j['answerWindowSec'] is int ? j['answerWindowSec'] as int : 10,
       userAnswer: j['userAnswer'] is String ? j['userAnswer'] as String : '',
       reason: _enumByName(MissReason.values, j['reason']),
       hintUsed: j['hintUsed'] == true,
       roundId: j['roundId'] is String ? j['roundId'] as String : null,
       theme: j['theme'] is String ? j['theme'] as String : null,
       themeGuess: j['themeGuess'] is String ? j['themeGuess'] as String : null,
-      tehnikaGuess: j['tehnikaGuess'] is bool ? j['tehnikaGuess'] as bool : null,
-      tehnikaPick: j['tehnikaPick'] is String ? j['tehnikaPick'] as String : null,
+      tehnikaGuess:
+          j['tehnikaGuess'] is bool ? j['tehnikaGuess'] as bool : null,
+      tehnikaPick:
+          j['tehnikaPick'] is String ? j['tehnikaPick'] as String : null,
       tags: tags is List ? tags.whereType<String>().toList() : const [],
     );
   }
@@ -257,7 +262,8 @@ class BingoGridEvent extends JournalEvent {
     required this.themes,
   });
 
-  factory BingoGridEvent.at(DateTime now, List<String> themes) => BingoGridEvent(
+  factory BingoGridEvent.at(DateTime now, List<String> themes) =>
+      BingoGridEvent(
         ts: now.toUtc().millisecondsSinceEpoch,
         day: localDay(now),
         themes: themes,
@@ -320,7 +326,9 @@ class FactEvent extends JournalEvent {
   });
 
   factory FactEvent.at(DateTime now,
-          {required String cardId, required String deck, required bool known}) =>
+          {required String cardId,
+          required String deck,
+          required bool known}) =>
       FactEvent(
         ts: now.toUtc().millisecondsSinceEpoch,
         day: localDay(now),
@@ -333,14 +341,16 @@ class FactEvent extends JournalEvent {
   String get type => 'fact';
 
   @override
-  Map<String, dynamic> body() => {'cardId': cardId, 'deck': deck, 'known': known};
+  Map<String, dynamic> body() =>
+      {'cardId': cardId, 'deck': deck, 'known': known};
 
   static FactEvent? _fromJson(Map<String, dynamic> j, int ts, String day) {
     final cardId = j['cardId'];
     final deck = j['deck'];
     final known = j['known'];
     if (cardId is! String || deck is! String || known is! bool) return null;
-    return FactEvent(ts: ts, day: day, cardId: cardId, deck: deck, known: known);
+    return FactEvent(
+        ts: ts, day: day, cardId: cardId, deck: deck, known: known);
   }
 }
 
@@ -472,11 +482,78 @@ class SvoyakEvent extends JournalEvent {
       taken: taken,
       secondsUsed: secondsUsed,
       decideSec: decideSec,
-      responseSeconds: j['responseSeconds'] is int
-          ? j['responseSeconds'] as int
-          : null,
+      responseSeconds:
+          j['responseSeconds'] is int ? j['responseSeconds'] as int : null,
       userAnswer: j['userAnswer'] is String ? j['userAnswer'] as String : '',
       roundId: j['roundId'] is String ? j['roundId'] as String : null,
     );
+  }
+}
+
+/// Избранное хранит снимок вопроса: смена ассета не удаляет сохранённый разбор.
+/// Удаление — отдельное событие; игровые ответы и их статистика не меняются.
+class FavoriteEvent extends JournalEvent {
+  final String questionId;
+  final bool saved;
+  final Map<String, dynamic>? snapshot;
+  final String origin;
+  final String? explanation;
+
+  const FavoriteEvent(
+      {required super.ts,
+      required super.day,
+      required this.questionId,
+      required this.saved,
+      this.snapshot,
+      this.origin = '',
+      this.explanation});
+
+  factory FavoriteEvent.at(DateTime now,
+          {required String questionId,
+          required bool saved,
+          Map<String, dynamic>? snapshot,
+          String origin = '',
+          String? explanation}) =>
+      FavoriteEvent(
+          ts: now.toUtc().millisecondsSinceEpoch,
+          day: localDay(now),
+          questionId: questionId,
+          saved: saved,
+          snapshot: snapshot,
+          origin: origin,
+          explanation: explanation);
+
+  @override
+  String get type => 'favorite';
+
+  @override
+  Map<String, dynamic> body() => {
+        'questionId': questionId,
+        'saved': saved,
+        if (saved) 'snapshot': snapshot,
+        if (saved) 'origin': origin,
+        if (saved && explanation != null) 'explanation': explanation,
+      };
+
+  static FavoriteEvent? _fromJson(Map<String, dynamic> j, int ts, String day) {
+    final id = j['questionId'];
+    final saved = j['saved'];
+    final snapshot = j['snapshot'];
+    if (id is! String || saved is! bool) return null;
+    if (saved &&
+        (snapshot is! Map ||
+            snapshot['id'] != id ||
+            snapshot['question'] is! String ||
+            snapshot['answer'] is! String ||
+            !['gq', 'bingo'].contains(snapshot['corpus']))) return null;
+    return FavoriteEvent(
+        ts: ts,
+        day: day,
+        questionId: id,
+        saved: saved,
+        snapshot: saved ? Map<String, dynamic>.from(snapshot as Map) : null,
+        origin: j['origin'] is String ? j['origin'] as String : '',
+        explanation:
+            j['explanation'] is String ? j['explanation'] as String : null);
   }
 }

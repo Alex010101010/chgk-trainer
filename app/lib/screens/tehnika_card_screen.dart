@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/favorite_button.dart';
 
 import '../app_theme.dart';
 import '../model/question.dart';
@@ -71,7 +72,8 @@ class TehnikaCard extends StatelessWidget {
         Text('Как это выглядит', style: text.titleMedium),
         const SizedBox(height: 12),
         for (final e in tehnika.examples)
-          if (questions[e.questionId] case final q?) _example(context, q, e.why),
+          if (questions[e.questionId] case final q?)
+            _example(context, q, e.why),
         const SizedBox(height: 12),
         FilledButton(
           key: const Key('tehnika-card-done'),
@@ -146,6 +148,10 @@ class TehnikaCard extends StatelessWidget {
             Text('Ответ', style: _kicker(context)),
             const SizedBox(height: 2),
             Text(q.answer, style: text.titleMedium),
+            FavoriteButton(
+                question: q,
+                origin: 'Приём недели · ${tehnika.title}',
+                explanation: why),
             const SizedBox(height: 14),
             Divider(height: 1, color: scheme.outlineVariant),
             const SizedBox(height: 14),

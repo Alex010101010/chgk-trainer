@@ -1,4 +1,5 @@
 import 'dart:math';
+import '../widgets/favorite_button.dart';
 
 import 'package:flutter/material.dart';
 
@@ -68,6 +69,10 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
   List<SvoyakTheme>? _all;
   List<JournalEvent> _events = const [];
   List<SvoyakTheme> _choice = const [];
+
+  bool _catalog = false;
+  String? _groupKey;
+  String? _packKey;
 
   SvoyakTheme? _theme;
   String _roundId = '';
@@ -160,6 +165,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
   }
 
   void _toChoice() {
+    holdScreenAwake(false);
     _c?.dispose();
     setState(() {
       _c = null;
@@ -175,11 +181,43 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
     super.dispose();
   }
 
+  bool get _nested => _theme != null || _catalog;
+
+  void _back() {
+    if (_theme != null) {
+      _toChoice();
+      return;
+    }
+    setState(() {
+      if (_packKey != null) {
+        _packKey = null;
+        final packs = _all!
+            .where((t) => t.groupKey == _groupKey)
+            .map((t) => t.packKey)
+            .toSet();
+        if (packs.length == 1) _groupKey = null;
+      } else if (_groupKey != null) {
+        _groupKey = null;
+      } else {
+        _catalog = false;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Своя игра')),
-      body: SafeArea(child: PlaySurface(child: _body())),
+    return PopScope(
+      canPop: !_nested,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop) _back();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Своя игра'),
+          leading: _nested ? BackButton(onPressed: _back) : null,
+        ),
+        body: SafeArea(child: PlaySurface(child: _body())),
+      ),
     );
   }
 
@@ -189,7 +227,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
     }
     if (_all == null) return const Center(child: CircularProgressIndicator());
     final theme = _theme;
-    if (theme == null) return _choiceList();
+    if (theme == null) return _catalog ? _catalogList() : _choiceList();
     if (_index >= theme.questions.length) return _summary(theme);
     return _question(theme, _c!);
   }
@@ -200,6 +238,13 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
       key: const Key('svoyak-choice'),
       padding: const EdgeInsets.all(16),
       children: [
+        OutlinedButton.icon(
+          key: const Key('svoyak-packs'),
+          onPressed: () => setState(() => _catalog = true),
+          icon: const Icon(Icons.folder_outlined),
+          label: const Text('Выбрать пакет'),
+        ),
+        const SizedBox(height: 16),
         Text('Выбери тему', style: text.titleLarge),
         const SizedBox(height: 4),
         const Text(
@@ -216,6 +261,89 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
               onTap: () => _startTheme(t),
             ),
           ),
+      ],
+    );
+  }
+
+  Set<String> _answered(SvoyakTheme t) {
+    final ids = t.questions.map((q) => q.question.id).toSet();
+    return _events
+        .whereType<SvoyakEvent>()
+        .where((e) => e.themeId == t.id && ids.contains(e.questionId))
+        .map((e) => e.questionId)
+        .toSet();
+  }
+
+  String _progress(SvoyakTheme t) {
+    final n = _answered(t).length;
+    if (n == 0) return 'Не начата';
+    if (n == t.questions.length) return 'Завершена · можно сыграть снова';
+    return 'Сыграно $n из ${t.questions.length} · начать заново';
+  }
+
+  Widget _catalogList() {
+    final text = Theme.of(context).textTheme;
+    if (_packKey != null) {
+      final themes = _all!.where((t) => t.packKey == _packKey).toList();
+      return ListView(
+        key: const Key('svoyak-pack-themes'),
+        padding: const EdgeInsets.all(16),
+        children: [
+          Text(themes.first.pack, style: text.titleLarge),
+          const SizedBox(height: 12),
+          for (final t in themes)
+            Card(
+                child: ListTile(
+              key: Key('svoyak-theme-${t.id}'),
+              contentPadding: const EdgeInsets.all(16),
+              title: Text(t.title, style: text.titleMedium),
+              subtitle: Text(_progress(t)),
+              onTap: () => _startTheme(t),
+            )),
+        ],
+      );
+    }
+    final entries = <String, List<SvoyakTheme>>{};
+    for (final t in _all!) {
+      if (_groupKey != null && t.groupKey != _groupKey) continue;
+      final key = _groupKey == null ? t.groupKey : t.packKey;
+      (entries[key] ??= []).add(t);
+    }
+    // Последние добавленные ручные пакеты идут первыми; порядок тем исходный.
+    final groups = entries.entries.toList().reversed;
+    return ListView(
+      key: const Key('svoyak-pack-list'),
+      padding: const EdgeInsets.all(16),
+      children: [
+        Text(
+            _groupKey == null
+                ? 'Выбери пакет'
+                : groups.first.value.first.groupTitle,
+            style: text.titleLarge),
+        const SizedBox(height: 12),
+        for (final entry in groups)
+          Card(
+              child: ListTile(
+            key: Key('svoyak-pack-${entry.key}'),
+            contentPadding: const EdgeInsets.all(16),
+            title: Text(
+                _groupKey == null
+                    ? entry.value.first.groupTitle
+                    : entry.value.first.packVariant ?? entry.value.first.pack,
+                style: text.titleMedium),
+            subtitle: Text('Тем: ${entry.value.length} · завершено: '
+                '${entry.value.where((t) => _answered(t).length == t.questions.length).length}'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => setState(() {
+              if (_groupKey != null) {
+                _packKey = entry.key;
+              } else {
+                _groupKey = entry.key;
+                final packs = entry.value.map((t) => t.packKey).toSet();
+                if (packs.length == 1) _packKey = packs.single;
+              }
+            }),
+          )),
       ],
     );
   }
@@ -314,6 +442,9 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
           child: Text('Ответил за ${c.responseSeconds} с'),
         ),
       _labelled('Ответ', q.answer),
+      FavoriteButton(
+          question: q,
+          origin: 'Своя игра · ${_theme!.pack} · ${_theme!.title}'),
       _labelled('Зачёт', q.acceptance),
       _labelled('Комментарий', q.comment),
       _labelled('Источник', q.sources.join('\n')),
@@ -384,7 +515,7 @@ class _SvoyakScreenState extends State<SvoyakScreen> {
         FilledButton(
           key: const Key('svoyak-again'),
           onPressed: _toChoice,
-          child: const Text('Ещё тема'),
+          child: Text(_catalog ? 'К темам пакета' : 'Ещё тема'),
         ),
         const SizedBox(height: 8),
         OutlinedButton(

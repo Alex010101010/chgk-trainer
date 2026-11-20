@@ -16,18 +16,35 @@ import 'package:chgk_trainer/screens/home_screen.dart';
 import 'package:chgk_trainer/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:chgk_trainer/widgets/panda_says.dart';
 
 final _now = DateTime(2026, 9, 26, 12);
 
 class _Questions implements QuestionRepository {
   @override
   Future<List<Question>> loadAll() async => const [
-        Question(id: 'b1', corpus: Corpus.bingo, question: '', answer: '',
-            acceptVariants: [], theme: 'Ковентри'),
-        Question(id: 'b2', corpus: Corpus.bingo, question: '', answer: '',
-            acceptVariants: [], theme: 'Менин'),
-        Question(id: 'g1', corpus: Corpus.gq, question: '', answer: '',
-            acceptVariants: [], tehniki: ['perevod']),
+        Question(
+            id: 'b1',
+            corpus: Corpus.bingo,
+            question: '',
+            answer: '',
+            acceptVariants: [],
+            theme: 'Ковентри'),
+        Question(
+            id: 'b2',
+            corpus: Corpus.bingo,
+            question: '',
+            answer: '',
+            acceptVariants: [],
+            theme: 'Менин'),
+        Question(
+            id: 'g1',
+            corpus: Corpus.gq,
+            question: '',
+            answer: '',
+            acceptVariants: [],
+            tehniki: ['perevod']),
       ];
 }
 
@@ -54,7 +71,11 @@ class _Facts implements FactRepository {
 /// момент экран выбрал.
 PandaVoice _voice() => PandaVoice(
       [
-        for (final id in const ['streak.alive', 'streak.broken', 'weakmap.show'])
+        for (final id in const [
+          'streak.alive',
+          'streak.broken',
+          'weakmap.show'
+        ])
           PandaMoment(id: id, name: id, lines: ['момент $id'], rare: const []),
       ],
       random: Random(1),
@@ -118,12 +139,26 @@ String _value(WidgetTester tester, String key) => tester
     .last
     .data!;
 
+Future<void> _showPanda(WidgetTester tester) async {
+  await tester.scrollUntilVisible(find.byType(PandaSays), 180,
+      scrollable: find.byType(Scrollable).first);
+  await tester.ensureVisible(find.byType(PandaSays));
+  await tester.pump(const Duration(seconds: 1));
+  await tester.pumpAndSettle();
+}
+
 void main() {
+  setUp(() => PackageInfo.setMockInitialValues(
+      appName: 'Панда будет?',
+      packageName: 'test',
+      version: '0.1.0',
+      buildNumber: '48',
+      buildSignature: 'test'));
 
   testWidgets('на журнале видны все блоки с верными числами', (tester) async {
-
     FactEvent fact(String id, int d) =>
-        FactEvent.at(_now.add(Duration(days: d)), cardId: id, deck: 'd', known: true);
+        FactEvent.at(_now.add(Duration(days: d)),
+            cardId: id, deck: 'd', known: true);
 
     await _pump(tester, [
       _answer('b1', Verdict.taken, GameMode.bingo, -1,
@@ -131,8 +166,11 @@ void main() {
       _answer('x', Verdict.missed, GameMode.classic, 0),
       // Неделя стажа 0: открыт только первый приём.
       _answer('g1', Verdict.missed, GameMode.tehnika, 0),
-      NoteEvent(ts: _now.millisecondsSinceEpoch, day: localDay(_now),
-          theme: 'Своё клише', text: 'заметка'),
+      NoteEvent(
+          ts: _now.millisecondsSinceEpoch,
+          day: localDay(_now),
+          theme: 'Своё клише',
+          text: 'заметка'),
       for (var d = -5; d < 0; d++) fact('c1', d),
     ]);
 
@@ -145,6 +183,7 @@ void main() {
     expect(_value(tester, 'profile-tehniki'), '0 из 1 открытых');
     expect(find.byKey(const Key('profile-weak-perevod')), findsOneWidget);
     expect(_value(tester, 'profile-facts'), '1 из 2');
+    await _showPanda(tester);
     expect(find.text('момент weakmap.show'), findsOneWidget,
         reason: 'есть слабое место — панда говорит о нём, а не о серии');
     expect(tester.takeException(), isNull);
@@ -156,12 +195,14 @@ void main() {
     expect(_value(tester, 'profile-streak'), '0');
     expect(_value(tester, 'profile-rate'), '—');
     expect(find.byKey(const Key('profile-unchecked-perevod')), findsOneWidget);
+    await _showPanda(tester);
     expect(find.text('момент streak.broken'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
   testWidgets('серия жива — панда про серию', (tester) async {
     await _pump(tester, [SessionStartEvent.at(_now)]);
+    await _showPanda(tester);
     expect(find.text('момент streak.alive'), findsOneWidget);
   });
 
@@ -185,6 +226,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(ProfileScreen), findsOneWidget);
+    expect(find.text('Версия 0.1.0 · сборка 48'), findsOneWidget);
+    expect(find.byKey(const Key('profile-favorites')), findsOneWidget);
     expect(find.byKey(const Key('home-update')).hitTestable(), findsOneWidget);
   });
 }

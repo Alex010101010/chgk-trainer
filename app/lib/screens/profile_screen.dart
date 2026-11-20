@@ -12,6 +12,8 @@ import '../model/tehnika.dart';
 import '../panda/panda_voice.dart';
 import '../widgets/panda_says.dart';
 import '../widgets/update_button.dart';
+import '../widgets/installed_version.dart';
+import 'favorites_screen.dart';
 import 'tehnika_check_screen.dart';
 
 /// Профиль (T9): сводка сверху и по блоку на ось — клише, приёмы, факты.
@@ -79,7 +81,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     } on QuestionAssetException catch (e) {
       if (mounted) setState(() => _assetError = e.message);
     } catch (e) {
-      if (mounted) setState(() => _assetError = 'Не удалось загрузить данные: $e');
+      if (mounted)
+        setState(() => _assetError = 'Не удалось загрузить данные: $e');
     }
   }
 
@@ -87,13 +90,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final events = _events;
     return Scaffold(
-      appBar: AppBar(title: const Text('Профиль'), actions: const [UpdateButton()]),
+      appBar:
+          AppBar(title: const Text('Профиль'), actions: const [UpdateButton()]),
       body: SafeArea(
-        child: _error != null
-            ? Center(child: Text(_error!))
-            : events == null
-                ? const Center(child: CircularProgressIndicator())
-                : _body(events),
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          const Padding(
+              padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
+              child: InstalledVersion()),
+          ListTile(
+            key: const Key('profile-favorites'),
+            leading: const Icon(Icons.bookmark_border),
+            title: const Text('Избранные вопросы'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
+                builder: (_) => const FavoritesScreen())),
+          ),
+          Expanded(
+              child: _error != null
+                  ? Center(child: Text(_error!))
+                  : events == null
+                      ? const Center(child: CircularProgressIndicator())
+                      : _body(events)),
+        ]),
       ),
     );
   }
@@ -107,11 +126,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final facts = _facts;
     final ready = questions != null && tehniki != null && facts != null;
 
-    final opened = ready ? openedTehniki(tehniki, weekIndex(events, now)) : const <Tehnika>[];
+    final opened = ready
+        ? openedTehniki(tehniki, weekIndex(events, now))
+        : const <Tehnika>[];
     final states = ready
         ? tehnikaStates(
             events,
-            {for (final q in questions) if (q.tehniki.isNotEmpty) q.id: q.tehniki},
+            {
+              for (final q in questions)
+                if (q.tehniki.isNotEmpty) q.id: q.tehniki
+            },
             opened.map((t) => t.id),
           )
         : const <String, TehnikaState>{};
@@ -176,7 +200,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       _row('Узнано в сетке', '$mastered из ${themes.length}',
           key: const Key('profile-mastered')),
       // Своя реалия — клише, пойманное на живой игре и записанное (T24).
-      _row('Своих реалий записано', '$custom', key: const Key('profile-custom')),
+      _row('Своих реалий записано', '$custom',
+          key: const Key('profile-custom')),
     ]);
   }
 

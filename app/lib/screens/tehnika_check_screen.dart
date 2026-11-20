@@ -1,4 +1,5 @@
 import 'dart:math';
+import '../widgets/favorite_button.dart';
 
 import 'package:flutter/material.dart';
 
@@ -23,8 +24,9 @@ const int kCheckMaxOptions = 6;
 
 /// Приёмы, открытые к неделе стажа [week]: по одному в неделю, и все прошлые
 /// остаются в игре.
-List<Tehnika> openedTehniki(List<Tehnika> tehniki, int week) =>
-    tehniki.isEmpty ? const [] : tehniki.sublist(0, tehnikaForWeek(tehniki, week).index + 1);
+List<Tehnika> openedTehniki(List<Tehnika> tehniki, int week) => tehniki.isEmpty
+    ? const []
+    : tehniki.sublist(0, tehnikaForWeek(tehniki, week).index + 1);
 
 /// Отбор вопросов проверки недели (T4b): невиденные эталонные вопросы
 /// открытых приёмов. Два слота из [kCheckSize] — приёму текущей недели,
@@ -245,8 +247,8 @@ class _TehnikaCheckScreenState extends State<TehnikaCheckScreen> {
     if (_index >= _round.length) {
       if (answered < kCheckSize && _round.isEmpty) {
         return const Center(
-          child: Text('Вопросы для проверки кончились',
-              key: Key('check-empty')),
+          child:
+              Text('Вопросы для проверки кончились', key: Key('check-empty')),
         );
       }
       return _summary();
@@ -314,6 +316,10 @@ class _TehnikaCheckScreenState extends State<TehnikaCheckScreen> {
       const SizedBox(height: 16),
       Text('Ответ', style: text.labelLarge),
       Text(q.answer),
+      FavoriteButton(
+          question: q,
+          origin: 'Проверка недели · ${main.title}',
+          explanation: why ?? main.trigger),
       if (q.comment case final c? when c.trim().isNotEmpty) ...[
         const SizedBox(height: 12),
         Text('Комментарий', style: text.labelLarge),
